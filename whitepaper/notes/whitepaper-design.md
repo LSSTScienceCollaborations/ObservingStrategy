@@ -8,6 +8,12 @@ The main points to convey in this white paper are that:
 * The baseline cadence can and will be optimized - even small improvements can be significant. Most importantly, the cadence is not set in stone and it will evolve.
 * The cadence optimization process will be as open and inclusive as technically possible. All stake holders will participate in this process.
 
+A few possible paper titles:
+
+* *“Current Baseline Design for LSST Deployment and Further Optimization”*
+* *“Optimization Strategies for LSST Deployment”*
+* *“Towards Optimal LSST Deployment”*
+* *“Science Driven Optimization of LSST Deployment”*
 
 **1. Introduction**
   * Synoptic Surveying with LSST - the basic observing strategy determined by the LSST's design.
