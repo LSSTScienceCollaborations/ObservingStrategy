@@ -14,7 +14,7 @@ A community white paper about LSST observing strategy, with quantifications via 
 
 ## Contacts
 
-This effort is being coordinated by Zeljko Ivezic.Perhaps we are missing a science area? Or an idea for how to perturb the observing strategy? We'd like to hear form you. Please send all feedback via [this repo's issues.](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues).
+This effort is being coordinated by Zeljko Ivezic.Perhaps we are missing a science area? Or an idea for how to perturb the observing strategy? We'd like to hear from you! Please send all your feedback to [this repo's issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new).
 
 The MAF Workshop SOC is: Zeljko Ivezic, Debbie Bard, Andy Connolly, Phil Marshall, Tom Matheson, Steve Ridgway, Michael Strauss, Lucianne Walkowicz, and Beth Willman.
 
