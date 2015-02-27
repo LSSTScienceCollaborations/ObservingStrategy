@@ -16,4 +16,4 @@ A community whitepaper outlining various science cases and the impacts that obse
 
 **6. Keeping It Even: Accurate Cosmological Measurements on the Largest Scales"**
 
-**7. Tensions and Trade-offs
+**7. Tensions and Trade-offs**
