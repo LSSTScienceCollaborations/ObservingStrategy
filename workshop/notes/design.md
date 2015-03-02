@@ -3,7 +3,7 @@
 The two main goals for the workshop are:
 
 1) To involve more people in defining more MAF metrics, and
-2) To revisit several science cases which need to deliver more quantitative details for designing simulated surveys (such as Galactic plane coverage, rolling cadence tradeoffs, North ecliptic spur coverage, deep drilling, dithering patterns).
+2) To revisit several science cases which need to deliver more quantitative details for designing simulated surveys (such as Galactic plane coverage, LMC/SMC coverage, rolling cadence tradeoffs, North ecliptic spur coverage, deep drilling, dithering patterns).
 
 The ultimate deliverable is a white paper (on some reasonable timescale after the
 workshop; definitely many months, hopefully before the next workshop) describing
