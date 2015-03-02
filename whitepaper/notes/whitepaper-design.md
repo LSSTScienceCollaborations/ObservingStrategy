@@ -29,6 +29,6 @@ A few possible paper titles:
 
 **6. Keeping It Even: Accurate Cosmological Measurements on the Largest Scales**
 
-**7. Drilling Deep: Options for a Small Number of Enhanced Rate Fields
+**7. Drilling Deep: Options for a Small Number of Enhanced Rate Fields**
 
 **8. Tensions and Trade-offs**
