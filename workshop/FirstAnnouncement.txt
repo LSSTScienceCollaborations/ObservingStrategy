@@ -6,22 +6,43 @@ August 20-22, 2015; Kitsap Conference Center, Bremerton, WA
 
 Meeting Rationale:
 
-This workshop is the second one in a series of LSST workshops aimed at engaging the community interested in LSST to help optimize its observing strategy. There will be several more cadence workshops prior to first light, and the cadence optimization is likely to continue into at least the commissioning phase.
+This workshop is the second one in a series of LSST workshops aimed at engaging the community 
+interested in LSST to help optimize its observing strategy. There will be several more cadence 
+workshops prior to first light, and the cadence optimization is likely to continue into at least 
+the commissioning phase.
 
-Since the first cadence workshop in 2014 (please see https://project.lsst.org/meetings/ocw) the Project has generated and analyzed a large number of simulated cadences
-that modified the LSST baseline cadence in various informative ways. These simulations can now be used for robust quantitative assessment of the system capabilities (please see https://confluence.lsstcorp.org/display/SIM/Cadence+Workshop+Simulated+Surveys as well as a starting point for further quantitative cadence optimization).
+Since the first cadence workshop in 2014 (please see https://project.lsst.org/meetings/ocw), the 
+LSST Project has generated and analyzed a large number of simulated cadences that modified the 
+LSST baseline cadence in various informative ways. These simulations can now be used for robust 
+quantitative assessment of the system capabilities; please see 
+https://confluence.lsstcorp.org/display/SIM/Cadence+Workshop+Simulated+Surveys 
+as a starting point for further quantitative cadence optimization.
+
 
 The main goals of the 2015 workshop are to:
 
-1) Present a status update on cadence optimization and report on the analysis of the existing set of about dozen simulated surveys,
+1) Engage a broad community in defining more robust and quantitative science drivers for open 
+areas (the coverage of the Galactic Plane, LMC/SMC, south Galactic Pole area, and the Ecliptic 
+plane; modifications of uniform temporal sampling, etc.),
 
-2) Describe unsolved problems in LSST cadence specification and engage a broad community in defining more robust and quantitative science drivers for open areas (the coverage of the Galactic Plane, LMC/SMC, south Galactic Pole area, the Ecliptic plane, modifications of uniform temporal sampling, etc.),
+2) Engage attendees in the definition and editing of a white paper about LSST observing strategy 
+and its science-driven optimization,
 
-3) Describe tools developed by the Project for assessing scientific potential of simulated cadences (Metrics Analysis Framework) and provide expert training for those who are willing to adopt MAF in their research and LSST-related work. There will be pre-workshop activities describing and introducing MAF. Details will be provided in the Second Announcement. Participation in these activities, nor familiarity with MAF, is not required to attend the workshop,
+3) Present a status update on cadence optimization and report on the analysis of the existing set 
+of about dozen simulated surveys, and
 
-4) Engage attendees in the definition and editing of a white paper about LSST observing strategy and it science-driven optimization.
+4) Describe tools developed by the Project for assessing scientific potential of simulated 
+cadences (Metrics Analysis Framework) and provide expert training for those who are willing to 
+adopt MAF in their research and LSST-related work. There will be pre-workshop activities describing 
+and introducing MAF. Details will be provided in the Second Announcement. Participation in these 
+activities, or familiarity with MAF, is not required to attend the workshop. 
 
-The target audience for this meeting is everyone willing to contribute to quantitative definition of the LSST observing strategy through development of specific science programs consistent with overall LSST mission and the LSST Science Requirements Document. Attendees will also include people with MAF experience who want to spend quality time with MAF developers and work on MAF implementations of science-driven metrics.
+
+The target audience for this meeting is everyone willing to contribute to quantitative definition of 
+the LSST observing strategy through development of specific science programs consistent with overall 
+LSST mission and the LSST Science Requirements Document. Attendees will also include people with MAF 
+experience who want to spend quality time with MAF developers and work on MAF implementations of 
+science-driven metrics.
 
 
 Tentative meeting schedule:
@@ -32,7 +53,10 @@ Morning:
 Plenary presentations about LSST (the end session of the LSST Project All-hands meeting 2015)
 
 Afternoon:
-Plenary presentations about LSST observing strategy: status report, plans and goals for the workshop, introduction to white paper about LSST observing strategy (description of the overall strategy of the cadence workshop series, goals for upcoming workshops, accomplishments to date, open questions, and plans for future development)
+Plenary presentations about LSST observing strategy: status report, plans and goals for the 
+workshop, introduction to white paper about LSST observing strategy (description of the overall 
+strategy of the cadence workshop series, goals for upcoming workshops, accomplishments to date, 
+open questions, and plans for future development)
 
 Evening (7:30-9:00)
 The Project and Community town hall meeting:
@@ -42,15 +66,18 @@ The Project and Community town hall meeting:
 == Friday ==
 
 Morning:
-Cadence group work organized by science topics, including but not limited to: the Galactic Plane (both static and time-domain programs), LMC/SMC, south Galactic Pole area, the Ecliptic plane, modifications of uniform temporal sampling, etc.).
+Cadence group work organized by science topics, including but not limited to: the Galactic Plane 
+(both static and time-domain programs), LMC/SMC, south Galactic Pole area, the Ecliptic plane, 
+modifications of uniform temporal sampling, etc.).
 
 Afternoon:
 Several parallel tracks, according to interests and technical background: 
-a) general discussions, including funding for science preparatory work, follow-up planning (including transient broker discussions), cross-facility work, etc., 
-b) work on white paper about LSST observing strategy:
-discussions of goals and timeline, editorial assignments, etc., and
-c) HackHalfDay: discussions of detailed quantitative cadence optimization,
-including pseudo coding or MAF coding (supported by MAF experts)
+a) general discussions, including funding for science preparatory work, follow-up planning 
+(including transient broker discussions), cross-facility work, etc., 
+b) work on white paper about LSST observing strategy: discussions of goals and timeline, 
+editorial assignments, etc., and
+c) HackHalfDay: discussions of detailed quantitative cadence optimization, including pseudo 
+coding or MAF coding (supported by MAF experts)
 
 Evening:
 Unconference: several parallel sessions whose topics will be determined
@@ -62,13 +89,18 @@ in real time by the participants.
 Morning:
 Plenary debriefs by cadence group leaders and planning for the next workshop.
 
-Workshop ends with lunch on Saturday. It will be possible to hold Science Collaborations meetings after lunch. If there is interest in such meetings please contact the chair of your Science Collaboration. If there is desire
-to hold a splinter meeting, please contact the SOC (see below).
+Workshop ends with lunch on Saturday. It will be possible to hold Science Collaborations 
+meetings after lunch. If there is interest in such meetings please contact the chair of your 
+Science Collaboration. If there is desire to hold a splinter meeting, please contact the SOC 
+(see below).
 
 
 Registration:
+Registration will be open no later than April 30, 2105 at the meeting website, 
+http://lsstsciencecollaborations.github.io/ObservingStrategy/
 
-Registration will be open on XXX. For registration please visit http://xxx
+Registration will be limited to about 100 attendees due to logistics. 
+Further details will be provided in the second announcement. 
 
 
 Scientific Organizing Committee:
@@ -82,5 +114,4 @@ Michael Strauss, Princeton University
 Lucianne Walkowicz, Adler Planetarium
 Beth Willman, Haverford College
 
-For inquiries, please email: ivezic@astro.washington.edu
-or any other SOC member.
+For inquiries, please email: ivezic@astro.washington.edu or any other SOC member.
