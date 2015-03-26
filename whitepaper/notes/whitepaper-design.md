@@ -21,14 +21,29 @@ A few possible paper titles:
 
 **2. A Solar System Census**
 
-**3. Galactic Transients, Variables and Other Stars**
+Asteroids and more.
 
-**4. Mapping Our Galaxy: Positions and Proper Motions**
+**3. The Galactic Plane: Transients, Variables and Other Stars**
 
-**5. Rolling Cadence: Extragalactic Time Domain Astronomy**
+**4. Mapping Our Galaxy: Positions, Proper Motions and Parallax**
+
+Mainly long timescale measurements?
+
+**5. Rolling Cadence: Extragalactic Time Domain Astronomy and Its Impacts**
+
+Includes: SNe, quasar variability, microlensing and reverberation mapping, but also stellar variability and fast transients...
 
 **6. Keeping It Even: Accurate Cosmological Measurements on the Largest Scales**
 
-**7. Drilling Deep: Options for a Small Number of Enhanced Rate Fields**
+Survey uniformity, dithering patterns, and related effects.
+
+**7. Drilling Deep: Options for a Small Number of Enhanced Observation Fields**
+
+**8. Special Surveys**
+
+Includes LMC/SMC?
 
 **8. Tensions and Trade-offs**
+
+Discussion and conclusions chapter, at the end, highlighting the issues that we will need to figure out.
+
