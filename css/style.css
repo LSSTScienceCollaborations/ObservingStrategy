@@ -484,6 +484,16 @@
 					background: #df93b8;
 				}
 
+			.icon.circle.fa-film {
+				background: #dd5555;
+				color: white;
+			}
+
+				.icon.circle.fa-film:hover {
+					background: #dd2222;
+				}
+
+
 		/*.icon.featured {
 			cursor: default;
 			display: block;
@@ -608,7 +618,7 @@
                                 display: block;
                                 border-radius: 100%;
                         }
-			
+
                         .feature-image:after
                         {
                                 content: '';
@@ -1214,7 +1224,7 @@
 	#banner {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
-		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../images/banner.jpg");
+		background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../images/Facility_night-470.jpg");
 		background-position: bottom left, bottom right, top left, top center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;
@@ -1363,8 +1373,8 @@
                                                         url('images/bgbl.svg') bottom left no-repeat,
                                                         url('images/overlay.png'),
                                                         /*linear-gradient(45deg, #b39c68, #a56365, #412e4c);*/
-							/*linear-gradient(45deg, #55799b, #424055, #131a44);*/
-							linear-gradient(45deg, #9e704e, #424055, #131a44);
+														/*linear-gradient(45deg, #55799b, #424055, #131a44);*/
+														linear-gradient(45deg, #9e704e, #131a44, #000000);
                         }
 
                         .main > .content.style2
@@ -1372,7 +1382,8 @@
                                 background:     url('images/bgtr.svg') top right no-repeat,
                                                         url('images/bgbl.svg') bottom left no-repeat,
                                                         url('images/overlay.png'),
-                                                        linear-gradient(45deg, #384955, #655361, #85505f);
+                                                        /*linear-gradient(45deg, #384955, #655361, #85505f);*/
+														linear-gradient(45deg, #9e704e, #131a44, #000000);
                         }
 
                         .main > .content.style3
@@ -1380,7 +1391,8 @@
                                 background:     url('images/bgtr.svg') top right no-repeat,
                                                         url('images/bgbl.svg') bottom left no-repeat,
                                                         url('images/overlay.png'),
-                                                        linear-gradient(45deg, #5f796b, #3a4e59, #2f394e);
+                                                        /*linear-gradient(45deg, #5f796b, #3a4e59, #2f394e);*/
+														linear-gradient(45deg, #9e704e, #424055, #131a44);
                         }
 
                         .main > .content.style4
@@ -1394,7 +1406,7 @@
 	#cta {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
-		background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("../images/banner.jpg");
+		background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("../images/Facility_night-470.jpg");
 		background-position: top left, top right, top left, bottom center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;
