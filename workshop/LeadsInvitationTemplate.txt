@@ -1,19 +1,20 @@
 
 Dear XXX,
 
-I am writing to you on behalf of the Science Organizing Committee for the LSST 2015 Cadence Workshop (Bremerton, WA, Aug 20-22, 2015). One of the main goals of this workshop is to revisit science drivers for various LSST programs  with an eye towards optimization of the baseline observing cadence (for more details please see the attached First Announcement). Examples where further cadence optimization is likely to yield tangible improvements include the coverage of the Galactic plane, search for solar system objects, deep drilling fields and the active sky area vs. sampling rate tradeoffs (also known as “rolling cadence”). 
+I am writing to you on behalf of the Science Organizing Committee for the LSST 2015 Cadence Workshop (Bremerton, WA, Aug 20-22, 2015). One of the main goals of this workshop is to revisit science drivers for various LSST programs with an eye towards optimizing the baseline observing strategy (for more details please see the attached First Announcement).  We've deisgned this workshop to take a highly interactive and flexible approach to cadence planning, while coupling it with a specific deliverable: a white paper written after the workshop (on timescale of a few months - we are aiming to post it on arXiv by the end of 2015), which will describe cadence strategies, tradeoffs, current baseline, open questions and future directions. 
 
-The ultimate deliverable of our work will be a white paper written after the workshop (on timescale of a few months - we are aiming to post it on arXiv by the end of 2015), which will describe cadence strategies, tradeoffs, current baseline, open questions and future directions. As you can see, this list implies a non-trivial amount of work and its successful completion will require coordinated and dedicated work by many experts interested in LSST. 
+Given your leadership role in the field of XXX and your interest in LSST, the SOC identified you as a key person with the vision and skills needed to lead a section of this white paper, and to do this in coordination with many experts interested in LSST.  I'm therefore writing to ask whether you would be willing to lead the XXXX section. We recognize that this will require a fair amount of effort (see below for details), and hope that you're as excited as we are for this opportunity to have a guiding hand in the strategic planning of LSST's operations. 
 
-In order to improve the efficiency of our deliberations in Bremerton, the SOC concluded that we should start this white paper prior to the workshop: by summarizing the current understanding of various cadence issues, we hope  to identify and prioritize remaining open issues. In order to proceed, we would like to identify a lead for each logical section in this white paper. We anticipate that multiple people will contribute to each section, but would like to assign responsibilities for completing sections on time to specific individuals.
+** Observing Strategies White Paper schedule**
+1. White paper section leads begin to organize expert co-authors relevant to their white paper section. More contributors will be accreted at the workshop and beyond and the SOC is happy to suggest names;
+2. To maximize the efficiency of cadence work during the August workshop in Bremerton, each white paper section should be started in June-July (by leads plus co-authors of your choosing) with a summary the current understanding of various cadence issues.  The pre-workshop goal is to identify and prioritize open issues.
+3. At the workshop, white paper section leads will have a guiding hand in the related discussions;
+4. After the workshop, white paper section leads will engage in further work (Sept-Dec) to deliver an arXiv publishable product by the end of the calendar year.
 
-Given your extensive experience with XXX, as well as demonstrated interest in LSST, I would like to ask you whether you would be willing to accept this responsibility?  
+At this time we cannot make any other hard promises, but there might be an opportunity to have LSST Corporation (not Project!) sponsor a working meeting, e.g. in Tucson, around Oct-Nov timeframe, for us to work together on the white paper. 
 
-To summarize, the expectations are that you would provide leadership in organizing experts from your area and contributing to the white paper. We expect some work prior to the workshop, probably in June-July time frame,
-and then further work during Sep-Dec.  To give credit to people who did work, authors would be clearly identified in a manner similar to what was done in the LSST Science Book. At this time we cannot make any other hard promises,
-but there might be an opportunity to have LSST Corporation (not Project!) sponsor a working meeting, e.g. in Tucson, around Oct-Nov timeframe, for us to work together on the white paper. 
+We hope that you will join us in this endeavor!
 
-We hope that the promise of exciting science from LSST will make you decide to join this group of like-minded people! 
 Sincerely, XXX 
 
 PS. I am attaching the first announcement where you can find more details about the workshop, such as schedule and the SOC membership. 
