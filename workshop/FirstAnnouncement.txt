@@ -29,7 +29,7 @@ plane; modifications of uniform temporal sampling, etc.),
 and its science-driven optimization,
 
 3) Present a status update on cadence optimization, and report on the analysis of the existing set 
-of about dozen simulated surveys, and
+of about a dozen simulated surveys, and
 
 4) Describe tools developed by the LSST Project for assessing the scientific potential of simulated 
 cadences (Metrics Analysis Framework), and provide expert training for those who are willing to 
@@ -38,7 +38,7 @@ and introducing MAF, details will be provided in the Second Announcement. Partic
 activities, or familiarity with MAF, is not required to attend the workshop. 
 
 
-The target audience for this meeting is everyone willing to contribute to quantitative definition of 
+The target audience for this meeting is everyone willing to contribute to a quantitative definition of 
 the LSST observing strategy through development of specific science programs consistent with the overall 
 LSST mission and the LSST Science Requirements Document. The attendees will include people with MAF 
 experience who want to spend quality time with MAF developers, and work on MAF implementations of 
@@ -54,7 +54,7 @@ Plenary presentations about LSST (the end session of the 2015 LSST Project All-H
 
 Afternoon:
 Plenary presentations about LSST observing strategy: status report, plans and goals for the 
-workshop, introduction to white paper about LSST observing strategy (description of the overall 
+workshop, introduction to a white paper about the LSST observing strategy (description of the overall 
 strategy of the cadence workshop series, goals for upcoming workshops, accomplishments to date, 
 open questions, and plans for future development)
 
@@ -74,7 +74,7 @@ Afternoon:
 Several parallel tracks, according to interests and technical background: 
 a) General discussions, including funding for science preparatory work, follow-up planning 
 (including transient broker discussions), cross-facility work, etc., 
-b) Work on white paper about LSST observing strategy: discussions of goals and timeline, 
+b) Work on the white paper about LSST observing strategy: discussions of goals and timeline, 
 editorial assignments, etc., and
 c) Hacking: discussions of detailed quantitative cadence optimization, including pseudo 
 coding or MAF coding (supported by MAF experts)
@@ -91,7 +91,7 @@ Plenary debriefs by cadence group leaders, and planning for work beyond the work
 
 Workshop ends with lunch on Saturday. It will be possible to hold Science Collaboration 
 meetings after lunch. If there is interest in such meetings please contact the chair of your 
-Science Collaboration. If there is desire to hold a splinter meeting, please contact the SOC 
+Science Collaboration. If there is a desire to hold a splinter meeting, please contact the SOC 
 (see below).
 
 
