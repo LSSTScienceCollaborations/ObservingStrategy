@@ -10,10 +10,9 @@ The main points to convey in this white paper are that:
 
 A few possible paper titles:
 
-* *“Current Baseline Design for LSST Deployment and Further Optimization”*
-* *“Optimization Strategies for LSST Deployment”*
-* *“Towards Optimal LSST Deployment”*
-* *“Science Driven Optimization of LSST Deployment”*
+* *"Science Driven Optimization of LSST's Observing Strategy"
+* *“Current Baseline Design for LSST's Observing Strategy and Further Optimization”*
+* *“Towards an Optimal LSST Observing Strategy”*
 
 **1. Introduction**
   * Synoptic Surveying with LSST - the basic observing strategy determined by the LSST's design.
@@ -23,11 +22,15 @@ A few possible paper titles:
 
 Asteroids and more.
 
-**3. The Galactic Plane: Transients, Variables and Other Stars**
+**3. The Galactic Plane and Beyond: Transients, Variables and Static Stars in Crowded Regions**
+
+[Variable stars will be of interest throughout the Local Group and beyond, and require cadence consideration.  Should those be their own Section?]
+
+Includes: Where does crowding begin to impact photometry, science cases for the plane (e.g. RRL to trace Galactic structures), variable stars with periods that drift during the survey, time sensitivity of color information to classify stellar transients and variables.
 
 **4. Mapping Our Galaxy: Positions, Proper Motions and Parallax**
 
-Mainly long timescale measurements?
+Includes: Time baseline and parallax factor distribution needed, distribution of and filter choice for superior seeing conditions for star galaxy separation, survey uniformity issues (see also Section 4).
 
 **5. Rolling Cadence: Extragalactic Time Domain Astronomy and Its Impacts**
 
