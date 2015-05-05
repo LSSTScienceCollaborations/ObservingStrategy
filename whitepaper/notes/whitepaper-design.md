@@ -36,6 +36,8 @@ Includes: Time baseline and parallax factor distribution needed, distribution of
 
 Includes: SNe, quasar variability, microlensing and reverberation mapping, but also stellar variability and fast transients...
 
+Stellar Variability/Fast Transients leads: Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz
+
 **6. Keeping It Even: Accurate Cosmological Measurements on the Largest Scales**
 
 Survey uniformity, dithering patterns, and related effects.
