@@ -8,11 +8,9 @@ The main points to convey in this white paper are that:
 * The baseline cadence can and will be optimized - even small improvements can be significant. Most importantly, the cadence is not set in stone and it will evolve.
 * The cadence optimization process will be as open and inclusive as technically possible. All stake holders will participate in this process.
 
-A few possible paper titles:
+Working paper titles:
 
-* *"Science Driven Optimization of LSST's Observing Strategy"
-* *“Current Baseline Design for LSST's Observing Strategy and Further Optimization”*
-* *“Towards an Optimal LSST Observing Strategy”*
+* "Science Driven Optimization of LSST's Observing Strategy"
 
 **1. Introduction**
   * Synoptic Surveying with LSST - the basic observing strategy determined by the LSST's design.
@@ -34,9 +32,13 @@ Includes: Time baseline and parallax factor distribution needed, distribution of
 
 **5. Rolling Cadence: Extragalactic Time Domain Astronomy and Its Impacts**
 
-Includes: SNe, quasar variability, microlensing and reverberation mapping, but also stellar variability and fast transients...
+Including sections on: 
 
-Stellar Variability/Fast Transients leads: Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz
+* SNe - 
+* AGN variability, microlensing and reverberation mapping - Ohad Shemmer & Timo Anguita
+* Stellar variability and Fast Transients - Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz
+* Fast transients - 
+
 
 **6. Keeping It Even: Accurate Cosmological Measurements on the Largest Scales**
 
