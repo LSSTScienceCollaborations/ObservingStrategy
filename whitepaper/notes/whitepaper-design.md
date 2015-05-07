@@ -22,13 +22,19 @@ Asteroids and more.
 
 **3. The Galactic Plane and Beyond: Transients, Variables and Static Stars in Crowded Regions**
 
-[Variable stars will be of interest throughout the Local Group and beyond, and require cadence consideration.  Should those be their own Section?]
+[Variable stars will be of interest throughout the Local Group and beyond, and require cadence consideration.  Should those be their own Section?]  
+
+Confirmed leads for variable stars: Lucianne Walkowitz, Michael Lund
 
 Includes: Where does crowding begin to impact photometry, science cases for the plane (e.g. RRL to trace Galactic structures), variable stars with periods that drift during the survey, time sensitivity of color information to classify stellar transients and variables.
+
+Confirmed leads for gaalctic plane science: Will Clarkson, Abi Saha (tentative, conflict could arise)
 
 **4. Mapping Our Galaxy: Positions, Proper Motions and Parallax**
 
 Includes: Time baseline and parallax factor distribution needed, distribution of and filter choice for superior seeing conditions for star galaxy separation, survey uniformity issues (see also Section 4).
+
+Confirmed lead for astrometry: David Monet
 
 **5. Rolling Cadence: Extragalactic Time Domain Astronomy and Its Impacts**
 
@@ -39,6 +45,7 @@ Including sections on:
 * Stellar variability and Fast Transients - Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz
 * Fast transients - 
 
+Confirmed lead on rolling cadence: Stephen Ridgway
 
 **6. Keeping It Even: Accurate Cosmological Measurements on the Largest Scales**
 
