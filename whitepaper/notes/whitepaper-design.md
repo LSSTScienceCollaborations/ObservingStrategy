@@ -25,6 +25,7 @@ Asteroids and more.
 [Variable stars will be of interest throughout the Local Group and beyond, and require cadence consideration.  Should those be their own Section?]  
 
 Confirmed leads for variable stars: Lucianne Walkowitz, Michael Lund
+Confirmed lead for extragalactic transients: Ashish Mahabal and Variables
 
 Includes: Where does crowding begin to impact photometry, science cases for the plane (e.g. RRL to trace Galactic structures), variable stars with periods that drift during the survey, time sensitivity of color information to classify stellar transients and variables.
 
