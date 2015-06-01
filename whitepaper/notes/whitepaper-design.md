@@ -41,9 +41,10 @@ Confirmed lead for astrometry: David Monet
 
 Including sections on: 
 
-* SNe - 
-* AGN variability, microlensing and reverberation mapping - Ohad Shemmer & Timo Anguita
-* Stellar variability and Fast Transients - Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz
+* Confirmed leads for cosmological SNe - Rahul Biswas, Michelle Lochner, Jeonghee Rho
+* Confirmed leads for time delay lens cosmography - Phil Marshall
+* Confirmed leads for AGN variability, microlensing and reverberation mapping - Ohad Shemmer, Timo Anguita
+* Confirmed leads for Stellar variability and Fast Transients - Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz
 * Fast transients - 
 
 Confirmed lead on rolling cadence: Stephen Ridgway
