@@ -18,7 +18,7 @@ Working paper titles:
 
 **2. A Solar System Census**
 
-Asteroids and more.
+Asteroids and more. Confirmed lead: Lynne Jones. 
 
 **3. The Galactic Plane and Beyond: Transients, Variables and Static Stars in Crowded Regions**
 
