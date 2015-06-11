@@ -29,7 +29,7 @@ Confirmed lead for extragalactic transients: Ashish Mahabal and Variables
 
 Includes: Where does crowding begin to impact photometry, science cases for the plane (e.g. RRL to trace Galactic structures), variable stars with periods that drift during the survey, time sensitivity of color information to classify stellar transients and variables.
 
-Confirmed leads for gaalctic plane science: Will Clarkson, Abi Saha (tentative, conflict could arise)
+Confirmed leads for gaalctic plane science: Will Clarkson, Kathy Vivas
 
 **4. Mapping Our Galaxy: Positions, Proper Motions and Parallax**
 
