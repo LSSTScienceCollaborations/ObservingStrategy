@@ -1,1 +1,67 @@
-To be written here, Zeljko!
+“An LSST Community Workshop: Science Driven Optimization of LSST's
+Observing Strategy” August 20-22, 2015; Kitsap Conference Center,
+Bremerton, WA
+
+The 2nd announcement (June 12, 2015)
+
+http://lsstsciencecollaborations.github.io/ObservingStrategy/
+
+Meeting Rationale:
+
+Are you interested in contributing to planning LSST's Observing Strategy?  Then
+this workshop is for you.  It will be the second in a series of LSST
+workshops aimed at engaging the community interested in LSST to help
+optimize its observing strategy.
+
+This past year, the LSST Project generated a large number of simulated
+Observing Strategies. These simulations can be used to quantitatively
+assess the scientific capabilities of any given implementation of
+LSST's core survey operations
+(https://confluence.lsstcorp.org/display/SIM/OpSim+Datasets+for+Cadence+Workshop+LSST2015).
+
+The main goal of the 2015 workshop is to identify quantitative metrics
+with which simulated LSST survey realizations can be tested for
+scientific efficacy.  FOR EXAMPLE, ...
+
+This workshop will also: 
+
+1) Engage a broad community in defining more robust and quantitative
+   science drivers for regions beyond LSST's core survey area (the
+   coverage of the Galactic Plane, LMC/SMC, south Galactic Pole area,
+   and the Ecliptic plane),
+
+2) Begin the definition and editing of a community white paper about
+   LSST observing strategy and its science-driven optimization,
+
+3) Present a status update on LSST's Observing Strategy optimization,
+   and report on the analysis of the new set of simulated surveys, and
+
+4) Describe tools developed by the LSST Project for assessing the
+   scientific potential of simulated cadences (Metrics Analysis
+   Framework), and provide expert training for those who are willing
+   to adopt the MAF in their research and LSST-related work. There
+   will be pre-workshop activities describing and introducing MAF,
+   details will be provided in the Second Announcement. Participation
+   in these activities, or familiarity with MAF, is not required to
+   attend the workshop.
+
+
+See http://lsstsciencecollaborations.github.io/ObservingStrategy/ for
+the tentative meeting schedule and to register.  The registration
+deadline is July 24, 2015.  Hotels near the conference site are
+already filling up for Wednesday, August 19 and registration is
+limited to 100 attendees, so don't wait!
+
+For inquiries, please email: ivezic@astro.washington.edu or any other SOC member.
+
+
+Scientific Organizing Committee:
+Debbie Bard, SLAC
+Andy Connolly (co-chair), University of Washington
+Zeljko Ivezic (co-chair), University of Washington
+Phil Marshall, SLAC
+Tom Matheson, NOAO
+Steve Ridgway, NOAO
+Michael Strauss, Princeton University
+Lucianne Walkowicz, Adler Planetarium
+Beth Willman, Haverford College
