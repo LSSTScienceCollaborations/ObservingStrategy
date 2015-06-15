@@ -19,9 +19,17 @@ assess the scientific capabilities of any given implementation of
 LSST's core survey operations
 (https://confluence.lsstcorp.org/display/SIM/OpSim+Datasets+for+Cadence+Workshop+LSST2015).
 
-The main goal of the 2015 workshop is to identify quantitative metrics
-with which simulated LSST survey realizations can be tested for
-scientific efficacy.  FOR EXAMPLE, ...
+The main goal of the 2015 workshop is to identify metrics by which
+simulated LSST survey realizations can be tested for scientific
+efficacy, and to develop quantitative algorithms to assess them.  For
+example, the measurement uncertainty on proper motion is one metric to
+describe the efficacy of a given LSST Observing Strategy.  Proper
+motion uncertainty involves a least-square (LSQ) fit of a straight
+line to a number of “observed” positions obtained in a simulated
+survey. Given a model of expected astrometric errors (their dependence
+on the seeing and attained signal-to-noise ratio), this metric can be
+computed as formal statistical uncertainty of the best-fit LSQ
+parameters.
 
 This workshop will also: 
 
@@ -39,9 +47,7 @@ This workshop will also:
 4) Describe tools developed by the LSST Project for assessing the
    scientific potential of simulated cadences (Metrics Analysis
    Framework), and provide expert training for those who are willing
-   to adopt the MAF in their research and LSST-related work. There
-   will be pre-workshop activities describing and introducing MAF,
-   details will be provided in the Second Announcement. Participation
+   to adopt the MAF in their research and LSST-related work. Participation
    in these activities, or familiarity with MAF, is not required to
    attend the workshop.
 
