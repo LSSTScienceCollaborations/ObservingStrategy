@@ -2,7 +2,9 @@
 
 A community white paper about LSST observing strategy, with quantifications via the the Metric Analysis Framework. We will be drafting the individual science cases, and how we expect them to be sensitive to LSST observing strategy, during the first half of 2015. Then, MAF metric calculations designed and executed during the 2015 MAF Workshop (to be held in Bremerton, WA, August 17-21) and afterwards will form the quantitative backbone of the document. You may have heard of the coming  "Cadence Wars" - this document represents the scientific diplomacy that will allow us, as a community, to avoid, or at least manage, that conflict.
 
-## Science Cases and Observing Strategy
+**See where we are up to in this project (and join the conversation) at [this repo's issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
+
+## The White Paper: Science Cases and Observing Strategy
 
 * [Document layout](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/whitepaper-design.md)
 * [Chapter template](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/chapter-template.md)
