@@ -63,7 +63,7 @@ Confirmed leads for deep drilling fields:
 
 **8. Special Surveys**
 
-Includes LMC/SMC?
+Confirmed leads for LMC/SMC: Knut Olsen, David Nidever
 
 Confirmed leads for special surveys: 
 
