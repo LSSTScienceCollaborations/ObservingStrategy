@@ -53,7 +53,7 @@ Confirmed leads on rolling cadence: Stephen Ridgway
 
 Survey uniformity, dithering patterns, and related effects.
 
-Confirmed leads for survey uniformity and dithering: Eric Gawiser
+Confirmed leads for survey uniformity and dithering: Eric Gawiser, Peter Kurczynski
 
 
 **7. Drilling Deep: Options for a Small Number of Enhanced Observation Fields**
