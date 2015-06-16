@@ -44,12 +44,15 @@ This workshop will also:
 3) Present a status update on LSST's Observing Strategy optimization,
    and report on the analysis of the new set of simulated surveys, and
 
-4) Describe tools developed by the LSST Project for assessing the
+   4) Utilize tools developed by the LSST Project for assessing the
    scientific potential of simulated cadences (Metrics Analysis
-   Framework), and provide expert training for those who are willing
-   to adopt the MAF in their research and LSST-related work. Participation
-   in these activities, or familiarity with MAF, is not required to
-   attend the workshop.
+   Framework).  In advance of the workshop, we will provide a day long
+   remote training for those who would like to adopt the MAF in their
+   research and LSST-related work. Participation in these activities,
+   or familiarity with MAF, is not required to attend the workshop.
+   If you are interested to participate in this training, please fill
+   out this Doodle poll.
+
 
 
 See http://lsstsciencecollaborations.github.io/ObservingStrategy/ for
