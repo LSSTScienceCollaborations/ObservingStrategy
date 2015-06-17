@@ -1,10 +1,10 @@
 
 The first part of each science chapter needs to outline, very briefly, the key science cases: what is to be measured and why this is of interest. Then, suppose we were to design an LSST survey to enable these measurements: qualitatively, what might it look like, in terms of the choices we are able to make? This introduction will summarize the results of a number of investigative sections, one on each science case.
 
-The individual sections will need to describe the particular discoveries and measurements that are being targeted in ecah science case. It will be helpful to think of a "science case" as "science project" that the section leads actually plan to do. Then, the sections can follow the tried and tested format of an observing proposal: a brief description of the investigation, with references, followed by a technical feasibility piece.  This latter part will need to be quantified using the MAF framework, via a set of metrics that need to be computed for any given observing strategy to quantify its impact on the described science case. Ideally, these metrics would be combined in a well-motivated figure of merit. The section can conclude with a discussion of any risks that have been identified, and how these could be mitigated.
+The individual sections will need to describe the particular discoveries and measurements that are being targeted in each science case. It will be helpful to think of a "science case" as "science project" that the section leads actually plan to do. Then, the sections can follow the tried and tested format of an observing proposal: a brief description of the investigation, with references, followed by a technical feasibility piece.  This latter part will need to be quantified using the MAF framework, via a set of metrics that need to be computed for any given observing strategy to quantify its impact on the described science case. Ideally, these metrics would be combined in a well-motivated figure of merit. The section can conclude with a discussion of any risks that have been identified, and how these could be mitigated.
 
 
-* General introduction, to the chapter's science porjects.
+* General introduction, to the chapter's science projects.
 * Overview of observing trategy needed by those projects, bringing out common themes or points of tension.
 
 Individual Science Cases:
