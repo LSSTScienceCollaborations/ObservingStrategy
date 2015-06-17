@@ -1,11 +1,11 @@
 # The LSST Observing Strategy
 
-A community whitepaper outlining various science cases and the impacts that observing strategy will have on them, quantified using the Metric Analysis Framework. The paper will describe various cadence strategies, tradeoffs, current baseline, future directions, etc, and should be good enough to present on arXiv. The timescale for producing this white paper, started before and finished after the workshop is many months, hopefully before the next workshop. 
+A community whitepaper outlining various science cases and the impacts that observing strategy will have on them, quantified using the Metric Analysis Framework. The paper will describe various strategies and tradeoffs that impact the observing cadence (visit sequence), current cadence baseline, future directions, etc, and should be good enough to present on arXiv. The timescale for producing this white paper, started before and finished after the workshop is many months, hopefully before the next workshop. 
 
 The main points to convey in this white paper are that:
 
-* We have a pretty good idea of how we would deploy LSST: there is a baseline cadence, with which it can be demonstrated that the data required for the promised science can be delivered.
-* The baseline cadence can and will be optimized - even small improvements can be significant. Most importantly, the cadence is not set in stone and it will evolve.
+* We have a pretty good idea of how we would deploy LSST: there is a baseline strategy and example cadences, with which it can be demonstrated that the data required for the promised science can be delivered.
+* The baseline strategy can and will be optimized - even small improvements can be significant. Most importantly, the strategy is not set in stone and it will evolve.
 * The cadence optimization process will be as open and inclusive as technically possible. All stake holders will participate in this process.
 
 Working paper titles:
@@ -13,55 +13,54 @@ Working paper titles:
 * "Science Driven Optimization of LSST's Observing Strategy"
 
 **1. Introduction**
-  * Synoptic Surveying with LSST - the basic observing strategy determined by the LSST's design.
+
+  * Synoptic Surveying with LSST - the basic observing strategy determined by key projects described in the LSST Science Requirements Document, and constrained by the LSST's design.
   * Optimizing the Observing Strategy - what perturbations can we introduce, to maximize the system's science capabilities?
 
 **2. A Solar System Census**
 
-Asteroids and more. 
+Includes: asteroids (particularly NEO and PHA), and outer solar system (KBO, etc), and special cadence requirements
+
 Confirmed leads for solar system: Lynne Jones. 
 
-**3. The Galactic Plane and Beyond: Transients, Variables and Static Stars in Crowded Regions**
+**3. The Galaxy**
 
-[Variable stars will be of interest throughout the Local Group and beyond, and require cadence consideration.  Should those be their own Section?]  
+Includes: stellar populations; halo, bulge and disk; variables as disgnostics of structure; photometry in crowded regions; preferred distribution of visits in time
 
-Confirmed leads for variable stars: Lucianne Walkowitz, Michael Lund
-Confirmed leads for extragalactic transients: Ashish Mahabal
-
-Includes: Where does crowding begin to impact photometry, science cases for the plane (e.g. RRL to trace Galactic structures), variable stars with periods that drift during the survey, time sensitivity of color information to classify stellar transients and variables.
-
-Confirmed leads for gaalctic plane science: Will Clarkson, Kathy Vivas
+Confirmed leads for galactic plane science: Will Clarkson, Kathy Vivas
 
 **4. Mapping Our Galaxy: Positions, Proper Motions and Parallax**
 
-Includes: Time baseline and parallax factor distribution needed, distribution of and filter choice for superior seeing conditions for star galaxy separation, survey uniformity issues (see also Section 4).
+Includes: time baseline and parallax factor distribution needed, distribution of and filter choice for superior seeing conditions for star galaxy separation, survey uniformity issues
 
 Confirmed leads for astrometry: David Monet
 
-**5. Rolling Cadence: Extragalactic Time Domain Astronomy and Its Impacts**
+**5. Variable and Transient Sources in the Galaxy and Beyond**
 
-Including sections on: 
+Includes: periodic, near-periodic and transient targets, periods that drift, time sensitivity of color information, rapid classification of transients, and temporal sampling strategies, particularly including rolling cadences
 
+* Confirmed leads for Stellar variability and Fast Stellar Transients: Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz
 * Confirmed leads for cosmological SNe: Rahul Biswas, Michelle Lochner, Jeonghee Rho
-* Confirmed leads for time delay lens cosmography: Phil Marshall
-* Confirmed leads for AGN variability, microlensing and reverberation mapping: Ohad Shemmer, Timo Anguita
-* Confirmed leads for Stellar variability and Fast Transients: Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz
-
-Confirmed leads on rolling cadence: Stephen Ridgway
+* Confirmed leads for extragalactic transients: Ashish Mahabal
+* Confirmed leads on rolling cadence: Stephen Ridgway
 
 **6. Keeping It Even: Accurate Cosmological Measurements on the Largest Scales**
 
-Survey uniformity, dithering patterns, and related effects.
+Includes: survey uniformity, long time series, gap minimization, and dithering patterns
 
-Confirmed leads for survey uniformity and dithering: Eric Gawiser, Peter Kurczynski
-
+* Confirmed leads for survey uniformity and dithering: Eric Gawiser, Peter Kurczynski
+* Confirmed leads for time delay lens cosmography: Phil Marshall
+* Confirmed leads for AGN variability, microlensing and reverberation mapping: Ohad Shemmer, Timo Anguita
 
 **7. Drilling Deep: Options for a Small Number of Enhanced Observation Fields**
 
+Includes: science objectives, field selection, and sampling strategy
+
 Confirmed leads for deep drilling fields: 
 
-
 **8. Special Surveys**
+
+Includes: science programs not served effectively by the maind wide-fast-deep program; additional sky regions; special cadences; candidate commissioning surveys
 
 Confirmed leads for LMC/SMC: Knut Olsen, David Nidever
 
@@ -70,5 +69,4 @@ Confirmed leads for special surveys:
 
 **8. Tensions and Trade-offs**
 
-Discussion and conclusions chapter, at the end, highlighting the issues that we will need to figure out.
-
+Discussion and conclusions chapter, at the end, highlighting the issues that we will need to figure out.  Possible topics include the cost/benefit tradeoffs between competing objectives
