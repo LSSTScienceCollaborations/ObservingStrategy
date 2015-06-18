@@ -10,15 +10,17 @@ workshop; definitely many months, hopefully before the next workshop) describing
 cadence strategies, tradeoffs, current baseline, future directions, etc. It should be
 good enough to go to arXiv.
 
-### Before the Workshop
+## Before the Workshop
 
 * Tutorial plan
 * Homework
 
-### The Meeting Itself
+## The Meeting Itself
 
 * Attendance: 85 people are now registered. The list of attendees is [here](https://project.lsst.org/meetings/lsst2015/cadence-registrations)
-* Our tentative meeting schedule is below. The [first announcement]() gave an early version of this, now we need to post something firmer on the website in the light of the registration results.
+* Our tentative meeting schedule is below. The [first announcement](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/workshop/FirstAnnouncement.txt) gave an early version of this, now we need to post something firmer on the website in the light of the registration results.
+
+----
 
 ### Workshop Schedule
 
@@ -71,17 +73,19 @@ meetings after lunch. If there is interest in such meetings please contact the c
 Science Collaboration. If there is a desire to hold a splinter meeting, please contact the SOC
 (see below).
 
-### After the Workshop
+----
+
+## After the Workshop
 
 * Activities
 * Timeline
 
-### Community building
+## Community building
 
-* Workshop email list? Or wider? Using github issues, etc.
+* Workshop email list? Or wider? Using GitHub issues, etc.
 * Advertising: meeting website, email timeline etc.
 
 
-### Notes
+## Notes
 
 At the first cadence workshop, it was very helpful to have MAF tutorials prior to the workshop. A lot of work will need to be done *prior* to the workshop. We cannot effectively support a large number of people, but this may not matter: only a fairly small number of people have developed new MAF metrics, and to get the best out of the workshop time, most attendees will need to have technical background. The workshop emphasis will be on coding within MAF; this needs to be made clear during the application process.
