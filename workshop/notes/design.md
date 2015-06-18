@@ -50,11 +50,11 @@ modifications of uniform temporal sampling, etc.).
 * *Afternoon:*
 Several parallel tracks, according to interests and technical background:
 
-> a) General discussions, including funding for science preparatory work, follow-up planning (including transient broker discussions), cross-facility work, etc.,
+    a) General discussions, including funding for science preparatory work, follow-up planning (including transient broker discussions), cross-facility work, etc.
 
-> b) Work on the white paper about LSST observing strategy: discussions of goals and timeline, editorial assignments, etc., and
+    b) Work on the white paper about LSST observing strategy: discussions of goals and timeline, editorial assignments, etc.
 
-> c) Hacking: discussions of detailed quantitative cadence optimization, including pseudo coding or MAF coding (supported by MAF experts)
+    c) Hacking: discussions of detailed quantitative cadence optimization, including pseudo coding or MAF coding (supported by MAF experts)
 
 * *Evening:*
 Unconference: several parallel sessions whose topics will have been determined
