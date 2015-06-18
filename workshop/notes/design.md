@@ -17,8 +17,59 @@ good enough to go to arXiv.
 
 ### The Meeting Itself
 
-* Attendance
-* Schedule - talks, hack sessions.
+* Attendance: 85 people are now registered. The list of attendees is [here](https://project.lsst.org/meetings/lsst2015/cadence-registrations)
+* Our tentative meeting schedule is below. The [first announcement]() gave an early version of this, now we need to post something firmer on the website in the light of the registration results.
+
+### Workshop Schedule
+
+#### Thursday, Aug 20, 2015
+
+* *Morning:*
+Plenary presentations about LSST (the end session of the 2015 LSST Project All-Hands Meeting)
+
+* *Afternoon:*
+Plenary presentations about LSST observing strategy: status report, plans and goals for the
+workshop, introduction to a white paper about the LSST observing strategy (description of the overall
+strategy of the cadence workshop series, goals for upcoming workshops, accomplishments to date,
+open questions, and plans for future development)
+
+* *Evening (7:30-9:00)*
+The Project and Community Town Hall Meeting:
+“Everything you always wanted to know about LSST but were afraid to ask”
+
+
+#### Friday, Aug 21, 2015
+
+* *Morning:*
+Cadence group work organized by science topics, including but not limited to: the Galactic Plane
+(both static and time-domain programs), LMC/SMC, south Galactic Pole area, the Ecliptic plane,
+modifications of uniform temporal sampling, etc.).
+
+* *Afternoon:*
+Several parallel tracks, according to interests and technical background:
+
+a) General discussions, including funding for science preparatory work, follow-up planning
+(including transient broker discussions), cross-facility work, etc.,
+
+b) Work on the white paper about LSST observing strategy: discussions of goals and timeline,
+editorial assignments, etc., and
+
+c) Hacking: discussions of detailed quantitative cadence optimization, including pseudo
+coding or MAF coding (supported by MAF experts)
+
+* *Evening:*
+Unconference: several parallel sessions whose topics will have been determined
+during the day by the workshop participants.
+
+#### Saturday, Aug 22, 2015
+
+* *Morning:*
+Plenary debriefs by cadence group leaders, and planning for work beyond the workshop.
+
+Workshop ends with lunch on Saturday. It will be possible to hold Science Collaboration
+meetings after lunch. If there is interest in such meetings please contact the chair of your
+Science Collaboration. If there is a desire to hold a splinter meeting, please contact the SOC
+(see below).
 
 ### After the Workshop
 
