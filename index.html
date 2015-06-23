@@ -307,6 +307,92 @@
 
 		</article>
 
+<!-- MAF Installation, from Andy Connolly via http://cadence.lsst.org/cadenceWorkshop/
+
+Finishing this will close #16
+
+<h2>Installation of software for the cadence workshop</h2>
+
+<div class="columns">
+  <h3> Installing the LSST Stack </h3>
+
+<p> Start by installing the necessary parts of the LSST software stack and the LSST-installed anaconda. In these instructions we assume you are installing in ~/lsst, however the install directory can be any place in the file system, including a place visible to all users.  To install in another location, replace ~/lsst with the desired path in the following instructions.  </p>
+
+<code>
+mkdir -p ~/lsst <br>
+
+cd ~/lsst<br>
+
+curl -O https://sw.lsstcorp.org/eupspkg/newinstall.sh<br>
+
+bash newinstall.sh
+</code>
+
+<p>Choose yes when prompted to install Anaconda (the recommended approach).   These packages will not interfere with your system installed versions. This step will download about 1 GB of files to your machine and usually takes less than 15 minutes. </p>
+
+
+<h3>Set up the environment and install the simulations code and data.</h3>
+<p>Source the appropriate shell script and use eups (see here for more info) to install the software and data. </p>
+<code>
+source ~/lsst/loadLSST.bash (if you are using bash)<br>
+source ~/lsst/loadLSST.csh (if you are using csh)<br>
+
+eups distrib install sims_maf -t sims
+</code>
+
+<p>This will install all packages required to analyze the LSST simulated cadences and their dependencies.  The installation should take on the order of 2 hours, with a final required installation size of 10GB. </p>
+
+<h3>Set up the packages:</h3>
+
+<p> In the terminal and directory you will run the ipython notebook from </p>
+
+<code>
+setup sims_maf -t sims
+</code>
+
+<h3> Download a simulated LSST survey and ipython notebook </h3>
+
+
+<p> Download a simulated survey <a href="http://ops2.tuc.noao.edu/runs/enigma_1189/data/enigma_1189_sqlite.db.gz">Enigma_1189</a> into the the directory you will run the ipython code (NOTE this is 2GB in size and will take a little time).</p>
+<p>
+
+<code>
+gunzip enigma_1189.db.gz
+</code>
+
+</p>
+<p> Download an ipython <a href="https://www.dropbox.com/s/759389m02y8emri/IntroductionNotebook.ipynb">notebook</a>. Note you do not need to signup for Dropbox just kill the initial window that requests you to sign in.</p>
+<p>
+
+
+
+</p>
+<h3> Run the notebook to test the simulations analysis code</h3>
+
+<p> In the directory and terminal where enigma_1189.db and IntroductionNotebook.ipynb reside </p>
+<p>
+
+<code>
+ipython notebook  IntroductionNotebook.ipynb
+</code>
+
+</p>
+<p> This should start a notebook in your browser. To execute each cell in the notebook just shift click. For an introduction to iPython notebooks see <a href="http://ipython.org/notebook.html">here</a></p>
+
+<h3> Download the rest of the ipython notebooks</h3>
+
+<code>
+git clone https://github.com/lsst-sims/sims_maf_notebooks.git
+</code>
+
+<p> If you run into difficulties or want more details check out the <a href="https://confluence.lsstcorp.org/display/SIM/Catalogs+and+MAF">LSST simulation confluence pages</a>
+
+</p>
+</div>
+</div>
+</section>
+
+-->
 		<!-- Footer -->
 			<footer id="footer">
 
