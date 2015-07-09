@@ -226,6 +226,15 @@
                 {
                         text-align: center;
                 }
+.featuredl
+        {
+                text-align: left;
+        }
+
+                .featured p
+                {
+                        text-align: left;
+                }
 
 /* Form */
 

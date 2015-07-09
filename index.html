@@ -39,6 +39,7 @@
 						<li><a href="#people" class="scrolly">People</a></li>
 						<li><a href="#schedule" class="scrolly">Schedule</a></li>
 						<li><a href="#whitepaper" class="scrolly">WhitePaper</a></li>
+						<li><a href="#installation" class="scrolly">Installation</a></li>
 						<li><a href="#registration" class="scrolly">Registration</a></li>
 						<li><a href="contact.htm">Contact</a></li>
 						<!-- <li><a href="#" class="button special">Registration</a></li> -->
@@ -143,6 +144,13 @@
                                         <span class="feature-icon"><a href="#whitepaper" class="icon fa-bar-chart-o scrolly"></a></span>
                                         <header><h3>White Paper</h3></header>
                                         <p>Plans for an observing strategy white paper.</p>
+									</section>
+                                </div>
+								<div class="4u">
+                                    <section>
+                                        <span class="feature-icon"><a href="#installation" class="icon fa-cog scrolly"></a></span>
+                                        <header><h3>Installation</h3></header>
+                                        <p>Installation instructions and tutorials for MAF</p>
 									</section>
                                 </div>
 
@@ -281,6 +289,219 @@
 			</section>
 		</article>
 
+<!-- Installation -->
+
+	<article id="installation" >
+		<header class="special container">
+			<span class="icon fa-bar-chart-o"></span>
+		</header>
+
+		<section class="main">
+
+		<div class="content dark style1 featured">
+		      <div class="container">
+			<header class="major">
+			    <h2> Installation instructions and MAF tutorials </h2>
+
+			<h4>Installation of the LSST framework</h4>
+
+		  <div class="content dark style1 featuredl">
+
+		  <p> The LSST software can now be
+		  installed from binaries using <a
+		  href="http://conda.pydata.org/docs/">conda</a>
+		  (the package management system used by
+		  Anaconda). The installation has been tested on
+		  Mac OSX and Linux. Full details are available
+		  <a
+		  href="https://github.com/mjuric/lsst_packaging_conda">here</a>
+		  but the
+		  basic steps for installation are as
+		  follows:</p>
+
+			  
+		  <p> To download the installation packages, in a terminal window
+		  create a directory lsst and cd to it. Then
+		  checkout the setup code using git (you may
+		   have to install git onto your machine)</p>
+
+		   <blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+		     Georgia;">
+		     git clone
+		  https://github.com/mjuric/lsst_packaging_conda.git</div></blockquote>
+
+
+
+		  <p> There are a number of prerequisites for the LSST
+		  system. You will need at least <a
+		  href="http://conda.pydata.org/miniconda.html">miniconda</a>
+		  with conda-build, jinja2, binstar, requests,
+		  sqlalchemy packages installed, and the requests_file
+		  python module (installed with "pip install
+		  requests_file"). To make this simple there is a
+		  script that will install these packages into a
+		  subdirectory named miniconda.</p>
+
+		   <blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+		     Georgia;">
+		     bash lsst_packaging_conda/bin/bootstrap.sh </li>
+		   </div></blockquote>
+
+		   <p> Assuming bash is your shell put the
+		   miniconda environment in your PATH</p>
+
+		   <blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+		     Georgia;">
+		  export PATH=~lsst/miniconda/bin:$PATH </li>
+		   </div></blockquote>
+
+		   <p> To avoid collisions with existing installations
+		   it is recommended that you install the LSST conda packages
+		   into a separate conda environment. To do this you
+		   should </p>
+
+		   <blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+		     Georgia;">
+		     conda create --name lsst ipython-notebook
+		   </div></blockquote>
+
+
+		   <blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+		     Georgia;">
+		     source activate lsst
+		   </div></blockquote>
+
+
+		   <p> Installing the LSST Metrics Analysis Framework
+		   is then</p>
+		   <blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+		     Georgia;"> conda install lsst-sims-maf</li></div></blockquote>
+
+		    <p>The install should take approximately 15
+		  minutes (depending on your network)</p>
+
+
+		    <p> To be able to run the Metrics Analysis
+		     Framework we need to setup up some environmental
+		     variables. If you have not already activated the
+		     conda environment do so with "source activate
+		     lsst" and then setup the LSST environment
+		     with</p>
+
+		     <blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+		     Georgia;">eups-setups.sh</li></div></blockquote>
+
+		   <blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+		     Georgia;">setup sims_maf</li></div></blockquote>
+
+		</div>  
+		<h4>Alternate installation of the LSST
+		framework using a virtual machine</h4>
+
+
+		<p> If you run into difficulties installing the
+		precompiled version of the Metrics Analysis Framework
+		we recommend that you install it in a Docker virtual
+		machine (see <a
+		href="http://docs.docker.com/mac/started/">here</a>
+		for instructions for installing Docker if you are
+		using a Mac and pointers to instructions for other
+		operating systems). Once Docker is installed (these
+		instructions are for a Mac but may work for other
+		systems):</p>
+
+		<blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+		  Georgia;">
+		  docker run  -i  -e USER=maf -v
+			  /Users/XXX/YYY:/home/maf/YYY -P -p 8888:8888
+			  --name maf -t lsst/maf </div></blockquote>
+
+	<p>This downloads MAF and runs it. It mounts the directory
+	/Users/XXX/YYY (which you should change to the directory where
+	you will do you work with MAF). Note: do not name your 'YYY'
+	directory 'lsst' as that will overwrite the directory
+	containing the LSST software in the container</p>
+
+	<p> This will start an interactive bash shell in the directory
+	/home/maf. It will also mount the directory /Users/XXX/YYY
+	(e.g. the directory you wish to write your notebooks in) as
+	YYY within the docker container and open up the iPython port
+	so that you can access, through your browser, notebooks
+	running in the docker container. </p>
+
+
+        <h3> How to run the Metrics Analysis Framework</h3>
+
+
+	<p> Checkout some example ipython notebooks and tutorials in
+	the terminal with conda running or within the Docker
+	container:</p>
+
+	<blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+		  Georgia;">
+			git clone
+	  https://github.com/LSST-nonproject/sims_maf_contrib.git
+	   </div></blockquote>
+
+
+	<h4> For the conda installation</h4>
+
+	<blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+	  Georgia;">
+	  ipython notebook
+			sims_maf_contrib/tutorials/Introduction\ Notebook.ipynb
+	   </div></blockquote>
+
+	<p> This should open an ipython notebook in a browser. You can
+	follow the instructions in the notebook by executing each cell
+	(with command-enter or control-enter). For an introduction to
+	iPython notebooks see <a
+	href="http://ipython.org/notebook.html">here</a></p>
+
+	<h4> For the Docker installation </h4>
+		
+	<blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+	  Georgia;">
+	ipython notebook --ip=0.0.0.0 --no-browser sims_maf_contrib/tutorials/Introduction\ Notebook.ipynb
+	   </div></blockquote>
+
+	   
+	<p> Check the ip address for the docker container (this
+	assumes a MacOSX installation </p>
+
+	<blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+	  Georgia;">boot2docker ip</div></blockquote>
+
+	<p> Open your browser and point to the ip address and port
+	http://[ip from above]:8888 This should open an ipython
+	notebook in a browser. You can follow the instructions in the
+	notebook by executing each cell (with command-enter or
+	control-enter). For an introduction to iPython notebooks see
+	<a href="http://ipython.org/notebook.html">here</a></p>
+
+
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+
+			</section>
+		</article>
 
 
 		<!-- Registration -->
