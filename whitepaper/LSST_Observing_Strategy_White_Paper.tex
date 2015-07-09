@@ -1,0 +1,145 @@
+% ====================================================================
+
+% LSST Observing Strategy White Paper
+
+% Copyright 2015 The LSST Science Collaborations
+
+% ====================================================================
+
+\documentclass[11pt,headsepline,cleardoubleempty,twoside,openright]{scrbook}
+% 11pt font
+% Draw a line under the header
+% Don't draw a line or print page numbers when a page is empty
+% Pages are two-sided - so margins alternate
+% Chapters start on the righthand side of the page
+
+\usepackage{SciBook}
+
+% ====================================================================
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{\stretch{3}}
+
+{\Huge\bfseries\scshape
+ Science Driven Optimization \\
+ of the LSST Observing Strategy}
+
+\vspace*{\stretch{2}}
+
+% Version number, to be taken out for published draft
+
+% \include{VersionDate}
+
+% \begin{center}
+% {\Large\bf Version 1.0\\
+%
+% \vspace*{\stretch{0.2}}
+%
+% November 2009}
+% \end{center}
+
+\vspace*{\stretch{2.5}}
+
+{\Large  Prepared by the LSST Science Collaborations,}\\
+\vspace*{\stretch{0.15}}
+{\Large with contributions from the LSST Project. }\\
+\vspace*{\stretch{1}}
+
+\end{center}
+\end{titlepage}
+
+% --------------------------------------------------------------------
+
+\tableofcontents
+
+% --------------------------------------------------------------------
+\clearemptydoublepage
+
+\chapter*{Preface}
+\addcontentsline{toc}{section}{Preface}
+\markboth{}{}
+
+\noindent This is a community white paper outlining various science
+cases and the impacts that observing strategy will have on them,
+quantified using the Metric Analysis Framework. We will describe
+various strategies and tradeoffs that impact the observing cadence
+(visit sequence), the current cadence baseline, and future directions
+for the optimization of the  survey strategy. We aim to publish this
+white paper on arXiv, and invite community feedback.
+
+The timescale for producing this white paper, started before and
+finished after the Observing Strategy workshop at the  August 2015
+LSST Project and Community workshop, is many months.
+
+The main points we will aim to convey in this white paper are as follows:
+
+\begin{itemize}
+
+    \item We have a pretty good idea of how we would deploy LSST:
+    there is a baseline strategy and example cadences, with which it
+    can be demonstrated that the data required for the promised
+    science can be delivered.
+
+    \item The baseline strategy can and will be optimized -- even small
+    improvements can be significant. Most importantly, the strategy is
+    not set in stone and it will evolve.
+
+    \item The cadence optimization process will be as open and
+    inclusive as technically possible. All stakeholders will
+    participate in this process.
+
+\end{itemize}
+
+\raggedright{Project start: July 2015.}
+
+
+% --------------------------------------------------------------------
+
+\include{introduction}
+
+% --------------------------------------------------------------------
+
+\include{solarsystem}
+
+% --------------------------------------------------------------------
+
+\include{galaxy}
+
+% --------------------------------------------------------------------
+
+\include{astrometry}
+
+% --------------------------------------------------------------------
+
+\include{variablesandtransients}
+
+% --------------------------------------------------------------------
+
+\include{cosmology}
+
+% --------------------------------------------------------------------
+
+\include{deepdrilling}
+
+% --------------------------------------------------------------------
+
+\include{specialsurveys}
+
+% --------------------------------------------------------------------
+
+\include{tradeoffs}
+
+% --------------------------------------------------------------------
+
+\bibliographystyle{apj}
+\bibliography{references}
+
+% --------------------------------------------------------------------
+
+\end{document}
+
+% ====================================================================
