@@ -332,15 +332,22 @@
 		   </div></blockquote>
 
 		  <p> If conda is not already installed, in a new
-		  terminal window create a directory lsst and cd to
-		  it. Download and install miniconda using the
-		  instructions given <a
+		  terminal window download and install miniconda using
+		  the instructions given <a
 		  href="http://conda.pydata.org/miniconda.html">here</a>
 		  (install Python 2.7). Note that the conda
 		  installation requires that you use bash for the
 		  initial installation. At the end of your
-		  installation check that conda is in your path with
-		  printenv PATH</p>
+		  installation check that the bin directory for conda
+		  is in your path with printenv PATH</p>
+
+		    <p> Install the ipython notebook </p>
+
+		   <blockquote> <div style="background-color:#DCDCDC;
+		   color:#000000; font-style: normal; font-family:
+		     Georgia;">
+		     conda install ipython-notebook 
+		   </div></blockquote>
 
 		   <p>Configure conda so that it knows where to access
 		   the LSST files using,</p>
@@ -371,10 +378,12 @@
 		     Georgia;">source eups-setups.sh</li></div></blockquote>
 
 		     <p> For the tcsh shell you will need the full
-		     path </p> 
-		      <blockquote> <div style="background-color:#DCDCDC;
-		   color:#000000; font-style: normal; font-family:
-		     Georgia;">source eups-setups.sh</li></div></blockquote>
+		     path to eups-setups.sh (in the miniconda
+		     directory) </p> <blockquote> <div
+		     style="background-color:#DCDCDC; color:#000000;
+		       font-style: normal; font-family: Georgia;">
+		       source [anaconda directory/bin/eups-setups.sh
+		     </li></div></blockquote>
 
 		     
 		   <blockquote> <div style="background-color:#DCDCDC;
