@@ -7,7 +7,7 @@ A community white paper about LSST observing strategy, with quantifications via 
 ## The White Paper: Science Cases and Observing Strategy
 
 * [Document layout](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/whitepaper-design.md)
-* [Chapter template](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/chapter-template.md)
+* [Overview of White Paper Chapter Goals](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/chapter-template.md)
 
 ## The 2015 MAF Workshop 
 
