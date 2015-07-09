@@ -14,6 +14,7 @@ A community white paper about LSST observing strategy, with quantifications via 
 * [Workshop design](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/workshop/notes/design.md): homework, tutorial plan, meeting schedule etc.
 * Getting started with MAF: check out the LSST [`sims_maf_contrib` wiki](https://github.com/LSST-nonproject/sims_maf_contrib/wiki) to see what people have been working on.
 * [Meeting website](http://lsstsciencecollaborations.github.io/ObservingStrategy/)
+* [List of registered attendees](https://project.lsst.org/meetings/lsst2015/cadence-registrations)
 
 ## Contacts
 
