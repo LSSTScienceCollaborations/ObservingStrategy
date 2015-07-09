@@ -4,6 +4,8 @@ A community white paper about LSST observing strategy, with quantifications via 
 
 **See where we are up to in this project (and join the conversation) at [this repo's issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
 
+For help getting started with git and GitHub, see this [handy guide](https://github.com/drphilmarshall/GettingStarted#top).
+
 ## The White Paper: Science Cases and Observing Strategy
 
 * [Document layout](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/whitepaper-design.md)
