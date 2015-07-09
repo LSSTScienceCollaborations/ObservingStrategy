@@ -56,7 +56,7 @@ Includes: survey uniformity, long time series, gap minimization, and dithering p
 
 Includes: science objectives, field selection, and sampling strategy
 
-Confirmed leads for deep drilling fields: Niel Brant (won't be in Bremerton), Lynne Jones
+Confirmed leads for deep drilling fields: Niel Brandt (won't be in Bremerton), Lynne Jones
 
 **8. Special Surveys**
 
