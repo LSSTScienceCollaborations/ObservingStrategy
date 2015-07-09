@@ -56,7 +56,7 @@ Includes: survey uniformity, long time series, gap minimization, and dithering p
 
 Includes: science objectives, field selection, and sampling strategy
 
-Confirmed leads for deep drilling fields: 
+Confirmed leads for deep drilling fields: Niel Brant (won't be in Bremerton), Lynne Jones
 
 **8. Special Surveys**
 
@@ -64,7 +64,7 @@ Includes: science programs not served effectively by the maind wide-fast-deep pr
 
 Confirmed leads for LMC/SMC: Knut Olsen, David Nidever
 
-Confirmed leads for special surveys: 
+Confirmed leads for special surveys [will Northern Ecliptic Spur and Galactic Plane be instead packaged under the Solar System and Galaxy chapters?]: 
 
 
 **8. Tensions and Trade-offs**
