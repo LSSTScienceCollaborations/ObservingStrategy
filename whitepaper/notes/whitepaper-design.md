@@ -42,7 +42,7 @@ Includes: periodic, near-periodic and transient targets, periods that drift, tim
 * Confirmed leads for Stellar variability and Fast Stellar Transients: Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz
 * Confirmed leads for cosmological SNe: Rahul Biswas, Michelle Lochner, Jeonghee Rho
 * Confirmed leads for extragalactic transients: Ashish Mahabal
-* Confirmed leads on rolling cadence: Stephen Ridgway
+* Confirmed leads on rolling cadence: Stephen Ridgway, Zeljko Ivezic
 
 **6. Keeping It Even: Accurate Cosmological Measurements on the Largest Scales**
 
