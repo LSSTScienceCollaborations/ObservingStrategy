@@ -4,16 +4,19 @@ A community white paper about LSST observing strategy, with quantifications via 
 
 **See where we are up to in this project (and join the conversation) at [this repo's issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
 
+For help getting started with git and GitHub, see this [handy guide](https://github.com/drphilmarshall/GettingStarted#top).
+
 ## The White Paper: Science Cases and Observing Strategy
 
 * [Document layout](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/whitepaper-design.md)
-* [Chapter template](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/chapter-template.md)
+* [Overview of White Paper Chapter Goals](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/chapter-template.md)
 
 ## The 2015 MAF Workshop 
 
 * [Workshop design](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/workshop/notes/design.md): homework, tutorial plan, meeting schedule etc.
 * Getting started with MAF: check out the LSST [`sims_maf_contrib` wiki](https://github.com/LSST-nonproject/sims_maf_contrib/wiki) to see what people have been working on.
 * [Meeting website](http://lsstsciencecollaborations.github.io/ObservingStrategy/)
+* [List of registered attendees](https://project.lsst.org/meetings/lsst2015/cadence-registrations)
 
 ## Contacts
 
