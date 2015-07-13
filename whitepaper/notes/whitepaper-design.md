@@ -42,7 +42,7 @@ Includes: periodic, near-periodic and transient targets, periods that drift, tim
 * Confirmed leads for Stellar variability and Fast Stellar Transients: Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz
 * Confirmed leads for cosmological SNe: Rahul Biswas, Michelle Lochner, Jeonghee Rho
 * Confirmed leads for extragalactic transients: Ashish Mahabal
-* Confirmed leads on rolling cadence: Stephen Ridgway
+* Confirmed leads on rolling cadence: Stephen Ridgway, Zeljko Ivezic
 
 **6. Keeping It Even: Accurate Cosmological Measurements on the Largest Scales**
 
@@ -56,7 +56,7 @@ Includes: survey uniformity, long time series, gap minimization, and dithering p
 
 Includes: science objectives, field selection, and sampling strategy
 
-Confirmed leads for deep drilling fields: 
+Confirmed leads for deep drilling fields: Niel Brandt (won't be in Bremerton), Lynne Jones
 
 **8. Special Surveys**
 
@@ -64,7 +64,7 @@ Includes: science programs not served effectively by the maind wide-fast-deep pr
 
 Confirmed leads for LMC/SMC: Knut Olsen, David Nidever
 
-Confirmed leads for special surveys: 
+Confirmed leads for special surveys [will Northern Ecliptic Spur and Galactic Plane be instead packaged under the Solar System and Galaxy chapters?]: 
 
 
 **8. Tensions and Trade-offs**
