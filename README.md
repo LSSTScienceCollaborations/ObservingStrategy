@@ -10,7 +10,7 @@ For help getting started with git and GitHub, see this [handy guide](https://git
 
 * Working title: "Science-driven Optimization of the LSST Observing Strategy"
 * [Document layout](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/whitepaper-design.md)
-* [Overview of White Paper Chapter Goals](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/chapter-template.md)
+* [Chapters and sections](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/chapter-template.md)
 * [Instructions for authors](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/README.md)
 
 ## The 2015 MAF Workshop 
