@@ -21,7 +21,7 @@
 %-
 % ====================================================================
 
-\section{Non-periodic Transient Events}
+\section{Transient Events}
 \label{sec:keyword} % For example, replace "keyword" with "lenstimedelays"
 
 \noindent{\it Author Name(s)} % (Writing team)
@@ -40,23 +40,42 @@
 % with a discussion of any risks that have been identified, and how
 % these could be mitigated.
 
-Non-periodic transient events may benefit from substantial temporal sampling (matched to the time constant of the
-event) with color information (perhaps contemporaneous) to support characterization and classification.
+Transient events may benefit from substantial temporal sampling (matched to the time constant of the
+event) with color information (perhaps contemporaneous) to support characterization and classification, obtained over the limited duration of interest.  Transient events slower than $\sim$ weeks may be adequately sampled by a uniform LSST cadence.  Faster events may require special scheduling strategies.  For some event types, LSST can only be expected to provide a discovery service, and followup will necessarily be performed elsewhere.
+
 
 % --------------------------------------------------------------------
 
 \subsection{Targets and Measurements}
 \label{sec:keyword:targets}
 
-Describe the discoveries and measurements you want to make for a generic  transient,
-with additional comment on specific variable types which have any special requirements.
+The class of transients includes a heterogeneous assortment of objects and phenomena.
 
-Example events:  stellar flares, CV outbursts, stellar micro-lensing, novae, supernovae, GRBs, 
+\begin{center} 
+\begin{tabular}{| p{5cm} | p{10cm} |}
+\hline Transient Type & Examples of target science\\
+\hline
+Flare stars & Flare frequency, energy, stellar age\\
+Cataclysmic variables  \& novae & Interacting binaries, stellar evolution, compact objects, explosive events\\
+Supernovae & SN physics, mass loss, distance scale, cosmology\\
+Active galactic nuclei & Galaxy evolution, reverberation mapping, black hole physics\\
+Stellar microlensing & Exoplanet statistics\\
+Gamma ray bursts & Optical discovery and characterization\\
+LIGO detections & Source position and characterization\\
+Serendipity & Discovery and characterization\\
+ \hline \end{tabular} 
+ \end{center}	
+ 
+Among the targets in this list, only AGN are likely to be sampled with sufficient resolution by a uniform LSST cadence - in fact for AGN, a challenge may be to spread visits sufficiently in time to avoid excessive seasonal gaps.
+ 
+For very short lived phenomena (stellar flares, CV outbursts, GRBs, LIGO events) it appears that the function of LSST will be to provide discoveries and/or simple characterization.  Followup to discovery/identification, if required, will surely take place elsewhere.  
+ 
+For events requiring intensive monitoring (stellar microlensing, exoplanet transits), the followup will certainly take place elsewhere.
 
-Now, describe their response to the observing strategy. Qualitatively,
-how will the science project be affected by the observing schedule and
-conditions? In broad terms, how would we expect the observing strategy
-to be optimized for this science?
+Supernovae fall in an intermediate time range.  LSST will provide multiple visits in multiple filters during the typical SN duration.  This sampling may be insufficient for many (including key) science objectives.  However, a moderate, and feasible, change to LSST observing strategy, may enhance the sampling for part of the sky part of the time, greatly enhancing the usefulness of SN observations.
+
+Serendipitous discoveries are of course harder to plan for.  An ideal transient discovery survey would include heavy coverage of all time scales. LSST will cover longer time periods well, but will have to make some choices of emphasis in coverage of shorter time-scales.
+
 
 
 % --------------------------------------------------------------------
@@ -64,17 +83,28 @@ to be optimized for this science?
 \subsection{Metrics}
 \label{sec:keyword:metrics}
 
-Quantifying the response via MAF metrics: definition of the metrics,
-and any derived overall figure of merit.
+\begin{center} 
+\begin{tabular}{| p{5cm} |p{10cm} |}
+\hline Metric & Description\\
+\hline
+SNe & Number of events adequately sampled\\ 
+Serendipity & Histogram of median visit series length vs maximum visit spacing within the series\\
+  \hline \end{tabular} 
+ \end{center}	
 
+The metrics for SNe will be highly specialized and based on the best available understanding of SN light curve analysis and the expected event population.
+
+The suggested metric set for serendipity is based on the simple-minded idea that a novel transient will be characterized by a band-limited, finite waveform, and that a useful observation series will consist of a series of samples extending over the duration of the event, with at least critical sampling of the fastest variations.  Since for some event durations the number of useful time series will be small, it may be useful to look not at the median length, but the median length of a subset size preselected as possibly useful (e.g. the$10^3$ longest series).
 
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
 \label{sec:keyword:analysis}
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
+Analysis shows that current simulations provide  poor coverage in any one filter for transient events longer than a deep drilling session ($\sim$30 minutes) and shorter than $\sim$ weeks.  
+
+Simulated performance for SN observations must be analyzed for both main survey and mini-survey (deep drilling) productivity.  It is considered that current simulated schedules give inadequate performance for SN science.
+
 
 
 % --------------------------------------------------------------------
@@ -82,9 +112,13 @@ the time of writing for this science project?
 \subsection{Discussion}
 \label{sec:keyword:discussion}
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+Community studies are providing improving SNe metrics, and continuing communication between the SN and LSST communities is essential to tuning the observing strategy to deliver the SN time series that are needed and possible.
+
+Improving LSST science return for SNe will also improve sampling of all transients with similar or somewhat shorter characteristic times.  Non-uniform survey strategies (rolling cadence) can significantly improve the LSST performance for faster transients.  Interpretation of multiple filters for novel events may be powerful, or problematic, since color may be uncertain.  
+
+Some insight into fast transients may be available from image pairs  or triples (as opposed to more complete series).  These include the pair of images in a visit - which could be useful in studying the rise time of an extremely fast event.  This includes the characteristic grouping of visits (typically 0.5 to 1.0 hour separation) planned for purposes of identifying asteroids.  It also includes fortuitous multiple sampling due to field overlap, providing additional sampling, which may be random or systematic, depending on the scheduling, on a time scale of minutes to hours.  The sampling benefits of this fortuitous overlap have not yet been investigated.
+
+
 
 
 % ====================================================================
