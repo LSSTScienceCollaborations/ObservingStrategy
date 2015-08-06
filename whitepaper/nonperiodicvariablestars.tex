@@ -40,30 +40,47 @@
 % with a discussion of any risks that have been identified, and how
 % these could be mitigated.
 
-Non-periodic variable stars may benefit from complete phase coverage over a single cycle, or other time interval  of of interest, repeated in consecutive intervals, or in intervals distributed over the survey.
+
+Some variable star types are not strictly periodic.  These include multi-period stars, for which Fourier analysis may be useful, but only if the underlying frequencies are at least critically sampled.  Irregularly variable stars may have so little repeatable structure that  neither phase stacking nor harmonic analysis is very useful, but patterns may become evident over observing intervals of years or decades.
+
+Non-periodic variable stars may benefit from complete phase coverage over a single cycle, or other time interval  of of interest, repeated in consecutive intervals, or in intervals distributed over the survey.  Variable stars for which thorough sampling of limited duration is required, including eruptive variables, are considered below with transients.
+
+
 % --------------------------------------------------------------------
 
 \subsection{Targets and Measurements}
 \label{sec:keyword:targets}
 
-Describe the discoveries and measurements you want to make for a generic  transient,
-with additional comment on specific variable types which have any special requirements.
+The class of non-periodic variables includes a heterogeneous assortment of objects and phenomena.
 
-Example events:  multi-mode pulsators, Applegate effect, etc
+\begin{center} 
+\begin{tabular}{| p{5cm} | p{10cm} |}
+\hline Variable Type & Examples of target science\\
+\hline
+Long Period Variables & Pulsation modes, internal structure, evolution\\
+Multimode pulsation & Pulsation mechanisms, internal structure\\ 
+Semi-regular variables & Pulsation mechanisms, convection \\
+Pulsating irregular variables & Chaotic dynamics \\
+Epsilon Aurigae systems & Circumstellar material, dark companions\\
+FU Ori systems & Accretion events, jets\\
+Young Stellar Objects & Accretion, jets, disks, binarity, flaring, rotation, spots, magnetic phenomena\\
+ \hline \end{tabular} 
+ \end{center}	
 
-Now, describe their response to the observing strategy. Qualitatively,
-how will the science project be affected by the observing schedule and
-conditions? In broad terms, how would we expect the observing strategy
-to be optimized for this science?
-
+In each case, the observational challenge is to discover and then to characterize the targets, utilizing the power of the LSST survey to increase by orders of magnitude the number of well-studied targets known.  Most of the targets in the table have variation time scales of $\simeq$ 1 week or greater, and will receive sampling commensurate with the time scale of variation under a natural LSST cadence ($\sim$800 visits over 10 years).  Where a higher sampling rate is needed, these will need customized attention to the time scale and the number and duration of sampled intervals.
 
 % --------------------------------------------------------------------
 
 \subsection{Metrics}
 \label{sec:keyword:metrics}
 
-Quantifying the response via MAF metrics: definition of the metrics,
-and any derived overall figure of merit.
+\begin{center} 
+\begin{tabular}{| p{5cm} |p{10cm} |}
+\hline Metric & Description\\
+\hline
+Non-periodic variables & Histogram of median visit series length vs maximum visit spacing within the series\\ 
+  \hline \end{tabular} 
+ \end{center}	
 
 
 % --------------------------------------------------------------------
@@ -71,8 +88,7 @@ and any derived overall figure of merit.
 \subsection{OpSim Analysis}
 \label{sec:keyword:analysis}
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
+Current simulations provide reasonable sampling ($\sim$2 samples per time constant) for variables that change brightness on a time scale of $>$1 week.  For faster variations, an enhanced sampling rate should be studied.
 
 
 % --------------------------------------------------------------------
@@ -80,10 +96,9 @@ the time of writing for this science project?
 \subsection{Discussion}
 \label{sec:keyword:discussion}
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+Special cadences offer the opportunity to extend LSST studies to non-periodic phenomena with time scales $\leq$1 week, rather than the $>$1 week that is naturally achieved with a uniform survey.  
 
 
+The need for contemporaneous color information has not been addressed, and needs consideration, as with novel targets and non-repeating signals, it may not be possible to infer color relations.
 % ====================================================================
 
