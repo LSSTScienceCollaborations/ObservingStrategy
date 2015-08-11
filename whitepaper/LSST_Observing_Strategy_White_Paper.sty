@@ -1,0 +1,456 @@
+%=====================================================================
+% LSST Observing Strategy White Paper
+%
+% Adapted from SciBook.sty, Phil Marshall Summer 2015
+%=====================================================================
+
+% PJM 2009-01-29 (Thursday) 09:37 PST
+% Bizarre bug only dound on windows - clash between scrbook definition of
+% ifvtex pacakage, and some other invocation of it....
+\let\ifvtex\relax
+% Tony - does this solve your problem?
+
+% Draft and final versions - boolean variable set by makefile,
+% default is draft.
+
+\usepackage{ifthen}
+\newboolean{draft}
+\newboolean{final}
+
+\setboolean{draft}{false}
+
+\typeout{ }
+\ifthenelse{\boolean{draft}}{
+  \typeout{************************}
+  \typeout{* Making draft version *}
+  \typeout{************************}
+}{
+  \setboolean{final}{true}
+  \typeout{************************}
+  \typeout{* Making final version *}
+  \typeout{************************}
+}
+\typeout{ }
+
+\ifthenelse{\boolean{draft}}
+{     % Draft version settings:
+  \typeout{*********************************}
+  \typeout{* INCLUDE LINE NUMBERS IN DRAFT *}
+  \typeout{*********************************}
+  \usepackage{lineno}
+  \linenumbers
+}{    % Final version settings:
+% Nice fonts - but not available on many systems (including Tony's)
+%  \usepackage{mathpple}
+}
+
+%------------------------------------------------------------------------------%
+% Line spacing - this could go inside the if block above if
+% the draft needed to be double spaced...
+
+% Standard:
+\renewcommand{\baselinestretch}{1.0}
+
+% % Double spacing:
+% \renewcommand{\baselinestretch}{2.0}
+
+% % Slightly compressed:
+% \renewcommand{\baselinestretch}{0.95}
+
+%------------------------------------------------------------------------------%
+% Packages
+
+%%%%%
+% Generally useful:
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage{deluxetable} % Moved here by PJM 2009-01-27
+
+%%%%%
+%% If you use a font encoding package, please enter it here, i.e.,
+% \usepackage{T1enc}
+% The following is an attractive font - but not everyone has it!
+% \usepackage{mathpple}
+% At the moment, we are using the system default font - the safest, but not
+% necessarily the prettiest option.
+
+%%%%%
+% Math packages commonly used by astronomers:
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+
+%%%%%
+% Style for inserting .eps files and rotating illustrations or tables
+
+% possible options for graphicx:
+% [dvips], [xdvi], [dvipdf], [dvipsone], [dviwindo], [emtex], [dviwin],
+% [pctexps],  [pctexwin],  [pctexhp],  [pctex32], [truetex], [tcidvi],
+% [oztex], [textures]
+
+% \usepackage[dvips]{graphicx}
+
+% jpg figures preferred to keep file size small and compilation
+% rapid - cannot use graphicx like this though...
+\usepackage{epsfig}
+
+%%%%%
+% Adding useful figure package tools
+\usepackage{wrapfig}
+
+%%%%%
+% Attempt to allow astro journal style citations (eg citep and citet...)
+\usepackage{natbib}
+% \usepackage{chapterbib}
+
+%%%%%
+% Hyper-linking between sections - must be *last* package?!:
+%\usepackage{color}
+%\definecolor{violet}{rgb}{0.4,0.0,0.4}
+%\usepackage[%
+%pdftitle={The LSST Science Book},%
+%pdfauthor={The LSST Science Collaborations},%
+%bookmarksnumbered=true,%
+%linkcolor=blue,citecolor=violet,colorlinks=true]{hyperref}
+%mbs
+\usepackage[usenames]{color}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\definecolor{violet}{rgb}{0.4,0.0,0.4}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
+\definecolor{darkred}{rgb}{0.5,0.00,0.0}
+\usepackage[%
+pdftitle={LSST Observing Strategy},%
+pdfauthor={The LSST Science Collaborations},%
+bookmarksnumbered=true,%
+linkcolor=blue,citecolor=violet,colorlinks=true]{hyperref}
+
+% Colored commenting:
+\newcommand{\question}[2]{\textcolor{darkred}{\bf Question from #1: #2}}
+\newcommand{\flag}[2]{\textcolor{darkred}{\bf #1: #2}}
+\newcommand{\new}[1]{\textcolor{darkgreen}{#1}}
+\newcommand{\black}[1]{\textcolor{black}{#1}}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+
+% Big tables, landscape:
+\usepackage{pdflscape}
+\usepackage{afterpage}
+
+% Correct link anchoring:
+\usepackage{hypcap}
+
+\usepackage{ifpdf}
+
+\usepackage{rotating}
+
+%------------------------------------------------------------------------------%
+
+% Headings and contents:
+
+%%%
+% How many levels of section head would you like numbered?
+% 0= no section numbers, 1= section, 2= subsection, 3= subsubsection
+\setcounter{secnumdepth}{2}
+
+% How many levels of section head would you like to appear in the
+%  Table of Contents?
+%  0= chapter titles, 1= section titles, 2= subsection titles,
+%  3= subsubsection titles.
+
+% Some chapters are organised as 1 project per subsection! eg weaklens
+\setcounter{tocdepth}{1}
+
+% This is to get the spacing right in the table of contents:
+% \makeatletter
+\renewcommand*\l@part{\@dottedtocline{1}{0em}{2.0em}}
+\renewcommand*\l@chapter{\@dottedtocline{1}{0em}{2.0em}}
+\renewcommand*\l@section{\@dottedtocline{1}{0em}{3.0em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{3.0em}{2.8em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{5.8em}{3.2em}}
+%\renewcommand*\l@section{\@dottedtocline{1}{0em}{3.0em}}
+%\renewcommand*\l@subsection{\@dottedtocline{2}{3.0em}{2.8em}}
+%\renewcommand*\l@subsubsection{\@dottedtocline{3}{5.8em}{3.2em}}
+% \makeatother
+
+%------------------------------------------------------------------------------%
+
+% Macros/definitions:
+
+% Markup:
+\def\XX{{\bf XX}\;}
+
+% General purpose usefulness:
+\def\eg{{e.g.}\xspace}
+\def\ie{{i.e.}\xspace}
+\def\etc{{etc}\xspace}
+\newcommand{\etal}{et al.}
+
+% Journal definitions for bibtex:
+\def\jnl#1{{\it#1\/}}
+\def\apj{\jnl{ApJ}}
+\def\apjl{\jnl{ApJL}}
+\def\apjs{\jnl{ApJS}}
+\def\aj{\jnl{AJ}}
+\def\apss{\jnl{Ap\&SS}}
+\def\mnras{\jnl{MNRAS}}
+\def\aap{\jnl{A\&A}}
+\def\aaps{\jnl{A\&AS}}
+\def\nat{\jnl{Nature}}
+\def\physrep{\jnl{Phys. Rep.}}
+\def\araa{\jnl{ARAA}}
+\def\prd{\jnl{Phys.\ Rev.\ D}}
+\def\pasp{\jnl{PASP}}
+\def\pasj{\jnl{PASJ}}
+\def\aaps{\jnl{A\&AS}}
+\def\an{\jnl{AN}}
+
+% Math macros:
+\def\ltsim{\lesssim}
+\def\gtsim{\gtrsim}
+\def\lessim{\lesssim}
+% \newcommand{\bit}[1]{\mbox{\textbf{\emph{#1}}}} % bold italic
+
+% Cosmology:
+\def\Om{\ensuremath{\Omega_{\rm m}}}
+\def\Ob{\ensuremath{\Omega_{\rm b}}}
+\def\OL{\ensuremath{\Omega_{\Lambda}}}
+\def\Ok{\ensuremath{\Omega_{\rm k}}}
+\def\om{\ensuremath{\omega_{\rm m}}}
+\def\ob{\ensuremath{\omega_{\rm b}}}
+\def\w0{\ensuremath{w_0}}
+\def\wa{\ensuremath{w_{\rm a}}}
+\def\lcdm{$\Lambda$CDM}
+\def\wcdm{$w$CDM}
+
+% Astronomy:
+\def\arcsec{''}
+\def\kms{\ensuremath{{\rm km s}^{-1}}}
+\def\hgpcq{\mbox{$h^{-3}$Gpc$^3$}}
+\def\hmpcq{\mbox{$h^{-3}$Mpc$^3$}}
+\def\hmpc{\mbox{$h^{-1}$Mpc}}
+\def\hmpci{\mbox{$h$\,Mpc$^{-1}$}}
+\def\mpc{\mbox{Mpc}}
+\def\mpci{\mbox{Mpc$^{-1}$}}
+%\def\phz{{photo-\emph{z}}}
+%\def\Phz{{Photo-\emph{z}}}
+\def\phz{{photometric redshift}}
+\def\Phz{{Photometric redshift}}
+\def\zp{z_{\rm p}}
+
+% LSST temrinology:
+\newcommand{\LevelTwo}{{Level~2}\xspace}
+\newcommand{\LevelThree}{{Level~3}\xspace}
+\newcommand{\CC}{LSSTComCam\xspace}
+\newcommand{\MultiFit}{{\sc MultiFit}\xspace}
+\newcommand{\photoz}{photo-$z$\xspace}
+
+% Image simulation tools:
+\newcommand{\PhoSim}{{\sc PhoSim}\xspace}
+\newcommand{\OpSim}{{\sc OpSim}\xspace}
+\newcommand{\CatSim}{{\sc CatSim}\xspace}
+\newcommand{\GalSim}{{\sc GalSim}\xspace}
+
+%------------------------------------------------------------------------------%
+
+% Explicit margin set-up (PJM 2009-08-25):
+%
+% - Useful diagram explaining various lengths:
+%    http://latex.knobs-dials.com/margins.png
+% - If topmargin and bottommargin are set too large, document may not
+%    compile, complaining of "too many unprocessed floats".
+%    Basically to fit all the figures in with their current sizes, need small
+%    margins. Maybe some figures are not sized as fractions of the \linewidth?
+
+% Letter:
+% \setlength{\paperwidth}{8.5in} % set size for latex
+% \setlength{\paperheight}{11in}
+% \special{papersize=8.5in,11in} % set size for ghostscript
+
+% A4:210 � 297mm = 8.27 x 11.69in
+\setlength{\paperwidth}{210mm} % set size for latex
+\setlength{\paperheight}{297mm}
+\special{papersize=210mm,297mm} % set size for ghostscript
+
+% ---
+% Left hand margin - different according to page number.
+% Inner margin should be larger to account for spine?
+
+% % Wide margins:
+% \newlength{\innermargin}
+% \setlength{\innermargin}{1.3in}
+% \newlength{\outermargin}
+% \setlength{\outermargin}{1.0in}
+
+% Narrow margins (about 2 and 3cm):
+\newlength{\innermargin}
+\setlength{\innermargin}{1.0in}
+\newlength{\outermargin}
+\setlength{\outermargin}{0.8in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Size tests PJM 2009-08-27 (Thursday)
+%
+% Letter paper, stretch 0.95, wide margins:   625 pages
+% A4 paper,     stretch 0.95, wide margins:   576 pages
+% A4 paper,     stretch 0.95, narrow margins: 558 pages
+% A4 paper,     stretch 1.00, narrow margins: 576 pages
+%  No checking for figure placement issues
+%  Left it with this final option.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Page numbering is such that odd pages are on the left:
+\setlength{\oddsidemargin}{\innermargin}
+\addtolength{\oddsidemargin}{-1.0in} % start with zero
+\addtolength{\oddsidemargin}{-\hoffset}
+\setlength{\evensidemargin}{\outermargin}
+\addtolength{\evensidemargin}{-1.0in} % start with zero
+\addtolength{\evensidemargin}{-\hoffset}
+
+% Just to make sure - zero the margin notes:
+\setlength{\marginparsep}{0in}
+\setlength{\marginparwidth}{0in}
+
+% Now set text width accordingly - each page has an inner and an outer margin:
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-\innermargin}
+\addtolength{\textwidth}{-\outermargin}
+
+% ---
+% Top and bottom margins are harder - need to account for header and footer.
+
+% Topmargin is gap between paper edge and top of header:
+\addtolength{\topmargin}{-1.0in} % start with zero
+\addtolength{\topmargin}{-\voffset}
+\addtolength{\topmargin}{0.9in}
+
+% Height of header line:
+\setlength{\headheight}{0.3in}
+% Separation between header and top of text block:
+\setlength{\headsep}{0.3in}
+% Distance between top of text block and first line of text:
+\setlength{\topskip}{\baselineskip}
+
+% Distance between bottom of text block and bottom of footer:
+\setlength{\footskip}{3\baselineskip}
+% Define distance between bottom of footer and end of page:
+\newlength{\bottommargin}
+\setlength{\bottommargin}{0.8in}
+
+% Now set height of text block - first to maximum:
+\setlength{\textheight}{\paperheight}
+% then leftovers is text block height:
+\addtolength{\textheight}{-1in} % start with zero
+\addtolength{\textheight}{-\topmargin}
+\addtolength{\textheight}{-\headheight}
+\addtolength{\textheight}{-\headsep}
+\addtolength{\textheight}{-\footskip}
+\addtolength{\textheight}{-\bottommargin}
+% \addtolength{\textheight}{5\baselineskip}
+
+%------------------------------------------------------------------------------%
+
+% Useful front matter trick:
+
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+
+%------------------------------------------------------------------------------%
+% Redefine headers:
+
+\renewcommand{\chaptermark}[1]{\markboth{Chapter\ \thechapter: #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+
+%------------------------------------------------------------------------------%
+% Redefine paragraphs and lists:
+
+\setlength\parskip{0.5\baselineskip \@plus 0.5\baselineskip}
+\setlength\parindent{0mm}
+
+\setlength\listparindent{0mm}
+\setlength\itemsep{-0.5\baselineskip}
+\setlength\parsep{0.5\baselineskip}
+\setlength\topsep{0mm}
+\setlength\partopsep{0mm}
+
+% \renewcommand*\descfont{\bfseries}
+
+%------------------------------------------------------------------------------%
+% Redefine sectioning:
+
+% \renewcommand*\sectfont{\bfseries}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\raggedsection\normalfont\itshape\size@subsubsection\sectfont}}
+
+%------------------------------------------------------------------------------%
+% Redefine captions:
+
+\renewcommand{\@makecaption}[2]{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{%
+    {\footnotesize\caplabelfont #1\captionformat}
+    {\footnotesize\capfont #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\footnotesize\caplabelfont #1\captionformat}
+    {\footnotesize\capfont #2\par}
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip
+}
+%------------------------------------------------------------------------------%
+% Autoreferencing:
+
+\renewcommand*\chapterautorefname{Chapter}
+\renewcommand*\sectionautorefname{\S}
+\renewcommand*\subsectionautorefname{\S}
+\renewcommand*\figureautorefname{Figure}
+\renewcommand*\tableautorefname{Table}
+\renewcommand*\equationautorefname{Equation}
+
+%------------------------------------------------------------------------------%
+% Tabular material:
+
+\setlength{\extrarowheight}{4pt}
+
+%------------------------------------------------------------------------------%
+
+% Bibliography stuff:
+
+\bibpunct[, ]{(}{)}{;}{a}{}{,}
+
+% Rename bibliography sections and make everything more compact:
+% \renewcommand\bibname{\LARGE References}
+% PJM: That large makes the header look silly...
+\renewcommand\bibname{References}
+
+% PJM: This command makes latex set up the bibliography as a section*, not
+% a chapter. Need to add a markboth command too, below...
+\renewcommand\bibsection{\chapter*{\refname}}
+% PJM 10/10/09: need this switch to change marking of appendix headers:
+\newboolean{appendix}
+\setboolean{appendix}{false}
+
+\let\oldthebibliography=\thebibliography
+\let\endoldthebibliography=\endthebibliography
+\renewenvironment{thebibliography}[1]{%
+  \begin{oldthebibliography}{#1}%
+% Make sure the references line gets into the contents table - note spacing!
+    \addcontentsline{toc}{chapter}{\hspace{2em}References}
+    \footnotesize
+    \setlength{\parskip}{0ex}%
+    \setlength{\itemsep}{0ex}%
+% PJM 10/10/09: Appendix reference section headers need to be marked with
+% "Appendix" not "Chapter"
+    \ifthenelse{\boolean{appendix}}{
+      \markboth{Appendix\ \thechapter: References}{Appendix\ \thechapter: References}
+    }{
+      \markboth{Chapter\ \thechapter: References}{Chapter\ \thechapter: References}
+    }
+}%
+{%
+  \end{oldthebibliography}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
