@@ -2,10 +2,69 @@
 \label{chp:solarsystem}
 
 \noindent {\it
-Lynne Jones, ...
+Lynne Jones, David Trilling, Mike Brown, Eric Christensen
 }
 
-Includes: asteroids (particularly NEO and PHA), and outer solar system
-(KBO, etc), and special cadence requirements
+\section{Discovering Solar System Objects}
 
-Confirmed leads for solar system: Lynne Jones.
+Discovering, rather than simply detecting, small objects throughout
+the Solar System requires unambiguously linking a series of detections
+together into an orbit. The orbit provides the information necessary
+to scientifically characterize the object itself and to understand the
+population as a whole. Without orbits, the detections of Solar System
+Objects (SSOs) by LSST will be of limited use; objects discovered with
+other facilities could be followed up by LSST, but almost the entire
+science benefit to planetary astronomy would be lost. 
+
+Therefore, the primary concern regarding the Solar System is related
+to the question ``Can we link detections of moving objects into
+orbits?''.  This requirement poses varying levels of difficulty as we
+move from Near Earth Objects (NEOs) through the Main Belt Asteroids
+(MBAs) and to TransNeptunian Objects (TNOs) and Scattered Disk Objects
+(SDOs), as well as for comets and for other unusual but very
+interesting populations such as Earth minimoons. 
+
+{\it discuss specific challenges for each population; TNOs and SDOs are
+  relatively easy, MBAs are very numerous, NEOs are hard because of
+  speed, comets and minimoons are hard because of nongravitational forces}
+
+Much of the answer to this question comes down to the performance of
+various pieces of LSST Data Management software. In particular, the
+false positive rate resulting from difference imaging, the compute
+limitations of the Moving Object Processing System (MOPS) to extend to high
+apparent velocities, and the capability to unambiguously determine if
+a linkage is `real' or not via orbit determination (done as part of
+MOPS). Additional concerns are related to how well observations
+widely separated in time can be linked into the `discovery' orbits
+(i.e. if we have a discovery in year 1, but do not detect the object
+again until year 3, could these observations be linked?). The answers
+to these questions range beyond the limits of the OpSim simulated
+surveys, but bear on the observing strategy requirements for
+discovering Solar System Objects.
+
+{\it describe current minimum observation requirements for existing
+  surveys, describe current expected requirements for MOPS, describe
+  current effort to understand if MOPS requirements are realistic in
+  LSST context}
+
+If we assume various detection requirements, ranging from XXX to the
+minimum MOPS requirements, we can characterize the performance of
+available simulated surveys in terms of their expected detection rates
+for various known populations.
+
+{\it describe completeness metrics for NEOs/MBAs/TNOs/etc - known
+  populations. what do we do about unknown populations?}
+
+Beyond this basic but absolutely critical requirement to actually
+discover SSOs across the Solar System, we can start to look at other
+science goals: detecting activity, determining colors for moving
+objects, and measuring shapes and spin states for objects. 
+
+{\it describe requirements and challenges for these; why colors are
+  hard, how many objects will we actually be able to determine
+  shape/spin for, how lightcurves may differ from shape/spin}
+
+Note: take a look at
+https://github.com/rhiannonlynne/MafSSO/blob/master/SSO_Analysis.ipynb
+(an extremely messy ipython notebook, but starting to point at some of
+the ideas I have for metrics -- let's expand on this)
