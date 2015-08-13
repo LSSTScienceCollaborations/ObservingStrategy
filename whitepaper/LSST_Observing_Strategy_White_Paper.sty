@@ -354,6 +354,22 @@ linkcolor=blue,citecolor=violet,colorlinks=true]{hyperref}
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 
 %------------------------------------------------------------------------------%
+
+\newcommand{\navigationbar}{
+    {\vskip\baselineskip \it\footnotesize
+        \begin{center}
+            Go to:
+                $\bullet$
+            \hyperref[sec:\secname]{the start of this section}
+                $\bullet$
+            \hyperref[chp:\chpname]{the start of the chapter} % eg SL Key Projects
+                $\bullet$
+            \hyperref[toc]{the table of contents}
+        \end{center}
+    }
+}
+
+%------------------------------------------------------------------------------%
 % Redefine headers:
 
 \renewcommand{\chaptermark}[1]{\markboth{Chapter\ \thechapter: #1}{}}
