@@ -48,13 +48,13 @@ The LSST observing strategy will affect mostly the first three of these categori
 the color selection of AGNs. This will eventually determine the AGN $L-z$ distribution and, in particular, may affect the identification
 of quasars at $z\gtsim 6$ if, for example, $Y$-band exposures will not be sufficiently deep.
 
-{\bf Variability:} AGNs can be effectively distinguished from (variable) stars, and from quiescent galaxies, by exhibiting certain characteristic variability patterns (e.g., Butler \& Bloom 2011). Non-uniform sampling may ``contaminate'' the variability signal of AGN candidates.
+{\bf Variability:} AGNs can be effectively distinguished from (variable) stars, and from quiescent galaxies, by exhibiting certain characteristic variability patterns (e.g., \citet{ButlerandBloom 2011}). Non-uniform sampling may ``contaminate'' the variability signal of AGN candidates.
 
 {\bf Astrometry:} AGNs will be selected among sources having zero proper motion, within the uncertainties. The LSST cadence
 may affect the level of this uncertainty in each band, and may therefore affect the ability to identify (mostly fainter) AGNs.
 %
 Differential chromatic refraction (DCR), making use of the astrometric offset a source with emission lines has with respect to
-a source with a featureless power-law spectrum, can help in the selection of AGNs and in confirming their photometric redshifts (Kaczmarczik~et~al.~2009). The DCR effect is more pronounced at higher airmasses. AGN selection and photometric redshift confirmation may be affected since the LSST cadence will affect the airmass distribution, in each band, for each AGN candidate.
+a source with a featureless power-law spectrum, can help in the selection of AGNs and in confirming their photometric redshifts \citep{KaczmarczikEtal2009}. The DCR effect is more pronounced at higher airmasses. AGN selection and photometric redshift confirmation may be affected since the LSST cadence will affect the airmass distribution, in each band, for each AGN candidate.
 
 \subsection{AGN Clustering}
 \label{sec:\secname:clustering}
@@ -73,22 +73,22 @@ depth in each band as a function of sky position that can directly affect the cl
 {\bf AGN Variability:} A variety of AGN variability studies will be enabled by LSST. These are intended to probe the physical properties of the unresolved inner regions of the central engine. Relations will be sought between variability amplitude and timescale vs. $L$, $z$, $\lambda_{\rm eff}$, color, multiwavelength and spectroscopic properties, if available. The LSST sampling is expected to provide high-quality power spectral density functions for a large number of AGNs; these can be used to constrain the SMBH mass and accretion rate/mode. Furthermore, LSST AGNs exhibiting excess variability over that expected from their luminosities will be further scrutinized as candidates for lensed systems having unresolved images with the excess (extrinsic) variability being attributed mainly to microlensing.
 
 Photometric reverberation mapping (PRM), measuring the time-delayed response of either the flux of the broad emission line region (BELR) lines to the flux of the AGN continuum or between the continuum flux in one (longer wavelength) band to the continuum flux in another (band with shorter wavelength), will be one of the cornerstones of AGN research in the LSST era
-(e.g., Chelouche 2013; Chelouche \& Zucker 2013; Chelouche~et~al.~2014). For example, LSST is expected to deliver BELR line-continuum time delays in $\sim10^5-10^6$ sources, which is unprecedented when compared to $\sim50-100$ such measurements conducted via the traditional, yet much more expensive (per source) spectroscopic method. Sources in the deep-drilling fields (DDFs) will benefit from the highest quality PRM
+(e.g., \citet{Chelouche2013}; \citet{Chelouche&Zucker2013}; \citet{CheloucheEtal2014}). For example, LSST is expected to deliver BELR line-continuum time delays in $\sim10^5-10^6$ sources, which is unprecedented when compared to $\sim50-100$ such measurements conducted via the traditional, yet much more expensive (per source) spectroscopic method. Sources in the deep-drilling fields (DDFs) will benefit from the highest quality PRM
 time-delay measurements given the factor of $\sim10$ denser sampling. The PRM measurements will probe the size and structure of the accretion disk and BELR, in a statistical sense, and may provide improved SMBH mass estimates for sources that have at least single-epoch spectra.
 
 The PRM method is very sensitive to the sampling in each band, therefore the ability to derive reliable time delays can be affected significantly
 by the LSST cadence. The best results will be obtained by having the most uniform sampling equally for each band. Additionally, there is
-a trade-off between the number of DDFs and the number of time delays that PRM can obtain (Chelouche~et~al.~2014). For example,
+a trade-off between the number of DDFs and the number of time delays that PRM can obtain \citep{CheloucheEtal2014}. For example,
 an increase in the number of DDFs, with similarly dense sampling in each field, can yield a proportionately larger number of high-quality time delays,
 down to lower luminosities, but at the expense of far fewer time delays (of relatively high luminosity sources) in the main survey.
 
-{\bf Time Delays in Gravitationally Lensed Quasars:} This aspect is discussed in detail in the lenstimedelays.tex section.
+{\bf Time Delays in Gravitationally Lensed Quasars:} This aspect is discussed in detail in the \autoref{sec:lenstimedelays} section.
 
 {\bf AGN Size and Structure with Microlensing:} Microlensing due to stars projected on top of individual lensed quasar images produce additional magnification. Using the fact that the Einstein radii of stars in lensing galaxies closely match the scales of different emission regions in high-redshift AGNs (micro-arcseconds), analyzing microlensing induced flux variations statistically on individual systems allows us to measure ``sizes'' of AGN regions.
 %
 Assuming a thermal profile for accretion disks, sizes in different emission wavelengths will be probed and as such, constraints on the slope of this thermal profile. Given the sheer number of lensed systems that LSST is expected to discover ($\sim8000$), this will allow us to stack systems for better constraints and hopefully determine the evolution of the size and profile. Due to the typical relative velocities of lenses, microlenses, observers (Earth) and source AGN, the microlensing variation timescales are between months to a few decades.
 
-The quasar microlensing optical depth is $\sim1$, so every lensed quasar should be affected by microlensing at any given point in time. However, measurable variability can occur on longer timescales. Mosquera~et~al.~(2011) did a study using all known lensed quasars. They found the median timescale between high magnification events (Einstein crossing time scales) in the observed $I$-band is of the order of $\sim20$~yr (with a distribution between 10 and 40~yr). However, the source crossing time (duration of a high magnification event) is $\sim7.3$~months (with a distribution tail up to 3~yr). This basically means that out of all the lensed quasar {\em images} (microlensing between images is completely uncorrelated) about half of them will be quiescent during the 10~yr baseline of LSST. However, since the typical number of lensed images is either two or four, it means that, statistically, in every system, one (for doubles) or two (for quads) high magnification events should be observed in 10~yr of LSST monitoring.
+The quasar microlensing optical depth is $\sim1$, so every lensed quasar should be affected by microlensing at any given point in time. However, measurable variability can occur on longer timescales. \citet{MosqueraandKochanek2011} did a study using all known lensed quasars. They found the median timescale between high magnification events (Einstein crossing time scales) in the observed $I$-band is of the order of $\sim20$~yr (with a distribution between 10 and 40~yr). However, the source crossing time (duration of a high magnification event) is $\sim7.3$~months (with a distribution tail up to 3~yr). This basically means that out of all the lensed quasar {\em images} (microlensing between images is completely uncorrelated) about half of them will be quiescent during the 10~yr baseline of LSST. However, since the typical number of lensed images is either two or four, it means that, statistically, in every system, one (for doubles) or two (for quads) high magnification events should be observed in 10~yr of LSST monitoring.
 
 Note that, the important cadence parameter is the source crossing time, as it is the length of the event to be as uniformly sampled as possible. The 7.3 months crossing time is the median for the observed $i$-band, but this time would be significantly shorter for bluer bands: for a thermal profile with slope $\alpha: R_\lambda \propto \lambda^\alpha$ implies source crossing time $t_{\rm s} \propto \lambda^{1/\alpha} \rightarrow t_u=t_i \times (\lambda_{\rm u} / \lambda_{\rm i})^{1/\alpha}$. For a Shakura-Sunyaev slope of $\alpha=0.75$ this would correspond to $7.3 \times (3600/8140)^{4/3}$ months $\approx 2.5$ months in the $u$-band.
 
@@ -100,9 +100,9 @@ Killer: observations spread on timescales larger than 3 months(??). This would l
 %
 Important Note: all this science needs to be done on lensed quasars with measured or very short time delays to remove the intrinsic variability signal, which might significantly reduce the sample.
 
-{\bf Microlensing Aided Reverberation Mapping:} Given that microlensing mostly affects continuum emission rather than BELR line emission, microlensing may enable disentangling the BELR line $+$ continuum emission in single photometric bands, allowing the use of single broad band PRM measurements (Sluse \& Tewes 2014). As with the two-band PRM method discussed above, the denser (and the longer) the sampling, the more accurate are the constraints that can be obtained for the time delays.
+{\bf Microlensing Aided Reverberation Mapping:} Given that microlensing mostly affects continuum emission rather than BELR line emission, microlensing may enable disentangling the BELR line $+$ continuum emission in single photometric bands, allowing the use of single broad band PRM measurements \citep{SluseandTewes2014}. As with the two-band PRM method discussed above, the denser (and the longer) the sampling, the more accurate are the constraints that can be obtained for the time delays.
 
-{\bf Transient AGN and TDEs:} This aspect is discussed in detail in the variablesandtransients.tex section(?)
+{\bf Transient AGN and TDEs:} This aspect is discussed in detail in the \autoref{sec:variablesandtransients.tex} section(?)
 
 % --------------------------------------------------------------------
 
