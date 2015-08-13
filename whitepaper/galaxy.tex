@@ -2,8 +2,7 @@
 \def\chpname{galaxy}\label{chp:\chpname}
 
 \noindent {\it
-Will Clarkson, Kathy Vivas, ...
-}
+Will Clarkson, Kathy Vivas, ...} {\it More co-authors to be added!}
 
 Includes: stellar populations; halo, bulge and disk; variables as
 disgnostics of structure; photometry in crowded regions; preferred
@@ -12,3 +11,549 @@ distribution of visits in time
 Confirmed leads for galactic plane science: Will Clarkson, Kathy Vivas
 
 \navigationbar
+
+\section{Introduction}\label{Galaxy_Intro}
+
+LSST will significantly advance Milky Way science, on lengthscales
+from the galactic halo and local volume, right down to sensitive
+surveys for faint nearby objects to uncover the true state of the
+Solar Neighborhood.
+%The broad reach of the Milky Way science
+%cases is nicely summarized in Section 2.1.4 of Ivezic et al. (2008
+%arXiv 0805.2366).
+%\begin{itemize}
+%\item What is the detailed structure and accretion history of the Milky Way?
+%\item What are the fundamental properties of all the stars within 300 pc of the Sun?
+%\end{itemize}
+Much more detail about most of these science cases, and specific
+science questions to be answered, can be found in the LSST Science
+Book (particularly chapters 6 and 7) and Ivezic et al. (2008 arXiv
+0805.2366, in particular Sections 2.1.4 and 4.4); in this chapter we
+outline the impact of the MW science cases on the LSST observing
+strategy, both for the main survey and for the ancillary observing
+campaigns. For the latter, many first-order questions (for example, how
+many exposures to take per filter over LSST’s operational lifetime)
+remain unanswered; this document is intended to be a step towards
+their resolution.
+
+For many of the science goals within the general area of “Milky Way
+science,”\footnote{{\it The Local Volume is not currently included in this chapter. Suggestions are welcome.}} the main survey is already quite well-matched to
+requirements (for example, see Ivezic et al. 2008 Section
+2.1.4-5). However, there are many important science cases - most
+obviously, but not exclusively, investigations towards the Galactic
+Plane - for which either no observations in the main survey are
+planned, or the main surveys by themselves are not sufficient to meet
+the science cases. For spatial areas like the Plane that are not
+currently covered by the main survey, considerable optimization
+remains to be done to define the observations.
+
+This Chapter is organized as follows: Because of the very large
+diversity in observing strategies, particularly for regions not in the
+main survey, we first summarize in Sections
+\ref{Galaxy_Assumptions}-\ref{Galaxy_Strategies} the science cases in
+terms of scientific and observational requirements, focusing on items
+for optimization, the LSST discovery space, and the areas in which
+observations will be required in addition to the baseline survey. Once
+these quantities are reported, the flow-through to optimization should
+become clear. Then, observational considerations particular to the
+Solar Neighborhood and Galactic Plane are developed in detail
+(Sections 3.4 onwards, led by Monet et al.). Finally, recommendations
+are made in Section YY.
+
+\section{Milky Way campaigns in relation to the main LSST surveys}\label{Galaxy_Assumptions}
+
+Before embarking on strategy considerations for the different science
+cases, we remind the reader that the baseline performance figures from
+previous documentation may not apply for all (or any!) spatial regions
+of interest to a given Milky Way science case. Or, assumptions one
+might make in planning may be violated just by moving to different
+spatial regions within the same science case.  An example might be
+surveys of the Solar Neighborhood: populations that happen to
+lie in front of the Galactic Disk will likely have many fewer visits
+per filter per year than their equally-close counterparts that happen
+to lie in front of the main survey area, no matter how the available
+observations are ordered within the strategy. \footnote{This is quite
+  aside from performance issues that are particular to crowded regions
+  like the Galactic Plane, which are developed in some detail in
+  Sections 3.4 onward.}  We identify the following classes:
+\begin{itemize}
+\item {\it Science cases including the main-survey area:} For some
+  science cases (e.g. finding the most metal-poor stars in the Halo),
+  the cadence and total number of visits in the main survey can be
+  assumed for most fields. In these cases, optimization of observing
+  strategy can proceed within the general parameters of the main
+  survey - there might be some small changes to suggest in terms of
+  the distribution of visits throughout the 10-year main survey, but
+  the photometric and astrometric performance listed in the LSST
+  Science Book can be assumed.
+\item {\it Science cases involving more intensive monitoring:} For
+  cases in which many more exposures might be required than for the
+  main survey (possibly in one or two filters only), the deep-drilling
+  sub-surveys are probably the natural channel to take data; see
+  Chapters 6 \& 7.
+\item {\it Science cases towards areas outside the main survey
+  regions:} For science cases not in regions currently slated for the
+  main-survey, the total time allocation will be much lower than the
+  main-survey baseline. In the present chapter, the main examples are regions in or in front of the Galactic Plane \footnote{(Although we point out that there may
+  also be regions in the main survey that might not currently be
+  observed in the best way for some cases, for example if the
+  population of interest to MW science is so nearby and bright that it
+  would strongly saturate in the main survey.)}. For cases such as this,
+  the total allocation per field might on average be on the order of
+  20 exposures per field per filter, over ten years, if spread over
+  all six filters evenly. For such an optimization, certain
+  assumptions one might make when planning a science case (e.g. can
+  average through local distortion by dithering across many
+  chip-regions) will be violated. In most science cases within this
+  general category, optimization using tools such as MAF will be
+  essential.
+  \begin{itemize}
+    \item {\bf Note:} Care should be taken during the planning process
+      to ensure that these cases are not artificially down-graded for
+      software reasons. An example might be: searches in the Plane for
+      variability on a timescale of months-years, would be compromised
+      if a small-allocation field were pushed entirely into the first
+      three years by OpSim in order to complete the short projects
+      first.
+    \end{itemize}
+\end{itemize}
+
+
+\section{Observing strategies for Milky Way science cases}\label{Galaxy_Strategies}
+
+In the following subsections, we outline the science cases within each
+science area, in rough order of increasing distance from the Sun. For
+each science case, we list the broad requirements, an attempt to
+translate these into observation strategy requirements, an indication
+of the discovery space open to LSST, and an indication of whether
+dedicated new observations will be required.
+
+To aid in optimization, we also list any technical drivers that do
+\underline{not} need to be optimized for a given science area.
+
+{\it Note: the parameters in this section are a first-cut, to be
+  updated by the experts in each science case!}
+
+{\it [Summary table would come here once we have updated content.]}
+
+\subsection{The Solar Neighborhood}
+
+{\it (Note: this is not yet a complete list of science cases, the
+  Solar Neighborhood working group was quite thorough in its Phase I
+  roadmap!)}
+
+Summary: generally the cases in this science area require deep
+photometry, particularly (though not exclusively) at red bandpasses,
+and sufficient per-image precision and distribution of observing times
+in at least one filter to measure parallax and/or proper motion. The
+main-survey area is not sufficient for this science area: dedicated
+observations are required for all science cases to fill in angular
+coverage (apart from photometric variability of cool dwarfs).
+
+Drivers NOT required for this science area: variability (for all apart from photometric variability of cool dwarfs).
+\vspace{-2mm} 
+
+\subsubsection{Co-moving groups (new groups or objects that are members of already-known groups)}
+\vspace{-2mm}
+\begin{itemize}
+\item {\bf Observing requirement:}  proper motions at better than 100 mas/yr in at least one filter; 10\% photometry in at least two further filters for object identification. 
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} Observations spread over time for proper motion sensitivity; best choice of filter for proper motions; minimum exposure time for other filters for photometry. 
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} objects too faint for gaia to measure sufficiently precise proper motions. 
+\vspace{-2mm}
+
+\item {\bf New observations required?} Yes - area coverage of main survey is insufficient.
+\vspace{-2mm}
+\end{itemize}
+
+\subsubsection{Volume-complete astrometric sample of extended Solar Neighborhood}
+\vspace{-2mm}
+\begin{itemize}
+
+\item {\bf Observing requirement:} Parallax measurements with LSST, deep photometry out to y-band. 
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} Minimum accumulated exposure time per filter; minimum spread in observing epochs to achieve parallax goals. 
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} LSST will likely lead this science case; gaia has little sensitivity in the red bandpasses needed for low mass objects (L/T/Y dwarfs). 
+\vspace{-2mm}
+
+\item {\bf New observations required?} Yes - area coverage of main survey is insufficient.
+\vspace{-2mm}
+\end{itemize}
+
+
+\subsubsection{Discovery of ultracold brown dwarfs (late-T and Y)}
+\vspace{-2mm}
+\begin{itemize}
+\item {\bf Observing requirement:} Very deep photometry in y \vspace{-2mm}
+\item {\bf Strategy requirement:} Minimum exposure time in y \vspace{-2mm}
+\item {\bf Discovery space for LSST:} Objects not already detected by WISE (and Spitzer). Suggests specific spatial regions (where crowding has prevented those facilities setting useful limits). May need WISE-observed regions for cross-calibration and survey completeness estimation. \vspace{-2mm}
+\item {\bf New observations required?} Yes - perhaps only for selected fields inaccessible to WISE and Spitzer. 
+\end{itemize}
+
+\subsubsection{The endpoints of stellar evolution in the Solar Neighborhood}
+\vspace{-2mm}
+\begin{itemize}
+\item {\bf Observing requirement:} Deep (u,g,r) photometry (required), sufficient proper motion precision for reduced proper motion diagnostics (preferred)
+\vspace{-2mm}
+\item {\bf Strategy requirement:} Minimum exposure times; distribution of observations through time to increase proper motion sensitivity.
+\vspace{-2mm}
+\item {\bf Discovery space for LSST:} White dwarfs intrinsically faint: in all noncrowded regions, the sheer field of view and collecting area of LSST makes it the winner for this science case.
+\vspace{-2mm}
+\item {\bf New observations required?} Yes - perhaps only for selected fields inaccessible to WISE and Spitzer. 
+\end{itemize}
+
+\subsubsection{Photometric variability of cool dwarfs}
+\vspace{-2mm}
+\begin{itemize}
+\item {\bf Observing requirement:} Photometry (do we know in which filters?) of sufficient sampling to measure starspot variability and also measure (to remove) transits and eclipses (fractional amplitude 1\% OK?). \vspace{-2mm}
+\item {\bf Strategy requirement:} Minimum number of exposures, minimum exposure time, subset of filters, particular cadence distribution. \vspace{-2mm}
+\item {\bf Discovery space for LSST:} Use LSST-detected objects as calibrators for stellar astronomy, or use LSST-detected objects to better understand the population based on results from other facilities. {\it (WIC \& KV; input needed!)} \vspace{-2mm}
+\item {\bf New observations required?} TBC - even for main-survey areas, might need better time coverage for variability sensitivity. Is the intent here to study calibrator objects well (e.g. in the main survey) or to chart this variability for all reachable stars near the Sun?
+\end{itemize}
+
+\subsection{Star clusters}
+
+Summary: Science mainly motivated by precise magnitudes and colors for
+members of the various stellar populations in clusters in various
+parts of the survey. Main requirement is for well-behaved
+(characterizable) photometric and astrometric measurements. Studies
+are still ongoing within the Star Clusters subgroup to determine
+whether main survey-like observations will be sufficient for the science
+goals.
+
+NOT required for optimization: variability, parallax
+
+
+
+\subsubsection{Formation History and Evolution of the Milky Way as traced by star clusters}
+\vspace{-2mm}
+\begin{itemize}
+\item {\bf Observing requirement:} Deep \{ugrizy\} photometry down to 2 magnitudes below the main sequence turn-off (required); astrometric precision to remove foreground contamination in regions too crowded for gaia (preferred).
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} Minimum photometric precision; filter-set for population constraints (is y needed?)
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} The full set of observable clusters within the MW, observed in as uniform a manner as possible; highly spatially-extended clusters (tidal interactions; dissolution into the MW); cluster bulk properties out to distance X kpc.
+\vspace{-2mm}
+
+\item {\bf New observations required?} TBC - Clusters within main-survey area, likely not. Clusters at the edge of or in the plane; dedicated observations likely required, configured properly to reach required precision in brightness and color in the presence of crowding.
+\vspace{-2mm}
+\end{itemize}
+
+
+\subsubsection{Stellar Mass function, metallicity, ages}
+\vspace{-2mm}
+\begin{itemize}
+\item {\bf Observing requirement:} Deep \{ugrizy\} photometry down to 4 magnitudes below the main sequence turn-off (required); astrometric precision to remove foreground contamination in regions too crowded for gaia (preferred). 
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} Minimum photometric precision; filter-set for population constraints (to do the mass function down to low-mass objects, is y required?)
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} Populations of nearby clusters down to mass limit X. {\it Broad question: survey all clusters in this way, or pick a few representative targets for new observations?} 
+\vspace{-2mm}
+
+\item {\bf New observations required?} TBC - Clusters within main-survey area, likely no. Clusters at the edge of or in the plane; dedicated observations likely required, configured properly to reach required precision in brightness and color in the presence of crowding.
+\vspace{-2mm}
+\end{itemize}
+
+\subsection{The Galactic Bulge}
+
+Summary: Nearly entirely in LSST’s classical region of avoidance, thus
+dedicated observations will be needed. Want to optimize for photometry
+and astrometry, as well as variability on a timescale of hours or
+longer (for RR Lyrae and other tracers of structure). Quite sensitive
+to crowding. At the longer timescale, microlensing with a wide-area
+facility like LSST could be transformative if affordable.
+
+NOT required for optimization: parallax
+
+(Note: the final science case, microlensing, might be a good candidate
+for a deep-drilling-like survey, e.g. pick a 2$\times$2 set of LSST
+pointings and monitor those with microlensing-friendly cadence in two
+filters (to help weed out false positives). This is one science case
+that should be revisited anyway.)
+
+
+\subsubsection{Bulge structure and stellar populations}
+\vspace{-2mm}
+\begin{itemize}
+\item {\bf Observing requirement:} Multi-color photometry in all bands to disentangle constituent bulge populations (required); sensitivity to RR Lyrae for distance and also extinction mapping (required); relative proper motion sensitivity for kinematic population separation (preferred; requires proper motion precision at the 0.5-1mas/yr level). 
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} \underline{\it Maximum} individual exposure time in these crowded fields; minimum exposure time for u-band sensitivity; cadence sufficient for proper motions; cadence sufficient for sensitivity to variables on $\sim$hour-long timescales.
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} Populations down to the main sequence turn-off (most fields); balance of populations across the entire structure; discovery of new RR Lyrae and improvement of extinction map. Gaia cannot make precision measurements down to a couple of magnitudes or so above the turn-off in these fields {\it (do we have more quantitative information than this yet?)}.
+\vspace{-2mm}
+
+\item {\bf New observations required?} Yes - the bulge is outside the
+  main LSST survey area. In addition, observations of disk-calibration
+  fields will be needed for statistical subtraction of the
+  foreground. Short exposures will also be needed to constrain nearby
+  bright objects or at least characterize their effect on the deep
+  exposures.
+\vspace{2mm}
+\end{itemize}
+
+\subsubsection{Stellar kinematics in the Bulge and foreground}
+\vspace{-2mm}
+\begin{itemize}
+\item {\bf Observing requirement:} Proper motion sensitivity better than 0.5 mas/yr, in at least one band.
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} \underline{\it Maximum} individual exposure time in these crowded fields; cadence distributed to maximize proper motion precision.
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} Proper motions both internally to LSST and externally to earlier epochs from previous campaigns. Gaia cannot make precision measurements down to a couple of magnitudes or so above the turn-off.
+\vspace{-2mm}
+
+\item {\bf New observations required?} Yes - the bulge is outside the main LSST survey area. Short exposures will also be needed to constrain nearby bright objects or at least characterize their effect on the deep exposures.
+\vspace{-2mm}
+\end{itemize}
+
+\subsubsection{Low-mass microlens events towards the Bulge}
+
+\begin{itemize}
+\item {\bf Observing requirement:} Main-survey-like monitoring in a subset of filters.
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} \underline{\it Maximum} individual exposure time in these crowded fields (likely different from the previous two science cases due to different analysis techniques); preferred filter choice for monitoring; cadence for sensitivity to microlensing events.
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} Detection of microlensing events at the low-mass end, including free-floating planets, at levels inaccessible to smaller-aperture trigger surveys. These objects would later be followed up by dedicated observations with other facilities. 
+\vspace{-2mm}
+
+\item {\bf New observations required?} Yes - the bulge is outside the main LSST survey area. Short exposures will also be needed to constrain nearby bright objects or at least characterize their effect on the deep exposures. 
+
+{\it Note: this might be a good candidate for a deep-drilling-like survey, e.g. pick a 2$\times$2 set of LSST pointings and monitor those with microlensing-friendly cadence in two filters (to help weed out false positives).} 
+
+\vspace{-2mm}
+\end{itemize}
+
+\subsection{The Milky Way Disk}
+
+Summary: precise colors and magnitudes, with the ability to
+disentangle populations in crowded regions. Sufficient cadence for
+variability down to minutes-hours variations.
+
+NOT required for optimization: proper motion, parallax.
+
+\subsubsection{Thin disk/thick disk structure and stellar populations}
+
+\begin{itemize}
+\item {\bf Observing requirement:} Precise magnitudes and colors; proper motions for reduced proper motion analysis. {\it (To what level of precision?)} Sensitivity in variability to RR Lyrae,  $\delta$ Scuti variables, eclipsing binaries.
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} \underline{\it Maximum} individual exposure time to avoid crowding per exposure; minimum total exposure time. Cadence sufficient for proper motions; cadence sufficient for variability down to a timescale of minutes-hours.
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} Regions too crowded for gaia
+\vspace{-2mm}
+
+
+\item {\bf New observations required?} Yes - these are observations of the Galactic Plane. Short exposures will also be needed to constrain nearby bright objects or at least characterize their effect on the deep exposures.
+\vspace{-2mm}
+\end{itemize}
+
+
+\subsubsection{Star formation in the Galactic Disk}
+
+Summary: this important topic does not seem to have been developed in
+previous versions of the LSST science book or Ivezic et
+al. (2008). LSST gives the opportunity to survey extensive areas
+around star formation regions in the Southern hemisphere. Among
+others, it would allow to study the Initial Mass Function down to the
+sub-stellar limit across different environments. Young stars are
+efficiently identified by their variability.
+
+NOT required for optimization: parallax, relative proper motion.
+
+\begin{itemize}
+\item {\bf Observing requirement:} Precise magnitudes and colors, appropriate cadence for T Tauri variability (days).
+
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} filter set for population constraints; redder bands (z, Y) important for the lowest mass stars; u band for accretion rates
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} Only optical survey in the galactic plane. It will produce an unbiased map of the young stellar populations in the Southern Hemisphere. Possibility of early alerts for outbursts of young stars.
+\vspace{-2mm}
+
+\item {\bf New observations required?} Yes, most regions are within the galactic plane (outside the LSST main survey area). Constraints in spatial coverage can be done by defining the areas of star formation.
+\vspace{-2mm}
+\end{itemize}
+
+\subsubsection{Spiral structure in the Milky Way disk}
+
+{\it Note: science case could use some development. This is based on LSST Science Book section 7.3.2.}
+
+\begin{itemize}
+\item {\bf Observing requirement:} Colors, photometry, proper motions
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} Minimum filter-set; cadence sufficient for proper motion; exposure time and strategy optimized to crowding in the preferred fields (e.g. $l \sim 270$).
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} Large, coherent structures in phase space that would be difficult for smaller-etendue surveys to efficiently probe. Regions too crowded for gaia.
+\vspace{-2mm}
+
+\item {\bf New observations required?} Yes - the galactic plane is not part of the LSST main survey.
+\vspace{-2mm}
+\end{itemize}
+
+
+\subsection{Dust throughout the Milky Way}
+
+Summary: deep \{ugriz\} observations required; usefulness appears to depend mainly on the depth achieved in each filter. 
+
+NOT required for optimization: variability, parallax, proper motion,
+y-band photometry [? - not according to the LSST Science book 7.5]
+
+\subsubsection{Spatial distribution of dust}
+
+\begin{itemize}
+\item {\bf Observing requirement:} As deep as possible in \{ugrizy\} to allow reddening-free indices to be constructed for stars, in order for the intrinsic and true colors to be compared to estimate reddening.
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} Minimum exposure-time accumulated in each filter; minimum filter-set {\it (Is y-band needed for this? Presumably would help, but doesn't seem to be mentioned in the Science book 7.5.)}.
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} 3D dust maps out to much greater distance than previously possible (e.g. with SDSS)
+\vspace{-2mm}
+
+\item {\bf New observations required?} Yes, but only for regions in the Galactic plane. 
+\vspace{-2mm}
+\end{itemize}
+
+
+\subsubsection{Variation in extinction laws}
+
+\begin{itemize}
+\item {\bf Observing requirement:} As deep as possible in \{ugrizy\} to estimate changes in reddening vector as a function of position and depth.
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} Minimum exposure-time accumulated in each filter; minimum filter-set; 2\% photometric accuracy in \{ugriz\}. {(Again, is y required?)}
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} F-turnoff stars with $g > 19$~(fainter than gaia will measure).
+\vspace{-2mm}
+
+\item {\bf New observations required?} Yes, but only for regions in the Galactic plane. 
+\vspace{-2mm}
+\end{itemize}
+
+\subsection{The Halo}
+
+Summary: with one exception (stellar streams and overdensities), most
+halo cases appear to be adequately met by the main survey. A
+representative sample of halo cases are included here for
+completeness. Main requirements: brightness and color precision;
+proper motion (some cases); variability (some cases).
+
+NOT required for optimization: parallax
+
+\subsubsection{Halo stellar streams and overdensities}
+
+\begin{itemize}
+\item {\bf Observing requirement:} Deep photometry, with sufficient color precision to identify main sequence objects. Variability sufficient to discern RR Lyrae.
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} Minimum filter-set required; minimum exposure time in these filters; variability sufficient for RR Lyrae. 
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} Objects too faint for gaia or PanSTARRS (seems to be most of the sample); structures with a very large extent on the sky; structures close to the Galactic Plane.
+\vspace{-2mm}
+
+\item {\bf New observations required?} Not for most of the sky, since the main survey has been shown to be sufficient for RR Lyrae. However, overdensities close to the Galactic Plane (like the Monoceros Ring) may be located outside the main survey, and then require dedicated observations. These observations would then need to be optimized carefully to achieve sufficient coverage for the desired tracers.
+\vspace{-2mm}
+\end{itemize}
+
+\subsubsection{Halo structure: main sequence stars out to 300 kpc}
+
+\begin{itemize}
+\item {\bf Observing requirement:} Deep photometry, with sufficient color precision to identify main sequence objects.  
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} Minimum filter-set required; minimum exposure time in these filters
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} Objects too faint for gaia or PanSTARRS
+\vspace{-2mm}
+
+\item {\bf New observations required?} No - baseline survey should be sufficient (e.g. Ivezic et al. 2008 2.1.5).
+\vspace{-2mm}
+\end{itemize}
+
+\subsubsection{Hypervelocity stars in and in front of the Halo}
+
+\begin{itemize}
+\item {\bf Observing requirement:} Proper motion precision at the 1 mas/yr level; brightness and color precision sufficient to constrain luminosity class
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} Minimum filter-set required; minimum exposure time in these filters; cadence for proper motions
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} Old main sequence turn-off stars at about 10kpc (r < 20; brighter than this is accessible to gaia)
+\vspace{-2mm}
+
+\item {\bf New observations required?} No - LSST science book 7.7
+\vspace{-2mm}
+\end{itemize}
+
+\subsubsection{The most metal-poor stars in the Galaxy}
+
+\begin{itemize}
+\item {\bf Observing requirement:} Color, brightness precision in the full \{ugrizy\} set for photometric selection of candidate metal-poor stars out to 100kpc from the Galactic Center.
+\vspace{-2mm}
+
+\item {\bf Strategy requirement:} Minimum filter-set required; minimum exposure time in these filters; cadence for proper motions
+\vspace{-2mm}
+
+\item {\bf Discovery space for LSST:} A much larger sample of metal-poor stars over a wider area than previously possible. 
+\vspace{-2mm}
+
+\item {\bf New observations required?} No - LSST science book 6.7.
+\vspace{-2mm}
+\end{itemize}
+
+
+%\subsubsection{}
+
+%\begin{itemize}
+%\item {\bf Observing requirement:} 
+%\vspace{-2mm}
+
+%\item {\bf Strategy requirement:} 
+%\vspace{-2mm}
+
+%\item {\bf Discovery space for LSST:} 
+%\vspace{-2mm}
+
+%\item {\bf New observations required?} 
+%\vspace{-2mm}
+%\end{itemize}
+
+%\subsubsection{}
+
+%\begin{itemize}
+%\item {\bf Observing requirement:} 
+%\vspace{-2mm}
+
+%\item {\bf Strategy requirement:} 
+%\vspace{-2mm}
+
+%\item {\bf Discovery space for LSST:} 
+%\vspace{-2mm}
+
+%\item {\bf New observations required?} 
+%\vspace{-2mm}
+%\end{itemize}
+
