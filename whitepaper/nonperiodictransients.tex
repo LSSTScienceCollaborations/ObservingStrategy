@@ -22,7 +22,7 @@
 % ====================================================================
 
 \section{Transient Events}
-\label{sec:keyword} % For example, replace "keyword" with "lenstimedelays"
+\def\secname{transients}\label{sec:\secname}
 
 \noindent{\it Author Name(s)} % (Writing team)
 
@@ -51,7 +51,7 @@ event) with color information (perhaps contemporaneous) to support characterizat
 
 The class of transients includes a heterogeneous assortment of objects and phenomena.
 
-\begin{center} 
+\begin{center}
 \begin{tabular}{| p{5cm} | p{10cm} |}
 \hline Transient Type & Examples of target science\\
 \hline
@@ -63,13 +63,13 @@ Stellar microlensing & Exoplanet statistics\\
 Gamma ray bursts & Optical discovery and characterization\\
 LIGO detections & Source position and characterization\\
 Serendipity & Discovery and characterization\\
- \hline \end{tabular} 
- \end{center}	
- 
+ \hline \end{tabular}
+ \end{center}
+
 Among the targets in this list, only AGN are likely to be sampled with sufficient resolution by a uniform LSST cadence - in fact for AGN, a challenge may be to spread visits sufficiently in time to avoid excessive seasonal gaps.
- 
-For very short lived phenomena (stellar flares, CV outbursts, GRBs, LIGO events) it appears that the function of LSST will be to provide discoveries and/or simple characterization.  Followup to discovery/identification, if required, will surely take place elsewhere.  
- 
+
+For very short lived phenomena (stellar flares, CV outbursts, GRBs, LIGO events) it appears that the function of LSST will be to provide discoveries and/or simple characterization.  Followup to discovery/identification, if required, will surely take place elsewhere.
+
 For events requiring intensive monitoring (stellar microlensing, exoplanet transits), the followup will certainly take place elsewhere.
 
 Supernovae fall in an intermediate time range.  LSST will provide multiple visits in multiple filters during the typical SN duration.  This sampling may be insufficient for many (including key) science objectives.  However, a moderate, and feasible, change to LSST observing strategy, may enhance the sampling for part of the sky part of the time, greatly enhancing the usefulness of SN observations.
@@ -83,14 +83,14 @@ Serendipitous discoveries are of course harder to plan for.  An ideal transient 
 \subsection{Metrics}
 \label{sec:keyword:metrics}
 
-\begin{center} 
+\begin{center}
 \begin{tabular}{| p{5cm} |p{10cm} |}
 \hline Metric & Description\\
 \hline
-SNe & Number of events adequately sampled\\ 
+SNe & Number of events adequately sampled\\
 Serendipity & Histogram of median visit series length vs maximum visit spacing within the series\\
-  \hline \end{tabular} 
- \end{center}	
+  \hline \end{tabular}
+ \end{center}
 
 The metrics for SNe will be highly specialized and based on the best available understanding of SN light curve analysis and the expected event population.
 
@@ -101,7 +101,7 @@ The suggested metric set for serendipity is based on the simple-minded idea that
 \subsection{OpSim Analysis}
 \label{sec:keyword:analysis}
 
-Analysis shows that current simulations provide  poor coverage in any one filter for transient events longer than a deep drilling session ($\sim$30 minutes) and shorter than $\sim$ weeks.  
+Analysis shows that current simulations provide  poor coverage in any one filter for transient events longer than a deep drilling session ($\sim$30 minutes) and shorter than $\sim$ weeks.
 
 Simulated performance for SN observations must be analyzed for both main survey and mini-survey (deep drilling) productivity.  It is considered that current simulated schedules give inadequate performance for SN science.
 
@@ -114,7 +114,7 @@ Simulated performance for SN observations must be analyzed for both main survey 
 
 Community studies are providing improving SNe metrics, and continuing communication between the SN and LSST communities is essential to tuning the observing strategy to deliver the SN time series that are needed and possible.
 
-Improving LSST science return for SNe will also improve sampling of all transients with similar or somewhat shorter characteristic times.  Non-uniform survey strategies (rolling cadence) can significantly improve the LSST performance for faster transients.  Interpretation of multiple filters for novel events may be powerful, or problematic, since color may be uncertain.  
+Improving LSST science return for SNe will also improve sampling of all transients with similar or somewhat shorter characteristic times.  Non-uniform survey strategies (rolling cadence) can significantly improve the LSST performance for faster transients.  Interpretation of multiple filters for novel events may be powerful, or problematic, since color may be uncertain.
 
 Some insight into fast transients may be available from image pairs  or triples (as opposed to more complete series).  These include the pair of images in a visit - which could be useful in studying the rise time of an extremely fast event.  This includes the characteristic grouping of visits (typically 0.5 to 1.0 hour separation) planned for purposes of identifying asteroids.  It also includes fortuitous multiple sampling due to field overlap, providing additional sampling, which may be random or systematic, depending on the scheduling, on a time scale of minutes to hours.  The sampling benefits of this fortuitous overlap have not yet been investigated.
 
@@ -123,3 +123,4 @@ Some insight into fast transients may be available from image pairs  or triples 
 
 % ====================================================================
 
+\navigationbar
