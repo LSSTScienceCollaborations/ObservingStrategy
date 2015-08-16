@@ -9,9 +9,10 @@ clean:
 
 pdf: $(PAPER)
 
-LSST_Observing_Strategy_White_Paper.pdf: LSST_Observing_Strategy_White_Paper.tex $(BIBFILES) $(TEXFILES)
+LSST_Observing_Strategy_White_Paper.pdf: LSST_Observing_Strategy_White_Paper.tex LSST_Observing_Strategy_White_Paper.sty $(BIBFILES) $(TEXFILES)
 	pdflatex LSST_Observing_Strategy_White_Paper.tex
 	pdflatex LSST_Observing_Strategy_White_Paper.tex
 	bibtex   LSST_Observing_Strategy_White_Paper
+	pdflatex LSST_Observing_Strategy_White_Paper.tex
 	pdflatex LSST_Observing_Strategy_White_Paper.tex
 	pdflatex LSST_Observing_Strategy_White_Paper.tex

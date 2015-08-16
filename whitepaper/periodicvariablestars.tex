@@ -22,7 +22,7 @@
 % ====================================================================
 
 \section{Periodic Variable Stars}
-\label{sec:keyword} % For example, replace "keyword" with "lenstimedelays"
+\def\secname{periodicvariables}\label{sec:\secname}
 
 \noindent{\it Author Name(s)} % (Writing team)
 
@@ -40,23 +40,40 @@
 % with a discussion of any risks that have been identified, and how
 % these could be mitigated.
 
-In a 10-year survey, periodic stars of almost any period will benefit from very complete phase
-coverage in all filters. Stars with a drifting  period will be served well with a approximately uniform sampling which
-constrains period variations frequently through the survey.
+Some stars may be strictly periodic, or sufficiently so to be treated as such for some purposes, in which case data from different cycles can be combined according to phase to provide a more fully sampled light curve.  It is unreasonable to suppose that LSST visits will be synchronized with variable stars, and visits will occur effectively at random phases. In a 10-year survey, most periodic stars of almost any period will benefit from  excellent phase coverage in all filters. Only a very small period range close to the sidereal day will be poorly observed.  There is no reason to believe that any likely LSST observing strategy could seriously disturb good sampling of periodic variables.
+
+Eclipsing binaries are discussed here with variable stars, as detection of eclipses is dependent on adequate sampling of the phase curve.  However, study of the  features of an eclipse, particularly one of short duration in phase, may require sampling more appropriate to the discussion of transients.
+
+\subsection{Nearly Periodic Variables}
+
+Stars with a drifting  period will be served well with sampling which constrains period variations frequently through the survey.  For targets with a wide range of periods, this will be most effectively accomplished with sampling that is rather uniform through the survey.  A considerable degree of uniformity is needed for many science objectives, and distribution of visits over the full survey is more important than the exact timing.
+
+Some variable stars do not exhibit a strictly repeating light curve, and show variations in light curve structure from period to period.  For observational purposes, these targets are better described as periodic transients, discussed in a later section.
+
+
 % --------------------------------------------------------------------
 
 \subsection{Targets and Measurements}
 \label{sec:keyword:targets}
 
-Describe the discoveries and measurements you want to make for a generic  transient,
-with additional comment on specific variable types which have any special requirements.
+\begin{center}
+\begin{tabular}{| l | p{10cm} |}
+\hline Periodic Variable Type & Examples of target science\\
+\hline
+Eclipsing binaries & Physical properties of stars, distances, ages, evolution, apsidal precession, mass transfer induced period changes, Applegate effect\\
+RR Lyrae & Galactic structure, distance ladder, RR Lyrae properties\\
+Cepheids & Distance ladder, cepheid properties\\
+Long Period Variables & Distance ladder, LPV properties\\
+Rotational Modulation & Gyrochronology, stellar activity\\
+ \hline \end{tabular}
+ \end{center}
 
-Example events:  cepheids, RR Lyr, apsidal precession, mass transfer induced period changes, etc
+These targets share the requirement for good sampling over the variation phase curve.
 
-Now, describe their response to the observing strategy. Qualitatively,
-how will the science project be affected by the observing schedule and
-conditions? In broad terms, how would we expect the observing strategy
-to be optimized for this science?
+For each target, the coverage of the phase curve sampling will accumulate randomly, and particular measurements or discoveries will become possible at a rate that is somewhat linear with number of acquired visits (hence linearly with time in a uniform survey).
+
+With millions of different periods, it is difficult to imagine designing the survey to optimize this sampling, but the sampling achieved can be predicted with appropriate metrics.
+
 
 
 % --------------------------------------------------------------------
@@ -64,8 +81,20 @@ to be optimized for this science?
 \subsection{Metrics}
 \label{sec:keyword:metrics}
 
-Quantifying the response via MAF metrics: definition of the metrics,
-and any derived overall figure of merit.
+\begin{center}
+\begin{tabular}{| p{5cm} |p{10cm} |}
+\hline Metric & Description\\
+\hline
+Eclipsing binary discovery & Fraction of discoveries vs fractional duration of eclipse\\
+Transiting exoplanets (depth dependent) & Fraction of discoveries vs fractional duration of eclipse\\
+Phase gap & Histogram vs period of the median and maximum phase gaps achieved in all fields\\
+Period determination (period dependent) & Fraction of targets vs survey duration, for which the period can be determined to 5-sigma confidence\\
+Period variability (period dependent) & Fraction of targets vs survey duration, for which a period change of 1\% can be determined with 5-sigma confidence\\
+  \hline \end{tabular}
+ \end{center}
+
+The period metrics can be based on a standard variable curve (e.g.sinusoid) of fiducial amplitude and brightness, and/or a realistic model population of a particular variable type. These metrics can be informative for science programs.  However, it is not clear that the survey strategy can or should attempt to control these metrics, as the requirements are specific to each target, and all targets benefit from a generally uniform distribution of visits.
+
 
 
 % --------------------------------------------------------------------
@@ -73,8 +102,7 @@ and any derived overall figure of merit.
 \subsection{OpSim Analysis}
 \label{sec:keyword:analysis}
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
+Current simulations show for the main survey a broad uniformity of visits, with thorough randomization of visit phase per period, giving very good phase coverage with minimum phase gaps.
 
 
 % --------------------------------------------------------------------
@@ -82,10 +110,17 @@ the time of writing for this science project?
 \subsection{Discussion}
 \label{sec:keyword:discussion}
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+For periodic variable science, two cadence characteristics should be avoided:
+\begin{itemize}
+\item an exactly uniform spacing of visits (which is anyway virtually impossible); \
+\item a very non-uniform distribution, such as most visits concentrated in a few survey years.
+ \end{itemize}
+
+A metric for maximum phase gap will guard against the possibility that a very unusual cadence might compromise the random sampling of periodic variables.
+
+In each case, it would help to jump-start science programs if some fraction of targets had more complete measurements early in the survey.
 
 
 % ====================================================================
 
+\navigationbar
