@@ -55,8 +55,8 @@ millions (RB: remember to check) of supernovae, that should be detected with the
 defined by series of field pointings as a function of time in filter bands
  (along with weather conditions) will determine the extent to which each of such
 supernovae can be characterized well. Characterization of these supernovae is at
- the core of a number of science programs that use supernovae as a bright abundant
- objects with emperically determined intrinsic brightness.
+ the core of a number of science programs that use supernovae as bright, abundant
+ objects with empirically determined intrinsic brightness.
 
 The most important of these is the use of SNIa (and potentially core-collapse
 supernovae like Type IIP) as standardizable candles to measure the
@@ -66,7 +66,7 @@ distance-redshift relation at cosmological distances to confront models leading 
  and obtaining their redshifts from photometry or follow-up spectroscopy)
 (c) estimation of intrinsic brightnesses of the supernovae. The efficacy of
 Photometric typing, redshifts and estimation of intrinsic brightnesses are all
-dependent on the amount of information availble in the observed light curves of supernovae.
+dependent on the amount of information available in the observed light curves of supernovae.
  It should be noted that goal of using supernovae to constrain the
 cosmology of a statistically homogeneous and isotropic universe is independent
 of the spatial extent of the locations of the supernovae, and therefore a target
@@ -74,10 +74,45 @@ of the spatial extent of the locations of the supernovae, and therefore a target
  in a relatively small subset of the LSST sky. However, there are other science cases
 using such supernovae as tracers of position, redshift and distance simultaneously to probe
  quantities like the distribution of peculiar velocities, or to test whether the universe is
-statisically isotropic at redshifts $z \lesssim 1.5$. Such projects which use supernovae as a tracer
-of large scale structure with a good measure of ``distance'' require large spatial extents, that could
-only be provided by the LSST WFD.
+statistically isotropic at redshifts $z \lesssim 1.5$. Such projects which use supernovae as a 
+tracer of large scale structure with a good measure of ``distance'' require large spatial extents, 
+that could only be provided by the LSST WFD.
 
+{\bfseries Photometric supernova classification}\\
+In the past, only spectroscopically typed supernovae have been used for cosmology. Photometric 
+typing from the light curve alone has only been used to select candidates for spectroscopic 
+follow-up (see for example \citet{Sako2008}). However, LSST will simply produce far too many 
+candidates for any chance of following up even a significant fraction of them. In order to avoid 
+throwing away the majority of the supernova dataset, we need to use techniques capable of 
+determining cosmological parameters from a potentially contaminated photometric supernova dataset.
+
+There have been several techniques proposed in recent literature to solve this problem. One 
+approach proposes applying stringent cuts to the photometric dataset to obtain a nearly pure sample 
+of type Ia supernovae \citep{Bernstein2012,Campbell2013} and to run the standard supernova analysis 
+with this sample. Another approach, BEAMS \citep{Kunz2007,Newling2011,Hlozek2012,Knights2013}, 
+makes use of the full dataset, coping with contamination by using a mixture model for the 
+likelihood, thus allowing for multiple populations. Whatever the technique ultimately used to for 
+cosmological analysis, it will rely on accurate initial classifications of supernova type and 
+unbiased estimates for the probability of each type.
+
+The current state-of-the-art photometric classification techniques rely on fitting empirically 
+determined templates of supernovae to light curves \citep{Jha2007,Guy2007,Sako2011}. However in 
+recent years, new approaches have been published in response to the 2010 `Supernova 
+Photometric Classification Challenge' \citep{Kessler2010a}. Many of these use novel light curve 
+parameterisation and employ machine learning algorithms to perform the classification (see 
+\citet{Kessler2010b} and references therein).
+
+While many of these methods have been tested on standard sets of simulated data and (in some cases) 
+on SDSS data, it is still not clear which technique (if any) is superior in all situations. For 
+example, some techniques rely heavily on reliable redshift information being available, while others 
+are less reliant on it. Some techniques may be more robust to non-representative datasets than 
+others and it is not clear how the techniques will respond to changes in cadence, filter sets, SNR 
+etc. With this in mind, we propose the use of a multifaceted classification system which employs 
+several different methods of extracting features from the light curves (e.g. fitting parametric 
+functions or templates) and several different classification algorithms. This system is highly 
+modular, allowing the easy addition of new approaches for direct comparison with existing 
+techniques. This also allows direct analysis of different observing strategies, without having to 
+make an initial choice of classification technique. 
 
 % --------------------------------------------------------------------
 
@@ -102,6 +137,8 @@ only be provided by the LSST WFD.
 Quantifying the response via MAF metrics: definition of the metrics,
 and any derived overall figure of merit.
 
+\emph{To be added: discussion of the ROC curve as a useful metric for photometric supernova 
+classification}
 
 % --------------------------------------------------------------------
 
