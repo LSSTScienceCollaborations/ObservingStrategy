@@ -69,7 +69,14 @@ weeks (eg. Type Ia) to close to a year (Type IIP). During the full ten year
  with a universal Wide Fast Deep (WFD) Candence, and certain specific locations
 of the sky called the Deep Drilling Fields (DDF) with special enhanced cadence. 
 
-This spatio-temporal window should contain millions (RB: remember to check) of supernovae, that will have apparent magnitudes brighter than the single exposure limiting magnitude of LSST, for at least some time. However, the actual sequence of observations in LSST
+This spatio-temporal window should contain millions (RB: remember to check) of supernovae, that will have apparent magnitudes brighter than the single exposure limiting magnitude of LSST, for at least some time. {\emph{Our first objective is to detect such supernovae}}. Detection of supernovae depends on identification
+ of a set of image subtraction between a high resolution `template` image of a
+ sky section, and a single exposure (usually of lower resolution) of the region,
+ after attempting to correctly account for the different resolutions of images, and alignment transformations. These sets of image subtractions associated
+ with a single object will be used to detect the object as a transient and then
+classify the transient as a supernova. Clearly, the detection and classification of an object as a supernova depends on the number of such images deetcted per object and the number of filters along with the SNR. 
+ 
+ However, the actual sequence of observations in LSST
 defined by series of field pointings as a function of time in filter bands
  (along with weather conditions) will determine the extent to which each of such
 supernovae can be characterized well. 
