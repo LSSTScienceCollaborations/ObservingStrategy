@@ -76,9 +76,10 @@ This spatio-temporal window should contain millions (RB: remember to check) of s
  characterized well.  Characterization of these supernovae is at the core of a
  number of science programs that use supernovae as bright, abundant objects with empirically determined intrinsic brightness. For LSST, this goal entails (a) detection of supernovae (b) photometric typing of supernovae, (c) estimating photometric redshifts of supernovae (or identifying host galaxies,
  and obtaining their redshifts from photometry or follow-up spectroscopy)
-(c) estimation of intrinsic brightnesses of the supernovae. The efficacy of
-Photometric typing, redshifts and estimation of intrinsic brightnesses are all
-dependent on the amount of information available in the observed light curves of supernovae.
+(c) estimation of intrinsic brightnesses of the supernovae, and finally use these data in addressing our science goals of cosmological inference, etc.
+The efficacy of photometric typing, redshifts and estimation of intrinsic brightnesses are all
+dependent on the amount of information available in the observed light curves of supernovae. While these steps are not necessarily independent, it is useful to think of the requirements on some of these steps separately; it is not unlikely  that combining some of these steps would still be affected by similar requirements. 
+
 {\emph{Our first objective is to detect such supernovae}}. By `detection of supernovae`, we mean a process
 that detects transients from the subsets of LSST detection, and classify them as supernovae (as opposed to an AGN, or an asteroid). In brief, this process 
 consists the identification of a set of image subtractions between high 
@@ -89,8 +90,7 @@ attempting to correctly account for the different resolutions of images, and ali
 classify the transient as a supernova . Clearly, this step of detecting a supernova depends on the number of such images recorded per object, the number of filters and the signal to noise ratio of these images. One might expect that the efficiency of this step may be summarized as a threshold on the joint properties 
 of an astrophysical candidate (apparent brightness, light curve characteristics, background) as well as observing conditions (Seeing etc.).  
 
-{\emph{Our second objective is to photometrically classify  different kinds of supernovae}}. 
-
+{\emph{Our second objective is to photometrically classify different kinds of supernovae}} 
 {\bfseries Photometric supernova classification}\\
 In the past, only spectroscopically typed supernovae have been used for cosmology. Photometric 
 typing from the light curve alone has only been used to select candidates for spectroscopic 
@@ -122,10 +122,11 @@ others and it is not clear how the techniques will respond to changes in cadence
 etc. With this in mind, we propose the use of a multifaceted classification system which employs 
 several different methods of extracting features from the light curves (e.g. fitting parametric 
 functions or templates) and several different classification algorithms. This system is highly 
-modular, allowing the easy addition of new approaches for direct comparison with existing 
-techniques. This also allows direct analysis of different observing strategies, without having to 
+modular, allowing the easy addition of new approaches for direct comparison with existing  techniques. This also allows direct analysis of different observing strategies, without having to 
 make an initial choice of classification technique. 
 
+
+{\emph{Our third obvective is to characterize the supernovae in terms of supernova models}}
 
 % Now, describe their response to the observing strategy. Qualitatively,
 % how will the science project be affected by the observing schedule and
@@ -134,17 +135,7 @@ make an initial choice of classification technique.
 % In broad terms, how would we expect the observing strategy
 % to be optimized for this science?
 
-{\emph{Our third obvective is to characterize the supernovae in terms of supernova models}}
 
-
-of the spatial extent of the locations of the supernovae, and therefore a target
- precision in terms of constraining cosmology can be met by using a high cadence sampling
- in a relatively small subset of the LSST sky. However, there are other science cases
-using such supernovae as tracers of position, redshift and distance simultaneously to probe
- quantities like the distribution of peculiar velocities, or to test whether the universe is
-statistically isotropic at redshifts $z \lesssim 1.5$. Such projects which use supernovae as a 
-tracer of large scale structure with a good measure of ``distance'' require large spatial extents, 
-that could only be provided by the LSST WFD.
 
 
 
@@ -176,6 +167,13 @@ the time of writing for this science project?
 Discussion: what risks have been identified? What suggestions could be
 made to improve this science project's figure of merit, and mitigate
 the identified risks?
+
+
+\begin{itemize}
+\item Intinsic Dispersion, environmental effects, newer analysis methods
+\item Follow-up procedures: What is feasible
+\item `Systematics': In what ways will the real data not match the assumptions made in analysis
+\end{itemize}
 
 
 % ====================================================================
