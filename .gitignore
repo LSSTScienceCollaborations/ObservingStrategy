@@ -9,6 +9,8 @@ LSST_Observing_Strategy_White_Paper.pdf
 *.fls
 *.out
 *.toc
+*.tod
+
 
 ## Intermediate documents:
 *.dvi
