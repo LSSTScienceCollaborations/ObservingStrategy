@@ -123,7 +123,10 @@
 pdftitle={LSST Observing Strategy},%
 pdfauthor={The LSST Science Collaborations},%
 bookmarksnumbered=true,%
-linkcolor=blue,citecolor=violet,colorlinks=true]{hyperref}
+linkcolor=blue,
+citecolor=blue,
+urlcolor=red,
+colorlinks=true]{hyperref}
 
 % Colored commenting:
 \newcommand{\question}[2]{\textcolor{darkred}{\bf Question from #1: #2}}
@@ -255,14 +258,68 @@ linkcolor=blue,citecolor=violet,colorlinks=true]{hyperref}
 \newcommand{\git}{\texttt{git}\xspace}
 \newcommand{\GitHub}{\texttt{GitHub}\xspace}
 
-% OpSim Runs to go here
+% --------------------------------------------------------------------
+% \makeatletter
+% --------------------------------------------------------------------
+%
+% MAF code macros
+%
+% Example use:
+%
+%    We used the \simsMAFcontrib{seasonstacker} to add ...
+%
+% Should produce:
+%
+%    We used the <a href="">\texttt{seasonstacker}</a> to add ...
+%
+% That is, format the name of the code in the text, and hyperlink it
+% to the file in sims_maf_contrib online.
 
-% MAF code macros to go here
+\newcommand{\code}[1]{\texttt{#1}}
 
-% \newcommand{}
-% https://github.com/LSST-nonproject/sims_maf_contrib/
+\newcommand{\simsMAFcontrib}[2]{%
+    % Example use: "We used \simsMAFcontrib{SeasonStacker}{mafContrib/seasonStacker.py} to work with seasons."
+    % \simsMAFcontrib{Class}{folder/filename}
+    \href{https://github.com/LSST-nonproject/sims_maf_contrib/blob/master/#2}{\code{#1}}
+}
 
 %------------------------------------------------------------------------------%
+
+% OPSIM RUNS
+
+% List of opsim databases, designed to act as a table of contents in
+% the introduction section:
+\newcommand{\listofopsimdbs}{
+  \vskip\baselineskip
+  {\OpSim databases investigated in this section:}
+  \phantomsection\label{tab:opsimdbnames}
+  \medskip
+  \hrule
+  \@starttoc{opsim.tod}
+  \medskip
+  \hrule
+}
+
+% \opsimdbname is the name of the database, corrcetly formatted.
+\newcommand{\opsimdbname}[1]{\texttt{#1}}
+
+% \opsimdbref is the function to use when referring to an opsim run.
+% "\opsimdbref{db:enigma}"  -> "{\sc OpSim} database \texttt{enigma1189}"
+\newcommand{\opsimdbref}[1]{\nameref{#1}}
+
+% The opsimdb command itself - make a new opsimdb subsection (which prints
+% a title line and advances the subsection counter) and label it for
+% referring to it elsewhere.
+\newcommand{\opsimdb}[2][]{
+   \subsection{\OpSim database \opsimdbname{#2}}
+   \label{#1}
+   % Add this project to this section's list of projects:
+   \addcontentsline{opsim.tod}{opsimdb}{\leavevmode\newline\opsimdbref{#1}\hfill}
+ }
+
+% --------------------------------------------------------------------
+% \makeatother
+% --------------------------------------------------------------------
 
 % Explicit margin set-up (PJM 2009-08-25):
 %
@@ -431,8 +488,8 @@ linkcolor=blue,citecolor=violet,colorlinks=true]{hyperref}
 % Autoreferencing:
 
 \renewcommand*\chapterautorefname{Chapter}
-\renewcommand*\sectionautorefname{\S}
-\renewcommand*\subsectionautorefname{\S}
+\renewcommand*\sectionautorefname{Section}
+\renewcommand*\subsectionautorefname{Sub-section}
 \renewcommand*\figureautorefname{Figure}
 \renewcommand*\tableautorefname{Table}
 \renewcommand*\equationautorefname{Equation}
