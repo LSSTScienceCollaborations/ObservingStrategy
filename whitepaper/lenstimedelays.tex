@@ -161,28 +161,67 @@ such a figure of merit in terms of the Hubble constant are underway.
 % OpSim analysis: how good would the default observing strategy be, at
 % the time of writing for this science project?
 
-In this section we will present the results of our OpSim analysis,
-answering the question ``how good would the current default observing
-strategy be for time delay lens cosmography?''
+In this section we present the results of our ongoing \OpSim / MAF
+analysis, as we try to
+answer the question ``how good would the proposed observing
+strategies be, for time delay lens cosmography?''
 
-\autoref{tab:lenstimedelays:results} shows the results of our MAF
-analysis of two different \OpSim databases.
+\autoref{fig:lenstimedelays:results} shows the results of our MAF
+analysis of one \OpSim database, \texttt{ops2\_1075}, where we have
+assumed that all filters were able to be used in the light curve
+analysis (as was implicitly assumed when applying the results of
+\citeauthor{LiaoEtal2015}). These sky maps show that, over the main
+(WDF) survey area, the time delay accuracy, time delay precision and
+time delay lens success fraction are consistently maintained,
+indicating that the global average values of these metrics could
+conceivably used as higher level metrics or even figure of merit.
 
+\autoref{tab:lenstimedelays:results} shows the global (i.e. al-sky)
+average values of our metrics, for two different \OpSim
+databases and two different filter set assumptions.
+
+\todo{PJM}{Compute global average lens time delay metrics and discuss.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[!ht]
+  \capstart
+  \begin{minipage}[b]{\linewidth}
+    \begin{minipage}[b]{0.32\linewidth}
+      \centering\includegraphics[width=\linewidth]{figs/lenstimedelays-ops2_1075-Accuracy-skymap.png}
+    \end{minipage} \hfill
+    \begin{minipage}[b]{0.32\linewidth}
+      \centering\includegraphics[width=\linewidth]{figs/lenstimedelays-ops2_1075-Precision-skymap.png}
+    \end{minipage} \hfill
+    \begin{minipage}[b]{0.32\linewidth}
+      \centering\includegraphics[width=\linewidth]{figs/lenstimedelays-ops2_1075-Fraction-skymap.png}
+    \end{minipage}
+  \end{minipage}
+\caption{Sky maps of the accuracy $A$ (left), precision $P$ (center) and
+success fraction $f$ (right) metrics, for the \texttt{ops2\_1075} \OpSim
+database and assuming all filters ($ugrizy$) are used in the analysis
+according to the assumptions described in the text.}
+\label{fig:lenstimedelays:results}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table*}
 \begin{center}
 \caption{Lens Time Delay Metric Analysis Results.}
 \label{tab:lenstimedelays:results}
 \footnotesize
-\begin{tabularx}{\linewidth}{cccccccc}
+\begin{tabularx}{\linewidth}{ccccccccc}
   \hline
   \OpSim run
    & Filters
     & \texttt{cadence}
      & \texttt{season}
       & \texttt{campaign}
-       & \texttt{Number}
-        & \texttt{Accuracy}
-         & \texttt{timedelayFoM} \\
+       & \texttt{Accuracy}
+        & \texttt{Precision}
+         & \texttt{Fraction}
+          & \texttt{timedelayFoM} \\
   \hline\hline
 
   \texttt{enigma\_1189}
@@ -192,7 +231,8 @@ analysis of two different \OpSim databases.
       & $XXX$
        & $XXX$
         & $XXX$
-         & $XXX$ \\
+         & $XXX$
+          & ??? \\
 
   \texttt{enigma\_1189}
    & $ugrizy$
@@ -201,30 +241,32 @@ analysis of two different \OpSim databases.
       & $XXX$
        & $XXX$
         & $XXX$
-         & $XXX$ \\
+         & $XXX$
+          & ??? \\
   \hline
 
-  \texttt{ops2\_1098}
+  \texttt{ops2\_1075}
    & $ri$
     & $XXX$
      & $XXX$
       & $XXX$
        & $XXX$
         & $XXX$
-         & $XXX$ \\
+         & $XXX$
+          & ??? \\
 
-  \texttt{ops2\_1098}
+  \texttt{ops2\_1075}
    & $ugrizy$
     & $XXX$
      & $XXX$
       & $XXX$
        & $XXX$
         & $XXX$
-         & $XXX$ \\
+         & $XXX$
+          & ??? \\
   \hline
 
-
-\multicolumn{8}{p{\linewidth}}{\scriptsize Notes: see the text for
+\multicolumn{9}{p{\linewidth}}{\scriptsize Notes: see the text for
 the definitions of each metric, and sky maps and histogram
 plots of them. The Figure of Merit is still under development.}
 \end{tabularx}
@@ -232,6 +274,7 @@ plots of them. The Figure of Merit is still under development.}
 \medskip\\
 \end{center}
 \end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % --------------------------------------------------------------------
@@ -242,6 +285,8 @@ plots of them. The Figure of Merit is still under development.}
 Discussion: what risks have been identified? What suggestions could be
 made to improve this science project's figure of merit, and mitigate
 the identified risks?
+
+\todo{PJM}{Write lens time delays discussion section.}
 
 
 \navigationbar
