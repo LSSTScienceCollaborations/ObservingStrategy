@@ -117,20 +117,21 @@
 \usepackage{colortbl}
 \definecolor{violet}{rgb}{0.4,0.0,0.4}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
-\definecolor{darkred}{rgb}{0.5,0.00,0.0}
+\definecolor{darkgreen}{rgb}{0.0,0.7,0.0}
+\definecolor{darkred}{rgb}{0.7,0.00,0.0}
 \usepackage[%
 pdftitle={LSST Observing Strategy},%
 pdfauthor={The LSST Science Collaborations},%
 bookmarksnumbered=true,%
-linkcolor=blue,
-citecolor=blue,
-urlcolor=red,
+linkcolor=darkgreen,
+citecolor=darkgreen,
+urlcolor=blue,
 colorlinks=true]{hyperref}
 
 % Colored commenting:
 \newcommand{\question}[2]{\textcolor{darkred}{\bf Question from #1: #2}}
 \newcommand{\flag}[2]{\textcolor{darkred}{\bf #1: #2}}
+\newcommand{\todo}[2]{\textcolor{darkred}{\bf #1: #2}}
 \newcommand{\new}[1]{\textcolor{darkgreen}{#1}}
 \newcommand{\black}[1]{\textcolor{black}{#1}}
 \newcommand{\gray}[1]{\textcolor{gray}{#1}}
