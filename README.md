@@ -1,14 +1,16 @@
-# Observing Strategy
+# Science-Driven Optimization of the LSST Observing Strategy
 
-A community white paper about LSST observing strategy, with quantifications via the the Metric Analysis Framework. We will be drafting the individual science cases, and how we expect them to be sensitive to LSST observing strategy, during the first half of 2015. Then, MAF metric calculations designed and executed during the 2015 MAF Workshop (to be held in Bremerton, WA, August 17-21) and afterwards will form the quantitative backbone of the document. You may have heard of the coming  "Cadence Wars" - this document represents the scientific diplomacy that will allow us, as a community, to avoid, or at least manage, that conflict.
+A community white paper about LSST survey strategy ("cadence"), with quantifications via the the Metric Analysis Framework. We will be drafting the individual science cases, and how we expect them to be sensitive to LSST observing strategy, during the first half of 2015. Then, MAF metric calculations designed and executed during the 2015 MAF Workshop (to be held in Bremerton, WA, August 17-21) and afterwards will form the quantitative backbone of the document. You may have heard of the coming  "Cadence Wars" - this document represents the scientific diplomacy that will allow us, as a community, to avoid, or at least manage, that conflict.
 
-**See where we are up to in this project (and join the conversation) at [this repo's issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
+**[Read the current draft of the white paper](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)**
+
+**Join the conversation about this project at [its issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
 
 For help getting started with git and GitHub, see this [handy guide](https://github.com/drphilmarshall/GettingStarted#top).
 
 ## The White Paper
 
-* Working title: "Science-driven Optimization of the LSST Observing Strategy"
+* [Current draft PDF](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)
 * [Document layout](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/whitepaper-design.md)
 * [Chapters and sections](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/chapter-template.md)
 * [Instructions for authors](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/README.md)
