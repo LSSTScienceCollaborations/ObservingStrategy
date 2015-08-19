@@ -312,11 +312,16 @@ colorlinks=true]{hyperref}
 % The opsimdb command itself - make a new opsimdb subsection (which prints
 % a title line and advances the subsection counter) and label it for
 % referring to it elsewhere.
-\newcommand{\opsimdb}[2][]{
-   \subsection*{\opsimdbname{#2}}
+\newcommand{\opsimdb}[3][]{
+   \vspace{\baselineskip}
+   \hrule
+   \vspace{-0.5\baselineskip}
+   \subsection*{\large\opsimdbname{#2}} % \large is not working...
    \label{#1}
+   \vspace{-0.5\baselineskip}
+   {\it #3}
    % Add this project to this section's list of projects:
-   \addcontentsline{opsim.tod}{opsimdb}{\leavevmode\newline\opsimdbref{#1}\hfill}
+   \addcontentsline{opsim.tod}{opsimdb}{\leavevmode\newline\opsimdbref{#1}~---~{\it#3}\hfill}
  }
 
 % --------------------------------------------------------------------
