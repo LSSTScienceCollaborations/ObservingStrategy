@@ -10,7 +10,7 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 
 * For help getting started with git and GitHub, see this [handy guide](https://github.com/drphilmarshall/GettingStarted#top).
 
-* Shortened URL for this repository: **[http://ls.st/o5k](http://ls.st/o5k)**
+* Shortened URL for this repository (for passing around): [http://ls.st/o5k](http://ls.st/o5k)
 
 * Community-contributed MAF metric code at the [`sims_maf_contrib` repository](https://github.com/LSST-nonproject/sims_maf_contrib/wiki)
 
