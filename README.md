@@ -26,3 +26,4 @@ This effort is being coordinated by Zeljko Ivezic, but contributions are welcome
 
 The MAF Workshop SOC is: Zeljko Ivezic, Debbie Bard, Andy Connolly, Phil Marshall, Tom Matheson, Steve Ridgway, Michael Strauss, Lucianne Walkowicz, and Beth Willman: any of them can propagate your privately-communicated concerns into a redacted issue on this repository.
 
+All white paper content is Copyright 2015 The Authors. If you make use of the ideas and results in the white paper in your research, please cite it as **"(LSST Science Collaborations in preparation)"**, and provide the URL of this repository: https://github.com/LSSTScienceCollaborations/ObservingStrategy.
