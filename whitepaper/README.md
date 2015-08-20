@@ -12,11 +12,11 @@ The white paper contains guidelines for authors on how to get involved - includi
 
 If you would like to propose changes or additions to the white paper, please:
 
-1) First, read the [paper](https://github.com/LSSTScienceCollaborations/ObservingStrategy/raw/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf) and the [issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues) to see if your suggestion is already being discussed.
+* 1) First, read the [paper](https://github.com/LSSTScienceCollaborations/ObservingStrategy/raw/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf) and the [issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues) to see if your suggestion is already being discussed.
 
-2) Then, to edit the paper, first [fork](https://help.github.com/articles/fork-a-repo/) this repository, clone it to your local machine, and edit the text. To compile the PDF, just hit `make` in the `whitepaper` folder.
+* 2) Then, to edit the paper, first [fork](https://help.github.com/articles/fork-a-repo/) this repository, clone it to your local machine, and edit the text. To compile the PDF, just hit `make` in the `whitepaper` folder.
 
-3) After you have committed and pushed your changes, you can submit a [pull request](https://help.github.com/articles/using-pull-requests/) to get your work accepted into the white paper by the editors. Thanks!
+* 3) After you have committed and pushed your changes, you can submit a [pull request](https://help.github.com/articles/using-pull-requests/) to get your work accepted into the white paper by the editors. Thanks!
 
 
 If the document does not compile, and you cannot fix the problem, please submit the error message and your preliminary diagnosis as an [issue](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues).
