@@ -33,13 +33,14 @@ What are our constraints? And our opportunities?
 
 The first step towards a science-based optimization of the LSST
 observing strategy is a {\it science-based evaluation of the baseline
-LSST observing strategy}. Adopting XXXX as this fiducial baseline, we
-now need to quantify the value of this observing schedule to each
-science team. This is what the LSST DM Sims team's ``Metric Analysis
-Framework''  was designed to enable. Once the fiducial strategy has
-been evaluated, then any other strategy can be evaluated in the same
-terms, using the same code, and we will be able to start optimizing
-the strategy through iterations between \OpSim and MAF.
+LSST observing strategy}. After simulating a sample  observing
+schedule consistent with this strategy (see  \autoref{chp:cadexp}), we
+then need to quantify its value to each science team. This is what the
+LSST DM Sims team's ``Metric Analysis Framework''  was designed to
+enable. Once the fiducial strategy has been evaluated in this way,
+then any other strategy can be evaluated in the same terms, using the
+same code, and we will be able to start optimizing the strategy
+through iterations between \OpSim and MAF.
 
 With this program in mind, it makes sense to define {\it one ``Figure
 of Merit'' (FoM) per science project}, that captures the value of  the
@@ -47,7 +48,7 @@ observing strategy under consideration to that science team. This FoM
 will probably be a function of several ``metrics'' that quantify
 lower-level features of the observing sequence.  For Figures of Merit
 to be directly comparable between disparate science projects,  they
-need to be {\it dimensional, and have the same units}. One natural
+need to be dimensional, and have the same units. One natural
 choice could be the {\it information gained} by the science team, in
 bits. This is a well-defined statistical quantity, albeit not yet one
 in common use. A given observing schedule's value would then depend on
@@ -68,8 +69,8 @@ project that we as a community want to carry out, and how that measure
 of success is likely (or even known) to depend on metrics that
 summarize the observing sequence presented to us. Thinking about the
 problem in terms of science projects, each with a  Figure of Merit,
-encourages us to design {\it modular document
-sections,} with one science project and one Figure of Merit per section.
+encourages us to design modular document sections, with one science
+project and one Figure of Merit per section.
 
 This will have the happy side-effect of allowing the chapters to be
 straightforwardly re-arranged as we go, to make the white paper easier
@@ -87,7 +88,8 @@ For an example of how all this could look, please see the
 \hyperref[sec:lenstimedelays]{lens
 time delays section}. The MAF subsections are still under development
 there, but keep checking back to see it come together during the
-August 2015 workshop week.
+August 2015 workshop week. Templates for the chapters and sections can
+be found in \autoref{chp:example}.
 
 
 \navigationbar
