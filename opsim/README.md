@@ -13,17 +13,17 @@ To suggest a new `OpSim` run, you will (of course) need to write a very short *p
 
 ## Proposed New `OpSim` Experiments
 
-|-----------------------|-----------------------|----- ----------------------------------|
-| **Name**              | **Proposer(s)**       | **Issue Thread**                       |
-|-----------------------|-----------------------|---- -----------------------------------|
+|-----------------------|-----------------------|---------------------------------------|
+| **Name**              | **Proposer(s)**       | **Issue Thread**                      |
+|-----------------------|-----------------------|---------------------------------------|
 | [Example](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/ProposalExample.md)
     | [Marshall](https://github.com/drphilmarshall)
         | [#64](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/64) |
-|-----------------------|-----------------------|---- -----------------------------------|
+|-----------------------|-----------------------|---------------------------------------|
 | [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/)
     | [...](https://github.com/)
         | [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/) |
-|-----------------------|-----------------------|----- ----------------------------------|
+|-----------------------|-----------------------|---------------------------------------|
 
 Here's the [proposal template](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/ProposalTemplate.md)
 for you to copy and edit. Have fun!
