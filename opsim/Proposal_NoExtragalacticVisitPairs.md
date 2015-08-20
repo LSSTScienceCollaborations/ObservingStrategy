@@ -1,4 +1,6 @@
-# Proposed `OpSim` Experiment: "No Extragalactic Visit Pairs"
+# "No Extragalactic Visit Pairs"
+
+A Proposed OpSim Experiment.
 
 *Proposer(s): Phil Marshall*
 

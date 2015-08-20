@@ -14,16 +14,12 @@ To suggest a new `OpSim` run, you will (of course) need to write a very short *p
 ## Proposed New OpSim Experiments
 
 
-|-----------------------|-----------------------|---------------------------------------|
-| **Name**              | **Proposer(s)**       | **Issue Thread**                      |
-|-----------------------|-----------------------|---------------------------------------|
-| [No Extragalactic Visit Pairs](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_NoExtragalacticVisitPairs.md)
-    | [Marshall](https://github.com/drphilmarshall)
-        | [#64](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/64) |
-| [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/)
-    | [...](https://github.com/)
-        | [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/) |
-|-----------------------|-----------------------|---------------------------------------|
+-----------------------|-----------------------|---------------------------------------
+ **Name**              | **Proposer(s)**       | **Issue Thread**
+-----------------------|-----------------------|---------------------------------------
+ [No Extragalactic Visit Pairs](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_NoExtragalacticVisitPairs.md) | [Marshall](https://github.com/drphilmarshall) | [#64](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/64)
+ [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/) | [...](https://github.com/) | [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/)
+-----------------------|-----------------------|---------------------------------------
 
 
 Here's the [proposal template](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_Template.md)
