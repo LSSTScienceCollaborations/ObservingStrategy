@@ -8,6 +8,8 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 
 For help getting started with git and GitHub, see this [handy guide](https://github.com/drphilmarshall/GettingStarted#top).
 
+Shortened URL for this repository: **[http://ls.st/o5k](http://ls.st/o5k)**
+
 ## The White Paper
 
 * [Current draft PDF](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)
