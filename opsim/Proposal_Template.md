@@ -1,4 +1,6 @@
-# Proposed `OpSim` Experiment: "Template"
+# "Template"
+
+A Proposed OpSim Experiment.
 
 *Proposer(s): Your Name Here*
 
