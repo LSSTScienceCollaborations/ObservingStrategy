@@ -285,7 +285,7 @@ colorlinks=true]{hyperref}
     \href{https://github.com/LSST-nonproject/sims_maf_contrib/blob/master/#2}{\code{#1}}
 }
 
-%------------------------------------------------------------------------------%
+% --------------------------------------------------------------------
 
 % OPSIM RUNS
 
@@ -324,6 +324,25 @@ colorlinks=true]{hyperref}
    % Add this project to this section's list of projects:
    \addcontentsline{opsim.tod}{opsimdb}{\leavevmode\newline\opsimdbref{#1}~---~{\it#3}\hfill}
  }
+
+
+% --------------------------------------------------------------------
+
+% CREDITS
+
+\newcommand{\github}[1]{% args = Username
+   \href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/commits?author=#1}{{#1}} % Hmm: "at" sign not being rendered correctly
+}
+
+\renewcommand{\author}[3]{% args = Name, Username, Institution
+   \phantomsection
+   #1\def\@currentlabel{\unexpanded{#1}}\label{#2} \footnotesize{(\github{#2})},\footnote{#3}
+   %\label{#2}
+}
+
+\newcommand{\credit}[1]{% args = Username
+    {\it \ref{#1}}
+}
 
 % --------------------------------------------------------------------
 % \makeatother
