@@ -11,19 +11,17 @@ experiments are available for us to run our MAF metrics on. This chapter gives s
 
 To suggest a new `OpSim` run, you will (of course) need to write a very short *proposal*. You can do this in a markdown file following [this template]() and check it into the `opsim` folder of this repository. Then, add it to the Table below, so everyone can see what you are suggesting and follow the link to your proposal.
 
-## Proposed New `OpSim` Experiments
+## Proposed New OpSim Experiments
+
 
 |-----------------------|-----------------------|---------------------------------------|
 | **Name**              | **Proposer(s)**       | **Issue Thread**                      |
 |-----------------------|-----------------------|---------------------------------------|
-| [Example](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/ProposalExample.md)
-    | [Marshall](https://github.com/drphilmarshall)
-        | [#64](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/64) |
+| [Example](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/ProposalExample.md) | [Marshall](https://github.com/drphilmarshall) | [#64](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/64) |
 |-----------------------|-----------------------|---------------------------------------|
-| [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/)
-    | [...](https://github.com/)
-        | [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/) |
+| [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/) | [...](https://github.com/) | [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/) |
 |-----------------------|-----------------------|---------------------------------------|
+
 
 Here's the [proposal template](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/ProposalTemplate.md)
 for you to copy and edit. Have fun!
