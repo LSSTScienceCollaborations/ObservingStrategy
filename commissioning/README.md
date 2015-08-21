@@ -17,7 +17,7 @@ To suggest a new `Commissioning Observation or Experiment`, you will (of course)
 
  **Name**              | **Proposer(s)**       | **Issue Thread**| **Description**
 :----------------------|:----------------------|:----------------|:----------------:
- [No Extragalactic Visit Pairs](https://github.com/cclaver/ObservingStrategy/blob/master/commissioning/commProp_r-band1hourtimeSeries.md) | [cclaver](https://github.com/cclaver) | [#69](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/69) | 1-hour r-band sequence
+ [1-Hour r-band Time Series](https://github.com/cclaver/ObservingStrategy/blob/master/commissioning/commProp_r-band1hourtimeSeries.md) | [cclaver](https://github.com/cclaver) | [#69](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/69) | A continuous 1-hour sequence of 15-sec. r-band exposures
  [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/issue64/opsim/) | [...](https://github.com/) | [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/)
 
 
