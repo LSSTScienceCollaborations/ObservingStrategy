@@ -1,4 +1,4 @@
-# "No Extragalactic Visit Pairs"
+# "1-Hour r-band Time Series"
 
 A Proposed OpSim Experiment.
 
@@ -6,7 +6,7 @@ A Proposed OpSim Experiment.
 
 *Issue thread: [#69](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/69)*
 
-## Proposed Commissioning Observation
+## Proposed Commissioning Observation/Experiment
 
 In a specified sky area, with good seeing (<0.8 arcsec) obtain a 1 hour long 
 continuous sequence of 15-sec exposures in the r-band.
