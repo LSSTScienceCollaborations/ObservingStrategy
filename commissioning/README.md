@@ -11,7 +11,7 @@ The [LSST Observing Strategy White Paper](https://github.com/LSSTScienceCollabor
 
 When considering a proposed obsering run that would be done in commissioning consider what you might want from the commissioning camera (ComCam - 3x3 4k x 4k CCDs in a single raft with 45 arcmin FOV) and what you might want from the full camera.  Think also about data that can be obtained in an hour, a night and/or a week or so. 
 
-To suggest a new `Commissioning Run` run, you will (of course) need to write a very short *proposal*. You can do this in a markdown file following [this template](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/issue64/opsim/Proposal_Template.md) and check it into the `opsim` folder of this repository. Then, add it to the Table below, so everyone can see what you are suggesting and follow the link to your proposal.
+To suggest a new `Commissioning Run` run, you will (of course) need to write a very short *proposal*. You can do this in a markdown file following [this template](https://github.com/cclaver/ObservingStrategy/blob/master/commissioning/commProp_Template.md) and check it into the `opsim` folder of this repository. Then, add it to the Table below, so everyone can see what you are suggesting and follow the link to your proposal.
 
 ## Proposed New Commissioning Experiments
 
