@@ -13,4 +13,4 @@ continuous sequence of 15-sec exposures in the r-band.
 
 ## Technical and/or Science Motivation
 
-Testing image differencing and alert production; 
+Testing image differencing and alert production; PSF characterization and photometric repeatability.
