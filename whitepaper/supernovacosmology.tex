@@ -153,8 +153,7 @@ to fit the calibrated fluxes to a light curve model with a set of parameters.
 According to the ansatz used in supernova cosmology, the intrinsic brightness of
  supernovae is largely determined by the parameters of the light curve model; 
  hence the uncertainties on the inferred parameters largely determine the
- uncertainties on the inferred peak intrinsic brightness or distance moduli of the
- supernovae.
+ uncertainties on the inferred peak intrinsic brightness or distance moduli of the supernovae.
 
 % Now, describe their response to the observing strategy. Qualitatively,
 % how will the science project be affected by the observing schedule and
@@ -178,6 +177,9 @@ and any derived overall figure of merit.
 \emph{To be added: discussion of the ROC curve as a useful metric for photometric supernova 
 classification}
 
+
+
+
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
@@ -185,6 +187,24 @@ classification}
 
 OpSim analysis: how good would the default observing strategy be, at
 the time of writing for this science project?
+
+As noted above the science goal of trying to characterize supernovae is largely
+dependent on how well the light curves of individual supernovae are sampled in
+time and filters. To study this, we reindex the opsim output on spatial
+locations rather than use the temporal index. There are different methods (which will be merged), and here we will first illustrate this in terms the cadence in an example LSST field.
+
+\begin{figure}
+\includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_0}
+\includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_1}
+\includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_2}
+\includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_3}
+\includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_4}
+\label{fig:opsimSummary}
+\caption{Cadence in different filters for a few LSST deep drilling fields in
+    the the ouptut of OpSim version Enigma 1189. This ignores issues of chip 
+gaps or overlaps between LSST. These issues have been addressed in \citep{CarrollEtal2014} and Awan et.al. 2015, in preparation. We will add these to this analysis.}
+\end{figure}
+
 
 
 % --------------------------------------------------------------------
@@ -199,8 +219,9 @@ the identified risks?
 
 \begin{itemize}
 \item Intinsic Dispersion, environmental effects, newer analysis methods
-\item Follow-up procedures: What is feasible
-\item `Systematics': In what ways will the real data not match the assumptions made in analysis
+\item Follow-up procedures: What is feasible? Where will our training samples for classification and light curve models come from (other experiments, our own 
+sub-samples with spectroscopic follow-up), spectroscopic follow-up of host galaxies. Can hosts be identified?
+\item `Systematics': In what ways will the real data not match the assumptions made in analysis. Having a large sample of SN, to understand the astrophysics would be useful for this. 
 \end{itemize}
 
 
