@@ -1,6 +1,6 @@
 # "Template"
 
-A Proposed OpSim Experiment.
+A Proposed Commissioning Experiment.
 
 *Proposer(s): Your Name Here*
 
