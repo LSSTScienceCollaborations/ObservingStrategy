@@ -9,7 +9,7 @@ A Proposed Commissioning Experiment.
 
 What observations or experimient during commissioning would be
 beneficial for validating your algorithms and help bootstrap your science
-inpreparation for the full survey.
+in preparation for the full survey.
 
 
 ## Technical and/or Science Motivation
