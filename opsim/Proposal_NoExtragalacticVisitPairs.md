@@ -4,6 +4,7 @@ A Proposed OpSim Experiment.
 
 *Proposer(s): Phil Marshall*
 
+*Issue thread: [#66](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/66)*
 
 ## Proposed Changes to the Observing Strategy
 
