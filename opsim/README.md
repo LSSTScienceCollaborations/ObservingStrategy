@@ -16,7 +16,7 @@ To suggest a new `OpSim` run, you will (of course) need to write a very short *p
 
  **Name**              | **Proposer(s)**       | **Issue Thread**
 :----------------------|:----------------------|:----------------:
- [No Extragalactic Visit Pairs](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/issue64/opsim/Proposal_NoExtragalacticVisitPairs.md) | [Marshall](https://github.com/drphilmarshall) | [#64](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/64)
+ [No Extragalactic Visit Pairs](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/issue64/opsim/Proposal_NoExtragalacticVisitPairs.md) | [Marshall](https://github.com/drphilmarshall) | [#64](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/66)
  [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/issue64/opsim/) | [...](https://github.com/) | [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/)
 
 
