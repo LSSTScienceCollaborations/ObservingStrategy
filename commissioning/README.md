@@ -1,7 +1,7 @@
 # Suggestions for Commissioning Observations
 
 While we write down our science cases and code up their metrics and
-Figures of Merit, we can also think about which kind of observations we
+Figures of Merit, we can also think about which kinds of observations we
 want during commissioning to prepare for doing science when the full
 starts.
 
@@ -17,9 +17,9 @@ To suggest a new `Commissioning Run` run, you will (of course) need to write a v
 
  **Name**              | **Proposer(s)**       | **Issue Thread**| **Description**
 :----------------------|:----------------------|:----------------|:----------------:
- [No Extragalactic Visit Pairs](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/issue64/opsim/Proposal_NoExtragalacticVisitPairs.md) | [Marshall](https://github.com/drphilmarshall) | [#66](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/66) | Dont observe in pairs of visits above the Galactic and Ecliptic planes
+ [No Extragalactic Visit Pairs](https://github.com/cclaver/ObservingStrategy/blob/master/commissioning/commProp_r-band1hourtimeSeries.md) | [cclaver](https://github.com/cclaver) | [#69](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/69) | 1-hour r-band sequence
  [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/issue64/opsim/) | [...](https://github.com/) | [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/)
 
 
-Here's the [proposal template](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/issue64/opsim/commProposal_Template.md)
+Here's the [commissioning proposal template](https://github.com/cclaver/ObservingStrategy/blob/master/commissioning/commProp_Template.md)
 for you to copy and edit. Have fun!
