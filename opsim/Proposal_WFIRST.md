@@ -1,6 +1,6 @@
-# "Template"
+# "Coordination with WFIRST"
 
-A Proposed OpSim Experiment:  Coordination with WFIRST
+A Proposed OpSim Experiment
 
 *Proposer(s): Eric Gawiser & Jason Rhoads*
 
@@ -13,7 +13,7 @@ We propose to add a "Special Survey" that duplicates the WFD observations of a 4
 
 ## Science Motivation
 
-WFIRST plans to perform deep near-infrared (ZYJH) imaging of 2300 square degrees of sky.  There is great enthusiasm for doing this in the LSST Wide Fast Deep (WFD) region in order to have deep ugri(zy) imaging available, but they are requesting full LSST 10-year depths by ~2027.  LSST science would benefit greatly from the availability of compatibly deep ZYJH images over such a wide regionto improve photometric redshifts and Spectral Energy Distribution fitting, etc.  
+WFIRST plans to perform deep near-infrared (ZYJH) imaging of 2300 square degrees of sky.  There is great enthusiasm for doing this in the LSST Wide Fast Deep (WFD) region in order to have deep ugri(zy) imaging available, but they are requesting full LSST 10-year depths by ~2027.  LSST science would benefit greatly from the availability of compatibly deep ZYJH images over such a wide region to improve photometric redshifts and Spectral Energy Distribution fitting, etc.  
 
 The proposed implementation represents a "worst case" scenario for the impact on the WFD survey by not reducing observations of this 2300 square degree field during the 2nd 5 years of the survey. It also does not pursue time-savings that could be achieved by asking only for ugri imaging of this region.  A more nuanced "rolling cadence" could eventually be implemented to achieve the proposed coordination with WFIRST.   
 
