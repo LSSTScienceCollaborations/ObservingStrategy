@@ -6,9 +6,11 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 
 * **Join the conversation about this project at [its issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
 
-* **Suggest a [new `OpSim` experiment](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md)**
+* **[NEW: Gauge the project's activity level](https://github.com/LSSTScienceCollaborations/ObservingStrategy/pulse/halfweekly)**
 
-* **Suggest some interesting [commissioning observations](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/commissioning/README.md)**
+* **NEW: Suggest a [new `OpSim` experiment](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md)**
+
+* **NEW: Suggest some interesting [commissioning observations](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/commissioning/README.md)**
 
 
 #### Shortcuts
@@ -20,10 +22,9 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 
 ## The 2015 MAF Workshop 
 
-* [Workshop design](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/workshop/notes/design.md): homework, tutorial plan, meeting schedule etc.
-* Getting started with MAF: check out the LSST [`sims_maf_contrib` wiki](https://github.com/LSST-nonproject/sims_maf_contrib/wiki) to see what people have been working on.
 * [Meeting website](http://lsstsciencecollaborations.github.io/ObservingStrategy/)
 * [List of registered attendees](https://project.lsst.org/meetings/lsst2015/cadence-registrations)
+* [NEW: Hack session products!](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues?utf8=%E2%9C%93&q=label%3A%22Hack+Day!%22+)
 
 ## Contacts
 
