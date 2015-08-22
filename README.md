@@ -25,6 +25,7 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 * [Meeting website](http://lsstsciencecollaborations.github.io/ObservingStrategy/)
 * [List of registered attendees](https://project.lsst.org/meetings/lsst2015/cadence-registrations)
 * [NEW: Hack session products!](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues?utf8=%E2%9C%93&q=label%3A%22Hack+Day!%22+)
+* [NEW: Feedback form](http://goo.gl/forms/xmVBIWynm4)
 
 ## Contacts
 
