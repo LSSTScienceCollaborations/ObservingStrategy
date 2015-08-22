@@ -15,8 +15,8 @@ To suggest a new `OpSim` run, you will (of course) need to write a very short *p
 
  **Name**              | **Proposer(s)**       | **Issue Thread**| **Description**
 :----------------------|:----------------------|:----------------|:----------------:
- [No Extragalactic Visit Pairs](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/issue64/opsim/Proposal_NoExtragalacticVisitPairs.md) | [Marshall](https://github.com/drphilmarshall) | [#66](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/66) | Dont observe in pairs of visits above the Galactic and Ecliptic planes
- [Target of Opportunity Observations](https://github.com/ebellm/ObservingStrategy/tree/TOO_opsim_proposal/opsim) | [Soares-Santos](https://github.com/soares-santos), [Bellm](https://github.com/soares-santos) | [#75](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/75) | simulate TOO Observations
+ [No Extragalactic Visit Pairs](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_NoExtragalacticVisitPairs.md) | [Marshall](https://github.com/drphilmarshall) | [#66](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/66) | Dont observe in pairs of visits above the Galactic and Ecliptic planes
+ [Target of Opportunity Observations](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_TOOObservations.md) | [Soares-Santos](https://github.com/soares-santos), [Bellm](https://github.com/soares-santos) | [#75](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/75) | simulate TOO Observations
  [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/issue64/opsim/) | [...](https://github.com/) | [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/)
 NEO optimized runs | SS SC | [#120](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/120) | Find more and different NEOs
 
