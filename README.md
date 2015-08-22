@@ -4,13 +4,13 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 
 * **[Read the current draft of the white paper](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)**
 
-* **Join the conversation about this project at [its issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
+* **[Join the conversation about this project at its issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
 
 * **[NEW: Gauge the project's activity level](https://github.com/LSSTScienceCollaborations/ObservingStrategy/pulse/halfweekly)**
 
-* **NEW: Suggest a [new `OpSim` experiment](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md)**
+* **[NEW: Suggest a new `OpSim` experiment](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md)**
 
-* **NEW: Suggest some interesting [commissioning observations](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/commissioning/README.md)**
+* **[NEW: Suggest some interesting commissioning observations](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/commissioning/README.md)**
 
 
 #### Shortcuts
@@ -28,7 +28,7 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 
 ## Contacts
 
-This effort is being coordinated by Zeljko Ivezic, but contributions are welcome from all round the LSST science collaborations. Perhaps we are missing a science area? Or an idea for how to perturb the observing strategy? We'd like to hear from you! Please send all your feedback to [this repo's issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new).
+This effort is being coordinated by Zeljko Ivezic, but contributions are welcome from all round the LSST science collaborations. Perhaps we are missing a science area? Or an idea for how to perturb the observing strategy? We'd like to hear from you! Please send all your feedback to [this repo's issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues).
 
 The MAF Workshop SOC is: Zeljko Ivezic, Debbie Bard, Andy Connolly, Phil Marshall, Tom Matheson, Steve Ridgway, Michael Strauss, Lucianne Walkowicz, and Beth Willman: any of them can propagate your privately-communicated concerns into a redacted issue on this repository.
 
