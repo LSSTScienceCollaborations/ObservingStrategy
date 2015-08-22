@@ -10,6 +10,11 @@ Will Clarkson, Kathy Vivas, Peregrine McGehee, and others to follow
 \section{Introduction}
 \def\secname{intro}\label{sec:\secname}
 
+% WIC 2015-08-21 15:00: lots of edits to the intro text to refocus the
+% document a bit more usefully.
+
+[{\bf (To be refactored following the template per chapter...}]
+
 LSST will significantly advance Milky Way science, on lengthscales
 from the galactic halo and local volume, right down to sensitive
 surveys for faint nearby objects to uncover the true state of the
@@ -25,113 +30,146 @@ Much more detail about most of these science cases, and specific
 science questions to be answered, can be found in the LSST Science
 Book (particularly chapters 6 and 7) and Ivezic et al. (2008 arXiv
 0805.2366, in particular Sections 2.1.4 and 4.4); in this chapter we
-outline the impact of the MW science cases on the LSST observing
-strategy, both for the main survey and for the ancillary observing
-campaigns. For the latter, many first-order questions (for example, how
-many exposures to take per filter over LSST’s operational lifetime)
-remain unanswered; this document is intended to be a step towards
-their resolution.
+(aim to) present metrics that will allow various observing strategies
+to be quantitatively assessed in terms of their impact on science
+cases falling under the general rubric of ``The Milky Way.''  
 
-For many of the science goals within the general area of “Milky Way
-science,”\footnote{{\it The Local Volume is not currently included in this chapter. Suggestions are welcome.}} the main survey is already quite well-matched to
-requirements (for example, see Ivezic et al. 2008 Section
-2.1.4-5). However, there are many important science cases - most
-obviously, but not exclusively, investigations towards the Galactic
-Plane - for which either no observations in the main survey are
-planned, or the main surveys by themselves are not sufficient to meet
-the science cases. For spatial areas like the Plane that are not
-currently covered by the main survey, considerable optimization
-remains to be done to define the observations.
+Our intention is to decouple the technical issue of coverage on-sky
+from the science accomplished; for example, if a science case includes
+regions both inside and outside of the ``Wide-Fast-Deep'' (WFD)
+survey, then the metric for a particular science case should produce a
+quantitative assessment of the science outcome no matter what the
+distribution of pointings on the sky actually was. As a result, issues
+to do with areal coverage (for example, whether a census of all nearby
+brown dwarfs that neglects ``low-latitude'' fields is scientifically
+unacceptable) should in theory drop out of the metrics assessment
+process.
 
-This Chapter is organized as follows: Because of the very large
-diversity in observing strategies, particularly for regions not in the
-main survey, we first summarize in Sections
-\ref{Galaxy_Assumptions}-\ref{Galaxy_Strategies} the science cases in
-terms of scientific and observational requirements, focusing on items
-for optimization, the LSST discovery space, and the areas in which
-observations will be required in addition to the baseline survey. Once
-these quantities are reported, the flow-through to optimization should
-become clear. Then, observational considerations particular to the
-Solar Neighborhood and Galactic Plane are developed in detail
-(Sections 3.4 onwards, led by Monet et al.). Finally, recommendations
-are made in Section YY.
+By assessing metrics across the range of MW science cases, guidance
+could then be given (if requested) on first-order questions that remain
+to be resolved for Milky Way science (such as: what percentage of
+LSST's total exposure manifest must be devoted to observations outside
+WFD in order for LSST to deliver Milky Way science?)
 
-\navigationbar
+%For the latter, many first-order questions (for example, how many
+%exposures to take per filter over LSST’s operational lifetime) remain
+%unanswered; this document is intended to be a step towards their
+%resolution.
 
-% --------------------------------------------------------------------
+%For many of the science goals within the general area of “Milky Way
+%science,”\footnote{{\it The Local Volume is not currently included in
+%    this chapter. Suggestions are welcome.}} the main survey is
+%already quite well-matched to requirements (for example, see Ivezic et
+%al. 2008 Section 2.1.4-5). However, there are many important science
+%cases - most obviously, but not exclusively, investigations towards
+%the Galactic Plane - for which either no observations in the
+%Wide-Fast-Deep (WFD) survey are planned, or the WFD survey by itself
+%may not be sufficient to meet a particular science case. 
 
-\section{Milky Way campaigns in relation to the main LSST surveys}
-\def\secname{assumptions}\label{sec:\secname}
+%main survey are
+%planned, or the main surveys by themselves are not sufficient to meet
+%the science cases. For spatial areas like the Plane that are not
+%currently covered by the main survey, considerable optimization
+%remains to be done to define the observations.
 
-Before embarking on strategy considerations for the different science
-cases, we remind the reader that the baseline performance figures from
-previous documentation may not apply for all (or any!) spatial regions
-of interest to a given Milky Way science case. Or, assumptions one
-might make in planning may be violated just by moving to different
-spatial regions within the same science case.  An example might be
-surveys of the Solar Neighborhood: populations that happen to
-lie in front of the Galactic Disk will likely have many fewer visits
-per filter per year than their equally-close counterparts that happen
-to lie in front of the main survey area, no matter how the available
-observations are ordered within the strategy. \footnote{This is quite
-  aside from performance issues that are particular to crowded regions
-  like the Galactic Plane, which are developed in some detail in
-  Sections 3.4 onward.}  We identify the following classes:
-\begin{itemize}
-\item {\it Science cases including the main-survey area:} For some
-  science cases (e.g. finding the most metal-poor stars in the Halo),
-  the cadence and total number of visits in the main survey can be
-  assumed for most fields. In these cases, optimization of observing
-  strategy can proceed within the general parameters of the main
-  survey - there might be some small changes to suggest in terms of
-  the distribution of visits throughout the 10-year main survey, but
-  the photometric and astrometric performance listed in the LSST
-  Science Book can be assumed.
-\item {\it Science cases involving more intensive monitoring:} For
-  cases in which many more exposures might be required than for the
-  main survey (possibly in one or two filters only), the deep-drilling
-  sub-surveys are probably the natural channel to take data; see
-  Chapters 6 \& 7.
-\item {\it Science cases towards areas outside the main survey
-  regions:} For science cases not in regions currently slated for the
-  main-survey, the total time allocation will be much lower than the
-  main-survey baseline. In the present chapter, the main examples are regions in or in front of the Galactic Plane \footnote{(Although we point out that there may
-  also be regions in the main survey that might not currently be
-  observed in the best way for some cases, for example if the
-  population of interest to MW science is so nearby and bright that it
-  would strongly saturate in the main survey.)}. For cases such as this,
-  the total allocation per field might on average be on the order of
-  20 exposures per field per filter, over ten years, if spread over
-  all six filters evenly. For such an optimization, certain
-  assumptions one might make when planning a science case (e.g. can
-  average through local distortion by dithering across many
-  chip-regions) will be violated. In most science cases within this
-  general category, optimization using tools such as MAF will be
-  essential.
-  \begin{itemize}
-    \item {\bf Note:} Care should be taken during the planning process
-      to ensure that these cases are not artificially down-graded for
-      software reasons. An example might be: searches in the Plane for
-      variability on a timescale of months-years, would be compromised
-      if a small-allocation field were pushed entirely into the first
-      three years by OpSim in order to complete the short projects
-      first.
-    \end{itemize}
-\end{itemize}
+Because of the very large diversity in science case and the ``ideal''
+observing strategy one might desire in each case, we summarize the
+science cases in terms of scientific and observational requirements,
+focusing on items for optimization, the LSST discovery space, and the
+areas in which at this time we expect observations to be mainly taken
+outside the WFD survey. We also include our assessment at this time of
+whether the performance estimates in the SRD are likely to be
+sufficient for the science case, and finally some strawman science
+metrics.
+
+{\bf Need more precise metrics!}
 
 \navigationbar
 
 % --------------------------------------------------------------------
 
-\section{Observing strategies for Milky Way science cases}
-\def\secname{strategies}\label{sec:\secname}
+%\section{Milky Way campaigns in relation to the main LSST surveys}
+%\def\secname{assumptions}\label{sec:\secname}
 
-In the following subsections, we outline the science cases within each
-science area, in rough order of increasing distance from the Sun. For
-each science case, we list the broad requirements, an attempt to
-translate these into observation strategy requirements, an indication
-of the discovery space open to LSST, and an indication of whether
-dedicated new observations will be required.
+%Before embarking on strategy considerations for the different science
+%cases, we remind the reader that the baseline performance figures from
+%previous documentation may not apply for all (or any!) spatial regions
+%of interest to a given Milky Way science case. Or, assumptions one
+%might make in planning may be violated just by moving to different
+%spatial regions within the same science case.  An example might be
+%surveys of the Solar Neighborhood: populations that happen to
+%lie in front of the Galactic Disk will likely have many fewer visits
+%per filter per year than their equally-close counterparts that happen
+%to lie in front of the main survey area, no matter how the available
+%observations are ordered within the strategy. \footnote{This is quite
+%  aside from performance issues that are particular to crowded regions
+%  like the Galactic Plane, which are developed in some detail in
+%  Sections 3.4 onward.}  We identify the following classes:
+%\begin{itemize}
+%\item {\it Science cases including the main-survey area:} For some
+%  science cases (e.g. finding the most metal-poor stars in the Halo),
+%  the cadence and total number of visits in the main survey can be
+%  assumed for most fields. In these cases, optimization of observing
+%  strategy can proceed within the general parameters of the main
+%  survey - there might be some small changes to suggest in terms of
+%  the distribution of visits throughout the 10-year main survey, but
+%  the photometric and astrometric performance listed in the LSST
+%  Science Book can be assumed.
+%\item {\it Science cases involving more intensive monitoring:} For
+%  cases in which many more exposures might be required than for the
+%  main survey (possibly in one or two filters only), the deep-drilling
+%  sub-surveys are probably the natural channel to take data; see
+%  Chapters 6 \& 7.
+%\item {\it Science cases towards areas outside the main survey
+%  regions:} For science cases not in regions currently slated for the
+%  main-survey, the total time allocation will be much lower than the
+%  main-survey baseline. In the present chapter, the main examples are regions i%n or in front of the Galactic Plane \footnote{(Although we point out that there% may
+%  also be regions in the main survey that might not currently be
+%  observed in the best way for some cases, for example if the
+%  population of interest to MW science is so nearby and bright that it
+%  would strongly saturate in the main survey.)}. For cases such as this,
+%  the total allocation per field might on average be on the order of
+%  20 exposures per field per filter, over ten years, if spread over
+%  all six filters evenly. For such an optimization, certain
+%  assumptions one might make when planning a science case (e.g. can
+%  average through local distortion by dithering across many
+%  chip-regions) will be violated. In most science cases within this
+%  general category, optimization using tools such as MAF will be
+%  essential.
+%  \begin{itemize}
+%    \item {\bf Note:} Care should be taken during the planning process
+%      to ensure that these cases are not artificially down-graded for
+%      software reasons. An example might be: searches in the Plane for
+%      variability on a timescale of months-years, would be compromised
+%      if a small-allocation field were pushed entirely into the first
+%      three years by OpSim in order to complete the short projects
+%      first.
+%    \end{itemize}
+%\end{itemize}
+%
+%\navigationbar
+
+% --------------------------------------------------------------------
+
+%\section{Observing strategies for Milky Way science cases}
+%\def\secname{strategies}\label{sec:\secname}
+
+In the following subsections, we attempt to translate the science cases
+into strawman metrics. The key features of the science cases relevant
+to metrics are listed in bullet form.
+
+({\bf Hierarchical metrics (e.g. Issue \#79):} since others are
+developing detailed metrics for fine-grained issues of detectability,
+in this Chapter we focus our candidate metrics mostly on high-level
+metrics that might call the variability metrics as functions. {\bf To
+  be worked out...})
+
+%In the following subsections, we outline the science cases within each
+%science area, in rough order of increasing distance from the Sun. For
+%each science case, we list the broad requirements, an attempt to
+%translate these into observation strategy requirements, an indication
+%of the discovery space open to LSST, and an indication of whether
+%dedicated new observations will be required.
 
 To aid in optimization, we also list any technical drivers that do
 \underline{not} need to be optimized for a given science area.
@@ -141,86 +179,88 @@ To aid in optimization, we also list any technical drivers that do
 
 {\it [Summary table would come here once we have updated content.]}
 
+\input{MilkyWay/SolarNeighborhood.tex}
+
 \subsection{The Solar Neighborhood}
 
-{\it (Note: this is not yet a complete list of science cases, the
-  Solar Neighborhood working group was quite thorough in its Phase I
-  roadmap!)}
+%{\it (Note: this is not yet a complete list of science cases, the
+%  Solar Neighborhood working group was quite thorough in its Phase I
+%  roadmap!)}
 
-Summary: generally the cases in this science area require deep
-photometry, particularly (though not exclusively) at red bandpasses,
-and sufficient per-image precision and distribution of observing times
-in at least one filter to measure parallax and/or proper motion. The
-main-survey area is not sufficient for this science area: dedicated
-observations are required for all science cases to fill in angular
-coverage (apart from photometric variability of cool dwarfs).
+%Summary: generally the cases in this science area require deep
+%photometry, particularly (though not exclusively) at red bandpasses,
+%and sufficient per-image precision and distribution of observing times
+%in at least one filter to measure parallax and/or proper motion. The
+%main-survey area is not sufficient for this science area: dedicated
+%observations are required for all science cases to fill in angular
+%coverage (apart from photometric variability of cool dwarfs).
 
-Drivers NOT required for this science area: variability (for all apart from photometric variability of cool dwarfs).
-\vspace{-2mm}
+%Drivers NOT required for this science area: variability (for all apart from pho%tometric variability of cool dwarfs).
+%\vspace{-2mm}
 
-\subsubsection{Co-moving groups (new groups or objects that are members of already-known groups)}
-\vspace{-2mm}
-\begin{itemize}
-\item {\bf Observing requirement:}  proper motions at better than 100 mas/yr in at least one filter; 10\% photometry in at least two further filters for object identification.
-\vspace{-2mm}
+%\subsubsection{Co-moving groups (new groups or objects that are members of alre%ady-known groups)}
+%\vspace{-2mm}
+%\begin{itemize}
+%\item {\bf Observing requirement:}  proper motions at better than 100 mas/yr in% at least one filter; 10\% photometry in at least two further filters for objec%t identification.
+%\vspace{-2mm}
 
-\item {\bf Strategy requirement:} Observations spread over time for proper motion sensitivity; best choice of filter for proper motions; minimum exposure time for other filters for photometry.
-\vspace{-2mm}
+%\item {\bf Strategy requirement:} Observations spread over time for proper moti%on sensitivity; best choice of filter for proper motions; minimum exposure time% for other filters for photometry.
+%\vspace{-2mm}
 
-\item {\bf Discovery space for LSST:} objects too faint for gaia to measure sufficiently precise proper motions.
-\vspace{-2mm}
+%\item {\bf Discovery space for LSST:} objects too faint for gaia to measure suff%iciently precise proper motions.
+%\vspace{-2mm}
 
-\item {\bf New observations required?} Yes - area coverage of main survey is insufficient.
-\vspace{-2mm}
-\end{itemize}
+%\item {\bf New observations required?} Yes - area coverage of main survey is in%sufficient.
+%\vspace{-2mm}
+%\end{itemize}
 
-\subsubsection{Volume-complete astrometric sample of extended Solar Neighborhood}
-\vspace{-2mm}
-\begin{itemize}
+%\subsubsection{Volume-complete astrometric sample of extended Solar Neighborhoo%d}
+%\vspace{-2mm}
+%\begin{itemize}
 
-\item {\bf Observing requirement:} Parallax measurements with LSST, deep photometry out to y-band.
-\vspace{-2mm}
+%\item {\bf Observing requirement:} Parallax measurements with LSST, deep photom%etry out to y-band.
+%\vspace{-2mm}
 
-\item {\bf Strategy requirement:} Minimum accumulated exposure time per filter; minimum spread in observing epochs to achieve parallax goals.
-\vspace{-2mm}
+%\item {\bf Strategy requirement:} Minimum accumulated exposure time per filter;% minimum spread in observing epochs to achieve parallax goals.
+%\vspace{-2mm}
 
-\item {\bf Discovery space for LSST:} LSST will likely lead this science case; gaia has little sensitivity in the red bandpasses needed for low mass objects (L/T/Y dwarfs).
-\vspace{-2mm}
+%\item {\bf Discovery space for LSST:} LSST will likely lead this science case; %gaia has little sensitivity in the red bandpasses needed for low mass objects (%L/T/Y dwarfs).
+%\vspace{-2mm}
 
-\item {\bf New observations required?} Yes - area coverage of main survey is insufficient.
-\vspace{-2mm}
-\end{itemize}
+%\item {\bf New observations required?} Yes - area coverage of main survey is in%sufficient.
+%\vspace{-2mm}
+%\end{itemize}
 
 
-\subsubsection{Discovery of ultracold brown dwarfs (late-T and Y)}
-\vspace{-2mm}
-\begin{itemize}
-\item {\bf Observing requirement:} Very deep photometry in y \vspace{-2mm}
-\item {\bf Strategy requirement:} Minimum exposure time in y \vspace{-2mm}
-\item {\bf Discovery space for LSST:} Objects not already detected by WISE (and Spitzer). Suggests specific spatial regions (where crowding has prevented those facilities setting useful limits). May need WISE-observed regions for cross-calibration and survey completeness estimation. \vspace{-2mm}
-\item {\bf New observations required?} Yes - perhaps only for selected fields inaccessible to WISE and Spitzer.
-\end{itemize}
+%\subsubsection{Discovery of ultracold brown dwarfs (late-T and Y)}
+%\vspace{-2mm}
+%\begin{itemize}
+%\item {\bf Observing requirement:} Very deep photometry in y \vspace{-2mm}
+%\item {\bf Strategy requirement:} Minimum exposure time in y \vspace{-2mm}
+%\item {\bf Discovery space for LSST:} Objects not already detected by WISE (and% Spitzer). Suggests specific spatial regions (where crowding has prevented thos%e facilities setting useful limits). May need WISE-observed regions for cross-c%alibration and survey completeness estimation. \vspace{-2mm}
+%\item {\bf New observations required?} Yes - perhaps only for selected fields i%naccessible to WISE and Spitzer.
+%\end{itemize}
 
-\subsubsection{The endpoints of stellar evolution in the Solar Neighborhood}
-\vspace{-2mm}
-\begin{itemize}
-\item {\bf Observing requirement:} Deep (u,g,r) photometry (required), sufficient proper motion precision for reduced proper motion diagnostics (preferred)
-\vspace{-2mm}
-\item {\bf Strategy requirement:} Minimum exposure times; distribution of observations through time to increase proper motion sensitivity.
-\vspace{-2mm}
-\item {\bf Discovery space for LSST:} White dwarfs intrinsically faint: in all noncrowded regions, the sheer field of view and collecting area of LSST makes it the winner for this science case.
-\vspace{-2mm}
-\item {\bf New observations required?} Yes - perhaps only for selected fields inaccessible to WISE and Spitzer.
-\end{itemize}
+%\subsubsection{The endpoints of stellar evolution in the Solar Neighborhood}
+%\vspace{-2mm}
+%\begin{itemize}
+%\item {\bf Observing requirement:} Deep (u,g,r) photometry (required), sufficie%nt proper motion precision for reduced proper motion diagnostics (preferred)
+%\vspace{-2mm}
+%\item {\bf Strategy requirement:} Minimum exposure times; distribution of obser%vations through time to increase proper motion sensitivity.
+%\vspace{-2mm}
+%\item {\bf Discovery space for LSST:} White dwarfs intrinsically faint: in all %noncrowded regions, the sheer field of view and collecting area of LSST makes i%t the winner for this science case.
+%\vspace{-2mm}
+%\item {\bf New observations required?} Yes - perhaps only for selected fields i%naccessible to WISE and Spitzer.
+%\end{itemize}
 
-\subsubsection{Photometric variability of cool dwarfs}
-\vspace{-2mm}
-\begin{itemize}
-\item {\bf Observing requirement:} Photometry (do we know in which filters?) of sufficient sampling to measure starspot variability and also measure (to remove) transits and eclipses (fractional amplitude 1\% OK?). \vspace{-2mm}
-\item {\bf Strategy requirement:} Minimum number of exposures, minimum exposure time, subset of filters, particular cadence distribution. \vspace{-2mm}
-\item {\bf Discovery space for LSST:} Use LSST-detected objects as calibrators for stellar astronomy, or use LSST-detected objects to better understand the population based on results from other facilities. {\it (WIC \& KV; input needed!)} \vspace{-2mm}
-\item {\bf New observations required?} TBC - even for main-survey areas, might need better time coverage for variability sensitivity. Is the intent here to study calibrator objects well (e.g. in the main survey) or to chart this variability for all reachable stars near the Sun?
-\end{itemize}
+%\subsubsection{Photometric variability of cool dwarfs}
+%\vspace{-2mm}
+%\begin{itemize}
+%\item {\bf Observing requirement:} Photometry (do we know in which filters?) of% sufficient sampling to measure starspot variability and also measure (to remov%e) transits and eclipses (fractional amplitude 1\% OK?). \vspace{-2mm}
+%\item {\bf Strategy requirement:} Minimum number of exposures, minimum exposure% time, subset of filters, particular cadence distribution. \vspace{-2mm}
+%\item {\bf Discovery space for LSST:} Use LSST-detected objects as calibrators %for stellar astronomy, or use LSST-detected objects to better understand the po%pulation based on results from other facilities. {\it (WIC \& KV; input needed!%)} \vspace{-2mm}
+%\item {\bf New observations required?} TBC - even for main-survey areas, might %need better time coverage for variability sensitivity. Is the intent here to st%udy calibrator objects well (e.g. in the main survey) or to chart this variabil%ity for all reachable stars near the Sun?
+%\end{itemize}
 
 \subsection{Star clusters}
 
