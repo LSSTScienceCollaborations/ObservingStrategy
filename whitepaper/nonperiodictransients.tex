@@ -24,7 +24,7 @@
 \section{Transient Events}
 \def\secname{transients}\label{sec:\secname}
 
-\noindent{\it Author Name(s)} % (Writing team)
+\noindent{\it Stephen Ridgeway, Ashish Mahabal, Ohad Shemmer } % (Writing team)
 
 % This individual section will need to describe the particular
 % discoveries and measurements that are being targeted in this section's
@@ -40,14 +40,20 @@
 % with a discussion of any risks that have been identified, and how
 % these could be mitigated.
 
-Transient events may benefit from substantial temporal sampling (matched to the time constant of the
-event) with color information (perhaps contemporaneous) to support characterization and classification, obtained over the limited duration of interest.  Transient events slower than $\sim$ weeks may be adequately sampled by a uniform LSST cadence.  Faster events may require special scheduling strategies.  For some event types, LSST can only be expected to provide a discovery service, and followup will necessarily be performed elsewhere.
-
+Transient events may benefit from substantial temporal sampling
+(matched to the time constant of the event) with color information
+(perhaps contemporaneous) to support characterization and
+classification, obtained over the limited duration of interest.
+Transient events slower than $\sim$ weeks may be adequately sampled by
+a uniform LSST cadence.  Faster events may require special scheduling
+strategies.  For some event types, LSST can only be expected to
+provide a discovery service, and followup will necessarily be
+performed elsewhere.
 
 % --------------------------------------------------------------------
 
 \subsection{Targets and Measurements}
-\label{sec:keyword:targets}
+\label{sec:\secname:targets}
 
 The class of transients includes a heterogeneous assortment of objects and phenomena.
 
@@ -56,13 +62,14 @@ The class of transients includes a heterogeneous assortment of objects and pheno
 \hline Transient Type & Examples of target science\\
 \hline
 Flare stars & Flare frequency, energy, stellar age\\
-Cataclysmic variables  \& novae & Interacting binaries, stellar evolution, compact objects, explosive events\\
+Cataclysmic variables  & Interacting binaries, stellar evolution, compact objects, explosive events\\
 Supernovae & SN physics, mass loss, distance scale, cosmology\\
 Active galactic nuclei & Galaxy evolution, reverberation mapping, black hole physics\\
 Stellar microlensing & Exoplanet statistics\\
 Gamma ray bursts & Optical discovery and characterization\\
 LIGO detections & Source position and characterization\\
 Serendipity & Discovery and characterization\\
+Tidal Disruption Events & Discovery and characterization\\
  \hline \end{tabular}
  \end{center}
 
@@ -74,6 +81,8 @@ For events requiring intensive monitoring (stellar microlensing, exoplanet trans
 
 Supernovae fall in an intermediate time range.  LSST will provide multiple visits in multiple filters during the typical SN duration.  This sampling may be insufficient for many (including key) science objectives.  However, a moderate, and feasible, change to LSST observing strategy, may enhance the sampling for part of the sky part of the time, greatly enhancing the usefulness of SN observations.
 
+For Tidal Disruption Events, where the fading time-scale is much more gradual (over weeks to months) than the rise time-scale it will be worth checking - through a metric - how many will be missed (as alerts). Ref. Science Book: 10.6.1. Also ref. recent papers.
+
 Serendipitous discoveries are of course harder to plan for.  An ideal transient discovery survey would include heavy coverage of all time scales. LSST will cover longer time periods well, but will have to make some choices of emphasis in coverage of shorter time-scales.
 
 
@@ -81,7 +90,7 @@ Serendipitous discoveries are of course harder to plan for.  An ideal transient 
 % --------------------------------------------------------------------
 
 \subsection{Metrics}
-\label{sec:keyword:metrics}
+\label{sec:\secname:metrics}
 
 \begin{center}
 \begin{tabular}{| p{5cm} |p{10cm} |}
@@ -99,7 +108,7 @@ The suggested metric set for serendipity is based on the simple-minded idea that
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
-\label{sec:keyword:analysis}
+\label{sec:\secname:analysis}
 
 Analysis shows that current simulations provide  poor coverage in any one filter for transient events longer than a deep drilling session ($\sim$30 minutes) and shorter than $\sim$ weeks.
 
@@ -110,7 +119,7 @@ Simulated performance for SN observations must be analyzed for both main survey 
 % --------------------------------------------------------------------
 
 \subsection{Discussion}
-\label{sec:keyword:discussion}
+\label{sec:\secname:discussion}
 
 Community studies are providing improving SNe metrics, and continuing communication between the SN and LSST communities is essential to tuning the observing strategy to deliver the SN time series that are needed and possible.
 

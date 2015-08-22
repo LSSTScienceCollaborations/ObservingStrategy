@@ -115,19 +115,23 @@
 \usepackage[usenames]{color}
 \usepackage{xcolor}
 \usepackage{colortbl}
-\definecolor{violet}{rgb}{0.4,0.0,0.4}
+\definecolor{violet}{rgb}{0.6,0.0,0.6}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
-\definecolor{darkred}{rgb}{0.5,0.00,0.0}
+\definecolor{darkgreen}{rgb}{0.0,0.7,0.0}
+\definecolor{darkred}{rgb}{0.7,0.00,0.0}
 \usepackage[%
 pdftitle={LSST Observing Strategy},%
 pdfauthor={The LSST Science Collaborations},%
 bookmarksnumbered=true,%
-linkcolor=blue,citecolor=violet,colorlinks=true]{hyperref}
+linkcolor=blue,
+citecolor=blue,
+urlcolor=darkgreen,
+colorlinks=true]{hyperref}
 
 % Colored commenting:
 \newcommand{\question}[2]{\textcolor{darkred}{\bf Question from #1: #2}}
 \newcommand{\flag}[2]{\textcolor{darkred}{\bf #1: #2}}
+\newcommand{\todo}[2]{\textcolor{darkred}{\bf #1: #2}}
 \newcommand{\new}[1]{\textcolor{darkgreen}{#1}}
 \newcommand{\black}[1]{\textcolor{black}{#1}}
 \newcommand{\gray}[1]{\textcolor{gray}{#1}}
@@ -249,8 +253,100 @@ linkcolor=blue,citecolor=violet,colorlinks=true]{hyperref}
 \newcommand{\OpSim}{{\sc OpSim}\xspace}
 \newcommand{\CatSim}{{\sc CatSim}\xspace}
 \newcommand{\GalSim}{{\sc GalSim}\xspace}
+\newcommand{\simsMafContrib}{\texttt{sim\_maf\_contrib}\xspace}
+\newcommand{\MAF}{{\sc MAF}\xspace}
 
-%------------------------------------------------------------------------------%
+% Git stuff
+\newcommand{\git}{\texttt{git}\xspace}
+\newcommand{\GitHub}{\texttt{GitHub}\xspace}
+
+% --------------------------------------------------------------------
+% \makeatletter
+% --------------------------------------------------------------------
+%
+% MAF code macros
+%
+% Example use:
+%
+%    We used the \simsMAFcontrib{seasonstacker} to add ...
+%
+% Should produce:
+%
+%    We used the <a href="">\texttt{seasonstacker}</a> to add ...
+%
+% That is, format the name of the code in the text, and hyperlink it
+% to the file in sims_maf_contrib online.
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\newcommand{\simsMAFcontrib}[2]{%
+    % Example use: "We used \simsMAFcontrib{SeasonStacker}{mafContrib/seasonStacker.py} to work with seasons."
+    % \simsMAFcontrib{Class}{folder/filename}
+    \href{https://github.com/LSST-nonproject/sims_maf_contrib/blob/master/#2}{\code{#1}}
+}
+
+% --------------------------------------------------------------------
+
+% OPSIM RUNS
+
+% List of opsim databases, designed to act as a table of contents in
+% the introduction section:
+\newcommand{\listofopsimdbs}{
+  \vskip\baselineskip
+  {\OpSim databases investigated in this section:}
+  \phantomsection\label{tab:opsimdbnames}
+  \medskip
+  \hrule
+  \@starttoc{opsim.tod}
+  \medskip
+  \hrule
+}
+
+% \opsimdbname is the name of the database, corrcetly formatted.
+\newcommand{\opsimdbname}[1]{\texttt{#1}}
+
+% \opsimdbref is the function to use when referring to an opsim run.
+% "\opsimdbref{db:enigma}"  -> "{\sc OpSim} database \texttt{enigma1189}"
+\newcommand{\opsimdbref}[1]{\nameref{#1}}
+\newcommand{\fullopsimdbref}[1]{\hyperref[#1]{\OpSim database \nameref{#1}}}
+
+% The opsimdb command itself - make a new opsimdb subsection (which prints
+% a title line and advances the subsection counter) and label it for
+% referring to it elsewhere.
+\newcommand{\opsimdb}[3][]{
+   \vspace{\baselineskip}
+   \hrule
+   \vspace{-0.5\baselineskip}
+   \subsection*{\large\opsimdbname{#2}} % \large is not working...
+   \label{#1}
+   \vspace{-0.5\baselineskip}
+   {\it #3}
+   % Add this project to this section's list of projects:
+   \addcontentsline{opsim.tod}{opsimdb}{\leavevmode\newline\opsimdbref{#1}~---~{\it#3}\hfill}
+ }
+
+
+% --------------------------------------------------------------------
+
+% CREDITS
+
+\newcommand{\github}[1]{% args = Username
+   \href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/commits?author=#1}{{#1}} % Hmm: "at" sign not being rendered correctly
+}
+
+\renewcommand{\author}[3]{% args = Name, Username, Institution
+   \phantomsection
+   #1\def\@currentlabel{\unexpanded{#1}}\label{#2} {\footnotesize(\github{#2})},\footnote{#3}
+   %\label{#2}
+}
+
+\newcommand{\credit}[1]{% args = Username
+    {\it \ref{#1}}
+}
+
+% --------------------------------------------------------------------
+% \makeatother
+% --------------------------------------------------------------------
 
 % Explicit margin set-up (PJM 2009-08-25):
 %
@@ -419,8 +515,8 @@ linkcolor=blue,citecolor=violet,colorlinks=true]{hyperref}
 % Autoreferencing:
 
 \renewcommand*\chapterautorefname{Chapter}
-\renewcommand*\sectionautorefname{\S}
-\renewcommand*\subsectionautorefname{\S}
+\renewcommand*\sectionautorefname{Section}
+\renewcommand*\subsectionautorefname{Sub-section}
 \renewcommand*\figureautorefname{Figure}
 \renewcommand*\tableautorefname{Table}
 \renewcommand*\equationautorefname{Equation}
