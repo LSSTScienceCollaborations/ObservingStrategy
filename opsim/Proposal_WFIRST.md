@@ -2,7 +2,7 @@
 
 A Proposed OpSim Experiment
 
-*Proposer(s): Eric Gawiser & Jason Rhoads*
+*Proposer(s): Eric Gawiser & Jason Rhodes*
 
 *Issue Thread: [#114](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/114)*
 
