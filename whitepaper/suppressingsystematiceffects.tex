@@ -11,6 +11,8 @@ It is expected that even after maximal optimization of camera optics and electro
 
 Similarly, the telescope optics may harbor systematic aberrations, and these also could be mitigated by recording images with varying parallactic angle.  Another relevant parameter, RotTelPos, is indicative of the projected angle of the telescope optics on the sky.  
 
+Uniformity of depth is essential - metrics and requirements will be added.
+
 
 \subsection{Metrics}
 
@@ -41,4 +43,4 @@ The recommended criterion for randomization of RotSkyPos is not the behavior of 
 
 It is certain that actively controlling the statistics of RotSkyPos will require additional slewing of the camera rotator.  At present, the operations plan is to only slew when necessary to prepare for a filter change - that could be estimated at the equivalent of $\simeq 3$ complete rotations per day.  Figure \ref{RotSkyPos} shows that to render the distribution completely uniform would require moving all observing angles an average of $\simeq 30$ degrees, or 300 complete rotations per night.  The timing of this has not been considered.  Whether or not this uniformity could be achieved with less slew time if implemented in scheduling remains to be demonstrated.
 
-A similar metric for RotTelPos should be developed. Other observing parameters may benefit from randomization, but are not presently recommended for metric analysis.
+A similar metric for RotTelPos should be developed. 
