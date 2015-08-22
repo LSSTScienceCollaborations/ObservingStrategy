@@ -1,0 +1,143 @@
+% ====================================================================
+%+
+% SECTION:
+%    section-name.tex  % eg lenstimedelays.tex
+%
+% CHAPTER:
+%    chapter.tex  % eg cosmology.tex
+%
+% ELEVATOR PITCH:
+%    Explain in a few sentences what the relevant discovery or
+%    measurement is going to be discussed, and what will be important
+%    about it. This is for the browsing reader to get a quick feel
+%    for what this section is about.
+%
+% COMMENTS:
+%
+%
+% BUGS:
+%
+%
+% AUTHORS:
+%    Phil Marshall (@drphilmarshall)  - put your name and GitHub username here!
+%    Will Clarkson (@willclarkson)
+%
+%-
+% ====================================================================
+
+\section{Star Clusters}
+\def\secname{starclusters}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
+
+\noindent{\it Author Name(s)} % (Writing team)
+
+% This individual section will need to describe the particular
+% discoveries and measurements that are being targeted in this section's
+% science case. It will be helpful to think of a ``science case" as a
+% ``science project" that the authors {\it actually plan to do}. Then,
+% the sections can follow the tried and tested format of an observing
+% proposal: a brief description of the investigation, with references,
+% followed by a technical feasibility piece. This latter part will need
+% to be quantified using the MAF framework, via a set of metrics that
+% need to be computed for any given observing strategy to quantify its
+% impact on the described science case. Ideally, these metrics would be
+% combined in a well-motivated figure of merit. The section can conclude
+% with a discussion of any risks that have been identified, and how
+% these could be mitigated.
+
+A short preamble goes here. What's the context for this science
+project? Where does it fit in the big picture?
+
+[Star cluster leads]
+
+%Two broad science areas {\bf [more?]}: (i) Better understanding of
+%stellar populations within clusters; (ii) star clusters as tracers of
+%star formation in the Galaxy, including donation to the Plane by
+%dissolution
+
+% --------------------------------------------------------------------
+
+\subsection{Target measurements and discoveries}
+\label{sec:keyword:targets}
+
+
+\begin{itemize}
+
+\item Formation history and evolution of the Milky Way as traced by star clusters
+
+\item Better understanding of star cluster stellar populations; stellar mass function, metallicity, ages
+
+\end{itemize}
+
+%Describe the discoveries and measurements you want to make.
+
+%Now, describe their response to the observing strategy. Qualitatively,
+%how will the science project be affected by the observing schedule and
+%conditions? In broad terms, how would we expect the observing strategy
+%to be optimized for this science?
+
+
+% --------------------------------------------------------------------
+
+\subsection{Metrics}
+\label{sec:keyword:metrics}
+
+Organized by broad science case within this area:
+\begin{itemize}
+\item Milky Way formation and evolution as traced by star clusters (focus below on tidal dissolution $\rightarrow$~contribution of stars to the Disk by clusters):
+  \begin{itemize}
+    \item Radius $R$ from cluster center at which LSST becomes unable to kinematically identify cluster members (figure might be: [x,y,z] = [cluster $M_v$, concentration parameter, $R$]; rerun for different locations in the Galaxy?
+      \item Sensitivity (quantified as surface brightness limit?) to tidal streams between clusters? Perhaps go broader, e.g. mass ratio or $M_v$~for tidally interacting clusters for which LSST becomes insensitive to existence of tidal tail?
+        \item LSST's sensitivity to azimuthal asymmetries in the light (or mass) profile of clusters ``near'' the plane
+  \end{itemize} 
+
+\item Stellar populations within clusters; mass function, metallicity, ages
+  \begin{itemize}
+    \item Radius of avoidance for LSST per-filter for a catalog of
+      known clusters (in-plane and out)
+      \item Distance limit at which LSST becomes insensitive to stars above mass $m_{lower}$ 
+  \end{itemize}
+
+\end{itemize}
+
+(Metrics note: all of the above are likely to be hierarchical, calling
+some parameterization of photometric sensitivity vs crowding as a
+method.)
+
+Need some sort of metric for the science return on the ensemble of
+globular clusters observed by LSST. If LSST doesn't go deeper than X
+at latitude $|b| < Y$, what is the impact on the science?
+
+%Quantifying the response via MAF metrics: definition of the metrics,
+%and any derived overall figure of merit.
+
+% --------------------------------------------------------------------
+
+\subsection{OpSim Analysis}
+\label{sec:keyword:analysis}
+
+OpSim analysis: how good would the default observing strategy be, at
+the time of writing for this science project?
+
+
+% --------------------------------------------------------------------
+
+\subsection{Discussion}
+\label{sec:keyword:discussion}
+
+One useful output of MAF for Solar Neighborhood work, will be the
+extent to which the small part of the sky in front of crowded regions
+in this general science area will make an impact. 
+
+Comparison of the science metrics for cases when Galactic Plane
+observations are / are not included as part of the OpSim run, will
+directly address the degree to which LSST should consider Solar
+Neighborhood science in its galactic plane strategy.
+
+%Discussion: what risks have been identified? What suggestions could be
+%made to improve this science project's figure of merit, and mitigate
+%the identified risks?
+
+
+% ====================================================================
+
+\navigationbar
