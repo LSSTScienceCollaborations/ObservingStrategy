@@ -1,4 +1,7 @@
 \section{Suppressing systematic effects}
+\def\secname{suppressing}\label{sec:\secname}
+
+\noindent{\it Stephen Ridgway, \ldots} % (Writing team)
 
 Much of cosmology science may be limited by systematic errors rather than photon signal-to-noise.  
 
@@ -35,5 +38,7 @@ First, we do not have at present a quantitative requirement for randomization of
 Second, a significant fraction of fields  have median values that are lower or higher than expected for a random distribution, with some far from uniformly distributed.  Regardless of the $per field$ criterion, it is desirable to avoid the incidence of individual discrepant fields.
 
 The recommended criterion for randomization of RotSkyPos is not the behavior of the majority of the fields, but of the minority with the least random behavior.  The number of non-random fields should be minimized.  A recommended metric is the count of fields with median RMS less then 0.8 or greater than 1.5 radians (these values to be reviewed again as additional experience is gained with additional OpSim schedule simulations and weak lensing analysis.)
+
+It is certain that actively controlling the statistics of RotSkyPos will require additional slewing of the camera rotator.  At present, the operations plan is to only slew when necessary to prepare for a filter change - that could be estimated at the equivalent of $\simeq 3$ complete rotations per day.  Figure \ref{RotSkyPos} shows that to render the distribution completely uniform would require moving all observing angles an average of $\simeq 30$ degrees, or 300 complete rotations per night.  The timing of this has not been considered.  Whether or not this uniformity could be achieved with less slew time if implemented in scheduling remains to be demonstrated.
 
 A similar metric for RotTelPos should be developed. Other observing parameters may benefit from randomization, but are not presently recommended for metric analysis.
