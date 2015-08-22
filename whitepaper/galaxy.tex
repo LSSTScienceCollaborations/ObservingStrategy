@@ -69,10 +69,9 @@ decided (for example the number of exposures per-filter).
 
 Before launching into the specifics of metrics per-science case, we
 point out some general factors that are likely to obtain for Milky Way
-science no matter the spatial crowding in a given science case, which
-we encourage the reader to incorporate into their thinking when
-considering possible metrics. [Language will change as metrics are
-  produced.]
+science (all over the sky), which we encourage the reader to
+incorporate into their thinking when considering possible
+metrics. [Language will change as metrics are produced.]
 
 We currently envisage these to be implemented as methods that a given
 science metric would call as part of its chain of evaluation.
@@ -158,22 +157,16 @@ metrics that might call the variability metrics as functions. {\bf To
   be worked out...})
 
 The following sections describe observing metrics for Milky Way
-science cases. These naturally divide into two classes: (i) science
-cases mostly or entirely in the Plane - for which metrics will be
-critical in determining not just the as-yet-unfinalized observing
-strategy, but whether a given science case can be done at all given a
-realistic allocation - and (ii). cases that fall within WFD, for which
-metrics are still needed to assess the tradeoff between different
-options in WFD itself. The sections that follow are:
+science cases. These are mostly (but not exclusively) in-plane
+observations. If your science case is not mentioned below, it should
+be mentioned concisely in Summary Table Y.
 
 % Subsection filenames all start with ``MW'' in violation of Phil's
 % advice to avoid chapter-specific names. This is to avoid namespace
 % collision between ``microlensing'' for AGN and ``microlensing'' in
 % the MW, for example!
 
-{\it Milky Way science cases mostly in the Plane:}
-
-Section \ref{sec:MW_spatial_structure}: Spatial Structure of the Milky Way Galaxy, including the plane and bulge;
+Section \ref{sec:MW_spatial_structure}: Spatial Structure of the Milky Way Galaxy, including the plane, bulge, halo and local volume;
 
 Section \ref{sec:MW_metallicity_mapping}: Galactic photometric metallicity mapping; 
 
@@ -187,15 +180,15 @@ Section \ref{sec:MW_microlensing} Microlensing;
 % with unknown scale-heights. Chuck Claver's white dwarf pulsator
 % project might be of interest here, among others.
 
-{\it Milky Way science cases but mostly in Wide-Fast-Deep:}
+%{\it Milky Way science cases but mostly in Wide-Fast-Deep:}
 
-Section \ref{sec:solarneighborhood} The Solar Neighborhood;
+%Section \ref{sec:solarneighborhood} The Solar Neighborhood;
 
-Section \ref{sec:starclusters} Star Clusters in the Milky Way;
+%Section \ref{sec:starclusters} Star Clusters in the Milky Way;
 
-Section \ref{sec:halostructure} Halo structure and populations;
+%Section \ref{sec:halostructure} Halo structure and populations;
 
-Section \ref{sec:localvolume} The Local Volume
+%Section \ref{sec:localvolume} The Local Volume
 
 [As of 2015-08-21, the .tex files for these subsections are mostly
   empty shells. Content to follow.]
@@ -206,10 +199,10 @@ Section \ref{sec:localvolume} The Local Volume
 \input{MilkyWay/MW_Dust.tex}
 \input{MilkyWay/MW_microlensing}
 
-\input{MilkyWay/SolarNeighborhood.tex}
-\input{MilkyWay/StarClusters.tex}
-\input{MilkyWay/HaloStructure.tex}
-\input{MilkyWay/LocalVolume.tex}
+%\input{MilkyWay/SolarNeighborhood.tex}
+%\input{MilkyWay/StarClusters.tex}
+%\input{MilkyWay/HaloStructure.tex}
+%\input{MilkyWay/LocalVolume.tex}
 
 \section{Milky Way Metrics: future work}
 \def\secname{MW_future_work}\label{sec:\secname}

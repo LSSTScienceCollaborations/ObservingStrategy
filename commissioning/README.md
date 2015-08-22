@@ -2,16 +2,16 @@
 
 While we write down our science cases and code up their metrics and
 Figures of Merit, we can also think about which kinds of observations or experiments 
-we might want to do during commissioning to prepare for doing science when the full
+we might want to do during commissioning to prepare for doing science when the full survey
 starts.
 
 ## Guidelines
 
-The [LSST Observing Strategy White Paper](https://github.com/LSSTScienceCollaborations/ObservingStrategy/raw/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf) contains a chapters listing the MAF based metrics for a variety of science programs.  Some of the science case presented would benefit from earaly data during commissioning either to validate and refine algorithms, bootstrap algorithms used in the full survey or provide value added in the science of the full survey (e.g. filling in time sampling the main survey won't do).
+The [LSST Observing Strategy White Paper](https://github.com/LSSTScienceCollaborations/ObservingStrategy/raw/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf) contains an overview of LSST science programs that depend on the details of LSST's observing strategy.   This white paper presents a set of MAF based metrics for a variety of science programs.  Some of the science cases presented would benefit from early data during commissioning either to validate and refine algorithms, bootstrap algorithms to be used in the full survey or provide value added in the science of the full survey (e.g. filling in time sampling that the main survey won't do).
 
-When considering a proposed obsering run that would be done in commissioning consider what you might want from the commissioning camera (ComCam - 3x3 4k x 4k CCDs in a single raft with 45 arcmin FOV) and what you might want from the full camera.  Think also about data that can be obtained in an hour, a night and/or a week or so. 
+When considering a proposed observing run that would be done in commissioning, consider what could be done with the commissioning camera (ComCam - 3x3 4k x 4k CCDs in a single raft with 45 arcmin FOV) and what would need the full camera.  Think also about data that can be obtained in an hour, a night and/or a week or so. 
 
-To suggest a new `Commissioning Observation or Experiment`, you will (of course) need to write a very short *proposal*. You can do this in a markdown file following [this template](https://github.com/cclaver/ObservingStrategy/blob/master/commissioning/commProp_Template.md) and check it into the `opsim` folder of this repository. Then, add it to the Table below, so everyone can see what you are suggesting and follow the link to your proposal.
+To suggest a new `Commissioning Observation or Experiment`, you will need to write a very short *proposal*. You can do this in a markdown file following [this template](https://github.com/cclaver/ObservingStrategy/blob/master/commissioning/commProp_Template.md) and check it into the `commissioning` folder of this repository. Then, add it to the Table below, so everyone can see what you are suggesting and follow the link to your proposal.
 
 ## Proposed New Commissioning Experiments
 
