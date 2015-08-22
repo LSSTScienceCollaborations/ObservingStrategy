@@ -4,6 +4,8 @@ A Proposed OpSim Experiment.
 
 *Proposer(s): Your Name Here*
 
+*Issue Thread (please update number): [#01](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/01)*
+
 
 ## Proposed Changes to the Observing Strategy
 
