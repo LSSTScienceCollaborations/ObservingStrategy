@@ -48,18 +48,36 @@ The LSST observing strategy will affect mostly the first three of these categori
 
 {\bf Variability:} AGNs can be effectively distinguished from (variable) stars, and from quiescent galaxies, by exhibiting certain characteristic variability patterns (e.g., \citet{ButlerandBloom2011}). Non-uniform sampling may ``contaminate'' the variability signal of AGN candidates.
 
-{\bf Astrometry:} AGNs will be selected among sources having zero proper motion, within the uncertainties. The LSST cadence
-may affect the level of this uncertainty in each band, and may therefore affect the ability to identify (mostly fainter) AGN.
+{\bf Astrometry:} AGNs will be selected among sources having zero
+proper motion, within the uncertainties. The LSST cadence may affect
+the level of this uncertainty in each band, and may therefore affect
+the ability to identify (mostly fainter) AGN.
 %
-Differential chromatic refraction (DCR), making use of the astrometric offset a source with emission lines has with respect to a source with a featureless power-law spectrum, can help in the selection of AGNs and in confirming their photometric redshifts \citep{KaczmarczikEtal2009}. The DCR effect is more pronounced at higher airmasses. AGN selection and photometric redshift confirmation may be affected since the LSST cadence will affect the airmass distribution, in each band, for each AGN candidate.
+Differential chromatic refraction (DCR), making use of the astrometric
+offset a source with emission lines has with respect to a source with
+a featureless power-law spectrum, can help in the selection of AGNs
+and in confirming their photometric redshifts
+\citep{KaczmarczikEtal2009}. The DCR effect is more pronounced at
+higher airmasses. Therefore, it'd be advantageous to have at least one
+visit, per source, at airmass greater than about 1.4. AGN selection
+and photometric redshift confirmation may be affected since the LSST
+cadence will affect the airmass distribution, in each band, for each
+AGN candidate.
 
 \subsection{AGN Clustering}
 \label{sec:\secname:clustering}
 
-\noindent Measurements of the spatial clustering of AGNs with respect to those of quiescent galaxies can provide clues as to how galaxies form inside their dark-matter halos and what causes the growth of their supermassive black holes (SMBHs). The impressive inventory of LSST AGNs will enable the clustering, and thus the host galaxy halo mass, to be determined over the widest range ranges of cosmic epoch and accretion power.
+\noindent Measurements of the spatial clustering of AGNs with respect
+to those of quiescent galaxies can provide clues as to how galaxies
+form inside their dark-matter halos and what causes the growth of
+their supermassive black holes (SMBHs). The impressive inventory of
+LSST AGNs will enable the clustering, and thus the host galaxy halo
+mass, to be determined over the widest range ranges of cosmic epoch
+and accretion power.
 %
-The LSST cadence will not only affect the overall AGN census and its $L-z$ distribution, but also the
-depth in each band as a function of sky position that can directly affect the clustering signal.
+The LSST cadence will not only affect the overall AGN census and its
+$L-z$ distribution, but also the depth in each band as a function of
+sky position that can directly affect the clustering signal.
 
 \subsection{AGNs and the Time Domain}
 \label{sec:\secname:time}
@@ -104,16 +122,34 @@ Important Note: all this science needs to be done on lensed quasars with measure
 % and MC fields, or different dithering patterns,: definition of the metrics,
 % and any derived overall figure of merit.
 
-{\bf AGN Selection:} Need to compute the mean $Y$ band magnitude across the sky for the nominal
-OpSim. Compare this magnitude to the one required for identifying $\geq1000$ quasars
-at $z\geq6$.
+{\bf AGN Selection:} Need to compute the mean $Y$ band magnitude
+across the sky for the nominal OpSim. Compare this magnitude to the
+one required for identifying $\geq1000$ quasars
+at $z\geq6$. Currently, for enigma\_1189, the single-epoch 5-sigma
+depth in $Y$ is 22.36 mag, and for the final co-added 5-sigma depth is
+$Y=24.4$. These limits are deeper than the original predictions (see
+AAS poster from 2013). Need to compare these numbers to the output
+from other OpSims.
 
-{\bf PRM:} Need to compute the average and the dispersion in the number of visits, per band, across the sky
-for the nominal OpSim (during the entire survey). Since PRM works best for uniform sampling, need to compare the
-distributions of the number of visits in each band, averaged across the sky, and identify ways to minimize any potential differences between these distributions. By running PRM simulations, identify the 1) minimum number of visits (in any band) that can yield any meaningful BELR-continuum lag estimates, and 2) the largest difference in the number of visits between two different bands that can yield any meaningful BELR-continuum lag estimates. Repeat these simulations by doubling the nominal number of DDFs. Assess the number of meaningful BELR-continuum time delays that can be obtained with the nominal OpSim, and point out potential perturbations in the cadence to improve the number and quality of such time delays.
+{\bf PRM:} Need to compute the average and the dispersion in the
+number of visits, per band, across the sky for the nominal OpSim
+(during the entire survey). Since PRM works best for uniform sampling,
+need to compare the distributions of the number of visits in each
+band, averaged across the sky, and identify ways to minimize any
+potential differences between these distributions. By running PRM
+simulations, identify the 1) minimum number of visits (in any band)
+that can yield any meaningful BELR-continuum lag estimates, and 2) the
+largest difference in the number of visits between two different bands
+that can yield any meaningful BELR-continuum lag estimates. Repeat
+these simulations by doubling the nominal number of DDFs. Assess the
+number of meaningful BELR-continuum time delays that can be obtained
+with the nominal OpSim, and point out potential perturbations in the
+cadence to improve the number and quality of such time delays.
 
-{\bf Microlensing:} Need to compute the dispersion in the time gap between visits in the same band, across the sky,
-in order to assess the fraction of microlensing events that might be missed (on top of seasonal gaps).
+{\bf Microlensing:} Need to compute the dispersion in the time gap
+between visits in the same band, across the sky, in order to assess
+the fraction of microlensing events that might be missed (on top of
+seasonal gaps).
 
 % --------------------------------------------------------------------
 
@@ -127,13 +163,15 @@ in order to assess the fraction of microlensing events that might be missed (on 
 
 Some additional considerations/thoughts that came up during the workshop:
 
-1) Assuming we will have 10 DDFs, perhaps one of those fields could be sampled more heavily than the
-others and would be visited nightly (or even more frequently) per band.
-This can be justified by the fact that a) very few AGNs have been monitored at these frequencies
-on such a long baseline, leaving room for discovery, and b) this may probe intermediate-mass black holes
-($\sim10^4 - 10^5$~M_{\odot}) via PRM or PSDs.
+1) Assuming we will have 10 DDFs, perhaps one of those fields could be
+sampled more heavily than the others and would be visited nightly (or
+even more frequently) per band. This can be justified by the fact that
+a) very few AGNs have been monitored at these frequencies on such a
+long baseline, leaving room for discovery, and b) this may probe
+intermediate-mass black holes ($\sim10^4 - 10^5$~$M_{\odot}$) via PRM or
+PSDs.
 
-2) Need to assess the effects of the LSST cadence on the ability to detect periodic AGNs and quasi-periodic oscillations
-(QPOs) in AGNs.
+2) Need to assess the effects of the LSST cadence on the ability to
+detect periodic AGNs and quasi-periodic oscillations (QPOs) in AGNs.
 
 \navigationbar
