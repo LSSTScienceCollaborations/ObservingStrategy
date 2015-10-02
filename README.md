@@ -1,10 +1,17 @@
 # Science-Driven Optimization of the LSST Observing Strategy
 
-A community white paper about LSST survey strategy ("cadence"), with quantifications via the the Metric Analysis Framework. We will be drafting the individual science cases, and how we expect them to be sensitive to LSST observing strategy, during the first half of 2015. Then, MAF metric calculations designed and executed during the 2015 MAF Workshop (to be held in Bremerton, WA, August 17-21) and afterwards will form the quantitative backbone of the document. You may have heard of the coming  "Cadence Wars" - this document represents the Cadnece Diplomacy that will allow us, as a community, to avoid, or at least manage, that conflict.
+A community white paper about LSST survey strategy ("cadence"), with quantifications via the the Metric Analysis Framework. We are drafting some individual science cases, that are either very important, and somehow stress the observing strategy, and descriing how we expect them to be sensitive to LSST observing strategy. MAF metric calculations are then being designed and implemented - we started this during the 2015 LSST Observing Strategy Workshop (in Bremerton, WA, August 17-21): these  will form the quantitative backbone of the document. You may have heard of the coming  "Cadence Wars" - this document represents the Cadence Diplomacy that will allow us, as a community, to avoid, or at least manage, that conflict. We welcome contributions from all around the LSST Science community.
 
 * **[Read the current draft of the white paper](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)**
 
-* **Join the conversation about this project at [its issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
+* **[Join the conversation about this project at its issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
+
+* **[NEW: Gauge the project's activity level](https://github.com/LSSTScienceCollaborations/ObservingStrategy/pulse/halfweekly)**
+
+* **[NEW: Suggest a new `OpSim` experiment](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md)**
+
+* **[NEW: Suggest some interesting commissioning observations](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/commissioning/README.md)**
+
 
 #### Shortcuts
 
@@ -15,14 +22,14 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 
 ## The 2015 MAF Workshop 
 
-* [Workshop design](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/workshop/notes/design.md): homework, tutorial plan, meeting schedule etc.
-* Getting started with MAF: check out the LSST [`sims_maf_contrib` wiki](https://github.com/LSST-nonproject/sims_maf_contrib/wiki) to see what people have been working on.
 * [Meeting website](http://lsstsciencecollaborations.github.io/ObservingStrategy/)
 * [List of registered attendees](https://project.lsst.org/meetings/lsst2015/cadence-registrations)
+* [NEW: Hack session products!](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues?utf8=%E2%9C%93&q=label%3A%22Hack+Day!%22+)
+* [NEW: Feedback form](http://goo.gl/forms/xmVBIWynm4)
 
 ## Contacts
 
-This effort is being coordinated by Zeljko Ivezic, but contributions are welcome from all round the LSST science collaborations. Perhaps we are missing a science area? Or an idea for how to perturb the observing strategy? We'd like to hear from you! Please send all your feedback to [this repo's issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new).
+This effort is being coordinated by Zeljko Ivezic, but contributions are welcome from all round the LSST science collaborations. Perhaps we are missing a science area? Or an idea for how to perturb the observing strategy? We'd like to hear from you! Please send all your feedback to [this repo's issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues).
 
 The MAF Workshop SOC is: Zeljko Ivezic, Debbie Bard, Andy Connolly, Phil Marshall, Tom Matheson, Steve Ridgway, Michael Strauss, Lucianne Walkowicz, and Beth Willman: any of them can propagate your privately-communicated concerns into a redacted issue on this repository.
 
