@@ -14,7 +14,7 @@ named <standalone_name>_standalone.tex which will include the
 paper Preface and all sections selected via command line
 
 Compile the tex into a pdf file with 
-$make run <standalone_name>
+$make run ARG=<standalone_name_root>
 
 """)
 
