@@ -15,8 +15,8 @@
 %
 %
 % AUTHORS:
-%   Ohad Shemmer (@ohadshemmer), Timo Anguita (@tanguita), Niel Brandt, Gordon Richards, Scott Anderson(?),
-%   Phil Marshall(?) (@drphilmarshall)
+%   Ohad Shemmer, Timo Anguita, Niel Brandt, Gordon Richards,
+%   Scott Anderson(?), Phil Marshall(?)
 %-
 % ====================================================================
 \clearpage
@@ -29,17 +29,25 @@
 \credit{GordonRichards}
 \credit{ScottAnderson}
 
-% This section discusses the potential effects of the LSST observing strategy on AGN science. In short, there appears to be
-% a consensus among the AGN and galaxies communities that AGN science will benefit from the most uniform cadence in
-% terms of even sampling for each band and uniform sky coverage. It is also expected that any reasonable
-% perturbation to the nominal LSST observing strategy will have mostly minor effects on AGN science. This section attempts
-% to identify all the areas of AGN science that may be affected by the observing strategy and to point out the metrics that
-% can be used to quantify any potential effect. Since the total number of metrics that must be quantified is quite large, and
-% the effects are likely small in most cases, the goal of this section is to identify potential ``killers'' that may undermine
-% key AGN research areas. For example, certain perturbations may reduce significantly the number of ``interesting'' AGNs,
-% such as $z>6$ quasars, lensed quasars, or transient AGNs. Another example is photometric reverberation mapping
-% which is one of LSST's greatest advantages for AGN research but is also very sensitive to the cadence; care must
-% be taken to ensure that the observing strategy does not undermine the ability to make the best use of this method.
+% This section discusses the potential effects of the LSST observing
+% strategy on AGN science. In short, there appears to be a consensus
+% among the AGN and galaxies communities that AGN science will benefit
+% from the most uniform cadence in terms of even sampling for each band
+% and uniform sky coverage. It is also expected that any reasonable
+% perturbation to the nominal LSST observing strategy will have mostly
+% minor effects on AGN science. This section attempts to identify all
+% the areas of AGN science that may be affected by the observing strategy
+% and to point out the metrics that can be used to quantify any potential
+% effect. Since the total number of metrics that must be quantified is
+% quite large, and the effects are likely small in most cases, the goal
+% of this section is to identify potential ``killers'' that may undermine
+% key AGN research areas. For example, certain perturbations may reduce
+% significantly the number of ``interesting'' AGNs, such as $z>6$ quasars,
+% lensed quasars, or transient AGNs. Another example is photometric
+% reverberation mapping which is one of LSST's greatest advantages for
+% AGN research but is also very sensitive to the cadence; care must be
+% taken to ensure that the observing strategy does not undermine the
+% ability to make the best use of this method.
 
 \subsection{AGN Selection and Census}
 \label{sec:\secname:selection}
@@ -115,9 +123,10 @@ lines to the flux of the AGN continuum or between the continuum flux
 in one (longer wavelength) band to the continuum flux in another
 (band with shorter wavelength), will be one of the cornerstones of
 AGN research in the LSST era (e.g., \citet{Chelouche2013};
-\citet{CheloucheandZucker2013}; \citet{CheloucheEtal2014}). For
-example, LSST is expected to deliver BELR line-continuum time delays
-in $\sim10^5-10^6$ sources, which is unprecedented when compared to
+\citet{CheloucheandZucker2013}; \citet{CheloucheEtal2014};
+\citet{EdelsonEtal2015}; \citet{FausnaughEtal2015}). For example,
+LSST is expected to deliver BELR line-continuum time delays in
+$\sim10^5-10^6$ sources, which is unprecedented when compared to
 $\sim50-100$ such measurements conducted via the traditional, yet
 much more expensive (per source) spectroscopic method. Sources in
 the deep-drilling fields (DDFs) will benefit from the highest quality
@@ -138,6 +147,11 @@ sampling in each field, can yield a proportionately larger number of
 high-quality time delays, down to lower luminosities, but at the
 expense of far fewer time delays (for relatively high luminosity
 sources) in the main survey.
+
+Potentially periodic AGN variability, leading to tentative discoveries
+of binary SMBHs (e.g., \citet{GrahamEtal2015}) may also benefit from
+uniform sampling. Over the ten-year survey, LSST will be sensitive
+to periods of a few days up to $\sim3$~yr.
 
 {\bf Time Delays in Gravitationally Lensed Quasars:} This aspect is
 discussed in detail in the lens time delays section
@@ -230,18 +244,18 @@ the non-periodic variables section (\autoref{sec:variables}).
 \label{sec:\secname:metrics}
 
 % Quantifying the main impacts on AGN science via MAF metrics, including the effects
-% of additional cadence facto,rs such as the number of DDFs
-% and MC fields, or different dithering patterns,: definition of the metrics,
+% of additional cadence factors such as the number of DDFs
+% and MC fields, or different dithering patterns, definition of the metrics,
 % and any derived overall figure of merit.
 
 {\bf AGN Selection:} Need to compute the mean $Y$ band magnitude
 across the sky for the nominal OpSim. Compare this magnitude to the
-one required for identifying $\geq1000$ quasars
-at $z\geq6$. Currently, for enigma\_1189, the single-epoch 5-sigma
-depth in $Y$ is 22.36 mag, and for the final co-added 5-sigma depth is
-$Y=24.4$. These limits are deeper than the original predictions (see
-AAS poster from 2013). Need to compare these numbers to the output
-from other OpSims.
+one required for identifying $\geq1000$ quasars at $z\geq6$.
+Currently, for enigma\_1189, the single-epoch 5-sigma depth in $Y$
+is 22.36 mag, and for the final co-added 5-sigma depth is $Y=24.4$.
+These limits are deeper than the original predictions (see the AAS
+poster from 2013:
+http://www.lsst.org/sites/default/files/221-RC-247.10-AAS_shemmer.pptx.pdf).
 
 {\bf PRM:} Need to compute the average and the dispersion in the
 number of visits, per band, across the sky for the nominal OpSim
@@ -263,6 +277,25 @@ between visits in the same band, across the sky, in order to assess
 the fraction of microlensing events that might be missed (on top of
 seasonal gaps).
 
+% Ideas for Metrics:
+% detection - how many can LSST detect based on the luminosity function
+% (depends on the depth in each band for single epoch and coadd)
+% (how will this change with each DR)? @ohadshemmer
+
+% classification - How many of these will we actually classify as quasars?
+% non-simultaneous colors. variability of QSOs (how does depend on
+% cadence/baseline/seasonal gaps?)
+
+% microlensing - convolve microlensing timescales for QSOs we already know
+% about. how many of the high magnification events do we get? How bright?
+% @tanguita
+
+% QPOs - Will the cadence and duration give you the proper range on the
+% power spectrum to detect QPOs with a given mass, spin, and L/Ledd?
+% (Bob Wagoner)
+
+% How is this interdependent with the photo-z metrics?
+
 % --------------------------------------------------------------------
 
 \subsection{Discussion}
@@ -277,13 +310,66 @@ Some additional considerations/thoughts that came up during the workshop:
 
 1) Assuming we will have 10 DDFs, perhaps one of those fields could be
 sampled more heavily than the others and would be visited nightly (or
-even more frequently) per band. This can be justified by the fact that
+even more frequently, e.g., from $\sim1$ to $\sim1000$ min) per band.
+This can be justified by the fact that
 a) very few AGNs have been monitored at these frequencies on such a
 long baseline, leaving room for discovery, and b) this may probe
 intermediate-mass black holes ($\sim10^4 - 10^5$~$M_{\odot}$) via PRM or
-PSDs.
+PSDs. Good candidate fields are the CDF-S and the MCs.
+Need to suggest a strategy for an OpSim (or commissioning).
 
 2) Need to assess the effects of the LSST cadence on the ability to
 detect periodic AGNs and quasi-periodic oscillations (QPOs) in AGNs.
+
+3) Needs from OpSim: in order to have informative metrics, we need to have
+accurate model light curves that can reproduce how the fiducial light
+curves appear in different bands, at different inherent luminosities,
+and at different redshifts.
+
+% DDF - we need longer duration OpSims in these fields. (Bob Wagoner)
+% (https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md)
+
+% commissioning opportunity - one field, one night, one filter (u or g).
+% 15/30 sec exposures. (Bob Wagoner)
+% (https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/commissioning/README.md)
+
+\todo{}{Compare the current science content with the AGN chapter in the
+Science Book as well as with the Ivezic et al. overview paper
+(http://arxiv.org/pdf/0805.2366v4.pdf).}
+
+\todo{}{Compare the $Y$-band (and other bands) depths, single
+epoch and final co-added, from  enigma\_1189 with other OpSims.}
+
+\todo{}{Assess the effect of non-simultaneous colors on AGN selection.}
+
+\todo{}{Based on the current OpSim, need to specify the magnitude limits
+at the highest airmass and assess the limitations of the DCR method in
+the $L-z$ plane. Should check this with MAF and if indeed AM <= 1.4, need
+to add a request in:
+https://github.com/LSSTScienceCollaborations/ObservingStrategy/tree/master/opsim
+}
+
+\todo{}{Assess whether, e.g., a pair of $\sim2.5$ min exposures (i.e., $\sim10$
+times longer than the standard exposures) at airmass $\sim2$ would get deep
+enough for useful DCR constraints for a large fraction of the AGNs. This may
+be a non-negligible perturbation of the expected 56-184 visits per band, and
+may even be impossible given current upper limits on exposure times, but
+this would help improve photo-z's for galaxies and SNe too.}
+
+\todo{}{For PRM and microlensing: obtain distributions (mean and dispersion)
+of the number of visits, per band, across the sky for the nominal OpSim
+(during the entire survey).}
+
+\todo{}{Add a discussion about blazars and LSST cadence (e.g., Isler+15?).
+Would blazar science benefit from a specific cadence requirement?}
+
+\todo{}{Check the Astrometry chapter and assess the astrometric precision
+for AGN selection. For example, we may require very good depth at least in
+the 1st and 10th year of the survey.}
+
+\todo{}{Indicate the properties (frequency range and sampling) for obtaining
+optimal PSDs required for QPO detection (given MBH, spin, and L/LEdd). Based on
+current OpSim, assess the potential of discovering QPOs in the main survey
+and in the DDFs.}
 
 \navigationbar
