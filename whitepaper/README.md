@@ -7,7 +7,7 @@ A community white paper about LSST observing strategy, with quantifications via 
 
 ## How to contribute
 
-We welcome contributions from all members of the LSST project and science community. 
+We welcome contributions from all members of the LSST project and science community! 
 The white paper contains guidelines for authors on how to get involved - including hyperlinks to useful resources.
 
 If you would like to propose changes or additions to the white paper, please:
