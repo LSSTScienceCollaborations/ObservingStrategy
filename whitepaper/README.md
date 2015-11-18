@@ -1,8 +1,10 @@
 # Science-driven Optimization of the LSST Observing Strategy
 
+[![Build Status](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy.svg?branch=master)](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy)
+
 A community white paper about LSST observing strategy, with quantifications via the the Metric Analysis Framework.
 
-* **[Read the current version of the paper here](https://github.com/LSSTScienceCollaborations/ObservingStrategy/raw/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)**
+* **[Read the current version of the paper here](http://www.slac.stanford.edu/~pjm/LSST/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)** (automatically generated PDF, updated every now and then. [log file is here](http://www.slac.stanford.edu/~pjm/LSST/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.log))
 
 
 ## How to contribute
