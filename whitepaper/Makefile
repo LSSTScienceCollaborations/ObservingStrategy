@@ -5,7 +5,7 @@ BIBFILES = references.bib
 all: pdf
 
 clean:
-	-rm -f *.aux *.log *.dvi *.blg *.bbl *.inx *.aut *.toc *.out $(PAPER)
+	-rm -f *.aux LSST*.log *.dvi *.blg *.bbl *.inx *.aut *.toc *.tod *.out
 
 pdf: $(PAPER)
 
