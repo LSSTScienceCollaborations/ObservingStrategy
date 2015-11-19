@@ -41,17 +41,17 @@ Pop-up discussions will be scheduled as we go on this page, and will take place 
 
 For reference, our attending chapter editors are:
 
-* Introduction: @bethwillman @connolly (remote)
-* OpSim Examples: @ivezic @yoachim
-* Solar System: @rhiannonlynne @davidtrilling (Thursday PM)
-* The Galaxy: @akvivas @willclarkson (both remote)
-* Stellar and Binary Variables: @AshishMahabal @lmwalkowicz 
-* Explosive Transients: @fedhere @ebellm (remote)
-* AGN: @ohadshemmer - (absent: @tanguita)
-* Cosmology: @egawiser - (absent: @MichelleLochner)
-* DDF: @rhiannonlynne - (absent: @nielbrandt)
-* Magellanic Clouds: @knutago @dnidever
-* Tensions and trade-offs: @StephenRidgway @bethwillman
+* Introduction: [@bethwillman](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@bethwillman) [@connolly](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@connolly) (remote)
+* OpSim Examples: [@ivezic](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@ivezic) [@yoachim](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@yoachim)
+* Solar System: [@rhiannonlynne](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@rhiannonlynne) [@davidtrilling](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@davidtrilling) (Thursday PM)
+* The Galaxy: [@akvivas](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@akvivas) [@willclarkson](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@willclarkson) (both remote)
+* Stellar and Binary Variables: [@AshishMahabal](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@AsishMahabal) [@lmwalkowicz](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@lmwalkowicz) 
+* Explosive Transients: [@fedhere](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@fedhere) [@ebellm](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@ebellm) (remote)
+* AGN: [@ohadshemmer](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@ohadshemmer) - (absent: [@tanguita](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@tanguita))
+* Cosmology: [@egawiser](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@egawiser) - (absent: [@MichelleLochner](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@MichelleLochner))
+* DDF: [@rhiannonlynne](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@rhiannonlynne) - (absent: [@nielbrandt](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@nielbrandt))
+* Magellanic Clouds: [@knutago](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@knutago) [@dnidever](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@dnidever)
+* Tensions and trade-offs: [@StephenRidgway](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@StephenRidgway) [@bethwillman](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@bethwillman)
 
 
 ## Remote Access
