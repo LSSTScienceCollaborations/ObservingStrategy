@@ -24,7 +24,7 @@
 % ====================================================================
 
 \section{Photometric Reverberation Mapping}
-\def\secname{AGNPhotoRM}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
+\def\secname{\chpname:photoRM}\label{sec:\secname}
 
 \credit{ohadshemmer}
 
@@ -63,7 +63,7 @@ time-delay measurements given the factor of $\sim10$ denser sampling.
 % --------------------------------------------------------------------
 
 \subsection{Target measurements and discoveries}
-\label{sec:keyword:targets}
+\label{sec:\secname:targets}
 
 % Describe the discoveries and measurements you want to make.
 
@@ -100,16 +100,31 @@ sources) in the main survey.
 % --------------------------------------------------------------------
 
 \subsection{Metrics}
-\label{sec:keyword:metrics}
+\label{sec:\secname:metrics}
 
 Quantifying the response via MAF metrics: definition of the metrics,
 and any derived overall figure of merit.
 
 
+Need to compute the average and the dispersion in the
+number of visits, per band, across the sky for the nominal OpSim
+(during the entire survey). Since PRM works best for uniform sampling,
+need to compare the distributions of the number of visits in each
+band, averaged across the sky, and identify ways to minimize any
+potential differences between these distributions. By running PRM
+simulations, identify the 1) minimum number of visits (in any band)
+that can yield any meaningful BELR-continuum lag estimates, and 2) the
+largest difference in the number of visits between two different bands
+that can yield any meaningful BELR-continuum lag estimates. Repeat
+these simulations by doubling the nominal number of DDFs. Assess the
+number of meaningful BELR-continuum time delays that can be obtained
+with the nominal OpSim, and point out potential perturbations in the
+cadence to improve the number and quality of such time delays.
+
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
-\label{sec:keyword:analysis}
+\label{sec:\secname:analysis}
 
 OpSim analysis: how good would the default observing strategy be, at
 the time of writing for this science project?
@@ -118,7 +133,7 @@ the time of writing for this science project?
 % --------------------------------------------------------------------
 
 \subsection{Discussion}
-\label{sec:keyword:discussion}
+\label{sec:\secname:discussion}
 
 Discussion: what risks have been identified? What suggestions could be
 made to improve this science project's figure of merit, and mitigate

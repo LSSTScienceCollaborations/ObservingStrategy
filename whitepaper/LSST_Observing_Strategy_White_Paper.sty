@@ -331,17 +331,17 @@ colorlinks=true]{hyperref}
 % CREDITS
 
 \newcommand{\github}[1]{% args = Username
-   \href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/commits?author=#1}{{#1}} % Hmm: "at" sign not being rendered correctly
+   \href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/commits?author=#1}{{#1}}% Hmm: "at" sign not being rendered correctly
 }
 
 \renewcommand{\author}[3]{% args = Name, Username, Institution
    \phantomsection
-   #1\def\@currentlabel{\unexpanded{#1}}\label{#2} {\footnotesize(\github{#2})},\footnote{#3}
-   %\label{#2}
+   % #1\def\@currentlabel{\unexpanded{#1}}\label{#2} {\footnotesize(\github{#2})},\footnote{#3}
+   #1\def\@currentlabel{\unexpanded{#1}}\label{#2},\footnote{\github{#2}, #3}
 }
 
 \newcommand{\credit}[1]{% args = Username
-    {\it \ref{#1}}
+    {\it \ref{#1}}%
 }
 
 % --------------------------------------------------------------------
