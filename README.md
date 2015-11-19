@@ -39,8 +39,6 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 
 ## Contacts
 
-This effort is being coordinated by Zeljko Ivezic, but contributions are welcome from all round the LSST science collaborations. Perhaps we are missing a science area? Or an idea for how to perturb the observing strategy? We'd like to hear from you! Please send all your feedback to [this repo's issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues).
+This effort is being coordinated by Zeljko Ivezic (@ivezic) and Beth Willman (@bethwillman), while Phil Marshall (@drphilmarshall) is the white paper editor-in-chief. Any of them can propagate your privately-communicated concerns into a redacted issue on this repository. Contributions are very welcome from all round the LSST science collaborations, and beyond. Perhaps we are missing a science case? Or an idea for how to perturb the observing strategy? We'd like to hear from you! Please send all your feedback to [this repo's issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues).
 
-The MAF Workshop SOC is: Zeljko Ivezic, Debbie Bard, Andy Connolly, Phil Marshall, Tom Matheson, Steve Ridgway, Michael Strauss, Lucianne Walkowicz, and Beth Willman: any of them can propagate your privately-communicated concerns into a redacted issue on this repository.
-
-All white paper content is Copyright 2015 The Authors. If you make use of the ideas and results in the white paper in your research, please cite it as **"(LSST Science Collaborations in preparation)"**, and provide the URL of this repository: https://github.com/LSSTScienceCollaborations/ObservingStrategy.
+All white paper content is Copyright 2015 The Authors. If you make use of the ideas and results in the white paper in your research, please cite it as **"(LSST Science Collaborations in preparation)"**, and provide the URL of this repository: https://github.com/LSSTScienceCollaborations/ObservingStrategy. Thanks!
