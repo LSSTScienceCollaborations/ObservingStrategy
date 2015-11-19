@@ -21,12 +21,21 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 * Shortened URL for this repository (for passing around): [http://ls.st/o5k](http://ls.st/o5k)
 * Community-contributed MAF metric code at the [`sims_maf_contrib` repository](https://github.com/LSST-nonproject/sims_maf_contrib/wiki)
 
-## The 2015 MAF Workshop 
+## The 2015 MAF Workshop, Bremerton 
+
+*August 19-21, 2015.*
 
 * [Meeting website](http://lsstsciencecollaborations.github.io/ObservingStrategy/)
 * [List of registered attendees](https://project.lsst.org/meetings/lsst2015/cadence-registrations)
-* [NEW: Hack session products!](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues?utf8=%E2%9C%93&q=label%3A%22Hack+Day!%22+)
-* [NEW: Feedback form](http://goo.gl/forms/xmVBIWynm4)
+* [Hack session products](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues?utf8=%E2%9C%93&q=label%3A%22Hack+Day!%22+)
+* [Feedback form](http://goo.gl/forms/xmVBIWynm4)
+
+## Face-to-Face White Paper Workshop, Tucscon
+
+*November 19-20, 2015.*
+
+* [Program](workshop/Tucson2015.md)
+
 
 ## Contacts
 
