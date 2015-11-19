@@ -124,13 +124,62 @@ targeted in each {\it science case}. It will be helpful to think of a
 actually plan to do}. Thinking this way means that the sections can
 follow the tried and tested format of an observing proposal: a brief
 description of the investigation, with references, followed by a
-technical feasibility piece.  This latter part will need to be
+technical feasibility piece.
+
+
+\subsection{Metric Quantification}
+
+\new{\bf The assessment of each science case will need to be
 quantified using the MAF framework, via a set of metrics that need to
-be computed for any given observing strategy to quantify its impact on
-the described science case. Ideally, these metrics would be combined
-in a well-motivated figure of merit. The section can conclude with a
-discussion of any risks that have been identified, and how these could
-be mitigated.
+be computed for any given observing strategy in order to quantify its
+impact on the described science.}
+
+\new{Ideally, these metrics would be combined in a {\it well-motivated
+figure of merit}, and used to compare several possible observing
+strategies (that have already been simulated with \OpSim). In many (or
+perhaps all) cases,  a figure of merit will be a {\it precision} (\ie
+a percentage statistical uncertainty) on a astrophysical model
+parameter, assuming negligible bias in its inference. Precision is
+usually what we need to forecast in order to convince TAC's to give us
+telescope time, and so it makes sense to focus on it here too.}   
+
+\new{Early on in a metric analysis, it may not be possible to compute
+a science case's ideal figure of merit, most likely because to do do
+would require a large simulation program to capture the response of
+the  parameter measurement to the observing strategy. At this early
+stage, it makes sense to look for simple proxies that {\it scale} the
+same way as model parameter precision. For example, we might expect
+the precision on a set of luminosity function  parameters to scale
+with the square root of the number of objects in the sample, and so
+$\sqrt{N}$ could be a sensible early figure of merit. Provided we get
+the scaling right, {\it we can then compare different observing
+strategies by looking  at the percentage change in the figure of
+merit,} and arguing that  this will correspond approximately to the
+same percentage change in the  ideal case.}
+
+Each science section needs to conclude with a discussion of any risks
+that have been identified, and how these could be mitigated. {\it The
+comparisons between different simulated strategies will help make the
+case for any changes to the baseline strategy, and in the short term
+provide motivation for
+\href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md}{proposed
+new \OpSim simulation runs.}} \new{For some science sections
+we will have only a metric design, without an implementation.
+Subsequent versions of this white paper will hopefully see these designs
+realized and put into action. For now, though, the discussion of risks to these science cases
+will necessarily be minimal, containing only predictions for how the figure of merit will
+vary among observing strategies.}
+
+\new{Quantitative comparisons between science cases needs will be
+carried out in the final chapter, ``Tensions and Trade-offs.'' This
+chapter cannot be written until we have quantitative MAF metric
+analysis results from the individual science cases to feed into it. At
+this early stage, the metrics for each science case, and in
+particular, the figures of merit, are not yet well defined. Again,
+rather than wait for the ideal figure of merit, {\it we instead
+encourage the calculation of simple proxies} that can give at least
+some early information about how good the baseline strategy and its
+early perturbations will be for each science case.}
 
 The following chapter shows a template introduction and
 science case section for you to work from. The latter is checked into
