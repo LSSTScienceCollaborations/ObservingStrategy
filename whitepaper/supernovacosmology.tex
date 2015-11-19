@@ -177,9 +177,42 @@ According to the ansatz used in SN cosmology, the intrinsic brightness of
 
 Quantifying the response via MAF metrics: definition of the metrics,
 and any derived overall figure of merit.
+\label{sec:keyword:metrics}
+
+\begin{center}
+\begin{tabular}{| p{5cm} |p{10cm} |p{2cm}}
+\hline Metric & Description & Status\\
+\hline
+SN discovery I  &  Identify the number of LSST data points and quality required & \\
+SN light curve I & Generate SN light curves using OpSim output of baseline Cadence &\\
+SN classification & Classify identified SNe into SN Ia, II, Ib, and Ic & \\
+SN light curve II & Generate SN light curves with different redshift (0.1-1) &\\
+SN discovery II &  Estimate the number of SN discovery as a function of redshift & \\
+\hline \end{tabular}
+ \end{center}
+
 
 \emph{To be added: discussion of the ROC curve as a useful metric for photometric supernova 
 classification}
+
+
+\begin{figure*}[!hb]
+    \begin{minipage}[b]{\linewidth}
+        \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_0}
+        \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_1}
+        \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_2}
+        \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_3}
+        \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_4}
+    \end{minipage}
+\label{fig:opsimSummary}
+\caption{Include 1) an example of Type Ia Light Curve, 2) an example of Type II, 3) the number of SNR as a function of
+redshift}
+\end{figure*}
+
+
+% --------------------------------------------------------------------
+
+\subsection{OpsSim Analysis}
 
 
 \begin{figure*}[!hb]
@@ -198,9 +231,6 @@ gaps and overlaps between LSST pointings. These issues have been addressed in \c
 
 
 
-% --------------------------------------------------------------------
-
-\subsection{OpsSim Analysis}
 \label{sec:keyword:analysis}
 
 OpSim analysis: how good would the default observing strategy be, at
