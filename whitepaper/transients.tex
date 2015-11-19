@@ -3,9 +3,14 @@
 \chapter[Explosive Transients]{Explosive Transients}
 \def\chpname{transients}\label{chp:\chpname}
 
-\noindent {\it
-Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz, Rahul Biswas, Michelle Lochner, Jeonghee Rho, Eric Bellm...
-}
+% \noindent {\it
+% Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz, Rahul Biswas, Michelle Lochner, Jeonghee Rho, Eric Bellm...
+% }
+
+Chapter editors:
+\credit{ebellm}?,
+\credit{fedhere}?,
+
 
 % --------------------------------------------------------------------
 
@@ -15,15 +20,18 @@ Explosive transients such as novae, supernovae (SNe), and gamma-ray bursts (GRBs
 Cadence choices are vital to determining LSST's ability to discover and characterize these events.
 Different types and time scales of phenomena benefit from different sampling strategies---sometimes significantly different.  Competing objectives described in this chapter are at the heart of LSST observing strategy and cadence design.
 
-When evaluating a particular observation or series of observations in light of how they perform for a specific science case, it may be helpful to think of metrics as lying along a continuum between discovery and characterization. Discovery requires a minimum amount of information to recognize an event or object as a candidate of interest, which necessarily involves some level of bare-bones characterization (upon which said recognition is based); rich characterization, on the other hand, implies that an event may not only be recognized as a candidate of interest, but basic properties of the event or object may be determined from the observation (e.g. including but not limited to classification of the event). The interpretation of a given metric along this continuum has implications for the subsequent action and analysis required, particularly as regards possible follow-up observations with other facilities. 
+When evaluating a particular observation or series of observations in light of how they perform for a specific science case, it may be helpful to think of metrics as lying along a continuum between discovery and characterization. Discovery requires a minimum amount of information to recognize an event or object as a candidate of interest, which necessarily involves some level of bare-bones characterization (upon which said recognition is based); rich characterization, on the other hand, implies that an event may not only be recognized as a candidate of interest, but basic properties of the event or object may be determined from the observation (e.g. including but not limited to classification of the event). The interpretation of a given metric along this continuum has implications for the subsequent action and analysis required, particularly as regards possible follow-up observations with other facilities.
 
 In this chapter we focus on LSST's potential to advance the science of transients as astrophysical objects; the use of SNe for cosmology is discussed in \autoref{chp:cosmo}.
 
+% --------------------------------------------------------------------
 
 \section{Transient Events}
-\def\secname{transients}\label{sec:\secname}
+\def\secname{\chpname:transients}\label{sec:\secname}
 
-\noindent{\it Stephen Ridgeway, Ashish Mahabal, Ohad Shemmer } % (Writing team)
+\credit{StephenRidgeway},
+\credit{AshishMahabal},
+\credit{ohadshemmer}
 
 Transient events may benefit from substantial temporal sampling
 (matched to the time constant of the event) with color information
@@ -71,7 +79,6 @@ For Tidal Disruption Events, where the fading time-scale is much more gradual (o
 Serendipitous discoveries are of course harder to plan for.  An ideal transient discovery survey would include heavy coverage of all time scales. LSST will cover longer time periods well, but will have to make some choices of emphasis in coverage of shorter time-scales.
 
 
-
 % --------------------------------------------------------------------
 
 \subsection{Metrics}
@@ -90,13 +97,13 @@ The metrics for SNe will be highly specialized and based on the best available u
 
 The suggested metric set for serendipity is based on the simple-minded idea that a novel transient will be characterized by a band-limited, finite waveform, and that a useful observation series will consist of a series of samples extending over the duration of the event, with at least critical sampling of the fastest variations.  Since for some event durations the number of useful time series will be small, it may be useful to look not at the median length, but the median length of a subset size preselected as possibly useful (e.g. the$10^3$ longest series).
 
-Lund et al. (2015; \url{http://arxiv.org/pdf/1508.03175.pdf}) discuss three metrics that have been incorporated into the MAF. Two of these metrics deal explicitly with time variable behavior: a) observational triplets, and b) detection of periodic variability. 
+Lund et al. (2015; \url{http://arxiv.org/pdf/1508.03175.pdf}) discuss three metrics that have been incorporated into the MAF. Two of these metrics deal explicitly with time variable behavior: a) observational triplets, and b) detection of periodic variability.
 
 \subsubsection{Observational triplets (TripletMetric)}
 
-This metric provides a means of evaluating whether a transient event on some timescale of interest has been detected, by testing for a sequence of three observations. The object must be detected in quiescence, followed by two subsequent detections above some threshold; this sequence of observations allows the magnitude of the change to be measured, as well as its timescale. 
+This metric provides a means of evaluating whether a transient event on some timescale of interest has been detected, by testing for a sequence of three observations. The object must be detected in quiescence, followed by two subsequent detections above some threshold; this sequence of observations allows the magnitude of the change to be measured, as well as its timescale.
 
-This metric may be used for a variety of astrophysical phenomena, in particular transient events on variable objects (e.g. novae, stellar flares), in that it is general with respect to the amplitude of the brightness variation as well as the timescale of said change. The requirement of a detection prior to outburst does constrain it to objects that have already been detected in quiescence (in other words, not necessarily ``true'' transients), although there may be some cases where this is not the case (e.g. a supernova occurring on a previously detected galaxy). In practice, the time lapse between the first and second and second and third observations must be comparable (between 10$^2$ and 10$^5$ seconds) for discovery. This metric may be calculated for a given OpSim run and then further reduced to a histoogram in logarithmic time bins; the minimum number of bins to construct an interesting sample of objects is source-dependent. 
+This metric may be used for a variety of astrophysical phenomena, in particular transient events on variable objects (e.g. novae, stellar flares), in that it is general with respect to the amplitude of the brightness variation as well as the timescale of said change. The requirement of a detection prior to outburst does constrain it to objects that have already been detected in quiescence (in other words, not necessarily ``true'' transients), although there may be some cases where this is not the case (e.g. a supernova occurring on a previously detected galaxy). In practice, the time lapse between the first and second and second and third observations must be comparable (between 10$^2$ and 10$^5$ seconds) for discovery. This metric may be calculated for a given OpSim run and then further reduced to a histoogram in logarithmic time bins; the minimum number of bins to construct an interesting sample of objects is source-dependent.
 
 \subsubsection{Transient Metric (transientAsciiMetric)}
 
@@ -104,13 +111,13 @@ Calculate what fraction of transients would be detected using an ascii input fil
 
 \subsection{Proposed Metrics}
 
-The following is a raw list of metric ideas; these need specificity and further description. 
+The following is a raw list of metric ideas; these need specificity and further description.
 
-The triplet metric may also be altered to include filter constraints, such that the triplets are drawn from a single filter or subset of filters.  
+The triplet metric may also be altered to include filter constraints, such that the triplets are drawn from a single filter or subset of filters.
 
 Color evolution constraint: triplets of observations in a specific color (really requirement of two triplets in multiple filters)
 
-  2D Histogram of delta t?s between observations constituting a triplet 
+  2D Histogram of delta t?s between observations constituting a triplet
 
 Histogram of median visit series length vs maximum visit spacing within the series
 
@@ -139,15 +146,9 @@ Improving LSST science return for SNe will also improve sampling of all transien
 Some insight into fast transients may be available from image pairs  or triples (as opposed to more complete series).  These include the pair of images in a visit - which could be useful in studying the rise time of an extremely fast event.  This includes the characteristic grouping of visits (typically 0.5 to 1.0 hour separation) planned for purposes of identifying asteroids.  It also includes fortuitous multiple sampling due to field overlap, providing additional sampling, which may be random or systematic, depending on the scheduling, on a time scale of minutes to hours.  The sampling benefits of this fortuitous overlap have not yet been investigated.
 
 
-
-
-
 \navigationbar
 
-
-
 % --------------------------------------------------------------------
-
 
 \input{gw.tex}
 
@@ -155,3 +156,4 @@ Some insight into fast transients may be available from image pairs  or triples 
 
 % \input{grb.tex}
 
+% --------------------------------------------------------------------
