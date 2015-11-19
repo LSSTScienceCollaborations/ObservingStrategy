@@ -4,7 +4,7 @@
 
 A community white paper about LSST observing strategy, with quantifications via the the Metric Analysis Framework.
 
-* **[Read the current version of the paper here](http://www.slac.stanford.edu/~pjm/LSST/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)** (automatically generated PDF, updated every now and then. [log file is here](http://www.slac.stanford.edu/~pjm/LSST/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.log))
+* **[Read the current version of the paper here](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)** (automatically generated PDF, updated hourly - [log file is here](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.log))
 
 
 ## How to contribute
@@ -14,7 +14,7 @@ The white paper contains guidelines for authors on how to get involved - includi
 
 If you would like to propose changes or additions to the white paper, please:
 
-* 1) First, read the [paper](https://github.com/LSSTScienceCollaborations/ObservingStrategy/raw/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf) and the [issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues) to see if your suggestion is already being discussed.
+* 1) First, read the [paper](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.pdf) and the [issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues) to see if your suggestion is already being discussed.
 
 * 2) Then, to edit the paper, first [fork](https://help.github.com/articles/fork-a-repo/) this repository, clone it to your local machine, and edit the text. To compile the PDF, just hit `make` in the `whitepaper` folder.
 

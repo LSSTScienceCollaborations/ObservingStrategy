@@ -1,0 +1,153 @@
+% ====================================================================
+%+
+% SECTION:
+%    section-name.tex  % eg lenstimedelays.tex
+%
+% CHAPTER:
+%    chapter.tex  % eg cosmology.tex
+%
+% ELEVATOR PITCH:
+%    Explain in a few sentences what the relevant discovery or
+%    measurement is going to be discussed, and what will be important
+%    about it. This is for the browsing reader to get a quick feel
+%    for what this section is about.
+%
+% COMMENTS:
+%
+%
+% BUGS:
+%
+%
+% AUTHORS:
+%    Phil Marshall (@drphilmarshall)  - put your name and GitHub username here!
+%-
+% ====================================================================
+
+\section{AGN Selection and Census}
+\def\secname{\chpname:census}\label{sec:\secname}
+
+\credit{ohadshemmer},
+\credit{nielbrandt},
+\credit{GordonRichards},
+\credit{ScottAnderson},
+{\it and others to follow}
+
+% This individual section will need to describe the particular
+% discoveries and measurements that are being targeted in this section's
+% science case. It will be helpful to think of a ``science case" as a
+% ``science project" that the authors {\it actually plan to do}. Then,
+% the sections can follow the tried and tested format of an observing
+% proposal: a brief description of the investigation, with references,
+% followed by a technical feasibility piece. This latter part will need
+% to be quantified using the MAF framework, via a set of metrics that
+% need to be computed for any given observing strategy to quantify its
+% impact on the described science case. Ideally, these metrics would be
+% combined in a well-motivated figure of merit. The section can conclude
+% with a discussion of any risks that have been identified, and how
+% these could be mitigated.
+
+% A short preamble goes here. What's the context for this science
+% project? Where does it fit in the big picture?
+
+\new{Large samples of LSST AGN will provide high precision constraints
+on  galaxy evolution models. The science yield will be maximized  by
+increasing the sample size; the accuracy with which the selection
+function is known may also be important. }
+
+% --------------------------------------------------------------------
+
+\subsection{Target measurements and discoveries}
+\label{sec:\secname:targets}
+
+% Describe the discoveries and measurements you want to make.
+
+% Now, describe their response to the observing strategy. Qualitatively,
+% how will the science project be affected by the observing schedule and
+% conditions? In broad terms, how would we expect the observing strategy
+% to be optimized for this science?
+
+\new{Our target measurements will be inferences of galaxy evolution
+model  parameters, from a joint analysis with the host galaxy
+properties. As an initial proxy, we focus on the quasar luminosity
+function -- and  as a first step towards that, the number counts.}
+About $10^7 - 10^8$ AGNs will be selected in the main LSST survey
+using a combination of criteria, split broadly into four categories:
+colors, astrometry, variability, and multiwavelength matching with
+other surveys. The LSST observing strategy will affect mostly the
+first three of these categories.
+
+{\bf Colors:} The LSST observing strategy will determine the depth in
+each band, as a function of position on the sky, and will thus affect
+the color selection of AGNs. This will eventually determine the AGN
+$L-z$ distribution and, in particular, may affect the identification
+of quasars at $z\gtsim 6$ if, for example, $Y$-band exposures will
+not be sufficiently deep.
+
+{\bf Variability:} AGNs can be effectively distinguished from (variable)
+stars, and from quiescent galaxies, by exhibiting certain characteristic
+variability patterns (e.g., \citet{ButlerandBloom2011}). Non-uniform
+sampling may ``contaminate'' the variability signal of AGN candidates.
+
+{\bf Astrometry:} AGNs will be selected among sources having zero
+proper motion, within the uncertainties. The LSST cadence may affect
+the level of this uncertainty in each band, and may therefore affect
+the ability to identify (mostly fainter) AGN.
+%
+Differential chromatic refraction (DCR), making use of the astrometric
+offset a source with emission lines has with respect to a source with
+a featureless power-law spectrum, can help in the selection of AGNs
+and in confirming their photometric redshifts
+\citep{KaczmarczikEtal2009}. The DCR effect is more pronounced at
+higher airmasses. Therefore, it could be advantageous to have at least one
+visit, per source, at airmass greater than about 1.4. AGN selection
+and photometric redshift confirmation may be affected since the LSST
+cadence will affect the airmass distribution, in each band, for each
+AGN candidate.
+
+% Ideas for Metrics:
+% detection - how many can LSST detect based on the luminosity function
+% (depends on the depth in each band for single epoch and coadd)
+% (how will this change with each DR)? @ohadshemmer
+
+% classification - How many of these will we actually classify as quasars?
+% non-simultaneous colors. variability of QSOs (how does depend on
+% cadence/baseline/seasonal gaps?)
+
+% --------------------------------------------------------------------
+
+\subsection{Metrics}
+\label{sec:\secname:metrics}
+
+Quantifying the response via MAF metrics: definition of the metrics,
+and any derived overall figure of merit.
+
+Need to compute the mean $Y$ band magnitude
+across the sky for the nominal OpSim. Compare this magnitude to the
+one required for identifying $\geq1000$ quasars at $z\geq6$.
+Currently, for enigma\_1189, the single-epoch 5-sigma depth in $Y$
+is 22.36 mag, and for the final co-added 5-sigma depth is $Y=24.4$.
+These limits are deeper than the original predictions.
+% (See the AAS poster from 2013: http://www.lsst.org/sites/default/files/221-RC-247.10-AAS_shemmer.pptx.pdf).
+
+% --------------------------------------------------------------------
+
+\subsection{OpSim Analysis}
+\label{sec:\secname:analysis}
+
+OpSim analysis: how good would the default observing strategy be, at
+the time of writing for this science project?
+
+
+% --------------------------------------------------------------------
+
+\subsection{Discussion}
+\label{sec:\secname:discussion}
+
+Discussion: what risks have been identified? What suggestions could be
+made to improve this science project's figure of merit, and mitigate
+the identified risks?
+
+
+% ====================================================================
+
+\navigationbar
