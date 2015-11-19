@@ -23,10 +23,11 @@
 %-
 % ====================================================================
 
-\section{Example Science Project Section}
-\def\secname{keyword}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
+\section{AGN Variability}
+\def\secname{\chpname:variability}\label{sec:\secname}
 
-\credit{authorgithubname} % (Writing team)
+\credit{ohadshemmer},
+{\it and others to follow}
 
 % This individual section will need to describe the particular
 % discoveries and measurements that are being targeted in this section's
@@ -42,8 +43,28 @@
 % with a discussion of any risks that have been identified, and how
 % these could be mitigated.
 
-A short preamble goes here. What's the context for this science
-project? Where does it fit in the big picture?
+% A short preamble goes here. What's the context for this science
+% project? Where does it fit in the big picture?
+
+A variety of AGN variability studies will be
+enabled by LSST. These are intended to probe the physical properties
+of the unresolved inner regions of the central engine. Relations will
+be sought between variability amplitude and timescale vs. $L$, $z$,
+$\lambda_{\rm eff}$, color, multiwavelength and spectroscopic
+properties, if available. The LSST sampling is expected to provide
+high-quality power spectral density (PSD) functions for a large number
+of AGNs; these can be used to constrain the SMBH mass and accretion
+rate/mode. Furthermore, LSST AGNs exhibiting excess variability over
+that expected from their luminosities will be further scrutinized as
+candidates for lensed systems having unresolved images with the excess
+(extrinsic) variability being attributed mainly to microlensing.
+
+Potentially periodic AGN variability, leading to tentative discoveries
+of binary SMBHs (e.g., \citet{GrahamEtal2015}), may also be
+measurable.  Over the ten-year survey, LSST will be sensitive to
+periods of a few days up to $\sim3$~yr.
+
+
 
 % --------------------------------------------------------------------
 
@@ -57,6 +78,11 @@ how will the science project be affected by the observing schedule and
 conditions? In broad terms, how would we expect the observing strategy
 to be optimized for this science?
 
+\new{We focus on the PSD function as a way of characterizing AGN
+variability in various ways. What do we expect the AGN population to
+look like in PSD parameter space? The hyper-parameters that govern the
+relationships between PSD parameters and  AGN and host galaxy
+properties are probably of greatest scintific interest.}
 
 % --------------------------------------------------------------------
 
@@ -65,6 +91,15 @@ to be optimized for this science?
 
 Quantifying the response via MAF metrics: definition of the metrics,
 and any derived overall figure of merit.
+
+\new{In lieu of a simulated AGN population, we focus on a few
+particular {\it diagnostic} metrics that capture  our likely ability
+to measure the PSD across the population. These include: the
+uniformity of the sampling pattern in log time lag?}
+
+% QPOs - Will the cadence and duration give you the proper range on the
+% power spectrum to detect QPOs with a given mass, spin, and L/Ledd?
+% (Bob Wagoner)
 
 
 % --------------------------------------------------------------------
