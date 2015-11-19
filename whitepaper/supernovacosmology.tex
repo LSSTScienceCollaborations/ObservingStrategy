@@ -215,14 +215,24 @@ redshift}
 \subsection{OpsSim Analysis}
 \label{sec:keyword:analysis}
 
-We analyzed the Opsim output of the  baseline observing stragety (see Section 2.2).
-We divided our analysis into two seperate data sets; one with Deep Drilling fields and the other one with main survey.
+{\bf Motivation and description:}
+
+As noted above the scientific goal of characterizing SNe is to a large extent
+dependent on how well the light curves of individual SNe are sampled in
+time and filters. To study this, we re-index the OpsSim output on spatial
+locations rather than use the temporal index. There are different methods (which will be merged), and here we will first illustrate this in terms the cadence in an example LSST field.
+Our goal for observing strategy is to obtain 7-10 epochs spread over 50 days or so for more than one filter (we will quantify the mininum filters later in the Section). This will allow to increase the number of SNe at low red-shift (e.g. z$<$ 1) and to distinguish SN Ia from other types of SNe.
+
+{\bf Analysis Results:}
+We analyzed the Opsim output of the  baseline observing stragety (see Section 2.2). 
+We used the file of $``$enigma_1189_sqlite.db$''$ {\footnote {http://ops2.tuc.noao.edu/runs/}}, and 
+We made our analysis into with two seperate data sets; one with Deep Drilling fields and the other one with main survey.
 
 \begin{figure}[tbh!]
 \vskip -1.3in
 %\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SNIaLCopsim.pdf}
 \vskip -1.3in
-\caption{ Light curve of Supernova Ia generated using OpSim output in 6 different bands
+\caption{Light curves of Supernova Type Ia generated using Deep Drilling Survey of the OpSim output in 6 different bands
 }
 \label{fig:SNIaLCopsimdeep}
 \end{figure}
@@ -233,31 +243,42 @@ We divided our analysis into two seperate data sets; one with Deep Drilling fiel
 \vskip -1.3in
 %\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SNIaLCopsim.pdf}
 \vskip -1.3in
-\caption{ Light curve of Supernova Ia generated using Deep Drilling Survey of the OpSim output in 6 different bands
+\caption{Light curves of Supernova Type Ia generated using Main Survey of the OpSim output in 6 different bands
 }
 \label{fig:SNIaLCopsimmain}
 \end{figure}
 
 
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
-
-As noted above the scientific goal of characterizing SNe is to a large extent
-dependent on how well the light curves of individual SNe are sampled in
-time and filters. To study this, we re-index the OpsSim output on spatial
-locations rather than use the temporal index. There are different methods (which will be merged), and here we will first illustrate this in terms the cadence in an example LSST field.
+%OpSim analysis: how good would the default observing strategy be, at
+%the time of writing for this science project?
 
 
 
 % --------------------------------------------------------------------
 
-\subsection{Discussion}
+\subsection{Suggestion of Rolling-Cadence and its OpSim Run}
 \label{sec:keyword:discussion}
 
 Discussion: what risks have been identified? What suggestions could be
 made to improve this science project's figure of merit, and mitigate
 the identified risks?
+
+{\bf Rolling-Cadence:} As mentioned above, our goal for observing strategy optimized for SN cosmology
+is to obtain 7-10 epochs spread over 50 days or so for more than one filter. We suggest to change the filter 
+every day and LSST can choose a part of sky which has the best airmass, centered on Zenith.
+LSST will observe about 1/3 of visible sky per day (to be confirmed). LSST can observe the same part of sky for 6 days 
+with 6 filters, and repeat 9 times for the same field. This observing strategy will result in 54 visits (with 6 different filters) for the same field. We repeat the same for Field 2 which takes another 54 days. Then observe Field 3 for another 54 days.
+
+\begin{figure}[tbh!]
+\vskip -1.3in
+%\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SNIaLCopsim.pdf}
+\vskip -1.3in
+\caption{Predictions of Light curves of Supernova Type Ia using Rolling-Cadence.
+}
+\label{fig:SNIaLCopsimmainnew}
+\end{figure}
+
 
 
 \begin{itemize}
