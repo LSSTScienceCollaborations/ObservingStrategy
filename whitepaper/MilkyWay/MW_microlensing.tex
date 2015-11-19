@@ -42,11 +42,17 @@
 % with a discussion of any risks that have been identified, and how
 % these could be mitigated.
 
-{\bf Note: these metrics have already been worked out in some detail
-  by Gould (arXiv). We do not expect to re-invent that wheel here.}
+%{\bf Note: these metrics have already been worked out in some detail
+%  by Gould (arXiv). We do not expect to re-invent that wheel here.}
 
-A short preamble goes here. What's the context for this science
-project? Where does it fit in the big picture?
+%A short preamble goes here. What's the context for this science
+%project? Where does it fit in the big picture?
+
+Gould (2013) argues assertively for inclusion of microlensing in the
+Galactic plane as part of LSST core science; see also Section 4.8.
+
+%Low-mass objects 
+
 
 % --------------------------------------------------------------------
 
@@ -68,6 +74,20 @@ to be optimized for this science?
 
 Quantifying the response via MAF metrics: definition of the metrics,
 and any derived overall figure of merit.
+
+{\bf Metric 1: fraction of low-mass objects correctly triggered based
+  on LSST observational timing.} Dependencies:
+\begin{itemize}
+  \item How many observations are required for an accurate trigger for followup? (E.g. could simply develop the ``Triples'' of Lund et al. (2015) towards higher number of repeat visits?) 
+\item What is the minimum coverage of a microlensing event lightcurve before it is classified as detected and triggered for followup? 
+\end{itemize}
+
+{\bf Metric 2: Error on mass function of microlensing objects as a population.} Dependencies in addition to Metric 1, all as spatial map:
+\begin{itemize}
+  \item Capability to simulate microlens population under assumptions on the mass function
+  \item Impact of sampling the mass function on its determination (e.g. if strategy X preferentially misses the short end of the timescale distribution, what does this do to the mass function determination?)
+\end{iemize}
+
 
 
 % --------------------------------------------------------------------
