@@ -7,11 +7,11 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 
 * **[Join the conversation about this project at its issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
 
-* **[NEW: Gauge the project's activity level](https://github.com/LSSTScienceCollaborations/ObservingStrategy/pulse/halfweekly)**
+* **[Gauge the project's activity level](https://github.com/LSSTScienceCollaborations/ObservingStrategy/pulse/halfweekly)**
 
-* **[NEW: Suggest a new `OpSim` experiment](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md)**
+* **[Suggest a new `OpSim` experiment](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md)**
 
-* **[NEW: Suggest some interesting commissioning observations](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/commissioning/README.md)**
+* **[Suggest some interesting commissioning observations](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/commissioning/README.md)**
 
 
 #### Shortcuts
