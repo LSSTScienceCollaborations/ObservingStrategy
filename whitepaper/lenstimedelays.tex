@@ -156,10 +156,10 @@ such a figure of merit in terms of the Hubble constant are underway.
 
 % --------------------------------------------------------------------
 
-\subsection{OpSim Analysis}
+\subsection{\OpSim Analysis}
 \label{sec:\secname:analysis}
 
-% OpSim analysis: how good would the default observing strategy be, at
+% \OpSim analysis: how good would the default observing strategy be, at
 % the time of writing for this science project?
 
 In this section we present the results of our ongoing \OpSim / MAF
@@ -171,8 +171,11 @@ We used the
 \simsMAFcontrib{SeasonStacker}{mafContrib/seasonStacker.py} to work
 with seasons.
 
-We used \texttt{ops2\_1075} for most of our tests, but we need to now
-re-run on \opsimdbref{db:enigma}, and others from \autoref{chp:cadence2015}.
+We used \texttt{ops2\_1075} \OpSim run for most of our tests, but we
+need to now re-run on \opsimdbref{db:enigma} and
+\opsimdbref{db:NoVisitPairs}, in order to assess the new baseline
+cadence, and compare it against a simulated observing strategy where
+the visit pair requirement is relaxed.
 
 \todo{PJM}{Correct the above paragraphs and add more links to MAF code.}
 
@@ -191,6 +194,19 @@ average values of our metrics, for two different \OpSim
 databases and two different filter set assumptions.
 
 \todo{PJM}{Compute global average lens time delay metrics and discuss.}
+
+
+\todo{PJM}{Define overall figure of merit and compute.}
+
+How about: define a sky area that provides required accuracy. This
+defines the available number of lenses. Then, in each pixel of that
+sky area, compute the expected number of lenses and the mean precision
+per lens there. Finally combine the whole sample to get the error on
+the weighted mean time delay, and equate that to the statistical
+uncertainty on the Hubble constant. Figure of merit is final precision
+on $H_0$, as a way to sum up the sample size and time delay
+measurability (at fixed accuracy requirement).ma
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[!ht]
@@ -234,7 +250,7 @@ according to the assumptions described in the text.}
           & \texttt{timedelayFoM} \\
   \hline\hline
 
-  \texttt{enigma\_1189}
+  \opsimdbref{db:enigma}
    & $ri$
     & $XXX$
      & $XXX$
@@ -244,7 +260,7 @@ according to the assumptions described in the text.}
          & $XXX$
           & ??? \\
 
-  \texttt{enigma\_1189}
+  \opsimdbref{db:enigma}
    & $ugrizy$
     & $XXX$
      & $XXX$
@@ -255,7 +271,7 @@ according to the assumptions described in the text.}
           & ??? \\
   \hline
 
-  \texttt{ops2\_1075}
+  \opsimdbref{db:NoVisitPairs}
    & $ri$
     & $XXX$
      & $XXX$
@@ -265,7 +281,7 @@ according to the assumptions described in the text.}
          & $XXX$
           & ??? \\
 
-  \texttt{ops2\_1075}
+  \opsimdbref{db:NoVisitPairs}
    & $ugrizy$
     & $XXX$
      & $XXX$
@@ -298,6 +314,20 @@ the identified risks?
 
 \todo{PJM}{Write lens time delays discussion section.}
 
+Main risk is that multi-filter light curve analysis will effectively
+not allow us  to use all 6 filters together. TDC2 simulated light curve analysis will answer this
+question.  2-filter alternative
+is important, as a pessimistic limit.
+
+How much effect did the relaxation of the visit pairs requirement
+have? If not much, could be because efficiency maximization prevents
+visits being split. Interested in investigating rolling cadence,
+including  some potentially extreme versions.
+
+Also need to assess 1 vs 3 vs 10 year light curves. How do metrics
+improve? What will be possible in the early part of the survey?
+
+% ====================================================================
 
 \navigationbar
 

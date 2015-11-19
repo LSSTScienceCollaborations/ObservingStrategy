@@ -19,8 +19,7 @@ To suggest a new `OpSim` run, you will (of course) need to write a very short *p
  [Target of Opportunity Observations](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_TOOObservations.md) | [Soares-Santos](https://github.com/soares-santos), [Bellm](https://github.com/soares-santos) | [#75](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/75) | simulate TOO Observations
  [Coordination with WFIRST](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_WFIRST.md) | [Gawiser](https://github.com/egawiser), [Rhodes](https://github.com/jasondrhodes) | [#114](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/114) | Add Special Survey to duplicate WFD observations of 2300 degrees during first 5 years 
 NEO optimized runs | SS SC | [#120](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/120) | Find more and different NEOs
-[Normal Plane](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_GP.md) | [Strader](https://github.com/caprastro) (for SMWLV) | [#162](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/162) | Do Galactic Plane with normal WFD cadence 
-
+[Normal Plane](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_GP.md) | [Strader](https://github.com/caprastro) (for SMWLV) | [#162](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/162) | Do Galactic Plane with normal WFD cadence
  [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/) | [...](https://github.com/) | [...](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/)
 
 Here's the [proposal template](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_Template.md)
