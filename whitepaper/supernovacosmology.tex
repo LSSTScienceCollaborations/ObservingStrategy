@@ -192,10 +192,36 @@ SN discovery II &  Estimate the number of SN discovery as a function of redshift
  \end{center}
 
 
-In 
+\begin{figure}[tbh!]
+%\vskip -1.3in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_290_lc.pdf}
+%\vskip -1.3in
+\caption{Light curves of Supernova Type Ia generated using Deep Drilling Survey of the OpSim output in 6 different bands.
+}
+\label{fig:SNIaLCopsimdeep}
+\end{figure}
+
+
+
+\begin{figure}[tbh!]
+%\vskip -1.3in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lc.pdf}
+%\vskip -1.3in
+\caption{Light curves of Supernova Type Ia generated using Main Survey of the OpSim output in different bands. The number of data points are limited. 
+}
+\label{fig:SNIaLCopsimmain}
+\end{figure}
+We build metrics for supernova cosmology in the following way:
+\begin{enumerate}
+\item We consider an ensemble of supernovae at different points of the sky with  their dates of explosions distributed uniformly through the survey period. For each of these supernovae, we evaluate a metric which we will call a 'perSNMetric' and add up the values of these metrics over the ensemble of supernovae. It has a rough interpretation of being the effective number of supernovae being used in the cosmological analysis.
+\item The 'perSNMetric' is evaluated with input about the supernova model parameters (redshift, model parameters etc.) and the observations that would see this supernovae in a hundred day period with $(-30, 7)$ window around the date of
+explosion. This 'perSNMetric' is evaluated as a product of metrics evaluating
+the performance of each stage. 
+\end{enumerate}
 
 \subsubsection{Discovery Metric}
-This metric is related to the estimated probability of detecting the supernova
+This metric is an approximation of the probability of detecting a SN as a transient using diffference imaging on single epoch (visit) exposures. It is constructed by computing a SNR for different obs
+related to the estimated probability of detecting the supernova
 from the survey images. To do t
 
 
