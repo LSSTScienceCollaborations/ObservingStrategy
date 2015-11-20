@@ -45,22 +45,19 @@
 %A short preamble goes here. What's the context for this science
 %project? Where does it fit in the big picture?
 
-
 Many populations of great importance to Astronomy exist predominantly
-in or near the Galactic Plane, and yet are sparse enough (and/or faint
-enough) that LSST is likely to be the only facility in the forseeable
-future that will be able to identify a statistically meaningful
-sample. Some (such as the novae that allow detailed study of suspected
-Type Ia Supernova progenitors) offer unique laboratories to study
-processes of fundamental importance to astrophysics at all
-scales. Others (like disk/disk microlensing events where {\it both}
-the lens and background source lie in the Milky Way disk) offer the
-{\it only} probe of important populations. An important collateral
-benefit of studies in the plane with an LSST-like facility, is
-improved mapping of the distribution and observational effects of the
-ISM (particularly dust), which is of importance to all IR/Optical/UV
-observational studies.
-
+in or near the Galactic Plane, and yet are sufficiently
+sparsely-distributed (and/or faint enough) that LSST is likely to be
+the only facility in the forseeable future that will be able to
+identify a statistically meaningful sample. Some (such as the novae
+that allow detailed study of the route to Type Ia Supernovae) offer
+unique laboratories to study processes of fundamental importance to
+astrophysics at all scales. Others (like intra-disk microlensing
+events) offer the {\it only} probe of important populations. An
+important collateral benefit of studies in the plane with an LSST-like
+facility, is improved mapping of the distribution and observational
+effects of the ISM (particularly dust), which is of importance to all
+IR/Optical/UV observational studies.
 
 % --------------------------------------------------------------------
 
@@ -75,8 +72,8 @@ observational studies.
 %to be optimized for this science?
 
 \begin{itemize}
-  \item 1. Probing quiescent compact binaries via variability;
-  \item 2. Novae and calibration of Type Ia supernovae;
+  \item 1. Quantifying the large quiescent compact binary population via variability;
+  \item 2. New insights into the behavior of Novae and the route to Type Ia Superovae;;
   \item 3. The next Galactic Supernova;;
   \item 4. Probing planets outside the Snow Line with Microlensing;
   \item 5. A three-dimensional Dust map and improvements in the reddening law
@@ -114,11 +111,11 @@ LSST would trigger a rich variety of observational investigations of
 the accretion/outflow process through studies of this large, dark
 population.
 
-While we have focused on black hole binaries, we note that LSST would
-be crucial for investigations of neutron star and white dwarf
-binaries. The total number of dwarf novae is presently poorly
-understood---theoretical estimates routinely yield a significantly
-higher number than are observed in the solar
+While we have focused above on black hole binaries, we note that LSST
+would be crucial for investigations of neutron star and white dwarf
+binaries. For example, the total number of dwarf novae is presently
+poorly understood---theoretical estimates routinely yield a
+significantly higher number than are observed in the solar
 neighborhood. Understanding the true specific frequency of these
 systems provides a key check on common envelope evolution, which is
 poorly constrained but has a large impact on, for example, LIGO event
@@ -149,10 +146,10 @@ within $5^{\circ}, 10^{\circ}$~of the Plane), this science case {\it
 %conditions? In broad terms, how would we expect the observing strategy
 %to be optimized for this science?
 
-{\bf 2. Novae and the calibration of Type Ia Supernovae:} Only $\sim
-15$ novae (explosions on the surfaces of white dwarfs) are discovered
-in the Milky Way each year, while observations of external galaxies
-show that the rate should be a factor of $\sim 3$ higher (Shafter et
+{\bf 2. Novae and the route to Type Ia Supernovae:} Only $\sim 15$
+novae (explosions on the surfaces of white dwarfs) are discovered in
+the Milky Way each year, while observations of external galaxies show
+that the rate should be a factor of $\sim 3$ higher (Shafter et
 al.~2014). Evidently, we are missing 50--75\% of novae due to their
 location in crowded, extinguished regions, where they are not bright
 enough to be discovered at the magnitude limits of existing transient
@@ -273,7 +270,13 @@ Galactic latitude are desirable.
 
 Unpolished notes about likely (reasonably straightforward) metrics
 follow, along with (in some cases) possible directions for future
-higher-level metrics.
+higher-level metrics.  \new{WIC - Note to co-authors: these metrics
+  were chosen to build off existing metrics in development. To take
+  one example, Peter Y has developed some nice ipython Notebooks that
+  illustrate representative Monte Carlo tests for periodicity
+  detection including spatial variation - thus I think the metrics
+  below should be straightforward to implement by modification of existing tools.}
+
 
 {\bf Metric 1.1 - Fraction of $10^{35-36}$~erg s$^{-1}$~quiescent
   black hole binaries detectable through ellipsoidal variability, as a function of location on sky and distance.}
