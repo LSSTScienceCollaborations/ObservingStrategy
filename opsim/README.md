@@ -11,6 +11,9 @@ experiments are available for us to run our MAF metrics on. This chapter gives s
 
 To suggest a new `OpSim` run, you will (of course) need to write a very short *proposal*. You can do this in a markdown file following [this template](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_Template.md) and check it into the `opsim` folder of this repository. Then, add it to the Table below, so everyone can see what you are suggesting and follow the link to your proposal.
 
+NB. When proposing a "rolling cadence" experiment, you should try and use the terminology defined by Kem Cook and Steve Ridgeway in their OpSim development work. Please see [their notes on rolling cadence strategy (v1.4)](https://docs.google.com/document/d/1OifCjqPMa76ErewS1zfY2KYjx0dBaY4KmXXnN3wm1GY/edit?usp=sharing) for guidance.
+
+
 ## Proposed New OpSim Experiments
 
  **Name**              | **Proposer(s)**       | **Issue Thread**| **Description**
