@@ -1,0 +1,15 @@
+# Extreme git commands for removing all trace of the goddamn PDF file:
+
+du -sch ../ObservingStrategy
+
+# "Filter" for the PDF file:
+
+git filter-branch --index-filter 'git rm --cached --ignore-unmatch LSST_Observing_Strategy_White_Paper.pdf' --prune-empty
+
+du -sch ../ObservingStrategy
+
+# "Garbage collection":
+
+\rm -rf .git/refs/original/ && git reflog expire --all && git gc --aggressive --prune
+
+du -sch ../ObservingStrategy
