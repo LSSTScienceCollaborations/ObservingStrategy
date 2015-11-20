@@ -35,7 +35,7 @@ LSST will provide an unprecedented combination of
 area, depth, multi-band, multi-epoch information for pursuing detail studies
 of the structure of this old Galactic component. We focus here in three
 specific projects that can be pursued with LSST. We define metrics that can
-be calculated in order to quantify the feasibility of the projects under different 
+be calculated in order to quantify the feasibility of the projects under different
 observational strategies. We expect more projects will join later.
 
 RR Lyrae stars have been known for several decades as excellent tracers
@@ -87,15 +87,23 @@ A particularly valuable measurement for studies in the halo is the infrared mean
 magnitudes z and Y since they provide the most accurate way to obtain 
 distances.
 
-\item Red Giants: red giants needs to be identified and separated from the 
-very numerous red main sequence stars present in the field. A gravity-sensitive
-photometric index can be used for separating efficiently giants from dwarfs (refs).
-The u magnitude is an essential ingredient in this process and it is necessary to
-follow-up the behavior of the u limiting magnitude under different observational strategies.
+\item Main sequence stars: lacking any distinguishable variability, the
+challenge in selecting a large and clean sample of main sequence stars comes
+from tremendous number of small and nearly-unresolved galaxies present at
+faint magnitudes. Precise star/galaxy separation is thus the limiting factor
+on the useful depth of the main sequence sample. In addition to identifying
+dwarfs, using dwarfs to map the metallicity distribution of the halo requires
+precise u-band data, since it exhibits the strongest metallicity dependence of
+the LSST filters.
 
-\item Photometric Metallicities: For this project it is necessary to measure ugr photometry 
-for main sequence stars. At faint magnitudes, star/galaxy separation is an issue that needs
-to be addressed.
+\item Red Giants: due to their intrinsic luminosity red giants will be sample
+a far deeper volume than main sequence stars at similar apparent magnitudes,
+but they must first be identified and separated from the very numerous main
+sequence stars present in the field. A gravity-sensitive photometric index can
+be used for separating efficiently giants from dwarfs (refs). The u magnitude
+is an essential ingredient in this process and it is necessary to follow-up
+the behavior of the u limiting magnitude under different observational
+strategies.
 
 \end{itemize}
 
@@ -104,8 +112,28 @@ to be addressed.
 \subsection{Metrics}
 \label{sec:keyword:MW_Halo_metrics}
 
-Quantifying the response via MAF metrics: definition of the metrics,
-and any derived overall figure of merit.
+\textbf{Star-Galaxy Separation:} For main sequence stars, the useful depth of
+the survey will likely not be the photometric detection limit but will instead
+be set by the ability to differentiate stars from unresolved background
+galaxies. Towards faint magnitudes the contamination by galaxies worsens
+significantly for several reasons: the number of galaxies is rising
+substantially, the angular size of galaxies is shrinking, and our ability to
+distinguish stars from marginally resolved galaxies diminishes for faint
+sources simply due to photon statistics. While the fundamental properties of
+the contaminant sources is beyond our control, our ability to reject these
+sources depends on survey parameters such as the distribution of seeing across
+visits and the depth of these visits.
+
+Our star galaxy separation metric accounts for these factors, using a modeling
+framework described in (s/g paper ref). This model uses the distribution of
+galaxies in size and number, derived from HST COSMOS observations, along with
+a fully Bayesian model decision formalism to compute the expected completeness
+and contamination in star-galaxy separation. Computationally for each position
+in the survey footprint we interpolate the results from that work on a grid in
+seeing, galaxy size, and coadd depth, then integrate over the distribution of
+galaxy sizes.
+
+[… will have more to say about the actual metric once it is fully implemented]
 
 
 % --------------------------------------------------------------------
@@ -113,8 +141,15 @@ and any derived overall figure of merit.
 \subsection{OpSim Analysis}
 \label{sec:keyword:MW_Halo_analysis}
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
+\begin{itemize}
+
+\item Comment on the north ecliptic spur in enigma\_1189. Is it close to the
+WFD S/G limit?
+
+\item Pan-STARRS-like cadence ops2\_1092, observing up to dec +15. How much
+volume do we gain, and how much do we lose in the WFD survey?
+
+\end{itemize}
 
 
 % --------------------------------------------------------------------
