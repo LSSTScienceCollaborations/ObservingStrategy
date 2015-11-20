@@ -191,9 +191,47 @@ SN discovery II &  Estimate the number of SN discovery as a function of redshift
 \hline \end{tabular}
  \end{center}
 
-\subsubsection{Discovery Metric}
-This metric is related to the estimated pr
 
+\begin{figure}[tbh!]
+%\vskip -1.3in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_290_lc.pdf}
+%\vskip -1.3in
+\caption{Light curves of Supernova Type Ia generated using Deep Drilling Survey of the OpSim output in 6 different bands.
+}
+\label{fig:SNIaLCopsimdeep}
+\end{figure}
+
+
+
+\begin{figure}[tbh!]
+%\vskip -1.3in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lc.pdf}
+%\vskip -1.3in
+\caption{Light curves of Supernova Type Ia generated using Main Survey of the OpSim output in different bands. The number of data points are limited. 
+}
+\label{fig:SNIaLCopsimmain}
+\end{figure}
+We build metrics for supernova cosmology in the following way:
+\begin{enumerate}
+\item We consider an ensemble of supernovae at different points of the sky with  their dates of explosions distributed uniformly through the survey period. For each of these supernovae, we evaluate a metric which we will call a 'perSNMetric' and add up the values of these metrics over the ensemble of supernovae. It has a rough interpretation of being the effective number of supernovae being used in the cosmological analysis.
+\item The 'perSNMetric' is evaluated with input about the supernova model parameters (redshift, model parameters etc.) and the observations that would see this supernovae in a hundred day period with $(-30, 7)$ window around the date of
+explosion. This 'perSNMetric' is evaluated as a product of metrics evaluating
+the performance of each stage. 
+\end{enumerate}
+
+\subsubsection{Discovery Metric}
+This metric is an approximation of the probability of detecting a SN as a transient from the set of single epoch (visit) exposures during the lifetime of a
+supernova. Here we assume that a single detection out of these visits is sufficient to identify the source as a transient. This probability is cosntructed
+by comparing the probability of transient detection for a point source of
+given SNR and filter band for a single visit. This single visit probability 
+currently uses an approximation from previous surveys (in particular some approximation from the Dark Energy Survey, and provided by R. Kessler, priv. communcation).
+
+
+\subsubsection{Quality Metric}
+We construct the quality metric for the perSNmetric by obtaining the light curve of the SN in the time window described above. We fit the light curve, and 
+approximately estimate the uncertainty in distance from the light curve fit alone. Of course, as is well known, luminosity distance estimates of supernova Type Ia also show an intrinsic scatter of around $0.1$ in previous surveys, which may be expected to decrease with better training samples and understanding 
+of underlying correlations of SNIa properties and their environments. We compute a quality metric for each SNIa as the ratio of the square of the uncertainty of the distance indicator from the supernova to the square of the intrinsic dispersion. When added up over SN to obtain a value $QM$, the uncertainty on 
+cosmological parameters may be expected to scale as $\sim sqrt(1.0 + \sum QM)$
 
 \emph{To be added: discussion of the ROC curve as a useful metric for photometric supernova 
 classification}
