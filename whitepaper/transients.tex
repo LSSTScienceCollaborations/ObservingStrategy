@@ -1,6 +1,6 @@
 % --------------------------------------------------------------------
 
-\chapter[Explosive Transients]{Explosive Transients}
+\chapter[Eruptive and Explosive Transients]{Explosive Transients}
 \def\chpname{transients}\label{chp:\chpname}
 
 % \noindent {\it
@@ -16,13 +16,30 @@ Chapter editors:
 
 \section{Introduction}
 
-Explosive transients such as novae, supernovae (SNe), and gamma-ray bursts (GRBs) probe the final stages of stellar evolution.
-Cadence choices are vital to determining LSST's ability to discover and characterize these events.
-Different types and time scales of phenomena benefit from different sampling strategies---sometimes significantly different.  Competing objectives described in this chapter are at the heart of LSST observing strategy and cadence design.
 
-When evaluating a particular observation or series of observations in light of how they perform for a specific science case, it may be helpful to think of metrics as lying along a continuum between discovery and characterization. Discovery requires a minimum amount of information to recognize an event or object as a candidate of interest, which necessarily involves some level of bare-bones characterization (upon which said recognition is based); rich characterization, on the other hand, implies that an event may not only be recognized as a candidate of interest, but basic properties of the event or object may be determined from the observation (e.g. including but not limited to classification of the event). The interpretation of a given metric along this continuum has implications for the subsequent action and analysis required, particularly as regards possible follow-up observations with other facilities.
+Explosive and eruptive transients include a diverse ensamble of object, diverse both physically and phenomenolocigally. Transients such as novae, supernovae (SNe), and gamma-ray bursts (GRBs) probe the final stages of stellar evolution, Tidal Disruption Events, GRS, Cataclism Variables give us the opportunity to studyunderstand compact and binary objects, Massive star eruptions allow us to understand mass loss mechanisms, chemical enrichment. Transients impact the evolutionary history of the Universe. The brightest transients (GRBs, TDEs, SNe) are light beams that can be seen onver cosmic distances, and some transients (Type Ia SNe in the first place) are cosmological tracers.
 
-In this chapter we focus on LSST's potential to advance the science of transients as astrophysical objects; the use of SNe for cosmology is discussed in \autoref{chp:cosmo}.
+Cadence choices are vital to determining LSST's ability to discover, classify, and characterize these events. However, because of the diversity in what we are here referring to as ``a transient'', it is difficult, in not impossible, to answer the question: what is the best observing strategy for transients as a whole. 
+
+Different types and time scales of phenomena benefit from different sampling strategies---sometimes significantly different, at time orthogonal.  Competing objectives described in this chapter are at the heart of LSST observing strategy and cadence design.
+
+When evaluating a particular observation or series of observations in light of how they perform for a specific science case, it may be helpful to think of metrics as lying along a continuum between discovery and characterization. Discovery requires a minimum amount of information to recognize an event or object as a candidate of interest, which necessarily involves some level of bare-bones characterization (upon which said recognition is based); rich characterization, on the other hand, implies that an event may not only be recognized as a candidate of interest, but basic properties of the event or object may be determined from the LSST observations (e.g. including but not limited to classification of the event). The level of characterization accessible through LSST data will of course evolve with time for all the transients that have characteristic time scales loonger than a few days. 
+%The interpretation of a given metric along this continuum has implications for the subsequent action and analysis required, particularly as regards possible follow-up observations with other facilities.
+
+In this chapter we focus on LSST's potential to advance the science of eruptive and explosive transients as astrophysical objects; the use of SNe for cosmology is discussed in \autoref{chp:cosmo}.
+
+We consider a non-exhaustive set of ``astronomical transients'' in the paragraphs that follow. We will use case studies to asses: 
+
+\begin{itemize}
+\item
+The discerning power of a given LSST observing cadence. For this topic we will address the ability to distinguish LBVs, SNe, and TDEs.
+\item
+The ability to identify an object of interest for follow-up and trigger prompt follow-up observations. For this topic GRBs are used as a case study.
+\item
+The insight that a cadence gives into a single transient class. The case study will be massive star Eruptions.
+\item 
+The statistical constraints to a transient class that can be obtained over the course of the LSST survey, from the LSST survey data alone (assuing a successful classification). SN Ia early interaction signatures or IIb shock breackout.
+\end{itemize}
 
 % --------------------------------------------------------------------
 
@@ -41,28 +58,37 @@ Transient events slower than $\sim$ weeks may be adequately sampled by
 a uniform LSST cadence.  Faster events may require special scheduling
 strategies.  For some event types, LSST can only be expected to
 provide a discovery service, and followup will necessarily be
-performed elsewhere.
+performed elsewhere. For some events, specifically detecting LIGO counterparts, a serendipitous discovery is extremely unlikely and enabling a TOO program would be the only way to provide a venue for LSSTs contribution to this science (?? is it ture??).
+
 
 % --------------------------------------------------------------------
 
 \subsection{Targets and Measurements}
 \label{sec:\secname:targets}
 
-The class of transients includes a heterogeneous assortment of objects and phenomena.
+The class of transients includes a heterogeneous assortment of objects and phenomena. The table below is a \emph{non-exhaustive} list of phenomena we are referring to as \emph{Eruptive and Explosive transients} in this document. 
 
 \begin{center}
 \begin{tabular}{| p{3cm} | p{8cm} | l | l |}
-\hline Transient Type & Examples of target science & Amplitude & Time Scale\\
+\hline Transient Type & Science drivers & Amplitude & Time Scale\\
 \hline
-Flare stars & Flare frequency, energy, stellar age & large & min\\
-Cataclysmic variables  & Interacting binaries, stellar evolution, compact objects, explosive events & small & min\\
-Supernovae & SN physics, mass loss, distance scale, cosmology& large & days\\
-Active galactic nuclei & Galaxy evolution, reverberation mapping, black hole physics& large & weeks\\
-Stellar microlensing & Exoplanet statistics& large & hours\\
-Gamma ray bursts & Optical discovery and characterization& large & min\\
-LIGO detections & Source position and characterization& unknown & min\\
-Serendipity & Discovery and characterization& unknown & unknown\\
-Tidal Disruption Events & Discovery and characterization & large & days\\
+Flare stars & Flare frequency, energy, stellar age & large & min \\
+
+Cataclysmic variables  & Interacting binaries, stellar evolution, compact objects & large & min - days\\
+
+LBV variability & Late stages stellar evolution, Mass loss, SN progenitors & large & weeks-years\\
+
+Massive star eruptions &  Late stages stellar evolution, Mass loss, SN progenitors & extreme &  weeks-years\\
+
+Supernovae & stellar evolution, feedback, chemical enrichment, cosmology & large & days - months \\
+
+Gamma ray bursts & SN connection, stellar evolution, cosmology & large & min - days\\
+
+Tidal Disruption Events & Massive BH demogaphic  & large & days\\
+
+LIGO detections &  EM charachterizaion & unknown & unknown\\
+
+Unknown  & Discovery & unknown & unknown\\
  \hline \end{tabular}
  \end{center}
 
