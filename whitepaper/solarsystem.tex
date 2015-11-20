@@ -341,74 +341,52 @@ Different discussion / risks for each science case within this general metric?
 
 % ====================================================================
 
-\section{Measuring colors}
-\def\secname{\chpname:colors}\label{sec:\secname}
-
-
-A short preamble goes here. What's the context for this science
-project? Where does it fit in the big picture?
-
-% --------------------------------------------------------------------
-
-\subsection{Target measurements and discoveries}
-\label{sec:\secname:targets}
-
-Describe the discoveries and measurements you want to make.
-
-Now, describe their response to the observing strategy. Qualitatively,
-how will the science project be affected by the observing schedule and
-conditions? In broad terms, how would we expect the observing strategy
-to be optimized for this science?
-
-
-% --------------------------------------------------------------------
-
-\subsection{Metrics}
-\label{sec:\secname:metrics}
-
-Quantifying the response via MAF metrics: definition of the metrics,
-and any derived overall figure of merit.
-
-
-% --------------------------------------------------------------------
-
-\subsection{OpSim Analysis}
-\label{sec:\secname:analysis}
-
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
-
-
-% --------------------------------------------------------------------
-
-\subsection{Discussion}
-\label{sec:\secname:discussion}
-
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
-
-
-% ====================================================================
-
 \section{Measuring lightcurves/rotation periods}
 \def\secname{\chpname:lightcurves}\label{sec:\secname}
 
-
-A short preamble goes here. What's the context for this science
-project? Where does it fit in the big picture?
+Two Solar System science projects require
+a series of photometric measurements. These
+are (1) measuring lightcurves and therefore
+shapes of minor bodies and (2) measuring
+the colors and therefore compositions of
+minor bodies. This section and the next describe
+the science and the metrics for these
+experiments.
 
 % --------------------------------------------------------------------
 
 \subsection{Target measurements and discoveries}
 \label{sec:\secname:targets}
 
-Describe the discoveries and measurements you want to make.
+In general, minor bodies are aspherical,
+and therefore observations of those bodies
+produce lightcurves with non-zero amplitudes.
+Constant monitoring of such a body would
+reveal the detailed lightcurve, which can
+be inverted to derive the effective observed
+shape at that epoch.
+Observations
+over multiple epochs allow for observations
+at different aspects, which can be used to
+determine the three dimensional shape and pole
+orientation of the minor body. All of this
+information can be used to understand,
+broadly, the orbital and physical evolution
+of minor bodies in the Solar System.
 
-Now, describe their response to the observing strategy. Qualitatively,
-how will the science project be affected by the observing schedule and
-conditions? In broad terms, how would we expect the observing strategy
-to be optimized for this science?
+LSST observations of minor bodies in the Solar System
+will not, however, necessarily be dense in time
+(with the exception of observations made in
+Deep Drilling Fields; see below).
+Therefore, lightcurves of minor bodies must
+be combined across arbitrary rotational phase.
+Without knowing the phase, the amplitude of
+the lightcurve (a proxy for
+asteroid shape) can simply be determined.
+More complicated lightcurve inversion analysis
+xxx ref xxx
+can be carried out, given a sufficient number
+of points.
 
 
 % --------------------------------------------------------------------
@@ -416,8 +394,109 @@ to be optimized for this science?
 \subsection{Metrics}
 \label{sec:\secname:metrics}
 
-Quantifying the response via MAF metrics: definition of the metrics,
-and any derived overall figure of merit.
+The metric for lightcurve analysis
+is therefore related to the number
+of observations. The specific requirement
+is
+at least $\sim$100 measurements of an asteroid over
+$\sim$years,
+calibrated with a photometric accuracy of
+$\sim$5\% (SNR=20)
+or better. In these cases,
+a coarse shape model can be derived.
+The sparse data inversion gives correct results for both fast (0.2--2~h) and slow ($>$24~h) rotators (Durech et al.\ 2007, IAUS).
+
+
+
+% --------------------------------------------------------------------
+
+\subsection{OpSim Analysis}
+\label{sec:\secname:analysis}
+
+The present default OpSim does pretty well for this project.
+Our estimate from existing metrics is that some $10^5$~main
+belt asteroids will be observed $>$500~times in the 
+nominal survey. 
+
+
+
+% --------------------------------------------------------------------
+
+\subsection{Discussion}
+\label{sec:\secname:discussion}
+
+The success of this experiment is predicated
+on the idea that MOPS will work as advertised, 
+that is, that the linking of tracklets and tracks
+will be successful, so that each object's photometric
+time series can be identified.
+
+% ====================================================================
+
+\section{Measuring colors}
+\def\secname{\chpname:colors}\label{sec:\secname}
+
+he varying compositions of asteroids result
+in a range of optical colors. Sloan filters
+in general are sufficiently diagnostic to
+discriminate among different compositional
+class xxx ref xxx. Therefore, when a Solar System
+minor body is observed in griz (Solar System
+objects are generally quite faint in u band
+and many fewer will be detected; Y band xxx),
+the color can be used to determine the composition
+and, downstream, composition as a function of
+asteroid size, family membership, orbital
+elements, or many other parameters.
+
+One obstacle to determining asteroid colors
+is that asteroid rotation periods are
+on the order of 2--20~hours, so that after
+an initial measurement all further
+measurements (in the same filter, or other
+filters) are obtained at an arbitrary rotational
+phase.
+However, as described above, asteroid lightcurves
+in a single band (presumably r band, which
+will likely have the most detections) can be
+derived. Any observing of that asteroid
+in a different filter can be corrected
+for the derived lightcurve brightness
+offset at the time of the non-r band observation.
+The intrinsic color of the asteroid can therefore
+be measured.
+
+% --------------------------------------------------------------------
+
+\subsection{Target measurements and discoveries}
+\label{sec:\secname:targets}
+
+
+The metric of interest is the number
+of observations in each band. If an asteroid has
+more than $\sim$100 observations in r band,
+then the lightcurve can be determined, and the
+color can then be derived. The fidelity of the color
+will depend on the number of measurements in
+each band with SNR$>$20 (giving colors good to
+5\%).
+
+
+
+% --------------------------------------------------------------------
+
+\subsection{Metrics}
+\label{sec:\secname:metrics}
+
+The metric of interest is the number
+of observations in each band. If an asteroid has
+more than $\sim$100 observations in r band,
+then the lightcurve can be determined, and the
+color can then be derived. The fidelity of the color
+will depend on the number of measurements in
+each band with SNR$>$20 (giving colors good to
+5\%).
+
 
 
 % --------------------------------------------------------------------
@@ -437,6 +516,7 @@ the time of writing for this science project?
 Discussion: what risks have been identified? What suggestions could be
 made to improve this science project's figure of merit, and mitigate
 the identified risks?
+
 
 
 % ====================================================================
