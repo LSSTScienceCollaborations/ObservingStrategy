@@ -191,9 +191,47 @@ SN discovery II &  Estimate the number of SN discovery as a function of redshift
 \hline \end{tabular}
  \end{center}
 
-\subsubsection{Discovery Metric}
-This metric is related to the estimated pr
 
+\begin{figure}[tbh!]
+%\vskip -1.3in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_290_lc.pdf}
+%\vskip -1.3in
+\caption{Light curves of Supernova Type Ia generated using Deep Drilling Survey of the OpSim output in 6 different bands.
+}
+\label{fig:SNIaLCopsimdeep}
+\end{figure}
+
+
+
+\begin{figure}[tbh!]
+%\vskip -1.3in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lc.pdf}
+%\vskip -1.3in
+\caption{Light curves of Supernova Type Ia generated using Main Survey of the OpSim output in different bands. The number of data points are limited. 
+}
+\label{fig:SNIaLCopsimmain}
+\end{figure}
+We build metrics for supernova cosmology in the following way:
+\begin{enumerate}
+\item We consider an ensemble of supernovae at different points of the sky with  their dates of explosions distributed uniformly through the survey period. For each of these supernovae, we evaluate a metric which we will call a 'perSNMetric' and add up the values of these metrics over the ensemble of supernovae. It has a rough interpretation of being the effective number of supernovae being used in the cosmological analysis.
+\item The 'perSNMetric' is evaluated with input about the supernova model parameters (redshift, model parameters etc.) and the observations that would see this supernovae in a hundred day period with $(-30, 7)$ window around the date of
+explosion. This 'perSNMetric' is evaluated as a product of metrics evaluating
+the performance of each stage. 
+\end{enumerate}
+
+\subsubsection{Discovery Metric}
+This metric is an approximation of the probability of detecting a SN as a transient from the set of single epoch (visit) exposures during the lifetime of a
+supernova. Here we assume that a single detection out of these visits is sufficient to identify the source as a transient. This probability is cosntructed
+by comparing the probability of transient detection for a point source of
+given SNR and filter band for a single visit. This single visit probability 
+currently uses an approximation from previous surveys (in particular some approximation from the Dark Energy Survey, and provided by R. Kessler, priv. communcation).
+
+
+\subsubsection{Quality Metric}
+We construct the quality metric for the perSNmetric by obtaining the light curve of the SN in the time window described above. We fit the light curve, and 
+approximately estimate the uncertainty in distance from the light curve fit alone. Of course, as is well known, luminosity distance estimates of supernova Type Ia also show an intrinsic scatter of around $0.1$ in previous surveys, which may be expected to decrease with better training samples and understanding 
+of underlying correlations of SNIa properties and their environments. We compute a quality metric for each SNIa as the ratio of the square of the uncertainty of the distance indicator from the supernova to the square of the intrinsic dispersion. When added up over SN to obtain a value $QM$, the uncertainty on 
+cosmological parameters may be expected to scale as $\sim sqrt(1.0 + \sum QM)$
 
 \emph{To be added: discussion of the ROC curve as a useful metric for photometric supernova 
 classification}
@@ -223,17 +261,17 @@ redshift}
 As noted above the scientific goal of characterizing SNe is to a large extent
 dependent on how well the light curves of individual SNe are sampled in
 time and filters. To study this, we re-index the OpsSim output on spatial
-locations rather than use the temporal index. There are different methods (which will be merged), and here we will first illustrate this in terms the cadence in an example LSST field.
-Our goal for observing strategy is to obtain 7-10 epochs spread over 50 days or so for more than one filter (we will quantify the mininum filters later in the Section). This will allow to increase the number of SNe at low red-shift (e.g. z$<$ 1) and to distinguish SN Ia from other types of SNe.
+locations rather than use the temporal index. There are different methods for this (which will be merged), and here we will first illustrate this in terms the cadence in an example LSST field.
+Our goal for observing strategy is to obtain 7-10 epochs spread over 50 days or so for more than one filter (we will quantify the mininum filters later in the Section). This will increase the number of well-measured SNe at low redshift (z$<$ 1) and improve distinguishing SN Ia from other types of SNe.
 
 {\bf Analysis Results and Discussion}
-We analyzed the Opsim output of the  baseline observing stragety (see Section 2.2). 
-We used the file of enigma\_1189\_sqlite {\footnote {http://ops2.tuc.noao.edu/runs/}}, and 
-We made our analysis into with two seperate data sets; one with Deep Drilling fields and the other one with main survey.
+We analyzed the Opsim output of the baseline observing strategy (see Section 2.2),
+$enigma\_1189\_sqlite.db$ {\footnote {\url{http://ops2.tuc.noao.edu/runs/}}}, and 
+we made our analysis with two separate data sets, one with Deep Drilling fields and the other one with the main WFD survey.
 
 \begin{figure}[tbh!]
 %\vskip -1.3in
-\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_290_lc.pdf}
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lc.pdf}
 %\vskip -1.3in
 \caption{Light curves of Supernova Type Ia generated using Deep Drilling Survey of the OpSim output in 6 different bands.
 }
