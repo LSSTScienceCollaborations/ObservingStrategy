@@ -167,13 +167,18 @@ identified during the entire survey.
 OpSim analysis: how good would the default observing strategy be, at
 the time of writing for this science project?
 
-1) For assessing the limitations of DCR, need to obtain from OpSim
-the current maximal airmasses for each band, and the associated
-image quality and limiting magnitude. Convert this output into
-the mean and spread of the uncertainty on the astrometric redshifts.
-Need to fold the astrometric redshift estimation from DCR into MAF.
-Check the implications of higher airmasses and limiting magnitudes
-on the ability to obtain more accurate and precise astrometric redshifts.
+1) For assessing the limitations of DCR on the $L-z$ plane of LSST AGNs,
+one needs to obtain from OpSim the current maximal airmasses for each band,
+and the associated image quality and limiting magnitude. The current maximal airmasses,
+per band, averaged across the sky are: 1.41, 1.50, 1.51, 1.51, 1.51,
+and 1.51 for ugrizY, respectively. Need to convolve this with the
+seeing in each band to obtain the dependence on airmass and image
+quality. This output should be converted into the mean and spread
+of the uncertainty on the astrometric redshifts. The best way
+to obtain this is to fold the astrometric redshift estimation from
+DCR into MAF. Ultimately, need to check the implications of higher
+airmasses and limiting magnitudes on the ability to obtain more accurate
+and precise astrometric redshifts.
 
 2) For predicting the number of detected $z>6$ quasars
 %Compare this magnitude to the
