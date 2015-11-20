@@ -23,7 +23,7 @@
 %-
 % ====================================================================
 
-\section{Photometric Reverberation Mapping}
+\section{The Size and Structure of the Broad Emission Line Region}
 \def\secname{\chpname:photoRM}\label{sec:\secname}
 
 \credit{ohadshemmer}
@@ -45,20 +45,24 @@
 % A short preamble goes here. What's the context for this science
 % project? Where does it fit in the big picture?
 
-Photometric reverberation mapping (PRM), measuring the time-delayed
-response of either the flux of the broad emission line region (BELR)
-lines to the flux of the AGN continuum or between the continuum flux
-in one (longer wavelength) band to the continuum flux in another (band
-with shorter wavelength), will be one of the cornerstones of AGN
-research in the LSST era (e.g., \citet{Chelouche2013};
-\citet{CheloucheandZucker2013}; \citet{CheloucheEtal2014};
-\citet{EdelsonEtal2015}; \citet{FausnaughEtal2015}). For example, LSST
-is expected to deliver BELR line-continuum time delays in
-$\sim10^5-10^6$ sources, which is unprecedented when compared to
-$\sim50-100$ such measurements conducted via the traditional, yet much
-more expensive (per source) spectroscopic method. Sources in the
-deep-drilling fields (DDFs) will benefit from the highest quality PRM
-time-delay measurements given the factor of $\sim10$ denser sampling.
+LSST can provide estimates of the size and structure of the broad
+emission line region (BELR) using the photometric reverberation
+mapping (PRM) method. This method enables one to measure the
+time-delayed response of the flux in one band to the flux
+in another by using cross-correlation techniques on AGN light
+curves (e.g., \citet{Chelouche2013}; \citet{CheloucheandZucker2013};
+\citet{CheloucheEtal2014}; \citet{EdelsonEtal2015};
+\citet{FausnaughEtal2015}). The main challenge of PRM is to detect,
+with high confidence, the time lag between the avriations of a BELR
+line-rich band with respect to variations in a line-poor band, given
+the relatively small flux contributions (~10\%) of BELR lines to each
+LSST band. Nevertheless, LSST is expected to deliver BELR line-continuum
+time delays in $\sim10^5-10^6$ sources, which is unprecedented when
+compared to $\sim60-80$ such measurements conducted, to date, via the
+traditional, yet much more expensive (per source) spectroscopic method.
+Sources in the deep-drilling fields (DDFs) will benefit from the highest
+quality PRM time-delay measurements given the factor of $\sim10$ denser
+sampling (\citet{CheloucheEtal2014}).
 
 % --------------------------------------------------------------------
 
@@ -73,17 +77,22 @@ time-delay measurements given the factor of $\sim10$ denser sampling.
 % to be optimized for this science?
 
 The PRM measurements will probe the size and structure of the
-accretion disk and BELR, in a statistical sense, and may provide
-improved SMBH mass estimates for sources that have at least
-single-epoch spectra. \new{Our goal is to understand the population of
-AGN broad line regions, including their geometry. We expect to do this
-via  a model that connects the BH mass, BLR geometry and AGN
-photometric variability properties via a set of scaling relations. A
-simple version of this is could be something like...\newline\newline
-So, our target measurements are of $a$ and $b$, the X parameters.
-Before we derive a metric that quantifies our ability to measure these
-parameters, we can anticipate some of the sensitivity of the
-photometric RM method to observing strategy.}
+BELR, in a statistical sense, and may provide improved SMBH mass estimates
+for sources that have at least single-epoch spectra. The goal is
+to obtain $R_{\rm BELR}$ measures for different BELR lines in certain
+luminosity and redshift bins; for example, PRM will provide mean $R_{\rm BELR}$
+for Ly$\alpha$ in quasars at $2.1\ltsim z \ltsim 2.2$ with $45 \ltsim \log L \ltsim 46$,
+or mean $R_{\rm BELR}$ for C~{\sc iv}~$\lambda 1549$ in quasars at $1.6\ltsim z \ltsim 1.7$
+with $44 \ltsim \log L \ltsim 45$.
+%\new{Our goal is to understand the population of
+%AGN broad line regions, including their geometry. We expect to do this
+%via  a model that connects the BH mass, BLR geometry and AGN
+%photometric variability properties via a set of scaling relations. A
+%simple version of this is could be something like...\newline\newline
+%So, our target measurements are of $a$ and $b$, the X parameters.
+%Before we derive a metric that quantifies our ability to measure these
+%parameters, we can anticipate some of the sensitivity of the
+%photometric RM method to observing strategy.}
 
 The PRM method is very sensitive to the sampling in each band,
 therefore the ability to derive reliable time delays can be affected
@@ -117,9 +126,10 @@ that can yield any meaningful BELR-continuum lag estimates, and 2) the
 largest difference in the number of visits between two different bands
 that can yield any meaningful BELR-continuum lag estimates. Repeat
 these simulations by doubling the nominal number of DDFs. Assess the
-number of meaningful BELR-continuum time delays that can be obtained
-with the nominal OpSim, and point out potential perturbations in the
-cadence to improve the number and quality of such time delays.
+%number of meaningful BELR-continuum time delays that can be obtained
+uncertainties on $R_{\rm BELR}$ values achieved with the nominal OpSim,
+and point out potential perturbations in the cadence to reduce these
+uncertainties.
 
 % --------------------------------------------------------------------
 
