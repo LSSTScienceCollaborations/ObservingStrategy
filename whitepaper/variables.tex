@@ -20,7 +20,7 @@ Chapter editors:
 
 Variable objects are defined as those that exhibit brightness changes, either periodic or non-periodic, which are detected in quiescence and non-destructive to the object itself. Variable objects span a wide range in timescale-of-interest (sometimes even within a single class of objects), and so different science cases benefit from different sampling strategies. These strategies may be significantly disparate from one another, sometimes even mutually exclusive; competing objectives described in this chapter and the next are therefore at the heart of LSST observing strategy and cadence design.
 
-Below we develop a number of key science cases for LSST studies of variable objects, associating them with related metrics that can be used within the Metrics Analysis Framework (MAF) to understand the impact of a given survey strategy realization on the scientific results for that case. The science cases outlined are by no means exhaustive, but rather are motivated by providing key quantitative examples of LSST's performance given any particular deployment of survey strategy. The authors encourage community contribution of similar cases, where the scientific outcome can be quantified using specific metrics. 
+Below we develop a number of key science cases for LSST studies of variable objects, associating them with related metrics that can be used within the Metrics Analysis Framework (MAF) to understand the impact of a given survey strategy realization on the scientific results for that case. The science cases outlined are by no means exhaustive, but rather are motivated by providing key quantitative examples of LSST's performance given any particular deployment of survey strategy. The authors encourage community contribution of similar cases, where the scientific outcome can be quantified using specific metrics.
 
 
 
@@ -68,7 +68,7 @@ Young stellar populations & Star and planet formation, accretion physics & small
 \subsection{Description of Relevant Metrics}
 \label{sec:keyword:variablemetrics}
 
-Despite the range in scientific motivation for the cases presented below, there are some common metrics that are widely applicable (or may be combined in a variety of ways with other metrics to suit a variety of applications). 
+Despite the range in scientific motivation for the cases presented below, there are some common metrics that are widely applicable (or may be combined in a variety of ways with other metrics to suit a variety of applications).
 
 %\subsection{Metrics}
 %\label{sec:keyword:metrics}
@@ -86,9 +86,9 @@ Period variability (period dependent) & Fraction of targets vs survey duration, 
   \hline \end{tabular}
  \end{center}
 
-The ability to identify that an object is periodic, and to correctly determine that object's period, are widely applicable measures of discovery. In the case of regular variables (as outlined below), these two measures together can uniquely identify a population. Other kinds of periodic systems (transiting planets for example) also require a measurement of periodicity, but have a much wider range of relevant periods, and looser requirements on the strictness of that periodicity. 
+The ability to identify that an object is periodic, and to correctly determine that object's period, are widely applicable measures of discovery. In the case of regular variables (as outlined below), these two measures together can uniquely identify a population. Other kinds of periodic systems (transiting planets for example) also require a measurement of periodicity, but have a much wider range of relevant periods, and looser requirements on the strictness of that periodicity.
 
-Lund et al. (2015; \url{http://arxiv.org/pdf/1508.03175.pdf}) discuss three metrics that have been incorporated into the MAF. Two of these metrics deal explicitly with time variable behavior: a) observational triplets, and b) detection of periodic variability. 
+Lund et al. (2015; \url{http://arxiv.org/pdf/1508.03175.pdf}) discuss three metrics that have been incorporated into the MAF. Two of these metrics deal explicitly with time variable behavior: a) observational triplets, and b) detection of periodic variability.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[tbh!]
@@ -96,7 +96,7 @@ Lund et al. (2015; \url{http://arxiv.org/pdf/1508.03175.pdf}) discuss three metr
 %\hskip -0.5in
 %\includegraphics[angle=0,width=1.19\hsize:,clip]{figs/enigma1189_earlySNe.pdf}
 %\vskip -4.0in
-\includegraphics{figs/variables/enigma1189_Phase_Gap_MedianGap_OPSI_SkyMap.pdf}
+\includegraphics{figs/variables/enigma_1189_PeriodogramPurity_OPSI_SkyMap.pdf}
 \caption{The value for the Periodogram Purity Function for candidate Baseline Cadence \opsimdbref{db:enigma}.
 The Periodogram Purity Function provides a measure of the power lost due to aliasing.}
 \label{fig:enigmaPeriodogramPurity}
@@ -110,7 +110,7 @@ The Periodogram Purity Function provides a measure of the power lost due to alia
 %\hskip -0.5in
 %\includegraphics[angle=0,width=1.19\hsize:,clip]{figs/enigma1189_earlySNe.pdf}
 %\vskip -4.0in
-\includegraphics{figs/variables/enigma1189_Phase_Gap_MedianGap_OPSI_SkyMap.pdf}
+\includegraphics{figs/variables/enigma_1189_Phase_Gap_MedianGap_OPSI_SkyMap.pdf}
 \caption{The median phase gap for candidate Baseline Cadence \opsimdbref{db:enigma}.
 The PhaseGapMetric looks at periods between 3 and 35 days by default.}
 \label{fig:enigmaMedianGap}
@@ -123,7 +123,7 @@ The PhaseGapMetric looks at periods between 3 and 35 days by default.}
 %\hskip -0.5in
 %\includegraphics[angle=0,width=1.19\hsize:,clip]{figs/enigma1189_earlySNe.pdf}
 %\vskip -4.0in
-\includegraphics{figs/variables/enigma1189_Phase_Gap_LargestGap_OPSI_SkyMap.pdf}
+\includegraphics{figs/variables/enigma_1189_Phase_Gap_LargestGap_OPSI_SkyMap.pdf}
 \caption{The maximum phase gap for candidate Baseline Cadence \opsimdbref{db:enigma}.
 The PhaseGapMetric looks at periods between 3 and 35 days by default.}
 \label{fig:enigmaMaxGap}
@@ -143,11 +143,11 @@ The Period Deviation Metric calculates the error in recovering the correct perio
 
 %\subsection{Proposed Metrics}
 
-%The following is a raw list of metric ideas; these need specificity and further description. 
+%The following is a raw list of metric ideas; these need specificity and further description.
 
 %FWHM of the window function (to quantify sampling)
 
-%Maximum hour angle difference 
+%Maximum hour angle difference
 
 %Fraction of discoveries vs fractional duration of eclipse
 
