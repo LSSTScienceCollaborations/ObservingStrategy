@@ -183,13 +183,16 @@ and any derived overall figure of merit.
 \begin{tabular}{| p{5cm} |p{10cm} |p{2cm}}
 \hline Metric & Description & Status\\
 \hline
-SN discovery I  &  Identify the number of LSST data points and quality required & \\
+Discovery Metric &  Identify the number of LSST data points and quality required & \\
 SN light curve quality & Generate SN light curves using OpSim output of baseline Cadence &\\
 SN classification & Classify identified SNe into SN Ia, II, Ib, and Ic & \\
 SN light curve II & Generate SN light curves with different redshift (0.1-1) &\\
 SN discovery II &  Estimate the number of SN discovery as a function of redshift & \\
 \hline \end{tabular}
  \end{center}
+
+\subsubsection{Discovery Metric}
+This metric is related to the estimated pr
 
 
 \emph{To be added: discussion of the ROC curve as a useful metric for photometric supernova 
@@ -220,19 +223,19 @@ redshift}
 As noted above the scientific goal of characterizing SNe is to a large extent
 dependent on how well the light curves of individual SNe are sampled in
 time and filters. To study this, we re-index the OpsSim output on spatial
-locations rather than use the temporal index. There are different methods (which will be merged), and here we will first illustrate this in terms the cadence in an example LSST field.
-Our goal for observing strategy is to obtain 7-10 epochs spread over 50 days or so for more than one filter (we will quantify the mininum filters later in the Section). This will allow to increase the number of SNe at low red-shift (e.g. z$<$ 1) and to distinguish SN Ia from other types of SNe.
+locations rather than use the temporal index. There are different methods for this (which will be merged), and here we will first illustrate this in terms the cadence in an example LSST field.
+Our goal for observing strategy is to obtain 7-10 epochs spread over 50 days or so for more than one filter (we will quantify the mininum filters later in the Section). This will increase the number of well-measured SNe at low redshift (z$<$ 1) and improve distinguishing SN Ia from other types of SNe.
 
 {\bf Analysis Results and Discussion}
-We analyzed the Opsim output of the  baseline observing stragety (see Section 2.2). 
-We used the file of $``$enigma_1189_sqlite.db$''$ {\footnote {http://ops2.tuc.noao.edu/runs/}}, and 
-We made our analysis into with two seperate data sets; one with Deep Drilling fields and the other one with main survey.
+We analyzed the Opsim output of the baseline observing strategy (see Section 2.2),
+$enigma\_1189\_sqlite.db$ {\footnote {\url{http://ops2.tuc.noao.edu/runs/}}}, and 
+we made our analysis with two separate data sets, one with Deep Drilling fields and the other one with the main WFD survey.
 
 \begin{figure}[tbh!]
-\vskip -1.3in
-%\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SNIaLCopsim.pdf}
-\vskip -1.3in
-\caption{Light curves of Supernova Type Ia generated using Deep Drilling Survey of the OpSim output in 6 different bands
+%\vskip -1.3in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lc.pdf}
+%\vskip -1.3in
+\caption{Light curves of Supernova Type Ia generated using Deep Drilling Survey of the OpSim output in 6 different bands.
 }
 \label{fig:SNIaLCopsimdeep}
 \end{figure}
@@ -240,10 +243,10 @@ We made our analysis into with two seperate data sets; one with Deep Drilling fi
 
 
 \begin{figure}[tbh!]
-\vskip -1.3in
-%\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SNIaLCopsim.pdf}
-\vskip -1.3in
-\caption{Light curves of Supernova Type Ia generated using Main Survey of the OpSim output in 6 different bands
+%\vskip -1.3in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lc.pdf}
+%\vskip -1.3in
+\caption{Light curves of Supernova Type Ia generated using Main Survey of the OpSim output in different bands. The number of data points are limited. 
 }
 \label{fig:SNIaLCopsimmain}
 \end{figure}
