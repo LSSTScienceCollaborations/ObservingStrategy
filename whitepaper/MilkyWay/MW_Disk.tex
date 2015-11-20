@@ -89,8 +89,9 @@ Corral-Santana et al.~2015). Many questions central to modern
 astrophysics can only be answered by enlarging this sample: which
 stars produce neutron stars and which black holes; whether there is a
 true gap in mass between neutron stars and black holes; whether
-supernova explosions result in large black hole kicks. there is
-expected to be a large population of black hole binaries in quiescence
+supernova explosions result in large black hole kicks. 
+
+There is expected to be a large population of black hole binaries in quiescence
 with low X-ray luminosities from $\sim 10^{30}$--$10^{33}$ erg/s.
 Such systems can be identified as optical variables that show unique,
 double-humped ellipsoidal variations of typical amplitude $\sim 0.2$
@@ -113,13 +114,16 @@ population.
 
 While we have focused above on black hole binaries, we note that LSST
 would be crucial for investigations of neutron star and white dwarf
-binaries. For example, the total number of dwarf novae is presently
+binaries. For example, the total number of dwarf novae (accretion disk
+instability outbursts around white dwarfs)
+is presently
 poorly understood---theoretical estimates routinely yield a
 significantly higher number than are observed in the solar
 neighborhood. Understanding the true specific frequency of these
 systems provides a key check on common envelope evolution, which is
 poorly constrained but has a large impact on, for example, LIGO event
-rates. LSST will detect dwarf novae, which last at least several days,
+rates. LSST will detect dwarf novae, which last at least several days
+with typical amplitudes of 4--6 mag,
 out to kpc scales. This will allow a test of not only the number of
 cataclysmic variables, but also of the 3D distribution within the
 Galaxy and dependence on metallicity gradients (Britt et al. 2015).
@@ -130,14 +134,13 @@ within $5^{\circ}, 10^{\circ}$~of the Plane), this science case {\it
     requires} that LSST observe the plane with sufficient cadence to
   detect the $\sim$hundreds of quiescent black-hole binaries by virtue
   of their variability. The natural choice for a survey for
-  low-luminosity black hole binaries, would be to extend the
+  low-luminosity black hole binaries would be to extend the
   Wide-Fast-Deep survey throughout the Plane in the direction of the
-  inner Milky Way. Turning to dwarf novae, the cadence of observations
+  inner Milky Way. For dwarf novae, the cadence of observations
   is critical in obtaining an accurate measure of the population of
   cataclysmic variables, as a long baseline is necessary to recover
-  low duty cycle systems while observations spaced too far apart risk
-  leaving windows large enough to allow short outbursts to go
-  undetected.
+  low duty cycle systems while widely-space observations
+ would miss short outbursts.
 
 %Describe the discoveries and measurements you want to make.
 
@@ -198,7 +201,7 @@ observations preceding the explosion, providing essential photometric
 data leading up to the event---but only if LSST covers the Plane at a
 frequent cadence. Just {\it how} frequent is open to exploration at
 present, but the prospect of high-sensitivity observations of the
-location of such a supernova {\it before} it takes place, are clearly
+location of such a supernova {\it before} it takes place are clearly
 of enormous scientific value. A secondary issue is the prospect that
 an easily-observed Milky Way supernova might be too bright for LSST to
 measure precisely with its planned exposure time, with a roughly 82\%
@@ -229,8 +232,8 @@ directly take advantage of the capabilities unique to LSST.
 {\it Response to observing strategy:} To catch lensing events as they
 start to brighten, with sufficient fidelity to trigger the intensive
 follow-up required, the models of Gould (2013) suggest each field
-should be observed once every few nights. Much sparser, and the survey
-would lose sensitivity to microlens events in progress.
+should be observed once every few nights. With sparser coverage,
+the survey would lose sensitivity to microlensing events in progress.
 
 {\bf 5. Dust in the Milky Way disk:} The Pan-STARRS1 survey (PS1) has
 produced a three-dimensional dust map of the region of the sky covered
@@ -247,15 +250,13 @@ extinctions and larger distances. Owing to the high extinction and the
 use of blue filters, this project is less affected by crowding than
 other projects requiring photometry in the Plane. 
 
-{\it Response to observing strategy:} When focusing on the ISM (as
-opposed to time-domain studies e.g. for Star forming regions and
-Herbig-Harbo objects), the main drivers of feasibility are likely to
-be: probing of the correct regions on the sky (in particular within a
-few degrees of the midplane) and achievement of sufficient photometric
-accuracy to improve over existing estimates are needed. Turning to
-crowding, this project is less affected by crowding than other
+{\it Response to observing strategy:} When focusing on dust in the ISM (as
+opposed to time-domain studies, e.g., dust around star-forming
+regions or young stars), the main drivers of feasibility are
+coverage of the few degrees around the Plane with sufficient photometric depth
+and accuracy. This project is less affected by crowding than other
 projects requiring photometry in the Plane owing to its use of blue
-filters and the high extinction. Nonetheless, quantiative estimates of
+filters and the high extinction.  Nonetheless, quantiative estimates of
 the expected photometric accuracy in coadded $u$ and $g$ images at low
 Galactic latitude are desirable.
 
@@ -278,7 +279,7 @@ higher-level metrics.  \new{WIC - Note to co-authors: these metrics
   below should be straightforward to implement by modification of existing tools.}
 
 
-{\bf Metric 1.1 - Fraction of $10^{35-36}$~erg s$^{-1}$~quiescent
+{\bf Metric 1.1 - Fraction of quiescent
   black hole binaries detectable through ellipsoidal variability, as a function of location on sky and distance.}
 Dependencies:
 \begin{itemize}
@@ -366,8 +367,9 @@ Dependencies:
 \subsection{OpSim Analysis}
 \label{sec:keyword:MW_Disk_analysis}
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
+The current baseline cadence (${\tt enigma\_1189}$) partially excludes the Galactic Plane from the deep-wide-fast survey and instead adopts a nominal 30 visits 
+per filter as part of a special proposal. We have proposed an OpSim run that includes the Galactic Plane in the deep-wide-fast survey (see \http{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_GP.md}). The metrics listed above should be carefully compared between our proposed 
+run and the baseline cadence.
 
 
 % --------------------------------------------------------------------
