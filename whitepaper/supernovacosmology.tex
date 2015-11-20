@@ -183,13 +183,16 @@ and any derived overall figure of merit.
 \begin{tabular}{| p{5cm} |p{10cm} |p{2cm}}
 \hline Metric & Description & Status\\
 \hline
-SN discovery I  &  Identify the number of LSST data points and quality required & \\
+Discovery Metric &  Identify the number of LSST data points and quality required & \\
 SN light curve quality & Generate SN light curves using OpSim output of baseline Cadence &\\
 SN classification & Classify identified SNe into SN Ia, II, Ib, and Ic & \\
 SN light curve II & Generate SN light curves with different redshift (0.1-1) &\\
 SN discovery II &  Estimate the number of SN discovery as a function of redshift & \\
 \hline \end{tabular}
  \end{center}
+
+\subsubsection{Discovery Metric}
+This metric is related to the estimated pr
 
 
 \emph{To be added: discussion of the ROC curve as a useful metric for photometric supernova 
@@ -229,10 +232,10 @@ $enigma\_1189\_sqlite.db$ {\footnote {\url{http://ops2.tuc.noao.edu/runs/}}}, an
 we made our analysis with two separate data sets, one with Deep Drilling fields and the other one with the main WFD survey.
 
 \begin{figure}[tbh!]
-\vskip -1.3in
-%\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SNIaLCopsim.pdf}
-\vskip -1.3in
-\caption{Light curves of Supernova Type Ia generated using Deep Drilling Survey of the OpSim output in 6 different bands
+%\vskip -1.3in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_290_lc.pdf}
+%\vskip -1.3in
+\caption{Light curves of Supernova Type Ia generated using Deep Drilling Survey of the OpSim output in 6 different bands.
 }
 \label{fig:SNIaLCopsimdeep}
 \end{figure}
@@ -240,10 +243,10 @@ we made our analysis with two separate data sets, one with Deep Drilling fields 
 
 
 \begin{figure}[tbh!]
-\vskip -1.3in
-%\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SNIaLCopsim.pdf}
-\vskip -1.3in
-\caption{Light curves of Supernova Type Ia generated using Main Survey of the OpSim output in 6 different bands
+%\vskip -1.3in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lc.pdf}
+%\vskip -1.3in
+\caption{Light curves of Supernova Type Ia generated using Main Survey of the OpSim output in different bands. The number of data points are limited. 
 }
 \label{fig:SNIaLCopsimmain}
 \end{figure}
