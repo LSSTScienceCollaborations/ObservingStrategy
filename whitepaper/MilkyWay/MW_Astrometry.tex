@@ -3,18 +3,28 @@
 \section{Astrometry with LSST: Positions, Proper Motions, and Parallax}
 \def\secname{MW_Astrometry}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
 
-\noindent {\it
-Dave Monet, Dana Casetti, John Gizis, Michael Liu
-}
+\noindent {\it Dave Monet, Dana Casetti, John Gizis, Michael Liu}
 
-%\medskip
-While astrometry is not a science case, high astrometric accuracy enables
-a large number of science cases.  Hence, the LSST Observing Strategy needs
-to be examined for systematic trends that might mitigate or even preclude
-precise measures of stellar positions, proper motions, parallaxes, and
-perturbations that arise from unseen companions.  To highlight the
-various astrometric impacts of the strategy, three science cases have
-been chosen for particular attention:
+\subsection{Introduction: Astrometry as a special case}
+\label{sec:keyword:MW_Astrometry_intro}
+
+A number of Milky Way science cases of interest to the Astronomical
+community will depend critically on the astrometric accuracy LSST will
+deliver. While ``astrometry'' is not a science case in the framework
+of this Whitepaper, LSST's astrometric performance will be sensitive
+to the particular choice of observing strategy.
+%While astrometry is not a science case, high astrometric accuracy enables
+%a large number of science cases.  
+Hence, the LSST Observing Strategy needs to be examined for systematic
+trends that might mitigate or even preclude precise measures of
+stellar positions, proper motions, parallaxes, and perturbations that
+arise from unseen companions. To illustrate the broad impact of
+strategy-enabled astrometry, three example impacted science cases are:
+%that illustrate the various impacts of the observing strategy might
+%be:
+%To highlight the
+%various astrometric impacts of the strategy, three science cases have
+%been chosen for particular attention:
 \begin{itemize}
 \item The tie between the Radio and Optical realizations of the
 International Celestial Reference System.
@@ -24,7 +34,10 @@ International Celestial Reference System.
 Each of these cases stresses different aspects of the LSST hardware, software,
 and observing strategies.
 
-\medskip
+\subsection{Sensitivity of parallax measurements to observing strategy}
+\label{sec:keyword:MW_Astrometry_cadence}
+
+%\medskip
 The measurement of stellar parallax puts the most constraints on the
 observing cadence.  There are two major issues:
 \begin{itemize}
@@ -84,6 +97,9 @@ minimal (if any) spatially extended structure.  The impact of this search
 has no obvious impact on the cadence other than temporal coverage to
 identify variability.
 
+\subsection{Metrics for LSST's delivered astrometric accuracy}
+\label{sec:keyword:MW_Astrometry_metrics}
+
 %\medskip
 In summary, there are three metrics for the observing strategy that have direct
 relevance
@@ -106,6 +122,9 @@ the number of fields with this correlation.
 reasonable coverage over the duration of the survey and to avoid
 collections of too many visits during a few short intervals.
 \end{itemize}
+
+\subsection{Topics that will need to be addressed}
+\label{sec:keyword:MW_Astrometry_furtherwork}
 
 %\medskip
 Finally, it must be noted that these MAF metrics are only part of the
