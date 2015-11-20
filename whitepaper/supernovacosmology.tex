@@ -220,10 +220,18 @@ the performance of each stage.
 \end{enumerate}
 
 \subsubsection{Discovery Metric}
-This metric is an approximation of the probability of detecting a SN as a transient using diffference imaging on single epoch (visit) exposures. It is constructed by computing a SNR for different obs
-related to the estimated probability of detecting the supernova
-from the survey images. To do t
+This metric is an approximation of the probability of detecting a SN as a transient from the set of single epoch (visit) exposures during the lifetime of a
+supernova. Here we assume that a single detection out of these visits is sufficient to identify the source as a transient. This probability is cosntructed
+by comparing the probability of transient detection for a point source of
+given SNR and filter band for a single visit. This single visit probability 
+currently uses an approximation from previous surveys (in particular some approximation from the Dark Energy Survey, and provided by R. Kessler, priv. communcation).
 
+
+\subsubsection{Quality Metric}
+We construct the quality metric for the perSNmetric by obtaining the light curve of the SN in the time window described above. We fit the light curve, and 
+approximately estimate the uncertainty in distance from the light curve fit alone. Of course, as is well known, luminosity distance estimates of supernova Type Ia also show an intrinsic scatter of around $0.1$ in previous surveys, which may be expected to decrease with better training samples and understanding 
+of underlying correlations of SNIa properties and their environments. We compute a quality metric for each SNIa as the ratio of the square of the uncertainty of the distance indicator from the supernova to the square of the intrinsic dispersion. When added up over SN to obtain a value $QM$, the uncertainty on 
+cosmological parameters may be expected to scale as $\sim sqrt(1.0 + \sum QM)$
 
 \emph{To be added: discussion of the ROC curve as a useful metric for photometric supernova 
 classification}
