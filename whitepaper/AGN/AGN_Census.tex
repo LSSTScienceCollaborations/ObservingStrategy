@@ -49,10 +49,18 @@
 % A short preamble goes here. What's the context for this science
 % project? Where does it fit in the big picture?
 
-\new{Large samples of LSST AGN will provide high precision constraints
-on  galaxy evolution models. The science yield will be maximized  by
-increasing the sample size; the accuracy with which the selection
-function is known may also be important. }
+%\new{From Phil: Large samples of LSST AGN will provide high precision constraints
+%on  galaxy evolution models. The science yield will be maximized  by
+%increasing the sample size; the accuracy with which the selection
+%function is known may also be important. }
+
+The primary goal for AGN science is to maximize the discovery of AGN
+with the LSST and construct the largest possible inventory of sources
+spanning the widest possible ranges in the redshift-luminosity parameter
+space. This, in turn, will provide high-precision constraints on galaxy
+evolution models as well as on various cosmological science cases,
+such as quasar clustering, the highest redshift quasars, and
+strong gravitational lensing.
 
 % --------------------------------------------------------------------
 
@@ -66,15 +74,16 @@ function is known may also be important. }
 % conditions? In broad terms, how would we expect the observing strategy
 % to be optimized for this science?
 
-\new{Our target measurements will be inferences of galaxy evolution
-model  parameters, from a joint analysis with the host galaxy
-properties. As an initial proxy, we focus on the quasar luminosity
-function -- and  as a first step towards that, the number counts.}
-About $10^7 - 10^8$ AGNs will be selected in the main LSST survey
-using a combination of criteria, split broadly into four categories:
-colors, astrometry, variability, and multiwavelength matching with
-other surveys. The LSST observing strategy will affect mostly the
-first three of these categories.
+%\new{From Phil: Our target measurements will be inferences of galaxy evolution
+%model  parameters, from a joint analysis with the host galaxy
+%properties. As an initial proxy, we focus on the quasar luminosity
+%function -- and  as a first step towards that, the number counts.}
+
+It is expected that $\approx 10^7 - 10^8$ AGNs will be selected in the
+main LSST survey using a combination of criteria, split broadly into
+four categories: colors, astrometry, variability, and multiwavelength
+matching with other surveys. The LSST observing strategy will affect
+mostly the first three of these categories as described further below.
 
 {\bf Colors:} The LSST observing strategy will determine the depth in
 each band, as a function of position on the sky, and will thus affect
@@ -104,6 +113,10 @@ and photometric redshift confirmation may be affected since the LSST
 cadence will affect the airmass distribution, in each band, for each
 AGN candidate.
 
+The most critical measurement in this stage is a reliable and precise
+redshift for each source, obtained both from a photometric and an
+astrometric redshift.
+
 % Ideas for Metrics:
 % detection - how many can LSST detect based on the luminosity function
 % (depends on the depth in each band for single epoch and coadd)
@@ -121,13 +134,13 @@ AGN candidate.
 Quantifying the response via MAF metrics: definition of the metrics,
 and any derived overall figure of merit.
 
-Need to compute the mean $Y$ band magnitude
-across the sky for the nominal OpSim. Compare this magnitude to the
-one required for identifying $\geq1000$ quasars at $z\geq6$.
-Currently, for enigma\_1189, the single-epoch 5-sigma depth in $Y$
-is 22.36 mag, and for the final co-added 5-sigma depth is $Y=24.4$.
-These limits are deeper than the original predictions.
-% (See the AAS poster from 2013: http://www.lsst.org/sites/default/files/221-RC-247.10-AAS_shemmer.pptx.pdf).
+The following metrics are important here:
+
+1) Estimating the number of quasars at $z>6$ that LSST can discover
+during a single visit as well as the entire survey and verify that
+this number does not fall short of the original predictions. This
+requires computing the limiting $Y$-band magnitude, averaged
+across the sky for the nominal OpSim. 
 
 % --------------------------------------------------------------------
 
@@ -136,6 +149,14 @@ These limits are deeper than the original predictions.
 
 OpSim analysis: how good would the default observing strategy be, at
 the time of writing for this science project?
+
+1) For maximizing the detection of $z>6$ quasars
+%Compare this magnitude to the
+%one required for identifying $\geq1000$ quasars at $z\geq6$.
+the current enigma\_1189 OpSim gives a single-epoch 5-sigma depth
+$Y=22.36$ mag, and for the final co-added 5-sigma depth it is $Y=24.4$.
+These limits are deeper than the original predictions (see plot).
+% (See the AAS poster from 2013: http://www.lsst.org/sites/default/files/221-RC-247.10-AAS_shemmer.pptx.pdf).
 
 
 % --------------------------------------------------------------------
