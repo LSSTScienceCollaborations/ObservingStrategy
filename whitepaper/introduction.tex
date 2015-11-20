@@ -1,4 +1,3 @@
-
 \chapter[Introduction]{Introduction}
 \def\chpname{intro}\label{chp:\chpname}
 
@@ -11,23 +10,26 @@ telescope with an effective aperture of 6.7 meters, currently under
 construction on Cerro Pach\'on in the Chilean Andes.  The telescope
 and camera will have a huge field of view, 9.6 deg$^2$, and the
 \'etendue, i.e., the product of collecting area and field of view will
-be significantly larger than any other telescope.  Thus this telescope
+be significantly larger than any other optical telescope.  Thus this telescope
 is designed for wide-field deep imaging of the sky; its mantra is
 ``Wide-Deep-Fast'', i.e., the ability to cover large swaths of sky
 (``Wide'') to faint magnitudes (``Deep'') in a short amount of time
-(``Fast''), allowing to scan the sky repeatedly.
+(``Fast''), allowing it to scan the sky repeatedly.  LSST will image
+in six broad filters, $ugrizy$, spanning the optical band from the
+atmospheric cutoff in the ultraviolet to the limit of CCD sensitivity
+in the near-infrared.  
 
   The science case for the LSST is based broadly on four science
   themes:
 \begin{itemize}
-\item Dark energy and dark matter (via strong and weak lensing,
-  large-scale structure, and supernovae);
+\item Dark energy and dark matter (via measurements of strong and weak lensing,
+  large-scale structure, clusters of galaxies, and supernovae);
 \item Exploring the transient and variable universe;
 \item Studying the structure of the Milky Way galaxy and its neighbors
   via resolved stellar populations;
-\item An inventory of the Solar System, including Near-Earth Asteroids
-  and Potential Hazardous Objects, Main-Belt Asteroids, and
-  Kuiper-Belt Objects.
+\item An inventory of the Solar System, including Near Earth Asteroids
+  and Potential Hazardous Objects, Main Belt Asteroids, and
+  Kuiper Belt Objects.
 \end{itemize}
 
 These themes, together with {\em many} other science applications, are
@@ -36,19 +38,31 @@ described in detail in the
 by the LSST Project Team and Science collaborations in 2009.  The
 present white paper represents an important next step in science
 planning beyond the Science Book.  In particular, we now need to
-quantify how well the LSST (for a given realization of its cadence)
-will be able to carry out its science goals; indeed, we will use this
-quantification to refine and optimize the cadence itself.
+quantify how well the LSST (for a given realization of its observing
+strategy, or ``{\em cadence}'') will be able to carry out its science
+goals; indeed, we will use this quantification to refine and optimize
+the cadence itself.  To zeroth order, the large \'etendue of LSST
+allows it to meet all its science goals with a single dataset with a
+universal cadence.  This document describes the design of the LSST
+cadence and the various ways in which can be further refined to
+optimize the science output of the survey.  As we describe in detail
+below, we quantify the effectiveness of a given cadence realization to
+meet science goals by defining a series of quantitative {\em metrics}.
+Any given realization will be more favorable for some science areas,
+and less so for others; the metrics allow us to quantify this, and
+optimize the overall cadence for the broadest range of LSST science
+areas.
 
-The Science Book is six years old.  In those six years, some of the
+In the six years since the Science Book was written, some of the
 science themes described in there have evolved or become obselete,
 while new science opportunities and ideas have arisen.  Moreover, our
 understanding of the capabilities (such as system response and
 therefore depth, telescope optics, and so on) have matured
-considerably.  The present document endeavors to explore the
-principal science themes as described in the Science Book, but is not
-slaved to them, and where appropriate, we will point out relevant
-updates to the Science Book.
+considerably.  The present document endeavors to explore the principal
+science themes as described in the Science Book, but is not slaved to
+them, and where appropriate, we will point out relevant updates to the
+Science Book.
+
 
 
 % --------------------------------------------------------------------
@@ -56,34 +70,122 @@ updates to the Science Book.
 \section{Synoptic Sky Surveying at Universal Cadence}
 \def\secname{intro:baseline}\label{sec:\secname}
 
-Synoptic Surveying with LSST - the basic observing strategy determined
-by key projects described in the LSST Science Requirements Document,
-and constrained by the LSST's design \citep{IvezicEtal2008}.
+  The LSST defined a so-called ``baseline cadence'', described in the
+  \href{http://adsabs.harvard.edu/abs/2008arXiv0805.2366I}{LSST
+    overview paper} and Chapter 3 of the Science Book.  This was used
+  to demonstrate that LSST could meet its basic science goals, and
+  indeed the formal
+  \href{https://www.lsstcorp.org/docushare/dsweb/Get/LPM-17}{science
+    requirements}.    As 
+  described in these references, the default LSST exposure is 15
+  seconds, and all exposures are taken in pairs, called a ``{\em
+    visit}'', before the telescope is slewed to a neighboring field.
+   Any given field is observed twice on a given night, which allows
+   preliminary trajectories of asteroids to be determined.  
+
+   The baseline cadence optimizes the amount of sky covered in any
+   given night (subject to the constraint of observing at airmass less
+   than 1.4 throughout), and allows the entire sky visible at any time
+   of the year to be covered in about three nights.  The cadence is
+   designed to give uniform coverage at any given time, and reaches
+   survey goals for measuring stellar parallax and proper motion over
+   the ten-year survey.  The survey requirements on depth lead to
+   roughly 825 visits (summing over the six filters) in the 10-year
+   LSST survey to any given point on the sky.  The resulting
+   Deep-Wide-Fast component of the survey covers roughly 18,000
+   deg$^2$ of high Galactic latitude sky, and requires about 85\% of
+   the available observing time. 
+
+   There are obvious science cases that the Deep-Wide-Fast survey does
+   not address, and thus the remaining 15\% of the telescope time in
+   the baseline cadence is devoted to a series of specialized
+   surveys.  They are as follows: 
+\begin{itemize} 
+\item Imaging at low Galactic latitudes.  This is currently defined as
+  a wedge which is broader closer to the Galactic Center,
+  corresponding roughly to a locus of constant stellar density.  In
+  this region, the number of repeat observations is reduced, given the
+  confusion limit in the stacked LSST data. 
+\item Imaging in the South Celestial Cap.  The airmass limit of 1.4
+  restricts observations to declination $> -70^\circ$ ({\bf get
+    precise value}), thus missing both the Magellanic Clouds.
+  Observations are done in the Cap to cover this region of sky, again
+  to shallower depth. 
+\item Imaging in a series of four {\em Deep Drilling Fields}, single
+  pointings in which 
+  we will obtain roughly four {\bf check!} times more exposures in all
+  filters in order to go about a magnitude fainter in the stacked
+  data, as well as to get better sampled light curves of variable
+  objects. 
+\item Imaging in the Northern portions of the Ecliptic Plane.  The
+  airmass limit of 1.4 restricts us to declination $< +2^\circ$ ({\bf
+    get precise value}), which means that much of the ecliptic plane
+  is uncovered.  By observing with a reduced cadence close to the
+  Ecliptic Plane north of this limit, we will be able to significantly
+  increase the fraction of Near-Earth Asteroids and Main Belt
+  Asteroids for which LSST obtains orbits.
+\end{itemize}
+
+  The LSST Project has developed an ``Operations Simulator'' (\OpSim),
+  described in detail in Chapter~\ref{chp:cadexp} of this paper, which includes a
+  realistic model of telescope operations, including time required for
+  camera readout, slew time, filter exchange, as well as time loss due
+  to clouds.  Given a series of ``proposals'' {\bf Do we still want to
+    use this vocabulary?} that set priorities of which fields to
+  observe at any given time, \OpSim has developed a series of
+  realizations of the series of observations that make up the ten-year
+  LSST survey.  Given such a realization, \OpSim outputs detailed
+  metrics describing, for example, the expected depth of the LSST
+  survey in each filter as a function of time.  The baseline cadence
+  is a specific realization of the \OpSim output, which meets the LSST
+  survey requirements, following the rules briefly outlined above.  
+   
+  Again, while the baseline cadence demonstrates that the LSST is
+  capable of meeting its stated science goals, it is not optimized for
+  all science, and Chapter~\ref{chp:cadexp} of this document describes a series of
+  experiments varying the assumptions in \OpSim.  In
+  Chapter~\ref{chp:specialsurveys}, we explore additional ideas for
+  future experiments to be done in \OpSim.  
+
+%Synoptic Surveying with LSST - the basic observing strategy determined
+%by key projects described in the LSST Science Requirements Document,
+%and constrained by the LSST's design \citep{IvezicEtal2008}.
 
 % --------------------------------------------------------------------
-
+\iffalse
+THIS SECTION HAS BEEN ABSORBED INTO WHAT IS ABOVE.
 \section{Beyond the Baseline Observing Strategy}
 \def\secname{intro:baseline}\label{sec:\secname}
 
 Optimizing the Observing Strategy: what perturbations are we
 permitted to introduce, to maximize the system's science capabilities?
 What are our constraints? And our opportunities?
+\fi
 
 % --------------------------------------------------------------------
 
 \section{Evaluation and Optimization of the LSST Observing Strategy}
 \def\secname{intro:evaluation}\label{sec:\secname}
 
-The first step towards a science-based optimization of the LSST
-observing strategy is a {\it science-based evaluation of the baseline
-LSST observing strategy}. After simulating a sample  observing
-schedule consistent with this strategy (see  \autoref{chp:cadexp}), we
-then need to quantify its value to each science team. This is what the
-LSST DM Sims team's ``Metric Analysis Framework''  was designed to
-enable. Once the fiducial strategy has been evaluated in this way,
-then any other strategy can be evaluated in the same terms, using the
-same code, and we will be able to start optimizing the strategy
-through iterations between \OpSim and MAF.
+The next step is to quantify how well any given realization of the
+LSST observing strategy (i.e., an output of \OpSim) supports the (many)
+science projects that LSST will enable.  As the algorithms controlling
+\OpSim are varied, some projects will benefit, while others may
+suffer.  By quantifying this for each projects, we can determine which cadence
+maximizes the science potential overall of the project. 
+
+Thus we need 
+%e first step towards a science-based optimization of the LSST
+%observing strategy is 
+a {\it science-based evaluation of the baseline
+  LSST observing strategy and its variants}. After simulating a sample
+observing schedule consistent with this strategy (see
+\autoref{chp:cadexp}), we then need to quantify its value to each
+science team.  This is what the LSST DM Sims team's ``Metric Analysis
+Framework'' was designed to enable. Once the fiducial strategy has
+been evaluated in this way, then any other strategy can be evaluated
+in the same terms, using the same code, and we will be able to %start
+optimize the strategy through iterations between \OpSim and MAF.
 
 With this program in mind, it makes sense to define {\it one ``Figure
 of Merit'' (FoM) per science project}, that captures the value of  the
@@ -114,6 +216,9 @@ summarize the observing sequence presented to us. Thinking about the
 problem in terms of science projects, each with a  Figure of Merit,
 encourages us to design modular document sections, with one science
 project and one Figure of Merit per section.
+
+{\bf I am not sure the following paragraph belongs in the white paper;
+  it is more a description of the writing process.}
 
 This will have the happy side-effect of allowing the chapters to be
 straightforwardly re-arranged as we go, to make the white paper easier

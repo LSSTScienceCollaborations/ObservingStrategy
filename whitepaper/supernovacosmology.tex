@@ -211,7 +211,28 @@ SN discovery II &  Estimate the number of SN discovery as a function of redshift
 }
 \label{fig:SNIaLCopsimmain}
 \end{figure}
-We build metrics for supernova cosmology in the following way:
+Supernovae are parametrized by their model parameters, and supernovae of each
+set of model parameters are uniformly distributed in time.
+Metrics for supernova cosmology should quantify the ability of supernovae 
+to estimate cosmological parameters in a particular observing strategy. 
+To do this, we compute the SN metric $M$ for a particular SN and call it the 
+perSNMetric $PM$ and add up the values of the perSNMetric for all supernovae. 
+Each perSNMetric is a product of perSNMetric for each step described above.
+
+\begin{equation}
+M = \sum_i PM_i, \qquad PM_i = \prod_{\rm{steps}} PM_i^{\rm{steps}}
+\end{equation}
+
+The perSNMetric values are then a function of the supernova parameters, and the set of observations during the 'lifetime' of that supernova. 
+In Fig.~\ref{perSNCadence}, we show a representation of examples of the observations during the 'lifetime' of a supernova, arbitrarily chosen to be in the range of (-30, 50) days after the date of explosion.
+\begin{figure}[tbh!]
+\includegraphics[angle=0,width=\textwidth,clip]{figs/SN_Cadence_290.pdf}
+\includegraphics[angle=0,width=\textwidth,clip]{figs/SN_Cadence_309.pdf}
+\caption{Cadence of Observations in the timewindow of a representative supernova at redshift of $z=0.5$ in a DDF (top) field (fieldID: 290) and a WFD (bootom) field (fieldID: 309). The red lines show the date of explosion, and the shades show the number of observation in a night in a distinct filter.}
+\label{fig:perSNCadence}
+\end{figure}
+
+
 \begin{enumerate}
 \item We consider an ensemble of supernovae at different points of the sky with  their dates of explosions distributed uniformly through the survey period. For each of these supernovae, we evaluate a metric which we will call a 'perSNMetric' and add up the values of these metrics over the ensemble of supernovae. It has a rough interpretation of being the effective number of supernovae being used in the cosmological analysis.
 \item The 'perSNMetric' is evaluated with input about the supernova model parameters (redshift, model parameters etc.) and the observations that would see this supernovae in a hundred day period with $(-30, 7)$ window around the date of
@@ -219,6 +240,7 @@ explosion. This 'perSNMetric' is evaluated as a product of metrics evaluating
 the performance of each stage. 
 \end{enumerate}
 
+\subsubsection{ Steps in the PerSNMetric}
 \subsubsection{Discovery Metric}
 This metric is an approximation of the probability of detecting a SN as a transient from the set of single epoch (visit) exposures during the lifetime of a
 supernova. Here we assume that a single detection out of these visits is sufficient to identify the source as a transient. This probability is cosntructed
@@ -232,6 +254,7 @@ We construct the quality metric for the perSNmetric by obtaining the light curve
 approximately estimate the uncertainty in distance from the light curve fit alone. Of course, as is well known, luminosity distance estimates of supernova Type Ia also show an intrinsic scatter of around $0.1$ in previous surveys, which may be expected to decrease with better training samples and understanding 
 of underlying correlations of SNIa properties and their environments. We compute a quality metric for each SNIa as the ratio of the square of the uncertainty of the distance indicator from the supernova to the square of the intrinsic dispersion. When added up over SN to obtain a value $QM$, the uncertainty on 
 cosmological parameters may be expected to scale as $\sim sqrt(1.0 + \sum QM)$
+The quality metric evaluated on the example SN plotted is $1.$ if observed in the deep field, and $0.002$ in the WFD field.
 
 \emph{To be added: discussion of the ROC curve as a useful metric for photometric supernova 
 classification}
