@@ -11,9 +11,9 @@ if __name__ == '__main__':
         Usage: gen_standalone.py <section_name> (<section_name>, <section_name>...) <standalone_name>
 this will generate a standalone tex file 
 named <standalone_name>_standalone.tex which will include the 
-paper Preface and all sections selected via command line
+paper Preface and all sections selected via command line.
 
-Compile the tex into a pdf file with 
+NOTE: after running this script you must compile the latex into a pdf: Compile the tex file with the command:
 $make run ARG=<standalone_name_root>
 
 """)
