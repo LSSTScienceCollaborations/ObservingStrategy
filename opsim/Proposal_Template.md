@@ -9,7 +9,7 @@ A Proposed OpSim Experiment.
 
 ## Proposed Changes to the Observing Strategy
 
-
+Describe your proposal of observing strategy.
 
 
 ## Science Motivation
