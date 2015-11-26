@@ -26,8 +26,8 @@ This summarizes overall idea, but since the visible sky is different every day a
 
 ## Science Motivation
 The main survey is important for discoveries of supernovae (SNe) for the redshift range of 0.1- 1 which is critical to constraint 
-SN cosmological parameters. In order to identify a variable source as a SN and to distinguish the source as a Type Ia SN
-we need 7-10 epochs spread over 45 days or so for each filter based on past experience. Universal survey of the baseline plan prvides 6 filter data for approximately 18 days (assuming a survey with a filter can be done for 3 days).  This provides
+SN cosmological parameters. In order to identify a variable source as a SN and to distinguish the source as a Type Ia SN,
+we need 7-10 epochs spread over 45 days or so for each filter based on past experience. Universal survey of the baseline plan provides 6 filter data for approximately 18 days (assuming a survey with a filter can be done for 3 days).  This provides
 15 data points over 45 days and 2.5 data points in average for each filter. Our analysis of OpSim run (baseline observing strategy) output shows the light curves of SNe from the OpSim data are insufficient not only to identify the source as a SN and but also to classify the SN if the SN is type Ia or II (or Ib, Ic). Our proposed observing strategy is critical
 to improve the quality of SN light curves. The light curves will have at least 3 times densely populated data points in time. 
 
