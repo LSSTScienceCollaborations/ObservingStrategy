@@ -21,13 +21,14 @@ Day 6:  Filter 6 (for Field 1).
 Repeat this sequence 9 times for the Field 1. This will generate 54 data points for 54 days for a supernova and
 average 9 data points for each filter. 
 Observe the same sequences for Field 2 (it takes 54 days) and then do the same for Field 3 (it takes another 54 days).
-This is overall idea and since the visible sky is different every day and the observation depends on the weather, an opsim run is needed accounting for all of these factors (and others that we haven't included here).
+This summarizes overall idea, but since the visible sky is different every day and the observation depends on the weather, an opsim run is needed accounting for all of these factors (and maybe others that we haven't mentioned here).
 
 
 ## Science Motivation
-We aim to obtain 7-10 epochs spread over 45 days or so for each filter. 
+The main survey is important for discoveries of supernovae (SNe) for the redshift range of 0.1- 1 which is critical to constraint 
+SN cosmological parameters. In order to identify a variable source as a SN and to distinguish the source as a Type Ia SN
+we need 7-10 epochs spread over 45 days or so for each filter based on past experience. Universal survey of the baseline plan prvides 6 filter data for approximately 18 days (assuming a survey with a filter can be done for 3 days).  This provides
+15 data points over 45 days and 2.5 data points in average for each filter. Our analysis of OpSim run (baseline observing strategy) output shows the light curves of SNe from the OpSim data are insufficient not only to identify the source as a SN and but also to classify the SN if the SN is type Ia or II (or Ib, Ic). Our proposed observing strategy is critical
+to improve the quality of SN light curves. The light curves will have at least 3 times densely populated data points in time. 
 
-Write a few sentences about why you want to make this change. Which
-science projects will benefit, do you expect?
-
-This strategy allows us to keep "Uniformity" of the LSST main survery and yet it can improve the quality of the data with smaller averge airmass.
+This strategy allows us to keep "Uniformity" of the LSST main survery and yet it can improve the quality of the data because we can make an averge airmass lower. 
