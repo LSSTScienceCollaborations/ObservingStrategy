@@ -8,8 +8,8 @@ A Proposed OpSim Experiment.
 
 
 ## Proposed Changes to the Observing Strategy
-
-Describe your proposal of observing strategy.
+How would you want to change the constraints on the simulated
+scheduler? Do you want it to do something new?
 
 
 ## Science Motivation
