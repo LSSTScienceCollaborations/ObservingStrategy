@@ -17,16 +17,16 @@ Chapter editors:
 \section{Introduction}
 
 
-Explosive and eruptive transients include a diverse ensamble of object, diverse both physically and phenomenolocigally. Transients such as novae, supernovae (SNe), and gamma-ray bursts (GRBs) probe the final stages of stellar evolution, Tidal Disruption Events, GRS, Cataclism Variables give us the opportunity to studyunderstand compact and binary objects, Massive star eruptions allow us to understand mass loss mechanisms, chemical enrichment. Transients impact the evolutionary history of the Universe. The brightest transients (GRBs, TDEs, SNe) are light beams that can be seen onver cosmic distances, and some transients (Type Ia SNe in the first place) are cosmological tracers.
+Explosive and eruptive transients include a diverse ensemble of object, diverse both physically and phenomenolocigally. Transients such as novae, supernovae (SNe), and gamma-ray bursts (GRBs) probe the final stages of stellar evolution, Tidal Disruption Events, GRBs, Cataclysmic Variables give us the opportunity to study compact and binary objects, Massive star eruptions allow us to understand mass loss mechanisms, chemical enrichment. Transients impact the evolutionary history of the Universe. The brightest transients (GRBs, TDEs, SNe) are light beams that can be seen over cosmic distances, and some transients (Type Ia SNe in the first place) are cosmological tracers.
 
 Cadence choices are vital to determining LSST's ability to discover, classify, and characterize these events. However, because of the diversity in what we are here referring to as ``a transient'', it is difficult, in not impossible, to answer the question: what is the best observing strategy for transients as a whole. 
 
 Different types and time scales of phenomena benefit from different sampling strategies---sometimes significantly different, at time orthogonal.  Competing objectives described in this chapter are at the heart of LSST observing strategy and cadence design.
 
-When evaluating a particular observation or series of observations in light of how they perform for a specific science case, it may be helpful to think of metrics as lying along a continuum between discovery and characterization. Discovery requires a minimum amount of information to recognize an event or object as a candidate of interest, which necessarily involves some level of bare-bones characterization (upon which said recognition is based); rich characterization, on the other hand, implies that an event may not only be recognized as a candidate of interest, but basic properties of the event or object may be determined from the LSST observations (e.g. including but not limited to classification of the event). The level of characterization accessible through LSST data will of course evolve with time for all the transients that have characteristic time scales loonger than a few days. 
+When evaluating a particular observation or series of observations in light of how they perform for a specific science case, it may be helpful to think of metrics as lying along a continuum between discovery and characterization. Discovery requires a minimum amount of information to recognize an event or object as a candidate of interest, which necessarily involves some level of bare-bones characterization (upon which said recognition is based); rich characterization, on the other hand, implies that an event may not only be recognized as a candidate of interest, but basic properties of the event or object may be determined from the LSST observations (e.g. including but not limited to classification of the event). The level of characterization accessible through LSST data will of course evolve with time for all the transients that have characteristic time scales longer than a few days. 
 %The interpretation of a given metric along this continuum has implications for the subsequent action and analysis required, particularly as regards possible follow-up observations with other facilities.
 
-In this chapter we focus on LSST's potential to advance the science of eruptive and explosive transients as astrophysical objects; the use of SNe for cosmology is discussed in \autoref{chp:cosmo}.
+In this chapter we focus on LSST's potential to advance the science of eruptive and explosive transients; the use of SNe for cosmology is discussed in \autoref{chp:cosmo}.
 
 We consider a non-exhaustive set of ``astronomical transients'' in the paragraphs that follow. We will use case studies to asses: 
 
@@ -36,9 +36,9 @@ The discerning power of a given LSST observing cadence. For this topic we will a
 \item
 The ability to identify an object of interest for follow-up and trigger prompt follow-up observations. For this topic GRBs are used as a case study.
 \item
-The insight that a cadence gives into a single transient class. The case study will be massive star Eruptions.
+The insight that a cadence gives into a single transient class. The case study will be massive star eruptions.
 \item 
-The statistical constraints to a transient class that can be obtained over the course of the LSST survey, from the LSST survey data alone (assuing a successful classification). SN Ia early interaction signatures or IIb shock breackout.
+The statistical constraints to a transient class that can be obtained over the course of the LSST survey, from the LSST survey data alone (assuming a successful classification). SN Ia early interaction signatures or IIb shock breakout.
 \end{itemize}
 
 % --------------------------------------------------------------------
@@ -46,9 +46,10 @@ The statistical constraints to a transient class that can be obtained over the c
 \section{Transient Events}
 \def\secname{\chpname:transients}\label{sec:\secname}
 
-\credit{StephenRidgeway},
 \credit{AshishMahabal},
-\credit{ohadshemmer}
+\credit{StephenRidgeway},
+\credit{ohadshemmer},
+\credit{fedhere}?,
 
 Transient events may benefit from substantial temporal sampling
 (matched to the time constant of the event) with color information
@@ -58,7 +59,14 @@ Transient events slower than $\sim$ weeks may be adequately sampled by
 a uniform LSST cadence.  Faster events may require special scheduling
 strategies.  For some event types, LSST can only be expected to
 provide a discovery service, and followup will necessarily be
-performed elsewhere. For some events, specifically detecting LIGO counterparts, a serendipitous discovery is extremely unlikely and enabling a TOO program would be the only way to provide a venue for LSSTs contribution to this science (?? is it ture??).
+performed elsewhere. 
+For some events, for example detecting LIGO counterparts, a serendipitous discovery is extremely unlikely, but enabling a TOO program would provide the opportunity for LSSTs to contribution significantly to this science.
+
+%templates and stacks
+
+%confusion 
+
+%
 
 
 % --------------------------------------------------------------------
@@ -87,26 +95,30 @@ Supernovae & stellar evolution, feedback, chemical enrichment, cosmology & large
 
 Gamma ray bursts & SN connection, stellar evolution, cosmology & large & min - days\\
 
-Tidal Disruption Events & Massive BH demogaphic  & large & days\\
+Tidal Disruption Events & Massive BH demographic  & large & days\\
 
-LIGO detections &  EM charachterizaion & unknown & unknown\\
+LIGO detections &  EM characterization & unknown & unknown\\
 
 Unknown  & Discovery & unknown & unknown\\
 
  \hline \end{tabular}
  \end{center}
 
-Among the targets in this list, only AGN are likely to be sampled with sufficient resolution by a uniform LSST cadence - in fact for AGN, a challenge may be to spread visits sufficiently in time to avoid excessive seasonal gaps.
+A phenomenon that could be classified as explosive transients, but is not duscussed here is AGN are however likely to be sampled with sufficient resolution by a uniform LSST cadence. AGNs are discussed in Chapter \ref{chap:AGN}.
 
-For very short lived phenomena (stellar flares, CV outbursts, GRBs, LIGO events) it appears that the function of LSST will be to provide discoveries and/or simple characterization.  Followup to discovery/identification, if required, will surely take place elsewhere.
+{\bf What else?}
 
-For events requiring intensive monitoring (stellar microlensing, exoplanet transits), the followup will certainly take place elsewhere.
+For very short lived phenomena (stellar flares, CV outbursts, GRBs, LIGO events) the main function of LSST will be to provide discoveries and/or simple characterization.  Followup to discovery/identification, if required, will surely take place elsewhere.
 
-Supernovae fall in an intermediate time range.  LSST will provide multiple visits in multiple filters during the typical SN duration.  This sampling may be insufficient for many (including key) science objectives.  However, a moderate, and feasible, change to LSST observing strategy, may enhance the sampling for part of the sky part of the time, greatly enhancing the usefulness of SN observations.
+LBV's, Gap transients??
 
-For Tidal Disruption Events, where the fading time-scale is much more gradual (over weeks to months) than the rise time-scale it will be worth checking - through a metric - how many will be missed (as alerts). Ref. Science Book: 10.6.1. Also ref. recent papers.
+Supernovae fall in an intermediate time range.  LSST will provide multiple visits in multiple filters during the typical SN duration (months).  This sampling may be insufficient for many science objectives.  However, moderate, and feasible, changes to LSST observing strategy, may enhance the sampling for part of the sky part of the time, greatly enhancing the usefulness of SN observations. A metric that assess the discovery rate of SN are included in the cosmology chapter. Here we are interested in assessing the ability of LSST to discriminate SN from other transients, SN subtypes from one another, and to identify particularly interesting SNe: for example those that show signature of shock breackout, or companion interaction in the early lightcurve, and would be candidate for \emph{flash spectroscopy} follow-up (ref here). In addition metrics that quantify LSST's ability to constraint SN physics in a statistically large sample of SN are needed (offered hopefully).
 
-Serendipitous discoveries are of course harder to plan for.  An ideal transient discovery survey would include heavy coverage of all time scales. LSST will cover longer time periods well, but will have to make some choices of emphasis in coverage of shorter time-scales.
+
+
+Tidal Disruption Events, whose fading time-scale is much more gradual (over weeks to months) than the rise time-scale and we want to asses - through a metric - how many are detected while still on the rise. Ref. Science Book: 10.6.1. Also ref. recent papers.
+
+In addition we hope that LSST will provide a wealth of serendipitous discoveries of yet-to-be-observed transients.  An ideal transient discovery survey would include heavy coverage of all time scales. LSST will cover longer time periods well, but will have to make some choices of emphasis in coverage of shorter time-scales. (metric here??)
 
 
 % --------------------------------------------------------------------
@@ -133,7 +145,7 @@ Lund et al. (2015; \url{http://arxiv.org/pdf/1508.03175.pdf}) discuss three metr
 
 This metric provides a means of evaluating whether a transient event on some timescale of interest has been detected, by testing for a sequence of three observations. The object must be detected in quiescence, followed by two subsequent detections above some threshold; this sequence of observations allows the magnitude of the change to be measured, as well as its timescale.
 
-This metric may be used for a variety of astrophysical phenomena, in particular transient events on variable objects (e.g. novae, stellar flares), in that it is general with respect to the amplitude of the brightness variation as well as the timescale of said change. The requirement of a detection prior to outburst does constrain it to objects that have already been detected in quiescence (in other words, not necessarily ``true'' transients), although there may be some cases where this is not the case (e.g. a supernova occurring on a previously detected galaxy). In practice, the time lapse between the first and second and second and third observations must be comparable (between 10$^2$ and 10$^5$ seconds) for discovery. This metric may be calculated for a given OpSim run and then further reduced to a histoogram in logarithmic time bins; the minimum number of bins to construct an interesting sample of objects is source-dependent.
+This metric may be used for a variety of astrophysical phenomena, in particular transient events on variable objects (e.g. novae, stellar flares), in that it is general with respect to the amplitude of the brightness variation as well as the timescale of said change. The requirement of a detection prior to outburst does constrain it to objects that have already been detected in quiescence (in other words, not necessarily ``true'' transients), although there may be some cases where this is not the case (e.g. a supernova occurring on a previously detected galaxy). In practice, the time lapse between the first and second and second and third observations must be comparable (between 10$^2$ and 10$^5$ seconds) for discovery. This metric may be calculated for a given OpSim run and then further reduced to a histogram in logarithmic time bins; the minimum number of bins to construct an interesting sample of objects is source-dependent.
 
 \subsubsection{Transient Metric (transientAsciiMetric)}
 
@@ -180,10 +192,12 @@ Some insight into fast transients may be available from image pairs  or triples 
 
 % --------------------------------------------------------------------
 
-\input{gw.tex}
+\input{sn.tex}
 
 % --------------------------------------------------------------------
 
 \input{grb.tex}
 
 % --------------------------------------------------------------------
+
+\input{gw.tex}

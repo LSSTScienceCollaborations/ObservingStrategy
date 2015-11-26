@@ -1,0 +1,42 @@
+% ====================================================================
+%+
+% SECTION:
+%    sn.tex  
+%
+% CHAPTER:
+%    transients.tex  
+%
+% ELEVATOR PITCH:
+%    Explain in a few sentences what the relevant discovery or
+%    measurement is going to be discussed, and what will be important
+%    about it. This is for the browsing reader to get a quick feel
+%    for what this section is about.
+%
+% COMMENTS:
+%
+%
+% BUGS:
+%
+%
+% AUTHORS:
+%   Federica Bianco (@fedhere)
+%
+% ====================================================================
+
+\section{Supernovae as transients}
+\def\secname{SNtransients}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
+
+\credit{fedhere} % (Writing team)
+
+Supernovae (SNe) are the final dramatic stages of stellar life. SNe include a diverse set of phenomena: explosion of low mass stars in binary systems, thermonuclear SN or SN Ia (also discussed in \ref{sec:\supernovae}), and explosion of high mass stars, Core collapse (CC) SNe. Phenomenologically the observable of the explosion are themselves diverse.  The transient duration ranges between weeks and months, possibly years. The electromagnetic energy radiated ranges between $\sim0.1$ (faintest CC SNe), to $\sim1$ (SN Ia) and $\sim100$ (Superluminous SNe, SLSNe) ($\times 10^{49} \erg$), corresponding to absolute magnitudes at peak ranging between $\sim-19$ and $\sim-22$.
+
+LSST's contribution to SNe studies can can be substantial, on many different aspects. The first crucial input will be discovery: we expect as many as $\sim 1000$ SN discoveries per night. The first step is then \emph{discrimination}, and the first question we need to answer, with a metric, is: will LSST photometry allow to distinguish the different types of SN to appropriately direct follow-up efforts?
+
+When a large statistical sample of SNe is generated, LSST's photometry may allow to set constraints on the diversity of the sample, and thus inference on the diversity within the population of SN, which in turn may constrain the genesis of the explosion. Outstanding questions that can be answered statistically are: what is the percentage of SN Ia that arise from a \emph{single degenerate} progenitor system (a CO WD-WD binary), from a {\emph single degenerate} system (a WD-MS or WD-RG binary), or a {\emph merger} (a WD-WD binary with a He and a CO WD) (citation). Answering this question may reduce the scatter in the Hubble diagram, if SNe from different progenitors are shown to require different standardization (citation). On the CC SN side: the diversity of SN subclasses, and the relationship between them (is there a phenomenological continuum or actually distinct classes, e.g. between IIp-IIL, IIb-Ib?) is yet to be understood. Individual well studied objects may answer these questions, for example individual SN Ia with tight constraints on the progenitor system show that both single and double degenerate progenitors exist (e.g. SN 2011fe, \citealt{Li2011}, and PTF 11kx, \citealt{Dilday11}). However, a statistical sample is suitable to set constraints on populations. Thus the question  we need to answer, with a metric, is: how much detail can be sacrificed in favor of sample size without compromising diagnostic power? And the diagnostic power relies on color and sampling: thus what is the trade-off between cadence in the same filter, and observations in different filters. Specifically, transients can be distinguished early from two photometric characteristics: rise time and color. There is a tension between these observables: obtaining colors relies of course on obtaining photometry in different bands at within short time scales, ideally simultaneously, although within a night is probably sufficiently close. However, assessing the rise slope is best done with a single filter, so prompt characterization also needs multiple epochs within a night, although separated by at least a few hours, in the same filter. That is: observing with differnt filters it is impossible (or very hard) to separate shape from color. Colors of course allow to learn a lot more about the statistical sample: as long as the epoch of peak is reliably assessed coadded lightcurves can be studeid (Bianco 2011).
+
+
+Thus we envision 2 SN related metrics: 
+\begin{itemize}
+\item a metric that assess the ability of a cadence to distinguish between SNe among all transients, the ability to distinguish among SN subtypes, and within a subtype the ability to gauge how typical, or atypical (and thus worthy or particular attention) a SN is. 
+\item a metric that works on a large sample (3-, 6-, 9-years of LSST data) and assess the ability to characterize the contribution of SN with specific features to the population: as a test case we will use the presence of an early blue excess for type Ia, signature of interaction with a companion, and the presence of an early blue escess signature of shock breakout for CC SNe.
+\end{itemize}

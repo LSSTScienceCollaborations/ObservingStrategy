@@ -2,13 +2,12 @@
 
 A Proposed OpSim Experiment.
 
-*Proposer(s): Your Name Here*
+*Proposer(s): Your name here*
 
-*Issue Thread (please update number): [#01](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/01)*
+*Issue Thread: [#01](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/01)*
 
 
 ## Proposed Changes to the Observing Strategy
-
 How would you want to change the constraints on the simulated
 scheduler? Do you want it to do something new?
 
