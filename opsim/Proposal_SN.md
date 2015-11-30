@@ -31,4 +31,4 @@ we need 7-10 epochs spread over 45 days or so for each filter based on past expe
 15 data points over 45 days and 2.5 data points in average for each filter. Our analysis of OpSim run (baseline observing strategy) output shows the light curves of SNe from the OpSim data are insufficient not only to identify the source as a SN and but also to classify the SN if the SN is type Ia or II (or Ib, Ic). Our proposed observing strategy is critical
 to improve the quality of SN light curves. The light curves will have at least 3 times densely populated data points in time. 
 
-This strategy allows us to keep "Uniformity" of the LSST main survery and yet it can improve the quality of the data because we can make an averge airmass lower. 
+This strategy may allow us to keep "Uniformity" of the LSST main survery and yet it might be able to improve the quality of the data because we can make an averge airmass lower. 
