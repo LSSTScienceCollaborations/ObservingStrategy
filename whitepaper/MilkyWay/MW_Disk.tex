@@ -114,15 +114,17 @@ population.
 
 While we have focused above on black hole binaries, we note that LSST
 would be crucial for investigations of neutron star and white dwarf
-binaries. For example, the total number of dwarf novae (accretion disk
-instability outbursts around white dwarfs)
+binaries. For example, the total number of compact binaries 
 is presently
-poorly understood---theoretical estimates routinely yield a
-significantly higher number than are observed in the solar
-neighborhood. Understanding the true specific frequency of these
-systems provides a key check on common envelope evolution, which is
+poorly understood---Population models of neutron star X-ray binaries diverge by orders 
+of magnitude, largely due to uncertainties in the common envelope phase of binary evolution (e.g. Pfahl et al, 2003; Kiel & Hurley, 2006; van Haaften et al, 2015). This is
 poorly constrained but has a large impact on, for example, LIGO event
-rates. LSST will detect dwarf novae, which last at least several days
+rates. A simple test case of common envelope evolution is available in the number of dwarf novae (DNe) 
+(accretion disk instability outbursts around white dwarfs), a population that does not suffer from
+some of the complicating factors that neutron star and black hole binaries do (e.g. supernova kicks). 
+Theoretical estimates routinely yield a significantly higher number of DNe than are observed in the solar
+neighborhood. Understanding the true specific frequency of these
+systems provides a key check on common envelope evolution.  LSST will detect dwarf novae, which last at least several days
 with typical amplitudes of 4--6 mag,
 out to kpc scales. This will allow a test of not only the number of
 cataclysmic variables, but also of the 3D distribution within the
@@ -136,7 +138,8 @@ within $5^{\circ}, 10^{\circ}$~of the Plane), this science case {\it
   of their variability. The natural choice for a survey for
   low-luminosity black hole binaries would be to extend the
   Wide-Fast-Deep survey throughout the Plane in the direction of the
-  inner Milky Way. For dwarf novae, the cadence of observations
+  inner Milky Way. The orbital period of these systems is short (typically $<1$ day), so that a rolling cadence
+  for at least parts of the Plane should be considered. For dwarf novae, the cadence of observations
   is critical in obtaining an accurate measure of the population of
   cataclysmic variables, as a long baseline is necessary to recover
   low duty cycle systems while widely-space observations
@@ -290,10 +293,11 @@ Dependencies:
 Possible higher-order metric: errors on the population size (mass
 function??) derived from a survey under a given observing
 strategy. Can imagine just adding up the ``recovered'' qLMXB
-population and comparing it to that simulated. Note that the survey
-will necessarily be highly incomplete (inclination effects, etc.), it
+population and comparing it to that simulated. Some white noise componant of varying strengths could be
+added to the light curves to simulate various contributions of the accretion disk to the continuum light. 
+Note that the survey will necessarily be highly incomplete (inclination effects, etc.), it
 is the likely {\it uncertainty} on the completeness-correction that
-would be crucial in this case.
+would be crucial in this case. 
 
 {\bf Metric 1.2 - Fraction of dwarf novae detected in a given survey
   run as a function of location and distance.}
@@ -303,7 +307,7 @@ Dependencies:
     \item Need to know how well the lightcurve shape needs to be characterized. Does the ``Triples'' approach work here, or would something more sophisticated be needed? (E.g. the ``transientASCIIMetric from the ``Explosive Transients'' section.) Can the observations be in different filters to accomplish this?
 \end{itemize}
 Higher-level metrics: Uncertainty in LIGO event rates due to
-uncertainties in DNe characterization.
+uncertainties in common envelope evolution, which drives uncertainties in both LIGO event rates and DN population.
 
 {\bf Metric 2.1 - Fraction of identified Novae as a function of location on-sky, distance, and time since initial rise.}
 Dependencies:
