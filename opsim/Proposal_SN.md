@@ -1,4 +1,4 @@
-# "New Observing Strategy of the Main Survey Optimized for SN Cosmology"
+# "A New Observing Strategy of the Main Survey Optimized for SN Cosmology: Rolling Cadence"
 
 A Proposed OpSim Experiment.
 
