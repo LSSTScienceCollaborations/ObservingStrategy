@@ -2,7 +2,7 @@
 
 A Proposed OpSim Experiment.
 
-*Proposer(s): Jeonghee Rho and SN Cosmology team
+*Proposer(s): Jeonghee Rho and SN team
 
 *Issue Thread: [#159](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/159)*
 
