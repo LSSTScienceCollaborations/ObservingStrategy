@@ -75,37 +75,46 @@ months to a few decades.
 % conditions? In broad terms, how would we expect the observing strategy
 % to be optimized for this science?
 
-\new{Our goal is to understand the population of AGN accretion disk sizes
-and profiles. We anticipate doing this via a hierarchical model where
-these properties are related to each other in some way, perhaps via
-power law scaling relations. A very simple version of this is the following...
-\newline\newline
-So, our targets are the parameters $a$ and $b$, that describe this
-simple population. How well will we be able to measure these, for a
-given survey strategy? This is what our MAF metric will quantify.
-Before we design this, we can predict the likely sensitivities of this
-measurement.}
+Analysis of microlensing induced variability will allow the measurement of 
+accretion disk sizes $R_\lambda$ and their thermal profile slope $\alpha$. This 
+needs to be done per system discovered. Assuming $\sim$1000 lensed quasars with 
+high quality light curves (i.e. that allow time delay measurements, see 
+\autoref{sec:lenstimedelays}), a relationship between size, thermal profile 
+slope, black hole mass and accretion disk luminosity will likely be derived.
+
+How precisely are we going to be able to measure these parameters for a given 
+survey strategy? This is not a simple question to answer due to the large 
+amount of degeneracies that plague the phenomenon. This is what out MAF metric 
+will quantify. Before we design this, we need to predict and statistically 
+quantify the degeneracies and sensitivities.
 
 
-The quasar microlensing optical depth is $\sim1$, so every lensed
-quasar should be affected by microlensing at any given point in time.
-However, measurable variability can occur on longer timescales.
-\citet{MosqueraandKochanek2011} studied all known lensed quasars.
-They found the median timescale between high magnification events
-(Einstein crossing time scales) in the observed $I$-band is of the
-order of $\sim20$~yr (with a distribution between 10 and 40~yr).
-However, the source crossing time (duration of a high magnification
-event) is $\sim7.3$~months (with a distribution tail up to 3~yr).
-This basically means that out of all the lensed quasar {\em images}
-(microlensing between images is completely uncorrelated) about half
-of them will be quiescent during the 10~yr baseline of LSST. However,
-since the typical number of lensed images is either two or four, it
-means that, statistically, in every system, one (for doubles) or two
-(for quads) high magnification events should be observed in 10~yr of
-LSST monitoring.
+% \new{Our goal is to understand the population of AGN accretion disk sizes
+% and profiles. We anticipate doing this via a hierarchical model where
+% these properties are related to each other in some way, perhaps via
+% power law scaling relations. A very simple version of this is the following...
+% \newline\newline
+% So, our targets are the parameters $a$ and $b$, that describe this
+% simple population. How well will we be able to measure these, for a
+% given survey strategy? This is what our MAF metric will quantify.
+% Before we design this, we can predict the likely sensitivities of this
+% measurement.}
 
-Note that, the important cadence parameter is the source crossing time,
-as it is the length of the event to be as uniformly sampled as
+
+The quasar microlensing optical depth is $\sim1$, so every lensed quasar should 
+be affected by microlensing at any given point in time to a different extent. Note however that the larger the magnification seen, the more stringent constraints on the geometric information that can be obtained of the source. \citet{MosqueraandKochanek2011} did a study on the expected microlensing timescales for all known lensed quasars at the time. They found the median Einstein crossing time scales, which can statistically be interpreted as the time between high magnification events, in 
+the observed $I$-band is of the order of $\sim20$~yr (with a distribution 
+between 10 and 40~yr). However, the source crossing time (duration of a high 
+magnification event) is $\sim7.3$~months (with a distribution tail up to 3~yr). 
+This basically means that out of all the lensed quasar {\em images} 
+(microlensing between images is completely uncorrelated) about half of them will 
+be quiescent during the 10~yr baseline of LSST. However, since the typical 
+number of lensed images is either two or four, it means that, statistically, in 
+every system, one (for doubles) or two (for quads) high magnification events 
+should be observed in 10~yr of LSST monitoring. 
+
+
+Note that, the important cadence parameter is the source crossing time. Ideally, high magnification event would need to be as uniformly sampled as
 possible. The 7.3 months crossing time is the median for the observed
 $i$-band, but this time would be significantly shorter for bluer bands:
 for a thermal profile with slope
@@ -115,6 +124,7 @@ t_u=t_i \times (\lambda_{\rm u} / \lambda_{\rm i})^{1/\alpha}$. For a
 Shakura-Sunyaev slope of $\alpha=0.75$ this would correspond to
 $7.3 \times (3600/8140)^{4/3}$ months which is $\approx 2.5$ months in
 the $u$-band.
+
 
 In terms of the cadence, at least three evenly sampled data points per
 band within two to three months would be preferred to be able to map
@@ -127,6 +137,10 @@ are not that common, this smaller area would mean only a few
 Regarding the season length, the ``months'' timescale of high
 magnification events very likely means that we can/will miss high
 magnification events in the season gaps, at least in the bluer bands.
+
+
+The above estimates correspond to those obtained by \citet{MosqueraandKochanek2011} for all \emph{currently} known lensed quasars. It is important to take into consideration that as the timescales directly depend on the projected velocities of the three-plane system: the redshifts of the lens and source as well as their respective peculiar velocites along the CMB dipole velocity in the direction towards the lensing galaxies (observer's peculiar velocity).
+
 
 Show stopper: observations spread on timescales larger than 3 months(?).
 This would likely miss the high magnification events. In those cases
