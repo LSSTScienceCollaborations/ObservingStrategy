@@ -125,7 +125,7 @@ For instance, for $m_g  <  23$ and the optimal $z =  2.7$, the HFQPO period is $
 %QPO search will be most relevant for the DDFs,
 Searching for HFQPOs in the DDFs will be most effective if the sampling frequency
 in those fields for the $u$ and $g$ bands is at least nightly, i.e., $\gtsim3000$
-visits during the entire survey. Using HFQPOs at such frequencies, LSST will be
+visits, per band, during the entire survey. Using HFQPOs at such frequencies, LSST will be
 sensistive to probing SMBHs down to $\approx10^{5} - 10^{6}~M_{\sun}$. 
 
 %In addition, there's a need for an "ultradeep" field, e.g., the MCs, that will
@@ -143,18 +143,30 @@ sensistive to probing SMBHs down to $\approx10^{5} - 10^{6}~M_{\sun}$.
 %the locations of `features' such as QPOs
 %and breaks in the PSD.
 
-\begin{figure}
-\includegraphics[width=5.0in]{figs/agn/AGN_Variability_01.pdf}
-\caption{Behavior of the spectral index of the PSD (black) of the Kepler Sy1 
-AGN Zw 229-15. This AGN is well-modelled by a C-ARMA(2,1) process. The spectral index varies
-from 0 to 4 depending upon the frequency. Insufficient sampling of the light
-curve (e.g. a few times a month), can result in the erroneous conclusion that a 
-damped random walk (DRW) model (max spectral slope 2), adequately 
-characterizes the variability.
-}
-\label{PSDvsFreq}
-\end{figure}
+In the main survey, standard time-series analyses techniques will be used
+for measuring time delays between pairs of continuum bands and for detecting
+periodic AGNs. Correlation analyses will search for relations between AGN
+variability properties and their basic physical parameters. In the DDFs,
+such analyses will enable probing deeper and more frequently, resulting in
+higher-quality data that will provide stronger constraints from correlation
+analyses; the only drawback is the relatively smaller number of sources
+available at the high-luminosity end.
 
+A key measurement enabled by the DDFs is a high-quality PSD, in six bands,
+for the largest number of AGNs to date. These PSDs, which are rich
+in diagnostic power, will be used to search for `features' such as QPOs
+and breaks, as well as power-law slopes, that can help constrain SMBH masses
+and accretion rates. Additionally, the PSDs can serve as selection
+tools, to more effectively distinguish AGNs from variable stars, as
+well as a means to propose cadence perturbations to further enhance
+AGN selection.
+
+A high-quality PSD, extended to high frequencies, can effectively distinguish
+AGNs from other variable sources, assuming AGN light curves are described by
+a particular continuous-time autoregressive moving average model (C-ARMA;
+\citet{KellyEtal2014}), i.e., C-ARMA(2,1), corresponding to a damped harmonic
+oscillator.
+%
 Determination of the hyperparmeters that describe the PSD requires high frequency
 sampling of the light curve ($\sim 1$~d$^{-1}$). Figure \ref{PSDvsFreq} shows
 the frequency dependence of the spectral index of the PSD (black) of the Kepler Sy 1 AGN 
@@ -172,9 +184,22 @@ clear that in the case of this AGN, the light curve must be sampled on timescale
 $1$-$5$ days in order to observe the $\nu^{-4}$ behavior characteristic of a higher order random walk.
 
 \begin{figure}
+\includegraphics[width=5.0in]{figs/agn/AGN_Variability_01.pdf}
+\caption{Behavior of the spectral index of the PSD (black) of the Kepler Sy1 
+AGN Zw 229-15. This AGN is well-modelled by a C-ARMA(2,1) process. The spectral index varies
+from 0 to 4 depending upon the frequency. Insufficient sampling of the light
+curve (e.g. a few times a month), can result in the erroneous conclusion that a 
+damped random walk (DRW) model (max spectral slope 2), adequately 
+characterizes the variability.
+}
+\label{PSDvsFreq}
+\end{figure}
+
+
+\begin{figure}
 \includegraphics[width=5.0in]{figs/agn/AGN_Variability_00.png}
 \caption{The effect of sampling cadence on hyperparameter estimation.}
-\label{CadenceEffec}
+\label{CadenceEffect}
 \end{figure}
 
 Accurate recovery of the PSD hyperparameters is greatly enhanced by rapid sampling. Figure \ref{CadenceEffect}
