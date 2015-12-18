@@ -182,43 +182,40 @@ identified during the entire survey.
 OpSim analysis: how good would the default observing strategy be, at
 the time of writing for this science project?
 
-1) For assessing the limitations of DCR on the $L-z$ plane of LSST AGNs,
+For assessing the limitations of DCR on the $L-z$ plane of LSST AGNs,
 one needs to obtain from OpSim the current maximal airmasses for each band,
-and the associated image quality and limiting magnitude. The current maximal airmasses,
-per band, averaged across the sky are: 1.41, 1.50, 1.51, 1.51, 1.51,
+and the associated image quality and limiting magnitude. The current maximal
+airmasses, per band, averaged across the sky are: 1.41, 1.50, 1.51, 1.51, 1.51,
 and 1.51 for ugrizY, respectively. Need to convolve this with the
 seeing in each band to obtain the dependence on airmass and image
 quality. This output should be converted into the mean and spread
 of the uncertainty on the astrometric redshifts. The best way
 to obtain this is to fold the astrometric redshift estimation from
-DCR into MAF. Ultimately, need to check the implications of higher
+DCR into MAF. Ultimately, one needs to check the implications of higher
 airmasses and limiting magnitudes on the ability to obtain more accurate
 and precise astrometric redshifts.
 
-2) For predicting the number of detected $z>6$ quasars
+For predicting the number of detected $z>6$ quasars
 %Compare this magnitude to the
 %one required for identifying $\geq1000$ quasars at $z\geq6$.
-the current enigma\_1189 OpSim for the main, i.e., WFD survey, gives a single-visit
-$5\sigma$-depth
+the current enigma\_1189 OpSim for the main, i.e., WFD survey, gives a
+single-visit $5\sigma$-depth
 %old number computed in Bremerton: $Y=22.36$ mag,
 $Y=21.51$ mag, and for the final co-added $5\sigma$-depth the median is $Y=24.36$.
 These limits are correspondingly deeper (i.e., better) than the original predictions
-(see plot).
+(see Fig.~\ref{fig:zgt6}).
 % (See the AAS poster from 2013: http://www.lsst.org/sites/default/files/221-RC-247.10-AAS_shemmer.pptx.pdf).
 
-%\begin{figure}
-%\includegraphics[width=5.0in]{figs/agn/zgt6_figure_AAS_2013.tiff}
-%\caption{Number of quasars at $z>6$ that LSST is expected to discover
-%based on $Y$-band limiting magnitude in a single epoch (entire survey)
-%marked by the first (second) dotted line from the left.}
-%\label{fig:zgt6}
-%\end{figure}
+\begin{figure}
+\includegraphics[width=5.0in]{figs/agn/zgt6_figure_AAS_2013.tiff}
+\caption{Number of quasars at $z>6$ that LSST is expected to discover
+based on $Y$-band limiting magnitude in a single epoch (entire survey)
+marked by the first (second) dotted line from the left.}
+\label{fig:zgt6}
+\end{figure}
 
-3) Simulate the amplitudes of the uncertainties in color-color space and how
-these depend on the cadence.
-
-4) Maximizing the number of LLAGN - depends mostly on effective variability selection
-(C-ARMA). More work needed here...
+As for non-simultaneous colors, the amplitudes of the uncertainties in color-color
+space should be assessed as well as how these depend on the cadence.
 
 % --------------------------------------------------------------------
 
