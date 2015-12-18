@@ -167,7 +167,7 @@ a particular continuous-time autoregressive moving average model (C-ARMA;
 \citet{KellyEtal2014}), i.e., C-ARMA(2,1), corresponding to a damped harmonic
 oscillator.
 %
-Determination of the hyperparmeters that describe the PSD requires light curve
+Determination of the parameters that describe the PSD requires light curve
 sampling at least as frequent as $\sim1$~d$^{-1}$. Figure~\ref{PSDvsFreq} shows
 the frequency dependence of the spectral index of the PSD for one particular AGN, 
 Zw 229-15, observed with {\em Kepler}. The light curve of this source is
@@ -196,19 +196,20 @@ behavior characteristic of a higher order random walk.
 \label{PSDvsFreq}
 \end{figure}
 
+Accurate recovery of the PSD parameters can be greatly enhanced by increasing the
+sampling frequency. To illustrate the effects of the cadence, Figure \ref{CadenceEffect}
+shows how the inferred joint distribution of two hyperparameters of the C-ARMA(2,1) model, the 
+oscillator timescale and the damping ratio, depend on the sampling frequency. Degrading the
+sampling frequency from $1/$($30$~min), corresponding to {\em Kepler} light curves, to $1/$($3$~d),
+corresponding to the nominal DDF cadence
+changes both the size and the shape of the joint distribution i.e. it degrades both 
+the accuracy and correlation of the inferred hyperparameters. 
 
 \begin{figure}
 \includegraphics[width=5.0in]{figs/agn/AGN_Variability_00.png}
 \caption{The effect of sampling cadence on hyperparameter estimation.}
 \label{CadenceEffect}
 \end{figure}
-
-Accurate recovery of the PSD hyperparameters is greatly enhanced by rapid sampling. Figure \ref{CadenceEffect}
-shows the effect of the sampling frequency on the inferred joint distribution of two
- hyperparameters of the C-ARMA(2,1) model, the 
-oscillator timescale and the damping ratio. Degrading the sampling frequency from $1/$($30$~min) 
-(Kepler) to $1/$($3$~d) changes both the size and the shape of the joint distribution i.e. it degrades both 
-the accuracy and correlation of the inferred hyperparameters. 
 
 %The PRM measurements will probe the size and structure of the
 %accretion disk and BELR, in a statistical sense, and may provide
