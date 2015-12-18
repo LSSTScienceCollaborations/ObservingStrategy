@@ -167,30 +167,31 @@ a particular continuous-time autoregressive moving average model (C-ARMA;
 \citet{KellyEtal2014}), i.e., C-ARMA(2,1), corresponding to a damped harmonic
 oscillator.
 %
-Determination of the hyperparmeters that describe the PSD requires high frequency
-sampling of the light curve ($\sim 1$~d$^{-1}$). Figure \ref{PSDvsFreq} shows
-the frequency dependence of the spectral index of the PSD (black) of the Kepler Sy 1 AGN 
-Zw 229-15. The light curve of this AGN is well-modelled by a C-ARMA(2,1) 
-model. The C-ARMA(2,1) is a higher order random walk than the 
-Damped Random Walk (DRW) of \citet{Kelly09} which is a C-ARMA(1,0)
- model. Recent varaibility studies indicate that the simple C-ARMA(1,0) 
-model is insufficient to model AGN variability because the spectral
- index of the C-ARMA(1,0)
-model is mathematically constrained to be 2 \citep{Kelly14,Kasliwal15,Simm15}. 
-The PSD (black line) is the ratio of an even polynomial numerator (orange line) to 
-an even polynomial denominator (brown line). Different powers of frequency dominate
-the PSD at different frequencies depending on the hyperparameters of the C-ARMA(2,1) model. It is
-clear that in the case of this AGN, the light curve must be sampled on timescales {\em shorter} than 
-$1$-$5$ days in order to observe the $\nu^{-4}$ behavior characteristic of a higher order random walk.
+Determination of the hyperparmeters that describe the PSD requires light curve
+sampling at least as frequent as $\sim1$~d$^{-1}$. Figure~\ref{PSDvsFreq} shows
+the frequency dependence of the spectral index of the PSD for one particular AGN, 
+Zw 229-15, observed with {\em Kepler}. The light curve of this source is
+well-described by a C-ARMA(2,1) model. The C-ARMA(2,1) model is a higher order
+random walk than the damped random walk (DRW) model of \citet{Kelly09}, which
+corresponds to a C-ARMA(1,0) model. Recent variability studies indicate that
+the simple C-ARMA(1,0) model is insufficient to model AGN variability because
+the spectral index of its PSD is mathematically constrained to be 2
+\citep{Kelly14,Kasliwal15,Simm15}. Insufficient sampling of an AGN light
+curve (e.g., a few times a month), can therefore result in the erroneous conclusion
+that a DRW model adequately characterizes the variability.
+
 
 \begin{figure}
 \includegraphics[width=5.0in]{figs/agn/AGN_Variability_01.pdf}
-\caption{Behavior of the spectral index of the PSD (black) of the Kepler Sy1 
-AGN Zw 229-15. This AGN is well-modelled by a C-ARMA(2,1) process. The spectral index varies
-from 0 to 4 depending upon the frequency. Insufficient sampling of the light
-curve (e.g. a few times a month), can result in the erroneous conclusion that a 
-damped random walk (DRW) model (max spectral slope 2), adequately 
-characterizes the variability.
+\caption{PSD of Zw 229-15 as a function of frequency, obtained from {\em Kepler}
+photometry. The PSD (purple) is the ratio of an even polynomial numerator (orange)
+to an even polynomial denominator (brown). This AGN is well-described by a
+C-ARMA(2,1) model; different powers of frequency dominate its PSD at different
+frequencies depending on the hyperparameters of this model. The wide
+frequency range enables detection of PSD spectral index variations ranging
+between 0 and 4. Clearly, the light curve of this AGN must be sampled on
+timescales {\em shorter} than $1-5$ days in order to observe the $\nu^{-4}$
+behavior characteristic of a higher order random walk.
 }
 \label{PSDvsFreq}
 \end{figure}
