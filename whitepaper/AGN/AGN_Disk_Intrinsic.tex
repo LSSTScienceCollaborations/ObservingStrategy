@@ -198,16 +198,24 @@ behavior characteristic of a higher order random walk.
 
 Accurate recovery of the PSD parameters can be greatly enhanced by increasing the
 sampling frequency. To illustrate the effects of the cadence, Figure \ref{CadenceEffect}
-shows how the inferred joint distribution of two hyperparameters of the C-ARMA(2,1) model, the 
-oscillator timescale and the damping ratio, depend on the sampling frequency. Degrading the
-sampling frequency from $1/$($30$~min), corresponding to {\em Kepler} light curves, to $1/$($3$~d),
-corresponding to the nominal DDF cadence
-changes both the size and the shape of the joint distribution i.e. it degrades both 
-the accuracy and correlation of the inferred hyperparameters. 
+shows how the inferred joint distribution of two hyperparameters of the C-ARMA(2,1)
+model, the oscillator timescale and the damping ratio, depend on the sampling frequency.
+Degrading the sampling frequency from $1/$($30$~min), corresponding to {\em Kepler}
+light curves, to $1/$($3$~d), corresponding to the nominal DDF cadence, changes both
+the size and the shape of the joint distribution, degrading both the accuracy and
+correlation of the inferred hyperparameters. 
 
 \begin{figure}
 \includegraphics[width=5.0in]{figs/agn/AGN_Variability_00.png}
-\caption{The effect of sampling cadence on hyperparameter estimation.}
+\caption{The effect of sampling frequency on hyperparameter estimation. Light curves
+were generated using a C-ARMA(2,1) model using the best-fit parameters for Zw 229-15,
+observed with {\em Kepler}, indicated by the red cross in each panel. The light curve
+was then down-sampled to simulate the effect of observational cadence. Constraints on
+the oscillator period and damping ratio begin to widen noticeably at 3-day sampling.
+At 1 week and longer cadence (not shown), one does not recover the correct model order.
+This strongly indicates the importance of further study to refine the cadence
+requirements for LSST.
+}
 \label{CadenceEffect}
 \end{figure}
 
