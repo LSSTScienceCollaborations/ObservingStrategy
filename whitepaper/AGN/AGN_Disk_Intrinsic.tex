@@ -203,18 +203,21 @@ model, the oscillator timescale and the damping ratio, depend on the sampling fr
 Degrading the sampling frequency from $1/$($30$~min), corresponding to {\em Kepler}
 light curves, to $1/$($3$~d), corresponding to the nominal DDF cadence, changes both
 the size and the shape of the joint distribution, degrading both the accuracy and
-correlation of the inferred hyperparameters. 
+correlation of the inferred hyperparameters.
+%
+Furthermore, the C-ARMA formalism may enable adjusting the cadence once the LSST survey
+begins to determine the sampling pattern in real time.
 
 \begin{figure}
 \includegraphics[width=5.0in]{figs/agn/AGN_Variability_00.png}
-\caption{The effect of sampling frequency on hyperparameter estimation. Light curves
-were generated using a C-ARMA(2,1) model using the best-fit parameters for Zw 229-15,
-observed with {\em Kepler}, indicated by the red cross in each panel. The light curve
-was then down-sampled to simulate the effect of observational cadence. Constraints on
-the oscillator period and damping ratio begin to widen noticeably at 3-day sampling.
-At 1 week and longer cadence (not shown), one does not recover the correct model order.
-This strongly indicates the importance of further study to refine the cadence
-requirements for LSST.
+\caption{The effect of sampling frequency on hyperparameter estimation (courtesy of
+J.~Moreno). Light curves were generated using a C-ARMA(2,1) model using the best-fit
+parameters for Zw 229-15, observed with {\em Kepler}, indicated by the red cross in
+each panel. The light curve was then down-sampled to simulate the effect of observational
+cadence. Constraints on the oscillator period and damping ratio begin to widen noticeably
+at 3-day sampling. At 1 week and longer cadence (not shown), one does not recover the
+correct model order. This strongly indicates the importance of further study to refine
+the cadence requirements for LSST.
 }
 \label{CadenceEffect}
 \end{figure}
@@ -256,17 +259,29 @@ uniformity of the sampling pattern in log time lag?}
 %with the nominal OpSim, and point out potential perturbations in the
 %cadence to improve the number and quality of such time delays.
 
+While additional work is required for determining the optimal cadence
+in order to fully capture AGN accretion physics and to enhance AGN selection,
+it is clear that even the nominal DDF sampling is not sufficiently
+frequent.
+
+One particular metric for which LSST can make a significant contribution
+using the C-ARMA formalism is the selection of low-luminosity AGN (LLAGN),
+i.e., sources with $L \ltsim 10^{42}$~erg~s$^{-1}$, in the DDFs. Such
+sources are likely to be missed by traditional color-variability selection
+algorithms. The metric to be developed should assess how the number of
+selected LLAGN depends on the sampling frequency in each band.
+
 % QPOs - Will the cadence and duration give you the proper range on the
 % power spectrum to detect QPOs with a given mass, spin, and L/Ledd?
 % (Bob Wagoner)
 
-As for HFQPOs: The amplitude of a HFQPO is very uncertain, as is its
-(small) duty cycle. Observations, theory and numerical simulations have
-only suggested that the fractional modulation should be small (less than
+While the ability to detect HFQPOs should also improve by increasing the
+sampling frequency, the amplitudes of such features are quite uncertain,
+as are the (short) duty cycles. Observations, theory and numerical simulations
+have only suggested that the fractional modulation should be small (less than
 a few percent). Thus it is not obvious how to choose a metric and observing
-strategy to maximize it (other than the choice of band that was already
-indicated).
-
+strategy to maximize it, other than increasing the sampling frequency to
+at least nightly samplings in the $g$ and $u$ bands.
 
 % --------------------------------------------------------------------
 
@@ -286,6 +301,9 @@ Discussion: what risks have been identified? What suggestions could be
 made to improve this science project's figure of merit, and mitigate
 the identified risks?
 
+Overall, the key requirement is to increase the nominal sampling frequency
+in the DDFs by at least a factor of 3, i.e., having at least 3000 visits,
+per band, during the entire survey.
 
 % ====================================================================
 
