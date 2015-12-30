@@ -3,7 +3,7 @@
 \section{Astrometry with LSST: Positions, Proper Motions, and Parallax}
 \def\secname{MW_Astrometry}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
 
-\noindent {\it Dave Monet, Dana Casetti, John Gizis, Michael Liu, Jay Strader}
+\noindent {\it Dave Monet, Dana Casetti, John Gizis, Michael Liu, Jay Strader, Will Clarkson, Peter Yoachim}
 
 A number of Milky Way science cases of interest to the Astronomical
 community will depend critically on the astrometric accuracy LSST will
@@ -179,16 +179,27 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
 
   \item[ii.] No attempt has been made in this subsection to account
     for spatial confusion in high-density regions. While this
-    confusion would be the same whatever observing strategy was
-    chosen, the numbers for proper motion and parallax uncertainty
-    should be regarded as lower limits.
+    confusion would be independent of exposure strategy would be the
+    same whatever observing strategy was chosen, the numbers for
+    proper motion and parallax uncertainty should be regarded as lower
+    limits.
 
     \item[iii.] The choice of fiducial apparent magnitude $r = u = y =
-      21.0$~is not terribly well-motivated. It would be informative to
-      repeat the analysis for a range of target apparent magnitudes
-      that are better-matched to the specific science cases.
+      21.0$~is not terribly well-motivated in this subsection. It
+      would be informative to repeat the analysis for a range of
+      target apparent magnitudes that are better-matched to the
+      specific science cases.
 
-  \item[iv.] We have not yet subdivided the samples by a meaningful
+      \item[iv.] The comparison between single-filter and $ugrizy$
+        detections likely overestimates the measurement precision for
+        the $u$-only and $y$-only detections, as an object only
+        detected in a single filter may well not be detected in all
+        images taken in that filter. While the comparison between
+        filter subsets for a given strategy may therefore be highly
+        approximate, the comparison between strategies for the same
+        filter should be more reliable.
+
+  \item[v.] We have not yet subdivided the samples by a meaningful
     spatial co-ordinate (galactic latitude would be the obvious
     choice). A large part of the breadth of the various metrics in
     \opsimdbref{db:enigma} as compared to {\it \bf ops2\_1092} may be
