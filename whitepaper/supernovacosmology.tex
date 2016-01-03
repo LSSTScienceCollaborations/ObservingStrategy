@@ -53,21 +53,23 @@ This objective of SN cosmology follows (at least for SNIa) results from
 several highly successful surveys; improvement in knowledge of cosmology
 could come from substantially larger numbers of well-characterized SNe.
 This goal is not directly tied to the unprecedentedly large survey area of
-LSST. However, we shall argue that in practice, even this goal would
+LSST; the larger number of well-characterized supernovae may be obtained from
+a relatively smaller spatio-temporal region with larger numbers of light curves
+well characterized. However, in practice, even this goal could
 benefit from the spatial scale offered by the WFD component of the LSST
 survey. 
 
 On the other hand, the WFD aspect will make the LSST survey potentially the
 first to scan the very large area of the entire Southern sky for SNe. SNe
-that are detected and well characterized by LSST will probe the isotropy of
-the universe.  Peculiar velocities of SNe will probe the growth of
-structure.  In addition, this large sample will enable further sharpening
+that are detected and well characterized by LSST can trace large scale
+large scale structure (albeit more noisily than galaxies due to smaller numbers) and includes estimates of radial distances, and their own redshift estimates which may be used in conjunction with host galaxy redshift information. Due to
+these properties they will probe the isotropy of the late time universe. 
+Peculiar velocities of SNe will probe the growth of structure.  In addition, this large sample will enable further sharpening
 of our understanding of the properties of the SN population of different
 types. This last point is extremely important for SN cosmology goals:  The
 success of SNIa cosmology has always been based on the empirical model that
 intrinsic peak brightnesses are related to the certain observable
 characteristics of SNe. 
-%While the spatial locations of the SNe are not important
 The WFD SNIa sample will dramatically increase the size of the sample
 available to train such an empirical model, as well understand the
 probability of deviations and scatter from this model. Aside from issues
@@ -77,6 +79,7 @@ due to deviations from the empirical model. The anticipated sample can be
 thought of as consisting of two components:  the low-redshift sample which
 is more likely to be complete, and the higher-redshift sample that will be
 able to constrain evolution. 
+
 % --------------------------------------------------------------------
 
 \subsection{Target measurements and discoveries}
@@ -201,77 +204,72 @@ intrinsic brightness or distance moduli of the SNe.
 and any derived overall figure of merit.}
 \label{sec:keyword:metrics}
 
+Since the described steps are all necessary for deter, a metric for supernovae cosmology must quantify the ability to perform these steps on each supernova of the sample. To connect this to the output of OpSims, we employ the following strategy:
+\begin{itemize}
+    \item we study the sequences of observations in small spatial regions of the sky so that the sequences of observations relate to positions of astrophysical objects like supernovae. In Fig., we show such a sequence for a DDF and SFD field for the entire survey, and for a single year.
+    \item On each such spatial region, we look at sliding time windows, each time window of size about 70 days (corresponding roughly to a supernova Type Ia  lifetime starting 20 days before peak and extending to about 50 days after peak). We call this a \textbf{perSNMetric} $PM$. We assign a value to each of these time-windows meant to estimate the quality of observations for a supernova whose rough lifetime matches that time window. The values assigned to each time-window defines our metric, and the
+ values must be assigned to quantify the success of the steps mentioned above.
+ We would expect this value to be a function of the properties of the sequence of observations and the properties of the transients (SN) being studied.
+ $$ PM = PM(\rm{observation Sequence, SN properties})$$
+    \item We add up the \textbf{perSNMetric} for the time windows to estimate the metric values $M$ for the spatial region of the sky surveyed. 
+        $$M = \sum_i PM_i $$
+\end{itemize}
+
+
+We will use two different approaches to defining the perSNMetric:
+a. Use a simulated supernovae Type Ia with specific parameters, observed with the sequence of observations in the above time-window, and evaluate the success of each step.
+b. Study heuristics of the observation sequences. We will provide some examples of this.
+
+We will first discuss approach (a).
+As the SN metric in a spatial region reflects the contribution of the sample
+of SN observed in that spatial region towards inferring the cosmological
+parameters. To warm up, consider a case where each SN observed with conditions better than a certain threshold contributes equally to the inference, the
+relevant metric would be a function of the number of SN in the sample passing
+such selection criteria. More generally, when the quality of all the supernovae are not similar enough, the metric should be thought of as the weighted sum of supernovae, with the weights being related to the inverse of the effective 
+variance of the distance modulus.
+\begin{equation}
+M\sim \sum_i w_i , \qquad  w_i \sim 1.0 /\sigma^2_\mu
+\end{equation}
+By comparing with the form of the perSNMetric, we see that the perSNMetric
+should be a proxy for $1.0/\sigma^2_\mu,$ where $\sigma^2_\mu$ is the effective variance on the measured distance modulus of the supernova.
+
+%\subsubsection{ Steps in the PerSNMetric}
+{\it  Steps in the PerSNMetric}
+
+As described before, the measurement of the distance modulus is the result of several steps. Therefore, we expect the perSNMetric to be a product of metrics in each of the steps:
+
+\begin{equation}
+PM_i = \prod_{\rm{steps}} PM_i^{\rm{steps}}
+\end{equation}
+
+These comoponents of perSNMetric contstructed in different steps are described in Tab.~\ref{tab:stepsAndMetrics}
 \begin{center}
+ \begin{table}
 \begin{tabular}{| p{5cm} |p{10cm}| }
 \hline Metric & Description \\
 \hline
-I. SN discovery  &  Identify a number of LSST data points/quality required to discover a SN  \\
-II. SN light curve quality & Generate SN light curves using OpSim output of Baseline Cadence \\
-III. SN classification & Classify identified SNe into SN Ia and non-Ia (II, Ib, and Ic)  \\
-IV. SN light curve II & Generate SN light curves in different redshifts (0.1-1) \\
-V. SN discovery II &  Estimate a number of SN discovery as a function of redshift \\
+I. SN discovery  &  Given the observations in a time window corresponding to the lifetime of a supernova, evaluate the  probability of detecting a
+transient \\
+II. SN classification & Given the observations in a time window corresponding to the lifetime of a supernova, evaluate the probability of classifying the transient\\
+III. SN light curve characterization quality & Given the observations in a time window corresponding to the lifetime of a supernova, evaluate the quality of characterization\\
 \hline \end{tabular}
+\label{tab:stepsAndMetrics}
+\end{table}
 \end{center}
 
 
-Type Ia supernovae are parametrized by their model parameters, and supernovae of each
-set of model parameters are uniformly distributed in time.
-Metrics for supernova cosmology should quantify the ability of supernovae 
-to estimate cosmological parameters for a particular observing strategy. 
-To do this, we compute the SN metric $M$ for a particular SN and call it the 
-perSNMetric $PM$ and add up the values of the perSNMetric for all supernovae. 
-Each perSNMetric is a product of perSNMetric for each step described above.
 
-\begin{equation}
-M = \sum_i PM_i, \qquad PM_i = \prod_{\rm{steps}} PM_i^{\rm{steps}}
-\end{equation}
-
-The perSNMetric values are then a function of the supernova parameters, and the set of
-observations during the 'lifetime' of that supernova. In Fig.~\ref{perSNCadence}, we show
-a representation of examples of the observations during the 'lifetime' of a supernova,
-arbitrarily chosen to be in the range of (-30, 50) days after the date of explosion.
-
-
-\begin{enumerate}
-\item We consider an ensemble of supernovae at different points of the sky with  their
-dates of explosions distributed uniformly through the survey period. For each of these
-supernovae, we evaluate a metric which we will call a 'perSNMetric' and add up the values
-of these metrics over the ensemble of supernovae. It has a rough interpretation of being
-the effective number of supernovae being used in the cosmological analysis. \item The
-'perSNMetric' is evaluated with input about the supernova model parameters (redshift,
-model parameters etc.) and the observations that would see this supernovae in a hundred
-day period with $(-30, 7)$ window around the date of explosion. This 'perSNMetric' is
-evaluated as a product of metrics evaluating the performance of each stage. 
-\end{enumerate}
-%\subsubsection{ Steps in the PerSNMetric}
-{\it  Steps in the PerSNMetric}
 \subsubsection{I. Discovery Metric}
-This metric is an approximation of the probability of detecting a SN as a transient from
-the set of single epoch (visit) exposures during the lifetime of a supernova. Here we
+This metric is a proxy for the probability of detecting a SN as a transient
+from the set of single epoch (visit) exposures during the lifetime of a supernova. Here we
 assume that a single detection out of these visits is sufficient to identify the source as
 a transient. This probability is constructed by comparing the probability of transient
-detection for a point source of given SNR and filter band for a single visit. This single
-visit probability currently uses an approximation from previous surveys (in particular
-some approximation from the Dark Energy Survey, and provided by R. Kessler, priv.
-communication).
+detection for a point source of given SNR and filter band for a single visit and the set of SNR values of a supernova based on the observation sequences. 
+This single
+visit probability currently uses an approximation from previous surveys (in particular a SNR-efficiency curve constructed from the Dark Energy Survey, and
+provided by R. Kessler, priv. communication).
 
-
-\subsubsection{II. Quality Metric}
-We construct the quality metric for the perSNmetric by obtaining the light curve of the SN
-in the time window described above. We fit the light curve, and approximately estimate the
-uncertainty in distance from the light curve fit alone. Of course, as is well known,
-luminosity distance estimates of supernova Type Ia also show an intrinsic scatter of
-around $0.1$ in previous surveys, which may be expected to decrease with better training
-samples and understanding of underlying correlations of SNIa properties and their
-environments. We compute a quality metric for each SNIa as the ratio of the square of the
-uncertainty of the distance indicator from the supernova to the square of the intrinsic
-dispersion. When added up over SN to obtain a value $QM$, the uncertainty on cosmological
-parameters may be expected to scale as $\sim sqrt(1.0 + \sum QM)$ The quality metric evaluated on 
-the example SN plotted is $1.$ if observed in the deep field, and $0.002$ in
-the WFD field.
-
-
-\subsubsection{III. Classification Metric}
+\subsubsection{II. Classification Metric}
 The classification metric is based on the output of the multifaceted machine learning 
 classification system described in Section \ref{sec:keyword:targets}. For a given set of supernovae 
 (simulated or real), we run the classification pipeline producing a probability of belonging to 
@@ -337,6 +335,22 @@ classifier, ranging from bad (light-colored) to (dark-colored). The x-axis is fa
 (contamination) and the y-axis is true positive rate (completeness) and the lines are plotted by 
 varying threshold probability to produce different sets of classifications (see text for details).}
 \end{figure}
+
+\subsubsection{III. Quality Metric}
+We construct the quality metric for the perSNmetric by obtaining the light curve of the SN
+in the time window described above. We fit the light curve, and approximately estimate the
+uncertainty in distance from the light curve fit alone. Of course, as is well known,
+luminosity distance estimates of supernova Type Ia also show an intrinsic scatter of
+around $0.1$ in previous surveys, which may be expected to decrease with better training
+samples and understanding of underlying correlations of SNIa properties and their
+environments. We compute a quality metric for each SNIa as the ratio of the square of the
+uncertainty of the distance indicator from the supernova to the square of the intrinsic
+dispersion. When added up over SN to obtain a value $QM$, the uncertainty on cosmological
+parameters may be expected to scale as $\sim sqrt(1.0 + \sum QM)$ The quality metric evaluated on 
+the example SN plotted is $1.$ if observed in the deep field, and $0.002$ in
+the WFD field.
+
+
 
 
 % --------------------------------------------------------------------
