@@ -408,7 +408,10 @@ a SN.
 
 We analyzed the OpSim output of the Baseline Observing Strategy,
 enigma$\_$1189$\_$sqlite.db{\footnote {\url{http://ops2.tuc.noao.edu/runs/}}} using two sets of data: one using the Deep Drilling Fields and the other the main WFD survey. 
-We generated light curves using SN light curves as an input and used COSMO code ({\it RB. detailed description needed}) 
+We generated light curves for a type Ia supernova with typical properties at a redshift of z=0.5 at few different locations using the observation sequences in the opsim output \verb enigma_1189= at those locations around a chosen date for peak. This date was chosen so that the 
+sequence of observations is representative of good cadence in \verb enigma_1189= at that location. To do this, we used the SALT2-extended model with $x1, c=0$ and $x_0 $ set so that the SNIa would have a specific magnitude of $-19.3$ 
+ in the rest frame BessellB band. This was performed using a version of SNCosmo to interpolate the SALT2 surfaces, and the LSST catalog simulation package
+ to calculate the flux for LSST bandpasses.
 Figure \ref{fig:SNIaLCopsimdeep} shows light curves in different
 filters towards a deep drilling field (RA., Decl.). The number of visits for 50 days is 53
 per filter. Using this light curve, we estimated a probability to be a SN-Ia.
