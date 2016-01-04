@@ -15,9 +15,19 @@ to the particular choice of observing strategy.
 Hence, the LSST Observing Strategy needs to be examined for systematic
 trends that might mitigate or even preclude precise measures of
 stellar positions, proper motions, parallaxes, and perturbations that
-arise from unseen companions. Here we highlight two representative science cases
-that illustrate the broad impact of strategy-enabled astrometry.
+arise from unseen companions.
 
+Section \ref{sec:keyword:MW_Astrometry_measurements} highlights two
+science cases at opposite scales of distance from the Sun that require
+accurate and precise astrometry and/or proper motion
+measurements. Section \ref{sec:keyword:MW_Astrometry_metrics} develops
+Metrics for LSST's astrometric performance, and discusses Figures of
+Merit for the two science cases that would depend on these
+Metrics. These metrics are applied to two example OpSim runs in
+Section \ref{sec:keyword:MW_Astrometry_OpSim}. Finally in Section
+\ref{sec:keyword:MW_Astrometry_furtherwork}, the work that is still
+needed is discussed, both in terms of the Metrics and the Figures of
+Merit that depend on them.
 
 %Each of these cases stresses different aspects of the LSST hardware, software,and observing strategies.
 
@@ -35,12 +45,11 @@ that illustrate the broad impact of strategy-enabled astrometry.
 \label{sec:keyword:MW_Astrometry_measurements}
 
 \begin{itemize}
-\item Identification of Streams in the Galactic Halo using proper motions.
-\item A complete sample of stars in the solar neighborhood.
+\item[1.] Identification of Streams in the Galactic Halo using proper motions.
+\item[2.] A complete sample of stars in the solar neighborhood.
 \end{itemize}
 %\item The tie between the Radio and Optical realizations of the International Celestial Reference System.
 %\item The specific and ensemble agreement between LSST and Gaia parallaxes.
-
 
 {\bf 1. Streams in the Galactic halo}
 
@@ -102,16 +111,16 @@ factor.
 %\medskip
 
 
-\subsection{Metrics for LSST's delivered astrometric accuracy}
+\subsection{Metrics and Figures of Merit for LSST's delivered astrometric accuracy}
 \label{sec:keyword:MW_Astrometry_metrics}
 
 %\medskip
 
-First we discuss metrics for the observing strategy that affect all of LSST's astrometric
-measurements, then discuss those relevant for the stream science case.
-
-These general metrics were identified years ago and are already in the suite of MAF utilities, but they should be
-reviewed prior to making final decisions.
+First we discuss metrics for the observing strategy that affect all of
+LSST's astrometric measurements, then discuss figures of merit for the
+two science cases. (The three general metrics were identified years ago and
+are already in the suite of MAF utilities, but they should be reviewed
+prior to making final decisions.)
 
 \begin{itemize}
 \item[A)] For each LSST field, the parallax factors at each epoch of
@@ -129,7 +138,7 @@ reasonable coverage over the duration of the survey and to avoid
 collections of too many visits during a few short intervals.
 \end{itemize}
 
-For the stream project discussed above, a simple to state (but perhaps complex to implement) metric
+For the stream project discussed above, a simple to state (but perhaps complex to implement) figure of merit
 is the number of streams that can be discovered in LSST via their proper motions. As a first
 attempt, it would be reasonable to assume about 100 halo streams from old, metal-poor dwarf galaxies with
 stellar masses $10^5-10^7 M_{\odot}$ distributed as $r^{-3.5}$. The stream widths and internal velocity
@@ -140,8 +149,7 @@ divided by the square root of the number of field stars. For globular clusters, 
 and typical masses $10^4-10^5 M_{\odot}$. Eventually it would be desirable to use actual simulated stream parameters taken from cosmological models of the Milky Way (e.g.,
 from the Aquarius simulation).
 
-The  solar neighborhood project will be sensitive to the general parallax and proper motion metrics discussed above. However, more specific metrics
-can also be useful: for example, the precision of the differential age measurement between the thin disk and halo, which would depend on the number of white dwarfs that can be isolated
+Solar neighborhood projects will be sensitive to the general parallax and proper motion metrics discussed above. More specific science figures of merit are {\it required} at this stage.  For example, the precision of the differential age measurement between the thin disk and halo, which would depend on the number of white dwarfs that can be isolated
 from each population.
 
 \subsection{OpSim Analysis}
@@ -153,13 +161,7 @@ December 2015) baseline strategy, \opsimdbref{db:enigma}, and the
 PanSTARRS-like cadence, {\it \bf ops2\_1092}, which shows far greater
 spatial uniformity and superior coverage of the Galactic Plane.
 
-%Section \ref{sec:keyword:MW_Astrometry_OpSim_firstorder} illustrates
-%the comparison of the two strategies for astrometry, using four
-%``first-order'' metrics (describing parallax and proper motion
-%precision). 
-
-\subsubsection{First-order metrics: Parallax and proper motion precision}
-%\label{sec:keyword:MW_Astrometry_OpSim_firstorder}
+\subsubsection{Metrics: Parallax and proper motion precision}
 
 Here we present the expected astrometric performance of LSST as a function of
 location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astrom_ByTime_PACoverage} -  \ref{fig_astrom_ByTime_paError}), and for three extreme choices of filters in which an object is detected (Figures \ref{fig_astrom_ByFilter_PACoverage} -  \ref{fig_astrom_ByFilter_paError}). Astrometric performance for parallax is quantified using the following metrics:
@@ -200,7 +202,7 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
 
   \item[v.] We have not yet subdivided the samples by a meaningful
     spatial co-ordinate (galactic latitude would be the obvious
-    choice). A large part of the breadth of the various metrics in
+    choice). A large part of the breadth of the various metric values in
     \opsimdbref{db:enigma} as compared to {\it \bf ops2\_1092} may be
       due to spatial nonuniformity of the sampling; replotting the
       histograms coded by galactic latitude would be highly informative in this context.
@@ -219,7 +221,7 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
 
 %% In the current incarnation, these will be LARGE figures. Consider
 %% finding a way to summarize them!
-\begin{figure}
+\begin{figure}[ht]
   \begin{center}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_01y_map.pdf}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_02y_map.pdf}
@@ -245,7 +247,7 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
   \label{fig_astrom_ByTime_PACoverage}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
   \begin{center}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_01y_map.pdf}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_02y_map.pdf}
@@ -273,7 +275,7 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
 
 
 
-\begin{figure}
+\begin{figure}[ht]
   \begin{center}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_01y_map.pdf}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_02y_map.pdf}
@@ -300,7 +302,7 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[ht]
   \begin{center}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_01y_map.pdf}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_02y_map.pdf}
@@ -327,7 +329,7 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
 \end{figure}
 
 %%% Now for the metrics by filter.
-\begin{figure}
+\begin{figure}[ht]
   \begin{center}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_u_map.pdf}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_y_map.pdf}
@@ -353,7 +355,7 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
   \label{fig_astrom_ByFilter_PACoverage}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
   \begin{center}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_u_map.pdf}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_y_map.pdf}
@@ -379,7 +381,7 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
   \label{fig_astrom_ByFilter_PADegen}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
   \begin{center}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_u_map.pdf}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_y_map.pdf}
@@ -405,7 +407,7 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
   \label{fig_astrom_ByFilter_pmError}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
   \begin{center}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_u_map.pdf}
   \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_y_map.pdf}
@@ -431,15 +433,44 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
   \label{fig_astrom_ByFilter_paError}
 \end{figure}
 
-\subsubsection{Second-order metrics: science metrics}
+\subsubsection{Figures of Merit based that depend on the Metrics}
 
-Building on the first-order metrics above, this piece will communicate scientific metrics for the cases identified in Section \ref{sec:keyword:MW_Astrometry_measurements} above. {\it Needs content!}
+Building on the first-order metrics above, this piece will communicate scientific figures of merit for the cases identified in Section \ref{sec:keyword:MW_Astrometry_measurements} above.
 
 \subsection{Topics that will need to be addressed}
 \label{sec:keyword:MW_Astrometry_furtherwork}
 
+Here we present suggestions for further work, first on figures of
+merit for the science cases, and then on additional Metrics for LSST's
+astrometric performance.
+
+\subsubsection{Further work on science Figures of Merit}
 %\medskip
-Finally, it must be noted that these MAF metrics are only part of the
+
+As of 2016-01-04, the Figures of Merit for both the highlighted
+Science cases need to be implemented and applied to OpSim output,
+preferably in a format that can be summarized in a single Table in
+this section. These figures of merit are discussed above in Section
+\ref{sec:keyword:MW_Astrometry_metrics} (particularly for the Halo
+Streams science project). Figures of merit for the two science cases
+might be:
+\begin{itemize}
+  \item[1.] Number of streams that LSST can discover via their proper motions;
+\item[2.] Uncertainty and bias in the thin and thick disk differential age measurement when using white dwarfs from each population as tracers.
+\end{itemize}
+
+Given the diversity of science cases that use local Solar Neighborhood
+populations as tracers, it may be advantageous to subdivide the Solar
+Neighborhood projects into further figures of merit. Two further example
+figures of merit might then be:
+\begin{itemize}
+  \item[3.] Uncertainty and bias in the Brown Dwarf mass function using Solar Neighborhood tracers;
+   \item[4.] Uncertainty and bias in the thickness in the main sequence of M-dwarfs within 25pc from the Sun, once variability has been characterized and removed.
+\end{itemize}
+
+\subsubsection{Further work on Astrometry Metrics}
+
+The MAF metrics presented in Sections \ref{sec:keyword:MW_Astrometry_OpSim} and \ref{sec:keyword:MW_Astrometry_metrics} are only part of the
 study of LSST's predicted astrometric performance.  Detailed simulations
 and studies need to be done in many other areas as part of the
 prediction and verification of LSST's astrometric performance.  Among
