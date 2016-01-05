@@ -128,7 +128,7 @@ many and which objects can be linked under observational cadence, given those as
 The criteria for `discovery' with MOPS depends on the number
 of observations of an object acquired per night, within some time
 window (creating `tracklets'), repeated over a number of nights within window of some
-days (creating `tracks'), linked into an orbit with a threshhold on
+days (creating `tracks'), linked into an orbit with a threshold on
 astrometric residuals. The current assumptions are that we can link
 detections into orbits with 2 detections per night within 90 minutes,
 repeated for 3 nights within 15 days. The additional assumptions are
@@ -202,7 +202,7 @@ survey strategy; completeness, since it marginalizes over the entire
 population at a particular H value, loses this
 capability. Completeness can be evaluated as a differential value
 (completeness @ H=X) or integrated over the size distribution
-(completeness @ H <= X).
+(completeness @ H $\leq$ X).
  
 A further simplification of the completeness can be achieved if the
 completeness at a particular H magnitude is the desired value. For
@@ -255,6 +255,11 @@ After initial discovery,
 A short preamble goes here. What's the context for this science
 project? Where does it fit in the big picture?
 
+How secure is the orbit - is it going to hit us?
+Libration amplitude distribution for TNOs?
+Can we find it after X years for further study?
+Can we identify the source region for NEOs within the main belt?
+
 % --------------------------------------------------------------------
 
 \subsection{Target measurements and discoveries}
@@ -303,20 +308,94 @@ the identified risks?
 \def\secname{\chpname:activity}\label{sec:\secname}
 
 
-A short preamble goes here. What's the context for this science
-project? Where does it fit in the big picture?
+Comets are the remnant building blocks of the Solar System
+that have been stored at cold temperatures beyond the ice
+line, either in the Kuiper belt or the Oort cloud, since their
+formation.  Measuring the evolution of cometary activity over
+a range of heliocentric distances with LSST will allow to
+understand the overall comet activity and to link these
+observations with the physical and chemical conditions in the
+early solar nebula during planet formation.  Comets are
+classified in two main dynamical families, Jupiter Family
+comets (JFCs) that have low-inclination orbits with periods
+less than 20 years, and Long-period comets (LPCs) that
+originate in the Oort Cloud at a distance of more than 10000
+AU and have large orbital eccentricities and nearly isotropic
+distribution of inclinations.  Currently there are over 400
+Jupiter-family comets known, most of which are faint compared
+with the LPCs.  LSST will observe about $10^4$ individual
+comets repeatedly including measurements of known objects over
+its 10-year survey \citep{2010PhDT.......241S}. The
+determination of their activity levels at various heliocentric
+distances will be used to study the time evolution of each
+object individually and to find the connection between comet
+families and their formation region in the Solar System.
 
-How secure is the orbit - is it going to hit us?
-Libration amplitude distribution for TNOs?
-Can we find it after X years for further study?
-Can we identify the source region for NEOs within the main belt?
+Several cometary volatiles result in strong emission bands
+excited by solar radiation that emit by resonant fluorescence
+at optical and near-ultraviolet wavelengths.  The LSST $u$
+filter peaks near the CN (0--0) emission band at 3880 \r{A}.
+Although CN is not the most abundant daughter species from
+cometary volatiles and the OH (0--0) emission band at 3080
+\r{A} is generally stronger, CN production rates provide an
+excellent proxy of the level of overall gas activity in
+comets. Other bands such as $r$, $i$, and $z$ will detect
+continuum brightness that is produced by reflected radiation
+from dust particles in the coma. Thus, it will be possible to
+obtain the evolution of the gas-to-dust production ratio at
+high cadence as a function of heliocentric distance in
+different comet families. The greatly increased sample size
+compared with previous catalogs \citep{1995Icar..118..223A}
+will allow for statistical comparison of the comet families
+and to link them to other small body populations in the Solar
+System.
 
 % --------------------------------------------------------------------
 
 \subsection{Target measurements and discoveries}
 \label{sec:\secname:targets}
 
-Describe the discoveries and measurements you want to make.
+LSST will make an exceptionally large number of comet
+observations.  About $10^4$ comets will be observed on average
+of 50 times by LSST during its main survey, while a few objects
+will be observed more than 1000 times
+\citep{2010PhDT.......241S}.  Simulations of characteristic
+comet orbits have shown that LSST will observe some Jupiter
+Family comets (JFCs) hundreds of times over their full orbits
+\citep{2010PhDT.......241S}.  Individual LPCs are predicted to
+be observed by LSST with dozens of observations as they
+approach or recede from the center of the Solar System or
+during their perihelion passage.  Thus, these observations
+will trace the onset of outgassing from quiescence at large
+heliocentric distances and the decline of activity after
+perihelion.  LSST will offer the unique opportunity to produce
+a large database of CN production rates for the observed
+comets that will vastly improve existing ones \citep[see
+e.g.][]{1995Icar..118..223A,2012ApJ...758...29A}.
+
+A recently discovered population of main-belt asteroids eject
+dust and produce coma and tails giving them the appearance of
+comets \citep{2012AJ....143...66J}.  This so-called main-belt
+comets or active asteroids have the orbital characteristics of
+asteroids with $T_J > 3$ and lose mass during part of their
+orbits. The cometary activity observed in these objects may be
+driven by primordial water water ice that is trapped near the
+surface and sublimates when it is exposed to sunlight.
+Main-belt comets are important because they may have been able to
+preserve water ice despite the effect of solar radiation and
+heating from the decay of short-lived radioactive nuclei.  The
+asteroids in the outer regions of the main belt can therefore
+have a substantial fraction of water and other volatiles that
+may have supplied the volatile content of terrestrial planets.
+Most of the main-belt-comets are faint with very weak comae
+that are active during part of their orbits. Given the
+expected flux sensitivity of LSST, the transient cometary
+activity of main-belt asteroids will be observable including
+many objects that could be below the detection limits of
+current photometric surveys.  The LSST observations will thus
+help to understand the overlap between different populations
+in the Solar System such as the relationship between comets
+and asteroids.
 
 Now, describe their response to the observing strategy. Qualitatively,
 how will the science project be affected by the observing schedule and
@@ -488,16 +567,6 @@ be measured.
 
 \subsection{Target measurements and discoveries}
 \label{sec:\secname:targets}
-
-
-The metric of interest is the number
-of observations in each band. If an asteroid has
-more than $\sim$100 observations in r band,
-then the lightcurve can be determined, and the
-color can then be derived. The fidelity of the color
-will depend on the number of measurements in
-each band with SNR$>$20 (giving colors good to
-5\%).
 
 
 

@@ -23,7 +23,7 @@
 % ====================================================================
 
 \section{AGN Size and Structure with Microlensing}
-\def\secname{\chpname:microlensing}\label{sec:\secname}
+\def\secname{\chpname:microlensing}\label{sec:microlensing}
 
 \credit{tanguita}
 
@@ -45,23 +45,21 @@
 % project? Where does it fit in the big picture?
 
 Microlensing due to stars projected on top of individual
-gravitationally-lensed quasar images produce additional magnification.
+gravitationally-lensed quasar images produces additional magnification.
 Using the fact that the Einstein radii of stars in lensing galaxies
 closely match the scales of different emission regions in
 high-redshift AGNs (micro-arcseconds), analyzing microlensing induced
 flux variations statistically on individual systems allows us to
 measure ``sizes'' of AGN regions.
 
-Assuming a thermal profile for accretion disks, sizes in different
-emission wavelengths will be probed and as such, constraints on the
-slope of this thermal profile will be placed. Given the sheer number
-of lensed systems that LSST is expected to discover ($\sim8000$),
-this will allow us to stack systems for better constraints and
-hopefully determine the {\it evolution of the size and profile.} Due to the
-typical relative velocities of lenses, microlenses, observers (Earth)
-and source AGN, the microlensing variation timescales are between
-months to a few decades.
-
+Assuming a thermal profile for accretion disks, sizes in different emission 
+wavelengths will be probed and as such, placing constraints on the slope of this 
+thermal profile. Given the sheer number of lensed systems that LSST is expected 
+to discover ($\sim8000$), this will allow us to stack systems for better 
+constraints and hopefully determine the {\it luminosity and redshift evolution 
+of the disk size and profile.} Due to the typical relative velocities of lenses, 
+microlenses, observers (Earth) and source AGN, the microlensing variation 
+timescales are between months to a few decades.
 
 % --------------------------------------------------------------------
 
@@ -75,78 +73,104 @@ months to a few decades.
 % conditions? In broad terms, how would we expect the observing strategy
 % to be optimized for this science?
 
-\new{Our goal is to understand the population of AGN accretion disk sizes
-and profiles. We anticipate doing this via a hierarchical model where
-these properties are related to each other in some way, perhaps via
-power law scaling relations. A very simple version of this is the following...
-\newline\newline
-So, our targets are the parameters $a$ and $b$, that describe this
-simple population. How well will we be able to measure these, for a
-given survey strategy? This is what our MAF metric will quantify.
-Before we design this, we can predict the likely sensitivities of this
-measurement.}
+Analysis of microlensing induced variability will allow the measurement of 
+accretion disk sizes $R_\lambda$ and their thermal profile slope $\alpha$. This 
+needs to be done per system discovered. Assuming $\sim$1000 lensed quasars with 
+high quality light curves (i.e. that allow time delay measurements, see 
+\autoref{sec:lenstimedelays}), a relationship between size, thermal profile 
+slope, black hole mass and accretion disk luminosity will likely be derived.
+
+How precisely are we going to be able to measure these parameters for a given 
+survey strategy? This is not a simple question to answer due to the significant 
+degeneracies that plague the phenomenon. This is what our MAF metric will 
+quantify. Before we design this, we need to predict and statistically quantify 
+the degeneracies and sensitivities.
+
+% \new{Our goal is to understand the population of AGN accretion disk sizes
+% and profiles. We anticipate doing this via a hierarchical model where
+% these properties are related to each other in some way, perhaps via
+% power law scaling relations. A very simple version of this is the following...
+% \newline\newline
+% So, our targets are the parameters $a$ and $b$, that describe this
+% simple population. How well will we be able to measure these, for a
+% given survey strategy? This is what our MAF metric will quantify.
+% Before we design this, we can predict the likely sensitivities of this
+% measurement.}
+
+The quasar microlensing optical depth is $\sim1$, so every lensed quasar should 
+be affected by microlensing at any given point in time to a different extent. 
+Note however that the larger the magnification seen, the more stringent 
+constraints on the geometric information that can be obtained of the source. 
+\citet{MosqueraandKochanek2011} did a study on the expected microlensing 
+timescales for all known lensed quasars at the time. They found that the median 
+Einstein crossing time scales, which can statistically be interpreted as the 
+time between high magnification events, in the observed $I$-band is of the order 
+of $\sim20$~yr (with a distribution between 10 and 40~yr). However, the source 
+crossing time (duration of a high magnification event) is $\sim7.3$~months (with 
+a distribution tail up to 3~yr). This basically means that out of all the lensed 
+quasar {\em images} (microlensing between images is completely uncorrelated) 
+about half of them will be quiescent during the 10~yr baseline of LSST. However, 
+since the typical number of lensed images is either two or four, this means 
+that, statistically, in every system, one (for doubles) or two (for quads) high 
+magnification events should be observed in 10~yr of LSST monitoring. 
+
+Note that, the important cadence parameter is the source crossing time. Ideally, 
+high magnification events would need to be as uniformly sampled as possible. The 
+7.3 months crossing time is the median for the observed $i$-band, but this time 
+would be significantly shorter for bluer bands: for a thermal profile with slope 
+$\alpha: R_\lambda \propto \lambda^\alpha$ implies source crossing time $t_{\rm 
+s} \propto \lambda^{1/\alpha} \rightarrow t_u=t_i \times (\lambda_{\rm u} / 
+\lambda_{\rm i})^{1/\alpha}$. For a Shakura-Sunyaev slope of $\alpha=0.75$ this 
+would correspond to $7.3 \times (3600/8140)^{4/3}$ months which is $\approx 2.5$ 
+months in the $u$-band.
 
 
-The quasar microlensing optical depth is $\sim1$, so every lensed
-quasar should be affected by microlensing at any given point in time.
-However, measurable variability can occur on longer timescales.
-\citet{MosqueraandKochanek2011} studied all known lensed quasars.
-They found the median timescale between high magnification events
-(Einstein crossing time scales) in the observed $I$-band is of the
-order of $\sim20$~yr (with a distribution between 10 and 40~yr).
-However, the source crossing time (duration of a high magnification
-event) is $\sim7.3$~months (with a distribution tail up to 3~yr).
-This basically means that out of all the lensed quasar {\em images}
-(microlensing between images is completely uncorrelated) about half
-of them will be quiescent during the 10~yr baseline of LSST. However,
-since the typical number of lensed images is either two or four, it
-means that, statistically, in every system, one (for doubles) or two
-(for quads) high magnification events should be observed in 10~yr of
-LSST monitoring.
-
-Note that, the important cadence parameter is the source crossing time,
-as it is the length of the event to be as uniformly sampled as
-possible. The 7.3 months crossing time is the median for the observed
-$i$-band, but this time would be significantly shorter for bluer bands:
-for a thermal profile with slope
-$\alpha: R_\lambda \propto \lambda^\alpha$ implies source crossing time
-$t_{\rm s} \propto \lambda^{1/\alpha} \rightarrow
-t_u=t_i \times (\lambda_{\rm u} / \lambda_{\rm i})^{1/\alpha}$. For a
-Shakura-Sunyaev slope of $\alpha=0.75$ this would correspond to
-$7.3 \times (3600/8140)^{4/3}$ months which is $\approx 2.5$ months in
-the $u$-band.
-
-In terms of the cadence, at least three evenly sampled data points per
-band within two to three months would be preferred to be able to map
-the constraining high magnification event(?), and these would
-hopefully be uniformly spaced. Very tight cadence (e.g., DDFs) would
-increase the constraints significantly. However, since lensed quasars
-are not that common, this smaller area would mean only a few
-($\sim80$?) suitable systems monitored in the DDFs.
+In terms of the cadence, at least three evenly sampled data points per band 
+within two to three months would be preferred to be able to map the constraining 
+high magnification event(?), and these would hopefully be uniformly spaced. Very 
+tight cadence (e.g., DDFs) would increase the constraints significantly. 
+However, since lensed quasars are not that common, this smaller area would mean 
+only a modest number ($\sim80$?) of suitable systems monitored in the DDFs.
 
 Regarding the season length, the ``months'' timescale of high
 magnification events very likely means that we can/will miss high
 magnification events in the season gaps, at least in the bluer bands.
 
-Show stopper: observations spread on timescales larger than 3 months(?).
+``Show stopper'': observations spread on timescales larger than 3 months.
 This would likely miss the high magnification events. In those cases
 we could perhaps consider close consecutive photometric bands as
 equivalent accretion disk regions, however this would mean weaker
 constraints on the thermal profile.
+
+{\bf Caveats:} The above estimates correspond to those obtained by 
+\citet{MosqueraandKochanek2011} for all \emph{currently} known lensed quasars. 
+It is important to take into consideration that the timescales directly depend 
+on the projected velocities of the three-plane system: the redshifts of the lens 
+and source as well as their respective peculiar velocites along the CMB dipole 
+velocity in the direction towards the lensing galaxies (observer's peculiar 
+velocity). Therefore, every new system will have a different timescale. 
+Furthermore, the discussion above is centered on high magnification events. Even 
+though these produce the most valuable information, low magnification events or 
+\emph{no} magnification events can set constraints in the structure of high 
+redshift AGN as well as the lensing galaxies (e.g. \citealt{gilmerino2005}). 
+Finally, long timescale high accuracy multiband data as will be delivered by 
+LSST have never been obtained to date for any lensed system. Coupling this fact 
+to a factor $\sim$10 increase on the number of lensed quasars known, LSST will 
+enable of totally new and unprecedented perspectives for microlensing studies.
 %
-Important Note: all this science needs to be done on lensed quasars
-with measured or very short time delays to remove the intrinsic
-variability signal, which might significantly reduce the sample.
-
-{\bf Microlensing Aided Reverberation Mapping:} Given that
-microlensing mostly affects continuum emission rather than BELR line
-emission, microlensing may enable disentangling the BELR line plus the
-continuum emission in single photometric bands, allowing the use of
-single broad band PRM measurements \citep{SluseandTewes2014}. As with
-the two-band PRM method discussed above, the denser (and the longer)
-the sampling, the more accurate are the constraints that can be
-obtained for the time delays.
-
+% Important Note: all this science needs to be done on lensed quasars
+% with measured or very short time delays to remove the intrinsic
+% variability signal, which might significantly reduce the sample.
+{\bf Microlensing Aided Reverberation Mapping:} Given that microlensing mostly 
+affects continuum emission rather than BELR emission, microlensing can enable 
+the disentangling of the BELR emission plus the continuum emission in single 
+photometric bands, allowing the use of single broad band PRM measurements 
+\citep{SluseandTewes2014}. As with the two-band PRM method discussed above, the 
+denser (and the longer) the sampling, the more accurate are the constraints that 
+can be obtained for the time delays. This method allows constraints on both the 
+accretion disk structure as explained above and the BELR. The only additional 
+requirement is one spectroscopic observation to constrain the ``macro'' 
+magnification ratios from narrow emission lines.
 % --------------------------------------------------------------------
 
 \subsection{Metrics}
@@ -155,10 +179,13 @@ obtained for the time delays.
 Quantifying the response via MAF metrics: definition of the metrics,
 and any derived overall figure of merit.
 
-Need to compute the dispersion in the time gap
-between visits in the same band, across the sky, in order to assess
-the fraction of microlensing events that might be missed (on top of
+Our metric would need to take into account the several parameters that come into 
+play for microlensing light curves which include: the dispersion in the time gap 
+between visits in the same band, across the sky, projected CMB velocity, 
+simulated peculiar velocities and redshifts of lenses and sources, in order to 
+assess the fraction of microlensing events that might be missed (on top of 
 seasonal gaps).
+....
 
 % microlensing - convolve microlensing timescales for QSOs we already know
 % about. how many of the high magnification events do we get? How bright?
@@ -172,6 +199,13 @@ seasonal gaps).
 OpSim analysis: how good would the default observing strategy be, at
 the time of writing for this science project?
 
+\begin{center}
+\begin{figure}
+\includegraphics[width=\textwidth]{figs/agn/enigma_1189_NightSep_seasonLength.pdf}
+\caption{Median Night Separation in days and median season length in months for all bands in the enigma\_1189 opsim output.}
+\label{microfig}
+\end{figure}
+\end{center}
 
 % --------------------------------------------------------------------
 
