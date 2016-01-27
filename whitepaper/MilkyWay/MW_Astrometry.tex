@@ -17,14 +17,14 @@ trends that might mitigate or even preclude precise measures of
 stellar positions, proper motions, parallaxes, and perturbations that
 arise from unseen companions.
 
-Section \ref{sec:keyword:MW_Astrometry_measurements} highlights two
+Section \ref{sec:\secname:MW_Astrometry_measurements} highlights two
 science cases at opposite scales of distance from the Sun that require
 accurate and precise astrometry and/or proper motion
-measurements. Section \ref{sec:keyword:MW_Astrometry_metrics} develops
+measurements. Section \ref{sec:\secname:MW_Astrometry_metrics} develops
 Metrics for LSST's astrometric performance, and discusses Figures of
 Merit for the two highlighted science cases. These metrics are applied to two example OpSim runs in
-Section \ref{sec:keyword:MW_Astrometry_OpSim}. Finally in Section
-\ref{sec:keyword:MW_Astrometry_furtherwork}, the work that is still
+Section \ref{sec:\secname:MW_Astrometry_OpSim}. Finally in Section
+\ref{sec:\secname:MW_Astrometry_furtherwork}, the work that is still
 needed is discussed, both in terms of the Metrics and the Figures of
 Merit that depend on them.
 
@@ -38,10 +38,10 @@ Merit that depend on them.
 %been chosen for particular attention:
 
 %\subsection{Introduction: Astrometry as a special case}
-%\label{sec:keyword:MW_Astrometry_intro}
+%\label{sec:\secname:MW_Astrometry_intro}
 
 \subsection{Target Measurements and Discoveries}
-\label{sec:keyword:MW_Astrometry_measurements}
+\label{sec:\secname:MW_Astrometry_measurements}
 
 \begin{itemize}
 \item[1.] Identification of Streams in the Galactic Halo using proper motions.
@@ -105,13 +105,13 @@ factor.
 
 
 %\subsection{Sensitivity of parallax measurements to observing strategy}
-%\label{sec:keyword:MW_Astrometry_cadence}
+%\label{sec:\secname:MW_Astrometry_cadence}
 
 %\medskip
 
 
 \subsection{Metrics and Figures of Merit for LSST's delivered astrometric accuracy}
-\label{sec:keyword:MW_Astrometry_metrics}
+\label{sec:\secname:MW_Astrometry_metrics}
 
 %\medskip
 
@@ -152,7 +152,7 @@ Solar neighborhood projects will be sensitive to the general parallax and proper
 from each population.
 
 \subsection{OpSim Analysis}
-\label{sec:keyword:MW_Astrometry_OpSim}
+\label{sec:\secname:MW_Astrometry_OpSim}
 
 Here we present initial analysis of LSST's astrometric
 performance. Two example strategies are assessed: the current (as of
@@ -165,9 +165,9 @@ spatial uniformity and superior coverage of the Galactic Plane.
 Here we present the expected astrometric performance of LSST as a function of
 location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astrom_ByTime_PACoverage} -  \ref{fig_astrom_ByTime_paError}), and for three extreme choices of filters in which an object is detected (Figures \ref{fig_astrom_ByFilter_PACoverage} -  \ref{fig_astrom_ByFilter_paError}). Astrometric performance for parallax is quantified using the following metrics:
 \begin{itemize}
-  \item[1.] Parallax factor coverage (following metric A of Section \ref{sec:keyword:MW_Astrometry_metrics}); values farther from 0 are better). See Figures \ref{fig_astrom_ByTime_PACoverage} \&  \ref{fig_astrom_ByFilter_PACoverage};
-    \item[2.] Parallax-Hour angle correlation (metric B of Section \ref{sec:keyword:MW_Astrometry_metrics}; values closer to 0 are better). See Figures \ref{fig_astrom_ByTime_PADegen} \& \ref{fig_astrom_ByFilter_PADegen};
-      \item[3.] Proper motion error, for a star at apparent magnitude 21.0 in the filter specified (this addresses the distribution of measurement epochs, as recommended in Metric C in section \ref{sec:keyword:MW_Astrometry_metrics}; smaller values are better). See Figures \ref{fig_astrom_ByTime_pmError} \& \ref{fig_astrom_ByFilter_pmError};
+  \item[1.] Parallax factor coverage (following metric A of Section \ref{sec:\secname:MW_Astrometry_metrics}); values farther from 0 are better). See Figures \ref{fig_astrom_ByTime_PACoverage} \&  \ref{fig_astrom_ByFilter_PACoverage};
+    \item[2.] Parallax-Hour angle correlation (metric B of Section \ref{sec:\secname:MW_Astrometry_metrics}; values closer to 0 are better). See Figures \ref{fig_astrom_ByTime_PADegen} \& \ref{fig_astrom_ByFilter_PADegen};
+      \item[3.] Proper motion error, for a star at apparent magnitude 21.0 in the filter specified (this addresses the distribution of measurement epochs, as recommended in Metric C in section \ref{sec:\secname:MW_Astrometry_metrics}; smaller values are better). See Figures \ref{fig_astrom_ByTime_pmError} \& \ref{fig_astrom_ByFilter_pmError};
         \item[4.] Parallax error, for a star at apparent magnitude 21.0 in the filter specified (smaller values are better). See Figures \ref{fig_astrom_ByTime_paError} \& \ref{fig_astrom_ByFilter_paError}.
 \end{itemize}
 
@@ -434,10 +434,10 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
 
 \subsubsection{Figures of Merit depening on the Metrics}
 
-Building on the first-order metrics above, this piece will communicate scientific figures of merit for the cases identified in Section \ref{sec:keyword:MW_Astrometry_measurements} above.
+Building on the first-order metrics above, this piece will communicate scientific figures of merit for the cases identified in Section \ref{sec:\secname:MW_Astrometry_measurements} above.
 
 \subsection{Topics that will need to be addressed}
-\label{sec:keyword:MW_Astrometry_furtherwork}
+\label{sec:\secname:MW_Astrometry_furtherwork}
 
 Here we present suggestions for further work, first on figures of
 merit for the science cases, and then on additional Metrics for LSST's
@@ -450,7 +450,7 @@ As of 2016-01-04, the Figures of Merit for both the highlighted
 Science cases need to be implemented and applied to OpSim output,
 preferably in a format that can be summarized in a single Table in
 this section. These figures of merit are discussed above in Section
-\ref{sec:keyword:MW_Astrometry_metrics} (particularly for the Halo
+\ref{sec:\secname:MW_Astrometry_metrics} (particularly for the Halo
 Streams science project). Figures of merit for the two science cases
 might be:
 \begin{itemize}
@@ -469,7 +469,7 @@ figures of merit might then be:
 
 \subsubsection{Further work on Astrometry Metrics}
 
-The MAF metrics presented in Sections \ref{sec:keyword:MW_Astrometry_OpSim} and \ref{sec:keyword:MW_Astrometry_metrics} are only part of the
+The MAF metrics presented in Sections \ref{sec:\secname:MW_Astrometry_OpSim} and \ref{sec:\secname:MW_Astrometry_metrics} are only part of the
 study of LSST's predicted astrometric performance.  Detailed simulations
 and studies need to be done in many other areas as part of the
 prediction and verification of LSST's astrometric performance.  Among
