@@ -327,21 +327,42 @@ Dependencies:
 \end{itemize}
 Possible higher-order FoM: error on inferred rate of Type Ia supernovae?
 
-{\bf FoM 3.1 - Maximum time-interval {\it before} triggering of a SN in the Milky Way that LSST would have taken precursor data.}
-Dependencies:
+%{\bf FoM 3.1 - Maximum time-interval {\it before} triggering of a SN in the Milky Way that LSST would h%ave taken precursor data.}
+%Dependencies:
+%\begin{itemize}
+%  \item This FoM would probably be very easy to calculate (just estimate the mean time between observat%ions). However the acceptable limits still need thought:
+%  \item How many colors are sufficient? Any observations at all before the SN goes off, or would a comp%lete set in all filters be needed to characterize the candidate progenitor?
+%    \item What level of variability sensitivity is really needed? Would just an extremely deep image of% the SN field before the event be sufficient?
+%\end{itemize}
+%{\bf FoM 3.2 - Maximum time-interval {\it after} the SN event for triggering followup.}
+%Dependencies:
+%\begin{itemize}
+%  \item Similar to FoM 3.1. 
+%    \item Is it important to know the discovery space for LSST? If a
+%      supernova at $m_V~15$~goes off, other facilities are likely to
+%      spot it...
+%\end{itemize}
+
+
+\new{\bf FoM 3.1 - Fraction of Galactic supernovae for which LSST would detect variability {\it before} the main Supernova event. Dependencies:}
 \begin{itemize}
-  \item This FoM would probably be very easy to calculate (just estimate the mean time between observations). However the acceptable limits still need thought:
-  \item How many colors are sufficient? Any observations at all before the SN goes off, or would a complete set in all filters be needed to characterize the candidate progenitor?
-    \item What level of variability sensitivity is really needed? Would just an extremely deep image of the SN field before the event be sufficient?
+  \item \new{Assume the probability of a SN going off scales with the number of stars along the line of sight to some depth. The ``starcount'' metric in sims-maf-contrib (by Mike Lund and collaborators) calculates this value out to some fiducial distance. Additionally}; 
+\item \new{This FoM requires an assessment of the ability of LSST to detect a particular lightcurve shape. Several options are possible at this time; we have selected ``metrics.TransientMetric'' from the baseline lsst-sims. Therefore also};
+\item \new{a lightcurve shape for the pre-SN variability must be assumed.}
 \end{itemize}
-{\bf FoM 3.2 - Maximum time-interval {\it after} the SN event for triggering followup.}
-Dependencies:
-\begin{itemize}
-  \item Similar to FoM 3.1. 
-    \item Is it important to know the discovery space for LSST? If a
-      supernova at $m_V~15$~goes off, other facilities are likely to
-      spot it...
-\end{itemize}
+
+% WIC - removed this one since it's a bit low-level...
+%
+%{\bf FoM 3.2 - Maximum time-interval {\it after} the SN event for triggering followup.}
+%Dependencies:
+%\begin{itemize}
+%  \item Similar to FoM 3.1. 
+%    \item Is it important to know the discovery space for LSST? If a
+%      supernova at $m_V~15$~goes off, other facilities are likely to
+%      spot it...
+%\end{itemize}
+
+
 
 {\bf FoM 4.1 - Fraction of accurately-triggered Microlens candidates as a function of location, distance, lens mass.}
 Dependencies:
@@ -381,6 +402,32 @@ Dependencies:
 \subsection{OpSim Analysis}
 \label{sec:\secname:MW_Disk_analysis}
 
+\new{(To stimulate input from collaborators, we have implemented a mock-up of a simple figure of merit for the Galactic Supernova case. We choose FoM 3.1 - the fraction of galactic supernovae for which an SN2010mc-like pre-SN outburst could be discovered by LSST. The results of all FoM's for this Section are collected in Table \ref{tab_SummarMWDisk}.)}
+
+\new{{\bf FoM 3.1: Fraction of Galactic supernovae for which LSST would detect variability {\it before} the main Supernova brightening:}}
+\begin{itemize}
+\item \new{{\it Definition:} 
+\begin{equation}
+  FoM_{preSN} \equiv \frac{ \sum^{sightlines}_{i} f_{var, i} N_{\ast, i} } {\sum^{sightlines}_{i} N_{ast, i}}
+\end{equation}
+where $f_{var, i}$~is the fraction of transient events that LSST would detect for observing strategy including the $i$'th sightline, $N_{\ast,i}$~the number of stars present along the $i$'th sightline, and the FoM is normalized by the total number of stars returned by the density model over all sightlines. (For the two OpSim runs tested here, enigma-1189 and ops2-1092, the normalization factors differ by $\sim 0.1\%$.) Therefore $0.0 \le FoM_{preSN} \le 1.0$.}
+\item \new{{\it Assumptions (observational):} Pre-SN variability similar to the pre-SN outburst of SN2010mc (Ofek et al. Nature). The pre-SN variability is modeled as a sawtooth lightcurve (in apparent magnitude). We assume this transient event will always reach brightness sufficient for LSST to observe, so opt for a very bright peak apparent magnitude in all filters. We assume that the probability of a supernova going off is proportional to the number of stars along a particular line of sight.}
+\item \new{{\it Parameters used:} The pre-SN outburst is simulated using the lsst-sims metrics.TransientMetric module. The lightcurve used has the following parameters: rise slope $-2.4$; time to peak; $20$~days; decline slope: $0.08$; total transient duration: 80 days. All filters are used in the detections, and 20 evenly-spaced phases are simulated for sensitivity to pathological cases (parameter nPhaseCheck=20). Peak apparent magnitudes used: $\{ 11,9,8,7,6,6\}$~in $\{u,g,r,i,z,y\}$. Then, $f_{var, i}$~is taken as the ``Sawtooth Alert'' quantity returned by metrics.TransientMetric. The starcounts metric (in sims-maf-contrib) is used to estimate the number of stars along a given line of sight, using fiducial distance limits ($10$pc $\le d \le 80$kpc).}
+\item \new{{\it \bf Results:} $FoM_{preSN}$(enigma-1189) = 0.251, while $FoM_{preSN}$(ops2-1092)=0.852. See Figure \ref{f_opSim_GalacticSN} for a breakdown of this figure of merit across sightlines.}
+
+\end{itemize}
+\begin{figure}
+\begin{center}
+  \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_1092.pdf}
+  \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_1189.pdf}
+%  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1092.pdf}
+%  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1189.pdf} 
+  \caption{\new{Figure of merit $FoM_{preSN}$~describing LSST's sensitivity to any pre-Supernova outburst, broken down by sightline, as sky-maps. $FoM_{preSN}$~is estimated for two OpSim runs (to-date); ops2-1092 (left) and enigma-1189 (right). The normalizing factors $N_{\ast, total}$ are $1.120\times 10^{12}$~for ops2-1092 and $1.121 \times 10^{12}$~for enigma-1189. The imprint of reduced sampling towards the inner plane can be clearly seen for enigma-1189.}}
+\end{center}
+\label{f_opSim_GalacticSN}
+\end{figure}
+
+
 %The current baseline cadence (${\tt enigma\_1189}$) partially excludes the Galactic Plane from the% deep-wide-fast survey and instead adopts a 
 %nominal 30 visits per filter as part of a special proposal. We have proposed an OpSim run that inc%ludes the Galactic Plane in the 
 %deep-wide-fast survey:
@@ -398,7 +445,9 @@ Dependencies:
 \label{sec:\secname:MW_Disk_discussion}
 
 The Figures of Merit listed above must now be implemented within the
-sims\_maf framework and applied to representative science cases.
+sims\_maf framework and applied to representative science
+cases. \new{See Table \ref{tab_SummaryMWDisk} at the end of this subsection for initial
+  efforts along these lines.}
 
 We welcome input and volunteers for this effort. 
 
@@ -416,6 +465,23 @@ We have proposed an OpSim run that includes the Galactic Plane in the
 deep-wide-fast survey:
 
 \url{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_GP.md}
+
+\begin{table}
+  \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
+    FoM & Brief description & {\rotatebox{90}{enigma-1189}} & {\rotatebox{90}{ops2-1092}} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
+    \hline
+    1.1 & \footnotesize{LMXB ellipsoidal variations}      & - & - & - & - & - \\
+    1.2 & \footnotesize{Uncertainty in dwarf nova duty cycle}   & - & - & - & - &  \footnotesize{LSST as initial trigger} \\
+    2.1 & \footnotesize{Fraction of Novae detected}       & - & - & - & - &  - \\
+    3.1 & \footnotesize{Galactic Supernova pre-variability} & 0.25 & {\bf 0.85} & - & - & \footnotesize{Fraction of SN2010mc-like outbursts that LSST would detect; $FoM_{preSN} = f_{var} \times N_{\ast}$} \\
+    4.1 & \footnotesize{Fraction of triggered microlens candidates} & - & - & - & - & - \\
+    4.2 & \footnotesize{Uncertainty in disk-disk microlens distribution parameters due to missed events} & - & - & - & - & \footnotesize{LSST as initial microlens trigger} \\
+    5.1a & \footnotesize{Median (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & \footnotesize{(Most useful FoM probably a spatial map of the uncertainty.)} \\
+    5.1b & \footnotesize{Variance (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & - \\
+  \end{tabular}
+\caption{Summary of figures-of-merit for the Galactic Disk science cases. The best value of each FoM is indicated in bold.}
+\label{tab_SummaryMWDisk}
+\end{table}
 
 
 %Discussion: what risks have been identified? What suggestions could be
