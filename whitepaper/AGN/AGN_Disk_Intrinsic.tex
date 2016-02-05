@@ -62,7 +62,7 @@ AGN science in the LSST era (e.g., \citealt{Chelouche2013};
 \citealt{CheloucheandZucker2013}; \citealt{EdelsonEtal2015};
 \citealt{FausnaughEtal2015}). Such measurements can test accretion disk models
 in a robust manner for a considerably larger number of AGNs than is currently
-feasible with microlensing (see section~\ref{sec:microlensing}).
+feasible with microlensing (see section~\ref{sec:agn:microlensing}).
 
 Theories of the hierarchical merger of dark matter halos over cosmic time
 predict that galaxy-galaxy mergers should result in the formation of a large
@@ -132,39 +132,6 @@ sensitive to probing SMBHs down to $\approx10^{5} - 10^{6}~M_{\odot}$.
 %be monitored, during commissioning phase, with frequencies in the range ~$1$-$10^4$ min. (i.e., from
 %minutes to weeks/months).
 
-\new{{\it New text from} \credit{AstroVPK}, {\it needs editing in}:
-\newline\newline
-Accretion disks in BH-XRBs exhibit quasi-periodic oscillations (QPOs) \citep{BelloniAccretion}. The QPO periods expected from the inner accretion disk (which provide a stable clock which is located closer to the horizon as the BH spin increases) can be estimated from that of the fundamental g-mode, which agree with the observed QPO frequencies in stellar mass BH binaries. Utilizing the theoretical upper bounds for BH spin and $L/L_{\rm Edd}$, and the lower bound to the $k$- and bolometric correction $B_i(Z)$ , one obtains $\log P(hours) > 0.4(1-m_i) + \log[(1+Z)D(Z)^2]$ for i-band magnitude $m_i$ and luminosity distance $D(Z)$. $B_i(Z)$ is a decreasing
-function of BH mass, but an increasing function of BH spin. The Lyman-alpha forest limits us to redshifts $Z < 2.7$ in the g-band. The QPO will be weaker within longer wavelength bands. The $\sim 80$ visits in the g-band proposed for the main survey appears insufficient to produce a useful PSD.  The expected QPO periods are longer than a few hour visit in a DDF. For instance, for $m_g  <  23$ and the optimal $Z =  2.7$, the QPO period $P > 4$~hrs. QPO search will be most relevant for the DDFs, if the sampling is at least ~nightly, i.e., ~3000 visits
-during the entire survey. In addition, there's a need for an ``ultradeep'' field, e.g., the MCs, that will
-be monitored, during commissioning phase, with frequencies in the range ~$1$-$10^4$ min. (i.e., from
-minutes to weeks/months).}
-
-Theories of the hierarchical merger of dark matter halos over cosmic
-time predict that galaxy-galaxy mergers should result in the formation
- of a large number of binary super massive AGN. This population is predicted
- to be a strong, stochastic contributor to the overall gravitational wave
- background \citep{2015arXiv151105564T}. The inspiral of gravitationally
-  bound pairs of supermassive black holes formed by a major merger may
-  `stall', reducing the gravitational wave signal \citep{2014SSRv..183..189C}.
-Potentially periodic AGN variability, leading to tentative discoveries
-of binary SMBHs (e.g., \citet{2015Natur.525..351D} and
- \citet{2015MNRAS.453.1562G}), may be measurable in LSST. The fraction of
- close supermassive binaries observed with LSST will provide strong
- constraints on the strength of the graviational wave signal expected from
-  inspiral. Over the ten-year survey, LSST will be sensitive to
-periods of a few days up to $\sim3$~yr.
-
-Photometric reverberation mapping (PRM) measuring the time-delayed
-response between the continuum flux
-in one (longer wavelength) band to the continuum flux in another (band
-with shorter wavelength), will be one of the cornerstones of AGN
-research in the LSST era (e.g., \citet{Chelouche2013};
-\citet{CheloucheandZucker2013}; \citet{CheloucheEtal2014};
-\citet{EdelsonEtal2015}; \citet{FausnaughEtal2015}). Sources in the
-deep-drilling fields (DDFs) will benefit from the highest quality PRM
-time-delay measurements given the factor of $\sim10$ denser sampling.
-
 % --------------------------------------------------------------------
 
 \subsection{Target measurements and discoveries}
@@ -193,11 +160,11 @@ tools, to more effectively distinguish AGNs from variable stars, as
 well as a basis to propose cadence perturbations to further enhance
 AGN selection.
 
-A high-quality PSD, extending to high frequencies, can effectively distinguish
-AGNs from other variable sources, assuming AGN light curves are described by
-a particular continuous-time autoregressive moving average model (C-ARMA;
-\citet{KellyEtal14}), i.e., C-ARMA(2,1), corresponding to a damped harmonic
-oscillator.
+A high-quality PSD, extending to high frequencies (reaching $\sim 1$ min
+timescales for stacked PSDs), can effectively distinguish AGNs from other
+variable sources, assuming AGN light curves are described by a particular
+continuous-time autoregressive moving average model (C-ARMA; \citet{KellyEtal14}),
+i.e., C-ARMA(2,1), corresponding to a damped harmonic oscillator.
 %
 Determination of the parameters that describe the PSD requires light curve
 sampling at least as frequent as $\sim1$~d$^{-1}$. Figure~\ref{PSDvsFreq} shows
@@ -237,11 +204,10 @@ light curves, to $1/$($3$~d), corresponding to the nominal DDF cadence, changes 
 the size and the shape of the joint distribution, degrading both the accuracy and
 correlation of the inferred hyperparameters.
 %
-Furthermore, the C-ARMA formalism may enable adjusting the cadence once the LSST survey
-begins to determine the sampling pattern in real time.
+Furthermore, the C-ARMA formalism may enable adjusting the cadence of the DDFs once
+the LSST survey begins to determine the sampling pattern in real time.
 
 \begin{figure}
-<<<<<<< HEAD
 \centering\includegraphics[width=0.9\linewidth]{figs/agn/AGN_Variability_00.png}
 \caption{The effect of sampling frequency on hyperparameter estimation (courtesy of
 J.~Moreno). Light curves were generated using a C-ARMA(2,1) model using the best-fit
@@ -267,31 +233,6 @@ the cadence requirements for LSST.
 %Before we derive a metric that quantifies our ability to measure these
 %parameters, we can anticipate some of the sensitivity of the
 %photometric RM method to observing strategy.}
-
-\new{{\it New text from} \credit{AstroVPK}, {\it needs editing in}:
-\newline\newline
-Accurate recovery of the PSD hyperparameters is greatly enhanced by rapid
-sampling. Figure \ref{CadenceEffect} shows the effect of the sampling frequency
-on the inferred joint distribution of two hyperparameters of the C-ARMA(2,1)
-model, the oscillator timescale and the damping ratio. Degrading the sampling
-frequency from $1/$($30$~min) (Kepler) to $1/$($3$~d) changes both the size and
-the shape of the joint distribution i.e. it degrades both the accuracy and
-correlation of the inferred hyperparameters.  PRM measurements will probe the
-size and structure of the accretion disk in a statistical sense by measuring the
-time-lag $\tau$ between varaibility in different photometric bands as well as
-the cross-correlation strength across bands.}
-
-\new{The PRM method is very sensitive to the sampling in each band,
-therefore the ability to derive reliable time delays can be affected
-significantly by the LSST cadence. The best results will be obtained
-by having the most uniform sampling equally for each band.
-Additionally, there is a trade-off between the number of DDFs and the
-number of time delays that PRM can obtain \citep{CheloucheEtal2014}.
-For example, an increase in the number of DDFs, with similarly dense
-sampling in each field, can yield a proportionately larger number of
-high-quality time delays, down to lower luminosities, but at the
-expense of far fewer time delays (for relatively high luminosity
-sources) in the main survey.}
 
 %\new{We focus on the PSD function as a way of characterizing AGN
 %variability in various ways. What do we expect the AGN population to
@@ -319,15 +260,16 @@ and any derived overall figure of merit.
 
 While additional work is required for determining the optimal cadence
 in order to fully capture AGN accretion physics and to enhance AGN selection,
-it is clear that even the nominal DDF sampling is not sufficiently
-frequent.
+it is clear that even the nominal DDF sampling (in enigma\_1189)
+is barely sufficient, and more frequent sampling would have been ideal.
 
 One particular metric for which LSST can make a significant contribution
 using the C-ARMA formalism is the selection of low-luminosity AGN (LLAGN),
 i.e., sources with $L \ltsim 10^{42}$~erg~s$^{-1}$, in the DDFs. Such
 sources are likely to be missed by traditional color-variability selection
-algorithms. The metric to be developed should assess how the number of
-selected LLAGN depends on the sampling frequency in each band.
+algorithms due to a strong host contribution. The metric to be developed should
+assess how the number of selected LLAGN depends on the sampling frequency in
+each band.
 
 % QPOs - Will the cadence and duration give you the proper range on the
 % power spectrum to detect QPOs with a given mass, spin, and L/Ledd?
@@ -339,7 +281,8 @@ as are the (short) duty cycles. Observations, theory and numerical simulations
 have only suggested that the fractional modulation should be small (less than
 a few percent). Thus it is not obvious how to choose a metric and observing
 strategy to maximize it, other than increasing the sampling frequency to
-at least nightly samplings in the $g$ and $u$ bands.
+at least nightly samplings in the $g$ and $u$ bands (i.e., increasing
+the sampling frequency in the DDFs at least by a factor of $\sim 3$).
 
 % --------------------------------------------------------------------
 
@@ -361,7 +304,11 @@ the identified risks?
 
 Overall, the key requirement is to increase the nominal sampling frequency
 in the DDFs by at least a factor of 3, i.e., having at least 3000 visits,
-per band, during the entire survey.
+per band, during the entire survey. Alternatively, if this sampling is not
+feasible for all the DDFs, it would be beneficial to identify a subset of
+``special'' DDFs which would be sampled by this frequency. Such DDFs would
+also benefit from being circumpolar, e.g., the Magellanic Clouds, enabling
+a more uniform sampling to produce the highest quality PSDs.
 
 % ====================================================================
 
