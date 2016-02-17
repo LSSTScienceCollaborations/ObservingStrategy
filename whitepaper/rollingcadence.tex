@@ -48,7 +48,7 @@
 % with a discussion of any risks that have been identified, and how
 % these could be mitigated.
 
-With a total of ~800 visits spaced approximately uniformly over 10 years, and distributed among 6 filters,
+With a total of $\sim 800$ visits spaced approximately uniformly over 10 years, and distributed among 6 filters,
 it is not clear that LSST can offer the sufficiently dense sampling in time for study of transients with typical durations less than or $\simeq 1$week.
 This is particularly a concern for key science requiring well-sampled SNIa light curves.  Rolling cadences stand out as a
 general solution that can potentially enhance sampling rates by 2$\times$ or more, on some of the sky all of the time and all of the sky some of the time, while maintaining a sufficient uniformity for survey objectives that require it.
@@ -100,7 +100,7 @@ From these examples, it appears that a 2$\times$ enhancement with uniformity clo
 
 % --------------------------------------------------------------------
 
-\subsection{ Fast Transients and Rolling Cadence}
+\subsection{Fast Transients and Rolling Cadence}
 \label{sec:rolling:transients}
 
 \noindent{\it Author Name(s)} % (Writing team)
@@ -137,12 +137,12 @@ Dithering does not work gracefully with a rolling cadence, reducing temporal cov
 
 These cautions illustrate that evaluation of rolling cadences must be based on the full range of schedule performance metrics, and not just those targeted by rolling cadence development.
 
-\subsection{ Directions for Future Work with Rolling Cadences}
+\subsection{Directions for Future Work with Rolling Cadences}
 \label{sec:rolling:directions}
 
-While preliminary experiments with rolling cadences have been carried out with OpSim, these experiments have signficant deficiencies, and are not suited for in-depth study as of this writing.  Progress in rolling cadence simulations is expected no sooner than mid to late-2016. Preparatory to that, analysis of cadences described above can guide development of objectives for enhancement by rolling cadence.  
+While preliminary experiments with rolling cadences have been carried out with OpSim, these experiments have significant deficiencies, and are not suited for in-depth study as of this writing.  Progress in rolling cadence simulations is expected no sooner than mid to late-2016. Preparatory to that, analysis of cadences described above can guide development of objectives for enhancement by rolling cadence.  
 
-Rolling cadences will be required to pass the same metrics as an other, and general requirements such as sky area, depth and visit count must be met.  Of particular interest will be metrics that clearly distinguish the gains available with rolling cadences - that is, metrics that measure schedule performance for variable targets, and especially those with strong sampling requirements, or more rapid variablity.
+Rolling cadences will be required to pass the same metrics as an other, and general requirements such as sky area, depth and visit count must be met.  Of particular interest will be metrics that clearly distinguish the gains available with rolling cadences - that is, metrics that measure schedule performance for variable targets, and especially those with strong sampling requirements, or more rapid variability.
 
 The following metrics, based on similar metrics developed for particular science objectives, may be useful in tuning rolling cadence performance. 
 
@@ -151,7 +151,7 @@ The following metrics, based on similar metrics developed for particular science
 
 \item Observation Triplets histograms. Similar to Pairs, but with closely spaced triplets allowing detection and confirmation of transient events (as described in http://arxiv.org/pdf/1508.03175v2.pdf).
 
-\item Period determination metric.  Compute a measure of the period determination accuracy after a given time interval, as a function of period. A complete analysis would allow use of real light curves for various object types with realistic brightness distributions.  A simpler approach would use a single example light curve and a fixed measurement error value. A simplest approach would be based on the samping function and its power spectrum (as described in http://arxiv.org/pdf/1508.03175v2.pdf).  This metric group would rate simulation performance for period determination of periodic variables - mostly stars.
+\item Period determination metric.  Compute a measure of the period determination accuracy after a given time interval, as a function of period. A complete analysis would allow use of real light curves for various object types with realistic brightness distributions.  A simpler approach would use a single example light curve and a fixed measurement error value. A simplest approach would be based on the sampling function and its power spectrum (as described in http://arxiv.org/pdf/1508.03175v2.pdf).  This metric group would rate simulation performance for period determination of periodic variables - mostly stars.
 
 \item Sampling of SNe light curves.  The most complete metric would count the number of SNe (of various types) light curves that would be well sampled (according to defined criteria), based on analysis of realistic simulated data.  A simpler metric would be based on estimated sampling requirements and cadence without considering brightness. The latter could be used initially, pending replacement (or calibration) with more extensive simulations.
 
