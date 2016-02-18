@@ -45,24 +45,26 @@
 % A short preamble goes here. What's the context for this science
 % project? Where does it fit in the big picture?
 
-LSST can provide estimates of the size and structure of the broad
+LSST may provide estimates of the size and structure of the broad
 emission line region (BELR) using the photometric reverberation
 mapping (PRM) method. This method enables one to measure the
 time-delayed response of the flux in one band to the flux
 in another by using cross-correlation techniques on AGN light
-curves (e.g., \citet{Chelouche2013}; \citet{CheloucheandZucker2013};
-\citet{CheloucheEtal2014}; \citet{EdelsonEtal2015};
-\citet{FausnaughEtal2015}). The main challenge of PRM is to detect,
-with high confidence, the time lag between the avriations of a BELR
+curves (e.g.,
+%\citet{Chelouche2013}; \citet{CheloucheandZucker2013};
+\citealt{CheloucheEtal2014}).
+%; \citet{EdelsonEtal2015}; \citet{FausnaughEtal2015}).
+The main challenge of PRM is to detect,
+with high confidence, the time lag between the variations of a BELR
 line-rich band with respect to variations in a line-poor band, given
-the relatively small flux contributions (~10\%) of BELR lines to each
+the relatively small flux contributions ($\sim10$\%)~of BELR lines to each
 LSST band. Nevertheless, LSST is expected to deliver BELR line-continuum
 time delays in $\sim10^5-10^6$ sources, which is unprecedented when
 compared to $\sim60-80$ such measurements conducted, to date, via the
 traditional, yet much more expensive (per source) spectroscopic method.
-Sources in the deep-drilling fields (DDFs) will benefit from the highest
+Sources in the DDFs will benefit from the highest
 quality PRM time-delay measurements given the factor of $\sim10$ denser
-sampling (\citet{CheloucheEtal2014}).
+sampling \citep{CheloucheEtal2014}.
 
 % --------------------------------------------------------------------
 
@@ -76,14 +78,17 @@ sampling (\citet{CheloucheEtal2014}).
 % conditions? In broad terms, how would we expect the observing strategy
 % to be optimized for this science?
 
-The PRM measurements will probe the size and structure of the
-BELR, in a statistical sense, and may provide improved SMBH mass estimates
-for sources that have at least single-epoch spectra. The goal is
-to obtain $R_{\rm BELR}$ measures for different BELR lines in certain
-luminosity and redshift bins; for example, PRM will provide mean $R_{\rm BELR}$
-for Ly$\alpha$ in quasars at $2.1\ltsim z \ltsim 2.2$ with $45 \ltsim \log L \ltsim 46$,
-or mean $R_{\rm BELR}$ for C~{\sc iv}~$\lambda 1549$ in quasars at $1.6\ltsim z \ltsim 1.7$
-with $44 \ltsim \log L \ltsim 45$.
+The PRM measurements will probe the size and structure of the BELR,
+in a statistical sense, and may provide improved SMBH mass estimates
+for sources that have at least single-epoch spectra. PRM will also be
+used to trigger follow-up spectrophotometric monitoring of ``promising''
+cases depending on their variability properties. The goal is to obtain
+$R_{\rm BELR}$ measures for different BELR lines in certain luminosity
+and redshift bins; for example, PRM may provide mean $R_{\rm BELR}$ for
+Ly$\alpha$ in quasars at $2.1\ltsim z \ltsim 2.2$ with
+$45 \ltsim \log L ({\rm erg~s}^{-1}) \ltsim 46$, or mean $R_{\rm BELR}$
+for C~{\sc iv}~$\lambda 1549$ in quasars at $1.6\ltsim z \ltsim 1.7$
+with $44 \ltsim \log L ({\rm erg~s}^{-1}) \ltsim 45$.
 %\new{Our goal is to understand the population of
 %AGN broad line regions, including their geometry. We expect to do this
 %via  a model that connects the BH mass, BLR geometry and AGN
@@ -98,11 +103,17 @@ The PRM method is very sensitive to the sampling in each band,
 therefore the ability to derive reliable time delays can be affected
 significantly by the LSST cadence. The best results will be obtained
 by having the most uniform sampling equally for each band.
+%
+Since the observed line-continuum lags scale with luminosity and redshift,
+PRM with the LSST will be limited by the average time gaps between successive
+observations in a particular band.
+%
 Additionally, there is a trade-off between the number of DDFs and the
 number of time delays that PRM can obtain \citep{CheloucheEtal2014}.
 For example, an increase in the number of DDFs, with similarly dense
 sampling in each field, can yield a proportionately larger number of
-high-quality time delays, down to lower luminosities, but at the
+high-quality time delays, down to somewhat lower luminosities (to the
+extent that host-galaxy contamination can be neglected), but at the
 expense of far fewer time delays (for relatively high luminosity
 sources) in the main survey.
 
@@ -114,22 +125,20 @@ sources) in the main survey.
 Quantifying the response via MAF metrics: definition of the metrics,
 and any derived overall figure of merit.
 
-
-Need to compute the average and the dispersion in the
-number of visits, per band, across the sky for the nominal OpSim
-(during the entire survey). Since PRM works best for uniform sampling,
-need to compare the distributions of the number of visits in each
-band, averaged across the sky, and identify ways to minimize any
-potential differences between these distributions. By running PRM
-simulations, identify the 1) minimum number of visits (in any band)
-that can yield any meaningful BELR-continuum lag estimates, and 2) the
-largest difference in the number of visits between two different bands
-that can yield any meaningful BELR-continuum lag estimates. Repeat
-these simulations by doubling the nominal number of DDFs. Assess the
+The average and the dispersion in the number of visits, per band, across
+the sky for the nominal OpSim (during the entire survey) should be computed.
+Since PRM works best for uniform sampling, one should compare the distributions
+of the number of visits in each band, averaged across the sky, and identify
+ways to minimize any potential differences between these distributions. By
+running PRM simulations, one should identify the 1) minimum number of visits
+(in any band) that can yield any meaningful BELR-continuum lag estimates, and
+2) the largest difference in the number of visits between two different bands
+that can yield any meaningful BELR-continuum lag estimates. These simulations
+should be repeated by doubling the nominal number of DDFs. Finally, the
 %number of meaningful BELR-continuum time delays that can be obtained
-uncertainties on $R_{\rm BELR}$ values achieved with the nominal OpSim,
-and point out potential perturbations in the cadence to reduce these
-uncertainties.
+uncertainties on $R_{\rm BELR}$ values achieved with the nominal OpSim
+should be assessed, and potential perturbations to the cadence should be
+pointed out to reduce these uncertainties.
 
 % --------------------------------------------------------------------
 
