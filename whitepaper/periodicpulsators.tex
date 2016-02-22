@@ -46,9 +46,28 @@ However, different implementations of the survey may result in different resulti
 
 \subsection{Tracing Galactic Structure with RR Lyrae}
 
-RR Lyrae variables are crucial tracers of structure in the Galaxy and beyond into the Local Group. The incredible sample of RR Lyrae anticipated from LSST observations will enable discovery of Galactic tidal stream and neighboring dwarf galaxies throughout much of the Local Group (Ivezic,Z., Tyson, J. A., Allsman, R., et al. 2008a, arXiv: 0805.2366). LSST also creates the possibility of detecting and studying RRL variables in the Magellenic Clouds; see Chapter [CHAPTER] for discussion.
+RR Lyrae variables are crucial tracers of structure in the Galaxy and beyond
+into the Local Group. The incredible sample of RR Lyrae anticipated from LSST
+observations will enable discovery of Galactic tidal stream and neighboring
+dwarf galaxies throughout much of the Local Group
+\citep{IvezicEtal2008}.  LSST also creates the possibility
+of detecting and studying RRL variables in the Magellenic Clouds; see Chapter
+[CHAPTER] for discussion.
 
-Oluseyi et al. 2012 [INSERT REF] carried out an extensive simulation of period and lightcurve shape recovery of RR Lyrae variables using an early OpSim run opsim1$\_$29. Correctly identifying the period aids in building the sample of interest, whereas fitting the lightcurve shape makes it possible to measure the metallicity of the star. In their simulation, they employed both a Fourier analysis and template matching to recover the lightcurve shape, finding that template matching yielded a more accurate lightcurve shape measurement in the presence of sparse data. The results of this simulation showed that the vast majority of RR Lyrae will be discovered by the baseline observing strategy (as deployed in opsim1$\_$29) within 5 years of survey operations. Half of both RRLab and RRLc stars will be found out to $\sim$600 kpc and $\sim$250 kpc (respectively) by the end of the 10-year main survey, and template matching techniques for lightcurve shape recovery will provide metallicities to $\sim$0.15dex. 
+\citet{2012AJ....144....9O} carried out an extensive simulation of period
+and lightcurve shape recovery of RR Lyrae variables using an early OpSim run
+opsim1$\_$29. Correctly identifying the period aids in building the sample of
+interest, whereas fitting the lightcurve shape makes it possible to measure the
+metallicity of the star. In their simulation, they employed both a Fourier
+analysis and template matching to recover the lightcurve shape, finding that
+template matching yielded a more accurate lightcurve shape measurement in the
+presence of sparse data. The results of this simulation showed that the vast
+majority of RR Lyrae will be discovered by the baseline observing strategy (as
+deployed in opsim1$\_$29) within 5 years of survey operations. Half of both
+RRLab and RRLc stars will be found out to $\sim$600 kpc and $\sim$250 kpc
+(respectively) by the end of the 10-year main survey, and template matching
+techniques for lightcurve shape recovery will provide metallicities to
+$\sim$0.15dex. 
 
 % --------------------------------------------------------------------
 
@@ -56,7 +75,23 @@ Oluseyi et al. 2012 [INSERT REF] carried out an extensive simulation of period a
 
 Classical cepheids remain an essential step in the cosmic distance ladder. Their calibration is based largely on LMC cepheids and known (assumed) distance of the LMC.  The associated errors, while uncertain, are believed to be of $\>\sim$7\%. (Madore, Barry F.; Freedman, Wendy L. (2009). "Concerning the Slope of the Cepheid Period?Luminosity Relation". The Astrophysical Journal 696 (2): 1498. arXiv:0902.3747. Bibcode:2009ApJ...696.1498M. doi:10.1088/0004-637X/696/2/1498.) New developments in galactic studies are poised to support substantially improved descriptive information concerning nearby galactic cepheids, with possible substantial reductions in this error, by accurately securing the PL slope and zero point.
 
-Cepheid calibration errors are associated in part with uncertainties in extinction, both interstellar and in some cases circumstellar, and in metalicity.  At present, the direct, local calibration of cepheids is limited by the availability of a few direct distance measurements, obtained with HST, with errors $\sim$10\%.  The GAIA mission is expected to return $\sim$9000 Galactic cepheids, of all periods, colors and metallicities, with distance errors less than 10\% (many of them much less) - Windmark, F.; Lindegren, L.; Hobbs, D., 2011A\&A...530A..76W. It is expected to deliver at least 1000 cepheids in the LMC with expected mean distance error $\sim$7-8\% (Clementini (2010) - 011EAS....45..267C).  GAIA, as well as other methods, will also support determination of the 3-d map of galactic interstellar extinction - including possible variations in the extinction law. These rich data sets will be supported with direct measurements of cepheid diameters (A. Merand et al, A\&A in press) and advances in stellar hydrodynamics (E. Mundprecht et al, 2013MNRAS.435.3191M) which will provide theoretical and empirical basis for calibrations to reconcile known physics with observational correction factors.
+Cepheid calibration errors are associated in part with uncertainties in
+extinction, both interstellar and in some cases circumstellar, and in
+metalicity.  At present, the direct, local calibration of cepheids is limited
+by the availability of a few direct distance measurements, obtained with HST,
+with errors $\sim$10\%.  The GAIA mission is expected to return $\sim$9000
+Galactic cepheids, of all periods, colors and metallicities, with distance
+errors less than 10\% (many of them much less) - Windmark, F.; Lindegren, L.;
+Hobbs, D., 2011A\&A...530A..76W. It is expected to deliver at least 1000
+cepheids in the LMC with expected mean distance error $\sim$7-8\% (Clementini
+(2010) - 011EAS....45..267C).  GAIA, as well as other methods, will also
+support determination of the 3-d map of galactic interstellar extinction -
+including possible variations in the extinction law. These rich data sets will
+be supported with direct measurements of cepheid diameters (A. Merand et al,
+A\&A in press) and advances in stellar hydrodynamics
+\citep{2013MNRAS.435.3191M} which will provide theoretical and empirical basis
+for calibrations to reconcile known physics with observational correction
+factors.
 
 Galactic cepheids will generally be too bright for LSST, but cepheids in the local group are sufficiently bright that LSST photometry will be limited by calibration errors rather than by brightness.  This dataset will provide superb support for integration of GAIA-based galactic cepheid studies with extra-galactic cepheid studies.
 
@@ -65,7 +100,7 @@ GAIA will provide similar precision data with the potential to identify or suppo
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
-\label{sec:keyword:analysis}
+\label{sec:\secname:analysis}
 
 
 Several metrics currently exist in the MAF for evaluating how LSST survey strategy affect the recovery of periodic sources. 
@@ -78,7 +113,11 @@ phase gap metric (PhaseGapMetric),
 
 the evaluate the periodicity of the source lightcurve and its coverage in phase space (the latter being relevant for shape recovery). 
 
-Recreating the template matching results of the Oluseyi et al. (2012) simulation requires sampling specific input lightcurves and comparing with the library of available shapes; this necessarily requires a step outside of the MAF, but can easily be enabled using the lightcurve simulation tool [NAME OF FED'S LIGHTCURVE TOOL].
+Recreating the template matching results of the \citet{2012AJ....144....9O}
+simulation requires sampling specific input lightcurves and comparing with the
+library of available shapes; this necessarily requires a step outside of the
+MAF, but can easily be enabled using the lightcurve simulation tool [NAME OF
+FED'S LIGHTCURVE TOOL].
  
 
 
@@ -89,7 +128,7 @@ Current simulations of the main survey show a broad uniformity of visits, with t
 % --------------------------------------------------------------------
 
 \subsection{Discussion}
-\label{sec:keyword:discussion}
+\label{sec:\secname:discussion}
 
 For periodic variable science, two cadence characteristics should be avoided:
 \begin{itemize}

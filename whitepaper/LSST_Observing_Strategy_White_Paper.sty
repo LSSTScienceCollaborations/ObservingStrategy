@@ -96,6 +96,8 @@
 %%%%%
 % Adding useful figure package tools
 \usepackage{wrapfig}
+\usepackage{caption}	  % caption package must be loaded before subcaption
+\usepackage{subcaption}   % added by ZI to support 2-panel figures
 
 %%%%%
 % Attempt to allow astro journal style citations (eg citep and citet...)
@@ -207,6 +209,7 @@ colorlinks=true]{hyperref}
 \def\pasj{\jnl{PASJ}}
 \def\aaps{\jnl{A\&AS}}
 \def\an{\jnl{AN}}
+\def\icarus{\jnl{Icarus}}
 
 % Math macros:
 \def\ltsim{\lesssim}
@@ -293,7 +296,7 @@ colorlinks=true]{hyperref}
 % the introduction section:
 \newcommand{\listofopsimdbs}{
   \vskip\baselineskip
-  {\OpSim databases investigated in this section:}
+  {\OpSim databases investigated in this section (name format: machineName\_runNumber):}
   \phantomsection\label{tab:opsimdbnames}
   \medskip
   \hrule
