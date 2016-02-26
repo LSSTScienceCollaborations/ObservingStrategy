@@ -216,8 +216,6 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
 \item[I3.] For the extremes of object color (objects detected only in the bluest or only in the reddest filter), the differences between strategies is weaker. The run \opsimdbref{db:enigma} still shows a population with poorer parallax measures (although this might be due to coverage of regions simply not covered at all by the PanSTARRS-like strategy).
 \end{itemize}
 
-({\it Summary table would help...})
-
 %% In the current incarnation, these will be LARGE figures. Consider
 %% finding a way to summarize them!
 \begin{figure}[ht]
@@ -434,7 +432,9 @@ location on-sky, subdivided by elapsed time in the survey (Figures \ref{fig_astr
 
 \subsubsection{Figures of Merit depening on the Metrics}
 
-Building on the first-order metrics above, this piece will communicate scientific figures of merit for the cases identified in Section \ref{sec:\secname:MW_Astrometry_measurements} above.
+Building on the first-order metrics above, this subsection will communicate scientific figures of merit for the cases identified in Section \ref{sec:\secname:MW_Astrometry_measurements} above.
+
+\new{Table \ref{tab_SummaryMWAstrometry} summarizes the Figures of Merit for Astrometry science cases.}
 
 \subsection{Topics that will need to be addressed}
 \label{sec:\secname:MW_Astrometry_furtherwork}
@@ -466,6 +466,31 @@ figures of merit might then be:
   \item[3.] Uncertainty and bias in the Brown Dwarf mass function using Solar Neighborhood tracers;
    \item[4.] Uncertainty and bias in the thickness in the main sequence of M-dwarfs within 25pc from the Sun, once variability has been characterized and removed.
 \end{itemize}
+
+%%%% SUMMARY TABLE FOR THIS SECTION
+
+\begin{table}
+  \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
+    FoM & Brief description & {\rotatebox{90}{enigma-1189}} & {\rotatebox{90}{ops2-1092}} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
+    \hline
+    1.1 & \footnotesize{Median parallax error at $g=21$ (main survey)}      & - & - & - & - & \footnotesize{Summarize the presentation in Figures \ref{fig_astrom_ByTime_PACoverage}-\ref{fig_astrom_ByFilter_paError}} \\
+    1.2. & \footnotesize{Median parallax error at $g=21$ (plane)}   & - & - & - & - &  - \\
+    1.3. & \footnotesize{Median proper motion error at $g=21$ (main survey)}  & - & - & - & - &  \footnotesize{Take median of Figure \ref{fig_astrom_ByTime_pmError} over the ``plane'' region} \\
+    1.4. & \footnotesize{Median proper motion error at $g=21$ (plane)} & - & - & - & - &  - \\
+    \hline
+    2.1. & \footnotesize{Number of streams LSST can discover via proper motions} & - & - & - & - &  - \\
+    3.1. & \footnotesize{Uncertainty and bias in thin- and thick-disk differential age measurement via white dwarfs} & - & - & - & - &  - \\
+    4.1. & \footnotesize{Uncertainty and bias in brown dwarf mass function from the Solar Neighborhood}  & - & - & - & - & \footnotesize{Using astrometry metrics for objects detected only in the reddest filter(s)} \\
+    4.2. & \footnotesize{Uncertainty and bias in white dwarf mass function from the Solar Neighborhood}  & - & - & - & - & \footnotesize{Using astrometry metrics for objects detected only in the bluest filter(s)} \\
+    5.1. & \footnotesize{Uncertainty and bias in Solar Neighborhood M-dwarf thickness on the MS}  & - & - & - & - &  - \\
+\end{tabular}
+\caption{Summary of figures-of-merit for the Milky Way Astrometry science cases. The best value of each FoM is indicated in bold. See Section \ref{sec:MW_Astrometry}. \new{At present (Feb 2016) these FoMs are all placeholders. Expert input is welcome!}}
+\label{tab_SummaryMWAstrometry}
+\end{table}
+
+
+%%%% SUMMARY TABLE FINISHES HERE
+
 
 \subsubsection{Further work on Astrometry Metrics}
 
