@@ -141,7 +141,7 @@ across the sky for simulated cadence \opsimdbref{db:baseCadence} is shown
 in Aitoff projection of equatorial coordinates. The red line shows the Ecliptic and
 the blue line shows the Galactic equator (it bifurcates around the so-called
 ``Galactic confusion zone''). The median value across the Universal Cadence area 
-is 27.1, with rms scatter of only 0.04 mag. The small dark dots are deep drilling 
+is 27.1, with RMS scatter of only 0.04 mag. The small dark dots are deep drilling 
 fields, with a median $5\sigma$ depth of 28.6.}
 \label{fig:coaddm5enigma}
 \end{figure}
@@ -203,14 +203,14 @@ These values are shallower than
 the zenith dark time values for two main reasons: the sky is expected to be
 brighter for non-dark time and away from zenith, the sky brightness model 
 currently implemented in \OpSim has some shortcomings (a new model will
-be implemented in version 4), and the moon avoidance is not as agressive
+be implemented in version 4), and the moon avoidance is not as aggressive
 as it could be. As a result, the limiting depths above are biased bright by close
 to 1 mag in the $z$ and $y$ bands, and a few tenths of a magnitude in the 
 $u$, $g$ and $i$ bands. The co-added depths are tied to single-visit bands,
 and suffer from the same bias. 
 \item For the 2,293 (overlapping) fields from the WFD area, 
 the median number of visits in the $ugrizy$ bands is (62, 88, 199, 201, 180,
-180), respectively. Not only that these medians exceed the requested
+180), respectively. Not only do these medians exceed the requested
 number of visits (design specification from the SRD\footnote{The LSST
 Science Requirements Document (SRD) is available as
 \url{http://ls.st/lpm-17}}) of (56, 80, 184, 184, 160, 160) in the $ugrizy$
@@ -287,7 +287,7 @@ all observations in the $r$ band. }
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Nvisits_as_function_of_Alt_Az_all_observations_HEAL_SkyMap.pdf}
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Nvisits_as_function_of_Alt_Az_r_Universal-18-0824B_HEAL_SkyMap.pdf}
 \vskip -0.1in
-\caption{The color-coded map in the eft panel shows the visit count from
+\caption{The color-coded map in the left panel shows the visit count from
 Baseline Cadence simulation \opsimdbref{db:baseCadence} in the equal-area Lambert projection of the
 horizontal coordinate system (altitude-azimuth), with north on top and west towards the
 right, for all six bands and proposals (Universal, Galactic Plane, Deep Drilling
@@ -452,29 +452,35 @@ and referred to as ``Baseline Cadence'',  in the rest of this
 document\footnote{This simulation was proposed by the Project Science Team 
 for adoption as the new Baseline Cadence to the Change Control Board.}
 
-An important feature of \opsimdbref{db:baseCadence} simulation is that the
-mean slew time of 6.8 sec is very close to the minimum possible slew
-time of about 4.5 sec. The implication is that the surveying
-efficiency, assuming 30 sec exposure time per visit, can be increased
-by at most about 6\% (that is, the total open-shutter time is within
-about 6\% from its possible maximum, given everything else unchanged).
-Nevertheless, there are other survey aspects, including sky coverage
-and temporal sampling functions, that can be further optimized, as
-discussed in \autoref{sec:cadexp:alternatives} below. 
+An important feature of \opsimdbref{db:baseCadence} simulation is that
+the mean slew time of 6.8 sec (which includes filter change time) is
+very close to the minimum possible slew time of about 4.5 sec. The
+implication is that the surveying efficiency, assuming 30 sec exposure
+time per visit, can be increased by at most about 6\% (that is, the
+total open-shutter time is within about 6\% from its possible maximum,
+given everything else unchanged).  Nevertheless, there are other
+survey aspects, including sky coverage and temporal sampling
+functions, that can be further optimized, as discussed in
+\autoref{sec:cadexp:alternatives} below.
 
 {\bf The main remaining known problems} with \opsimdbref{db:baseCadence} simulation include
 \begin{itemize}
-\item A strong bias towards observations west from the meridian for the main survey, see
-       figure \autoref{fig:AltAzenigma}. 
-\item The sky brightness model has systematic errors in red bands, resulting
-      in estimates of limit depths ($m_5$, both for single visits and coadded depths)
-      that are too shallow by about 0.3 mag in the $u$ band, and 0.5 mag in the $z$ and 
-      $y$ bands.
-\item The moon avoidance angle of 30 deg. allows too many $z$ band observations
-          with elevated sky brightness due to moonshine, resulting in about 0.2-0.3 mag
-          shallower depth. 
-\item There are too many unrequested and unnecessary revisits of the same field in the
-         same night (that is, more than two visits to the same field in the same night). 
+\item A strong bias towards observations west from the meridian for
+  the main survey, see \autoref{fig:AltAzenigma}.  This bias
+  significantly degrades the survey seeing and depth.
+\item Several proposals complete after only 3-4 years, resulting in
+  regions of sky where the proper motions are poorly constrained due
+  to the short observing baseline.  See \autoref{fig:parapmenigma2}.
+\item The sky brightness model has systematic errors in red bands,
+  resulting in estimates of limit depths ($m_5$, both for single
+  visits and coadded depths) that are too shallow by about 0.3 mag in
+  the $u$ band, and 0.5 mag in the $z$ and $y$ bands.
+\item The moon avoidance angle of 30 deg. allows too many $z$ band
+  observations with elevated sky brightness due to moonshine,
+  resulting in about 0.2-0.3 mag shallower depth.
+\item There are too many unrequested and unnecessary revisits of the
+  same field in the same night (that is, more than two visits to the
+  same field in the same night).
 \end{itemize}
 
 \navigationbar
@@ -618,11 +624,11 @@ execute additional programs (the current baseline).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!]
 \vskip -0.03in
-\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/ops2_1092_Parallax_Normed__HEAL_SkyMap.pdf}
-\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/ops2_1092_Proper_Motion_Normed__HEAL_SkyMap.pdf}
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Parallax_Normed_All_Visits_non-dithered_HEAL_SkyMap.pdf}
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Proper_Motion_Normed_All_Visits_non-dithered_HEAL_SkyMap.pdf}
 \vskip -0.2in
 \caption{The trigonometric parallax errors (left) and proper motion errors (right)  for simulated cadence
-ops2\_1092 (``Pan-STARRS-like'' cadence), normalized by the values for idealized perfectly optimized
+minion\_1020 (``Pan-STARRS-like'' cadence), normalized by the values for idealized perfectly optimized
 cadence, are shown in Aitoff projection of equatorial coordinates (compare to \autoref{fig:parapmenigma}).}
 \label{fig:parapmenigma2}
 \end{figure}
@@ -630,12 +636,12 @@ cadence, are shown in Aitoff projection of equatorial coordinates (compare to \a
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!]
-\vskip -3.9in
-\hskip -0.5in
-\includegraphics[angle=0,width=1.19\hsize:,clip]{figs/PS-seeing.pdf}
-\vskip -4.0in
-\caption{The median seeing in r filter, for simulated cadence ops2\_1092 (``Pan-STARRS-like'' cadence),
-normalized by expected value (0.70). Note that fields with the most positive and most negative
+\vskip -0.03in
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Median_FWHMeff_r_band_all_props_OPSI_SkyMap.pdf}
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Median_FWHMeff_r_band_all_props_OPSI_Histogram.pdf}
+\vskip -0.2in
+\caption{The median seeing in $r$ filter, for simulated cadence minion\_1020 (``Pan-STARRS-like'' cadence),
+normalized by expected value (0.83$^{\prime\prime}$). Note that fields with the most positive and most negative
 declination have on average larger values. For comparison, the median normalized seeing for WFD fields
 in Baseline Cadence is 1.08, with a negligible fraction of fields with values above 1.18.}
 \label{fig:PS-seeing}
@@ -1003,7 +1009,7 @@ previous section, these \OpSim databases are all available for further
 testing with science-based MAF metrics.
 
 The U.S. Congress has given a mandate to NASA to implement a
-Near-Earth Object (NEO) Survey program to detect, track, catalogue,
+Near-Earth Object (NEO) Survey program to detect, track, catalog,
 and characterize the physical characteristics of near-Earth objects
 equal to or greater than 140 meters in diameter\footnote{See
 \url{http://www.gpo.gov/fdsys/pkg/PLAW-109publ155/pdf/PLAW-109publ155.pdf}}.
@@ -1398,3 +1404,18 @@ limit than 1.5, which was used in most simulations to date.
 
 
 \navigationbar
+
+%%  LocalWords:  STARRS cadexp Bremerton MAF opsim baseCadence Aitoff
+%%  LocalWords:  airmass coadded WFD Msec airmassenigma ugrizy ivezic
+%%  LocalWords:  SRD coaddm urz ury parapmenigma OpSim pre HAenigma
+%%  LocalWords:  AltAzenigma radians enigmaGapAll enigmaGapr SNe griz
+%%  LocalWords:  enigmaMAXGapAll enigmaEarlySNe Intra opstwoPS opstwo
+%%  LocalWords:  UConlyNoVisitPairs NoVisitPairs kraken ShortExptime
+%%  LocalWords:  DoubleUbandExptime LongExptime UConlyRelaxedAirmass
+%%  LocalWords:  DoubleUbandExptimewithNESpur UConlyStringentAirmass
+%%  LocalWords:  NEO PHA NEOs PHAs MOID Neptunian detections intra eq
+%%  LocalWords:  differencing NEOsNoVisitPairs NEOswithVisitPairs LMC
+%%  LocalWords:  NEOswithVisitTriplets NEOwithVisitQuads NvisitStats
+%%  LocalWords:  enigmaNEO intranightgapCompare NEOquads Gould's SMC
+%%  LocalWords:  Stubbs multi yoachim rhiannonlynne quartiles swiss
+%%  LocalWords:  strawman unrequested
