@@ -524,17 +524,22 @@ will be allocated to WFD cadence. \\
 {\bf Analysis Results:} This simulated cadence is named \opsimdbref{db:opstwo}.
 Compared to the Baseline Cadence \opsimdbref{db:baseCadence}:
 \begin{enumerate}
-\item The total number of visits is close to the expected value: 2.42 million.
-The minimum number of visits per field for the 2,293 WFD fields in Baseline Cadence
-is 966 for this simulation, compared to 888 for Baseline Cadence.
+\item The total number of visits is close to the expected value: 2.42
+  million.  The minimum number of visits per field for the 2,293 WFD
+  fields in Baseline Cadence is 965 for this simulation, compared to
+  888 for Baseline Cadence.
 \item The median number of visits per night and the mean slew time are
-essentially the same as for Baseline Cadence (807 vs. 816 and 7.2 sec vs. 6.8 sec).
+  essentially the same as for Baseline Cadence (807 vs. 816 and 7.2
+  sec vs. 6.8 sec).
 \item The median seeing, sky brightness and airmass in the r and i bands are
       essentially the same as for WFD fields in Baseline Cadence.
-\item XXX The median trigonometric parallax and proper motion errors are improved by
-about 8\%, with improvements commensurate with the increase in the number of visits.
-\item This simulation also shows observing bias towards west (that is, additional
-special programs in \opsimdbref{db:baseCadence} are not responsible for this bias).
+\item The median trigonometric parallax and proper motion errors are
+  improved by about 8\%, with improvements commensurate with the
+  increase in the number of visits and the elimination of regions
+  which are not observed for a full 10 years.
+\item This simulation also shows observing bias towards west (that is,
+  additional special programs in \opsimdbref{db:baseCadence} are not
+  responsible for this bias).
 \end{enumerate}
 
 
@@ -543,17 +548,17 @@ proposal, delivered 99.2\% of the number of visits obtained by
 Baseline Cadence. Therefore, {\it the ``filler'' aspect of other
 proposals does not have a major impact on the surveying efficiency}.
 The minimum number of visits per field for the 2,293 WFD fields in
-Baseline Cadence is 968 (the SRD design value is 825 and the stretch
+Baseline Cadence is 886 (the SRD design value is 825 and the stretch
 goal value is 1000). Although the sky coverage of these 2293 fields is
 about 18,000 sq.deg., their cumulative area is 22,000 sq.deg. With
 proper dithering, the effective number of visits could be increased to
-$968\times22/18 = 1183$ (or the WFD area increased from 18,000 sq. deg.; see
-analysis of ops2\_1092 below). This increase is an improvement of 43\%
+$886\times22/18 = 1083$ (or the WFD area increased from 18,000 sq. deg.; see
+analysis of \opsimdbref{db:opstwoPS} below). This increase is an improvement of 31\%
 relative to the SRD design specification of 825 visits over 18,000
 sq.deg. However, note again that there are no other programs in this
 simulation (i.e., if other programs were allocated 10\% of the
 observing time, the implied overall ``over-performance'' in the number
-of  visits would be about 30\%).
+of  visits would be about 20\%).
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -576,18 +581,20 @@ same as in Baseline Cadence, but spread over a 42\% larger sky area
 {\bf Analysis Results:}  This simulated cadence is named \opsimdbref{db:opstwoPS}.
 Compared to the Baseline Cadence \opsimdbref{db:baseCadence}:
 \begin{enumerate}
-\item The total number of visits is 2.47 million, and essentially identical to the
+\item The total number of visits is 2.42 million, and essentially identical to the
 number of visits in Baseline cadence.
 \item
-The mean number of visits per field is 758.5, which is 98\% of the number of visits
+The mean number of visits per field is 740, which is 81\% of the number of visits %minion_1016 median 912 visits per feild WFD
 for WFD fields obtained by Baseline Cadence (but here the sky area is 42\% larger).
 \item The median number of visits per night and the mean slew time are
-essentially the same as for Baseline Cadence.
-\item The median seeing, sky brightness and airmass in the r and i bands for WFD fields are
-         essentially the same as in Baseline Cadence.
+  essentially the same as for Baseline Cadence.
+\item The median seeing, sky brightness and airmass in the r and i
+  bands for WFD fields are essentially the same as in Baseline
+  Cadence.
 \item The median trigonometric parallax and proper motion errors show
-uniform behavior over the entire enlarged area (see \autoref{fig:parapmenigma2}),
-with the values similar to those obtained for Baseline Cadence.
+  uniform behavior over the entire enlarged area (see
+  \autoref{fig:parapmenigma2}), with the values similar to those
+  obtained for Baseline Cadence.
 \item This simulation also shows observing bias towards west.
 \end{enumerate}
 
@@ -604,21 +611,21 @@ illustrated in \autoref{fig:PS-seeing}. The increased median seeing
 would decrease the number of galaxies effectively resolved for weak
 lensing by about 3-5\%. In addition, the additional area has somewhat
 larger extinction due to interstellar dust which further decreases the
-galaxy counts (this impact of dust extinction is not yet implemented
-in MAF). As a result of these effects, the two strategies result in
-similar weak lensing galaxy samples.
+galaxy counts (this impact of dust extinction on galaxy counts is not
+yet implemented in MAF). As a result of these effects, the two
+strategies result in similar weak lensing galaxy samples.
 
 {\bf Conclusions:} When only the Universal Cadence proposal is
 employed, the survey area could be increased by about 40\%, while
-still delivering the mean number of fields at the level of 98\% of
-that in Baseline Cadence (or 92\% of the SRD design value of 825).
-Hence, simulations ops2\_1092  and \opsimdbref{db:opstwo} demonstrate
-that the ``survey reserve'', relative to the Universal Cadence design
-specifications from the SRD, can be used to i) increase the number of
-visits per field over the WFD area,  or ii) increase the surveyed area
-while keeping the number of visits per field statistically unchanged,
-or iii) increase both area and the number of visits, and/or iv)
-execute additional programs (the current baseline).
+still delivering the mean number of fields at the level of 81\% of
+that in Baseline Cadence (or 90\% of the SRD design value of 825).
+Hence, simulations \opsimdbref{db:opstwoPS} and \opsimdbref{db:opstwo}
+demonstrate that the ``survey reserve'', relative to the Universal
+Cadence design specifications from the SRD, can be used to i) increase
+the number of visits per field over the WFD area, or ii) increase the
+surveyed area while keeping the number of visits per field
+statistically unchanged, or iii) increase both area and the number of
+visits, and/or iv) execute additional programs (the current baseline).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -672,12 +679,12 @@ surveying efficiency, then this simulation should deliver more than
 {\bf Analysis Results:} This simulated cadence is named \opsimdbref{db:UConlyNoVisitPairs}. Compared
 to \opsimdbref{db:opstwo}:
 \begin{enumerate}
-\item The total number of visits is 2.45 million, identical to \opsimdbref{db:opstwo}.
+\item The total number of visits is 2.42 million, identical to \opsimdbref{db:opstwo}.
 \item The median slew time, and the median coadded depth and seeing in the $r$ band
 are essentially identical, too.
-\item The median airmass in the $r$ band of 1.26 is a bit higher than 1.20 obtained
+\item The median airmass in the $r$ band of 1.25 is a bit higher than 1.18 obtained
 for \opsimdbref{db:opstwo}.
-\item The median fraction of revisits faster than 30 minutes of 0.35 is smaller than 0.39
+\item The median fraction of revisits faster than 30 minutes of 0.32 is smaller than 0.38
 for \opsimdbref{db:opstwo}, and is consistent with the absence of pair contributions (that is,
 such revisits are due to field edge overlaps, and unintentional revisits, in case of \opsimdbref{db:UConlyNoVisitPairs}).
 \end{enumerate}
@@ -691,7 +698,7 @@ science (and, of course, it's crucial for asteroid science).
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+%---XXXX--Leaving off updating numbers here.  Hope to finish tomorrow.  --py
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \opsimdb[db:NoVisitPairs]{kraken\_1043}{Baseline Cadence, but with no visit pairs.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
