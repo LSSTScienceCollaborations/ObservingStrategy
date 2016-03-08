@@ -698,7 +698,7 @@ science (and, of course, it's crucial for asteroid science).
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-%---XXXX--Leaving off updating numbers here.  Hope to finish tomorrow.  --py
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \opsimdb[db:NoVisitPairs]{kraken\_1043}{Baseline Cadence, but with no visit pairs.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -718,23 +718,23 @@ Baseline Cadence. \\
 {\bf Analysis Results:}  This simulated cadence is named
 \opsimdbref{db:NoVisitPairs}. Compared to \opsimdbref{db:baseCadence},
 \begin{enumerate}
-\item The total number of visits is 2.53 million, or 2.4\% more than
+\item The total number of visits is 2.51 million, or 2.4\% more than
 in Baseline Cadence.
-\item The mean slew time is 5.8 sec, or 16\% shorter than for Baseline
+\item The mean slew time is 5.8 sec, or 15\% shorter than for Baseline
 Cadence. This decrease in the mean slew time implies an efficiency
 increase of 2.8\% and explains the actual 2.4\% improvement implied by
 the total number of visits.  Note that this simulation has the
 shortest mean slew time of all simulations investigated here (the
 nominal shortest slew and settle time is about 4.5 sec).
 \item The median airmass in the r band is slightly larger for this
-simulation than for Baseline Cadence: 1.29 vs. 1.23.
+simulation than for Baseline Cadence: 1.29 vs. 1.22.
 \end{enumerate}
 
 
 {\bf Conclusions:}
 Unlike the comparison of \opsimdbref{db:UConlyNoVisitPairs} and
 \opsimdbref{db:opstwo}, here the removal of visit pair requirement
-results in a 16\% shorter mean slew time and consequently in 2.4\%
+results in a 15\% shorter mean slew time and consequently in 2.4\%
 more visits.
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -765,21 +765,22 @@ number of visits is about 32\% and the expected number of visits is
 {\bf Analysis Results:}  This simulated cadence is named
 \opsimdbref{db:ShortExptime}. Compared to Baseline Cadence:
 \begin{enumerate}
-\item The total number of visits is 3.29 million, representing an
-increase of 33\% that is very close to the expected value of 32\%.
-\item The median number of visits per night is 1091, or about 34\%
-more than for Baseline Cadence. The total open shutter time is 11\%
+\item The total number of visits is 3.23 million, representing an
+increase of 31\% that is very close to the expected value of 32\%.
+\item The median number of visits per night is 1079, or about 32\%
+more than for Baseline Cadence. The total open shutter time is 14\%
 smaller for this simulation, and easily understood as due to expected
 11\% decrease due to smaller surveying efficiency (the mean slew time
-is practically the same as in Baseline Cadence, 6.8 sec vs. 6.9 sec).
-\item The main survey (WFD, 18,000 sq. deg.) fields received 32\% more
+is the same as in Baseline Cadence, 6.9 sec).
+% 2.8 vs 2.1
+\item The main survey (WFD, 18,000 sq. deg.) fields received 33\% more
 visits than in Baseline Cadence. The increase in the minimum number of
-visits over that area is 7\% (from 898 to 961). In addition, another
+visits over that area is 9\% (from 886 to 963). In addition, another
 1,000 sq. deg. (6\% of the nominal WFD) area has more than 961 visits.
 \item Most other performance parameters are essentially unchanged: the
-fraction of visits spent on the main survey (84\% vs. 85\%), the
-median seeing in the r band (0.78 arcsec vs. 0.77 arcsec), and the
-median airmass (1.24 vs. 1.23).
+fraction of visits spent on the main survey (88\% vs. 85\%), the
+median seeing in the r band (0.93 arcsec vs. 0.94 arcsec), and the
+median airmass (1.23 vs. 1.22).
 \end{enumerate}
 
 {\bf Conclusions:}
@@ -789,7 +790,7 @@ shorter exposures can be easily understood using simple efficiency
 estimates. With the visit exposure time is decreased from 30 sec to 20
 sec, the surveying efficiency and the total open shutter time drops by
 $\sim$10\%, while the number of (shorter exposure time) visits (for
-all proposals) increases by 33\%.
+all proposals) increases by 32\%.
 
 
 
@@ -817,14 +818,14 @@ Compared to Baseline Cadence:
 \begin{enumerate}
 \item The total number of visits is 1.42 million or 58\% of the visits
 obtained with Baseline Cadence, and the total open-shutter time is
-15\% higher than for Baseline Cadence. Both results are in good
+16\% higher than for Baseline Cadence. Both results are in good
 agreement with above expectations.
-\item The median number of visits per night is 472, or 58\% of the
-value obtained with Baseline Cadence. The mean slew time is 0.1 sec
+\item The median number of visits per night is 467, or 57\% of the
+value obtained with Baseline Cadence. The mean slew time is 0.5 sec
 longer than that obtained with Baseline Cadence.
 \item This simulation has significantly different time allocation per
-proposal, compared to Baseline Cadence: 69\% spent on the Universal
-proposal (vs. 85\%) and 18\%  spent on the North Ecliptic proposal
+proposal, compared to Baseline Cadence: 74\% spent on the Universal
+proposal (vs. 85\%) and 11\%  spent on the North Ecliptic proposal
 (vs. 6\%)  (with smaller and less important differences for other
 proposals). Because of these differences, {\it the results of this
 test may not be very robust.}
@@ -836,16 +837,16 @@ efficiency are in good agreement with delivered values. Of course, the
 increased efficiency comes at the cost of fewer visits, which is
 disadvantageous for time-domain science.
 
-{\bf Note to OpSim team: this simulation should be repeated} with the
-requested number of visits per field set to 60\% of the values used
-for Baseline Cadence for {\bf all} proposals. For example, instead of
-(75, 105, 240, 240, 210, 210) for Universal-18-0824B proposal, (45,
-63, 144, 144, 126, 126) should be used.  This way the additional
-observing time due to improved surveying efficiency will be allocated
-to all proposals, including Universal Cadence. {\it This simulation
-will be repeated with the same North Ecliptic Spur proposal as used
-for \opsimdbref{db:baseCadence}, and with the modified requested number of
-visits.}
+%{\bf Note to OpSim team: this simulation should be repeated} with the
+%requested number of visits per field set to 60\% of the values used
+%for Baseline Cadence for {\bf all} proposals. For example, instead of
+%(75, 105, 240, 240, 210, 210) for Universal-18-0824B proposal, (45,
+%63, 144, 144, 126, 126) should be used.  This way the additional
+%observing time due to improved surveying efficiency will be allocated
+%to all proposals, including Universal Cadence. {\it This simulation
+%will be repeated with the same North Ecliptic Spur proposal as used
+%for \opsimdbref{db:baseCadence}, and with the modified requested number of
+%visits.}
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -884,11 +885,11 @@ outputs may be a bit confusing). \\
 {\bf Analysis Results:} This simulated cadence is named \opsimdbref{db:DoubleUbandExptime}.  Compared
 to Baseline Cadence (\opsimdbref{db:baseCadence}):
 \begin{enumerate}
-\item The total number of visits is 2.21 million or 89.5\% of the
+\item The total number of visits is 2.32 million or 95\% of the
 Baseline Cadence values. The fraction of time allocated to the main
-survey is 77\% vs. 85\% for Baseline Cadence, and for the NE spur
-proposal 14\% vs. 6\%. Given that the NE spur proposal was different
-than for \opsimdbref{db:baseCadence}, this simulation needs to be rerun.
+survey is 84\% vs. 85\% for Baseline Cadence, and for the NE spur
+proposal 7\% vs. 6\%. %Given that the NE spur proposal was different
+%than for \opsimdbref{db:baseCadence}, this simulation needs to be rerun.
 \end{enumerate}
 
 {\bf Conclusions:} The u band exposure time can be increased from 30
@@ -896,9 +897,7 @@ seconds to 60 seconds without a significant impact on the survey
 efficiency. This change would result in a gain of about 0.2 mag in the
 coadded depth. However, the number of visits in the u band would be
 decreased by about a factor of two, with a negative impact on
-time-domain science.  {\it This simulation will be repeated with the
-same North Ecliptic Spur proposal as used for \opsimdbref{db:baseCadence}
-to make conclusions more robust and precise.}
+time-domain science.  
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -928,17 +927,20 @@ Cadence (\opsimdbref{db:baseCadence}):
 \begin{enumerate}
 \item The total number of visits is 2.36 million or 95.5\% of the
 Baseline Cadence values. The fraction of time allocated to the main
-survey is 78\% vs. 85\% for Baseline Cadence, and for the NE spur
-proposal 13\% vs. 6\%. Given that the NE spur proposal was different
-than for \opsimdbref{db:baseCadence}, this simulation needs to be rerun.
+survey is 85\% vs. 85\% for Baseline Cadence, and for the NE spur
+proposal 7\% vs. 6\%.
+
+The median number of visits in the $grizy$ filters in the main survey
+decreases by only around 1-2\%.  The main survey coadded $u$ is 0.18
+mags deeper. The other filters reach the same depth within 1\%.
 \end{enumerate}
 
 
 {\bf Conclusions:} When the $u$ band exposure time is increased from
 30 seconds to 60 seconds, and the number of visits is kept unchanged,
 the single-visit and coadded depths would be improved by 0.6 mag. This
-improvement would come at  the expense of about 6\% fewer visits in
-other bands (with about 0.03 mag shallower coadded depths).
+improvement would come at the expense of about 1\% fewer visits in
+other bands (with about 0.01 mag shallower coadded depths).
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -955,13 +957,13 @@ only Universal Cadence proposal and thus compare to
 
 {\bf Analysis Results:}  This simulated cadence is named
 \opsimdbref{db:UConlyRelaxedAirmass}.  Compared to
-\opsimdbref{db:opstwo}, it collected 98.0\% visits. This fraction is
+\opsimdbref{db:opstwo}, it collected 99.1\% visits. This fraction is
 identical to the loss of efficiency due to slightly longer mean slew
-time: 8.1 sec vs. 7.2 sec. In addition,
+time: 7.2 sec vs. 6.8 sec. In addition,
 \opsimdbref{db:UConlyRelaxedAirmass} has much worse airmass
 distributions than \opsimdbref{db:opstwo},  extending to the allowed
 maximum of 2.0. For example, the median for the r band and WFD fields
-is 1.33, compared to 1.20 for \opsimdbref{db:opstwo}.
+is 1.30, compared to 1.19 for \opsimdbref{db:opstwo}.
 
 {\bf Conclusions:} This simulation confirms that it's a bad idea to
 relax airmass limit: as a result, the airmass distribution always
@@ -988,7 +990,7 @@ only the Universal Cadence proposal and thus compare to
  visits. The mean slew time is also essentially unchanged (7.4 sec vs.
  7.2 sec). The airmass distributions is improved compared to
  \opsimdbref{db:opstwo}. For example, the median for the r band and
- WFD fields is 1.14, compared to 1.20 for \opsimdbref{db:opstwo}.  The
+ WFD fields is 1.11, compared to 1.18 for \opsimdbref{db:opstwo}.  The
  limiting coadded depth in u and g bands is about 0.1 mag deeper than
  for Baseline Cadence.
 
