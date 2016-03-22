@@ -344,13 +344,15 @@ and false positive rate (FPR) is defined as
  \rm{FPR} = \frac{\rm{FP}}{\rm{FP}+\rm{TN}}.
 \end{equation}
 
-Thus plotting the TPR against the FPR for varying probability threshold yields a ROC curve. 
-Finally, the ROC curve can be summarized into a single number, although with some loss of 
-information, by computing the area-under-curve (AUC), which is simply the integral under the ROC 
-curve. The closer this number is to 1, the better the classifier in question is at returning a 
-pure sample with high completeness. The AUC allows direct comparison between classifiers for a 
-range of scenarios (i.e. not simply demanding a pure sample), making it a more general metric to 
-use than accuracy, purity or efficiency and is the metric we use for the classification part of the 
+Thus plotting the TPR against the FPR for varying probability threshold yields
+a ROC curve.  Finally, the ROC curve can be summarized into a single number,
+although with some loss of information, by computing the area-under-curve
+(AUC), which is simply the integral under the ROC curve. The closer this
+number is to 1, the better the classifier in question is at returning a pure
+sample with high completeness. The AUC allows direct comparison between
+classifiers for a range of scenarios (i.e.\ not simply demanding a pure
+sample), making it a more general metric to use than accuracy, purity or
+efficiency and is the metric we use for the classification part of the
 supernova analysis.
 
 \begin{table}
