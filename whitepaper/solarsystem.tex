@@ -63,16 +63,17 @@ LSST's performance for moving objects need to be based on `per object'
 measurements, rather than at a series of points on the sky or per
 field pointing. For all metrics discussed in this chapter, the orbit
 of each object is integrated over the time of the simulated opsim
-survey and the times when each object is visible are recorded; these
+survey and the detections of each object are recorded (using the
+footprint of the focal plane and including
+trailing losses and adusting for the colors of the objects in each
+filter to generate SNR and likelihood of detection); these
 series of observations per object are then the basis for metric
 evaluations.
 
-% Introduce, with a very broad brush, this chapter's science projects,
-% and why it makes sense for them to be considered together.
 
 % ====================================================================
 
-\section{Discovering and linking Solar System Objects}
+\section{Discovery: linking Solar System Objects}
 \def\secname{\chpname:discovery}\label{sec:\secname}
 
 Discovering, rather than simply detecting, small objects throughout
@@ -159,15 +160,26 @@ Discovery opportunity, and thus the completeness of the underlying
 population, is very sensitive to the time interval between
 observations. For most solar system objects, with a 90 minute window
 within a night, gathering two or more repeat observations within a night requires
-that the field pointing is revisited two or more times. Gathering
+that the field pointing is revisited two or more times. Especially if the time
+interval is much longer than 30 minutes, ensuring that the sky
+observed within a night covers large contiguous blocks (rather than
+narrow disconnected strips), also becomes important to be sure that
+objects are followed between pointings.  Gathering
 observations over multiple nights for a wide variety of Solar System
-objects (moving at a wide variety of apparent velocities) generally requires covering a large
+objects (moving at a wide variety of apparent velocities) will require covering a large
 neighboring area of sky; thus the internight revisit rate for large contiguous
 blocks of sky is important. An optimal discovery strategy for moving
 objects could be ensuring a minimum (default: two) number of revisits
-within a night within a short time window (default: 90 minutes), and
+within a night within a short time window (default: 90 minutes),
+preferably over a large block of sky, and
 covering large contiguous amounts of sky several (default: 3) times within a
-longer time window (default: 15 days).
+longer time window (default: 15 days).  Observations within a single
+night do not need to be in the same filter, however we will be
+constrained by the shallower limiting magnitude of the pair; {\it e.g.}
+preferably $r$ band observations would be paired with $i$ rather than
+$u$ observations. Finally, the fill factor of the camera is important;
+in these simulations we have used the LSST focal plane, which has an
+approximately 92\% fill factor.
 
 % --------------------------------------------------------------------
 
@@ -206,8 +218,8 @@ example, completeness for PHAs at H=22 is an important summary value.
 
 
 \begin{figure}
-\includegraphics[width=3.5in]{figs/solarsystem/discoverychances}
-\includegraphics[width=3.5in]{figs/solarsystem/completeness}
+\includegraphics[width=3.3in]{figs/solarsystem/discoverychances}
+\includegraphics[width=3.3in]{figs/solarsystem/completeness}
 \caption{Left: Number of discovery chances as a function of H
   (median value for all objects), assuming the minimum criteria for
   discovery - 2 visits per night within 90 minutes, repeated for 3
@@ -217,7 +229,7 @@ example, completeness for PHAs at H=22 is an important summary value.
 \label{standard_discovery}}
 \end{figure}
 
-Add table?
+Add table? Add comparison of various discovery criteria.
 
 
 % --------------------------------------------------------------------
@@ -234,13 +246,14 @@ Discussion: what risks have been identified? What suggestions could be
 made to improve this science project's figure of merit, and mitigate
 the identified risks?
 
-
+\navigationbar
 
 % ====================================================================
 
 \section{Orbital Accuracy}
 \def\secname{\chpname:orbits}\label{sec:\secname}
 
+After initial discovery, 
 
 A short preamble goes here. What's the context for this science
 project? Where does it fit in the big picture?
@@ -290,6 +303,7 @@ Discussion: what risks have been identified? What suggestions could be
 made to improve this science project's figure of merit, and mitigate
 the identified risks?
 
+\navigationbar
 
 % ====================================================================
 
@@ -421,6 +435,8 @@ the identified risks?
 
 Different discussion / risks for each science case within this general metric?
 
+\navigationbar
+
 % ====================================================================
 
 \section{Measuring lightcurves/rotation periods}
@@ -514,6 +530,8 @@ that is, that the linking of tracklets and tracks
 will be successful, so that each object's photometric
 time series can be identified.
 
+\navigationbar
+
 % ====================================================================
 
 \section{Measuring colors}
@@ -590,8 +608,12 @@ Discussion: what risks have been identified? What suggestions could be
 made to improve this science project's figure of merit, and mitigate
 the identified risks?
 
+\navigationbar
 
-
+% ====================================================================
+%
+% other metrics? binary detection?
+%
 % ====================================================================
 
 \section{Deep Drilling Observations}
