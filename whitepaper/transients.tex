@@ -27,8 +27,7 @@ Contributing Authors:
 Explosive and eruptive transients include a diverse ensemble of
 object, diverse both physically and phenomenolocigally. Transients
 such as novae, supernovae (SNe), and gamma-ray bursts (GRBs) probe the
-final stages of stellar evolution, Tidal Disruption Events (TDEs),
-Gamma Ray Bursts (GRBs), Cataclysmic Variables (CVs) give us the
+final stages of stellar evolution, Tidal Disruption Events (TDEs), GRBs, Cataclysmic Variables (CVs) give us the
 opportunity to study compact and binary objects, massive star
 eruptions allow us to understand mass loss mechanisms, and chemical
 enrichment. Transients impact the evolutionary history of the
@@ -56,6 +55,9 @@ the event). The level of characterization accessible through LSST data
 will of course evolve with time for all the transients that have
 characteristic time scales longer than a few days.
 
+Here we foucs on cadences feasible within the main survey.
+Many science objectives related to transients may be better, and possibly only,
+achieved within the DDF program.
 Transient events may benefit from substantial temporal sampling
 (matched to the time constant of the event) with color information
 (perhaps contemporaneous) to support characterization and
@@ -83,38 +85,40 @@ paragraphs that follow.
 %The class of transients includes a heterogeneous assortment of objects
 %and phenomena.
 The table below is a \emph{non-exhaustive} list of
-phenomena we are referring to as \emph{Eruptive and Explosive
+phenomena to which we are referring as \emph{Eruptive and Explosive
   transients} in this document.
 
 \begin{center}
-\begin{tabular}{| p{3cm} | p{8cm} | l | l |}
+  \begin{tabular}{| p{2.5cm} | p{6cm} | l | l | l |}
     \hline
 
-    Transient Type & Science drivers & Amplitude & Time Scale\\
+    Transient Type & Science drivers & Amplitude & Time Scale & Event Rate\\
 \hline
 
-Flare stars & Flare frequency, energy, stellar age & large & min \\
+Flare stars & Flare frequency, energy, stellar age & large & min & ?\\
 
-X-ray Novae & Interacting binaries, stellar evolution, SN progenitors, nuclear physics & large & weeks \\
+X-ray Novae & Interacting binaries, stellar evolution, SN progenitors, nuclear physics & large & weeks & ?\\
 
-Cataclysmic variables & Interacting binaries, stellar evolution, compact objects & large & min - days\\
+Cataclysmic variables & Interacting binaries, stellar evolution, compact objects & large & min - days & ?\\
 
-LBV variability & Late stages stellar evolution, Mass loss, SN progenitors & large & weeks-years\\
+LBV variability & Late stages stellar evolution, Mass loss, SN progenitors & large & weeks-years & ?\\
 
-Massive star eruptions & Late stages stellar evolution, Mass loss, SN progenitors & extreme & weeks-years\\
+Massive star eruptions & Late stages stellar evolution, Mass loss, SN progenitors & extreme & weeks-years & rare\\
 
-SN & stellar evolution, feedback, chemical enrichment, cosmology & large & days - months \\
+SN & stellar evolution, feedback, chemical enrichment, cosmology & extreme & days - months & very common\\
 
-GRBs & SN connection, stellar evolution, cosmology & large & min - days\\
+GRBs & SN connection, stellar evolution, cosmology & extreme & min - days & ?\\
 
-TDEs & Massive BH demographic & large & days\\
+TDEs & Massive BH demographic & large & months & ?\\
 
-LIGO detections & EM characterization & unknown & unknown\\
+LIGO detections & EM characterization & unknown & unknown & ?\\
 
-Unknown & Discovery & unknown & unknown\\
+Unknown & Discovery & unknown & unknown & rare\\
 
  \hline \end{tabular}
- \end{center}
+\end{center}
+
+WE SOULD ADD A FIGURE OF THE PHASE SPACE + EVENT RATE
 
 
 {\bf What else?}
@@ -137,7 +141,8 @@ LIGO events) the main function of LSST will be to provide discoveries
 and/or simple characterization.  Followup to discovery/identification,
 if required, will surely take place elsewhere.
 
-LBV's, Gap transients??
+LBV's and massive star eruptions (such as the 
+Gap transients??
 
 SN fall in an intermediate time range.  LSST will provide
 multiple visits in multiple filters during the typical SN duration
@@ -156,6 +161,7 @@ quantify LSST's ability to constraint SN physics in a statistically
 large sample of SN are needed (offered hopefully).
 
 
+**** STILL WANT THIS? CAN WE DO IT?
 TDEs, whose fading time-scale is much more gradual
 (over weeks to months) than the rise time-scale and we want to asses -
 through a metric - how many are detected while still on the
@@ -178,20 +184,37 @@ In the paragraphs that follow we will use case studies to asses:
 
 \begin{itemize}
 \item
-The discerning power of a given LSST observing cadence. For this topic
-we will address the ability to distinguish LBVs, SNe, and TDEs.
+  The discerning power of a given LSST observing cadence.
+  While early classification of transients is extremely important for
+  transient science with LSST, it is also an incerdibly difficult task,
+  on which many astronomers and statisticians are working. It is unfeasible,
+  and beyond the scope of this work to attempt a naive classification metric.
+  However a crucial input to follo-up strategy design is the early
+  identification of young, fast evolving transients. We identify a region of
+  the phase-space of rising speed and color that is characteristif of a
+  variety of transients in their early phases and assess the ability of LSST's
+  cadences to place transients within this phase-space. (Eric, Stefano, Iair, Fed...)
+  %For this topic we will address the ability to distinguish LBVs, SNe, and TDEs.
 \item
-The ability to identify an object of interest for follow-up and
-trigger prompt follow-up observations. For this topic GRBs are used as
-a case study.
+  The ability to identify an object of interest for follow-up and
+  trigger prompt follow-up observations. For this topic GRBs are used as
+  a case study. ***ERIC
 \item
-The insight that a cadence gives into a single transient class. The
-case study will be massive star eruptions.
+  The insight that a cadence gives into a single transient class. The
+  case study will be
+  **massive star eruptions if Nathan gets it done
+  **CVs if Laura gets it done
 \item 
-The statistical constraints to a transient class that can be obtained
-over the course of the LSST survey, from the LSST survey data alone
-(assuming a successful classification). SN Ia early interaction
-signatures or IIb shock break-out.
+  The statistical constraints to a transient class that can be obtained
+  over the course of the LSST survey, from the LSST survey data alone
+  (assuming a successful classification). SN Ia early interaction
+  signatures or IIb shock break-out (Fed).
+\item
+  The ability of LSST, given a cadence, to provide insightful coverage
+  for long duration transients. This metric favors cadences with small
+  seasonal gaps, which allow us to gather complete color evolution of
+  slow evolving transients, such as LBV and TDEs. (Ryan)
+
 \end{itemize}
 
 In this chapter we focus on LSST's potential to advance the science of
@@ -217,6 +240,7 @@ The metrics for SNe will be highly specialized and based on the best
 available understanding of SN light curve analysis and the expected
 event population.
 
+%%WHAT DOES THE PARAGRAPH BELOW MEAN?
 The suggested metric set for serendipity is based on the simple-minded
 idea that a novel transient will be characterized by a band-limited,
 finite waveform, and that a useful observation series will consist of
