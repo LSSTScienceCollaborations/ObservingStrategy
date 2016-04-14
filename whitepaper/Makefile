@@ -1,5 +1,5 @@
 PAPER = LSST_Observing_Strategy_White_Paper.pdf
-TEXFILES = *.tex
+TEXFILES = *.tex */*.tex 
 BIBFILES = references.bib
 
 all: pdf
