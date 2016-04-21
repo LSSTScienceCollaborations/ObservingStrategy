@@ -181,12 +181,33 @@ magnification ratios from narrow emission lines.
 Quantifying the response via MAF metrics: definition of the metrics,
 and any derived overall figure of merit.
 
-Our metric would need to take into account the several parameters that come into 
-play for microlensing light curves which include: the dispersion in the time gap 
-between visits in the same band, across the sky, projected CMB velocity, 
-simulated peculiar velocities and redshifts of lenses and sources, in order to 
-assess the fraction of microlensing events that might be missed (on top of 
-seasonal gaps).
+Metrics for these section need to be defined by using simulated light curves 
+that take into account the several parameters that come into play in quasar 
+microlensing. These include: the time gap between visits in the same band, 
+projected CMB velocity, simulated peculiar velocities and redshifts of lenses 
+and sources as well as ``macro'' lens model parameters (i.e., surface mass 
+density and shear projected on top of lensed quasar images). Two metrics are 
+currently in consideration:
+
+High Magnification Events recovery metric: This metric will measure the number 
+of high magnification events recovered/missed considering the cadence and season 
+length in every LSST band and as the precision of the brightness measurement.
+
+Accretion disk size and slope metric: This metric will do a full analysis of the 
+``pure'' microlensing light curves to recover these two physical AGN parameters. 
+The figure of merit would be the accuracy of the measurement.
+
+Since microlensing signal can only be obtained after time delays between images 
+have been measured, both metrics need close interaction with time delay 
+measurements. As such, the ``Time Delays Challenges'' (see section 
+\autoref{sec:lenstimedelays}) will include complete microlensing signal 
+simulations which also include the aforementioned parameters. Note that given 
+the dependence on individual filter cadence and season length as well as 
+projected CMB velocities, every region on the sky needs to be considered. Time 
+Delay Challenge submissions will thus include recovered ``pure'' microlensing 
+light curves in addition to measured time-delays.
+
+
 ....
 
 % microlensing - convolve microlensing timescales for QSOs we already know
@@ -200,6 +221,8 @@ seasonal gaps).
 
 OpSim analysis: how good would the default observing strategy be, at
 the time of writing for this science project?
+
+\todo{Timo} Write current analysis of median night separation and season length using \opsimdbref{db:baseCadence} and \opsimdbref{db:NoVisitPairs}. 
 
 \begin{center}
 \begin{figure}
