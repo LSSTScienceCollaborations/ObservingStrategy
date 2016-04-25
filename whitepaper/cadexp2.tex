@@ -13,8 +13,8 @@ Chapter editors:
 
 % --------------------------------------------------------------------
 
-\noindent{\bf Summary:} In this chapter 
-%(which was originally prepared as \href{http://www.astro.washington.edu/users/ivezic/lsst/cadexp2.pdf}{an 
+\noindent{\bf Summary:} In this chapter
+%(which was originally prepared as \href{http://www.astro.washington.edu/users/ivezic/lsst/cadexp2.pdf}{an
 %LSST DM Sims standalone report})
 we analyze and compare the performance of a number of simulated LSST
 observing strategies (``cadences'')
@@ -28,7 +28,7 @@ specifications for the main survey sky coverage (18,000 sq.deg.) and the number 
 visits per field (825, summed over all bands) from the Science Requirements Document (SRD),
 and assuming perfect dithering\footnote{With a fill factor of 0.9 for the 9.6 sq.deg. large
 field of view, it takes 1.72 million visits to meet the SRD specifications when a perfect
-redistribution of the field overlap coverage is assumed.}. 
+redistribution of the field overlap coverage is assumed.}.
 This margin can be used to increase the sky coverage of the main survey, the total
 number of visits per field, or to enhance special programs, such as
 deep drilling fields and Galactic plane coverage. Several  simulations
@@ -71,7 +71,7 @@ study the impact of various strategy variations on the scientific
 potential of LSST\@. The cadence set also includes a candidate baseline
 cadence replacement.
 
-An initial analysis of these 
+An initial analysis of these
 \href{http://ops2.lsst.org:8080}{simulated surveys} is presented here,
 and based on \href{https://confluence.lsstcorp.org/display/SIM/MAF+documentation}{MAF}
 reports.
@@ -122,26 +122,26 @@ addressed here are available at the end of this document.
 \end{subfigure}
 %\vskip -1.3in
 \caption{The median airmass in the $r$ band across the sky for simulated cadence
-\opsimdbref{db:baseCadence} is shown in Aitoff projection of equatorial coordinates 
-in the left panel. The red line shows the Ecliptic and the blue line shows the Galactic 
-equator (it bifurcates around the so-called ``Galactic confusion zone''). The corresponding 
-airmass histogram is shown in the right panel. For the main survey area, the maximum 
+\opsimdbref{db:baseCadence} is shown in Aitoff projection of equatorial coordinates
+in the left panel. The red line shows the Ecliptic and the blue line shows the Galactic
+equator (it bifurcates around the so-called ``Galactic confusion zone''). The corresponding
+airmass histogram is shown in the right panel. For the main survey area, the maximum
 allowed airmass was set to 1.5. }
 \label{fig:airmassenigma}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!]
 \vskip -0.1in
 \includegraphics[angle=0,width=0.99\hsize,clip]{figs/cadence/minion_1016_CoaddM5_r_band_all_props_OPSI_SkyMap.pdf}
 \vskip -0.5in
-\caption{The coadded $5\sigma$ depth for point sources in the $r$ band 
-across the sky for simulated cadence \opsimdbref{db:baseCadence} is shown 
+\caption{The coadded $5\sigma$ depth for point sources in the $r$ band
+across the sky for simulated cadence \opsimdbref{db:baseCadence} is shown
 in Aitoff projection of equatorial coordinates. The red line shows the Ecliptic and
 the blue line shows the Galactic equator (it bifurcates around the so-called
-``Galactic confusion zone''). The median value across the Universal Cadence area 
-is 27.1, with RMS scatter of only 0.04 mag. The small dark dots are deep drilling 
+``Galactic confusion zone''). The median value across the Universal Cadence area
+is 27.1, with RMS scatter of only 0.04 mag. The small dark dots are deep drilling
 fields, with a median $5\sigma$ depth of 28.6.}
 \label{fig:coaddm5enigma}
 \end{figure}
@@ -175,22 +175,22 @@ on the South Celestial pole proposal, and 4.5\% on the Deep Drilling
 cosmology proposal (5 fields).
 \item The median number of visits {\it per night} is 816, the range is
 88 to 1,104, with 3,026 observing nights. The mean slew time is 6.8
-seconds (median: 4.8 sec) and the total exposure time is 7.34 Msec. 
-The surveying efficiency, or the median total open shutter time (per night) 
+seconds (median: 4.8 sec) and the total exposure time is 7.34 Msec.
+The surveying efficiency, or the median total open shutter time (per night)
 as a fraction of the observing time (the ratio of the open shutter time and
-the sum of the open shutter time, readout time and slew time) is 73\%. 
-\item 
+the sum of the open shutter time, readout time and slew time) is 73\%.
+\item
 The 25\%-75\% quartiles for the number of filter changes per night are 2
-and 6, with the mean of 4.3 The total number of filter changes is 14,194. 
+and 6, with the mean of 4.3 The total number of filter changes is 14,194.
 \item In the $r$ band, the median effective seeing is 0.93 arcsec (for the more
 traditional geometric FWHM, the median is 0.81 arcsec), the median
 airmass is 1.23, and the median $5\sigma$ depth for point sources in WFD
-area (also known as the Universal Cadence area) is 24.16 (using the best 
-current estimate of the fiducial depth at airmass of one, $m_5(r)=24.39$, 
-defined by the SRD Table 5). The variation of the median airmass for the $r$ 
+area (also known as the Universal Cadence area) is 24.16 (using the best
+current estimate of the fiducial depth at airmass of one, $m_5(r)=24.39$,
+defined by the SRD Table 5). The variation of the median airmass for the $r$
 band observations with the position on the sky is shown in
 \autoref{fig:airmassenigma}.
-\item The median single-visit depths for WFD fields are (23.14, 24.47, 24.16, 
+\item The median single-visit depths for WFD fields are (23.14, 24.47, 24.16,
 23.40, 22.23, 21.57) in the $ugrizy$ bands\footnote{Note that these values
 depend on externally supplied values for fiducial single-epoch
 $5\sigma$ depths; the following values were used in analysis described
@@ -198,40 +198,40 @@ here: (23.62, 24.85, 24.39, 23.94, 23.36, 22.45) in the $ugrizy$
 bands, respectively. These values are similar, but not identical, to the values
 listed in Table 2 from the latest version (v3.1) of the LSST overview
 paper: (23.68, 24.89, 24.43, 24.00, 23.45, 22.60). This discrepancy
-is due to continuing improvements in the system performance estimates.}. 
+is due to continuing improvements in the system performance estimates.}.
 These values are shallower than
 the zenith dark time values for two main reasons: the sky is expected to be
-brighter for non-dark time and away from zenith, the sky brightness model 
+brighter for non-dark time and away from zenith, the sky brightness model
 currently implemented in \OpSim has some shortcomings (a new model will
 be implemented in version 4), and the moon avoidance is not as aggressive
 as it could be. As a result, the limiting depths above are biased bright by close
-to 1 mag in the $z$ and $y$ bands, and a few tenths of a magnitude in the 
+to 1 mag in the $z$ and $y$ bands, and a few tenths of a magnitude in the
 $u$, $g$ and $i$ bands. The co-added depths are tied to single-visit bands,
-and suffer from the same bias. 
-\item For the 2,293 (overlapping) fields from the WFD area, 
+and suffer from the same bias.
+\item For the 2,293 (overlapping) fields from the WFD area,
 the median number of visits in the $ugrizy$ bands is (62, 88, 199, 201, 180,
 180), respectively. Not only do these medians exceed the requested
 number of visits (design specification from the SRD\footnote{The LSST
 Science Requirements Document (SRD) is available as
 \url{http://ls.st/lpm-17}}) of (56, 80, 184, 184, 160, 160) in the $ugrizy$
 bands, but the minimum number of visits per field over this area does
-so, too. This result is quite encouraging given that 
-only 85\% of observing time was spent on the Universal Cadence proposal. 
-\item The median coadded $5\sigma$ depth 
+so, too. This result is quite encouraging given that
+only 85\% of observing time was spent on the Universal Cadence proposal.
+\item The median coadded $5\sigma$ depth
 for point sources in the $ugrizy$ bands is (25.4, 27.0, 27.1, 26.4,
-25.2, 24.4), respectively, for the Universal Cadence area. The distribution 
+25.2, 24.4), respectively, for the Universal Cadence area. The distribution
 of coadded depth across the sky is fairly uniform, as illustrated in \autoref{fig:coaddm5enigma}.
 \item For the 2,293 fields from the Universal Cadence area, the median
-geometric FWHM for seeing is 0.78 arcsec in the $r$ band and 0.77 arcsec 
-in the $i$ band. The median airmass in the $urz$ bands is 1.25, 1.20 and 1.26 
+geometric FWHM for seeing is 0.78 arcsec in the $r$ band and 0.77 arcsec
+in the $i$ band. The median airmass in the $urz$ bands is 1.25, 1.20 and 1.26
 (the maximum allowed airmass for the Universal Cadence area was set to
-1.5).  The median sky brightness in the $ury$ bands is 22.0 mag/arcsec$^2$, 
+1.5).  The median sky brightness in the $ury$ bands is 22.0 mag/arcsec$^2$,
 21.1 mag/arcsec$^2$, and 17.3 mag/arcsec$^2$, respectively (for comparison,
-assumed dark sky brightness in the $ury$ bands is 23.0, 21.2 and 18.6 
-mag/arcsec$^2$).  The current model sky brightness in the $y$ band is biased 
-high by close to 1 mag. 
+assumed dark sky brightness in the $ury$ bands is 23.0, 21.2 and 18.6
+mag/arcsec$^2$).  The current model sky brightness in the $y$ band is biased
+high by close to 1 mag.
 \item Restricted to the Universal Cadence fields, a unique area of
-18,000 sq.deg. received at least 888 visits per field (summed over bands; 
+18,000 sq.deg. received at least 888 visits per field (summed over bands;
 the SRD design value is 825).
 \item The median trigonometric parallax and proper motion errors are
 0.62 mas and 0.17 mas/yr, respectively, for bright sources (limited by
@@ -313,8 +313,8 @@ but only shows the $r$ band visits for WFD fields.}
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_RmsAngle_rotSkyPos_r_band_WFD_OPSI_SkyMap.pdf}
 \vskip -0.1in
 \caption{The left panel shows the position angle distribution (in radians)  in each band for the
-main survey fields in \opsimdbref{db:baseCadence}. The position angle is the angle between 
-``up'' in the image and North on the sky. The variation of the root-mean-square scatter of the 
+main survey fields in \opsimdbref{db:baseCadence}. The position angle is the angle between
+``up'' in the image and North on the sky. The variation of the root-mean-square scatter of the
 $r$ band distribution across the sky is shown in the right panel.}
 \label{fig:rotator}
 \end{figure}
@@ -449,7 +449,7 @@ are not fully understood (most notably the observing bias towards
 west),  or undesired (unnecessary revisits of the same field in the
 same night), \opsimdbref{db:baseCadence} is used as a benchmark cadence,
 and referred to as ``Baseline Cadence'',  in the rest of this
-document\footnote{This simulation was proposed by the Project Science Team 
+document\footnote{This simulation was proposed by the Project Science Team
 for adoption as the new Baseline Cadence to the Change Control Board.}
 
 An important feature of \opsimdbref{db:baseCadence} simulation is that
@@ -897,7 +897,7 @@ seconds to 60 seconds without a significant impact on the survey
 efficiency. This change would result in a gain of about 0.2 mag in the
 coadded depth. However, the number of visits in the u band would be
 decreased by about a factor of two, with a negative impact on
-time-domain science.  
+time-domain science.
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -946,7 +946,6 @@ other bands (with about 0.01 mag shallower coadded depths).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \opsimdb[db:UConlyRelaxedAirmass]{minion\_1022}{Only Universal Cadence, with relaxed airmass limit.}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Motivation and description:}  What is the effect of changing the
@@ -1064,22 +1063,19 @@ analyzed in this section:
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:NEOswithVisitPairs]{enigma\_1016}{NEO test: pairs of visits
-  (i.e.\ the Baseline Cadence).}.
+\opsimdb[db:NEOswithVisitPairs]{enigma\_1016}{NEO test: pairs of visits (i.e.\ the Baseline Cadence).}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \opsimdb[db:NEOswithVisitTriplets]{enigma\_1281}{NEO test: triplets of visits.}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \opsimdb[db:NEOwithVisitQuads]{enigma\_1282}{NEO test: quads of visits.}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
