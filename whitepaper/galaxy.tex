@@ -24,63 +24,66 @@ Contributing authors:
 \section{Introduction}
 \def\secname{MW_Intro}\label{sec:\secname}
 
-LSST's large survey grasp will yield significant contributions to
-essentially all areas of Galactic astronomy. Science cases for Milky
-Way astronomy with LSST cover lengthscales from a few pc (such as
-sensitive surveys of low-mass objects in the Solar Neighborhood), up
-to many tens of kpc (such as sensitive surveys for low-mass satellite
-galaxies of the Milky Way and their post-disruption remnant streams,
-and beyond this, investigations of resolved stellar populations in the
-Local Volume). 
+\new{LSST's large survey grasp will yield significant contributions to
+essentially all areas of Galactic astronomy. LSST Milky Way science
+cases cover lengthscales ranging from a few pc (such as sensitive
+surveys of low-mass objects in the Solar Neighborhood), up to many
+tens of kpc (such as surveys for low-mass satellite galaxies of the
+Milky Way and their post-disruption remnant streams, and beyond this,
+investigations of resolved stellar populations in the Local
+Volume). Because the diversity of science cases in the Milky Way is so
+vast, we make no attempt to be comprehensive. Much more detail about
+most of the LSST science cases, and specific science questions to be
+answered, can be found in the LSST Science Book (particularly chapters
+6 and 7) and Ivezic et al. (2008 arXiv 0805.2366, in particular
+Sections 2.1.4 and 4.4 of that document).\footnote{We do however provide motivating details for certain science cases in this Chapter, particularly in Section \ref{sec:MW_Disk}, as those cases are not emphasized in the LSST Science Book or the relevant sections of Ivezic et al. (2008).} As with the rest of this whitepaper, we
+intend to provoke the reader to contribute to the optimization of
+LSST's observing strategy.}
 
-Because the diversity of science cases in the Milky Way is so vast, we
-make no attempt to be comprehensive. Much more detail about most of
-the LSST science cases, and specific science questions to be answered,
-can be found in the LSST Science Book (particularly chapters 6 and 7)
-and Ivezic et al. (2008 arXiv 0805.2366, in particular Sections 2.1.4
-and 4.4 of that document).\footnote{\new{Since several of the science cases
-for populations in the Galactic Disk do not appear to have been developed
-elsewhere, however, Section~\ref{sec:MW_Disk} does present motivating details
-for those science cases.}} In this chapter we present a few
-representative science cases that illustrate trade-offs between
-observing strategies, for programs at low galactic latitudes as well
-as away from the disk, and for programs requiring sufficient cadence
-for variability as well as deep integrated imaging. 
+\new{Concern about observations towards the inner Galactic Plane has
+  for several years been a common theme in feedback on LSST's
+  observing strategy, as the Baseline survey currently expends
+  relatively little observing time per field at low Galactic
+  latitudes\footnote{At the time of writing, observations towards the
+    inner Plane still seem to be compromised further by the way OpSim
+    arranges shorter programs to completion at early times in the
+    simulated survey. This reduces the time baseline available for
+    inner-Plane measurements by a significant factor compared to
+    observations away from the Plane (see e.g. Figure
+    \ref{fig_astrom_ByTime_pmError} in Section
+    \ref{sec:MW_Astrometry:MW_Astrometry_OpSim}, in which the entirety
+    of the observed Plane is visible as a region of substantially
+    coarser proper motion measurement compared to high latitude
+    regions).}. Even without the machinery of the Metrics and Figures
+  of Merit, populations only found in scientifically interesting
+  numbers at low Galactic latitudes seem likely to be detected only
+  with low efficiency by LSST under the Baseline strategy. (An example
+  is the probing of the mass function of moderate-separation
+  extrasolar planets via intra-disk planetary microlensing, as argued
+  forcefully in Gould 2013 arXiv 1304.3455). Having stated this,
+  however, our expectation is that the evaluation of the Figures of
+  Merit laid out in this Chapter will, as a by-product, {\it
+    quantitatively} show how a range of Milky Way science cases will
+  be substantially improved by selecting a strategy with superior
+  Plane coverage, at little or no cost to the rest of LSST's
+  scientific investigations.}
 
-As with the rest of this whitepaper, our intention is to provoke the
-astronomical community to contribute to the optimization of LSST's
-observing strategy. Readers who find that an important area of Milky
-Way astronomy is under-served by the treatment here, are welcome to
-contact the editors to get involved and contribute improvements. For
-example, while inclusion of the inner Galactic plane in the
-Wide-Fast-Deep survey would allow characterization of important
-populations through variability (as will be shown quantitatively in
-Section 4.3), such a dataset would also be of immense value in
-disentangling and measuring structural parameters of major galactic
-components (for example the tilt angle of the disk and the effects of
-radial migration within it). We welcome further development of
-quantitative figures of merit by which the appropriateness of LSST's observing
-strategies can be assessed in terms of the science of interest to the
-reader.
+\new{At the time of writing (April 2016), we explore the scientific
+  impact of shallow Plane observations by comparing Metrics and
+  Figures of Merit evaluated for the Baseline cadence
+  (\opsimdbref{db:baseCadence}) and for the PanSTARRS-like strategy
+  (\opsimdbref{db:opstwoPS}), the latter of which has essentially uniform depth at all Galactic latitudes observed. The OpSim team is working to complete the proposed Wide-Fast-Deep-Plane survey (OpSim proposal {\tt Proposal\_GP.md}), and the results of the Figure of Merit evaluations on this new run will be incorporated into this chapter as they become available.}
 
 \subsection{Chapter terminology and structure}
 
-In what follows, ``Metrics'' refer to diagnostic metrics of LSST's
-technical performance, and are generally rather low-level (for
-example, the formal proper motion precision, mapped with location
-across the sky). Then, a ``figure of merit'' is a higher-level
-quantity that illustrates LSST's utility for the science case of
-interest (for example, the uncertainty and/or bias on an astrophysical
-parameter of interest, such as the mass function of a certain stellar
-population near the Sun).
-
 To try to tame the diversity of science cases, we have picked
 representative cases and grouped them within broad scientific areas,
-devoting one Section of this chapter to each grouping of cases. Our
-intention at this date is to provide a summary Table at the end of
-each Section that will present the figure of merit for each science
-case within that section (as columns) for each tested observing
-strategy (as rows).
+devoting one Section of this chapter to each grouping of cases. A
+small number of Figures of Merit (FoMs) have been described for each
+case. For each of the groupings of science cases, a summary Table is
+provided that will present the figure of merit for each science case
+within that section (as columns) for each tested observing strategy
+(as rows).
 
 At present, science cases are grouped in the following way:
 Section~\ref{sec:MW_Halo} assesses the degree to which structures in the Milky
@@ -97,40 +100,38 @@ will be provided by the \textit{Gaia} mission). For this reason, specific
 issues relating to precision astrometry are developed in
 Section~\ref{sec:MW_Astrometry}.
 
-\new{Section \ref{sec:MW_Future} presents descriptions of
-  investigations that are needed to properly determine LSST's utility
-  for Milky Way science, but which at this date (mid-April 2016) are
-  as-yet relatively incompletely developed. Examples identified at
-  this stage include the uses of LSST to set constraints on Galactic
-  components (the structure of the Bulge, and constraints on radial
-  migration in the mid-plane).}
+Section \ref{sec:MW_Future} presents descriptions of investigations
+that are needed to properly determine LSST's utility for Milky Way
+science, but which at this date (mid-April 2016) are as-yet relatively
+incompletely developed. Examples identified at this stage include the
+uses of LSST to set constraints on Galactic components.
+
+\new{2016-04-25: recently-added contributions on Dust and
+  Star-formation history will be incorporated into this structure as
+  appropriate. At present ($\sim$4:00pm Eastern) we are expecting more input very shortly from a contributor.}
 
 \subsection{Summary tables for Figures of Merit}
 
-\new{At-a-glance tables comparing Figures of Merit for the various science
-cases, will be found in the appropriate summary tables:}
+The tables below organize the comparison of Figures of Merit for all
+the science cases considered in this chapter:
 \begin{itemize}
   \item Mapping the Milky Way Halo: Table \ref{tab_SummaryMWHalo}
   \item Mapping the Milky Way Disk: Table \ref{tab_SummaryMWDisk}
   \item Astrometry with LSST: Table \ref{tab_SummaryMWAstrometry}
-  \item The Milky Way Bulge: content needed
-  \item Mapping the Local Volume with Resolved Stars: content needed.
 \end{itemize}
 
 \subsection{Needed input}
 
-Many of the diagnostic Metrics are (as of February 2016) relatively
-well-developed. What is needed at this stage is the implementation of
-the figures of merit that depend on these Metrics. In some Sections we
-have sketched out such figures of merit, in others the development of
-a useful (and practical) figure of merit is still a topic of active
-development. 
-
-We welcome assistance from the reader in the development of the
-figures of merit for all sections. 
+While many of the diagnostic Metrics are relatively well-developed,
+implementation is needed of Figures of Merit (FoMs) that depend on
+these metrics. In some Sections we have sketched out such figures of
+merit, in others the development of a practical FoM is still a topic
+of active development.
 
 \input{MilkyWay/MW_Halo.tex}
 \input{MilkyWay/MW_Disk.tex}
+\input{MilkyWay/MW_SFH.tex}
+\input{MilkyWay/MW_Dust.tex}
 \input{MilkyWay/MW_Astrometry.tex}
 %\input{MilkyWay/MW_Bulge.tex}
 %\input{MilkyWay/MW_LocalVolume}
