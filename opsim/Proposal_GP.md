@@ -20,3 +20,16 @@ the Plane, but has not been justified in detail. Further, there are
 a number of science programs that cannot be accomplished with the baseline special proposal coverage, including the characterization of certain classes of variable stars only found in these crowded regions, a microlensing survey for exoplanets and compact objects, and a three-dimensional dust map important for both Galactic and extragalactic science. These science cases will be laid out in more detail in the Observing Strategy white paper.
 
 With this OpSim run, the difference with the baseline cadence can be determined and then this can be properly weighed against the science gain from the proposal.
+
+
+## Implementation
+
+A version of this has been produced using opsim v3.3.8 and is available from the links at
+http://astro-lsst-01.astro.washington.edu:8080/ 
+You can see that the galactic plane run is called 'astro_lsst_01_1004' (sorry for the terrible names). 
+The sqlite link is
+http://astro-lsst-01.astro.washington.edu:8080/db_gzip/astro_lsst_01_1004_sqlite.db.gz 
+The standard MAF analyses for this run are also available at: 
+http://astro-lsst-01.astro.washington.edu:8080/metricSelect?runId=3
+and 
+http://astro-lsst-01.astro.washington.edu:8080/metricSelect?runId=4
