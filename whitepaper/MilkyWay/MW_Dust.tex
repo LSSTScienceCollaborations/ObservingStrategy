@@ -110,7 +110,7 @@ Mapping of the dust component of the Galactic ISM requires detection of the redd
 colors of stars at known distances. The reddening is determined from the color excess deduced
 by comparison of the observed colors with those expected based on the stellar spectral type. In
 the absence of identifying spectra, the spectral type can be inferred by dereddening the observed
-colors (assuming a specific extinction law, i.e., a particular value of RV ) back to the unreddened
+colors (assuming a specific extinction law, i.e., a particular value of $R_V$) back to the unreddened
 stellar locus in a color-color diagram. This dereddening is equivalent to assignment of reddeningfree
 colors along the stellar locus, which measure the location in the color-color diagram along
 the direction perpendicular to the reddening vector. Once the effective line of sight reddening has
@@ -122,8 +122,8 @@ kpc is possible using SDSS photometry of M dwarfs (McGehee 2009). Analysis of th
 excess in regions effectively free of interstellar reddening shows that distance modulus limits of 7.0
 (at M5) to 11.2 (at M0) result in a volume-limited survey nearly free of the systematic color biases
 inherent in this g-band limited data set.
-These limits correspond to g ∼ 20.6 and σg ∼ 0.02−0.03 for single-epoch SDSS observations. Given
-the relative g-band 5 σ limits of SDSS and the LSST single epoch and final co-added surveys, we
+These limits correspond to g ∼ 20.6 and $\sigma_g$ ∼ 0.02−0.03 for single-epoch SDSS observations. Given
+the relative g-band 5$\sigma$ limits of SDSS and the LSST single epoch and final co-added surveys, we
 estimate that the the co-added LSST data will reach 5 magnitudes deeper in m-M, allowing the
 LSST to probe dust structures across a significant portion of the Galaxy. 
 
@@ -131,7 +131,7 @@ LSST to probe dust structures across a significant portion of the Galaxy.
 Changes in the absorption properties of dust grains, as parametrized by RV , result in a shift in
 both the direction and length (for a specific dust column density) of the reddening vector in a
 color-color diagram. This is reflected in the reddening-free colors by variations in the scaling factor
-used when defining the linear combination of colors, e.g., in the E(g − r)/E(r − i) term for Qgri.
+used when defining the linear combination of colors, e.g., in the $E(g − r)/E(r − i)$ term for $Q_{gri}$.
 By analysis of the observed color shifts due to reddening it is possible to constrain the value of RV
 along the line of sight and gain insight into the nature and composition of the interstellar dust in
 that region of the Galaxy.
@@ -154,10 +154,10 @@ to be optimized for this science?
 
 \subsection{Metrics}
 \label{sec:\secname:metrics}
- From the material in the science book and what you have contributed, I think a metric dependent on the photometric accuracy metrics might be the way to go (e.g. estimate the error in A_V and E(B-V) for different strategies, which would be a simple scaling for each pixel in the spatial map given the nominal scalings with exposure time in each filter).
+ From the material in the science book and what you have contributed, I think a metric dependent on the photometric accuracy metrics might be the way to go (e.g. estimate the error in $A_V$ and $E(B-V)$ for different strategies, which would be a simple scaling for each pixel in the spatial map given the nominal scalings with exposure time in each filter).
 
 The spacing in time of the visits doesn't matter for dust (as far as I know). 
-Pushing to fainter magnitudes (which means both better seeing and longer exposures) matters, both because we want more stars, and in particular, we want more stars *behind* the dust.  If we can't see through the dust, we can't do much.  At PS1 depth, we get to ~ 3-5 kpc, with maybe up to 1ish mag E(B-V).  If we went 3 or 4 mags fainter, how far could we go?  This is a good question, and one I am unlikely to answer by next week.  But it is something we should figure out. 
+Pushing to fainter magnitudes (which means both better seeing and longer exposures) matters, both because we want more stars, and in particular, we want more stars *behind* the dust.  If we can't see through the dust, we can't do much.  At PS1 depth, we get to ~ 3-5 kpc, with maybe up to 1ish mag $E(B-V)$.  If we went 3 or 4 mags fainter, how far could we go?  This is a good question, and one I am unlikely to answer by next week.  But it is something we should figure out. 
 
 I'm cc'ing Greg in case he has a better answer, or in case he has some mock map runs that give us an idea of how our results depend on survey depth. 
 Quantifying the response via MAF metrics: definition of the metrics,
