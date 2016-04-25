@@ -125,17 +125,19 @@ the contaminant sources is beyond our control, our ability to reject these
 sources depends on survey parameters such as the distribution of seeing across
 visits and the depth of these visits.
 
-Our star galaxy separation metric accounts for these factors, using a modeling
-framework described in (s/g paper ref). This model uses the distribution of
-galaxies in size and number, derived from HST COSMOS observations, along with
-a fully Bayesian model decision formalism to compute the expected completeness
-and contamination in star-galaxy separation. Computationally for each position
-in the survey footprint we interpolate the results from that work on a grid in
-seeing, galaxy size, and coadd depth, then integrate over the distribution of
-galaxy sizes.
-
-[… will have more to say about the actual metric once it is fully implemented]
-
+We are currently in the process of developing a metric that will estimate our
+ability to separate stars and galaxies for any observation depth and seeing
+conditions. This requires both an understanding of how images of a source are
+measured and classified as either a star or galaxy, and how the population of
+stars and galaxies vary in number and size (for galaxies) with depth. Our model
+uses the distribution of galaxies in size and number, derived from HST COSMOS
+observations, along with a fully Bayesian model decision formalism to compute
+the expected completeness and contamination in star-galaxy separation.
+Computationally for each position in the survey footprint we interpolate the
+results from that work on a grid in seeing, galaxy size, and coadd depth, then
+integrate over the distribution of galaxy sizes. This modeling process is
+currently being verified against existing surveys, and will be incorporated into
+the observing strategy study at a later date.
 
 % --------------------------------------------------------------------
 
