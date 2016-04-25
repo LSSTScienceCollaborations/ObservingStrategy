@@ -4,7 +4,8 @@
 Chapter editors:
 \credit{bethwillman},
 \credit{connolly},
-\credit{ivezic}.
+\credit{ivezic},
+\credit{drphilmarshall}.
 
 The Large Synoptic Survey Telescope (LSST) is a dedicated optical
 telescope with an effective aperture of 6.7 meters, currently under
@@ -20,8 +21,7 @@ in six broad filters, $ugrizy$, spanning the optical band from the
 atmospheric cutoff in the ultraviolet to the limit of CCD sensitivity
 in the near-infrared.
 
-  The science case for the LSST is based broadly on four science
-  themes:
+The science case for the LSST is based broadly on four science themes:
 \begin{itemize}
 \item Dark energy and dark matter (via measurements of strong and weak lensing,
   large-scale structure, clusters of galaxies, and supernovae);
@@ -71,36 +71,34 @@ Science Book.
 \section{Synoptic Sky Surveying at Universal Cadence}
 \def\secname{intro:baseline}\label{sec:\secname}
 
-  The LSST defined a so-called ``baseline cadence'', described in the
-  \href{http://adsabs.harvard.edu/abs/2008arXiv0805.2366I}{LSST
-    overview paper} and Chapter 3 of the Science Book.  This was used
-  to demonstrate that LSST could meet its basic science goals, and
-  indeed the formal
-  \href{https://www.lsstcorp.org/docushare/dsweb/Get/LPM-17}{science
-    requirements}.    As
-  described in these references, the default LSST exposure is 15
-  seconds, and all exposures are taken in pairs, called a ``{\em
-    visit}'', before the telescope is slewed to a neighboring field.
-   Any given field is observed twice on a given night, which allows
-   preliminary trajectories of asteroids to be determined.
+The LSST defined a so-called ``baseline cadence'', described in the
+\href{http://adsabs.harvard.edu/abs/2008arXiv0805.2366I}{LSST overview
+paper} and Chapter 3 of the Science Book.  This was used
+to demonstrate that LSST could meet its basic science goals, and indeed
+the formal
+\href{https://www.lsstcorp.org/docushare/dsweb/Get/LPM-17}{science
+requirements}.    As described in these references, the default LSST
+exposure is 15 seconds, and all exposures are taken in pairs, called a
+``{\em visit}'', before the telescope is slewed to a neighboring field.
+Any given field is observed twice on a given night, which allows
+preliminary trajectories of asteroids to be determined.
 
-   The baseline cadence optimizes the amount of sky covered in any
-   given night (subject to the constraint of observing at airmass less
-   than 1.4 throughout), and allows the entire sky visible at any time
-   of the year to be covered in about three nights.  The cadence is
-   designed to give uniform coverage at any given time, and reaches
-   survey goals for measuring stellar parallax and proper motion over
-   the ten-year survey.  The survey requirements on depth lead to
-   roughly 825 visits (summing over the six filters) in the 10-year
-   LSST survey to any given point on the sky.  The resulting
-   Deep-Wide-Fast component of the survey covers roughly 18,000
-   deg$^2$ of high Galactic latitude sky, and requires about 85\% of
-   the available observing time.
+The baseline cadence optimizes the amount of sky covered in any given
+night (subject to the constraint of observing at airmass less than 1.4
+throughout), and allows the entire sky visible at any time of the year
+to be covered in about three nights.  The cadence is designed to give
+uniform coverage at any given time, and reaches survey goals for
+measuring stellar parallax and proper motion over the ten-year survey.
+The survey requirements on depth lead to roughly 825 visits (summing
+over the six filters) in the 10-year LSST survey to any given point on
+the sky.  The resulting Deep-Wide-Fast component of the survey covers
+roughly 18,000 deg$^2$ of high Galactic latitude sky, and requires about
+85\% of the available observing time.
 
-   There are obvious science cases that the Deep-Wide-Fast survey does
-   not address, and thus the remaining 15\% of the telescope time in
-   the baseline cadence is devoted to a series of specialized
-   surveys.  They are as follows:
+There are obvious science cases that the Deep-Wide-Fast survey does
+not address, and thus the remaining 15\% of the telescope time in the
+baseline cadence is devoted to a series of specialized surveys.  They
+are as follows:
 \begin{itemize}
 \item Imaging at low Galactic latitudes.  This is currently defined as
   a wedge which is broader closer to the Galactic Center,
@@ -127,41 +125,24 @@ Science Book.
   Asteroids for which LSST obtains orbits.
 \end{itemize}
 
-  The LSST Project has developed an ``Operations Simulator'' (\OpSim),
-  described in detail in Chapter~\ref{chp:cadexp} of this paper, which includes a
-  realistic model of telescope operations, including time required for
-  camera readout, slew time, filter exchange, as well as time loss due
-  to clouds.  Given a series of ``proposals'' {\bf Do we still want to
-    use this vocabulary?} that set priorities of which fields to
-  observe at any given time, \OpSim has developed a series of
-  realizations of the series of observations that make up the ten-year
-  LSST survey.  Given such a realization, \OpSim outputs detailed
-  metrics describing, for example, the expected depth of the LSST
-  survey in each filter as a function of time.  The baseline cadence
-  is a specific realization of the \OpSim output, which meets the LSST
-  survey requirements, following the rules briefly outlined above.
+The LSST Project has developed an ``Operations Simulator'' (\OpSim),
+described in detail in Chapter~\ref{chp:cadexp} of this paper, which
+includes a realistic model of telescope operations, including time
+required for camera readout, slew time, filter exchange, as well as time
+loss due to clouds.  Given a set of so-called ``proposals''
+that set the priorities of which fields to
+observe at any given time, \OpSim has developed a series of realizations
+of the series of observations that make up the ten-year LSST survey.
+The baseline cadence is a specific realization of the
+\OpSim output, which meets the LSST survey requirements, following the
+rules briefly outlined above.
 
-  Again, while the baseline cadence demonstrates that the LSST is
-  capable of meeting its stated science goals, it is not optimized for
-  all science, and Chapter~\ref{chp:cadexp} of this document describes a series of
-  experiments varying the assumptions in \OpSim.  In
-  Chapter~\ref{chp:specialsurveys}, we explore additional ideas for
-  future experiments to be done in \OpSim.
-
-%Synoptic Surveying with LSST - the basic observing strategy determined
-%by key projects described in the LSST Science Requirements Document,
-%and constrained by the LSST's design \citep{IvezicEtal2008}.
-
-% % --------------------------------------------------------------------
-% \iffalse
-% THIS SECTION HAS BEEN ABSORBED INTO WHAT IS ABOVE.
-% \section{Beyond the Baseline Observing Strategy}
-% \def\secname{intro:baseline}\label{sec:\secname}
-%
-% Optimizing the Observing Strategy: what perturbations are we
-% permitted to introduce, to maximize the system's science capabilities?
-% What are our constraints? And our opportunities?
-% \fi
+Again, while the baseline cadence demonstrates that the LSST is capable
+of meeting its stated science goals, it is not optimized for all
+science, and \autoref{chp:cadexp} of this document describes a
+series of experiments varying the assumptions in \OpSim.  In
+\autoref{chp:specialsurveys}, we explore additional ideas for future
+experiments to be done in \OpSim.
 
 \navigationbar
 
@@ -177,11 +158,9 @@ science projects that LSST will enable.  As the algorithms controlling
 suffer.  By quantifying this for each projects, we can determine which cadence
 maximizes the science potential overall of the project.
 
-Thus we need
-%e first step towards a science-based optimization of the LSST
-%observing strategy is
+Therefore, we need
 a {\it science-based evaluation of the baseline
-  LSST observing strategy and its variants}. After simulating a sample
+LSST observing strategy and its variants}. After simulating a sample
 observing schedule consistent with this strategy (see
 \autoref{chp:cadexp}), we then need to quantify its value to each
 science team.  This is what the LSST DM Sims team's ``Metric Analysis
@@ -193,54 +172,175 @@ optimize the strategy through iterations between \OpSim and MAF.
 With this program in mind, it makes sense to define {\it one ``Figure
 of Merit'' (FoM) per science project}, that captures the value of  the
 observing strategy under consideration to that science team. This FoM
-will probably be a function of several ``metrics'' that quantify
+will probably be a function of several ``diagnostic metrics'' that quantify
 lower-level features of the observing sequence.  For Figures of Merit
 to be directly comparable between disparate science projects,  they
-need to be dimensional, and have the same units. One natural
-choice could be the {\it information gained} by the science team, in
-bits. This is a well-defined statistical quantity, albeit not yet one
-in common use. A given observing schedule's value would then depend on
-both this information gain, but also {\it how much that information is
-worth to the whole community}. It is at this point that the debate
-could become heated: probably the best we can do in Cadence Diplomacy
-is to quantify all the information gains implied by each proposed
-change to the baseline  observing strategy, combine them to see
-whether it makes everyone happy, and iterate. In this way we might
-hope to minimize the debates about the less quantifiable worth of each
-piece of information.
+need to be dimensional, and have the same units.
+\footnote{One natural choice of units for Figures of Merit could be the
+{\it information  gained} by the science team, in bits. This is a
+well-defined statistical quantity, albeit not yet one in common use.}
+% A given observing schedule's value would then depend on both this
+% information gain, but also {\it how much that information is worth to
+% the whole community}. It is at this point that the debate could become
+% heated: probably the best we could do in cadence diplomacy would be to
+% to quantify all the information gains implied by each proposed change to
+% the baseline  observing strategy, combine them to see whether it makes
+% everyone happy, and iterate. In this way we might hope to minimize the
+% debates about the less quantifiable worth of each piece of information.}
 
-We are some way from being able to define information-based Figures of
-Merit for most science cases -- but the metrics that they will depend
-on will be easier to derive. Writing this white paper is an
-opportunity to think through the Figure of Merit for each science
+It may not always be straightforward to define a Figure of
+Merit for some science cases, but the diagnostic metrics that they will likely depend
+upon will be easier to derive. Writing this white paper is an
+opportunity to think through the FoM for each science
 project that we as a community want to carry out, and how that measure
 of success is likely (or even known) to depend on metrics that
-summarize the observing sequence presented to us. Thinking about the
-problem in terms of science projects, each with a  Figure of Merit,
-encourages us to design modular document sections, with one science
-project and one Figure of Merit per section.
+summarize the observing sequence presented to us. We return to the
+question of FoM design in \autoref{sec:guidelines:metrics} below.
 
-{\bf I am not sure the following paragraph belongs in the white paper;
-  it is more a description of the writing process.}
+Thinking about the problem in terms of science projects, each with a
+Figure of Merit, encourages us to design modular document sections, with
+one science project and one Figure of Merit per section. These modular
+sections ought then be easily extracted, combined and edited into
+publishable articles. They will also naturally lead to the definition of
+a suite of MAF metrics that can be evaluated on any future \OpSim output
+database.  Tabulating the values of the diagnostic metrics and the FoM,
+for different cadences, for each science case, will be very helpful for
+this purpose.
 
-This will have the happy side-effect of allowing the chapters to be
-straightforwardly re-arranged as we go, to make the white paper easier
-to read. It will also naturally lead to the definition of a suite of
-MAF  super-metrics, can be evaluated on any future \OpSim output
-database.  A table in each section showing the values of the metrics
-and the FoM, for different schedules, for that science project, will
-be very helpful. The metric names in these tables should match the
-metric class names in the
-\href{https://github.com/LSST-nonproject/sims_maf_contrib/wiki}{\simsMafContrib}
-module. In principle these tables could be auto-generated by the MAF
-framework, and extended as \OpSim is repeatedly reconfigured and run.
+Having laid out the essential features of our science-driven evaluation
+program, in the next section we translate them into guidance for
+contributors to this community effort.
+
+\navigationbar
+
+% --------------------------------------------------------------------
+
+\section{Guidelines for Contributors}
+\def\secname{guidelines}\label{sec:\secname}
+
+\credit{drphilmarshall}
+
+Contributions to this community effort are welcome from everyone. In
+this section we give brief guidelines for how to make a contribution,
+and how you should structure that contribution.
+
+\subsection{How to Get Involved}
+
+The first thing you should do is browse the current version of the white
+paper, which you should be able to \href{http://ls.st/iw2}{view on
+\GitHub}. You can download the  continuously-compiled
+\href{http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.pdf}{latest
+version of the PDF document}, which is hyper-linked for easy navigation.
+You will then be able to provide good feedback, which you should do via
+the
+\href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues}{\GitHub
+issues}. Please search the existing issues first: there might be a
+conversation already taking place that you could join. New issues are
+most welcome: we'd like to make this white paper as comprehensive as
+possible.
+
+To edit the white paper, you'll need to
+\href{https://help.github.com/articles/fork-a-repo/}{``fork'' its
+repository}. You will then  be able to edit the paper in your own
+fork, and when you are ready,  submit a
+\href{https://help.github.com/articles/using-pull-requests/}{``pull
+request''} explaining what you are doing and the new version that  you
+would like to be accepted. It's a good idea to submit this pull
+request sooner rather than later, because associated with it will be a
+discussion thread that the writing community can use to discuss your
+ideas with you. For help getting started with \git and \GitHub, please
+see this
+\href{https://github.com/drphilmarshall/GettingStarted#top}{handy
+guide}.
+
+
+\subsection{Writing Science Cases}
+
+For a high-level justification of the following design, please see
+\autoref{sec:intro:evaluation} above. In short, we're aiming for modular
+science sections (that are easy to write in parallel, and then
+re-arrange into other publications later) that are each focused on {\it
+one science project each}, and quantified by one (or maybe two) figures
+of merit (which will likely depend on other, lower-level diagnostic
+metrics).
+
+At the beginning of each science chapter there will be a brief
+\textit{introduction} that outlines the commonality of the key science
+projects contained in that chapter. The individual science sections
+following this introduction will then need to describe the particular
+discoveries and measurements that are being targeted in each
+\textit{science case}. It will be helpful to think of these science
+cases as investigations that the section leads {\it actually plan to
+do}. Thinking this way means that each individual section can follow the
+tried and tested format of an {\it observing proposal}: a brief
+description of the investigation, with references, followed by analysis
+of its technical feasibility. The latter is where the MAF analysis
+should go. Like an observing proposal, each section will seek to
+demonstrate the science performance achievable given various assumptions
+about the time that could be awarded (or in our case, the survey that
+could be delivered).
 
 For an example of how all this could look, please see the
-\hyperref[sec:lenstimedelays]{lens
-time delays section}. The MAF subsections are still under development
-there, but keep checking back to see it come together during the
-August 2015 workshop week. Templates for the chapters and sections can
-be found in \autoref{chp:example}.
+\hyperref[sec:lenstimedelays]{lens time delays section}. While the MAF
+analysis in this science case is still in progress, the suggested
+structure of the science case can be seen. Template latex files for the
+chapters and sections can be found in the
+\href{https://github.com/LSSTScienceCollaborations/ObservingStrategy}{\GitHub
+repository}.
+
+
+\subsection{Metric Quantification}
+\label{sec:\secname:metrics}
+
+The feasibility of each science case will need to be quantified using
+the MAF framework, via a set of metrics (a Figure of Merit, and some
+diagnostic metrics)  that need to be computed for any given observing
+strategy in order to quantify the impact of that cadence on the
+described science.
+
+In many (or perhaps all) cases, a Figure of Merit will be a
+\textit{precision} (\ie a percentage statistical uncertainty) on a
+astrophysical model parameter, assuming negligible bias in its
+inference. Precision is usually what we need to forecast in order to
+convince TAC's to give us telescope time, and so it makes sense to focus
+on it here too.
+
+Early on in a metric analysis, it may not be possible to compute a
+science case's Figure of Merit, most likely because to do do would
+require a large simulation program to capture the response of the
+parameter measurement to the observing strategy. At this early stage, it
+makes sense to look for simple {\it proxies} that scale the same way as
+model parameter precision. For example, we might expect the precision on
+a set of luminosity function  parameters to scale with the square root
+of the number of objects in the sample, and so $\sqrt{N}$ could be a
+sensible proxy for the Figure of Merit. Provided we get the scaling
+right, we can then compare different observing strategies by looking  at
+{\it the percentage change in the Figure of Merit,} and arguing that
+this will correspond approximately to the same percentage change in the
+ideal case.
+
+Each science section needs to conclude with a discussion of any risks
+that have been identified, and how these could be mitigated. What does
+this mean? Each science project will have a threshold acceptable
+Figure of Merit value, as well as a target (or ``design'') value.  If
+an observing strategy gives an FoM value below the threshold, it
+is very important that we know about it.  Optimizing all science cases
+in such a complex and diverse set is not really the best way of
+thinking about LSST's scheduling task: rather than maximizing
+happiness, what we are really trying to do is minimize global
+unhappiness.
+The comparisons between different simulated strategies will help make
+the case for any changes to the baseline strategy, and in the short term
+provide motivation for
+\href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md}{proposed
+new \OpSim simulation runs.}
+
+For some science sections we will have only a metric design, without an
+implementation. As this white paper  evolves, many of these designs will
+be realized and put into action. At first, though, the discussion of
+risks to these science cases will necessarily be minimal, containing
+only predictions for how the Figure of Merit is likely to vary among
+observing strategies.
 
 \navigationbar
 
@@ -260,13 +360,11 @@ chapters:
 \begin{itemize}
     \item \autoref{chp:solarsystem}: \nameref{chp:solarsystem}
     \item \autoref{chp:galaxy}: \nameref{chp:galaxy}
-    % \item \autoref{chp:astrometry}: \nameref{chp:astrometry}
     \item \autoref{chp:variables}: \nameref{chp:variables}
     \item \autoref{chp:transients}: \nameref{chp:transients}
     \item \autoref{chp:MCs}: \nameref{chp:MCs}
     \item \autoref{chp:agn}: \nameref{chp:agn}
     \item \autoref{chp:cosmo}: \nameref{chp:cosmo}
-    % \item \autoref{chp:deepdrilling}: \nameref{chp:deepdrilling}
     \item \autoref{chp:specialsurveys}: \nameref{chp:specialsurveys}
     \item \autoref{chp:wfirst}: \nameref{chp:wfirst}
 \end{itemize}
@@ -274,155 +372,18 @@ chapters:
 Finally, in \autoref{chp:tradeoffs} we bring the results of all the
 science metric analyses  together and discuss the tensions between
 them, and the trade-offs that we can anticipate having to make.
-
-\navigationbar
-
-% --------------------------------------------------------------------
-
-\section{Guidelines for Contributors}
-\def\secname{guidelines}\label{sec:\secname}
-
-\credit{drphilmarshall}
-
-Since this is a community white paper, contributions are welcome from
-everyone. Read on for how to make a contribution, and how you should
-structure that contribution.
-
-\subsection{How to Get Involved}
-
-The first thing you should do is read and absorb the current version
-of the white paper, which you should be able to
-\href{http://ls.st/iw2}{view on \GitHub}. (You can also
-\href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/raw/master/whitepaper/LSST_Observing_Strategy_White_Paper.pdf}{download
-the ``raw'' PDF}, which is hyper-linked for easier navigation.) You
-will then be able to provide good feedback, which you should do via
-the
-\href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues}{\GitHub
-issues}. Browse the existing issues first: there might be a
-conversation you can  join. New issues are most welcome: we'd like to
-make this white paper as comprehensive as possible.
-
-To edit the white paper, you'll need to
-\href{https://help.github.com/articles/fork-a-repo/}{``fork'' its
-repository}. You will then  be able to edit the paper in your own
-fork, and when you are ready,  submit a
-\href{https://help.github.com/articles/using-pull-requests/}{``pull
-request''} explaining what you are doing and the new version that  you
-would like to be accepted. It's a good idea to submit this pull
-request sooner rather than later, because associated with it will be a
-discussion thread that the writing community can use to discuss your
-ideas with you. For help getting started with \git and \GitHub, please
-see this
-\href{https://github.com/drphilmarshall/GettingStarted#top}{handy
-guide}.
-
-
-\subsection{Chapter and Section Design}
-
-For a high-level justification of the following design, please see
-\autoref{sec:intro:evaluation}. In short, we're aiming for modular
-sections (that are easy to write in parallel, and then re-arrange
-within chapters later) focused on one science project each, and
-quantified by one (or maybe two) figures of merit (which will likely
-depend on other, lower-level metrics). Each section can be thought of
-as an observing proposal, demonstrating the performance achievable
-given various assumptions about the time awarded.\footnote{These notes
-on the white paper design are adapted from the notes at
-\href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/notes/chapter-template.md}{\texttt{whitepaper/notes/chapter-template.md}}}
-
-
-The first section of each science chapter needs to be an \textit{introduction}
-that outlines, very briefly, the commonality of the key science projects
-contained in it:  what is to be measured, in broad-brush terms, and
-why this is of interest. Then, suppose we were to design an LSST
-survey to enable these measurements: qualitatively, what might it look
-like, in terms of the choices we are able to make? This chapter
-introduction can eventually (when the results are in!) summarize,
-again, in very broad brush terms, the results of a number of
-investigative sections, one on each science case.
-
-The individual sections following this introduction will then need to
-describe the particular discoveries and measurements that are being
-targeted in each \textit{science case}. It will be helpful to think of a
-``science case" as a ``science project" that the section leads {\it
-actually plan to do}. Thinking this way means that the sections can
-follow the tried and tested format of an observing proposal: a brief
-description of the investigation, with references, followed by a
-technical feasibility piece.
-
-
-\subsection{Metric Quantification}
-
-\new{\bf The assessment of each science case will need to be
-quantified using the MAF framework, via a set of metrics that need to
-be computed for any given observing strategy in order to quantify its
-impact on the described science.}
-
-\new{Ideally, these metrics would be combined in a \textit{well-motivated
-figure of merit}, and used to compare several possible observing
-strategies (that have already been simulated with \OpSim). In many (or
-perhaps all) cases,  a figure of merit will be a \textit{precision} (\ie
-a percentage statistical uncertainty) on a astrophysical model
-parameter, assuming negligible bias in its inference. Precision is
-usually what we need to forecast in order to convince TAC's to give us
-telescope time, and so it makes sense to focus on it here too.}
-
-\new{Early on in a metric analysis, it may not be possible to compute
-a science case's ideal figure of merit, most likely because to do do
-would require a large simulation program to capture the response of
-the  parameter measurement to the observing strategy. At this early
-stage, it makes sense to look for simple proxies that \textit{scale} the
-same way as model parameter precision. For example, we might expect
-the precision on a set of luminosity function  parameters to scale
-with the square root of the number of objects in the sample, and so
-$\sqrt{N}$ could be a sensible early figure of merit. Provided we get
-the scaling right, \textit{we can then compare different observing
-strategies by looking  at the percentage change in the figure of
-merit,} and arguing that  this will correspond approximately to the
-same percentage change in the  ideal case.}
-
-Each science section needs to conclude with a discussion of any risks
-that have been identified, and how these could be mitigated. \new{What does
-this mean? Each science project will have a \textit{threshold acceptable
-figure of merit value}, as well as a target (or ``design'') value.  If
-an observing strategy gives a figure of merit below the threshold, it
-is very important that we know about it.  Optimizing all science cases
-in such a complex and diverse set is not really the best way of
-thinking about LSST's scheduling task: \textit{rather than maximizing
-happiness, what we are really trying to do is minimze global
-unhappiness (Z.~Ivezic, priv.\ comm.).}}
-
-\textit{The comparisons between different simulated
-strategies will help make the case for any changes to the baseline
-strategy, and in the short term provide motivation for
-\href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md}{proposed
-new \OpSim simulation runs.}} \new{For some science sections we will
-have only a metric design, without an implementation. Subsequent
-versions of this white paper will hopefully see these designs realized
-and put into action. For now, though, the discussion of risks to these
-science cases will necessarily be minimal, containing only predictions
-for how the figure of merit will vary among observing strategies.}
-
-\new{Quantitative comparisons between science cases needs will be
-carried out in the final chapter, ``Tensions and Trade-offs.'' This
-chapter cannot be written until we have quantitative MAF metric
-analysis results from the individual science cases to feed into it. At
-this early stage, the metrics for each science case, and in
-particular, the figures of merit, are not yet well defined. Again,
-rather than wait for the ideal figure of merit, \textit{we instead
-encourage the calculation of simple proxies} that can give at least
-some early information about how good the baseline strategy and its
-early perturbations will be for each science case.}
-
-The following chapter shows a template introduction and
-science case section for you to work from. The latter is checked into
-the repository as
-\href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/section-template.tex}{\texttt{section-template.tex}}.
-For an example of a section being developed according to the above guidelines,
-please take a look at \autoref{sec:lenstimedelays}.
+This final chapter will serve as this work's set of running conclusions.
 
 
 \navigationbar
+
+
+% The following chapter shows a template introduction and
+% science case section for you to work from. The latter is checked into
+% the repository as
+% \href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/section-template.tex}{\texttt{section-template.tex}}.
+% For an example of a section being developed according to the above guidelines,
+% please take a look at \autoref{sec:lenstimedelays}.
 
 % % ====================================================================
 %
