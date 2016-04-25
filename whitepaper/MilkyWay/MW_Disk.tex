@@ -426,7 +426,7 @@ opt for a very bright peak apparent magnitude in all filters. We assume that
 the probability of a supernova going off is proportional to the number of stars
 along a particular line of sight.}
 \item \new{{\it Parameters used:} The pre-SN outburst is simulated using the lsst-sims metrics.TransientMetric module. The lightcurve used has the following parameters: rise slope $-2.4$; time to peak; $20$~days; decline slope: $0.08$; total transient duration: 80 days. All filters are used in the detections, and 20 evenly-spaced phases are simulated for sensitivity to pathological cases (parameter nPhaseCheck=20). Peak apparent magnitudes used: $\{ 11,9,8,7,6,6\}$~in $\{u,g,r,i,z,y\}$. Then, $f_{var, i}$~is taken as the ``Sawtooth Alert'' quantity returned by metrics.TransientMetric. The starcounts metric (in sims-maf-contrib) is used to estimate the number of stars along a given line of sight, using fiducial distance limits ($10$pc $\le d \le 80$kpc).}
-\item \new{{\it \bf Results:} $FoM_{preSN}$(enigma-1189) = 0.251, while $FoM_{preSN}$(ops2-1092)=0.852. See Figure \ref{f_opSim_GalacticSN} for a breakdown of this figure of merit across sightlines.}
+\item \new{{\it \bf Results:} $FoM_{preSN}$(enigma-1189) = 0.129, while $FoM_{preSN}$(ops2-1092)=0.826.\footnote{\new{2016-04-25 For comparison, when run on 2015-era OpSim runs {\it enigma\_1189} (Baseline strategy) and {\it ops2\_1092} (PanSTARRS-like strategy) the results were 0.251 (Baseline) and 0.852 (PanSTARRS-like strategy). So the 2016-era OpSim runs show a sharper disadvantage than before to the Baseline cadence for the Galactic Supernova case.}} See Figure \ref{f_opSim_GalacticSN} for a breakdown of this figure of merit across sightlines.}
 
 \end{itemize}
 \begin{figure}
@@ -486,7 +486,7 @@ deep-wide-fast survey:
     1.1 & \footnotesize{LMXB ellipsoidal variations}      & - & - & - & - & - \\
     1.2 & \footnotesize{Uncertainty in dwarf nova duty cycle}   & - & - & - & - &  \footnotesize{LSST as initial trigger} \\
     2.1 & \footnotesize{Fraction of Novae detected}       & - & - & - & - &  - \\
-    3.1 & \footnotesize{Galactic Supernova pre-variability} & 0.25 & {\bf 0.85} & - & - & \footnotesize{Fraction of SN2010mc-like outbursts that LSST would detect; $FoM_{preSN} = f_{var} \times N_{\ast}$} \\
+    3.1 & \footnotesize{Galactic Supernova pre-variability} & 0.13 & {\bf 0.83} & - & - & \footnotesize{Fraction of SN2010mc-like outbursts that LSST would detect; $FoM_{preSN} = f_{var} \times N_{\ast}$} \\
     4.1 & \footnotesize{Fraction of triggered microlens candidates} & - & - & - & - & - \\
     4.2 & \footnotesize{Uncertainty in disk-disk microlens distribution parameters due to missed events} & - & - & - & - & \footnotesize{LSST as initial microlens trigger} \\
     5.1a & \footnotesize{Median (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & \footnotesize{(Most useful FoM probably a spatial map of the uncertainty.)} \\
