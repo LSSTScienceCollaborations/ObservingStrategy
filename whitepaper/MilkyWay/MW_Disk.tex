@@ -417,7 +417,7 @@ Dependencies:
 \begin{equation}
   FoM_{preSN} \equiv \frac{ \sum^{sightlines}_{i} f_{var, i} N_{\ast, i} } {\sum^{sightlines}_{i} N_{\ast, i}}
 \end{equation}
-where $f_{var, i}$~is the fraction of transient events that LSST would detect for observing strategy including the $i$'th sightline, $N_{\ast,i}$~the number of stars present along the $i$'th sightline, and the FoM is normalized by the total number of stars returned by the density model over all sightlines. (For the two OpSim runs tested here, enigma-1189 and ops2-1092, the normalization factors differ by $\sim 0.1\%$.) Therefore $0.0 \le FoM_{preSN} \le 1.0$.}
+where $f_{var, i}$~is the fraction of transient events that LSST would detect for observing strategy including the $i$'th sightline, $N_{\ast,i}$~the number of stars present along the $i$'th sightline, and the FoM is normalized by the total number of stars returned by the density model over all sightlines. (For the two OpSim runs tested here, \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS}, the normalization factors differ by $\sim 0.1\%$.) Therefore $0.0 \le FoM_{preSN} \le 1.0$.}
 \item \new{{\it Assumptions (observational):} Pre-SN variability similar to the
     pre-SN outburst of SN2010mc \citep{2013Natur.494...65O}. The pre-SN variability is
 modeled as a sawtooth lightcurve (in apparent magnitude). We assume this
@@ -426,7 +426,7 @@ opt for a very bright peak apparent magnitude in all filters. We assume that
 the probability of a supernova going off is proportional to the number of stars
 along a particular line of sight.}
 \item \new{{\it Parameters used:} The pre-SN outburst is simulated using the lsst-sims metrics.TransientMetric module. The lightcurve used has the following parameters: rise slope $-2.4$; time to peak; $20$~days; decline slope: $0.08$; total transient duration: 80 days. All filters are used in the detections, and 20 evenly-spaced phases are simulated for sensitivity to pathological cases (parameter nPhaseCheck=20). Peak apparent magnitudes used: $\{ 11,9,8,7,6,6\}$~in $\{u,g,r,i,z,y\}$. Then, $f_{var, i}$~is taken as the ``Sawtooth Alert'' quantity returned by metrics.TransientMetric. The starcounts metric (in sims-maf-contrib) is used to estimate the number of stars along a given line of sight, using fiducial distance limits ($10$pc $\le d \le 80$kpc).}
-\item \new{{\it \bf Results:} $FoM_{preSN}$(enigma-1189) = 0.129, while $FoM_{preSN}$(ops2-1092)=0.826.\footnote{\new{2016-04-25 For comparison, when run on 2015-era OpSim runs {\it enigma\_1189} (Baseline strategy) and {\it ops2\_1092} (PanSTARRS-like strategy) the results were 0.251 (Baseline) and 0.852 (PanSTARRS-like strategy). So the 2016-era OpSim runs show a sharper disadvantage than before to the Baseline cadence for the Galactic Supernova case.}} See Figure \ref{f_opSim_GalacticSN} for a breakdown of this figure of merit across sightlines.}
+\item \new{{\it \bf Results:} $FoM_{preSN}$(\opsimdbref{db:baseCadence}) = 0.129, while $FoM_{preSN}$(\opsimdbref{db:opstwoPS})=0.826.\footnote{\new{2016-04-25 For comparison, when run on 2015-era OpSim runs \opsimdbref{db:baseCadence} (Baseline strategy) and \opsimdbref{db:opstwoPS} (PanSTARRS-like strategy) the results were 0.251 (Baseline) and 0.852 (PanSTARRS-like strategy). So the 2016-era OpSim runs show a sharper disadvantage than before to the Baseline cadence for the Galactic Supernova case.}} See Figure \ref{f_opSim_GalacticSN} for a breakdown of this figure of merit across sightlines.}
 
 \end{itemize}
 \begin{figure}
@@ -435,17 +435,11 @@ along a particular line of sight.}
   \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_1189.pdf}
 %  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1092.pdf}
 %  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1189.pdf} 
-  \caption{\new{Figure of merit $FoM_{preSN}$~describing LSST's sensitivity to any pre-Supernova outburst, broken down by sightline, as sky-maps. $FoM_{preSN}$~is estimated for two OpSim runs (to-date); ops2-1092 (left) and enigma-1189 (right). The normalizing factors $N_{\ast, total}$ are $1.120\times 10^{12}$~for ops2-1092 and $1.121 \times 10^{12}$~for enigma-1189. The imprint of reduced sampling towards the inner plane can be clearly seen for enigma-1189.}}
+  \caption{\new{Figure of merit $FoM_{preSN}$~describing LSST's sensitivity to any pre-Supernova outburst, broken down by sightline, as sky-maps. $FoM_{preSN}$~is estimated for two OpSim runs (to-date); \opsimdbref{db:opstwoPS} (left) and \opsimdbref{db:baseCadence} (right). The normalizing factors $N_{\ast, total}$ are $1.120\times 10^{12}$~for \opsimdbref{db:opstwoPS} and $1.121 \times 10^{12}$~for \opsimdbref{db:baseCadence}. The imprint of reduced sampling towards the inner plane can be clearly seen for \opsimdbref{db:baseCadence}.}}
 \end{center}
 \label{f_opSim_GalacticSN}
 \end{figure}
 
-
-%The current baseline cadence (${\tt enigma\_1189}$) partially excludes the Galactic Plane from the% deep-wide-fast survey and instead adopts a 
-%nominal 30 visits per filter as part of a special proposal. We have proposed an OpSim run that inc%ludes the Galactic Plane in the 
-%deep-wide-fast survey:
-
-%\url{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_GP.md}
 
 % The Figures of Merit listed above must now be implemented and applied to the OpSim databases.
 
@@ -465,7 +459,7 @@ cases. \new{See Table \ref{tab_SummaryMWDisk} at the end of this subsection for 
 We welcome input and volunteers for this effort. 
 
 Qualitatively, however, we can note immediately that the current
-baseline cadence (${\tt enigma\_1189}$) partially excludes the
+baseline cadence (\opsimdbref{db:baseCadence}) partially excludes the
 Galactic Plane from the deep-wide-fast survey and instead adopts a
 nominal 30 visits per filter as part of a special proposal - which
 also tends to cluster the visits in the inner Plane within the first
@@ -481,7 +475,7 @@ deep-wide-fast survey:
 
 \begin{table}
   \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
-    FoM & Brief description & {\rotatebox{90}{enigma-1189}} & {\rotatebox{90}{ops2-1092}} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
+    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence}}} & {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
     \hline
     1.1 & \footnotesize{LMXB ellipsoidal variations}      & - & - & - & - & - \\
     1.2 & \footnotesize{Uncertainty in dwarf nova duty cycle}   & - & - & - & - &  \footnotesize{LSST as initial trigger} \\
@@ -492,7 +486,7 @@ deep-wide-fast survey:
     5.1a & \footnotesize{Median (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & \footnotesize{(Most useful FoM probably a spatial map of the uncertainty.)} \\
     5.1b & \footnotesize{Variance (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & - \\
   \end{tabular}
-\caption{Summary of figures-of-merit for the Galactic Disk science cases. The best value of each FoM is indicated in bold. See Section \ref{sec:MW_Disk}.}
+\caption{Summary of figures-of-merit for the Galactic Disk science cases. The best value of each FoM is indicated in bold. Runs \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS} refer to the Baseline and PanSTARRS-like strategies, respectively. See Section \ref{sec:MW_Disk}. }
 \label{tab_SummaryMWDisk}
 \end{table}
 
