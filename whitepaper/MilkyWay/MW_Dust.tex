@@ -26,7 +26,7 @@
 \section{Dust in the Milky Way}
 \def\secname{MW_Dust}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
 
-\noindent{\it Author Name(s)} % (Writing team)
+\noindent{\it Peregrine M. McGehee} % (Writing team)
 
 % This individual section will need to describe the particular
 % discoveries and measurements that are being targeted in this section's
@@ -42,15 +42,105 @@
 % with a discussion of any risks that have been identified, and how
 % these could be mitigated.
 
-{\it Peregrine's contribution appears to be missing here... was this overwritten in a commit since August?}\\
+Interstellar dust is a significant constituent of the Galaxy. Its composition and associated extinction
+properties tell us about the material and environments in which stars and their planets are formed.
+Dust also presents an obstacle for a wide-range of astronomical observations, causing light from
+stars in the plane of the Milky Way to be severely dimmed and causing the apparent colors of
+objects observed in any direction to be shifted from their intrinsic values. These color shifts
+are dependent upon the dust column density along the line of sight and the radiative transport
+properties of the dust grains.
 
-A short preamble goes here. What's the context for this science
-project? Where does it fit in the big picture?
+The wavelength dependence of the absorption due to dust is parametrized in the widely used model
+of Cardelli et al. (1989) by the ratio of general to selection extinction in the Johnson B and V
+bands, defined as $R_V = A_V /E(B − V)$. The value of RV depends on the dust composition and
+grain size along the line of sight. In the low-density diffuse ISM, $R_V$ has a value $\sim 3.1$, while in
+dense molecular clouds, $R_V$ can be higher with values $4 < R_V < 6$.
+
+The fundamental importance of a well-characterized dust map to astronomy is underscored by the
+$>$ 5,000 citations to the dust and extinction maps by Schlegel et al. (1998), henceforth SFD98.
+The SFD98 maps are based on far-infrared observations and predict reddening in specific bands by
+assuming a dust model and $R_V$ = 3.1 as appropriate for sky areas away from the Galactic plane.
+Despite the great contribution that the SFD98 extinction map has made to the field, these maps
+suffer from several issues that limit their utility in some regimes of study. 1) While the SFD98
+map seems to be well calibrated at low column density, various tests using galaxy counts, star
+counts and colors, and stellar spectrophotometry indicate that SFD98 overpredicts dust by $\sim30\%$
+above E(B − V ) $\sim$ 1 mag. Because this overcorrection appears especially in cold clouds, it is
+likely related to the temperature correction adopted in the SFD98 model. 2) In some cases,
+especially at low Galactic latitudes, RV variation is important and is not tracked by SFD98. 3)
+For study of low-redshift, large-scale structure, contamination by unresolved point sources can be
+important (see Yahata et al. 2007). 4) Finally, the resolution of the SFD98 map is $sim 6$ asrcmin, which
+is larger than the angular scales subtended by nearby, resolved, galaxies for which a carefully
+characterized foreground dust distribution is particularly important. For all these reasons, LSST
+stellar photometry, which can constrain the temperature correction, overall calibration, and point
+source contamination of SFD98, is valuable.
+
+For the study of stellar populations and objects within the Galactic disk it is also important to
+determine both the line of sight extinction and the value of RV at a specific distance, neither of
+which is dealt with by SFD98. By analysis of the observed reddening of stellar colors, we will verify
+both the dust column density and RV values predicted by these maps and can also determine the
+local spatial distribution of the dust. We will do this utilizing two specific stellar populations - the
+M dwarfs and the F turn-off stars.
+
+The reddening of stellar colors due to the presence of interstellar dust along the line of sight can,
+in principle, be used to map the three-dimensional distribution of that dust. This requires that
+two important parameters are determined - the amount the observed stellar color is reddened and
+the distance to the star. By comparison of the color excess measured in stars at varying distances
+we can infer the location of the extincting medium. However, given lack of an a priori knowledge
+of the light of sight extinction, which is the very quantity we wish to measure, it can be difficult
+to accurately assign intrinsic stellar colors and luminosities in order to determine the amount of
+color excess and the distance. This difficulty can be surmounted, however, if we utilize reddeninginvariant
+combinations of colors whose values can be used to infer location on the stellar locus
+and hence intrinsic colors and luminosities. This technique is viable if we use LSST photometry of
+M dwarfs as the stellar locus in $ugriz$ colors is nearly parallel to the reddening vector for all but
+coolest stars.
+
 
 % --------------------------------------------------------------------
 
 \subsection{Target measurements and discoveries}
 \label{sec:\secname:targets}
+
+The use of stellar samples to create three-dimensional extinction maps has an established history
+beginning with the work of Neckel \& Klare (1980); however these, including studies based on SDSS
+photometry, are typically limited to heliocentric distances of 1−2 kpc. In the full co-added survey,
+LSST will be able to map dust structures out to distances exceeding 15 kpc, thus revealing a
+detailed picture of this component of the Milky Way Galaxy.
+
+Mapping of the dust component of the Galactic ISM requires detection of the reddening in the
+colors of stars at known distances. The reddening is determined from the color excess deduced
+by comparison of the observed colors with those expected based on the stellar spectral type. In
+the absence of identifying spectra, the spectral type can be inferred by dereddening the observed
+colors (assuming a specific extinction law, i.e., a particular value of $R_V$) back to the unreddened
+stellar locus in a color-color diagram. This dereddening is equivalent to assignment of reddeningfree
+colors along the stellar locus, which measure the location in the color-color diagram along
+the direction perpendicular to the reddening vector. Once the effective line of sight reddening has
+been computed, the distance to each star can be determined using dereddened photometry and
+well-calibrated color-absolute magnitude relations.
+
+It has been demonstrated that accurate three-dimensional mapping of the local ISM within a few
+kpc is possible using SDSS photometry of M dwarfs (McGehee 2009). Analysis of the g − i color
+excess in regions effectively free of interstellar reddening shows that distance modulus limits of 7.0
+(at M5) to 11.2 (at M0) result in a volume-limited survey nearly free of the systematic color biases
+inherent in this g-band limited data set.
+These limits correspond to g ∼ 20.6 and $\sigma_g$ ∼ 0.02−0.03 for single-epoch SDSS observations. Given
+the relative g-band 5$\sigma$ limits of SDSS and the LSST single epoch and final co-added surveys, we
+estimate that the the co-added LSST data will reach 5 magnitudes deeper in m-M, allowing the
+LSST to probe dust structures across a significant portion of the Galaxy. 
+
+
+Changes in the absorption properties of dust grains, as parametrized by RV , result in a shift in
+both the direction and length (for a specific dust column density) of the reddening vector in a
+color-color diagram. This is reflected in the reddening-free colors by variations in the scaling factor
+used when defining the linear combination of colors, e.g., in the $E(g − r)/E(r − i)$ term for $Q_{gri}$.
+By analysis of the observed color shifts due to reddening it is possible to constrain the value of RV
+along the line of sight and gain insight into the nature and composition of the interstellar dust in
+that region of the Galaxy.
+
+The LSST will be in a unique position to measure the changes in the observed reddening vector
+due to RV variations due to its superb photometric accuracy (see § 2.6). The specifications for
+LSST are a factor of two more stringent than typically achieved in previous surveys, including the
+SDSS (except for limited photometric conditions).
+
 
 Describe the discoveries and measurements you want to make.
 
@@ -64,7 +154,12 @@ to be optimized for this science?
 
 \subsection{Metrics}
 \label{sec:\secname:metrics}
+ From the material in the science book and what you have contributed, I think a metric dependent on the photometric accuracy metrics might be the way to go (e.g. estimate the error in $A_V$ and $E(B-V)$ for different strategies, which would be a simple scaling for each pixel in the spatial map given the nominal scalings with exposure time in each filter).
 
+The spacing in time of the visits doesn't matter for dust (as far as I know). 
+Pushing to fainter magnitudes (which means both better seeing and longer exposures) matters, both because we want more stars, and in particular, we want more stars *behind* the dust.  If we can't see through the dust, we can't do much.  At PS1 depth, we get to ~ 3-5 kpc, with maybe up to 1ish mag $E(B-V)$.  If we went 3 or 4 mags fainter, how far could we go?  This is a good question, and one I am unlikely to answer by next week.  But it is something we should figure out. 
+
+I'm cc'ing Greg in case he has a better answer, or in case he has some mock map runs that give us an idea of how our results depend on survey depth. 
 Quantifying the response via MAF metrics: definition of the metrics,
 and any derived overall figure of merit.
 

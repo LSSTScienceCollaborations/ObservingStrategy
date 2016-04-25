@@ -1,11 +1,14 @@
 PAPER = LSST_Observing_Strategy_White_Paper.pdf
-TEXFILES = *.tex */*.tex 
+TEXFILES = *.tex */*.tex
 BIBFILES = references.bib
 
 all: pdf
 
 clean:
 	-rm -f *.aux LSST*.log *.dvi *.blg *.bbl *.inx *.aut *.toc *.tod *.out
+
+vclean: clean
+	-rm LSST_Observing_Strategy_White_Paper.pdf
 
 pdf: $(PAPER)
 

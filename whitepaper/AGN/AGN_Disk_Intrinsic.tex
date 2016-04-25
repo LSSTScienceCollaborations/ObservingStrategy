@@ -125,8 +125,9 @@ For instance, for $m_g  <  23$ and the optimal $z =  2.7$, the HFQPO period is $
 %QPO search will be most relevant for the DDFs,
 Searching for HFQPOs in the DDFs will be most effective if the sampling frequency
 in those fields for the $u$ and $g$ bands is at least nightly, i.e., $\gtsim3000$
-visits, per band, during the entire survey. Using HFQPOs at such frequencies, LSST will be
-sensitive to probing SMBHs down to $\approx10^{5} - 10^{6}~M_{\odot}$.
+visits, per band, during the entire survey. Given that the period of a typical HFQPO is
+related to the SMBH mass by $P({\rm hr}) \approx (1.1-4.0)(1+z)(M/10^{7}M_{\odot})$,
+LSST will be sensitive to probing SMBHs with $M < 10^{7}~M_{\odot}$ using HFQPOs.
 
 %In addition, there's a need for an "ultradeep" field, e.g., the MCs, that will
 %be monitored, during commissioning phase, with frequencies in the range ~$1$-$10^4$ min. (i.e., from
@@ -179,20 +180,38 @@ the spectral index of its PSD is mathematically constrained to be 2
 curve (e.g., a few times a month), can therefore result in the erroneous conclusion
 that a DRW model adequately characterizes the variability.
 
-
 \begin{figure}
-\centering\includegraphics[width=0.9\linewidth]{figs/agn/AGN_Variability_01.pdf}
-\caption{PSD of Zw 229-15 as a function of frequency, obtained from {\em Kepler}
-photometry. The PSD (purple) is the ratio of an even polynomial numerator (orange)
-to an even polynomial denominator (brown). This AGN is well-described by a
-C-ARMA(2,1) model; different powers of frequency dominate its PSD at different
-frequencies depending on the hyperparameters of this model. The wide
-frequency range enables detection of PSD spectral index variations ranging
-between 0 and 4. Clearly, the light curve of this AGN must be sampled on
-timescales {\em shorter} than $1-5$ days in order to observe the $\nu^{-4}$
-behavior characteristic of a higher order random walk.
-}
-\label{PSDvsFreq}
+  \begin{subfigure}[t]{0.5\textwidth}
+    \centering\includegraphics[width=0.9\linewidth]{figs/agn/AGN_Variability_01.pdf}
+    \centering
+    \caption{}
+    \label{fig:PSDvsFreq}
+  \end{subfigure}
+  %\medskip
+  \begin{subfigure}[t]{0.5\textwidth}
+    \centering\includegraphics[width=0.9\linewidth]{figs/agn/PowerOfSDSSK2.jpg}
+    \centering
+    \caption{}
+    \label{fig:SDSSK2Power}
+  \end{subfigure}
+  \caption{(\subref{fig:PSDvsFreq}) shows the PSD of Zw 229-15 as a function of frequency,
+  obtained from {\em Kepler} photometry. The PSD (purple) is the ratio of an even 
+  polynomial numerator (orange) to an even polynomial denominator (brown). 
+  This AGN is well-described by a C-ARMA(2,1) model; different powers of frequency 
+  dominate its PSD at different frequencies depending on the hyperparameters of 
+  this model. The wide frequency range enables detection of PSD spectral index variations 
+  ranging between 0 and 4. Clearly, the light curve of this AGN must be sampled on 
+  timescales {\em shorter} than $1-5$ days in order to observe the $\nu^{-4}$ behavior
+  characteristic of a higher order random walk. This is illustrated in (\subref{fig:SDSSK2Power}) 
+  where we see the frequencies and time intervals probed by SDSS, Kepler and a light curve 
+  constructed by combining the two datasets (SDSS+K2). Each vertical dashed line corresponds to
+  a pair of observations seperated by the indicated $\delta t$ (top axis). We plot (for 
+  illustration), two C-ARMA models with the same overall power - a damped random walk, i.e. a 
+  C-ARMA(1.0) process, and a damped harmonic oscillator, i.e a C-ARMA(2,1) process. 
+  It is clear that SDSS (Kepler) cannot probe the highest (lowest) frequencies. However the 
+  combination of the two can cover the full frequency range. The LSST cadence should be chosen 
+  to provide similar temporal coverage in the DDFs.}
+  \label{PSDvsFreq}
 \end{figure}
 
 Accurate recovery of the PSD parameters can be greatly enhanced by increasing the
@@ -258,31 +277,41 @@ and any derived overall figure of merit.
 %with the nominal OpSim, and point out potential perturbations in the
 %cadence to improve the number and quality of such time delays.
 
-While additional work is required for determining the optimal cadence
-in order to fully capture AGN accretion physics and to enhance AGN selection,
-it is clear that even the nominal DDF sampling (in enigma\_1189)
-is barely sufficient, and more frequent sampling would have been ideal.
+While additional work is required for determining the optimal cadence in order
+to fully capture AGN accretion physics and to enhance AGN selection, it is clear
+that even the nominal DDF sampling (in enigma\_1189) is barely sufficient, and
+more frequent sampling would have been ideal. The ability to detect HFQPOs
+should also improve by increasing the sampling frequency, the amplitudes of such
+features are quite uncertain, as are the (short) duty cycles. Observations,
+theory and numerical simulations have only suggested that the fractional
+modulation should be small (less than a few percent). Thus it is not obvious how
+to choose a metric and observing strategy to maximize it, other than increasing
+the sampling frequency to at least nightly samplings in the $g$ and $u$ bands
+(i.e., increasing the sampling frequency in the DDFs at least by a factor of
+$\sim 3$).
 
-One particular metric for which LSST can make a significant contribution
-using the C-ARMA formalism is the selection of low-luminosity AGN (LLAGN),
-i.e., sources with $L \ltsim 10^{42}$~erg~s$^{-1}$, in the DDFs. Such
-sources are likely to be missed by traditional color-variability selection
-algorithms due to a strong host contribution. The metric to be developed should
-assess how the number of selected LLAGN depends on the sampling frequency in
-each band.
+Specific metrics include:
 
-% QPOs - Will the cadence and duration give you the proper range on the
-% power spectrum to detect QPOs with a given mass, spin, and L/Ledd?
-% (Bob Wagoner)
+1) LSST can make a significant contribution using
+the C-ARMA formalism is the selection of low-luminosity AGN (LLAGN), i.e.,
+sources with $L \ltsim 10^{42}$~erg~s$^{-1}$, in the DDFs. Such sources are
+likely to be missed by traditional color-variability selection algorithms due to
+a strong host contribution. The metric to be developed should assess how the
+number of selected LLAGN depends on the sampling frequency in each band.
 
-While the ability to detect HFQPOs should also improve by increasing the
-sampling frequency, the amplitudes of such features are quite uncertain,
-as are the (short) duty cycles. Observations, theory and numerical simulations
-have only suggested that the fractional modulation should be small (less than
-a few percent). Thus it is not obvious how to choose a metric and observing
-strategy to maximize it, other than increasing the sampling frequency to
-at least nightly samplings in the $g$ and $u$ bands (i.e., increasing
-the sampling frequency in the DDFs at least by a factor of $\sim 3$).
+2) Assessing the standard deviation of the error in recovered time-lag between
+bands, $\tau$, using a cross-correlation analysis. The goal is to minimize
+$\sigma_{\Delta \tau}$. Additionally, one should assess the worst case estimate of
+the time-lag between bands, i.e., minimizing $\max \vert \Delta \tau \vert$.
+
+3) Determining the fractional error on the slopes and features of the PSD.
+Assuming that AGN variability is parametrized by a C-ARMA process with
+autoregressive roots $\{\rho_{i}:1 \leq i \leq p\}$, the damping timescales and
+QPO centers are given by $\tau_{i} = 1/|\Re(\rho_{i})|$ and ${\rm QPO}_{i} =
+2\pi/|\Im(\rho_{i})|$, respectively. One needs to investigate how well different
+sampling strategies recover each damping timescale and QPO center for a range of
+assumed models. The choice of appropriate models can be guided by using
+variability data from K2 observations of SDSS quasars.
 
 % --------------------------------------------------------------------
 
