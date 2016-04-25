@@ -85,11 +85,22 @@ shock breakout searches.
 
 GRB afterglow discovery is among the science cases that places the greatest stress on the LSST cadence.  Because afterglows fade rapidly---dropping several magnitudes in the first few hours---high cadence observations are required to detect the fast fading.  
 If an afterglow candidate can be recognized in real time, it will be possible to trigger TOO spectroscopy (to measure a redshift and confirm the event is cosmological), X-ray and radio observations (to detect a high-energy counterpart and the presence of a jet), and additional photometry (to characterize the lightcurve evolution).  If there is no source at the location of the transient in the coadded reference image, two consecutive observations in the same filter separated by an hour or two are the minimum required to potentially trigger followup of a fast-fading event.  
-However, a third or fourth observation in a single night---ideally in the same filter---would improve the purity of the sample.  Observations in other bands at high cadence are less useful because they require assumptions about the event's SED and its evolution to determine if a source is truly fading.
+However, a third observation within a night or two---ideally in the same
+filter---would improve the purity of the sample and reduce the reliance on
+triggered followup.  
+Observations in other bands at high cadence are less useful because they require assumptions about the event's SED and its evolution to determine if a source is truly fading.
 
-Distinguishing orphan afterglows from on-axis events (whether conventional GRBs or dirty fireballs) will also require more than two detections.  Orphan events may prove harder to recognize in real time, because they are intrinsically fainter than on-axis events and show an initial rise rather than a rapid decay.  
-Additionally, because of relativistic time dilation high redshift events are easier to detect, but these events will be fainter and more difficult to follow up.
-Accordingly, population studies of orphan afterglow candidates may be best conducted with LSST photometry alone.  These may only be productive if LSST has suffiently frequent revisits to a field in a single filter.
+Distinguishing orphan afterglows from on-axis events (whether conventional
+GRBs or dirty fireballs) will also require more than two detections.
+Orphan events may prove harder to recognize in real time, because they are
+intrinsically fainter than on-axis events and show an initial rise rather
+than a rapid decay (Figure \ref{fig:afterglow_lcs}).  Additionally, because
+of relativistic time dilation, high redshift events are easier to detect,
+but these events will be fainter and more difficult to follow up.
+Accordingly, population studies of orphan afterglow candidates may by
+necessity be conducted with LSST photometry alone.  Such studies may only
+be productive if LSST has sufficiently frequent revisits to a field in a
+single filter.
 
 % --------------------------------------------------------------------
 
@@ -111,7 +122,7 @@ this implies that our detectability estimates are optimistic.)
 We simulate random on-axis afterglows using the parameters of
 \citet{2011PASP..123.1034J}: the R-band apparent magnitude at 1 minute
 after explosion is randomly drawn from a Gaussian with $\mu=15.35$,
-$\sigma=1.59$ and decays with $\alpha=1.0$.  For these quick estimates we
+$\sigma=1.59$ and decays with $\alpha=1.0$.  For these estimates we
 simply assume zero color difference between in all LSST bands.  
 There are roughly 300 on-axis GRBs per year with these parameters;
 we calculate the average fraction of these events which have at least one,
@@ -124,8 +135,20 @@ two, or three detections in any single filter.
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
+We ran \texttt{GRBTransientMetric} on several OpSim v3.3.5 runs with a range of
+characteristics:  \opsimdbref{db:baseCadence}, the baseline cadence;
+\opsimdbref{db:NEOswithVisitTriplets}, with three visits per WFD field;
+\opsimdbref{db:NoVisitPairs}, with no visit pairs; and
+\opsimdbref{db:opstwoPS}, a PanSTARRS-like cadence.
+
+Table \ref{tab:SummaryGRBs} lists the fraction of on-axis afterglows
+detected in at least one, two, and three visits in a single filter.
+
+Because of its wider areal coverage, the PanSTARRS-like cadence of
+\opsimdbref{db:opstwoPS} maximizes the fraction of events detected in 
+one and two epochs.  Not surprisingly, the triplet-visit WFD cadence of
+\opsimdbref{db:NEOswithVisitTriplets} maximizes the three-epoch detection
+rate. 
 
 
 \begin{table}
@@ -136,22 +159,27 @@ the time of writing for this science project?
 	  {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & Notes \\
     \hline
     \thesection-1 & \footnotesize{\texttt{GRBTransientMetric},
-    \texttt{nPerFilter}\,$=1$}      & 0.17 & 0.16 & 0.20 & 0.21 &
+    \texttt{nPerFilter}\,$=1$}      & 0.17 & 0.16 & 0.20 & \textbf{0.21} &
     \footnotesize{Fraction of GRB-like transients detected in at least one
     epoch.} \\
     \thesection-2     & \footnotesize{\texttt{GRBTransientMetric},
-    \texttt{nPerFilter}\,$=2$}      & 0.12 & 0.10 & 0.09 & 0.14 &
+    \texttt{nPerFilter}\,$=2$}      & 0.12 & 0.10 & 0.09 & \textbf{0.14} &
     \footnotesize{Fraction of GRB-like transients detected in at least two 
     epochs in any single filter.} \\
     \thesection-3     & \footnotesize{\texttt{GRBTransientMetric},
-    \texttt{nPerFilter}\,$=3$}      & 0.05 & 0.08 & 0.04 & 0.04 &
+    \texttt{nPerFilter}\,$=3$}      & 0.05 & \textbf{0.08} & 0.04 & 0.04 &
     \footnotesize{Fraction of GRB-like transients detected in at least
 	    three epochs in any single filter.} 
 \end{tabular}
-\caption{Summary of figures-of-merit (FoMs) for on-axis Gamma-Ray Bursts.
-	The best value of each FoM is indicated in bold.
-\textbf{replace with actual metrics used in each section}}
-\label{tab_SummaryGRBs}
+\caption{Mean figures-of-merit (FoMs) for on-axis Gamma-Ray Bursts for one,
+two, and three detections in a filter.
+The best value of each FoM is indicated in bold.
+The wider areal coverage of \opsimdbref{db:opstwoPS} improves its detection
+rate of GRBs in one and two epochs, while the triplet visits
+in \opsimdbref{db:NEOswithVisitTriplets} naturally improve the
+three-detection efficiency.
+}
+\label{tab:SummaryGRBs}
 \end{table}
 
 % --------------------------------------------------------------------
@@ -159,12 +187,49 @@ the time of writing for this science project?
 \subsection{Discussion}
 \label{sec:\secname:discussion}
 
+An LSST cadence purely designed for discovering GRB afterglows would
+include three or more visits to each field every night, with the visits
+separated by an hour or two.
+Moreover, it would be conducted in a single filter in order to best 
+identify the lightcurve shape of off-axis events.
 
-\textbf{how long are these above limiting magnitude at these pars? feed into TripletBandMetric, or controltime...}
+While the current surveys simulated are far from this ideal
+(usually just two closely spaced visits, with subsequent revisits days
+later), nonetheless an appreciable number of GRBs are detectable.
+\opsimdbref{db:NEOswithVisitTriplets} would detect about 25 events each
+year in three epochs, already potentially the largest sample of untriggered
+afterglows.  
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+However, some care is required in interpreting these values:
+while the GRB afterglow fades rapidly over the first day of the explosion
+(Figure \ref{fig:afterglow_lcs}), at later times a 30 minute visit
+separation is not enough to reveal significant evolution in the lightcurve.
+We intend to enhance our metric to require that detections are counted only
+if significant evolution is statistically distinguishable with 1\%
+photometry.
+
+In future work we intend to simulate cosmological populations of on- and
+off-axis in order to better determine how many events could be discovered
+in time to trigger real-time followup.
+
+\begin{figure}[hbt]
+\centerline{
+\includegraphics[width=0.6\textwidth]{figs/transients/afterglow_cdf.png}
+}
+\caption{
+Cumulative fraction of GRB on-axis afterglows fainter than magnitude 24.7 
+at a given time after the burst.
+We use an $\alpha=1$ decay with no jet breaks and the brightness parameters
+of \citet{2011PASP..123.1034J}.
+}
+\label{fig:afterglow_visibility}
+\end{figure}
+
+Thanks to LSST's depth, GRBs can be visible for weeks (Figure
+\ref{fig:afterglow_visibility}).  Accordingly,
+modest enhancements to the intra- and inter-night revisit rate with 
+single-filter rolling cadences should substantially improve LSST's
+discovery and characterization of relativistic explosions.
 
 
 % ====================================================================
