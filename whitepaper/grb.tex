@@ -19,7 +19,7 @@
 %
 %
 % AUTHORS:
-%    Phil Marshall (@drphilmarshall)  - put your name and GitHub username here!
+%    Eric Bellm (@ebellm)  - put your name and GitHub username here!
 %-
 % ====================================================================
 
@@ -100,9 +100,13 @@ The core figure of merit for GRB afterglows is simply the raw number of on- and 
 
 The appropriate way to derive these detections is to conduct a Monte Carlo simulation of a cosmological population of GRBs and fold it through the LSST observing cadence \citep[cf.][]{2011PASP..123.1034J}.  We are developing this infrastructure for the MAF framework.  
 
-In the meantime, simplified metrics can give us a general idea of how well a given cadence can characterize fast-evolving transients such as GRBs.
-We have created a new metric, \texttt{GRBOnAxisMetric}, that replaces the linearly rising and decaying lightcurve in 
-\texttt{TransientMetric} with the $F \sim t^{-\alpha}$ decay characteristic of on-axis afterglows.  (For the time being, we neglect the jet break that steepens the rate of decay; this implies that our detectability estimates are optimistic.)
+In the meantime, simplified metrics can give us a general idea of how well
+a given cadence can characterize fast-evolving transients such as GRBs.  We
+have created a new metric, \texttt{GRBTransientMetric}, that replaces the
+linearly rising and decaying lightcurve in \texttt{TransientMetric} with
+the $F \sim t^{-\alpha}$ decay characteristic of on-axis afterglows.  (For
+the time being, we neglect the jet break that steepens the rate of decay;
+this implies that our detectability estimates are optimistic.)
 
 We simulate random on-axis afterglows using the parameters of
 \citet{2011PASP..123.1034J}: the R-band apparent magnitude at 1 minute
@@ -132,15 +136,15 @@ the time of writing for this science project?
 	  {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & Notes \\
     \hline
     \thesection-1 & \footnotesize{\texttt{GRBTransientMetric},
-    \texttt{nPerFilter}\,$=1$}      & - & - & - & - &
+    \texttt{nPerFilter}\,$=1$}      & 0.17 & 0.16 & 0.20 & 0.21 &
     \footnotesize{Fraction of GRB-like transients detected in at least one
     epoch.} \\
     \thesection-2     & \footnotesize{\texttt{GRBTransientMetric},
-    \texttt{nPerFilter}\,$=2$}      & - & - & - & - &
+    \texttt{nPerFilter}\,$=2$}      & 0.12 & 0.10 & 0.09 & 0.14 &
     \footnotesize{Fraction of GRB-like transients detected in at least two 
     epochs in any single filter.} \\
     \thesection-3     & \footnotesize{\texttt{GRBTransientMetric},
-    \texttt{nPerFilter}\,$=3$}      & - & - & - & - &
+    \texttt{nPerFilter}\,$=3$}      & 0.05 & 0.08 & 0.04 & 0.04 &
     \footnotesize{Fraction of GRB-like transients detected in at least
 	    three epochs in any single filter.} 
 \end{tabular}
