@@ -417,7 +417,7 @@ Dependencies:
 \begin{equation}
   FoM_{preSN} \equiv \frac{ \sum^{sightlines}_{i} f_{var, i} N_{\ast, i} } {\sum^{sightlines}_{i} N_{\ast, i}}
 \end{equation}
-where $f_{var, i}$~is the fraction of transient events that LSST would detect for observing strategy including the $i$'th sightline, $N_{\ast,i}$~the number of stars present along the $i$'th sightline, and the FoM is normalized by the total number of stars returned by the density model over all sightlines. (For the two OpSim runs tested here, \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS}, the normalization factors differ by $\sim 0.1\%$.) Therefore $0.0 \le FoM_{preSN} \le 1.0$.}
+where $f_{var, i}$~is the fraction of transient events that LSST would detect for observing strategy including the $i$'th sightline, $N_{\ast,i}$~the number of stars present along the $i$'th sightline, and the FoM is normalized by the total number of stars returned by the density model over all sightlines. (For the two OpSim runs tested here, \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS}, the normalization factors differ by $\sim 2\%$.) Therefore $0.0 \le FoM_{preSN} \le 1.0$.}
 \item \new{{\it Assumptions (observational):} Pre-SN variability similar to the
     pre-SN outburst of SN2010mc \citep{2013Natur.494...65O}. The pre-SN variability is
 modeled as a sawtooth lightcurve (in apparent magnitude). We assume this
@@ -431,11 +431,11 @@ along a particular line of sight.}
 \end{itemize}
 \begin{figure}
 \begin{center}
-  \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_1092.pdf}
-  \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_1189.pdf}
+  \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_Baseline.png}
+  \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_PanSTARRS.png}
 %  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1092.pdf}
 %  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1189.pdf} 
-  \caption{\new{Figure of merit $FoM_{preSN}$~describing LSST's sensitivity to any pre-Supernova outburst, broken down by sightline, as sky-maps. $FoM_{preSN}$~is estimated for two OpSim runs (to-date); \opsimdbref{db:opstwoPS} (left) and \opsimdbref{db:baseCadence} (right). The normalizing factors $N_{\ast, total}$ are $1.120\times 10^{12}$~for \opsimdbref{db:opstwoPS} and $1.121 \times 10^{12}$~for \opsimdbref{db:baseCadence}. The imprint of reduced sampling towards the inner plane can be clearly seen for \opsimdbref{db:baseCadence}.}}
+  \caption{\new{Figure of merit $FoM_{preSN}$~describing LSST's sensitivity to any pre-Supernova outburst, broken down by sightline, as sky-maps. $FoM_{preSN}$~is estimated for two OpSim runs (to-date); \opsimdbref{db:opstwoPS} (left) and \opsimdbref{db:baseCadence} (right). The normalizing factors $N_{\ast, total}$ are $3.692\times 10^{10}$~for \opsimdbref{db:opstwoPS} and $3.793 \times 10^{10}$~for \opsimdbref{db:baseCadence}. The imprint of reduced sampling towards the inner plane can be clearly seen for \opsimdbref{db:baseCadence}.}}
 \end{center}
 \label{f_opSim_GalacticSN}
 \end{figure}
