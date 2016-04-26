@@ -19,14 +19,22 @@ Contributing Authors:
 \credit{nathansmith},
 \credit{tommatheson},
 \credit{chomiuk},
-\credit{arcavi}
+\credit{arcavi},
+\credit{raffaellamargutti},
+\credit{Doctor},
+\credit{Fong},
+\credit{Haiman},
+\credit{Kalogera},
+\credit{Trimble},
+\credit{svalenti},
+\credit{Zauderer}
 % --------------------------------------------------------------------
 
 \section{Introduction}
 
 
-Explosive and eruptive transients include a physically and
-phenomenologically diverse ensemble of objects.   What these events share
+Explosive and eruptive transients are physically and
+phenomenologically diverse.   What these events share
 are rare, large-amplitude deviations from a quiescent state.  These
 outbursts are typically unpredictable and of limited duration, and so their
 discovery and characterization are sensitive to the detailed observing
@@ -45,13 +53,15 @@ SNe) are light beams that can be seen over cosmic distances, and some
 transients---most notably Type Ia SNe---are cosmological tracers.  
 In this chapter we focus on LSST's potential to advance the astrophysics of
 eruptive and explosive transients; the use of SNe for cosmology is
-discussed in \autoref{chp:cosmo}.
+discussed in \autoref{chp:cosmo}. Transients in the Milky Way Disk are
+discussed in more detail in \autoref{chp:galaxy}.
 
 Cadence choices will determine LSST's ability to discover, classify, and
-characterize these events. However, different types and time scales of
-phenomena will benefit from different sampling strategies---sometimes
+characterize these events. However, due to their different time scales, 
+different phenomena will benefit from different sampling 
+strategies---sometimes
 significantly different, and at times orthogonal.  Competing objectives
-described in this chapter are at the heart of LSST observing strategy and
+described in this chapter are at the heart of LSST's observing strategy and
 cadence design.
 
 When evaluating a particular observation or series of observations in
@@ -77,7 +87,7 @@ a uniform LSST cadence.  Obtaining adequate sampling for faster-evolving
 events may require special scheduling
 strategies.  For some event types, LSST can only be expected to
 provide a discovery service, and followup will necessarily be
-performed elsewhere so long as the cadence is sufficient to identify the
+performed elsewhere----so long as the cadence is sufficient to identify the
 event type.
 For some events, such as detecting electromagnetic counterparts to
 gravitational wave events,
@@ -109,26 +119,28 @@ phenomena to which we are referring as \emph{Eruptive and Explosive
     Transient Type & Science drivers & Amplitude & Time Scale & Event Rate\\
 \hline
 
-Flare stars & Flare frequency, energy, stellar age & large & min & ?\\
+Flare stars & Flare frequency, energy, stellar age & large & min & common\\
 
-X-ray Novae & Interacting binaries, stellar evolution, SN progenitors, nuclear physics & large & weeks & ?\\
+X-ray Novae & Interacting binaries, stellar evolution, SN progenitors,
+nuclear physics & large & weeks & rare\\
 
-Cataclysmic variables & Interacting binaries, stellar evolution, compact objects & large & min - days & ?\\
+Cataclysmic variables & Interacting binaries, stellar evolution, compact
+objects & large & min - days & common\\
 
-LBV variability & Late stages stellar evolution, Mass loss, SN progenitors & large & weeks-years & ?\\
+LBV variability & Late stages stellar evolution, Mass loss, SN progenitors
+& large & weeks-years & rare \\
 
 Massive star eruptions & Late stages stellar evolution, Mass loss, SN progenitors & extreme & weeks-years & rare\\
 
-Super Novae & stellar evolution, feedback, chemical enrichment, cosmology & extreme & days - months & very common\\
-
+Supernovae & stellar evolution, feedback, chemical enrichment, cosmology & extreme & days - months & very common\\
 
 GRBs & jet physics, SN connection, stellar evolution & extreme & min - days
-& very rare\\
+& rare\\
 
 TDEs & Massive BH demographics, accretion physics & large & weeks-months & very rare\\
 
 
-LIGO detections & EM characterization & unknown & unknown & ?\\
+LIGO detections & EM characterization & unknown & unknown & rare\\
 
 \emph{Unknown} & Discovery & unknown & unknown & rare\\
 
@@ -167,13 +179,13 @@ must take place elsewhere. This implies that the LSST observations
 must be sufficient to recognize that an event is fast-evolving in real
 time in order to to trigger followup. However, assessing the rise
 slope is best done with a single filter, so prompt characterization
-also needs multiple epochs within a night, although separated by at
+also needs multiple epochs within a night, preferably separated by at
 least a few hours, in the same filter (we discuss this in detail in
-Section~\ref{transientsAge}). That is: observing with different
-filters it is impossible (or very hard) to separate shape from
-color. Colors of course allow to learn a lot more about a statistical
-sample (Section~\ref{SNtransients}): as long as the epoch of peak is
-reliably assessed coadded light curves and color time series can be studied.
+Section~\ref{sec:transientsAge}). That is, when observing with different
+filters it is very difficult to separate lightcurve evolution from
+color variations. Colors are informative when considering a statistical
+samples (Section~\ref{sec:SNtransients}): as long as the epoch of peak is
+reliably assessed, coadded light curves and color time series can be studied.
 
 SN fall in an intermediate time range.  LSST will provide
 multiple visits in multiple filters during the typical SN duration
@@ -190,7 +202,7 @@ those that show signature of shock break-out, or companion interaction
 in the early light curve, and would be candidates for \emph{flash
 spectroscopy} follow-up \citep[e.g.,][]{2014Natur.509..471G}. 
 In addition, metrics that
-quantify LSST's ability to constraint SN physics in a statistically
+quantify LSST's ability to constrain SN physics in a statistically
 large sample of SN are needed.
 
 TDEs have only recently started to be characterized in the optical
@@ -200,9 +212,10 @@ would like to asses - through metrics - how well TDEs can be
 distinguished from supernovae based on their light curve shape and
 color (in real-time so that followup observations can be triggered)
 and how well the LSST light curves themselves can be used to model the
-TDE emission and deduce the black hole properties.  Ref. Science Book:
-10.6.1, \citet{Gezari2012, Chornock2014, Arcavi2014, Holoien2014,
-  Holoien2015, Holoien2016}.
+TDE emission and deduce the black hole properties.  
+%Ref. Science Book:
+%10.6.1, \citet{Gezari2012, Chornock2014, Arcavi2014, Holoien2014,
+%Holoien2015, Holoien2016}.
 
 Large amplitude flares from AGN may mimic
 explosive transients; they are discussed in Chapter~\ref{chp:agn}.
@@ -212,43 +225,49 @@ discoveries of yet-to-be-observed transients.  An ideal transient
 discovery survey would include balanced coverage of all time scales. LSST
 will cover longer time periods well, but will have to make some
 choices of emphasis in coverage of shorter time-scales. 
-\textbf{histograms of delta-t}
 
-In the secitons that follow we will use case studies to asses:
+In the sections that follow we will use several case studies to assess
+LSST's performance for a range of time-domain science:
 
 \begin{itemize}
 \item
-  The discerning power of a given LSST observing cadence.
-  While early classification of transients is extremely important for
-  transient science with LSST, it is also an incerdibly difficult task,
-  on which many astronomers and statisticians are working. It is unfeasible,
-  and beyond the scope of this work to attempt a naive classification metric.
-  However a crucial input to follow-up strategy design is the early
-  identification of young, fast evolving transients. We identify a region of
-  the phase-space of rising speed and color that is characteristif of a
+  The ability of a given LSST cadence to discriminate truly young
+  transients from those only first detected well after their explosion date.  
+  This ability is a crucial input to follow-up strategy design.
+  We identify a region of lightcurve slope
+  % the phase-space of rising speed and color 
+  that is characteristic of a
   variety of transients in their early phases and assess the ability of LSST's
-  cadences to place transients within this phase-space. (Eric, Stefano, Iair, Fed...)
-  %For this topic we will address the ability to distinguish LBVs, SNe, and TDEs.
-\item
-  The ability to identify in real-time a rapidly-evolving 
-  object of interest and
-  trigger prompt follow-up observations. For this topic GRBs are used as
-  a case study. ***ERIC
-\item
-  The insight that a cadence gives into a single transient class. The
-  case study will be
-  **massive star eruptions if Nathan gets it done
-  **CVs if Laura gets it done
+  cadences to place transients within this phase-space. 
+  More sophisticated classification algorithms will likely be necessary, but
+  are beyond the scope of this whitepaper.
+  %While early classification of transients is extremely important for
+  %transient science with LSST, it is also an incerdibly difficult task,
+  %on which many astronomers and statisticians are working. It is unfeasible,
+  %and beyond the scope of this work to attempt a naive classification metric.
 \item 
   The statistical constraints to a transient class that can be obtained
   over the course of the LSST survey, from the LSST survey data alone
   (assuming a successful classification). SN Ia early interaction
   signatures or IIb shock break-out (Fed).
 \item
-  The ability of LSST, given a cadence, to provide insightful coverage
-  for long duration transients. This metric favors cadences with small
-  seasonal gaps, which allow us to gather complete color evolution of
-  slow evolving transients, such as LBV and TDEs. (Ryan)
+  The ability to identify in real-time a rapidly-evolving 
+  object of interest and
+  trigger prompt follow-up observations. For this topic GRBs are used as
+  a case study. 
+\item
+  The insight that a cadence gives into single transient classes. We
+  discuss CVs, massive star eruptions, and TDEs.
+%\item
+%  The ability of LSST, given a cadence, to provide insightful coverage
+%  for long duration transients. This metric favors cadences with small
+%  seasonal gaps, which allow us to gather complete color evolution of
+%  slow evolving transients, such as LBV and TDEs. (Ryan)
+  \item
+	  The value of triggered Target-of-Opportunity observations for
+	  following up very rare, fast-evolving events.   Here the kilonova
+	  counterparts expected from Advanced LIGO triggers are used as a
+	  case study.
 
 \end{itemize}
 
@@ -328,36 +347,13 @@ construct an interesting sample of objects is source-dependent.
 Calculate what fraction of transients would be detected using an ASCII
 input file for the light curve.
 
-\subsection{Proposed Metrics}
-
-The following is a raw list of metric ideas; these need specificity
-and further description.
-
-The triplet metric may also be altered to include filter constraints,
-such that the triplets are drawn from a single filter or subset of
-filters.
-
-Color evolution constraint: triplets of observations in a specific
-color (really requirement of two triplets in multiple filters)
-
-  2D Histogram of delta ts between observations constituting a triplet
-
-Histogram of median visit series length vs maximum visit spacing
-within the series
-
-Number of events adequately sampled
-
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
 \label{sec:\chpname:analysis}
 
 Analysis shows that current simulations provide  poor coverage in any one filter for transient events longer than a deep drilling session ($\sim$30 minutes) and shorter than $\sim$ weeks.
-
-Simulated performance for SN observations must be analyzed for both
-main survey and mini-survey (deep drilling) productivity.  It is
-considered that current simulated schedules give inadequate
-performance for SN science.
+\textbf{delta T histogram}
 
 
 
@@ -395,10 +391,6 @@ overlap have not yet been investigated.
 \input{transientAge.tex}
 % --------------------------------------------------------------------
 
-\input{cv.tex}
-
-% --------------------------------------------------------------------
-
 \input{sn.tex}
 
 % --------------------------------------------------------------------
@@ -408,6 +400,10 @@ overlap have not yet been investigated.
 % --------------------------------------------------------------------
 
 \input{tde.tex}
+
+% --------------------------------------------------------------------
+
+\input{cv.tex}
 
 % --------------------------------------------------------------------
 
