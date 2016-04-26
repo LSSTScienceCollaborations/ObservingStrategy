@@ -156,21 +156,22 @@ from accretion shocks.
 \hline
 1.  & Produce ASCII lightcurve for eruptive outburst \\
 2.  & Initialise large array to store the maps of fraction detected as a function of duration and amplitude. \\
-2.  & for {\it duration} in range \{min, max\}:  \\
-3.  & ~~~~ for {\it amplitude} in range \{min, max\}: \\
+2.  & for {\it duration T} in range \{min, max\}:  \\
+3.  & ~~~~ for {\it amplitude A} in range \{min, max\}: \\
 4.  & ~~~~~~~~~~ run {\tt mafContrib/transientAsciiMetric} \\
-5.  & ~~~~~~~~~~ store the spatial map of the fraction detected \\
+5.  & ~~~~~~~~~~ store the spatial map of the fraction detected for this (A, T) pair \\
 6.  & Initialise master arrays to hold the run of duration distribution measurements.\\
-7.  & for {\it iDraw} in range \{1, nDraws\}:\\
-8.  & ~~~~ construct model population with input duration distribution \\
-9.  & ~~~~ Apply the stored metrics from 2-5 to measure fraction recovered \\
-10.  & ~~~~ Characterize the duration distribution for this draw \\
-11. & ~~~~ Fill the {\it iDraw}'th entry in the master arrays. \\
-12. & {\bf FoM 1:} Compute the median and variance of the upper/lower quintiles. \\
-13. & {\bf FoM 2:} Evaluate the bias between recovered and input high-state duration. \\
+7. & Produce distribution of high--state durations and amplitudes from which the simulations will be drawn. \\
+8.  & for {\it iDraw} in range \{1, nDraws\}:\\
+9.  & ~~~~ construct model population with input duration distribution \\
+10.  & ~~~~ Apply the stored metrics from 2-5 to measure fraction recovered \\
+11.  & ~~~~ Characterize the duration distribution for this draw \\
+12. & ~~~~ Fill the {\it iDraw}'th entry in the master arrays. \\
+13. & {\bf FoM 1:} Compute the median and variance of the upper/lower quintiles. \\
+14. & {\bf FoM 2:} Evaluate the bias between recovered and input high-state duration. \\
 \hline
 \end{tabular}
-\caption{\new{Pseudocode for Figure of Merit recovering the distribution
+\caption{\new{Steps for Figure of Merit recovering the distribution
   for the duration of EXor high states. See Section \ref{sec:MW_SFH:targets} }}
 \label{table:pseudoForExor}
 \end{table}
