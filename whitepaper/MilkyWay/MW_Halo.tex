@@ -34,7 +34,7 @@ test current models of hierarchical galaxy formation.
 LSST will provide an unprecedented combination of
 area, depth, multi-band, multi-epoch information for pursuing detail studies
 of the structure of this old Galactic component. We focus here in three
-specific projects that can be pursued with LSST. We define metrics that can
+specific projects that can be pursued with LSST. We suggest metrics and figure of merits that can
 be calculated in order to quantify the feasibility of the projects under different
 observational strategies. We expect more projects will join later.
 
@@ -42,27 +42,27 @@ RR Lyrae stars have been known for several decades as excellent tracers
 of the halo population. They are not only old stars ($>10$ Gyrs) but they are
 also excellent standard candles that allow to build 3-dimensional maps. 
 The halo of the Milky Way has been now surveyed in a very large extension up to 
-$\sim 60-80$ kpc from the Galactic center (refs). Beyond that, the halo is
+$\sim 60-80$ kpc from the Galactic center \citep[][among others]{drake13a,drake13b,zinn14,torrealba15}. 
+Beyond that, the halo is
 mostly uncharted territory.
 From these RR Lyrae surveys, we have learned that the halo is filled with substructures
 which are usually interpreted as debris from destroyed satellite galaxies. The smooth 
 component of the RR Lyrae distribution is well described
 with a power-law of the mean number density of RR Lyrae stars as a function of
-galactocentric distance, which gets steeper after $\sim 30$ kpc (refs). 
-Thus, beyond $\sim 60$ kpc, few field RR Lyrae stars are expected. However, we expect that 
+galactocentric distance, which gets steeper after $\sim 30$ kpc \citep{zinn14}. 
+Thus, beyond $\sim 60$ kpc, few field RR Lyrae stars are expected. However, we presume that 
 any RR Lyrae star beyond this distance may be part of either debris material or distant
-satellite galaxies of low luminosity that have been escaped detection until now (refs). 
+satellite galaxies of low luminosity that have been escaped detection until now \citep{sesar14,baker15}. 
 LCDM models predict debris as far as $0.5$~Mpc from the galactic center
 This is the territory that will be explored by LSST.
 
 Similarly, red giant stars can be used to trace the structure of the halo up to large
 distances. They have the advantage 
-of being bright and numerous stars. 
-%%COLIN, PLEASE STEP IN HERE.
+of being bright and numerous stars.
 
 Fainter than these two tracers, main sequence stars stand up as a tool for studying
 the Halo. They are the most numerous type of stars available and statistical studies 
-are possible. Using the technique of photometric metallicities (Ivezic et al 2008), 
+are possible. Using the technique of photometric metallicities \citep{ivezic08}, 
 SDSS provided unprecedented maps of the metallicity distribution up to  $\sim 10$ 
 kpc from the Galactic center, unveiling not only the mean metallicity distribution 
 of the halo but also, sub-structures within the halo. This kind of works will be extended
@@ -81,12 +81,16 @@ type of objects:
 
 \item RR Lyrae stars: These are bright horizontal-branch variable stars with
 periods between 0.2 to 1.0 days and large amplitudes, particularly in the bluer 
-bandpasses (g amplitudes $0.5 - 1.5$~mag). Optimal use of LSST for discovering
-RR Lyraes involves the simultaneous use of multi-band time series (refs).
-Chapter \ref{chp:variables} discusses with details the discovery metrics for RR Lyrae stars.
-A particularly valuable measurement for studies in the halo is the infrared mean
-magnitudes z and y since they provide the most accurate way to obtain 
-distances.
+bandpasses (g amplitudes $0.5 - 1.5$~mag). \citet{2012AJ....144....9O} made an intensive
+search for RR Lyrae stars in simulated LSST data and reached to the conclusion 
+that this type of stars can be recovered to distances $\sim 600$ kpc. A similar procedure
+can now be performed using MAF and current cadence scenarios.
+Chapter \ref{chp:variables} discusses the discovery metrics for variable stars 
+including RR Lyrae stars. However, optimal recovery may involve more complex metrics
+involving the simultaneous use of multi-band time series \citep{vanderplas15,vivas16}.
+Besides the recovery of the variable stars, a particularly valuable measurement to track 
+for studies in the halo is the infrared mean magnitudes z and y since they provide the 
+most accurate way to obtain distances \citep{caceres08}. 
 
 \item Main sequence stars: lacking any distinguishable variability, the
 challenge in selecting a large and clean sample of main sequence stars comes
@@ -101,12 +105,24 @@ the LSST filters.
 a far deeper volume than main sequence stars at similar apparent magnitudes,
 but they must first be identified and separated from the very numerous main
 sequence stars present in the field. A gravity-sensitive photometric index can
-be used for separating efficiently giants from dwarfs (refs). The u magnitude
+be used for separating efficiently giants from dwarfs. The u magnitude
 is an essential ingredient in this process and it is necessary to follow-up
 the behavior of the u limiting magnitude under different observational
-strategies.
+strategies. Figure~\ref{fig-MW-giants} shows the distance that can be reached 
+by M giants of different metallicities assuming a limiting magnitude in the u band of
+26.0. 
 
 \end{itemize}
+
+\begin{figure}
+\begin{center}
+  \includegraphics[scale=0.5]{./figs/milkyway/lsst_mgiants_grdist.pdf}
+  \caption{Distance to which red giant stars can be identified in the galactic halo asuuming a limiting magnitude
+  of u=26.0. The color code scales with the metallicity of the stars. More metal-poor stars can be 
+  detected to farther distances. \label{fig-MW-giants}}
+\end{center}
+\end{figure}
+
 
 % --------------------------------------------------------------------
 
@@ -139,25 +155,37 @@ integrate over the distribution of galaxy sizes. This modeling process is
 currently being verified against existing surveys, and will be incorporated into
 the observing strategy study at a later date.
 
+\textbf{Distance to the farthest RR Lyrae stars:} This metrics involves the ability to
+recover an RR Lyrae star as a function of its distance. An RR Lyrae star may be
+considered as recovered if its period and amplitude are within 10\% of their real values.
+The distance is calculated using the mean magnitude of the recovered RR Lyrae stars 
+(in the more IR photometrics bands) and the interstellar extinction (maps are available 
+now in MAF).  Output of this metric is the distance at which certain percentage of RR 
+Lyrae stars (eg. 80\%) can be recovered by LSST. It is expected that the results 
+of this metric at low galactic latitudes will be largely dependent on the chosen observational 
+strategy. 
+
+A reasonable Figure of Merit for this sub-project is the volume of the halo within RR Lyrae stars 
+can be recovered. Similarly, another Figure of Merit is the fraction of the Galactic thick disk's volume that can be 
+traced by RR Lyrae stars.
+
+\textbf{Distance to the farthest main sequence stars and giant stars:} Being non-variable objects
+the metrics for these objects are somewhat simpler and requires the determination of the limiting
+magnitude (in u band) for which galaxy/star separation is reliable to certain level. Then, a figure of
+merit is the volume of the halo mapped with these tracers. 
+
+
+
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
 \label{sec:\secname:MW_Halo_analysis}
 
-\new{Table \ref{tab_SummaryMWHalo} summarizes the science Figures of Merit
+Table \ref{tab_SummaryMWHalo} summarizes the science Figures of Merit
 for the Milky Way Halo science cases for LSST. OpSim analysis for this
-Section will be summarized in that Table; at the present date (Feb
-2016) placeholder rows are given for the FoM's. Input from the reader
-is welcome!}
-
-\begin{itemize}
-
-\item Comment on the north ecliptic spur in \opsimdbref{db:baseCadence}. Is it close to the
-WFD S/G limit?
-
-\item Pan-STARRS-like cadence ops2\_1092, observing up to dec +15. How much
-volume do we gain, and how much do we lose in the WFD survey?
-\end{itemize}
+Section will be summarized in that Table; at the present date (April
+2016) placeholder rows are given for the FoM's. Input from the readers
+is welcome!
 
 %%% SUMMARY TABLE FOR THIS SUBSECTION
 
@@ -166,11 +194,11 @@ volume do we gain, and how much do we lose in the WFD survey?
     FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence} }} & {\rotatebox{90}{\opsimdbref{db:opstwoPS} }} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
     \hline
     1.1. & \footnotesize{Survey volume to RR Lyraes}      & - & - & - & - & \footnotesize{Volume within which the distance to a template RR Lyrae star can be estimated to 10\% uncertainty.} \\
-    1.2. & \footnotesize{Survey volume to Main Sequence tracers down to limiting magnitude $X$} & - & - & - & - & \footnotesize{(Including star-galaxy separation for MS objects)} \\
+    1.2. & \footnotesize{Survey volume to Main Sequence tracers} & - & - & - & - & \footnotesize{(Including star-galaxy separation)} \\
     1.3. & \footnotesize{Survey volume to Red Giants} & - & - & - & - & - \\
-    2.1. & \footnotesize{Completeness of metallicity sub-structure recovery as a function of distance} & - & - & - & - & \footnotesize{Over all three tracer populations?} \\ 
-    3.1. & \footnotesize{Uncertainty and bias in age distribution parameterization of the main Halo population} & - & - & - & - & - \\
-    3.2. & \footnotesize{Uncertainty and bias in the population fraction identified correctly with each halo component} & - & - & - & - & \footnotesize{Some overlap with Halo astrometry FoM?} \\
+%    2.1. & \footnotesize{Completeness of metallicity sub-structure recovery as a function of distance} & - & - & - & - & \footnotesize{Over all three tracer populations?} \\ 
+%    3.1. & \footnotesize{Uncertainty and bias in age distribution parameterization of the main Halo population} & - & - & - & - & - \\
+%    3.2. & \footnotesize{Uncertainty and bias in the population fraction identified correctly with each halo component} & - & - & - & - & \footnotesize{Some overlap with Halo astrometry FoM?} \\
 \end{tabular}
 \caption{Summary of figures-of-merit (FoMs) for the Galactic Halo science cases. The best value of each FoM is indicated in bold. Runs \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS} refer to the Baseline and PanSTARRS-like strategies, respectively. See Section \ref{sec:MW_Halo}.}
 \label{tab_SummaryMWHalo}
@@ -179,12 +207,12 @@ volume do we gain, and how much do we lose in the WFD survey?
 
 % --------------------------------------------------------------------
 
-\subsection{Discussion}
-\label{sec:\secname:MW_Halo_discussion}
+%\subsection{Discussion}
+%\label{sec:\secname:MW_Halo_discussion}
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+%Discussion: what risks have been identified? What suggestions could be
+%made to improve this science project's figure of merit, and mitigate
+%the identified risks?
 
 
 % ====================================================================
