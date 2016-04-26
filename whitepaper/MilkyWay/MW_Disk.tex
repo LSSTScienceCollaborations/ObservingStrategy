@@ -26,7 +26,7 @@
 \section{Mapping the Milky Way Disk}
 \def\secname{MW_Disk}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
 
-\noindent{\it Will Clarkson, Peregrine McGehee, Jay Strader, Chris Britt}  % (Writing team)
+\noindent{\it Will Clarkson, Jay Strader, Chris Britt}  % (Writing team)
 
 % This individual section will need to describe the particular
 % discoveries and measurements that are being targeted in this section's
@@ -53,11 +53,15 @@ identify a statistically meaningful sample. Some (such as the novae
 that allow detailed study of the route to Type Ia Supernovae) offer
 unique laboratories to study processes of fundamental importance to
 astrophysics at all scales. Others (like intra-disk microlensing
-events) offer the {\it only} probe of important populations. An
-important collateral benefit of studies in the plane with an LSST-like
-facility, is improved mapping of the distribution and observational
-effects of the ISM (particularly dust), which is of importance to all
-IR/Optical/UV observational studies.
+events) offer the {\it only} probe of important populations. 
+
+An important collateral benefit of studies in the plane with an
+LSST-like facility, is improved mapping of the distribution and
+observational effects of the ISM (particularly dust), which is of
+importance to all IR/Optical/UV observational studies. \new{Due to its
+  importance for studies of {\it all} Milky Way Astronomy, LSST's use
+  to constrain the distribution of interstellar dust in three
+  dimensions is presented in Section \ref{sec:MW_Dust}.}
 
 % --------------------------------------------------------------------
 
@@ -71,7 +75,7 @@ IR/Optical/UV observational studies.
 %conditions? In broad terms, how would we expect the observing strategy
 %to be optimized for this science?
 
-We have identified five science cases within the general area of Milky
+We have identified \new{four} science cases within the general area of Milky
 Way Disk studies, that will have a diversity of dependencies on
 observing strategy (e.g. slow intrinsic variability vs fast intrinsic
 variability vs no variability). When the figures of merit have been
@@ -82,7 +86,7 @@ computed for these science cases, the results will be summarized in a Table in S
   \item 2. New insights into the behavior of Novae and the route to Type Ia Superovae;
   \item 3. The next Galactic Supernova;
   \item 4. Measuring population parameters of planets outside the Snow Line with Microlensing;
-  \item 5. A three-dimensional Dust map and improvements in the reddening law
+  %\item 5. A three-dimensional Dust map and improvements in the reddening law
 \end{itemize}
 
 Motivation and qualitative description of response to observing strategy:
@@ -249,36 +253,6 @@ follow-up required, the models of Gould (2013) suggest each field
 should be observed once every few nights. With sparser coverage,
 the survey would lose sensitivity to microlensing events in progress.
 
-{\bf 5. Dust in the Milky Way disk:}
-LSST studies of the interstellar medium, in particular the dust component,
-are discussed in Section \ref{sec:MW_Dust}.
-
-The Pan-STARRS1 survey (PS1) has
-produced a three-dimensional dust map of the region of the sky covered
-in their 3$\pi$ survey (which excludes a large part of the Galactic
-Plane toward the south). Such maps are necessary to accurately measure
-the intrinsic luminosities and colors of both Galactic and
-extragalactic sources. The PS1 map (Schlafly et al.~2014) saturates at
-extinctions $E(B-V) > 1.5$ as their tracer stars fall out of the
-survey catalogs fainter than $g\sim 22$, meaning that this
-high-fidelity map does not extend uniformly to within a few degrees of
-the midplane. In addition, it only extends to a distance of about 4.5
-kpc. Deep LSST data will allow this map to be extended to much higher
-extinctions and larger distances. Owing to the high extinction and the
-use of blue filters, this project is less affected by crowding than
-other projects requiring photometry in the Plane. 
-
-{\it Response to observing strategy:} When focusing on dust in the ISM (as
-opposed to time-domain studies, e.g., dust around star-forming
-regions or young stars), the main drivers of feasibility are
-coverage of the few degrees around the Plane with sufficient photometric depth
-and accuracy. This project is less affected by crowding than other
-projects requiring photometry in the Plane owing to its use of blue
-filters and the high extinction.  Nonetheless, quantiative estimates of
-the expected photometric accuracy in coadded $u$ and $g$ images at low
-Galactic latitude are desirable.
-
-
 % --------------------------------------------------------------------
 
 \subsection{Figures of Merit}
@@ -386,23 +360,23 @@ Dependencies:
   \item Event rate with sufficient-cadence observations to trigger followup as a function of (distance, lens mass);
 \end{itemize}
 
-{\bf FoM 5.1 - Errors in derived $E(B-V)$, $n_H$~as a function of
-  location in the Plane.}
-Dependencies:
-\begin{itemize}
-  \item SNR scaling with apparent magnitude
-    \item For the M dwarf based technique, the relation between
-      reddening-invariant index $[Q_{gri}]$~and intrinsic $g-i$~are
-      expressed as polynomials, so expect non-linear relation with
-      photometric error.  
-      \item This uses a 5th-order polynomial to describe the
-        $(Q_{gri}, g-i)$~stellar locus for M dwarfs $(g-i > 1.6)$.
-        \item Care must be taken to correctly propagate errors through
-          the various indices used - not trivial with so many choices
-          of flux ratio used.
-          \item Uncertainties in the parameterizations used for e.g. color-$M_V$~relationships.
-            \item The above are all for every location probed on the map.
-\end{itemize}
+%{\bf FoM 5.1 - Errors in derived $E(B-V)$, $n_H$~as a function of
+%  location in the Plane.}
+%Dependencies:
+%\begin{itemize}
+%  \item SNR scaling with apparent magnitude
+%    \item For the M dwarf based technique, the relation between
+%      reddening-invariant index $[Q_{gri}]$~and intrinsic $g-i$~are
+%      expressed as polynomials, so expect non-linear relation with
+%      photometric error.  
+%      \item This uses a 5th-order polynomial to describe the
+%        $(Q_{gri}, g-i)$~stellar locus for M dwarfs $(g-i > 1.6)$.
+%        \item Care must be taken to correctly propagate errors through
+%          the various indices used - not trivial with so many choices
+%          of flux ratio used.
+%          \item Uncertainties in the parameterizations used for e.g. color-$M_V$~relationships.
+%            \item The above are all for every location probed on the map.
+%\end{itemize}
 
 % --------------------------------------------------------------------
 
@@ -426,7 +400,7 @@ opt for a very bright peak apparent magnitude in all filters. We assume that
 the probability of a supernova going off is proportional to the number of stars
 along a particular line of sight.}
 \item \new{{\it Parameters used:} The pre-SN outburst is simulated using the lsst-sims metrics.TransientMetric module. The lightcurve used has the following parameters: rise slope $-2.4$; time to peak; $20$~days; decline slope: $0.08$; total transient duration: 80 days. All filters are used in the detections, and 20 evenly-spaced phases are simulated for sensitivity to pathological cases (parameter nPhaseCheck=20). Peak apparent magnitudes used: $\{ 11,9,8,7,6,6\}$~in $\{u,g,r,i,z,y\}$. Then, $f_{var, i}$~is taken as the ``Sawtooth Alert'' quantity returned by metrics.TransientMetric. The starcounts metric (in sims-maf-contrib) is used to estimate the number of stars along a given line of sight, using fiducial distance limits ($10$pc $\le d \le 80$kpc).}
-\item {\it \bf Results:} $FoM_{preSN}$(\opsimdbref{db:baseCadence}) = 0.129, while $FoM_{preSN}$(\opsimdbref{db:opstwoPS})=0.826.\footnote{\new{2016-04-25 For comparison, when run on 2015-era OpSim runs \opsimdbref{db:baseCadence} (Baseline strategy) and \opsimdbref{db:opstwoPS} (PanSTARRS-like strategy) the results were 0.251 (Baseline) and 0.852 (PanSTARRS-like strategy). So the 2016-era OpSim runs show a sharper disadvantage than before to the Baseline cadence for the Galactic Supernova case.}} See Figure \ref{f_opSim_GalacticSN} for a breakdown of this figure of merit across sightlines.
+\item {\it \bf Results:} $FoM_{preSN}$(\opsimdbref{db:baseCadence}) = 0.129, while $FoM_{preSN}$(\opsimdbref{db:opstwoPS})=0.826.\footnote{\new{2016-04-25 For comparison, when run on 2015-era OpSim runs {\tt enigma\_1189} (Baseline strategy) and {\tt ops2\_1092} (PanSTARRS-like strategy) the results were 0.251 (Baseline) and 0.852 (PanSTARRS-like strategy). So the 2016-era OpSim runs show a sharper disadvantage than before to the Baseline cadence for the Galactic Supernova case.}} See Figure \ref{f_opSim_GalacticSN} for a breakdown of this figure of merit across sightlines.
 
 \end{itemize}
 \begin{figure}
@@ -435,7 +409,7 @@ along a particular line of sight.}
   \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_PanSTARRS.png}
 %  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1092.pdf}
 %  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1189.pdf} 
-  \caption{Figure of merit $FoM_{preSN}$~describing LSST's sensitivity to any pre-Supernova outburst, broken down by sightline, as sky-maps. $FoM_{preSN}$~is estimated for two OpSim runs (to-date); \opsimdbref{db:baseCadence} (left; Baseline cadence) and \opsimdbref{db:opstwoPS} (right; PanSTARRS-like strategy). The normalizing factors $N_{\ast, total}$ are $3.692\times 10^{10}$~for \opsimdbref{db:opstwoPS} and $3.793 \times 10^{10}$~for \opsimdbref{db:baseCadence}. The imprint of reduced sampling towards the inner plane can be clearly seen for \opsimdbref{db:baseCadence}.}
+  \caption{Figure of merit $FoM_{preSN}$~describing LSST's sensitivity to any pre-Supernova outburst, broken down by sightline, as sky-maps. $FoM_{preSN}$~is estimated for two OpSim runs (to-date); \opsimdbref{db:baseCadence} (left; Baseline cadence) and \opsimdbref{db:opstwoPS} (right; PanSTARRS-like strategy). The normalizing factors $N_{\ast, total}$ are $3.692\times 10^{10}$~for \opsimdbref{db:opstwoPS} and $3.793 \times 10^{10}$~for \opsimdbref{db:baseCadence}. The imprint of reduced sampling towards the inner plane can be clearly seen for \opsimdbref{db:baseCadence}. Notice the difference in scale between the left and right panels. See Section \ref{sec:MW_Disk:MW_Disk_analysis}}
 \end{center}
 \label{f_opSim_GalacticSN}
 \end{figure}
@@ -483,8 +457,8 @@ deep-wide-fast survey:
     3.1 & \footnotesize{Galactic Supernova pre-variability} & 0.13 & {\bf 0.83} & - & - & \footnotesize{Fraction of SN2010mc-like outbursts that LSST would detect; $FoM_{preSN} = f_{var} \times N_{\ast}$} \\
     4.1 & \footnotesize{Fraction of triggered microlens candidates} & - & - & - & - & - \\
     4.2 & \footnotesize{Uncertainty in disk-disk microlens distribution parameters due to missed events} & - & - & - & - & \footnotesize{LSST as initial microlens trigger} \\
-    5.1a & \footnotesize{Median (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & \footnotesize{(Most useful FoM probably a spatial map of the uncertainty.)} \\
-    5.1b & \footnotesize{Variance (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & - \\
+%    5.1a & \footnotesize{Median (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & \footnotesize{(Most useful FoM probably a spatial map of the uncertainty.)} \\
+%    5.1b & \footnotesize{Variance (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & - \\
   \end{tabular}
 \caption{Summary of figures-of-merit for the Galactic Disk science cases. The best value of each FoM is indicated in bold. Runs \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS} refer to the Baseline and PanSTARRS-like strategies, respectively. See Section \ref{sec:MW_Disk}. }
 \label{tab_SummaryMWDisk}
