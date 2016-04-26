@@ -89,7 +89,11 @@ computed for these science cases, the results will be summarized in a Table in S
   %\item 5. A three-dimensional Dust map and improvements in the reddening law
 \end{itemize}
 
-Motivation and qualitative description of response to observing strategy:
+\new{Below we provide more detail on these science cases, including
+  qualitative discussion of the expected impact of the choice of
+  observing strategy, as these science cases are not discussed in
+  detail elsewhere (in the LSST Science Book or the Ivezic et al. 2008
+  summary paper).}
 
 {\bf 1. Probing quiescent compact binaries via variability:} Of the
 millions of stellar-mass black holes formed through the collapse of
@@ -261,16 +265,46 @@ the survey would lose sensitivity to microlensing events in progress.
 %Quantifying the response via MAF metrics: definition of the metrics,
 %and any derived overall figure of merit.
 
-Unpolished notes about likely (reasonably straightforward) figures of
-merit (FoM) follow, along with (in some cases) possible directions for
-future higher-level FoM. In many cases, dependencies on
-Metrics are identified.  \new{WIC - Note to co-authors: these FoM
-  were chosen to build off existing metrics in development. To take
-  one example, Peter Y has developed some nice ipython Notebooks that
-  illustrate representative Monte Carlo tests for periodicity
-  detection including spatial variation - thus I think the Figures of Merit
-  below should be straightforward to implement by modification of
-  existing tools.}
+\new{Here we describe the Figures of Merit (FoMs) we intend to
+  implement and evaluate for the candidate observing strategies of
+  interest. Where these FoM have already been evaluated, we provide
+  their evaluation in Table \ref{tab_SummarMWDisk}. Those FoM:}
+
+\begin{itemize}
+  \item FoM 1.1 - Fraction of quiescent black hole binaries detectable through ellipsoidal variability;
+    \item FoM 1.2 - Uncertainty on the recurrence time distribution of Dwarf Novae;
+      \item FoM 2.1 - Uncertainty in the number of Novae detected over the LSST survey interval;
+        \item FoM 3.1 - Fraction of Galactic supernovae for which LSST would detect variability {\it before} the main Supernova event.
+          \item FoM 4.1 - Fraction of accurately-triggered Microlens candidates
+            \item FoM 4.2 - Uncertainty in the mass function of intra-disk microlensed planets;
+\end{itemize}
+
+\new{In these FoMs, ``uncertainty'' can be taken to mean both random
+  and systematic uncertainty, likely recorded as separate numbers for
+  each FoM. We anticipate determining the FoMs that record population
+  parameter-uncertainty in a Monte Carlo sense. This is particularly
+  relevant for FoMs in which the event rate per pointing may be low
+  ($\lesssim 1$~event per pointing per decade) but not so low that
+  only 1-few events are expected over the whole sky over the lifetime
+  of the survey (as is the case for FoM 3.1, the First Galactic
+  Supernova). In very rare-event cases, the FoM can scale with the
+  stellar density and the recovery fraction of that particular
+  transient, and need only be evaluated once for the entire survey.}
+
+\new{Since (at the time of writing) evaluating a Metric with relaxed
+  SQL constraints typically takes half an hour or more, we do not
+  expect to re-evaluate the metric for each trial in a Monte Carlo
+  evaluation. Instead, the best strategy seems to be to evaluate the
+  run of a particular metric against a parameter of interest (apparent
+  magnitude, say, which is also expected to lead to a turnover in the
+  importance of confusion error), and the investigator's preferred
+  Monte Carlo framework for their population of interest can
+  interpolate the stored Metric values at the time of trial-population
+  generation. At the present date (2016-04-26) we have begun
+  investigating the use of these ``Vector Metrics'' for Figures of
+  Merit. We describe the anticipated FoMs in these cases below.}
+
+\new{WIC 2016-04-26 7pm EDT: more to follow a little later this evening!}
 
 
 {\bf FoM 1.1 - Fraction of quiescent
