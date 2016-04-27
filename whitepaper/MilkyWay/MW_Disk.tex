@@ -26,7 +26,7 @@
 \section{Mapping the Milky Way Disk}
 \def\secname{MW_Disk}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
 
-\noindent{\it Will Clarkson, Jay Strader, Chris Britt}  % (Writing team)
+Authors: \credit{willclarkson}, \credit{caprastro}, \credit{cbritt4}, \credit{chomiuk}
 
 % This individual section will need to describe the particular
 % discoveries and measurements that are being targeted in this section's
@@ -59,9 +59,10 @@ An important collateral benefit of studies in the plane with an
 LSST-like facility, is improved mapping of the distribution and
 observational effects of the ISM (particularly dust), which is of
 importance to all IR/Optical/UV observational studies. \new{Due to its
-  importance for studies of {\it all} Milky Way Astronomy, LSST's use
-  to constrain the distribution of interstellar dust in three
-  dimensions is presented in Section \ref{sec:MW_Dust}.}
+  importance for {\it all} Milky Way Astronomy, a separate Section is
+  devoted to the impact of observing strategy on the utility of LSST
+  data to constrain the distribution of interstellar dust in three
+  dimensions (Section \ref{sec:MW_Dust}).}
 
 % --------------------------------------------------------------------
 
@@ -89,7 +90,11 @@ computed for these science cases, the results will be summarized in a Table in S
   %\item 5. A three-dimensional Dust map and improvements in the reddening law
 \end{itemize}
 
-Motivation and qualitative description of response to observing strategy:
+\new{Below we provide more detail on these science cases, including
+  qualitative discussion of the expected impact of the choice of
+  observing strategy, as these science cases are not discussed in
+  detail elsewhere (in the LSST Science Book or the Ivezic et al. 2008
+  summary paper).}
 
 {\bf 1. Probing quiescent compact binaries via variability:} Of the
 millions of stellar-mass black holes formed through the collapse of
@@ -224,7 +229,7 @@ an easily-observed Milky Way supernova might be too bright for LSST to
 measure precisely with its planned exposure time, with a roughly 82\%
 chance of a core-collapse supernova reaching one or two magnitudes
 brighter than LSST's nominal saturation limit (with a 1/3 chance that
-a ccSN would reach $m_V \sim 5$~(Adams et al. 2013). For a Type Ia in
+a ccSN would reach $m_V \sim 5$; Adams et al. 2013). For a Type Ia in
 the Milky Way, 
 \citet{2013ApJ...778..164A} estimate $m_{V, max} \lesssim 13.5$~in 92\% of
 cases.
@@ -261,54 +266,198 @@ the survey would lose sensitivity to microlensing events in progress.
 %Quantifying the response via MAF metrics: definition of the metrics,
 %and any derived overall figure of merit.
 
-Unpolished notes about likely (reasonably straightforward) figures of
-merit (FoM) follow, along with (in some cases) possible directions for
-future higher-level FoM. In many cases, dependencies on
-Metrics are identified.  \new{WIC - Note to co-authors: these FoM
-  were chosen to build off existing metrics in development. To take
-  one example, Peter Y has developed some nice ipython Notebooks that
-  illustrate representative Monte Carlo tests for periodicity
-  detection including spatial variation - thus I think the Figures of Merit
-  below should be straightforward to implement by modification of
-  existing tools.}
+\new{Here we describe the Figures of Merit (FoMs) we intend to
+  implement and evaluate for the candidate observing strategies of
+  interest. Where these FoM have already been evaluated, we provide
+  the numerical results in Table \ref{tab_SummaryMWDisk}. Those FoM:}
 
-
-{\bf FoM 1.1 - Fraction of quiescent
-  black hole binaries detectable through ellipsoidal variability, as a function of location on sky and distance.}
-Dependencies:
 \begin{itemize}
-  \item Monte Carlo in period, phase and shape parameters (ASCII input?) for variables as measured in a particular OpSim run. Likely run Monte Carlo for a representative number (ten?) of well-chosen orbital periods within the 0.1-5d range;
-  \item (Since these are short-period objects): the ``PeriodicMetric'' of Lund et al. (2015);
-  \item Will likely need reasonably high-spatial-resolution HEALPIX slices and a prescription for population density as a function of position on-sky (can be analytic).
+  \item FoM 1.1 - Fraction of quiescent black hole binaries detectable through ellipsoidal variability;
+    \item FoM 1.2 - Uncertainty on the recurrence time distribution of Dwarf Novae;
+      \item FoM 2.1 - Fraction of Novae detected by LSST (specific and total);
+        \item FoM 2.2 - Fraction of Novae caught early enough by LSST to schedule followup observations;
+        \item FoM 3.1 - Fraction of Galactic supernovae for which LSST would detect variability {\it before} the main Supernova event;
+          \item FoM 4.1 - Fraction of accurately-triggered Microlens candidates;
+            \item FoM 4.2 - Uncertainty in the mass function of intra-disk microlensed planets.
 \end{itemize}
-Possible higher-order FoM: errors on the population size (mass
-function??) derived from a survey under a given observing
+
+\new{With the exception of FoM 3.1 above, all these Figures of Merit
+  are likely to be impacted by spatial confusion, as the populations
+  of interest tend to lie at low Galactic latitudes. Metrics for
+  assessing the impact of crowding have been developed (e.g. {\tt
+    CrowdingMetrics.ipynb} in {\tt maf\_contrib}), and these should be
+  incorporated into all the FoMs described here. For the present,
+  however, we note that confusion is not a function of source
+  strategy. Running the FoMs without confusion isolates the impact of
+  strategy alone on the science that can be performed, as FoMs can be
+  compared in a relative sense. Inclusion of crowding will later set
+  the absolute scale for each FoM.}
+
+\new{In these FoMs, ``uncertainty'' can be taken to mean both random and
+systematic uncertainty, likely recorded as separate numbers for each
+FoM. We anticipate determining the FoMs that record population
+parameter-uncertainty in a Monte Carlo sense. This is particularly
+relevant for FoMs in which the event rate per pointing may be low
+($\lesssim 1$~event per pointing per decade) but not so low that only
+1-few events are expected over the whole sky over the lifetime of the
+survey (as is the case for FoM 3.1, the First Galactic Supernova). In
+very rare-event cases, the FoM can scale with the stellar density and
+the recovery fraction of that particular transient, and need only be
+evaluated once for the entire survey.}
+
+\new{Since (at the time of writing) evaluating a Metric with relaxed
+  SQL constraints typically takes about 0.5-1.5 hours, we do not
+  expect to perform Monte Carlo simulations initially. In the
+  medium-term, when Monte Carlo experiments in the target populations
+  are desired, the best strategy may be to evaluate the
+  run of a particular metric against a parameter of interest (apparent
+  magnitude, say, which is also expected to lead to a turnover in the
+  importance of confusion error), and the investigator's preferred
+  Monte Carlo framework for their population of interest can
+  interpolate the stored Metric values at the time of trial-population
+  generation. At the present date (2016-04-26) we have begun
+  investigating the use of these ``Vector Metrics'' for Figures of
+  Merit. We describe the anticipated FoMs in these cases below.}
+
+{\bf FoM 1.1 - Fraction of quiescent black hole binaries detectable
+  through ellipsoidal variability:} \new{Table
+  \ref{table:pseudoFOM_1p1} outlines the steps to evaluate FoM
+  1.1. Since the lightcurve {\it shape} matters in addition to the
+  detection (i.e. we expect LSST data to be used to characterize
+  ellipsoidal variations, not just to trigger followup by other
+  observatories) the metric choice for detectability should take the
+  lightcurve shape into account.}
+
+\new{The main innovation required before this FoM can be run, is the
+  extension of existing periodic Metrics to cases with a lightcurve
+  shape more complicated than a sine plus noise. The {\tt
+    TransientAsciiMetric} may be a good place to start; or, it might
+  be straightforward to extend {\tt periodicStarFit} to lightcurves
+  with more than one Fourier coefficient. Or, an entirely new metric
+  might be written including more Fourier terms in the fit.}
+
+\new{An open question is how best to meaningfully quantify the
+  recovery fraction of a population with a wide range in binary
+  parameters. However, as an initial FoM, evaluating once for an
+  ``average'' population will allow direct comparison between
+  observing strategies.}
+
+{\it Possible higher-order FoM:} errors on the population size (mass
+function?) derived from a survey under a given observing
 strategy. Can imagine just adding up the ``recovered'' qLMXB
-population and comparing it to that simulated. Some white noise componant of varying strengths could be
-added to the light curves to simulate various contributions of the accretion disk to the continuum light. 
-Note that the survey will necessarily be highly incomplete (inclination effects, etc.), it
-is the likely {\it uncertainty} on the completeness-correction that
-would be crucial in this case. 
+population and comparing it to that simulated. Some white noise
+componant of varying strengths could be added to the light curves to
+simulate various contributions of the accretion disk to the continuum
+light.  Note that the survey will necessarily be highly incomplete
+(inclination effects, etc.), it is the likely {\it uncertainty} on the
+completeness-correction that would be crucial in this case.
 
-{\bf FoM 1.2 - Fraction of dwarf novae detected in a given survey
-  run as a function of location and distance.}
-Dependencies:
-\begin{itemize}
-  \item Monte Carlo in distribution of maximum brightness and rise/decay timescale;
-    \item "Triples" without filter constraints (given a prior detection in each filter)- what fraction are recovered?
-    \item Histogram of duty cycle recovery efficiency versus duration of outburst and recurrence time.
-    \item Histogram of recovery efficiency of maximum brightness of dwarf nova versus duration and recurrence time (if assume subsequent outbursts have similar profiles).
-    \end{itemize}
-Higher-level FoM: Uncertainty in LIGO event rates due to
-uncertainties in common envelope evolution, which drives uncertainties in both LIGO event rates and DN population.
+\begin{table}[h]
+  \small
+  \begin{tabular}{c p{12cm}}
+    & {\it FoM 1.1 - Fraction of quiescent black hole binaries (qLMXB) detectable by LSST through ellipsoidal variability} \\
+    \hline 
+  1. & Pick a typical binary mass ratio and separation for $qLMXB$ \\
+  2. & Identify typical ellipsoidal variation amplitude and period \\
+  3. & Represent as Fourier terms or ASCII lightcurve \\
+  4. & Run a variant of {\tt periodicStarFit.ipynb} that allows the appropriate double-humped lightcurve shape. May be appropriate to modify {\tt mafContrib/periodicStarMetric.py}. \\
+  5. & {\bf Evaluate FoM 1.1:} Load the result from 4. and sum over the spatial region (to be determined: Galactic Latitude range? Comparison high-latitude clusters?) where the qLMXBs are expected.\\
+\hline
+    \end{tabular}
+ \caption{\new{Description of Figure of Merit 1.1.}}
+  \label{table:pseudoFOM_1p1}
+\end{table}
 
-{\bf FoM 2.1 - Fraction of identified Novae as a function of location on-sky, distance, and time since initial rise.}
-Dependencies:
-\begin{itemize}
-  \item Is the ``Triplets'' metric sufficient (i.e. is this ``just'' a case of supplying the metric the correct $\Delta t$~parameter values)?;
-    \item What is the maximum interval since initial rise that would be acceptable? (Is this a function of waveband for followup?)
-\end{itemize}
-Possible higher-order FoM: error on inferred rate of Type Ia supernovae?
+%Dependencies:
+%\begin{itemize}
+%  \item Monte Carlo in period, phase and shape parameters (ASCII input?) for va%riables as measured in a particular OpSim run. Likely run Monte Carlo for a rep%resentative number (ten?) of well-chosen orbital periods within the 0.1-5d range;%
+%  \item (Since these are short-period objects): the ``PeriodicMetric'' of Lund et al. (2015);
+%  \item Will likely need reasonably high-spatial-resolution HEALPIX slices and a prescription for population density as a function of position on-sky (can be analytic).
+%\end{itemize}
+%Possible higher-order FoM: errors on the population size (mass
+%function??) derived from a survey under a given observing
+%strategy. Can imagine just adding up the ``recovered'' qLMXB
+%population and comparing it to that simulated. Some white noise componant of va%rying strengths could be
+%added to the light curves to simulate various contributions of the accretion di%sk to the continuum light. 
+%Note that the survey will necessarily be highly incomplete (inclination effects, etc.), it
+%is the likely {\it uncertainty} on the completeness-correction that
+%would be crucial in this case. 
+
+{\bf FoM 1.2 - Uncertainty on the recurrence-time distribution of
+  Dwarf Novae:} \new{Table \ref{table:pseudoFOM_1p2} illustrates a
+  version of this FoM that could be run in the near future. Dwarf
+  Novae are a heterogeneous class; in the near future we imagine
+  assigning an average lightcurve to a population and determining the
+  recovered vs input recurrence timescale, under the assumption that
+  the spatial distribution of recurrent Dwarf Novae is uniform. This
+  isolates the impact of observing strategy alone due to gaps in
+  coverage. Rather than a full Monte Carlo in Novae populations,
+  initially the investigator might compute the FoM for a
+  representative range of recurrence timescales (since the error on
+  timescale recovery may be expected to scale with the recurrence
+  timescale iself).}
+
+\begin{table}[h]
+  \small
+  \begin{tabular}{c p{12cm}}
+    & {\it FoM 1.2 - Uncertainty in the Dwarf Nova Recurrence timescale} \\
+    \hline 
+  1. & Pick a typical lightcurve for the Dwarf Nova class of interest \\
+  2. & Assign a recurrence timescale \\
+  3. & Run {\tt TransientMetricASCII} using this lightcurve and recurrence timescale. \\
+  4. & Combine the (spatially distributed) results of 3. into a median and formal random uncertainty estimate on the recurrence time estimated from each line of sight. \\
+  5. & Compute the offset and its formal error, between the median from 4. and the input recurrence timescale from 2.\\
+  6. & {\bf FoM 1.2 - Uncertainty in recurrent DN timescale:} The four numbers from steps 4. and 5. are the characterization of the uncertainty in recurrence timescale required. \\
+\hline
+    \end{tabular}
+ \caption{\new{Description of Figure of Merit 1.2.}}
+  \label{table:pseudoFOM_1p2}
+\end{table}
+
+{\it Possible higher-order FoM:} Uncertainty in LIGO event rates due
+to uncertainties in common envelope evolution, which drives
+uncertainties in both LIGO event rates and DN population.
+
+%Dependencies:
+%\begin{itemize}
+%  \item Monte Carlo in distribution of maximum brightness and rise/decay timescale;
+%    \item "Triples" without filter constraints (given a prior detection in each filter)- what fraction are recovered?
+%    \item Histogram of duty cycle recovery efficiency versus duration of outburst and recurrence time.
+%    \item Histogram of recovery efficiency of maximum brightness of dwarf nova versus duration and recurrence time (if assume subsequent outbursts have similar profiles).
+%    \end{itemize}
+
+{\bf FoMs 2.1 \& 2.2 - Fraction of Novae characterized by LSST; and the fraction detected early enough for followup:} \new{Since the set of Novae is so heterogeneous, one can imagine a two-stage process. In the near-future, a single run of {\tt TransientMetricASCII} using some sense of an ``average'' Nova as tracer to enable comparison between observing strategies. We present this in Table \ref{table:pseudoFOM_2p1}, which includes examples for the specific and total fraction of Novae recovered.} 
+
+\new{In the longer term, a Monte Carlo simulation could be run on a particular class of Novae depending on the parameters of the overall population whose constraints are desired. This latter effort would likely require further development of the Vector Metrics.}
+
+\begin{table}[h]
+  \small
+  \begin{tabular}{c p{12cm}}
+    & {\it FoMs 2.1 \& 2.2 - Novae identified from LSST data} \\
+    \hline 
+  1. & Pick a typical lightcurve for the Nova class of interest \\
+  2. & Run {\tt TransientMetricASCII} using this lightcurve \\
+  3. & {\bf FoM 2.1a: Specific fraction of Novae discovered:} Sum the result from 2. over the spatial region of interest \\
+  4. & {\bf FoM 2.1b: Fraction of Novae discovered:} Multiply the result of 2. by the result of the {\tt Starcounts} metric. Sum this to find the fraction of Novae recovered if their spatial density follows the stellar density in the Milky Way. \\
+  5. & From the typical lightcurve and a typical follow-up scenario, determine the time interval before outburst peak that would be required to schedule followu-up observations.\\
+  6. & Use these to produce the time interval parameters for the {\tt TripletMetric}. \\
+  7. & Run {\tt TripletMetric.py} \\
+  8. & {\bf FoM 2.2: Fraction of Novae detected by LSST early enough for follow-up observations to be arranged} Sum the result of step 6. over the spatial region of interest.\\
+\hline
+    \end{tabular}
+ \caption{\new{Description of Figures of Merit 2.1. \& 2.2.}}
+  \label{table:pseudoFOM_2p1}
+\end{table}
+
+
+\new{\it Possible higher-order metrics:} Error on the rate of Type Ia supernovae using LSST data taken under various observing strategies.
+
+%Dependencies:
+%\begin{itemize}
+%  \item Is the ``Triplets'' metric sufficient (i.e. is this ``just'' a case of supplying the metric the correct $\Delta t$~parameter values)?;
+%    \item What is the maximum interval since initial rise that would be acceptable? (Is this a function of waveband for followup?)
+%\end{itemize}
+%Possible higher-order FoM: error on inferred rate of Type Ia supernovae?
 
 %{\bf FoM 3.1 - Maximum time-interval {\it before} triggering of a SN in the Milky Way that LSST would h%ave taken precursor data.}
 %Dependencies:
@@ -327,24 +476,44 @@ Possible higher-order FoM: error on inferred rate of Type Ia supernovae?
 %\end{itemize}
 
 
-\new{\bf FoM 3.1 - Fraction of Galactic supernovae for which LSST would detect variability {\it before} the main Supernova event. Dependencies:}
-\begin{itemize}
-  \item \new{Assume the probability of a SN going off scales with the number of stars along the line of sight to some depth. The ``starcount'' metric in sims-maf-contrib (by Mike Lund and collaborators) calculates this value out to some fiducial distance. Additionally}; 
-\item \new{This FoM requires an assessment of the ability of LSST to detect a particular lightcurve shape. Several options are possible at this time; we have selected ``metrics.TransientMetric'' from the baseline lsst-sims. Therefore also};
-\item \new{a lightcurve shape for the pre-SN variability must be assumed.}
-\end{itemize}
+{\bf FoM 3.1 - Fraction of Galactic supernovae for which LSST would
+  detect variability {\it before} the main Supernova event:} We have
+implemented a simple FoM for the Galactic Supernova case, using the
+parameters of SN2010mc as an example whose pre-SN outburst could be
+discovered first by LSST. The FoM is defined as
+\begin{equation}
+  FoM_{preSN} \equiv \frac{ \sum^{sightlines}_{i} f_{var, i} N_{\ast, i} } {\sum^{sightlines}_{i} N_{\ast, i}}
+\label{eqn:def_FOM_3p1}
+\end{equation}
+where $f_{var, i}$~is the fraction of transient events that LSST would
+detect for observing strategy including the $i$'th sightline,
+$N_{\ast,i}$~the number of stars present along the $i$'th sightline,
+and the FoM is normalized by the total number of stars returned by the
+density model over all sightlines. (For the two OpSim runs tested
+here, \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS}, the
+normalization factors differ by $\sim 2\%$.) FoM values are in the
+range $0.0 \le FoM_{preSN} \le 1.0$.
 
-% WIC - removed this one since it's a bit low-level...
-%
-%{\bf FoM 3.2 - Maximum time-interval {\it after} the SN event for triggering followup.}
-%Dependencies:
-%\begin{itemize}
-%  \item Similar to FoM 3.1. 
-%    \item Is it important to know the discovery space for LSST? If a
-%      supernova at $m_V~15$~goes off, other facilities are likely to
-%      spot it...
-%\end{itemize}
+We assume the Pre-SN variability similar to the pre-SN outburst of
+SN2010mc \citep{2013Natur.494...65O}. The pre-SN variability is
+modeled as a sawtooth lightcurve (in apparent magnitude). We assume
+this transient event will always reach brightness sufficient for LSST
+to observe, so opt for a very bright peak apparent magnitude in all
+filters. We assume that the probability of a supernova going off is
+proportional to the number of stars along a particular line of
+sight. 
 
+In definition (\ref{eqn:def_FOM_3p1}), a lightly-modified version of
+{\tt CountMetric} was used to determine $N_{\ast, i}$~with the output
+summed over all sight-lines to produce $N_{\ast}$. Module {\tt
+  TransientMetric} was used to determine $f_{var, i}$~for each
+sight-line.\footnote{The notebooks used to evaluate this version of
+  FoM 3.1 can be found in subdirectory {\tt notebooks} of the
+  experimental github repository {\tt lsstScratchWIC}, available at
+  this link: \url{https://github.com/willclarkson/lsstScratchWIC}}
+
+% WIC 2016-04-26 - removed the old bullets here since they are
+% obsolete now!
 
 
 {\bf FoM 4.1 - Fraction of accurately-triggered Microlens candidates as a function of location, distance, lens mass.}
@@ -383,35 +552,22 @@ Dependencies:
 \subsection{OpSim Analysis}
 \label{sec:\secname:MW_Disk_analysis}
 
-\new{(To stimulate input from collaborators, we have implemented a mock-up of a simple figure of merit for the Galactic Supernova case. We choose FoM 3.1 - the fraction of galactic supernovae for which an SN2010mc-like pre-SN outburst could be discovered by LSST. The results of all FoM's for this Section are collected in Table \ref{tab_SummarMWDisk}.)}
+{\bf FoM 3.1: the First Galactic Supernova:} This FoM is described in  Definition (\ref{eqn:def_FOM_3p1}) of Section \ref{sec:MW_Disk:MW_Disk_metrics}.
 
-\new{{\bf FoM 3.1: Fraction of Galactic supernovae for which LSST would detect variability {\it before} the main Supernova brightening:}}
-\begin{itemize}
-\item \new{{\it Definition:} 
-\begin{equation}
-  FoM_{preSN} \equiv \frac{ \sum^{sightlines}_{i} f_{var, i} N_{\ast, i} } {\sum^{sightlines}_{i} N_{\ast, i}}
-\end{equation}
-where $f_{var, i}$~is the fraction of transient events that LSST would detect for observing strategy including the $i$'th sightline, $N_{\ast,i}$~the number of stars present along the $i$'th sightline, and the FoM is normalized by the total number of stars returned by the density model over all sightlines. (For the two OpSim runs tested here, \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS}, the normalization factors differ by $\sim 2\%$.) Therefore $0.0 \le FoM_{preSN} \le 1.0$.}
-\item \new{{\it Assumptions (observational):} Pre-SN variability similar to the
-    pre-SN outburst of SN2010mc \citep{2013Natur.494...65O}. The pre-SN variability is
-modeled as a sawtooth lightcurve (in apparent magnitude). We assume this
-transient event will always reach brightness sufficient for LSST to observe, so
-opt for a very bright peak apparent magnitude in all filters. We assume that
-the probability of a supernova going off is proportional to the number of stars
-along a particular line of sight.}
-\item \new{{\it Parameters used:} The pre-SN outburst is simulated using the lsst-sims metrics.TransientMetric module. The lightcurve used has the following parameters: rise slope $-2.4$; time to peak; $20$~days; decline slope: $0.08$; total transient duration: 80 days. All filters are used in the detections, and 20 evenly-spaced phases are simulated for sensitivity to pathological cases (parameter nPhaseCheck=20). Peak apparent magnitudes used: $\{ 11,9,8,7,6,6\}$~in $\{u,g,r,i,z,y\}$. Then, $f_{var, i}$~is taken as the ``Sawtooth Alert'' quantity returned by metrics.TransientMetric. The starcounts metric (in sims-maf-contrib) is used to estimate the number of stars along a given line of sight, using fiducial distance limits ($10$pc $\le d \le 80$kpc).}
-\item {\it \bf Results:} $FoM_{preSN}$(\opsimdbref{db:baseCadence}) = 0.129, while $FoM_{preSN}$(\opsimdbref{db:opstwoPS})=0.826.\footnote{\new{2016-04-25 For comparison, when run on 2015-era OpSim runs {\tt enigma\_1189} (Baseline strategy) and {\tt ops2\_1092} (PanSTARRS-like strategy) the results were 0.251 (Baseline) and 0.852 (PanSTARRS-like strategy). So the 2016-era OpSim runs show a sharper disadvantage than before to the Baseline cadence for the Galactic Supernova case.}} See Figure \ref{f_opSim_GalacticSN} for a breakdown of this figure of merit across sightlines.
+{\it Parameters used:} The lightcurve used has the following parameters: rise slope $-2.4$; time to peak; $20$~days; decline slope: $0.08$; total transient duration: 80 days. All filters are used in the detections, and 20 evenly-spaced phases are simulated for sensitivity to pathological cases (parameter nPhaseCheck=20). Peak apparent magnitudes used: $\{ 11,9,8,7,6,6\}$~in $\{u,g,r,i,z,y\}$. Then, $f_{var, i}$~is taken as the ``Sawtooth Alert'' quantity returned by {\tt TransientMetric}. For the stellar density metric, distance limits ($10$pc $\le d \le 80$kpc) are used to avoid biases in the FoM estimate by the Magellanic Clouds.
 
-\end{itemize}
+{\it \bf Results:} $FoM_{preSN}$(\opsimdbref{db:baseCadence}) = 0.129, while $FoM_{preSN}$(\opsimdbref{db:opstwoPS})=0.826.\footnote{\new{2016-04-25 For comparison, when run on 2015-era OpSim runs {\tt enigma\_1189} (Baseline strategy) and {\tt ops2\_1092} (PanSTARRS-like strategy) the results were 0.251 (Baseline) and 0.852 (PanSTARRS-like strategy). So the 2016-era OpSim runs show a sharper disadvantage than before to the Baseline cadence for the Galactic Supernova case.}} See Figure \ref{f_opSim_GalacticSN} for a breakdown of this figure of merit across sightlines.
+
+
 \begin{figure}
 \begin{center}
   \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_Baseline.png}
   \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_PanSTARRS.png}
 %  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1092.pdf}
 %  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1189.pdf} 
-  \caption{Figure of merit $FoM_{preSN}$~describing LSST's sensitivity to any pre-Supernova outburst, broken down by sightline, as sky-maps. $FoM_{preSN}$~is estimated for two OpSim runs (to-date); \opsimdbref{db:baseCadence} (left; Baseline cadence) and \opsimdbref{db:opstwoPS} (right; PanSTARRS-like strategy). The normalizing factors $N_{\ast, total}$ are $3.692\times 10^{10}$~for \opsimdbref{db:opstwoPS} and $3.793 \times 10^{10}$~for \opsimdbref{db:baseCadence}. The imprint of reduced sampling towards the inner plane can be clearly seen for \opsimdbref{db:baseCadence}. Notice the difference in scale between the left and right panels. See Section \ref{sec:MW_Disk:MW_Disk_analysis}}
-\end{center}
+  \caption{Figure of merit $FoM_{preSN}$~describing LSST's sensitivity to any pre-Supernova outburst for the Galactic Supernova science case, broken down by sightline, as sky-maps. $FoM_{preSN}$~is estimated for two OpSim runs (to-date); \opsimdbref{db:baseCadence} (left; Baseline cadence) and \opsimdbref{db:opstwoPS} (right; PanSTARRS-like strategy). The normalizing factors $N_{\ast, total}$ are $3.692\times 10^{10}$~for \opsimdbref{db:opstwoPS} and $3.793 \times 10^{10}$~for \opsimdbref{db:baseCadence}. The imprint of reduced sampling towards the inner plane can be clearly seen for \opsimdbref{db:baseCadence}. Notice the difference in color scale between the left and right panels. See Section \ref{sec:MW_Disk:MW_Disk_analysis}}
 \label{f_opSim_GalacticSN}
+\end{center}
 \end{figure}
 
 
@@ -454,6 +610,7 @@ deep-wide-fast survey:
     1.1 & \footnotesize{LMXB ellipsoidal variations}      & - & - & - & - & - \\
     1.2 & \footnotesize{Uncertainty in dwarf nova duty cycle}   & - & - & - & - &  \footnotesize{LSST as initial trigger} \\
     2.1 & \footnotesize{Fraction of Novae detected}       & - & - & - & - &  - \\
+    2.2 & \footnotesize{Fraction of Nova alerts}       & - & - & - & - &  - \\
     3.1 & \footnotesize{Galactic Supernova pre-variability} & 0.13 & {\bf 0.83} & - & - & \footnotesize{Fraction of SN2010mc-like outbursts that LSST would detect; $FoM_{preSN} = f_{var} \times N_{\ast}$} \\
     4.1 & \footnotesize{Fraction of triggered microlens candidates} & - & - & - & - & - \\
     4.2 & \footnotesize{Uncertainty in disk-disk microlens distribution parameters due to missed events} & - & - & - & - & \footnotesize{LSST as initial microlens trigger} \\

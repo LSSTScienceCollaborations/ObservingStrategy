@@ -178,8 +178,8 @@ magnification ratios from narrow emission lines.
 \subsection{Metrics}
 \label{sec:\secname:metrics}
 
-Quantifying the response via MAF metrics: definition of the metrics,
-and any derived overall figure of merit.
+%Quantifying the response via MAF metrics: definition of the metrics,
+%and any derived overall figure of merit.
 
 Metrics for these section need to be defined by using simulated light curves 
 that take into account the several parameters that come into play in quasar 
@@ -189,23 +189,26 @@ and sources as well as ``macro'' lens model parameters (i.e., surface mass
 density and shear projected on top of lensed quasar images). Two metrics are 
 currently in consideration:
 
-High Magnification Events recovery metric: This metric will measure the number 
-of high magnification events recovered/missed considering the cadence and season 
-length in every LSST band and as the precision of the brightness measurement.
+High Magnification Events recovery metric: This metric will measure the number of high magnification events recovered/missed considering the cadence and season length in every LSST band and as the precision of the brightness measurement.
 
-Accretion disk size and slope metric: This metric will do a full analysis of the 
-``pure'' microlensing light curves to recover these two physical AGN parameters. 
-The figure of merit would be the accuracy of the measurement.
+Accretion disk size and slope metric: This metric will do a full analysis of the ``pure'' microlensing light curves to recover these two physical AGN parameters. The figure of merit would be the accuracy of the measurement.
 
 Since microlensing signal can only be obtained after time delays between images 
 have been measured, both metrics need close interaction with time delay 
-measurements. As such, the ``Time Delays Challenges'' (see section 
+measurements. As such, the ``Time Delays Challenges'' (see
 \autoref{sec:lenstimedelays}) will include complete microlensing signal 
-simulations which also include the aforementioned parameters. Note that given 
+simulations which also take into account the aforementioned parameters. Note
+that given 
 the dependence on individual filter cadence and season length as well as 
-projected CMB velocities, every region on the sky needs to be considered. Time 
-Delay Challenge submissions will thus include recovered ``pure'' microlensing 
-light curves in addition to measured time-delays.
+projected CMB velocities, every region on the sky needs to be considered
+independently. Time Delay Challenge submissions will thus include recovered
+``pure'' microlensing 
+light curves in addition to measured time-delays. By doing the reverse
+procedure, i.e. using these ``pure'' microlensing light curves to statistically
+re obtain the input accretion disk sizes and thermal slopes, we will be able to
+quantitatively measure the accuracy of the intrinsic accretion disk parameter
+estimations for a given survey strategy.
+
 
 
 ....
@@ -219,27 +222,39 @@ light curves in addition to measured time-delays.
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
-
-\todo{Timo} Write current analysis of median night separation and season length using \opsimdbref{db:baseCadence} and \opsimdbref{db:NoVisitPairs}. 
+Much like the cosmology with lensed quasar time delays, we expect a strong
+dependence of both proposed metrics with night-to-night cadence, uniformity and
+season length. Maximizing these will maximize the likelihood of recovering high
+magnification events, which in turn will provide the most stringent constraints
+on
+accretion disk structure. As mentioned above, since shorter wavelengths show
+faster and stronger magnification events, in an ideal scenario, bluer bands would have
+tighter night-to-night cadence.
 
 \begin{center}
-\begin{figure}
-\includegraphics[width=\textwidth]{figs/agn/enigma_1189_NightSep_seasonLength.pdf}
-\caption{Median Night Separation in days and median season length in months for all bands in the enigma\_1189 opsim output.}
-\label{microfig}
-\end{figure}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{figs/agn/NightSep_seasonLength.pdf}
+		\caption{Median Night Separation in days (left) and median season length in months (right) for all bands in the current ``Baseline Cadence'' (\opsimdbref{db:baseCadence}, top) and ``No Visit Pairs''	(\opsimdbref{db:NoVisitPairs}, bottom) opsim outputs.}
+		\label{microfig}
+	\end{figure}
 \end{center}
+
+As shown in figure \ref{microfig}, it seems there is a slightly better prospect
+for the AGN structure with microlensing science case using the ``No Visit Pairs'' observing
+strategy in comparison to the baseline strategy due to the smaller inter-night
+gaps and longer season lengths in the g band. In both cases the night-to-night
+cadence in the longer wavebands are compatible with the detection of most
+microlensing events. On the other hand, in the u and g bands in both survey strategies it might compromise the results. Furthermore, in all LSST bands the spread in the night-to-night cadence (uniformity) and season length will likely dominate the uncertainties.
+
 
 % --------------------------------------------------------------------
 
 \subsection{Discussion}
 \label{sec:\secname:discussion}
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+%Discussion: what risks have been identified? What suggestions could be
+%made to improve this science project's figure of merit, and mitigate
+%the identified risks?
 
 
 % ====================================================================

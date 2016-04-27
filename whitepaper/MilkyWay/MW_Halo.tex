@@ -26,7 +26,9 @@
 \section{Mapping the Milky Way Halo}
 \def\secname{MW_Halo}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
 
-\noindent{\it Kathy Vivas, Colin Slater, David Nidever, Beth Willman}  % (Writing team)
+\credit{akvivas}, \credit{ctslater}, \credit{dnidever}, \credit{bethwillman}
+
+%\noindent{\it Kathy Vivas, Colin Slater, David Nidever, Beth Willman}  % (Writing team)
 
 The study of the Halo of the Milky Way is of the most importance not only to understand
 the formation and early evolution of our own galaxy, but also to test 
@@ -63,7 +65,7 @@ of being bright and numerous stars.
 Fainter than these two tracers, main sequence stars stand up as a tool for studying
 the Halo. They are the most numerous type of stars available and statistical studies 
 are possible. Using the technique of photometric metallicities \citep{ivezic08}, 
-SDSS provided unprecedented maps of the metallicity distribution up to  $\sim 10$ 
+the Sloan Digital Sky Survey (SDSS) provided unprecedented maps of the metallicity distribution up to  $\sim 10$ 
 kpc from the Galactic center, unveiling not only the mean metallicity distribution 
 of the halo but also, sub-structures within the halo. This kind of works will be extended
 to the outermost parts of the Galaxy with LSST data.
@@ -155,15 +157,28 @@ integrate over the distribution of galaxy sizes. This modeling process is
 currently being verified against existing surveys, and will be incorporated into
 the observing strategy study at a later date.
 
+This is a diagnostic metric and some of the higher level metrics described below 
+will depend on this one.
+
 \textbf{Distance to the farthest RR Lyrae stars:} This metrics involves the ability to
 recover an RR Lyrae star as a function of its distance. An RR Lyrae star may be
 considered as recovered if its period and amplitude are within 10\% of their real values.
-The distance is calculated using the mean magnitude of the recovered RR Lyrae stars 
-(in the more IR photometrics bands) and the interstellar extinction (maps are available 
-now in MAF).  Output of this metric is the distance at which certain percentage of RR 
+The procedure followed by \citet{2012AJ....144....9O} is a good example on how this can be
+achieved. They built a large number of synthetic light curves spanning the properties of
+known RR Lyrae stars and {\sl observed} them with the cadence given by the OpSim runs
+available at that time. An improvement over this previous work should include the use
+of simultaneous multi-band information to recover periods \citep[e.g.,][]{vanderplas15,vivas16}.
+
+However, a first look into this problem using MAF can be achieved
+by simplifying the procedure and only test if a star with period 0.55 days (the mean period for
+RR Lyrae stars) can be recovered by metrics already available in MAF.
+Then, distance can be calculated using the mean magnitude of the recovered RR Lyrae stars 
+(in the more IR photometrics bands) and the interstellar extinction at that point of the sky (maps are available 
+now in MAF).  Output of this metric should be the largest distance that can be measured with a 10\% precision
+at which certain percentage of RR 
 Lyrae stars (eg. 80\%) can be recovered by LSST. It is expected that the results 
 of this metric at low galactic latitudes will be largely dependent on the chosen observational 
-strategy. 
+strategy (how sparse will the cadence be  in the galactic plane).
 
 A reasonable Figure of Merit for this sub-project is the volume of the halo within RR Lyrae stars 
 can be recovered. Similarly, another Figure of Merit is the fraction of the Galactic thick disk's volume that can be 
@@ -171,9 +186,9 @@ traced by RR Lyrae stars.
 
 \textbf{Distance to the farthest main sequence stars and giant stars:} Being non-variable objects
 the metrics for these objects are somewhat simpler and requires the determination of the limiting
-magnitude (in u band) for which galaxy/star separation is reliable to certain level. Then, a figure of
-merit is the volume of the halo mapped with these tracers. 
-
+magnitude (in u band) for which galaxy/star separation is reliable to certain level. In these cases, distances
+depend on metallicity. Then, a figure of
+merit is the volume of the halo mapped with stars within certain metallicity range. 
 
 
 % --------------------------------------------------------------------
