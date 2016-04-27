@@ -234,29 +234,45 @@ the Milky Way,
 \citet{2013ApJ...778..164A} estimate $m_{V, max} \lesssim 13.5$~in 92\% of
 cases.
 
-{\bf 4. Population parameters of planets beyond the Snow Line with Microlensing:} Gould
-(2013) shows that LSST could be an effective intra-disk microlensing
-survey (in which disk stars are lensed by other objects in the disk,
-such as exoplanets, brown dwarfs, or compact objects). The lower
-stellar density compared to past bulge-focused microlensing surveys
-would be offset by the larger area covered by LSST. The predicted rate
-of high magnification microlensing events that are very sensitive to
-planets would be $\sim 25$ per year. This survey would be able to
-detect planets at moderate distances from their host stars, a regime
-poorly probed by standard Doppler and transit techniques. The LSST
-data alone would not be sufficient: the detection of a slow ($\sim$
-days) timescale increase in brightness of a disk star would need to
-trigger intensive photometric observations from small (1-m to 2-m
-class) telescopes that would observe at high cadence for the 1--2
-months of the microlensing event. This would represent an excellent
-synergy between LSST and the wider observing community, and would
-directly take advantage of the capabilities unique to LSST.
+{\bf 4. Population parameters of planets beyond the Snow Line with
+  Microlensing:} Gould (2013) shows that, LSST could contribute a
+highly valuable survey for intra-disk microlensing (in which disk
+stars are lensed by other objects in the disk, such as exoplanets,
+brown dwarfs, or compact objects). The lower stellar density compared
+to past bulge-focused microlensing surveys would be offset by the
+larger area covered by LSST. The predicted rate of high magnification
+microlensing events that are very sensitive to planets would be $\sim
+25$ per year. This survey would be able to detect planets at moderate
+distances from their host stars, a regime poorly probed by standard
+Doppler and transit techniques. The LSST data alone would not be
+sufficient: the detection of a slow ($\sim$ days) timescale increase
+in brightness of a disk star would need to trigger intensive
+photometric observations from small (1-m to 2-m class) telescopes that
+would observe at high cadence for the 1--2 months of the microlensing
+event. This would represent an excellent synergy between LSST and the
+wider observing community, and would directly take advantage of the
+capabilities unique to LSST.
 
 {\it Response to observing strategy:} To catch lensing events as they
 start to brighten, with sufficient fidelity to trigger the intensive
 follow-up required, the models of Gould (2013) suggest each field
-should be observed once every few nights. With sparser coverage,
-the survey would lose sensitivity to microlensing events in progress.
+should be observed once every few nights. With sparser coverage, the
+survey would lose sensitivity to microlensing events in
+progress. \new{Comparison with a similar sample towards the inner
+  Milky Way would be highly useful, which would argue for observations
+  of the entire visible Plane with similar cadence.}
+
+\new{Microlensing is also discussed elsewhere in this document,
+  particularly for relatively the Magellanic Clouds (Chapter
+  \ref{chp:MCs}), for AGN (Section \ref{sec:agn:microlensing}), and in
+  WFIRST fields towards the Bulge (Section
+  \ref{sec:wfirst:microlensing}). There is also some discussion in
+  Section \ref{sec:planets}. We note that the WFIRST discussion in
+  Section \ref{sec:wfirst:microlensing} assumes that Bulge fields will
+  be observed even at low cadence ($\sim 1$~observation per day) for
+  the first {\it eight} years of the survey. This would be compromised
+  by a strategy that puts all the Galactic Plane observations into the
+  first few years of the survey.}
 
 % --------------------------------------------------------------------
 
@@ -361,7 +377,7 @@ completeness-correction that would be crucial in this case.
   2. & Identify typical ellipsoidal variation amplitude and period \\
   3. & Represent as Fourier terms or ASCII lightcurve \\
   4. & Run a variant of {\tt periodicStarFit.ipynb} that allows the appropriate double-humped lightcurve shape. May be appropriate to modify {\tt mafContrib/periodicStarMetric.py}. \\
-  5. & {\bf Evaluate FoM 1.1:} Load the result from 4. and sum over the spatial region (to be determined: Galactic Latitude range? Comparison high-latitude clusters?) where the qLMXBs are expected.\\
+  5. & {\bf Arrive at FoM 1.1:} Load the result from 4. and sum over the spatial region (to be determined: Galactic Latitude range? Comparison high-latitude clusters?) where the qLMXBs are expected.\\
 \hline
     \end{tabular}
  \caption{\new{Description of Figure of Merit 1.1.}}
@@ -402,12 +418,12 @@ completeness-correction that would be crucial in this case.
   \begin{tabular}{c p{12cm}}
     & {\it FoM 1.2 - Uncertainty in the Dwarf Nova Recurrence timescale} \\
     \hline 
-  1. & Pick a typical lightcurve for the Dwarf Nova class of interest \\
-  2. & Assign a recurrence timescale \\
-  3. & Run {\tt TransientMetricASCII} using this lightcurve and recurrence timescale. \\
-  4. & Combine the (spatially distributed) results of 3. into a median and formal random uncertainty estimate on the recurrence time estimated from each line of sight. \\
-  5. & Compute the offset and its formal error, between the median from 4. and the input recurrence timescale from 2.\\
-  6. & {\bf FoM 1.2 - Uncertainty in recurrent DN timescale:} The four numbers from steps 4. and 5. are the characterization of the uncertainty in recurrence timescale required. \\
+  1. & Pick a typical lightcurve for the Dwarf Nova class of interest; \\
+  2. & Assign a recurrence timescale; \\
+  3. & Run {\tt TransientMetricASCII} using this lightcurve and recurrence timescale; \\
+  4. & Combine the (spatially distributed) results of 3. into a median and formal random uncertainty estimate on the recurrence time estimated from each line of sight; \\
+  5. & Compute the offset and its formal error, between the median from 4. and the input recurrence timescale from 2;\\
+  6. & {\bf Arrive at FoM 1.2:} The four numbers from steps 4. and 5. are the characterization of the uncertainty in recurrence timescale required. \\
 \hline
     \end{tabular}
  \caption{\new{Description of Figure of Merit 1.2.}}
@@ -435,14 +451,15 @@ uncertainties in both LIGO event rates and DN population.
   \begin{tabular}{c p{12cm}}
     & {\it FoMs 2.1 \& 2.2 - Novae identified from LSST data} \\
     \hline 
-  1. & Pick a typical lightcurve for the Nova class of interest \\
-  2. & Run {\tt TransientMetricASCII} using this lightcurve \\
-  3. & {\bf FoM 2.1a: Specific fraction of Novae discovered:} Sum the result from 2. over the spatial region of interest \\
-  4. & {\bf FoM 2.1b: Fraction of Novae discovered:} Multiply the result of 2. by the result of the {\tt Starcounts} metric. Sum this to find the fraction of Novae recovered if their spatial density follows the stellar density in the Milky Way. \\
-  5. & From the typical lightcurve and a typical follow-up scenario, determine the time interval before outburst peak that would be required to schedule followu-up observations.\\
-  6. & Use these to produce the time interval parameters for the {\tt TripletMetric}. \\
-  7. & Run {\tt TripletMetric.py} \\
-  8. & {\bf FoM 2.2: Fraction of Novae detected by LSST early enough for follow-up observations to be arranged} Sum the result of step 6. over the spatial region of interest.\\
+  1. & Pick a typical lightcurve for the Nova class of interest; \\
+  2. & Run {\tt TransientMetricASCII} using this lightcurve; \\
+  3. & {\bf Arrive at FoM 2.1a: Specific fraction of Novae discovered:} Sum the result from 2. over the spatial region of interest; \\
+  4. & {\bf Arrive at FoM 2.1b:} Multiply the result of 2. by the result of the {\tt Starcounts} metric. Sum this to find the fraction of Novae recovered if their spatial density follows the stellar density in the Milky Way. \\
+  \hline 
+  5. & From the typical lightcurve and a typical follow-up scenario, determine the time interval before outburst peak that would be required to schedule followu-up observations;\\
+  6. & Use these to produce the time interval parameters for the {\tt TripletMetric}; \\
+  7. & Run {\tt TripletMetric.py}; \\
+  8. & {\bf Arrive at FoM 2.2:} Sum the result of step 6. over the spatial region of interest.\\
 \hline
     \end{tabular}
  \caption{\new{Description of Figures of Merit 2.1. \& 2.2.}}
@@ -515,19 +532,75 @@ sight-line.\footnote{The notebooks used to evaluate this version of
 % WIC 2016-04-26 - removed the old bullets here since they are
 % obsolete now!
 
+{\bf FoM 4.1 - Fraction of accurately-triggered Microlens candidates
+  within a spatial region of interest:} \new{Table
+  \ref{table:pseudoFOM_4p1} lays out a possible FoM for the fraction
+  of microlens candidates that LSST might catch sufficiently early
+  that follow-up observations can be planned for other facilties. This
+  low-level FoM should be straightforward to compute, for a microlens
+  template lightcurve corresponding to some suitable average over the
+  regime of interest.}
 
-{\bf FoM 4.1 - Fraction of accurately-triggered Microlens candidates as a function of location, distance, lens mass.}
-Dependencies:
-\begin{itemize}
-  \item Analytic (?) model for microlens lightcurve for representative sample of microlens parameters;
-    \item transientASCIIMetric may well already do what we need! 
-\end{itemize}
+\begin{table}[h]
+  \small
+  \begin{tabular}{c p{12cm}}
+    & {\it FoM 4.1 - Fraction of microlens events triggered from LSST observations} \\
+    \hline 
+  1. & Decide on the typical microlens scenario of particular interest; \\
+  2. & Produce a template ASCII lightcurve for this scenario; \\
+  3. & Determine the characteristics for a trigger; \\
+     & ~~~~ e.g. slow rise to 20\% flux above baseline at 7$\sigma$~significance;\\
+     & ~~~~ e.g. must be at most $T$~days after the initial rise to schedule follow-up; \\
+  3. & run the metric {\tt transientASCII} on this template; \\
+  4. & {\bf Arrive at FoM 4.1:} Sum the fraction of detected candidates from 3. spatially over the region of interest.\\
+\hline
+    \end{tabular}
+ \caption{\new{Description of Figure of Merit 4.1}}
+  \label{table:pseudoFOM_4p1}
+\end{table}
 
-{\bf FoM 4.2 - errors in the (mass function, distance distribution) of intra-disk microlensed planets.}
-Dependencies:
-\begin{itemize}
-  \item Event rate with sufficient-cadence observations to trigger followup as a function of (distance, lens mass);
-\end{itemize}
+{\bf FoM 4.2 - Uncertainty in the mass function of microlensed planets
+  past the Snow Line:} \new{Table \ref{table:pseudoFOM_4p2}
+  illustrates a possible FoM for a science case concerning uncertainty
+  in the parameters of a particular planetary population of
+  interest. As with FoM 4.1, in this scenario LSST is used as the
+  initial trigger for follow-up observations by other facilities, but
+  the observing strategy imposes uncertainty and bias on the eventual
+  derived parameters through its removal of parts of the population
+  from further study. The investigator could assume a particular
+  uncertainty imposed on the mass determination from follow-up
+  observations, but this should be fixed for all evaluations of the
+  FoM so that LSST strategies can be compared. Strictly speaking, a
+  Monte Carlo simulation over many realizations of the input planetary
+  population should probably be run. However, formal errors would
+  probably be acceptable in the near-term (i.e. formal errors on the
+  determination of mass function parameters that are determined from
+  the subset of objects that survive LSST's selection function for a
+  particular strategy).}
+
+\begin{table}[h]
+  \small
+  \begin{tabular}{c p{12cm}}
+    & {\it FoM 4.2 - Uncertainty in the mass function for planets beyond the Snoe Line through Microlensing}\\
+    \hline 
+  1. & Parameterize the mass function of the population of interest;\\
+  2. & Parameterize its distribution of lens amplitude and timescale;\\
+  3. & Parameterize the scaling of event rate with local stellar density;\\
+  4. & Generate a sample population over the sky; \\
+     & ~~~ Scaling from 3. might be used in conjunction with {\tt maf\_contrib/starcounts}; \\
+  5. & Run the transient-recovery metric for this population; \\
+     & ~~~ Choice of metric needs to handle spatially varying lightcurve template; \\
+     & ~~~ Or, with {\tt TripletMetric} or similar, the time-interval parameters should be allowed to spatially vary; \\
+  6. & Determine the population of microlens planets that would have been triggered by LSST. Do not sum, but record the indices of the surviving objects; \\
+  7. & Apply typical measurement uncertainty from a likely followup campaign; \\
+  8. & Fit the determined mass function from this sample of survivors only; \\
+  9. & {\bf Arrive at FoM 4.2:} Find the offset (from input) and formal uncertainty on the mass function parameters.\\
+\hline
+    \end{tabular}
+ \caption{\new{Description of Figure of Merit 4.2}}
+  \label{table:pseudoFOM_4p2}
+\end{table}
+
 
 %{\bf FoM 5.1 - Errors in derived $E(B-V)$, $n_H$~as a function of
 %  location in the Plane.}
@@ -605,19 +678,19 @@ deep-wide-fast survey:
 
 \begin{table}
   \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
-    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence}}} & {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
+    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence}}} & {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & {\rotatebox{90}{\scriptsize{\tt astro\_lsst\_01\_1004}  }} &  {\rotatebox{90}{future run 2}} & Notes \\
     \hline
     1.1 & \footnotesize{LMXB ellipsoidal variations}      & - & - & - & - & - \\
     1.2 & \footnotesize{Uncertainty in dwarf nova duty cycle}   & - & - & - & - &  \footnotesize{LSST as initial trigger} \\
     2.1 & \footnotesize{Fraction of Novae detected}       & - & - & - & - &  - \\
     2.2 & \footnotesize{Fraction of Nova alerts}       & - & - & - & - &  - \\
     3.1 & \footnotesize{Galactic Supernova pre-variability} & 0.13 & {\bf 0.83} & - & - & \footnotesize{Fraction of SN2010mc-like outbursts that LSST would detect; $FoM_{preSN} = f_{var} \times N_{\ast}$} \\
-    4.1 & \footnotesize{Fraction of triggered microlens candidates} & - & - & - & - & - \\
-    4.2 & \footnotesize{Uncertainty in disk-disk microlens distribution parameters due to missed events} & - & - & - & - & \footnotesize{LSST as initial microlens trigger} \\
+    4.1 & \footnotesize{Fraction of LSST-triggered microlens candidates} & - & - & - & - & - \\
+    4.2 & \footnotesize{Uncertainty in derived planetary mass function} & - & - & - & - & \footnotesize{LSST as initial microlens trigger} \\
 %    5.1a & \footnotesize{Median (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & \footnotesize{(Most useful FoM probably a spatial map of the uncertainty.)} \\
 %    5.1b & \footnotesize{Variance (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & - \\
   \end{tabular}
-\caption{Summary of figures-of-merit for the Galactic Disk science cases. The best value of each FoM is indicated in bold. Runs \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS} refer to the Baseline and PanSTARRS-like strategies, respectively. See Section \ref{sec:MW_Disk}. }
+\caption{Summary of figures-of-merit for the Galactic Disk science cases. The best value of each FoM is indicated in bold. Runs \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS} refer to the Baseline and PanSTARRS-like strategies, respectively. Column {\tt astro\_lsst\_01\_1004} refers to a recently-completed OpSim run that includes the Plane in Wide-Fast-Deep observations. See Section \ref{sec:MW_Disk}. }
 \label{tab_SummaryMWDisk}
 \end{table}
 
