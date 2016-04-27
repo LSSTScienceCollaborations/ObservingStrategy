@@ -253,45 +253,103 @@ the identified risks?
 \section{Orbital Accuracy}
 \def\secname{\chpname:orbits}\label{sec:\secname}
 
-After initial discovery, 
+A vast number of moving objects will appear in
+LSST images. Multiple observations of a common
+object will be linked, and a preliminary orbit
+derived. However, 
+the orbital elements (semi-major axis, 
+eccentricity, etc.) will have some uncertainty.
+Short arcs --- that is, a small amount of time
+between the first and last observation of a given
+object --- produce orbits with large uncertainties
+on the orbital elements. As arc length grows,
+the orbital uncertainties decrease.
 
-A short preamble goes here. What's the context for this science
-project? Where does it fit in the big picture?
+A number of science cases require relatively small
+uncertainties on orbital elements. Perhaps most 
+importantly, small uncertainties can aid in
+discriminating between Near Earth Objects that
+might and might not impact the Earth. A more subtle
+example relates to the libration amplitude
+distribution for TNOs, which can be compared
+to predictions from Solar System formation models.
+Only with small uncertainties on orbital elements
+can the libration amplitudes be determined
+to sufficient precision to compare to the predictive
+models. Finally, during and after the primary
+LSST survey additional measurements will be desired
+for further characterization of many objects. 
+Only if the orbital elements are sufficiently well
+know can objects be studied later with other
+facilities. For example, to carry out spectroscopy,
+the position of the object must be known to
+approximately 1~arcsec (the width of a typical
+slit). This places strong requirements on the 
+knowledge of the orbital elements.
 
-How secure is the orbit - is it going to hit us?
-Libration amplitude distribution for TNOs?
-Can we find it after X years for further study?
-Can we identify the source region for NEOs within the main belt?
 
 % --------------------------------------------------------------------
 
 \subsection{Target measurements and discoveries}
 \label{sec:\secname:targets}
 
-Describe the discoveries and measurements you want to make.
-
-Now, describe their response to the observing strategy. Qualitatively,
-how will the science project be affected by the observing schedule and
-conditions? In broad terms, how would we expect the observing strategy
-
-
+The relevant data here are positions as a function
+of time for a given object (assuming that the
+linking of measurements to a given object
+is satisfactory). Assuming that the 
+accuracy and precision of each measurement are approximately
+constant (likely, since all will be made by the
+same observing system), the only significant 
+factor that improves the knowledge of the orbit
+is extending the observational arc. The observing
+strategy employed by LSST must therefore have a cadence
+in which objects are revisited with the largest possible
+arcs that still allow linking of observations. In other words,
+if the observations of a given object are too widely spaced,
+linking may not be possible, so, even though the arc
+is long, the linking is poor and the object yield
+is low. If the observations are made too densely in 
+time, linking is likely to be good, but the arc
+may not be very long. A middle ground is desired.
 
 % --------------------------------------------------------------------
 
 \subsection{Metrics}
 \label{sec:\secname:metrics}
 
-Quantifying the response via MAF metrics: definition of the metrics,
-and any derived overall figure of merit.
-
+The relevant metric for these science cases is therefore
+that for objects are ``linkable'' (that is, with three pairs
+of observations within 15~days each time the object is
+observed) we want to know the maximum arc. In general,
+longer arc means decreased uncertainties for orbital
+elements. Although in detail there are some peculiarities
+of this relationship, to first order this proxy should
+be sufficient.
 
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
+referring to minion 1016:
+
+referring to minion_1016_ObsArc_neos_tnos_mbas_MOOB_ComboMetricVsH.pdf:
+
+In the default observing strategy the median observational
+arclength for NEOs and MBAs is 8~years for bodies
+larger than 1~km and 6~years for 300~m bodies. With these
+orbital arcs, the orbits will be quite well known
+xxx quantify -- how well! xxx, meaning that the majority
+of LSST-observed objects will have orbits that are sufficiently
+well known that the above science cases can be carried out.
+In some special cases --- for example, the case where 
+an NEO's orbit still presents a signficant probability 
+of terrestrial impact --- additional non-LSST follow-up
+may be needed, but this will be a small minority of cases.
+
+xxx what we probably want is fraction of objects
+with arcs longer than 3 years (say) as a fxn of 
+H mag, for NEOs/MBAs/TNOs. xxx
 
 
 % --------------------------------------------------------------------
@@ -299,9 +357,14 @@ the time of writing for this science project?
 \subsection{Discussion}
 \label{sec:\secname:discussion}
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+The baseline cadence and similar cadences will likely be
+sufficient for most objects and most science cases. However,
+particular attention should be given to cadences that present
+significantly different linking yields for NEOs. NEOs
+have the most difficult orbits for linking, and if the linking
+yield of NEOs decreases then necessarily the mean orbital
+uncertainty will increase, thus jeopardizing the science
+cases described above.
 
 \navigationbar
 
@@ -411,6 +474,8 @@ to be optimized for this science?
 \subsection{Metrics}
 \label{sec:\secname:metrics}
 
+xxx lynne: describe how you wrote this metric xxx
+
 Quantifying the response via MAF metrics: definition of the metrics,
 and any derived overall figure of merit.
 
@@ -419,6 +484,8 @@ and any derived overall figure of merit.
 
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
+
+xxx lynne: describe results from your activity studies/metrics
 
 OpSim analysis: how good would the default observing strategy be, at
 the time of writing for this science project?
@@ -482,7 +549,8 @@ Without knowing the phase, the amplitude of
 the lightcurve (a proxy for
 asteroid shape) can simply be determined.
 More complicated lightcurve inversion analysis
-xxx ref xxx
+(e.g., Durech et al.\ 2016)
+% http://adsabs.harvard.edu/abs/2016A%26A...587A..48D
 can be carried out, given a sufficient number
 of points.
 
@@ -541,7 +609,10 @@ The varying compositions of asteroids result
 in a range of optical colors. Sloan filters
 in general are sufficiently diagnostic to
 discriminate among different compositional
-class xxx ref xxx. Therefore, when a Solar System
+class 
+(e.g., Parker et al.\ 2008).
+% http://adsabs.harvard.edu/abs/2008Icar..198..138P
+Therefore, when a Solar System
 minor body is observed in griz (Solar System
 objects are generally quite faint in u band
 and many fewer will be detected; Y band xxx),
@@ -572,6 +643,8 @@ be measured.
 \subsection{Target measurements and discoveries}
 \label{sec:\secname:targets}
 
+The relevant measurements are observations of
+a given asteroid in each of the LSST bandpasses.
 
 
 % --------------------------------------------------------------------
@@ -595,6 +668,11 @@ each band with SNR$>$20 (giving colors good to
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
+xxx
+lynne: i don't see a figure that reports this number
+in the latest tarball, though i have seen that figure
+somewhere i think ....
+
 OpSim analysis: how good would the default observing strategy be, at
 the time of writing for this science project?
 
@@ -604,9 +682,14 @@ the time of writing for this science project?
 \subsection{Discussion}
 \label{sec:\secname:discussion}
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+As with many other Solar System science cases, the primary
+risk here is adopting an operational cadence in which
+the observing cadence for a given asteroid is sufficiently
+poor that objects are not successfully linked. In this case,
+objects will not have a large number of observations
+in a given band, which jeopardizes both the lightcurve
+inversion science and color/composition studies described
+above.
 
 \navigationbar
 
