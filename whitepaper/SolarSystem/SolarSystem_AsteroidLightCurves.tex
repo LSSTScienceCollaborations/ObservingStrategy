@@ -1,0 +1,122 @@
+% ====================================================================
+%+
+% SECTION:
+%    SolarSystem_AsteroidLightCurves.tex
+%
+% CHAPTER:
+%    solarsystem.tex
+%
+% ELEVATOR PITCH:
+%-
+% ====================================================================
+
+\section{Measuring Asteroid Light Curves and Rotation Periods}
+\def\secname{\chpname:lightcurves}\label{sec:\secname}
+
+% \credit{rhiannonlynne},
+% \credit{davidtrilling}
+
+Two Solar System science projects require a series of photometric
+measurements. These are (1) measuring lightcurves and therefore shapes
+of minor bodies and (2) measuring the colors and therefore compositions
+of minor bodies. This section and the next describe the science and the
+metrics for these experiments.
+
+% --------------------------------------------------------------------
+
+\subsection{Target measurements and discoveries}
+\label{sec:\secname:targets}
+
+In general, minor bodies are aspherical, and therefore observations of
+those bodies produce lightcurves with non-zero amplitudes. Constant
+monitoring of such a body would reveal the detailed lightcurve, which
+can be inverted to derive the effective observed shape at that epoch.
+Observations over multiple epochs allow for observations at different
+aspects, which can be used to determine the three dimensional shape and
+pole orientation of the minor body. All of this information can be used
+to understand, broadly, the orbital and physical evolution of minor
+bodies in the Solar System.
+
+LSST observations of minor bodies in the Solar System will not, however,
+necessarily be dense in time (with the exception of observations made in
+Deep Drilling Fields; see below). Therefore, lightcurves of minor bodies
+must be combined across arbitrary rotational phase. Without knowing the
+phase, the amplitude of the lightcurve (a proxy for asteroid shape) can
+simply be determined. More complicated lightcurve inversion analysis
+(e.g., Durech et al.\ 2016)
+% http://adsabs.harvard.edu/abs/2016A%26A...587A..48D
+can be carried out, given a sufficient number of points.
+
+
+% --------------------------------------------------------------------
+
+\subsection{Metrics}
+\label{sec:\secname:metrics}
+
+The general requirement for successful lightcurve inversion is to have
+a large number of observations, at high SNR, over a wide range of
+time. A guideline is that $\sim$100 measurements of an asteroid over
+$\sim$years, calibrated with a photometric accuracy of
+$\sim$5\% (SNR=20) or better, is sufficient to generate a coarse shape model.
+This sparse data inversion gives correct results for both fast (0.2--2~h) and
+slow ($>$24~h) rotators \citep{2007IAUS..236..191D}.
+
+The metric {\tt LightcurveInversionMetric} simply checks to see if the
+observations of a particular object meet these requirements, and if
+so, identifies that object as having the potential for lightcurve
+inversion.
+
+% --------------------------------------------------------------------
+
+\subsection{OpSim Analysis}
+\label{sec:\secname:analysis}
+
+\begin{figure}
+\includegraphics[width=3.3in]{figs/solarsystem/minion_1016_LightcurveInversion_neo_tno_mba_MOOB_ComboMetricVsH}
+\includegraphics[width=3.3in]{figs/solarsystem/enigma_1282_LightcurveInversion_neo_tno_mba_MOOB_ComboMetricVsH}
+\caption{Fraction of the sample population with the potential for
+  lightcurve inversion, as a function of $H$ magnitude for NEOs, MBAs
+  and TNOs, for simulated surveys \opsimdbref{db:baseCadence} and \opsimdbref{db:NEOwithVisitQuads}.
+\label{lightcurveinversion}}
+\end{figure}
+
+Most solar system objects receive many observations, and bright
+objects will have high SNR in most of those observations, so it's not
+surprising that the the baseline cadence, \opsimdbref{db:baseCadence},
+performs reasonably well with this metric. Running the same metric on
+other simulated surveys tends to show similar results, although
+\opsimdbref{db:NEOwithVisitQuads} demonstrates that a higher fraction
+of NEOs get suitable observations for lightcurve inversion. This is
+illustrated in Figure~\ref{lightcurveinversion}. More
+sophisticated metrics or investigation will be required to discover
+the cause of this, although it seems likely that with visit quads,
+there are just more observations of the bright NEOs total, leading to
+a higher fraction of objects available for lightcurve inversion. The
+difference between these surveys suggests that it is possible to
+significantly increase the numbers of NEOs for which we can determine
+shapes, rotation rates, and spin positions.
+
+% --------------------------------------------------------------------
+
+\subsection{Discussion}
+\label{sec:\secname:discussion}
+
+A risk which is not captured by this simple metric is that the
+observations included for the lightcurve inversion estimate here,
+could potentially occur far apart in time such that linking between
+the observations (to determine that they belong to the same object) is
+not possible.
+
+Further work needs to be done to understand the necessary final figure
+of merit, in particular, how many light curve inversion targets are
+necessary, and how should they be spread among different sizes of
+objects? Small objects have different shape and
+rotation distributions than larger objects, so it is interesting
+scientifically to understand objects at a range of $H$ magnitude. In
+addition, this metric currently uses observations in any filter;
+further work should be done to determine if this is sufficient, or if
+observations must occur in a single filter.
+
+% --------------------------------------------------------------------
+
+\navigationbar

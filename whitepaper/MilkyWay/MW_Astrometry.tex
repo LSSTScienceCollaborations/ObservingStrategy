@@ -1,9 +1,21 @@
-%\chapter{Mapping Our Galaxy: Positions, Proper Motions and Parallax}
-%\def\chpname{astrometry}\label{chp:\chpname}
-\section{Astrometry with LSST: Positions, Proper Motions, and Parallax}
-\def\secname{MW_Astrometry}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
+% ====================================================================
+%+
+% SECTION:
+%    MW_Astrometry.tex
+%
+% CHAPTER:
+%    galaxy.tex
+%
+% ELEVATOR PITCH:
+%
+%-
+% ====================================================================
 
-\noindent {\it Dave Monet, Dana Casetti, John Gizis, Michael Liu, Jay Strader, Will Clarkson, Peter Yoachim}
+\section{Astrometry with LSST: Positions, Proper Motions, and Parallax}
+\def\secname{MW_Astrometry}\label{sec:\secname}
+
+\credit{dgmonet}, \credit{DanaCD}, \credit{jgizis}, \credit{mliu},
+\credit{caprastro}, \credit{willclarkson}, \credit{yoachim}
 
 A number of Milky Way science cases of interest to the Astronomical
 community will depend critically on the astrometric accuracy LSST will
@@ -11,19 +23,19 @@ deliver. While ``astrometry'' is not a science case in the framework
 of this white paper, LSST's astrometric performance will be sensitive
 to the particular choice of observing strategy.
 %While astrometry is not a science case, high astrometric accuracy enables
-%a large number of science cases.  
+%a large number of science cases.
 Hence, the LSST Observing Strategy needs to be examined for systematic
 trends that might mitigate or even preclude precise measures of
 stellar positions, proper motions, parallaxes, and perturbations that
 arise from unseen companions.
 
-Section \ref{sec:\secname:MW_Astrometry_measurements} highlights two
+\autoref{sec:\secname:MW_Astrometry_measurements} highlights two
 science cases at opposite scales of distance from the Sun that require
 accurate and precise astrometry and/or proper motion
-measurements. Section \ref{sec:\secname:MW_Astrometry_metrics} develops
+measurements. \autoref{sec:\secname:MW_Astrometry_metrics} develops
 Metrics for LSST's astrometric performance, and discusses Figures of
 Merit for the two highlighted science cases. These metrics are applied to two example OpSim runs in
-Section \ref{sec:\secname:MW_Astrometry_OpSim}. Finally in Section
+\autoref{sec:\secname:MW_Astrometry_OpSim}. Finally in Section
 \ref{sec:\secname:MW_Astrometry_furtherwork}, the work that is still
 needed is discussed, both in terms of the Metrics and the Figures of
 Merit that depend on them.
@@ -61,9 +73,15 @@ subhalos.
 
 A relatively small number of streams, originating from both dwarfs and globular clusters, have been identified via photometry
 of individual stars in large surveys such as SDSS\@. However, only the highest surface brightness structures can be found
-in this manner, and it is often difficult to trace the streams over their full extent. LSST will enable streams to be identified 
+in this manner, and it is often difficult to trace the streams over their full extent. LSST will enable streams to be identified
 by stellar proper motions, and combined with targeted follow-up spectroscopy, will yield full 6-D position and velocity measurements suitable for dynamical modeling.
 Further, it will allow the discovery of tidal debris that is no longer spatially coherent but which can be unambiguously identified in phase space.
+
+Finally, streams and other kinematically-distinct halo substructure
+can be identified and characterized by combining proper motions and
+photometry in reduced proper-motion diagrams \citep[e.g.,][]{carlin12},
+and by analyzing proper-motions of tracers such as
+RR Lyrae and giants over large portions of the sky \citep[e.g.,][]{casettidinescu15}.
 
 {\it Response to observing strategy:} Most stars in streams will be main-sequence stars, and the old main sequence turnoff  is located at $r\sim24$ at a distance of 100 kpc.
 The nominal LSST proper motion precision at this magnitude is 1 mas yr$^{-1}$, corresponding to about 475 km s$^{-1}$ at this distance. The proper motion
@@ -71,6 +89,12 @@ measurements will be better for brighter stars, but in general ensembles of star
 
 To identify streams over their full lengths of many degrees of the sky, relative astrometry over small fields will not be sufficient. Therefore the absolute astrometric frame is important. Matching the optical astrometry to the radio International Celestial Reference System (ICRS) relies on measuring accurate positions for objects visible in both wavelength regimes.
 These are typically distant QSOs. Unfortunately, many QSOs have detectable optical or radio structures that degrade the positions or suggests a displacement between the location of the sources of the radio and optical radiation. LSST will need to identify a large number of point-like QSOs based on their colors and variability.
+
+Since the number of galaxies is overwhelming toward faint magnitudes,
+these must be exploited to produce a reliable absolute
+proper-motion zero point. By using Gaia stars at the bright end
+as absolute proper-motion calibrators we can quantify the precision
+and accuracy of background galaxies as a secondary link to an inertial reference system, and thus improve the calibration at the faint end of the survey.
 
 %The tie between the radio and optical reference frames relies on measuring accurate positions for objects visible in both wavelength regimes.  Whereas there are optical variable stars with radio emission, most have associated optical nebulosity that degrades the accuracy of the optical positions. The typical radio+optical object is a QSO.  Unfortunately, many QSOs have detectable optical or radio structures that degrade the positions or suggests a displacement between the location of the sources of the radio and optical radiation.  The major contribution from LSST will be the identification of a large number of QSOs based on their colors that have minimal (if any) spatially extended structure.  The impact of this search has no obvious impact on the cadence other than temporal coverage to identify variability.
 
@@ -95,7 +119,7 @@ factor.
 \item [2] The correlation between parallax factor and hour angle in the observations needs to be minimized.
 \end{itemize}
 
-%with respect to the meanmotion of the reference frame. 
+%with respect to the meanmotion of the reference frame.
 
 %The search for faint proper motion stars has two key components.  The first is the need to identify stars that move from the ensemble of other image features that can cause confusion.  For example, a compact group of stars that contains one or more stars of variable brightness can confuse the catalog correlation algorithm.  The other is the need to establish the zero point. For the case of relative astrometry, meaning the measurement of relative positions in an image, the question remains on how to remove the mean motion of the reference frame.  For example, astrometry on certain classes of galaxies might produce a zero point of sufficient accuracy.  This leads to a third constraint on the observing cadence.
 % \begin{itemize}
@@ -170,18 +194,18 @@ which an object is detected (Figures~\ref{fig_astrom_ByFilter_PACoverage} -
 \ref{fig_astrom_ByFilter_paError}).  Astrometric performance for parallax is
 quantified using the following metrics:
 \begin{itemize}
-  \item[1.] Parallax factor coverage (following metric A of Section \ref{sec:\secname:MW_Astrometry_metrics}); values farther from 0 are better). See Figures \ref{fig_astrom_ByTime_PACoverage} \&  \ref{fig_astrom_ByFilter_PACoverage};
-    \item[2.] Parallax-Hour angle correlation (metric B of Section \ref{sec:\secname:MW_Astrometry_metrics}; values closer to 0 are better). See Figures \ref{fig_astrom_ByTime_PADegen} \& \ref{fig_astrom_ByFilter_PADegen};
-      \item[3.] Proper motion error, for a star at apparent magnitude 21.0 in the filter specified (this addresses the distribution of measurement epochs, as recommended in Metric C in section \ref{sec:\secname:MW_Astrometry_metrics}; smaller values are better). See Figures \ref{fig_astrom_ByTime_pmError} \& \ref{fig_astrom_ByFilter_pmError};
+  \item[1.] Parallax factor coverage (following metric A of \autoref{sec:\secname:MW_Astrometry_metrics}); values farther from 0 are better). See Figures \ref{fig_astrom_ByTime_PACoverage} \&  \ref{fig_astrom_ByFilter_PACoverage};
+    \item[2.] Parallax-Hour angle correlation (metric B of \autoref{sec:\secname:MW_Astrometry_metrics}; values closer to 0 are better). See Figures \ref{fig_astrom_ByTime_PADegen} \& \ref{fig_astrom_ByFilter_PADegen};
+      \item[3.] Proper motion error, for a star at apparent magnitude 21.0 in the filter specified (this addresses the distribution of measurement epochs, as recommended in Metric C in \autoref{sec:\secname:MW_Astrometry_metrics}; smaller values are better). See Figures \ref{fig_astrom_ByTime_pmError} \& \ref{fig_astrom_ByFilter_pmError};
         \item[4.] Parallax error, for a star at apparent magnitude 21.0 in the filter specified (smaller values are better). See Figures \ref{fig_astrom_ByTime_paError} \& \ref{fig_astrom_ByFilter_paError}.
 \end{itemize}
 
-{\it Limitations of this presentation:} 
+{\it Limitations of this presentation:}
 \begin{itemize}
   \item[i.] The spatial maps are clipped at $95\%$~in order to keep
     the color-scale at a sensible range; in some cases this has had
     the side effect of removing parts of the spatial coverage in the
-    \opsimdbref{db:baseCadence} maps. 
+    \opsimdbref{db:baseCadence} maps.
 
   \item[ii.] No attempt has been made in this subsection to account
     for spatial confusion in high-density regions. While this
@@ -213,37 +237,37 @@ quantified using the following metrics:
 
 \end{itemize}
 
-{\it Indications at this date:} Despite these limitations, we note the following: 
+{\it Indications at this date:} Despite these limitations, we note the following:
 
 \begin{itemize}
   \item[I1.] Taking snapshots of the survey at various stages of completion (Figures \ref{fig_astrom_ByTime_PACoverage} -  \ref{fig_astrom_ByTime_paError}), the PanSTARRS-like cadence is no worse than \opsimdbref{db:baseCadence}, and by most measures offers better performance;
-\item[I2.] As might be expected, the distribution of metric values for the PanSTARRS-like cadence is narrower than for \opsimdbref{db:baseCadence} - thus astrometric survey uniformity is improved; 
+\item[I2.] As might be expected, the distribution of metric values for the PanSTARRS-like cadence is narrower than for \opsimdbref{db:baseCadence} - thus astrometric survey uniformity is improved;
 \item[I3.] For the extremes of object color (objects detected only in the bluest or only in the reddest filter), the differences between strategies is weaker. The run \opsimdbref{db:baseCadence} still shows a population with poorer parallax measures (although this might be due to coverage of regions simply not covered at all by the PanSTARRS-like strategy).
 \end{itemize}
 
-%% In the current incarnation, these will be LARGE figures. Consider
+%% In the current incarnation, these will be big figures on the page. Consider
 %% finding a way to summarize them!
 \begin{figure}[ht]
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_01y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_02y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_01y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_02y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_10y_map.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_01y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_02y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_01y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_02y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_10y_map.png}
   \end{center}
 
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_01y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_02y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_01y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_02y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_10y_hst.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_01y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_02y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_01y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_02y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_10y_hst.png}
   \end{center}
   \caption{Parallax coverage achieved at different epochs within the survey. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:opstwoPS} (PanSTARRS-like cadence). Reading left-right, columns represent: {\it Left column:} all observations within the first 365 days of operation; {\it Middle column:} first two years; {\it right column:} the full 10-year survey. Spatial maps are clipped at 95\%, with histogram horizontal scale set to $\pm 1.0$~for easy comparison.}
   \label{fig_astrom_ByTime_PACoverage}
@@ -251,25 +275,25 @@ quantified using the following metrics:
 
 \begin{figure}[ht]
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_01y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_02y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_01y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_02y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_10y_map.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_01y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_02y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_01y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_02y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_10y_map.png}
   \end{center}
 
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_01y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_02y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_01y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_02y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_10y_hst.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_01y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_02y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_01y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_02y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_10y_hst.png}
   \end{center}
   \caption{Parallax degeneracy with hour angle for different epochs within the survey. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:opstwoPS} (PanSTARRS-like cadence). Reading left-right, columns represent: {\it Left column:} all observations within the first 365 days of operation; {\it Middle column:} first two years; {\it right column:} the full 10-year survey. Spatial maps are clipped at 95\%, with histogram horizontal scale set to the range $0.0-1.0$.}
   \label{fig_astrom_ByTime_PADegen}
@@ -279,25 +303,25 @@ quantified using the following metrics:
 
 \begin{figure}[ht]
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_01y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_02y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_01y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_02y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_10y_map.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_01y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_02y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_01y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_02y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_10y_map.png}
   \end{center}
 
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_01y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_02y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_01y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_02y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_10y_hst.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_01y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_02y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_01y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_02y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_10y_hst.png}
   \end{center}
   \caption{Proper motion error for a star at $r=21.0$, for different epochs within the survey. Crowding errors are ignored. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:opstwoPS} (PanSTARRS-like cadence). Reading left-right, columns represent: {\it Left column:} all observations within the first 365 days of operation; {\it Middle column:} first two years; {\it right column:} the full 10-year survey. Spatial maps are clipped at 95\% and a log-scale is used for the maps and histograms. NOTE: the horizontal axes in the histograms are different for the two strategies; this is to allow the long tail of the proper motion error distribution in the \opsimdbref{db:baseCadence} to be displayed.}
   \label{fig_astrom_ByTime_pmError}
@@ -306,25 +330,25 @@ quantified using the following metrics:
 
 \begin{figure}[ht]
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_01y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_02y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_01y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_02y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_10y_map.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_01y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_02y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_01y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_02y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_10y_map.png}
   \end{center}
 
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_01y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_02y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_01y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_02y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_10y_hst.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_01y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_02y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_01y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_02y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_10y_hst.png}
   \end{center}
   \caption{Parallax error for a star at $r=21.0$, for different epochs within the survey. Crowding errors are ignored. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:opstwoPS} (PanSTARRS-like cadence). Reading left-right, columns represent: {\it Left column:} all observations within the first 365 days of operation; {\it Middle column:} first two years; {\it right column:} the full 10-year survey. Spatial maps are clipped at 95\%.}
   \label{fig_astrom_ByTime_paError}
@@ -333,25 +357,25 @@ quantified using the following metrics:
 %%% Now for the metrics by filter.
 \begin{figure}[ht]
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_u_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_u_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_10y_map.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_u_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_u_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_10y_map.png}
   \end{center}
 
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_u_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1189_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_u_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_Baseline_10y_hst.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_u_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paCovge_1092_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_u_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paCovge_PanSTARRS_10y_hst.png}
   \end{center}
   \caption{Parallax coverage achieved for three extremes of object color, over the full 10-year survey. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:opstwoPS} (PanSTARRS-like cadence). Reading left-right, columns represent: {\it Left column:} Objects detected only in the bluest filter; {\it Middle column:} objects detected only in the reddest filter; {\it Right column:} objects detected in all filters. Spatial maps are clipped at 95\%, with histogram horizontal scale set to $\pm 1.0$~for easy comparison.}
   \label{fig_astrom_ByFilter_PACoverage}
@@ -359,25 +383,25 @@ quantified using the following metrics:
 
 \begin{figure}[ht]
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_u_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_u_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_10y_map.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_u_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_u_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_10y_map.png}
   \end{center}
 
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_u_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1189_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_u_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_Baseline_10y_hst.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_u_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paDegen_1092_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_u_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDegen_PanSTARRS_10y_hst.png}
   \end{center}
   \caption{Parallax degeneracy with hour angle, selecting filters for three extremes of object color, over the full 10-year survey. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:opstwoPS} (PanSTARRS-like cadence). Reading left-right, columns represent: {\it Left column:} Objects detected only in the bluest filter; {\it Middle column:} objects detected only in the reddest filter; {\it Right column:} objects detected in all filters. Spatial maps are clipped at 95\%, with histogram horizontal scale set to the range $0.0-1.0$.}
   \label{fig_astrom_ByFilter_PADegen}
@@ -385,51 +409,51 @@ quantified using the following metrics:
 
 \begin{figure}[ht]
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_u_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_u_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_10y_map.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_u_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_u_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_10y_map.png}
   \end{center}
 
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_u_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1189_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_u_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_Baseline_10y_hst.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_u_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_pmError_1092_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_u_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_pmError_PanSTARRS_10y_hst.png}
   \end{center}
-  \caption{Proper motion error for a star at apparent magnitude $m=21.0$, for three extremes of object color and assessed over the full survey. Crowding errors are ignored. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:opstwoPS} (PanSTARRS-like cadence). Reading left-right, columns represent: {\it Left column:} Objects detected only in the bluest filter; the fiducial object has apparent magnitude $u=21.0$; {\it Middle column:} objects detected only in the reddest filter (so $y = 21.0$); {\it Right column:} objects detected in all filters (using $r=21.0$~and a ``flat'' spectrum within sims\_maf). Spatial maps are clipped at 95\% and a log-scale is used for both the spatial maps and histograms. NOTE: the horizontal axes in the histograms are different for the two strategies; this is to allow the long tail of the proper motion error distribution in the \opsimdbref{db:baseCadence} to be displayed.}
+  \caption{Proper motion error for a star at apparent magnitude $m=21.0$, for three extremes of object color and assessed over the full survey. Crowding errors are ignored. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:opstwoPS} (PanSTARRS-like cadence). Reading left-right, columns represent: {\it Left column:} Objects detected only in the bluest filter; the fiducial object has apparent magnitude $u=21.0$; {\it Middle column:} objects detected only in the reddest filter (so $y = 21.0$); {\it Right column:} objects detected in all filters (using $r=21.0$~and a ``flat'' spectrum within sims\_maf). Spatial maps are clipped at 95\% and a log-scale is used for both the spatial maps and histograms. NOTE: the horizontal axes in the histograms are different for the two strategies; this is to allow the long tail of the proper motion error distribution in the \opsimdbref{db:baseCadence} to be displayed. \new{Horizontal scales on histograms may need adjusting.}}
   \label{fig_astrom_ByFilter_pmError}
 \end{figure}
 
 \begin{figure}[ht]
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_u_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_u_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_10y_map.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_u_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_y_map.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_10y_map.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_u_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_y_map.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_10y_map.png}
   \end{center}
 
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_u_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1189_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_u_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_Baseline_10y_hst.png}
   \end{center}
   \begin{center}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_u_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_y_hst.pdf}
-  \includegraphics[width=2.0in]{./figs/milkyway/MW_Astrom_paError_1092_10y_hst.pdf}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_u_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_y_hst.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paError_PanSTARRS_10y_hst.png}
   \end{center}
   \caption{Parallax error for a star at apparent magnitude $m=21.0$, for three extremes of object color and assessed over the full survey. Crowding errors are ignored. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:opstwoPS} (PanSTARRS-like cadence). Reading left-right, columns represent: {\it Left column:} Objects detected only in the bluest filter; the fiducial object has apparent magnitude $u=21.0$; {\it Middle column:} objects detected only in the reddest filter (so $y = 21.0$); {\it Right column:} objects detected in all filters (using $r=21.0$~and a ``flat'' spectrum within sims\_maf). Spatial maps are clipped at 95\%.}
   \label{fig_astrom_ByFilter_paError}
@@ -437,7 +461,7 @@ quantified using the following metrics:
 
 \subsubsection{Figures of Merit depening on the Metrics}
 
-Building on the first-order metrics above, this subsection will communicate scientific figures of merit for the cases identified in Section \ref{sec:\secname:MW_Astrometry_measurements} above.
+Building on the first-order metrics above, this subsection will communicate scientific figures of merit for the cases identified in \autoref{sec:\secname:MW_Astrometry_measurements} above.
 
 \new{Table \ref{tab_SummaryMWAstrometry} summarizes the Figures of Merit for Astrometry science cases.}
 
@@ -476,11 +500,11 @@ figures of merit might then be:
 
 \begin{table}
   \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
-    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence} }} & {\rotatebox{90}{\opsimdbref{db:opstwoPS} }} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
+    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence} }} & {\rotatebox{90}{\opsimdbref{db:opstwoPS} }} & {\rotatebox{90}{\scriptsize{\tt astro\_lsst\_01\_1004} }} &  {\rotatebox{90}{future run 2}} & Notes \\
     \hline
     1.1 & \footnotesize{Median parallax error at $g=21$ (main survey)}      & - & - & - & - & \footnotesize{Summarize the presentation in Figures \ref{fig_astrom_ByTime_PACoverage}-\ref{fig_astrom_ByFilter_paError}} \\
     1.2. & \footnotesize{Median parallax error at $g=21$ (plane)}   & - & - & - & - &  - \\
-    1.3. & \footnotesize{Median proper motion error at $g=21$ (main survey)}  & - & - & - & - &  \footnotesize{Take median of Figure \ref{fig_astrom_ByTime_pmError} over the ``plane'' region} \\
+    1.3. & \footnotesize{Median proper motion error at $g=21$ (main survey)}  & - & - & - & - &  \footnotesize{Take median of Figure \ref{fig_astrom_ByTime_pmError} over the ``plane'' region.~~~ \new{2016-04-26 Note to Phil when Section-auditing: I (WIC) still intend to evaluate this before the Apr 30th deadline! Peter Y has suggested a way this might be done.}  } \\
     1.4. & \footnotesize{Median proper motion error at $g=21$ (plane)} & - & - & - & - &  - \\
     \hline
     2.1. & \footnotesize{Number of streams LSST can discover via proper motions} & - & - & - & - &  - \\
@@ -489,7 +513,7 @@ figures of merit might then be:
     4.2. & \footnotesize{Uncertainty and bias in white dwarf mass function from the Solar Neighborhood}  & - & - & - & - & \footnotesize{Using astrometry metrics for objects detected only in the bluest filter(s)} \\
     5.1. & \footnotesize{Uncertainty and bias in Solar Neighborhood M-dwarf thickness on the MS}  & - & - & - & - &  - \\
 \end{tabular}
-\caption{Summary of Figures of Merit for the Milky Way Astrometry science cases. The best value of each FoM is indicated in bold. Runs \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS} refer to the Baseline and PanSTARRS-like strategies, respectively. See Section \ref{sec:MW_Astrometry}.}
+\caption{Summary of Figures of Merit for the Milky Way Astrometry science cases. The best value of each FoM is indicated in bold. Runs \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS} refer to the Baseline and PanSTARRS-like strategies, respectively. Column {\tt astro\_lsst\_01\_1004} refers to a recently-completed OpSim run that includes the Plane in Wide-Fast-Deep observations. See \autoref{sec:MW_Astrometry}.}
 \label{tab_SummaryMWAstrometry}
 \end{table}
 
@@ -505,8 +529,8 @@ and studies need to be done in many other areas as part of the
 prediction and verification of LSST's astrometric performance.  Among
 the most important are the following.
 \begin{itemize}
-\item How well do galaxies perform as astrometric reference objects? Are certain shapes or colors better than others? What is the 
-surface density of ``good" astrometric reference galaxies as a function of filter? 
+\item How well do galaxies perform as astrometric reference objects? Are certain shapes or colors better than others? What is the
+surface density of ``good" astrometric reference galaxies as a function of filter?
 \item How well can we identify optically point-like QSOs that will be useful in matching the optical reference frame to the ICRS?
 %\item Given the LSST exposure time, site, and physical characteristics, how can we mitigate the limitations on astrometric accuracy imposed by the seeing and local atmospheric turbulence?
 \item How does the astrometric performance depend on stellar density? If there are fields in which photometry is only possible via difference imaging, what are the limitations
