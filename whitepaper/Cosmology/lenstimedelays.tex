@@ -1,0 +1,320 @@
+% ====================================================================
+%+
+% SECTION NAME:
+%    lenstimedelays.tex
+%
+% CHAPTER:
+%    cosmology.tex
+%
+% ELEVATOR PITCH:
+%    Lensed quasars and supernovae provide distance measurements for
+%    cosmology. They are a few days to a few weeks in length. To
+%    measure them well we need long campaigns (>~3 years) with high
+%    night-to-night cadence (better than the standard 5 days if
+%    possible, especially as combining all filters might be difficult.)
+%
+% AUTHORS:
+%   Phil Marshall (@drphilmarshall)
+%-
+% ====================================================================
+
+\section{ Strong Gravitational Lens Time Delays }
+\def\secname{lenstimedelays}\label{sec:\secname}
+
+\credit{drphilmarshall},
+\credit{rhiannonlynne},
+\credit{tanguita}
+
+The multiple images of strongly lensed quasars and supernovae have
+delayed arrival times: variability in the first image will be observed
+in the second image some time later, as the photons take different
+paths around the deflector galaxy, and through different depths of
+gravitational potential. If the lens mass distribution can be modeled
+independently, using a combination of high resolution imaging of the
+distorted quasar/SN host galaxy and stellar dynamics in the lens
+galaxy, the measured time delays can be used to infer the ``time delay
+distance'' in the system. This distance enables a direct measurement
+of the Hubble constant, independent of the distance ladder.
+
+% --------------------------------------------------------------------
+
+\subsection{Target measurements and discoveries}
+\label{sec:\secname:targets}
+
+For this cosmological probe to be competitive with LSST's others, the
+time delays of several hundred systems (which will be distributed
+uniformly over the extragalactic sky) will need to be measured with
+bias below the sub-percent level, while the precision required is a
+few percent per lens.  In galaxy-scale lenses, the kind that are most
+accurately modeled, these time delays are typically between several
+days and several weeks long, and so are measurable in monitoring
+campaigns having night-to-night cadence of between one and a few days,
+and seasons lasting several months or more.
+
+To obtain accurate as well as precise lensed quasar time delays, several
+monitoring seasons are required. Lensed supernova time delays have not
+yet been measured, but their transient nature means that their time
+delay measurements may be more sensitive to cadence than season or
+campaign length.
+
+% --------------------------------------------------------------------
+
+\subsection{Metrics}
+\label{sec:\secname:metrics}
+
+Anticipating that the time delay accuracy would depend on night-to-night
+cadence, season length, and campaign length, we carried out a large
+scale simulation and measurement program that coarsely sampled these
+schedule properties. In \citet{LiaoEtal2015}, we simulated 5 different
+light curve datasets, each containing 1000 lenses, and presented them to
+the strong lensing community in a ``Time Delay Challenge.'' These 5
+challenge ``rungs'' differed by their schedule properties, in the ways
+shown in \autoref{tab:tdcrungs}. Focusing on the best challenge
+submissions made by the community, we derived a simple power law model
+for the variation of each of the time delay accuracy, time delay
+precision, and useable sample fraction, with the schedule properties
+cadence, season length and campaign length. These models are shown in
+\autoref{fig:tdcresults}, reproduced from \citet{LiaoEtal2015}, and are
+given by the following equations:
+\begin{align}
+|A|_{\rm model} &\approx 0.06\% \left(\frac{\rm cad} {\rm 3 days}  \right)^{0.0}
+                          \left(\frac{\rm sea}  {\rm 4 months}\right)^{-1.0}
+                          \left(\frac{\rm camp}{\rm 5 years} \right)^{-1.1} \notag \\
+  P_{\rm model} &\approx 4.0\% \left(\frac{\rm cad} {\rm 3 days}  \right)^{ 0.7}
+                         \left(\frac{\rm sea}  {\rm 4 months}\right)^{-0.3}
+                         \left(\frac{\rm camp}{\rm 5 years} \right)^{-0.6} \notag \\
+  f_{\rm model} &\approx 30\% \left(\frac{\rm cad} {\rm 3 days}  \right)^{-0.4}
+                        \left(\frac{\rm sea}  {\rm 4 months}\right)^{ 0.8}
+                        \left(\frac{\rm camp}{\rm 5 years} \right)^{-0.2} \notag
+\end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table*}
+\begin{center}
+\capstart
+\begin{tabular}{cccccc} \hline\hline
+  Rung &  Mean Cadence & Cadence Dispersion & Season   & Campaign & Length   \\
+       &  (days)       & (days)             & (months) & (years)  & (epochs) \\ \hline
+  0    &    3.0        &   1.0              &   8.0    &    5     & 400      \\
+  1    &    3.0        &   1.0              &   4.0    &    10    & 400      \\
+  2    &    3.0        &   0.0              &   4.0    &    5     & 200      \\
+  3    &    3.0        &   1.0              &   4.0    &    5     & 200      \\
+  4    &    6.0        &   1.0              &   4.0    &    10    & 200      \\
+\hline\hline
+\end{tabular}
+\end{center}
+\caption{The observing parameters for the five rungs of the Time Delay
+Challenge. Reproduced from \citet{LiaoEtal2015}.\label{tab:tdcrungs}}
+\end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[!ht]
+  \capstart
+  \begin{minipage}[b]{\linewidth}
+    \begin{minipage}[b]{0.32\linewidth}
+      \centering\includegraphics[width=\linewidth]{figs/Accuracy_season_nca.pdf}
+    \end{minipage} \hfill
+    \begin{minipage}[b]{0.32\linewidth}
+      \centering\includegraphics[width=\linewidth]{figs/Precision_cadence_nca.pdf}
+    \end{minipage} \hfill
+    \begin{minipage}[b]{0.32\linewidth}
+      \centering\includegraphics[width=\linewidth]{figs/Fraction_season_nca.pdf}
+    \end{minipage}
+  \end{minipage}
+\caption{Examples of changes in accuracy $A$ (left), precision $P$
+(center) and success fraction $f$ (right) with schedule properties, as
+seen in the different TDC submissions. The gray approximate power law
+model was derived by visual inspection of the pyCS-SPL results; the
+signs of the indices were pre-determined according to our expectations.
+Reproduced from \citet{LiaoEtal2015}.}
+\label{fig:tdcresults}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+All three of these metrics would, in an ideal world, be optimized:
+this could be achieved by decreasing the night-to-night cadence (to
+better sample the light curves), extending the observing season length
+(to maximize the chances of capturing a strong variation and its
+echo), and extending the campaign length (to increase the number of
+effective time delay measurements). A combined figure of merit should
+therefore be readily available.
+
+The quantity of greatest scientific interest is the {\it accuracy in
+cosmological parameters}: this coudl be computed as follows. Setting a
+required accuracy threshold  defines the available number of lenses,
+which in turns gives us the mean precision per lens there. Combining the
+whole sample, we would get the error on the weighted mean time delay,
+and can equate that to the statistical uncertainty on the Hubble
+constant. The Figure of merit would be the final precision on $H_0$, as
+a way to sum up the sample size and time delay measurability (at fixed
+accuracy requirement).
+
+% --------------------------------------------------------------------
+
+\subsection{\OpSim Analysis}
+\label{sec:\secname:analysis}
+
+% \OpSim analysis: how good would the default observing strategy be, at
+% the time of writing for this science project?
+
+In this section we present the results of our ongoing \OpSim / MAF
+analysis, as we try to
+answer the question ``how good would the proposed observing
+strategies be, for time delay lens cosmography?''
+
+We used the
+\simsMAFcontrib{SeasonStacker}{mafContrib/seasonStacker.py} to work
+with seasons, rather than calendar years.
+We used \texttt{ops2\_1075} \OpSim run for most of our tests, but plan
+to re-run on \opsimdbref{db:baseCadence} and
+\opsimdbref{db:NoVisitPairs}, in order to assess the new baseline
+cadence and compare it against a simulated observing strategy where
+the visit pair requirement is relaxed.
+
+% \todo{PJM}{Correct the above paragraphs and add more links to MAF code.}
+
+\autoref{fig:lenstimedelays:results} shows the results of our MAF
+analysis of one \OpSim database, \texttt{ops2\_1075}, where we have
+assumed that all filters were able to be used in the light curve
+analysis (as was implicitly assumed when applying the results of
+\citeauthor{LiaoEtal2015}). These sky maps show that, over the main
+(WDF) survey area, the time delay accuracy, time delay precision and
+time delay lens success fraction are consistently maintained,
+indicating that the global average values of these metrics could
+conceivably used as higher level metrics or even figure of merit.
+
+\autoref{tab:lenstimedelays:results} shows the global (i.e. all-sky)
+average values of our metrics, for two different \OpSim
+databases and two different filter set assumptions.
+% \todo{PJM}{Compute global average lens time delay metrics and discuss.}
+% \todo{PJM}{Define overall figure of merit and compute.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[!ht]
+  \capstart
+  \begin{minipage}[b]{\linewidth}
+    \begin{minipage}[b]{0.32\linewidth}
+      \centering\includegraphics[width=\linewidth]{figs/lenstimedelays-ops2_1075-Accuracy-skymap.png}
+    \end{minipage} \hfill
+    \begin{minipage}[b]{0.32\linewidth}
+      \centering\includegraphics[width=\linewidth]{figs/lenstimedelays-ops2_1075-Precision-skymap.png}
+    \end{minipage} \hfill
+    \begin{minipage}[b]{0.32\linewidth}
+      \centering\includegraphics[width=\linewidth]{figs/lenstimedelays-ops2_1075-Fraction-skymap.png}
+    \end{minipage}
+  \end{minipage}
+\caption{Sky maps of the accuracy $A$ (left), precision $P$ (center) and
+success fraction $f$ (right) metrics, for the \texttt{ops2\_1075} \OpSim
+database and assuming all filters ($ugrizy$) are used in the analysis
+according to the assumptions described in the text.}
+\label{fig:lenstimedelays:results}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{table*}
+% \begin{center}
+% \caption{Lens Time Delay Metric Analysis Results.}
+% \label{tab:lenstimedelays:results}
+% \footnotesize
+% \begin{tabularx}{\linewidth}{ccccccccc}
+%   \hline
+%   \OpSim run
+%    & Filters
+%     & \texttt{cadence}
+%      & \texttt{season}
+%       & \texttt{campaign}
+%        & \texttt{Accuracy}
+%         & \texttt{Precision}
+%          & \texttt{Fraction}
+%           & \texttt{timedelayFoM} \\
+%   \hline\hline
+%
+%   \opsimdbref{db:baseCadence}
+%    & $ri$
+%     & $XXX$
+%      & $XXX$
+%       & $XXX$
+%        & $XXX$
+%         & $XXX$
+%          & $XXX$
+%           & ??? \\
+%
+%   \opsimdbref{db:baseCadence}
+%    & $ugrizy$
+%     & $XXX$
+%      & $XXX$
+%       & $XXX$
+%        & $XXX$
+%         & $XXX$
+%          & $XXX$
+%           & ??? \\
+%   \hline
+%
+%   \opsimdbref{db:NoVisitPairs}
+%    & $ri$
+%     & $XXX$
+%      & $XXX$
+%       & $XXX$
+%        & $XXX$
+%         & $XXX$
+%          & $XXX$
+%           & ??? \\
+%
+%   \opsimdbref{db:NoVisitPairs}
+%    & $ugrizy$
+%     & $XXX$
+%      & $XXX$
+%       & $XXX$
+%        & $XXX$
+%         & $XXX$
+%          & $XXX$
+%           & ??? \\
+%   \hline
+%
+% \multicolumn{9}{p{\linewidth}}{\scriptsize Notes: see the text for
+% the definitions of each metric, and sky maps and histogram
+% plots of them. The Figure of Merit is still under development.}
+% \end{tabularx}
+% \normalsize
+% \medskip\\
+% \end{center}
+% \end{table*}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+% --------------------------------------------------------------------
+
+\subsection{Discussion}
+\label{sec:\secname:discussion}
+
+% \todo{PJM}{Write lens time delays discussion section.}
+
+The main risk involved with this science case
+is that the multi-filter light curve analysis will not be well approximated by
+the real-life combination of all 6 filters together.
+The second time delay challenge (TDC2) will help answer this
+question.  For now, just using 2 filters gives a lower limit on the
+overall precision we should expect.
+
+We would expect the relaxation of the visit pairs requirement to
+increase the  night to night cadence by a factor of two, if the visits
+are redistributed randomly in time. If \OpSim is not being as liberal as
+this, we may not see much improvement over the baseline cadence:
+efficiency maximization could be preventing visits being fully split. We
+are interested in any changes to the WFD survey time sampling that
+reduce the inter-night gaps: these  would include rolling cadence
+schemes.
+
+% Also need to assess 1 vs 3 vs 10 year light curves. How do metrics
+% improve? What will be possible in the early part of the survey?
+
+% ====================================================================
+
+\navigationbar
+
+% ====================================================================
