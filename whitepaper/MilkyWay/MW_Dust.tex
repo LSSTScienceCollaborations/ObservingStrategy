@@ -59,21 +59,21 @@ approach requires determination of the intrinsic stellar colors and
 the photometric parallax of each star in the presence of an unknown
 amount and law of extinction. Such maps are necessary to accurately
 measure the intrinsic luminosities and colors of both Galactic and
-extragalactic sources. \new{Recent work on 3-D maps include the
-  Bayesian analysis method based on Pan-STARRS--1 (PS1) data (Green et
-  al. 2015, ApJ, 810, 25) and an alternative technique using SDSS
+extragalactic sources. Recent work on 3-D maps include the
+  Bayesian analysis method based on Pan-STARRS--1 (PS1) data 
+  \citep{green15} and an alternative technique using SDSS
   photometry of M dwarfs (McGehee et al. 2016, in
   preparation). However, these studies have so far typically been
   limited to heliocentric distances of $\lesssim$4.5 kpc. In the full
   co-added survey, LSST will be able to map dust structures out to
   distances exceeding 40 kpc, thus revealing a detailed picture of
-  this component of the Milky Way Galaxy.}
+  this component of the Milky Way Galaxy.
 
-\new{While the PS1 3-D dust map is a significant advance, it suggests a
+While the PS1 3-D dust map is a significant advance, it suggests a
 number of major improvements that LSST will be able to
 provide. Firstly, the PS1 map covers the region of the sky covered in
 their 3$\pi$ survey, and thus excludes a large part of the Galactic
-Plane towards the South. Secondly, the PS1 map (Schlafly et al.~2014)
+Plane towards the South. Secondly, the PS1 map \citep{2014ApJ...789...15S}
 saturates at extinctions $E(B-V) > 1.5$ as their tracer stars fall out
 of the survey catalogs fainter than $g\sim 22$, meaning that this
 high-fidelity map does not extend uniformly to within a few degrees of
@@ -81,21 +81,21 @@ the midplane. Thirdly, this map is currently limited to distances $d
 \lesssim 4.5$~kpc. Deep LSST data will allow this map to be extended
 to much higher extinctions and larger distances. Owing to the high
 extinction and the use of blue filters, this project is less affected
-by crowding than other projects requiring photometry in the Plane.}
+by crowding than other projects requiring photometry in the Plane.
 
-\new{The SDSS approach is complementary, and makes use of reddening-free
-colors defined in the SDSS $ugriz$~system by McGehee et
-al. (2005). This approach makes use of M dwarf locus in $(g-r,r-i)$
+The SDSS approach is complementary, and makes use of reddening-free
+colors defined in the SDSS $ugriz$~system by \citet{mcgehee05}.
+This approach makes use of M dwarf locus in $(g-r,r-i)$
 being nearly perpendicular to the reddening vector in that color-color
 space. This allows mapping of a reddening-invariant index to the
-intrinsic stellar $g-i$ color and subsequent deterimation of the
+intrinsic stellar $g-i$ color and subsequent determination of the
 light-of-sight reddening. This approach assumes a set extinction law,
 i.e $R_V = 3.1$, in order compute the reddening-invariant index from
 the observed $g-r$ and $r-i$ colors. Given the relative faintness of M
 dwarfs, this technique is distance limited to $\sim$1 kpc when based
 on SDSS data. With its significantly greater survey depth to M-dwarfs,
 LSST should revolutionize the use of this technique to probe
-Interstellar dust.}
+Interstellar dust.
 
 % --------------------------------------------------------------------
 
@@ -118,7 +118,7 @@ filters and the high extinction.  Nonetheless, quantiative estimates of
 the expected photometric accuracy in coadded $u$ and $g$ images at low
 Galactic latitude are desirable.
 
-\new{Production of a 3-D map of the dust component of the ISM based on
+Production of a 3-D map of the dust component of the ISM based on
   LSST photometry will tell us how much dust is present, what type it
   is, and where it is along the line of sight.  The latter concern
   brings in issues of how to determine stellar photometric parallaxes
@@ -127,9 +127,9 @@ Galactic latitude are desirable.
   $R_V$ expressed as functions of $\mu$ under a suitable binning
   scheme. We can create simple Figure of Merit maps that lose the
   $\mu$ dependency by computing the mean and variance of the measured
-  variances in $E(B-V)$ and $R_V$ over the $\mu$ bins.}
+  variances in $E(B-V)$ and $R_V$ over the $\mu$ bins.
 
-\new{With the possible exception of sightlines towards star formation
+With the possible exception of sightlines towards star formation
   regions, studies of interstellar dust are insensitive to the
   distribution in time of the visits. In the case of active star
   formation regions it is possible that changes in the ISM could be
@@ -140,7 +140,7 @@ Galactic latitude are desirable.
   more stars are required that lie behind the dust. In general, the
   use of broad band photometry requires attention to the intrinsic
   SEDs of the background stars in order to correct for heterochromatic
-  variations in the effective reddening law.}
+  variations in the effective reddening law.
 
 % --------------------------------------------------------------------
 
@@ -148,32 +148,11 @@ Galactic latitude are desirable.
 
 \label{sec:\secname:metrics}
 
-Production of a 3-D map of the dust component of the ISM based on LSST
-photometry will tell us how much dust is present, what type it is, and
-where it is along the line of sight.  The latter concern brings in
-issues of how to determine stellar photometric parallaxes ($\mu =
-m-M$) under an unknown reddening.
-
-The dust maps that are created will consist of the median and variance
-of $E(B-V)$ and $R_V$ expressed as functions of $\mu$ under a suitable
-binning scheme. We can create simple Figure of Merit maps that lose
-the $\mu$ dependency by computing the mean and variance of the
-measured variances in $E(B-V)$ and $R_V$ over the $\mu$ bins.
-
-With the possible exception of sightlines towards star formation
-regions, the spacing in time of the visits doesn't matter for dust
-studies. In the case of active star formation regions it is possible
-that changes in the ISM could be apparent over the lifetime of the
-survey.  Pushing to fainter magnitudes (which means both better seeing
-and longer exposures) matters, both because we want more stars, and in
-particular, we want more stars behind the dust.
-
-
 {\bf Metric 1: Uncertainty and bias in $E(B-V)$~estimates as a
   function of location on-sky.} Dependencies:
 
 \begin{itemize}
-  \item Stellar population throughout the survey (e.g. Knut / Peter developments; TRILEGAL?);
+  \item Stellar population throughout the survey %(e.g. Knut / Peter developments; TRILEGAL?);
     \item Dust map throughout the survey region;
     \item Scale photometric error predictions for each band from program requirements per exposure;
       \item Produce formal estimate on the error in extinction and reddening as a function of position on-sky within the survey.
@@ -185,18 +164,21 @@ particular, we want more stars behind the dust.
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
+Table \ref{tab_SummaryMWDust} summarizes the science Figures of Merit
+for the ISM science cases with LSST. 
+At the present date (April
+2016) placeholder rows are given for the FoM's.
+
 
 
 % --------------------------------------------------------------------
 
-\subsection{Discussion}
-\label{sec:\secname:discussion}
+%\subsection{Discussion}
+%\label{sec:\secname:discussion}
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+%Discussion: what risks have been identified? What suggestions could be
+%made to improve this science project's figure of merit, and mitigate
+%the identified risks?
 
 \begin{table}
   \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}

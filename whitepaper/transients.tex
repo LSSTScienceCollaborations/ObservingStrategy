@@ -277,23 +277,64 @@ LSST's performance for a range of time-domain science:
 \subsection{Metrics}
 \label{sec:\chpname:metrics}
 
-We discuss several science-specific metrics in the sections that follow.
-Here we describe several \textit{generic} metrics valuable for considering
-transient performance in general:
+%We discuss several science-specific metrics in the sections that follow.
+%Here we describe several \textit{generic} metrics valuable for considering
+%transient performance in general:
 
-\subsubsection{Observation Gap Metrics (\texttt{intraNightGapMetric},
-\texttt{interNightGapMetric})}
+%\subsubsection{Observation Gap Metrics (\texttt{intraNightGapMetric},
+%\texttt{interNightGapMetric})}
+%
+%Calculates the median time between consecutive observations of a field in a
+%single night and in more than one night.  SQL queries can be used to
+%restrict to single-filter revisits.
 
-Calculates the median time between consecutive observations of a field in a
-single night and in more than one night.  SQL queries can be used to
-restrict to single-filter revisits.
+%\subsubsection{Transient Metric (\texttt{transientMetric}, 
+%\texttt{transientAsciiMetric})}
+%
+%Calculate what fraction of transients would be detected using either a
+%sawtooth lightcurve or a user-specified ASCII
+%input file for the lightcurve.
 
-\subsubsection{Transient Metric (\texttt{transientMetric}, 
-\texttt{transientAsciiMetric})}
 
-Calculate what fraction of transients would be detected using either a
-sawtooth lightcurve or a user-specified ASCII
-input file for the lightcurve.
+Two metrics were developed and are used in this chapter specifically for transient phenomena:
+\begin{itemize}
+  \item{\texttt{GRBTransientMetric}: detects the fraction of GRB-like transients detected (with user-specified constraints) using an $F(t) \propto t^{-\alpha}$
+    lightcurve. This metric is used in Section~\ref{sec:grbs}}
+  \item{\texttt{transientAsciiMetric}: accepts an ASCII file in input, so that realistic transient shapes can be used, with different shapes for different filters. The output can be the series of LSST observations (magnitude and error), or the fraction of transients detected (with user-specified constraints). This metric is used in Section~\ref{sec:SNtransients}.}
+\end{itemize}
+    
+Furthermore, metrics relevant to transient science are discused in Chapters~\ref{chp:galaxy},~\ref{chp:cosmo}, and ~\ref{chp:variables}. In particular: 
+\citet{2015arXiv150803175L} discuss
+three metrics that have been incorporated into the MAF. Two of these
+metrics deal explicitly with time variable behavior: a) observational
+triplets, and b) detection of periodic variability. While in this
+chapter we do not deal with periodic phenomena, the first of these
+metrics is useful to generically assess the performance of LSST for
+transients of all types.
+
+\texttt{TripletMetric}: this metric provides a means of evaluating whether a transient event
+on some time scale of interest has been detected, by testing for a
+sequence of three observations. The object must be detected in
+quiescence, followed by two subsequent detections above some
+threshold; this sequence of observations allows the magnitude of the
+change to be measured, as well as its time scale.
+
+This metric may be used for a variety of astrophysical phenomena, in
+particular transient events on variable objects (e.g. novae, stellar
+flares), in that it is general with respect to the amplitude of the
+brightness variation as well as the time scale of said change. The
+requirement of a detection prior to outburst does constrain it to
+objects that have already been detected in quiescence (in other words,
+not necessarily ``true'' transients), although there may be some cases
+where this is not the case (e.g. a supernova occurring on a previously
+detected galaxy). In practice, the time lapse between the first and
+second and second and third observations must be comparable (between
+10$^2$ and 10$^5$ seconds) for discovery. This metric may be
+calculated for a given OpSim run and then further reduced to a
+histogram in logarithmic time bins; the minimum number of bins to
+construct an interesting sample of objects is source-dependent.
+
+Many science cases can be developed and tested with these metrics, and we encourage users to do so. In addition we are collecting a library of representative transient lightcurves in a separate GitHub repository\footnote{\url{https://github.com/LSSTTVS/LSST_TVS_RoadMap}} and we encourage readers to contribute their transient models or observations.
 
 % --------------------------------------------------------------------
 
@@ -315,7 +356,6 @@ color information valuable for realtime classification.
 If a subset of those third
 visits were in the same filter as the first two, it would improve the shape
 characterization of the fastest-evolving transients.
-
 
 \begin{table}
   \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
