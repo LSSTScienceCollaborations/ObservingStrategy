@@ -90,7 +90,7 @@ provide a discovery service, and followup will necessarily be
 performed elsewhere----so long as the cadence is sufficient to identify the
 event type.
 For some events, such as detecting electromagnetic counterparts to
-gravitational wave events,
+gravitational wave events (GWs),
 serendipitous discoveries are unlikely, but
 enabling a ToO program would provide the opportunity for LSST to
 contribute significantly to this science.
@@ -101,7 +101,7 @@ contribute significantly to this science.
 %facilities.
 
 We consider a non-exhaustive set of ``astronomical transients'' in the
-paragraphs that follow.
+paragraphs that follow. For a few of these transients, we have at this time been able to quantify the ability of LSST cadences to produce useful and interest data to meet various science drivers. This includes: SNe, GRBs, and GWs. For other transient families (Novae, LBVs, TDEs) we provide more general information, and invite the community to further develop the ideas proposed here into measurable science cases. 
 
 \subsection{Targets and Measurements}
 \label{sec:\chpname:targets}
@@ -330,7 +330,6 @@ sequence of three observations. The object must be detected in
 quiescence, followed by two subsequent detections above some
 threshold; this sequence of observations allows the magnitude of the
 change to be measured, as well as its time scale.
-
 This metric may be used for a variety of astrophysical phenomena, in
 particular transient events on variable objects (e.g. novae, stellar
 flares), in that it is general with respect to the amplitude of the
@@ -347,6 +346,11 @@ histogram in logarithmic time bins; the minimum number of bins to
 construct an interesting sample of objects is source-dependent.
 
 Many science cases can be developed and tested with these metrics, and we encourage users to do so. In addition we are collecting a library of representative transient lightcurves in a separate GitHub repository\footnote{\url{https://github.com/LSSTTVS/LSST_TVS_RoadMap}} and we encourage readers to contribute their transient models or observations.
+
+Additionally, metrics that quantify the intra-night, as well as the inter-night gap, are of extreme interest to the transient community and are heavily used throughout this chapter, in Sections ~\ref{sec:transientAge}, ~\ref{sn:SNtransients}, and~\ref{sec:gw} for example.
+
+ERIC HISTOGRAMS HERE!
+
 
 % --------------------------------------------------------------------
 
@@ -400,11 +404,11 @@ overlap have not yet been investigated.
 
 % --------------------------------------------------------------------
 
-\input{tde.tex}
+\input{gw.tex}
 
 % --------------------------------------------------------------------
 
-\input{cv.tex}
+\input{tde.tex}
 
 % --------------------------------------------------------------------
 
@@ -412,4 +416,6 @@ overlap have not yet been investigated.
 
 % --------------------------------------------------------------------
 
-\input{gw.tex}
+\input{cv.tex}
+
+
