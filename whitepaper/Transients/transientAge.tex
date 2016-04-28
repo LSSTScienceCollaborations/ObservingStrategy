@@ -1,96 +1,59 @@
-% ====================================================================
-%+
+
 % SECTION:
-%    transientAge.tex
+%    transient.tex  
 %
 % CHAPTER:
-%    transients.tex
+%    transients.tex  
 %
 % ELEVATOR PITCH:
+%    Explain in a few sentences what the relevant discovery or
+%    measurement is going to be discussed, and what will be important
+%    about it. This is for the browsing reader to get a quick feel
+%    for what this section is about.
 %
-%-
+% COMMENTS:
+%
+%
+% BUGS:
+%
+%
+% AUTHORS:
+%  Stefano Valenti , Federica Bianco (@fedhere)
+%
 % ====================================================================
 
-% \section{Young Transients Discrimination Power}
-\subsection{Young Transients Discrimination Power}
+\section{Young Transients Discrimination Power}
 \def\secname{transientsAge}\label{sec:\secname}
 
-\credit{svalenti},
-\credit{fedhere}
 
-In this section we investigate the possibility to identify young
-transients using the intra-night visits. The Baseline Cadence predicts
-that on average, fields in the main survey get revisited about every 3
-days using all filters, and every 15 days when using only r band visits
-(see section 2.2).  This means that we are likely to discover transients
-that are between 0 and 3 days old. As pointed out in section 6.1.2, the
-first hours after the explosion reveal fundamental information on the
-nature of transients. It is then important to be able to select, among
-the large number of transients discovered by LSST, the youngest objects.
-The Baseline Cadence predicts that the second intra-night visit will
-occur between 30 minutes to 2 hours after the first visit.  The question
-we are trying to answer here is: Which intra-night gap will maximize the
-identification of young objects? To answer this question, we have
-selected a set of transients with good photometric coverage in the first
-week after the the outburst/explosion (see left panel of Figure 1) and
-compute the light curve slope (mag/day) as a function of time (see right
-panel of Figure 1). In Figure 2,  we report the change in brightness
-between the first and the second visit for a set of different transients
-as function of phase from explosion. Despite the heterogeneity in light
-curves shapes most of the transients show a similar change in brightens
-on a short time scale. This confirms that early classification and
-identification of interesting transients in a short time scale is a
-major challenge. However, independently on the type of transient, young
-transients may be easier to identify with large time gap between visits
-(2 hours). In general, most of the transients have a large increase in
-brightness at early phase. If the second visit occurs only 30 minutes
-after the first visit, the change in brightness will be of the order of
-1$\%$ or less independently on the type of transient or the time from
-the start of the outburst/explosion, (see left panel of Figure 2). If
-the second visit occurs 2 hours after the first visit, the change of
-brightness will be large enough to be detected for young transients
-($\sim$ 5$\%$). It is also worth to notice that a larger gap (24 hours),
-while could help in identify young transients, does not help in identify
-the type of transient.  The identification of interesting transients, at
-early stage, can be achieved using supplementary information like
-historical information from previous visits or color information of the
-transients. Finally, we want to stress that the quality of early
-multiwavelengh data available today is still limited; the sample of
-astronomical transients used here is not comprehensive and an uniform
-set of homogeneous data of different transients is still needed in order
-to further investigate the need of color information.
+\credit{svalenti}~\credit{fedhere} % (Writing team)
+
+For many transients the first few hours after event beginning reveal a tremendous amount of fundamental information on the nature of transients, and a large amount of resources in the transient community are devoted to the study of the very early phases of transients (e.g. SNe, GRBs). Since real time discrimination is a very hard task, it is then important to be able to select, among the large number of transients discovered by LSST, the youngest objects, in order to device follow-up plans, and best distribute precious follow-up resources. In this section we investigate the feasibility of identification of young transients from the LSST data alone, using the intra-night visits.
+
+The Baseline Cadence~\opsimdbref{db:baseCadence} predicts that, on average, fields in the main survey are revisited every $\sim3$ days in any filter (Figure~\ref{fig:enigmaGapAll}), and every $\sim15$ days when using only $r$ band visits (Figure~\ref{fig:enigmaGapr}).  Hence, we are likely to discover transients when they are between 0 and 3 days old. Within the~\opsimdbref{db:baseCadence} cadence, and most cadences realized thus far, the second intra-night visit should occur between 30 minutes to 2 hours after the first visit (to maximize the Solar System moving objects recovery,~\ref{chp:solarsystem}). We want to understand how the {\bf\emph{intra-night gap enables, affects, and maximizes the identification of new transients as young}}, where by young here we mean well within a day of outburst/explosion.
+To begin to answer this question, we limit our investigation to lightcurve shape alone, and specifically to what can be done in $r$ band. We have selected a representative set of transients with good photometric coverage in the first week after the the outburst/explosion (see left panel of Figure~\ref{fig:earlyslope}) and computed the light curve slope as a function of time in magnitudes per day (right panel of Figure~\ref{fig:earlyslope})). In Figure~\ref{fig:earlyrise} we report the change in $r$ brightness between the first and the second visit for the same set of transients as function of phase.
+
+Despite the heterogeneity in light curve shapes most of the transients show a similar change in brightness on short time scales. 
+This confirms that early classification and identification of interesting transients in real time is a major challenge. However, independently on the type of transient, although in general new transients have a large increase in brightness it, is much easier to assess whether a transients is \emph{young} with large time gap between visits (e.g. 2 hours).
+Within 30 minutes the change in brightness is of the order of $1\%$, or even less, for most transients that we investigated within the first $\sim3$ days from the start of the outburst/explosion (Figure~\ref{fig:earlyslope}, left). Thus a measurement of the change would require a $SNR\gtrsim500$ on each measurement. Longer gaps give us more leverage: with a time gap of $\sim2$~hours after the first visit, the change of brightness will increase to $\sim5\%$. However the breadth of the gap is not of course unlimited: while helpful in identifying young transients, a gap of even 24 hours does not by itself enable identification of the type of transient.  The identification of interesting transients, at an early stage, can be aided by using supplementary information, such as historical information from previous visits, and by color information about the transient. But to properly assess the color of an evolving transient, the observation pair has to be simultaneous, or separated by a small gap~\ref{sec:SNtransients}.
+
+Finally, we stress that the quality and completeness of early multiwavelengh data available at this time is limited; the sample of astronomical transients used here is not comprehensive and a uniform set of homogeneous data of different transients is still needed in order to further investigate the ideal separation between observations, the need for color information, and the tension between the two.
+
+{\bf\emph{In the light of these considerations, we recommand the simulation of a cadence with three visits per field, per night, two in the same band, but spaced by two hours or more, and a third in a different band. This criteria could be limited to the observations above and below the ecliptic plane, where recovery of Solar System objects puts less strain on the cadence requirements.}}
 
 \begin{figure}[hbt]
 \centerline{
-\includegraphics[width=0.6\textwidth]{figs/transients/earlyslope1.pdf}
+\includegraphics[width=0.6\textwidth]{figs/transients/earlyslope.pdf}
 }
-\caption{light curve slope [mag/days] of different type of transients as
-function of the phase from transient outburst/explosion.}
+\caption{\emph{Left}: $r'$-band light curve for representative transients as function of the phase from the beginning of the transient outburst/explosion for the first few days of the transient life. \emph{Right}: slope of the transient evolution. Data from: SN~Ia,~\citet{Olling15}; SNII,~\citet{Rubin16}; SN~.Ia,~\citet{Shen10}; SN~Ib,~\citet{Valenti11},~\citet{Cao13}; SN~Ic,~\citet{Mazzali02}; CV, ~\citet{Sokoloski13}, Finzell et al. (in prep), SN~Ia+interaction (see Section~\ref{sec:SNtransients})}.
 \label{fig:earlyslope}
 \end{figure}
 
 \begin{figure}[hbt]
 \centerline{
-\includegraphics[width=0.6\textwidth]{figs/transients/earlyrise1.pdf}
+\includegraphics[width=0.6\textwidth]{figs/transients/earlyrise.pdf}
 }
-\caption{Expected difference magnitudes between two consecutive
-observations for a set of astronomical transients as a function of the
-phase of the transient. We consider the cases of the second observation
-occurring 30 minutes (left panel), 2 hours (central panel) and 24 hours
-(right panel) after the first observation. Data from: SN~Ia,  Olling et
-al 2015; SN~Ia with shock interaction (see Section~\ref{sec:SNtransients}); SNII, Rubin et al 2016; SN~.Ia, 2010ApJ...715..767S; SN~Ib,
-Valenti et al 2011, Chao et al 2013; SN~Ic, Mazzali et al 2002; cv,
-Sokoloski et al. 2013, Finzell, et al in prep.
+\caption{Observed magnitude change between two consecutive observations for a representative set of astronomical transients, as a function of the phase. We consider observation gaps of 30 minutes  (left panel), 2 hours (central panel) and 24 hours (right panel). 
 }
 \label{fig:earlyrise}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%
-%    Ineed to add the references
-%
-%Olling et al 2015, Nature, 521, 332O
-%Rubin et al 2016, 2016ApJ, 820, 33R
-%Valenti et al 2011, MNRAS, 416, 3138V
-%Chao et al 2013,  ApJ, 775, 7C
-%Mazzali et al, 2002, ApJ, 572L, 61M
-%Sokoloski et al. 2013, 2013ApJ...770L..33S
-%Finzell, et al in prep
