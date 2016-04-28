@@ -373,8 +373,8 @@ Additionally, metrics that quantify the intra-night, as well as the inter-night 
 The current set of simulated cadences
 provide poor coverage in any one
 filter for transient events longer than a visit pair ($\sim$30
-minutes) and shorter than $\sim$ weeks (\autoref{fig:tgaps};
-\autoref{tab:visitgaps}).
+minutes) and shorter than $\sim$ weeks (\autoref{fig:tgaps} and 
+\autoref{fig:tgaps_r}; \autoref{tab:visitgaps}).
 
 As discussed in the subsequent sections, this
 gap in the sampling hinders characterization of fast-evolving
@@ -395,7 +395,7 @@ characterization of the fastest-evolving transients.
     \hline
 
     \thesection-1 & \footnotesize{\texttt{IntraNightGapsMetric},
-    any filter}      & -- & -- & -- & -- &
+    any filter}      & 0.39 & 0.42 & 0.18 & 0.40 &
     \footnotesize{Median gap (hours) between consecutive observations of a field
 	    in any pair
     of filters in a single night.} \\
@@ -406,7 +406,7 @@ characterization of the fastest-evolving transients.
 	    field in a single night.} \\
 
     \thesection-3 & \footnotesize{\texttt{InterNightGapsMetric},
-    any filter}      & -- & -- & -- & -- &
+    any filter}      & 3.0 & 3.9 & 2.0 & 3.0 &
 	    \footnotesize{Median gap (days) between consecutive observations of a field
 	    in any pair
     of filters over multiple nights.} \\
@@ -426,12 +426,22 @@ several simulated surveys.
 
 \begin{figure}[hbt]
 \centerline{
-	\includegraphics[width=0.45\textwidth]{figs/transients/median_internight_gap_r.pdf}
-	\includegraphics[width=0.45\textwidth]{figs/transients/median_intranight_gap_r.pdf}
+	\includegraphics[width=0.45\textwidth]{figs/transients/MedianIntra-NightGap.pdf}
+	\includegraphics[width=0.45\textwidth]{figs/transients/MedianInter-NightGap.pdf}
 }
-\caption{ Histograms of median $r$-band inter- (left) and intra- (right)
-night visit gaps for several OpSim runs. }
+\caption{ Histograms of median intra- (left) and inter- (right)
+night visit gaps for any band for several OpSim runs. }
 \label{fig:tgaps}
+\end{figure}
+
+\begin{figure}[hbt]
+\centerline{
+	\includegraphics[width=0.45\textwidth]{figs/transients/MedianIntra-NightGap_r.pdf}
+	\includegraphics[width=0.45\textwidth]{figs/transients/MedianInter-NightGap_r.pdf}
+}
+\caption{ Histograms of median $r$-band intra- (left) and inter- (right)
+night visit gaps for several OpSim runs. }
+\label{fig:tgaps_r}
 \end{figure}
 
 % don't just care about gap between consecutive obs, though; first-last obs
