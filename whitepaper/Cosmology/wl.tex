@@ -14,7 +14,7 @@
 \def\secname{wl}\label{sec:\secname}
 
 \credit{StephenRidgway},
-\credit{jmyers341}.
+\credit{jmeyers314}.
 
 Much of LSST cosmology may be limited by systematic errors rather than
 photon signal-to-noise. This is especially true of weak gravitational
@@ -58,13 +58,13 @@ statistics of these distributions.
 \subsection{OpSim Analysis}
 
 \begin{figure}
-\includegraphics[width=5.0in]{enigma1189RmsAnglerotSkyPosugrizybandallpropsOPSIComboHistogram.png}
+\centering\includegraphics[width=\linewidth]{figs/enigma1189RmsAnglerotSkyPosugrizybandallpropsOPSIComboHistogram.png}
 \caption{The relative angle of the detector plane with respect to the sky, RotSkyPos, as a histogram showing the number of fields vs. rms of the parameter.}
 \label{RotSkyPos}
 \end{figure}
 
-The distribution of rms values by filter is shown in Figure
-\ref{RotSkyPos} for the current candidate baseline simulation,
+The distribution of rms values by filter is shown in
+\autoref{RotSkyPos} for the current candidate baseline simulation,
 enigma\_1189.  As shown, the rms values cluster around the value 1
 radian,  with typical values 1 +- 0.3 radian.  This compares to a
 completely uniform distribution over the half circle with an rms of
@@ -99,7 +99,7 @@ It is certain that actively controlling the statistics of RotSkyPos
 will require additional slewing of the camera rotator.  At present,
 the operations plan is to only slew when necessary to prepare for a
 filter change - that could be estimated at the equivalent of $\simeq
-3$ complete rotations per day.  Figure \ref{RotSkyPos} shows that to
+3$ complete rotations per day.  \autoref{RotSkyPos} shows that to
 render the distribution completely uniform would require moving all
 observing angles an average of $\simeq 30$ degrees, or 300 complete
 rotations per night.  The timing of this has not been considered.
