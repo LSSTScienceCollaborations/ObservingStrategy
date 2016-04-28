@@ -393,36 +393,6 @@ subtle occuring?).
 % night are required, a naive expectation is that PHA completeness for
 % runs with fewer requested visits will drop significantly. \\
 %
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{figure}[t!]
-% \vskip -2.5in
-% \includegraphics[angle=0,width=0.99\hsize:,clip]{figs/NvisitStats.pdf}
-% \vskip -2.7in
-% \caption{The distribution of the number of visits used for nightly sequences of
-% length given on the horizontal axis. Only $griz$ bands are used. Note that even
-% ``no pairs'' simulation (\opsimdbref{db:NEOsNoVisitPairs})
-% includes multiple visits. The highest peak is at the
-% requested number of visits in a sequence.}
-% \label{fig:NvisitStats}
-% \end{figure}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{figure}[t!]
-% \vskip -1.2in
-% \includegraphics[angle=0,width=0.49\hsize:,clip]{figs/medinternight1.pdf}
-% \includegraphics[angle=0,width=0.49\hsize:,clip]{figs/medinternight2.pdf}
-% \vskip -1.3in
-% \caption{%
-% The comparison of the median intra-night gap distributions for Baseline Cadence (left)
-% and simulation \opsimdbref{db:NEOsNoVisitPairs}, which did not request pairs of visits per night.
-% Despite no need for pairs, simulation \opsimdbref{db:NEOsNoVisitPairs} produced them ``spontaneously'',
-% as well as longer sequences (see \autoref{fig:NvisitStats}). The mean field revisit
-% time is much shorter (about 6 minutes, see the right panel) than for Baseline Cadence
-% (22 minutes).}
-% \label{fig:intranightgapCompare}
-% \end{figure}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[t!]
@@ -461,24 +431,6 @@ subtle occuring?).
 %
 %
 % {\bf Analysis Results:}
-% First, we emphasize that ``requested'' is not the same as
-% ``delivered'': even the ``no pairs''
-% simulation \opsimdbref{db:NEOsNoVisitPairs} ends
-% up having multiple visits in a given night to the same fields, and
-% when multiple visits per night are requested, not all fields get to
-% have completed sequences. The statistics of how many fields are
-% combined into sequences of a given number of visits is shown in
-% \autoref{fig:NvisitStats}.  As evident, the highest peak is at the
-% requested number of visits in a sequence, but not all visits are
-% incorporated into requested sequences: some are in both shorter and
-% longer sequences. In particular, even ``no pairs'' simulation includes
-% multiple visits to some fields, essentially because the current
-% version of the algorithm is not told not to do so. As illustrated in
-% \autoref{fig:intranightgapCompare}, such revisits typically happen
-% within 10 minutes from the first visit. This (unintended) behavior
-% implies that the naive expectation above is probably incorrect, as we
-% discuss in more detail below.
-%
 %
 % For baseline reference, the PHA completeness for
 % \opsimdbref{db:baseCadence} is shown in \autoref{fig:enigmaNEO}. The
@@ -515,18 +467,6 @@ subtle occuring?).
 % for PHAs with H$\le$22 by about 15-20\% (and by about 30\% for quads).
 %
 %
-% \subsubsection{Impact on other science programs}
-%
-% The impact of requesting sequences with 3 or 4 visits to the same
-% field on other science programs is not yet analyzed in detail.  The
-% impact on static science should be minimal, except perhaps for a bit
-% worse behavior of various systematic errors (because fewer nights,
-% with their observing conditions, are sampled).
-%
-% For time-domain science, the mean revisit time will increase by about
-% 50\% if we go from pairs to triples, and by about a factor of two for
-% quads. This change will have a negative impact on time-domain science
-% programs based on SNe, variable stars, and transient objects, which
-% remains to be quantified.
+
 
 \navigationbar
