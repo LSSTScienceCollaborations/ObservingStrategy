@@ -69,14 +69,14 @@ schemes have only achieve modest performances in distinguishing, for
 example SN~Ic from SN~Ia. As mentioned earlier in this chapter, the issue
 of prompt classification is at the heart of the success of LSST
 transient science, but it is too complex to tackle in this chapter,
-while LSST's ability to assess wheather a new transient is young is discussed
+while LSST's ability to assess whether a new transient is young is discussed
 in Section~\ref{transientsAge}.
 
 When a large statistical sample of SNe is generated, LSST's photometry
 may allow to set constraints on the diversity of the sample, even as a
-standalone survey, without the aid of follow-up efforts. Thus LSST
-\emph{alone} can shed light on the diversity within the population of SN,
-which in turn may constrain the genesis of the explosion. Outstanding
+standalone survey, without the aid of follow-up efforts.
+{\bf Thus LSST \emph{alone} can shed light on the diversity within the population of SN},
+which in turn may constrain the genesis of the explosion.\footnote{Reliable typing of a SN and redshift determination may still require auxiliary data.} Outstanding
 questions that can be answered by an LSST photometric sample include,
 for example, what is the percentage of SN Ia that arise from a
 \emph{double degenerate} (DD) progenitor system (a CO WD-WD binary), from a
@@ -145,9 +145,9 @@ the same epoch, or at epochs separated by 1 day, and we include the
 effects of observational noise by generating datapoints from a draw
 within Gaussian distribution centered at the color measured in the
 previous step and with standard deviation $\sigma_\mathrm{pop} = 0.5$,
-1, and 2. One such lightcurve, with maximal interaction effects, is showin in Figure \ref{fig:kasenlc}.
-We generate populations of $N_\mathrm{pop}=100,
-~1000,~10000$ observations for $g'-r'$, $u'-r'$, $g'-i'$, and
+1, and 2. One such lightcurve, with maximal interaction effects, is shown in Figure \ref{fig:kasenlc}.
+We generate populations of $N_\mathrm{pop}=100$,
+~1000,~10000 observations for $g'-r'$, $u'-r'$, $g'-i'$, and
 $u'-i'$. Because the effect is heavily chromatic and it dissipates
 becoming essentially negligible by $r$ band, $u'-i'$ gives the most
 leverage. However $g'$ and $r'$ are the best observed LSST bands in
@@ -169,7 +169,7 @@ templates. The data points represnt one possible LSST observations of
 this transient, obtained by running the \texttt{transientAsciiMetric}.
 This particular event is \emph{not} detected in two filters within the
 first 10 days after explosion, and it is thus a non-detection for our
-purpose.}
+purposes.}
 \label{fig:kasenlc}
 \end{figure}
 
@@ -210,7 +210,7 @@ enhanced by $\sim50\%$.
 Then we extract from the  \texttt{transientAsciiMetric}, injecting SN at
 $z=0.5$, the number of \emph{color observations} (observations in 2
 bands within 1 day of each other, each fulfilling our SNR requirement
-for the color (which for simplicity we translat into a requirement on
+for the color (which for simplicity we translate into a requirement on
 each observation of $\mathrm{SNR} >
 \frac{1.0}{2.0~\sigma_\mathrm{pop}/\sqrt{2}}$, which for
 $\sigma_\mathrm{pop}=2$ is $\mathrm{SNR}>1.5$) for 3-, 6-, and 12 months
@@ -233,16 +233,17 @@ which is a \emph{conservative} assumption. Then our numbers drop by a
 factor 10 to $\sim60$ SNe in 3 months, $\sim180$ in 6 months, $\sim900$.
 Thus a year is \emph{nearly} enough for us to push our understanding of
 the progenitor population and constrain the fraction of SD progenitors
-to fractions smaller than 20\%. In the \autoref{tab:SummarySNprojs} we
+to fractions smaller than 20\%. In the Table~\ref{tab:SummarySNprojs} we
 summarize the results of our metric for different LSST cadences,
 recalling that our figure of metric is the timeline in the LSST survey
-that enables us to distinguish a SD controbution of less than 20\%.
+that enables us to distinguish a SD contribution of less than 20\%.
 
 \autoref{fig:sndetect} shows the detection rate for SN~Ia at $z=0.5$
 in absence of shock interaction as a function of SNR (product of $g'$
 and $r'$ limit) for 3, 6 months, and a year of
-\opsimdbref{db:baseCadence} (ideally I will plot it for the aother
-survey as well tonight)
+\opsimdbref{db:baseCadence}.
+% (ideally I will plot it for the other survey as well tonight) 
+
 
 
 \begin{table}
@@ -255,7 +256,7 @@ survey as well tonight)
     \thesection-1 & \footnotesize{\texttt{SNIaprojenitorMetric},
     \texttt{1,000 detections}}      & ? & 1 & ? & ? &
     \footnotesize{Time to collect 10,00 relevant color observations in  years in 3 month intervals.} \\
-    \thesection-2     & \footnotesize{\texttt{GRBTransientMetric},
+    \thesection-2     & \footnotesize{\texttt{SNIaprojenitorMetric},
     \texttt{10,000 detections}}      & ? & ? & ? &? &
     \footnotesize{Time to collect 10,000 relevant color observations in  years in 3 month intervals.}\\
 \end{tabular}
@@ -269,6 +270,6 @@ survey as well tonight)
     \includegraphics[width=0.6\textwidth]{figs/transients/LSST_Iadetected_wcolor.pdf}
   }
   \caption{
-    Normal SN Ia lightcure at z=0.5 detected by the \opsimdbref{db:baseCadence} cadence in 3 months, 6 months, and 1 year, that provide color informations useful to constrain the progenitor distrobution. }
+    Normal SN Ia lightcure at z=0.5 detected by the \opsimdbref{db:baseCadence} cadence in 3 months, 6 months, and 1 year, that provide color information useful to constrain the progenitor distribution. }
   \label{fig:sndetect}
 \end{figure}
