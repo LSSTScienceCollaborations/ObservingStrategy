@@ -1,37 +1,25 @@
 % ====================================================================
 %+
 % SECTION:
-%    sn.tex  
+%    sn.tex
 %
 % CHAPTER:
-%    transients.tex  
+%    transients.tex
 %
 % ELEVATOR PITCH:
-%    Explain in a few sentences what the relevant discovery or
-%    measurement is going to be discussed, and what will be important
-%    about it. This is for the browsing reader to get a quick feel
-%    for what this section is about.
 %
-% COMMENTS:
-%
-%
-% BUGS:
-%
-%
-% AUTHORS:
-%   Federica Bianco (@fedhere)
-%
+%-
 % ====================================================================
 
-\section{Supernovae as transients}
-\def\secname{SNtransients}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
+\section{Supernovae as Transients}
+\def\secname{SNtransients}\label{sec:\secname}
 
-\credit{fedhere} % (Writing team)
+\credit{fedhere}
 
 Supernovae (SNe) represent the final dramatic stages of life of many
 stars. The term SN we covers a diverse set of phenomena: explosion of
 low mass stars in binary systems, thermonuclear SN or SN Ia (also
-discussed in \ref{sec:supernovae}), and explosion of high mass stars,
+discussed in \autoref{sec:supernovae}), and explosion of high mass stars,
 Core collapse (CC) SNe, and even terminal explosions of more exotic
 systems, yet to be understood, like Super Luminous SNe
 (SLSNe). Phenomenologically, the observable of the explosion are
@@ -54,11 +42,11 @@ within the LSST footprint every year. The key questions concerning
 LSST SN science are:
 \begin{itemize}
 \item
-LSST's SN discovery power, 
+LSST's SN discovery power,
 \item
-LSST's discrimination power, 
+LSST's discrimination power,
 \item
-the quality of the statistical sample over time. 
+the quality of the statistical sample over time.
 \end{itemize}
 The first and second topic are \emph{time sensitive}, while the latter
 is not, although it is interesting to understand the pace at which a
@@ -125,6 +113,7 @@ about the statistical sample: as long as the epoch of peak is reliably
 assessed coadded light curves can be studied \citep{Bianco11}.
 
 \subsection{Distinguishing progenitor scenarios}
+
 In this chapter, we envision and design a SN related metric that works
 on a large sample (months, to years of LSST data) and assess the
 ability to characterize the contribution of SN with specific features
@@ -172,17 +161,25 @@ contributions.
 \centerline{
 \includegraphics[width=0.6\textwidth]{figs/transients/LSST_Kasen_lcv0.pdf}
 }
-\caption{
-A normal SN Ia lightcure at z=0.5 showing the effects of interaction with a RG companion as seen from the most favorable viewing angle: the effect is of interaction as simulated by \citet{Kasen10} is added on top of a lightcurve simulated from the \citealt{Nugent02} templates. The data points represent one possible LSST observations of this transient, obtained by running the \texttt{transientAsciiMetric}. This particular event is \emph{not} detected in two filters within the first 10 days after explosion, and it is thus a non-detection for our purpose.}
+\caption{ A normal SN Ia lightcure at z=0.5 showing the effects of
+interaction with a RG companion as seen from the most favorable viewing
+angle: the effect is of interaction as simulated by \citet{Kasen10} is
+added on top of a lightcurve simulated from the \citealt{Nugent02}
+templates. The data points represnt one possible LSST observations of
+this transient, obtained by running the \texttt{transientAsciiMetric}.
+This particular event is \emph{not} detected in two filters within the
+first 10 days after explosion, and it is thus a non-detection for our
+purposes.}
 \label{fig:kasenlc}
 \end{figure}
 
-
-
-In the table below we report our diagnostic power, as the ability to distinguish a population with a $f_\mathrm{SD} > x$ from $f_\mathrm{SD}<0.05$ as a function of noise ($\sigma_\mathrm{pop}$) and population size ($N$)
+In the table below we report our diagnostic power, as the ability to
+distinguish a population with a $f_\mathrm{SD} > x$ from
+$f_\mathrm{SD}<0.05$ as a function of noise ($\sigma_\mathrm{pop}$) and
+population size ($N$)
 
 \begin{center}
-\begin{tabular}{ c | c| c| c | c | c| c| c | } 
+\begin{tabular}{ c | c| c| c | c | c| c| c | }
 $g-i$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000}& $g-r$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000} \\
   \hline
  \bf{$\sigma_\mathrm{pop} = 2.0$}&  -  & -  &  0.2 & &  -  & -  &  0.2 \\
@@ -197,13 +194,55 @@ $g-i$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000}& $g-r$&\bf{$N$=100}&\bf{$N$=1,
 \end{tabular}
 \end{center}
 
-At this point what remains to do is to evaluate how long it will take for a given LSST cadence to obtain a sufficient number of observations in the 2 desired colors, separated by less than 1 day, passing the SNR requirements. This should be done in a full Monte Carlo simulation injecting lightcurves with the proper lightcurve shape at the proper rate. However at this stage we simply evaluate the relative observability of SNe with excess, and SNe without excess, at $z~=~0.5$ and properly adjust the number of detections, according to the injected ratio. The relative detectability can be assessed with the \texttt{transientAsciiMetric}, injecting observations with realistic shapes, and we conclude that for RG progenitor the detectability is enhanced by $\sim50\%$.
+At this point what remains to do is to evaluate how long it will take
+for a given LSST cadence to obtain a sufficient number of observations
+in the 2 desired colors, separated by less than 1 day, passing the SNR
+requirements. This should be done in a full Monte Carlo simulation
+injecting lightcurves with the proper lightcurve shape at the proper
+rate. However at this stage we simply evaluate the relative
+observability of SNe with excess, and SNe without excess, at $z~=~0.5$
+and properly adjust the number of detections, according to the injected
+ratio. The relative detectability can be assessed with the
+\texttt{transientAsciiMetric}, injecting observations with realistic
+shapes, and we conclude that for RG progenitor the detectability is
+enhanced by $\sim50\%$.
 
-Then we extract from the  \texttt{transientAsciiMetric}, injecting SN at $z=0.5$, the number of \emph{color observations} (observations in 2 bands within 1 day of each other, each fulfilling our SNR requirement for the color (which for simplicity we translate into a requirement on each observation of $\mathrm{SNR} > \frac{1.0}{2.0~\sigma_\mathrm{pop}/\sqrt{2}}$, which for $\sigma_\mathrm{pop}=2$ is $\mathrm{SNR}>1.5$) for 3-, 6-, and 12 months of survey in year 1.
+Then we extract from the  \texttt{transientAsciiMetric}, injecting SN at
+$z=0.5$, the number of \emph{color observations} (observations in 2
+bands within 1 day of each other, each fulfilling our SNR requirement
+for the color (which for simplicity we translate into a requirement on
+each observation of $\mathrm{SNR} >
+\frac{1.0}{2.0~\sigma_\mathrm{pop}/\sqrt{2}}$, which for
+$\sigma_\mathrm{pop}=2$ is $\mathrm{SNR}>1.5$) for 3-, 6-, and 12 months
+of survey in year 1.
 
-With the minimum goal of distinguishing a SD contribution of 20\% to the SN Ia population, we need more than 1000 detections, in 2 filters within 1 day, with both datapoints in $SNR \geq 2$. With the  \texttt{transientAsciiMetric} we find that in $g'-r'$ color the baseline survey detects $\sim600$ such SNe in 3 months, $\sim1800$ in 6 months, $\sim9000$ in a year. But these pairs of observations are with any gap in time, within the first 10 days. To include the constraint that the detections should be within 24 hours we refer to the median inter-night gap metric, which is plotted in ~\ref{fig:enigmaGapAll} for the baseline survey, we estimate $~\sim10\%$ of the observation are revisited within a night. With the assumption that this is likely to happen in two different filters, which is \emph{non-conservative}, but neglecting intra-night observations that may happen in the two different filters, which is a \emph{conservative} assumption. Then our numbers drop by a factor 10 to $\sim60$ SNe in 3 months, $\sim180$ in 6 months, $\sim900$. Thus a year is \emph{nearly} enough for us to push our understanding of the progenitor population and constrain the fraction of SD progenitors to fractions smaller than 20\%. In the Table~\ref{tab:SummarySNprojs} we summarize the results of our metric for different LSST cadences, recalling that our figure of metric is the timeline in the LSST survey that enables us to distinguish a SD contribution of less than 20\%.
+With the minimum goal of distinguishing a SD contribution of 20\% to the
+SN Ia population, we need more than 1000 detections, in 2 filters within
+1 day, with both datapoints in $SNR \geq 2$. With the
+\texttt{transientAsciiMetric} we find that in $g'-r'$ color the baseline
+survey detects $\sim600$ such SNe in 3 months, $\sim1800$ in 6 months,
+$\sim9000$ in a year. But these pairs of observations are with any gap
+in time, within the first 10 days. To include the constraint that the
+detections should be within 24 hours we refer to the median inter-night
+gap metric, which is plotted in ~\ref{fig:enigmaGapAll} for the baseline
+survey, we estimate $~\sim10\%$ of the observation are revisited within
+a night. With the assumption that this is likely to happen in two
+different filters, which is \emph{non-conservative}, but neglecting
+intra-night observations that may happen in the two different filters,
+which is a \emph{conservative} assumption. Then our numbers drop by a
+factor 10 to $\sim60$ SNe in 3 months, $\sim180$ in 6 months, $\sim900$.
+Thus a year is \emph{nearly} enough for us to push our understanding of
+the progenitor population and constrain the fraction of SD progenitors
+to fractions smaller than 20\%. In the Table~\ref{tab:SummarySNprojs} we
+summarize the results of our metric for different LSST cadences,
+recalling that our figure of metric is the timeline in the LSST survey
+that enables us to distinguish a SD contribution of less than 20\%.
 
-Figure~\ref{fig:sndetect} shows the detection rate for SN~Ia at $z=0.5$ in absence of shock interaction as a function of SNR (product of $g'$ and $r'$ limit) for 3, 6 months, and a year of \opsimdbref{db:baseCadence} (ideally I will plot it for the other survey as well tonight) 
+\autoref{fig:sndetect} shows the detection rate for SN~Ia at $z=0.5$
+in absence of shock interaction as a function of SNR (product of $g'$
+and $r'$ limit) for 3, 6 months, and a year of
+\opsimdbref{db:baseCadence}.
+% (ideally I will plot it for the other survey as well tonight) 
 
 
 
@@ -234,4 +273,3 @@ Figure~\ref{fig:sndetect} shows the detection rate for SN~Ia at $z=0.5$ in absen
     Normal SN Ia lightcure at z=0.5 detected by the \opsimdbref{db:baseCadence} cadence in 3 months, 6 months, and 1 year, that provide color information useful to constrain the progenitor distribution. }
   \label{fig:sndetect}
 \end{figure}
-

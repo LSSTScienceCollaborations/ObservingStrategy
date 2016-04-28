@@ -1,18 +1,32 @@
+% ====================================================================
+%+
+% NAME:
+%    youngstars.tex
+%
+% CHAPTER:
+%    variables.tex
+%
+% ELEVATOR PITCH:
+%-
+% ====================================================================
 
 \section{Discovery and Characterization of Young Stellar Populations}
 \def\secname{youngstars}\label{sec:\secname}
 
-\noindent{\it P. Hartigan and C. Johns-Krull} % (Writing team)
+\credit{phartigan},
+\credit{CJohnsKrull},
+\credit{pmmcgehee}
+
 
 \subsection{Introduction}
 
-All young stars exhibit some form of 
+All young stars exhibit some form of
 photometric variability, and these variations hold the key
 to understanding the diverse physical processes present at starbirth
 such as mass accretion events from circumstellar disks, presence of
 warps in envelopes, creation of new knots in stellar jets,
-evolution of stellar angular momenta, starspot longevity and cycles, 
-and the frequency and strength of flares. 
+evolution of stellar angular momenta, starspot longevity and cycles,
+and the frequency and strength of flares.
 With the proper cadences and filter choices,
 LSST will make a significant impact in our understanding of all
 these phenomena simply by providing large enough samples to allow
@@ -32,7 +46,7 @@ from cool star spots, though the active regions that generate X-rays in
 these objects undoubtedly produce flares as well. Additional variations occur
 among cTTs, primarily caused by unsteady mass infall from circumstellar disks
 onto their stars, and from periodic extinction events that unfold as dense
-clumps or disk warps circle the star in Keplerian orbits. 
+clumps or disk warps circle the star in Keplerian orbits.
 At the extreme end of cTTs phenomena, rare
 massive outbursts of several magnitudes with decay times between several months
 to over a hundred years in pre-main-sequence stars (EX Ori's and FU Ori's)
@@ -42,7 +56,7 @@ will easily detect them along with similar, less-dramatic systems.
 
 Obtaining rotation periods for large numbers of pre-main-sequence stars is the only way to
 quantify how the angular momenta of young stars vary with age. For both wTTs and cTTs,
-phase-coherence in the rotation periods defines the longevity of star spots, while the 
+phase-coherence in the rotation periods defines the longevity of star spots, while the
 amplitude of the periodic component of the lightcurve constrains the spot coverage (and
 temperature if multiple filters are used). In cTTs, U-band fluxes rise during
 accretion events, which we can distinguish from extinction events if red magnitudes are
@@ -61,17 +75,76 @@ reliable for detection of new young stars, but LSST will at minimum assist
 by identifying non-YSO X-ray sources, and should be a means for discovery
 for older pre-main-sequence stars (10 $-$ 30 My range) that have had time
 to wander away from the well-known sites of star forming activity that are
-typical targets for deep, pointed X-ray surveys
+typical targets for deep, pointed X-ray surveys.
+
+
+
+{\bf From the Milky Way science perspective:}
+% i.e. moved from Perry's part of Chapter 4
+
+LSST gives the opportunity to survey extensive areas
+around star formation regions in the Southern hemisphere. Among
+others, it would allow to study the Initial Mass Function down to the
+sub-stellar limit across different environments. Young stars are
+efficiently identified by their variability.
+
+Section 8.10.2 in the LSST Science Book (p298--299) provides a thorough
+scientific motivation for the characterization of young stars through
+variability, including discussion of the observational signatures of the
+diverse physical phenomena driving observed time variability. The
+general observable is strong, irregular flaring across the entire
+$ugrizy$~bandpass of LSST. Flaring can last from minutes to years, and
+at amplitudes from a few tenths to several magnitudes.
+
+
+% % --------------------------------------------------------------------
+% % From Perry:
+%
+% \subsection{Target measurements and discoveries}
+% \label{sec:\secname:targets}
+
+The nature of the variability in young stars changes with evolutionary
+status. For the youngest stars still undergoing significant mass
+accretion, FU Orionis and related outbursts can occur due to
+circumstellar disk instabilities. As the natal environment dissipates
+and the accretion rates drops, the stars take on a Classical T Tauri
+appearance where the variability is primarily due to changes in the
+accretion flow and rotational modulation of hot spots resulting from
+accretion shocks on the protostellar photosphere. Also present are the
+signature of cool spots arising from strong magnetic fields. This cool
+spot rotational modulation is responsible for the variability in the
+disk-less, and older, weak-line T Tauri stars.
+
+Of particular interest are the FUor and EXor variables, which are named
+after the prototype objects FU Orionis \citep{hartmann96} and EX Lupi
+\citep{herbig01} respectively, and for which only a relatively small
+number of examples are known. In these pre-main sequence objects,
+eruptive outbursts of up to 6 magnitudes have been observed, with high
+state durations from years to decades. In addition to triggering
+follow-up observations, LSST should be able to set the first population
+constraints on the duration of high states, particularly for the short
+end of the timescale distribution for these eruptive variables.
+
+%{\bf CTTS and WTTS material goes here.}
+
+%Here are the references cited above:\\
+%Hartmann \& Kenyon 1996, ARA\&A, 34, 207 \\
+%Herbig et al. 2001, PASP, 113, 1547 \\
+%Herbig 1977, ApJ, 217, 693 \\
+%Aspin et al. 2009, ApJ, 692L, 67 \\
+%Hodapp et al. 1996, ApJ, 468, 861 \\
+%McGehee et al. 2004, ApJ, 616, 1058 \\
+
 
 % --------------------------------------------------------------------
 
-\subsection{OpSim Analysis}
+\subsection{Analysis}
 \label{sec:\secname:analysis}
 
 {\bf Target Regions}
 
 Young stars congregate in specific regions, so it is worthwhile to
-consider which of these areas will be the most fertile for studies with LSST.  
+consider which of these areas will be the most fertile for studies with LSST.
 The closest star forming regions are all about 140~pc distant: Taurus-Auriga in
 the north and $\rho$ Oph, Lupus, Cha I, and CrA in the south. However,
 these regions have only low-mass molecular clouds, and each contain
@@ -87,8 +160,8 @@ Owing to extinction in the dark clouds,
 source confusion will generally not be an issue (as evidenced by typical
 deep optical images of such regions), though the large fraction
 of pre-main-sequence binaries at all separations ensures that many
-lightcurves will be composites of the primaries and secondaries. 
-More distant star-forming regions will suffer from enhanced foreground 
+lightcurves will be composites of the primaries and secondaries.
+More distant star-forming regions will suffer from enhanced foreground
 contamination, though it should be possible to eliminate most contaminating
 variable stars by combining close inspection of their lightcurves with
 colors.
@@ -97,7 +170,7 @@ colors.
 
 {\bf A. Magnitude Limits, Filter Choices}
 
-To quantify YSO studies with LSST, we consider V~927 Tau, 
+To quantify YSO studies with LSST, we consider V~927 Tau,
 a rather faint, moderately-reddened 0.2 M$_\odot$ young star in the Taurus cloud
 as a target goal. Extrapolating this star
 to the distance of Carina we have u=24.0, g=23.0, r=20.8, i=19.4, and z=18.0. For reference,
@@ -105,26 +178,26 @@ a typical young star in the Carina X-ray catalog has an i-magnitude of 18.
 Objects that suffer larger extinctions along the line of sight will
 be easiest to observe in the red. The universal cadence option of 2$\times$15 sec
 exposures will yield $\sigma$ = 0.02 mag for r=21.8, a magnitude fainter than
-V~927 Tau would be in Carina. We show below that this photometric uncertainty 
+V~927 Tau would be in Carina. We show below that this photometric uncertainty
 suffices to recover a typical period from such an object. The mass function
-of young stars appears to peak around 0.3 M$_\odot$, so LSST will 
+of young stars appears to peak around 0.3 M$_\odot$, so LSST will
 determine periods below this mass peak with nominal r-band measurements
 for a region like Carina. Of course, several additional magnitudes of extinction will
 exist towards many embedded sources. For example, if we assume an additional five magnitudes
 of extinction at V for the V~927 Tau-like example above,
 then r=25.2 and $\sigma$ = 0.41 mag per visit with universal cadence,
-so no usable lightcurve will be possible at r. 
+so no usable lightcurve will be possible at r.
 However, z=20.5 in this case, where $\sigma$ $<$ 0.01 mag and precision
-lightcurves are again possible. 
+lightcurves are again possible.
 
 {\bf B. Period Recovery for wTTs}
 
 In order to assess how well LSST will recover periods, we created the following
 model for wTTs variability.  Based on current surveys of wTTs, the periods are
 distributed approximately as a Poisson distribution with a mean of 3.5 days
-\citep[Affer et al. (2013)]{Affer13}. 
+\citep[Affer et al. (2013)]{Affer13}.
 Amplitudes are typically 0.1 magnitude \citep[(Grankin et al. 2008)]{ROTOR},
-, so we adopt a Poisson distribution 
+, so we adopt a Poisson distribution
 that has a mean amplitude of 0.05 mag, and then add 0.05 mag to ensure that
 the mean variability is 0.1 mag. Shapes of T-Tauri lightcurves can be sinusoidal,
 but many are `bowl-shaped', influenced by the distribution of large dark starspots
@@ -133,7 +206,7 @@ For the bowl lightcurves we assumed a Gaussian shape with a FWHM in a uniform
 distribution of extent between 0 and 0.75 in phase.
 Our simulations cover both of these shapes.
 Errors for each point were taken to be 0.02 magnitude, corresponding to
-about r $\sim$ 21.8 for a universal cadence. 
+about r $\sim$ 21.8 for a universal cadence.
 
 One set of simulations assumed a cadence of
 one observation every three days over the course of a year.
@@ -146,7 +219,7 @@ the cadence to once every 7 days, the ability to recover periods drops to
 82\%\ and 59\% , respectively, for the two shapes. Interestingly, restricting the
 sample to the highest-amplitude sources ($\gtrsim$ 0.1 magnitude) does little
 to aid period recovery. The main issue remains the short-period systems where
-P $\lesssim$ 2 days. 
+P $\lesssim$ 2 days.
 
 \begin{figure}[b]
 \begin{center}
@@ -187,8 +260,8 @@ Right: The narrowest 278 bowls have a significantly higher error rate than the e
 \end{figure}
 
 Overall, standard cadences of once every few days should suffice
-to find most periodic T-Tauri stars that have periods $\gtrsim$ 3 days. 
-A dedicated campaign to observe star-forming regions 
+to find most periodic T-Tauri stars that have periods $\gtrsim$ 3 days.
+A dedicated campaign to observe star-forming regions
 at time intervals of an hour or less is required to capture the shorter-period systems.
 The r-filter should suffice for most objects, though some benefit will be had
 by going to z to allow the more heavily-extincted sources to be observed.
@@ -203,7 +276,7 @@ events to a large degree overwhelm low-amplitude periodic signatures. Even when
 period searches yield a low false-alarm probability, the results are not necessarily
 reliable. Results from Palomar Transient Factory surveys in the North American
 Nebula \citep[(Findeisen et al. 2013)]{feindeisen13} and with Spitzer
-\citep[(Cody et al. 2014)]{cody14} 
+\citep[(Cody et al. 2014)]{cody14}
 reveal several types of both short- and long-term variations including both bursting and
 fading.  These observations emphasize how important it will be to have some
 dense phase coverage as a reality check to ensure the reliability of
@@ -218,6 +291,60 @@ Periodic extinction events follow the same restrictions and
 have the same requirements as rotational periods described in subsection B.
 
 
+
+
+{\bf From the Milky Way science perspective:}
+% i.e. moved from Perry's part of Chapter 4
+
+In order to assess the ability of LSST to 1) identify and 2) classify
+Young Stellar Objects we need to quantify the variability timescales
+and amplitudes of both Class I/II (stars with disks, including
+Classical T Tauris) and Class III (Weak-line T Tauris).  Inclusion of
+eruptive variables (FUor/EXor) is appropriate as well.
+
+In brief, Weak-line T-Tauris are quasi-periodic with amplitudes of 0.1
+to 0.3 mag and periods 1 to $\sim$15 days, so their variability is
+comparable to that of $\gamma$ Dor stars. Given the temporal evolution
+of cool spots, a period recovery analysis such as shown for RR Lyrae
+stars is likely difficult.  The embedded systems and Classical T
+Tauris are irregular variables but have been shown to have distinctive
+colors due to extinction and the ultraviolet and blue excess arising
+from accretion shocks.
+
+\autoref{table:pseudoForExor} shows a possible Figure of Merit for the
+recovery by LSST of the distribution of EXor high-state duration in
+outburst.
+
+
+\begin{table}
+\small
+\begin{tabular}{c p{12cm}}
+& {\it Figure of Merit for recovery of EXor high--state duration distribution}\\
+\hline
+1.  & Produce ASCII lightcurve for eruptive outburst \\
+2.  & Initialise large array to store the maps of fraction detected as a function of duration and amplitude. \\
+2.  & for {\it duration T} in range \{min, max\}:  \\
+3.  & ~~~~ for {\it amplitude A} in range \{min, max\}: \\
+4.  & ~~~~~~~~~~ run {\tt mafContrib/transientAsciiMetric} \\
+5.  & ~~~~~~~~~~ store the spatial map of the fraction detected for this (A, T) pair \\
+6.  & Initialise master arrays to hold the run of duration distribution measurements.\\
+7. & Produce distribution of high--state durations and amplitudes from which the simulations will be drawn. \\
+8.  & for {\it iDraw} in range \{1, nDraws\}:\\
+9.  & ~~~~ construct model population with input duration distribution \\
+10.  & ~~~~ Apply the stored metrics from 2-5 to measure fraction recovered \\
+11.  & ~~~~ Characterize the duration distribution for this draw \\
+12. & ~~~~ Fill the {\it iDraw}'th entry in the master arrays. \\
+13. & {\bf FoM 1:} Compute the median and variance of the upper/lower quintiles. \\
+14. & {\bf FoM 2:} Evaluate the bias between recovered and input high-state duration. \\
+\hline
+\end{tabular}
+\caption{Steps for Figure of Merit recovering the distribution
+  for the duration of EXor high states.}
+\label{table:pseudoForExor}
+\end{table}
+
+
+
 % --------------------------------------------------------------------
 
 \subsection{Summary and Recommendations}
@@ -226,8 +353,8 @@ have the same requirements as rotational periods described in subsection B.
 {\bf Performance for Nominal Cadences}
 
 Nominal cadences that return to a star-forming region every 3-4 days
-will suffice to determine rotation periods for $\sim$ 90\%\ of the 
-young stars within the magnitude limits of LSST. 
+will suffice to determine rotation periods for $\sim$ 90\%\ of the
+young stars within the magnitude limits of LSST.
 These cadences are also adequate to detect major episodic
 accretion events like FU Ori's and EX Ori's.
 
@@ -241,11 +368,11 @@ the only way to provide a sanity check on any periods recovered for
 cTTs, which have complex irregular light variations.
 Comparing longevities of starspots across the mass ranges of young
 stars requires two well-sampled lightcurves separated by large
-time intervals. 
+time intervals.
 
 These goals can be accomplished by having a week every year where
 one or more selected fields are observed once every 30 minutes in u, r and z.
-A young star with a 2-day period sampled every 30 minutes provides a 
+A young star with a 2-day period sampled every 30 minutes provides a
 data point every 0.01 in phase. For the best-case scenario, observing for 7 nights
 and 10 hours per night would yield 140 photometric points in each filter.
 Depending on the period aliasing, this coverage should populate the
@@ -257,6 +384,22 @@ Combining a densely-packed short-interval
 dataset with a sparse but long baseline study maxmizes the scientific return
 for both methods, and allows LSST to address all of the phenomena
 discussed in the Introduction.
+
+
+{\bf From the Milky Way science perspective:}
+% i.e. moved from Perry's part of Chapter 4
+
+Galactic star formation regions are largely found at low Galactic
+latitudes or within the Gould Belt structure. As such study of young
+stars with LSST is closely tied to other science goals concerning the
+Milky Way Disk and is subject to the concerns of both crowded field
+photometry and the observing cadence along the Milky Way.
+
+The embedded and Classical T Tauri stars also undergo significant and
+rapid color changes due to accretion processes. The ability of LSST to
+track these variations in color could be limited by the interval
+between filter changes.
+
 
 % ====================================================================
 
@@ -273,13 +416,13 @@ discussed in the Introduction.
 %\bibitem[Cody al. (2014)]{cody14}
 %Cody, A., et al.
 %{Cody, A. et al.} 2014,
-%\textit{AJ}, 147, 82 
+%\textit{AJ}, 147, 82
 
 %\bibitem[Grankin al. (2008)]{ROTOR}
 %\bibitem[Findeisen al. (2013)]{findeisen13}
 %Findeisen, K., Hillenbrand, L., Ofek, E., Levitan, D., Sesar, B., Laher, R., \& Surace, J.
 %{Findeisen, K. et al.} 2013,
-%\textit{ApJ}, 768, 93 
+%\textit{ApJ}, 768, 93
 
 %\bibitem[Grankin al. (2008)]{ROTOR}
 %{Grankin, K. N., Bouvier, J., Herbst, W., \& Melnikov, S. Yu.} 2008,

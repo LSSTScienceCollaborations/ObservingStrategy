@@ -8,47 +8,44 @@
 %
 % ELEVATOR PITCH:
 %    Large Scale Structure, Weak Lensing, and Clusters all require
-% survey uniformity in the static 10-year survey.  A key contributor to 
-%this is the pattern of dithers adopted.  
-%
-% COMMENTS:
-%
-%
-% BUGS:
-%
+%    survey uniformity in the static 10-year survey.  A key contributor
+%    to this is the pattern of dithers adopted.
 %
 % AUTHORS:
 %   Eric Gawiser (@egawiser)
 %-
 % ====================================================================
-\clearpage
+
 \section{Large Scale Structure:  Testing Dithering Patterns and Timescales to Improve Survey Uniformity}
 \def\secname{lss}\label{sec:\secname}
 
-\noindent{\it Humna Awan, Eric Gawiser, Peter Kurczynski, Lynne Jones} % (Writing team)
+\credit{HumnaAwan},
+\credit{egawiser}
+\credit{PeterKurczynski},
+\credit{rhiannonlynne}
 
-% This individual section will need to describe the particular
-% discoveries and measurements that are being targeted in this section's
-% science case. It will be helpful to think of a ``science case" as a
-% ``science project" that the authors {\it actually plan to do}. Then,
-% the sections can follow the tried and tested format of an observing
-% proposal: a brief description of the investigation, with references,
-% followed by a technical feasibility piece. This latter part will need
-% to be quantified using the MAF framework, via a set of metrics that
-% need to be computed for any given observing strategy to quantify its
-% impact on the described science case. Ideally, these metrics would be
-% combined in a well-motivated figure of merit. The section can conclude
-% with a discussion of any risks that have been identified, and how
-% these could be mitigated.
+Three of the key cosmology probes available with LSST represent ``static
+science'' insensitive to time-domain concerns.  These are Weak Lensing,
+Large-Scale Structure, and Galaxy Clusters.  Nonetheless, due to the
+need to track and correct for the survey ``window function'' in all of
+these probes, cosmology with LSST will benefit greatly from achieving
+survey depth as uniform as possible over the WFD area.  OpSim tiles the
+sky in hexagons inscribed within the nearly-circular LSST field-of-view.
+It has been shown in \citet{CarrollEtal2014} that the default LSST
+survey strategy implemented in OpSim runs leads to a strongly
+non-uniform ``honeycomb'' pattern due to overlapping regions on the
+edges of these hexagons receiving double the observing time.  A pattern
+of large dithers proves sufficient to greatly reduce these overlaps,
+leading to an increase in median survey depth in each filter of 0.08
+magnitudes.
 
-% A short preamble goes here. What's the context for this science
-% project? Where does it fit in the big picture?
+In this section, we report results from an investigation by Awan et al.
+(in preparation) of several geometrical patterns for dithers performed
+on timescales varying from once per observing season to once per night
+to every visit.
 
-Three of the key cosmology probes available with LSST represent ``static science'' insensitive to time-domain concerns.  These are Weak Lensing, Large-Scale Structure, and Galaxy Clusters.  Nonetheless, due to the need to track and correct for the survey ``window function'' in all of these probes, cosmology with LSST will benefit greatly from achieving survey depth as uniform as possible over the WFD area.  OpSim tiles the sky in hexagons inscribed within the nearly-circular LSST field-of-view.  It has been shown in \citet{CarrollEtal2014} that the default LSST survey strategy implemented in OpSim runs leads to a strongly non-uniform ``honeycomb'' pattern due to overlapping regions on the edges of these hexagons receiving double the observing time.  A pattern of large dithers proves sufficient to greatly reduce these overlaps, leading to an increase in median survey depth in each filter of 0.08 magnitudes.  
-
-In this section, we report results from an investigation by Awan et al. (in preparation) of several geometrical patterns for dithers performed on timescales varying from once per observing season to once per night to every visit.  
-
-\todo{EG}{Flesh out WL, LSS, and Clusters dependence on survey uniformity to make this section more clearly science-driven.}  
+% \todo{EG}{Flesh out WL, LSS, and Clusters dependence on survey
+% uniformity to make this section more clearly science-driven.}
 
 % --------------------------------------------------------------------
 
@@ -64,10 +61,13 @@ In this section, we report results from an investigation by Awan et al. (in prep
 % Quantifying the response via MAF metrics: definition of the metrics,
 % and any derived overall figure of merit.
 
-Our primary metric is total uncertainty in the derived window function over relevant angular scales, modeled via variations in the angular power spectrum of fake galaxy fluctuations between $gri$ bands.  
-Intermediate metrics include the number of galaxies in 
-each pixel, fluctuations in this number, total power in the angular power spectrum of a skymap of those fluctuations, and residual power that angular power spectrum after subtracting a smooth fit to it.  
-
+Our primary metric is the total uncertainty in the derived window function
+over relevant angular scales, modeled via variations in the angular
+power spectrum of fake galaxy fluctuations between $gri$ bands.
+Intermediate metrics include the number of galaxies in each pixel,
+fluctuations in this number, total power in the angular power spectrum
+of a skymap of those fluctuations, and residual power that angular power
+spectrum after subtracting a smooth fit to it.
 
 
 % --------------------------------------------------------------------
@@ -75,12 +75,11 @@ each pixel, fluctuations in this number, total power in the angular power spectr
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
-% OpSim analysis: how good would the default observing strategy be, at
-% the time of writing for this science project?
+In this section we present our ongoing \OpSim / MAF analysis, as we try
+to answer the question ``what dithering strategies produce acceptable
+variations in survey uniformity, and which appears optimal?''
 
-In this section we present our ongoing \OpSim / MAF
-analysis, as we try to
-answer the question ``what dithering strategies produce acceptable variations in survey uniformity, and which appears optimal?''
+What we show here are selected highlights from the paper by Awan et al (2015).
 
 %We used the
 %\simsMAFcontrib{SeasonStacker}{mafContrib/seasonStacker.py} to work
@@ -95,13 +94,13 @@ answer the question ``what dithering strategies produce acceptable variations in
 %\autoref{tab:lenstimedelays:results} shows the global (i.e. al-sky)
 
 
-%--------------------------------------------------------------------
+% %--------------------------------------------------------------------
+%
+% \subsection{Results}
+% \label{sec:\secname:results}
 
-\subsection{Results}
-\label{sec:\secname:results}
 
-
-\todo{EG}{Improve figures to originals rather than screen-captures.}
+% \todo{EG}{Improve figures to originals rather than screen-captures.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -179,14 +178,23 @@ answer the question ``what dithering strategies produce acceptable variations in
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\todo{EG}{Input fuller results and text from Awan et al. draft.}  
+% \todo{EG}{Input fuller results and text from Awan et al. draft.}
 
-%---------------------------------------------------------------------
+% %---------------------------------------------------------------------
+%
+% \subsection{Figure of Merit}
+% \label{sec:\secname:fom}
+%
+%
 
-\subsection{Figure of Merit}
-\label{sec:\secname:fom}
-
-
+% % --------------------------------------------------------------------
+%
+% \subsection{Discussion}
+% \label{sec:\secname:discussion}
+%
+% Discussion: what risks have been identified? What suggestions could be
+% made to improve this science project's figure of merit, and mitigate
+% the identified risks?
 
 \navigationbar
 

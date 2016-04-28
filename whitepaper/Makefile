@@ -18,12 +18,10 @@ LSST_Observing_Strategy_White_Paper.pdf: LSST_Observing_Strategy_White_Paper.tex
 	bibtex   LSST_Observing_Strategy_White_Paper
 	pdflatex LSST_Observing_Strategy_White_Paper.tex
 	pdflatex LSST_Observing_Strategy_White_Paper.tex
-	pdflatex LSST_Observing_Strategy_White_Paper.tex
 
 run: $(ARG)_standalone.tex LSST_Observing_Strategy_White_Paper.sty  $(BIBFILES) $(TEXFILES)
 	pdflatex $(ARG)_standalone.tex
 	pdflatex $(ARG)_standalone.tex
 	bibtex  LSST_Observing_Strategy_White_Paper
-	pdflatex $(ARG)_standalone.tex
 	pdflatex $(ARG)_standalone.tex
 	pdflatex $(ARG)_standalone.tex
