@@ -734,43 +734,65 @@ of points.
 \subsection{Metrics}
 \label{sec:\secname:metrics}
 
-The metric for lightcurve analysis
-is therefore related to the number
-of observations. The specific requirement
-is
-at least $\sim$100 measurements of an asteroid over
-$\sim$years,
-calibrated with a photometric accuracy of
-$\sim$5\% (SNR=20)
-or better. In these cases,
-a coarse shape model can be derived.
-The sparse data inversion gives correct results for both fast (0.2--2~h) and
+The general requirement for successful lightcurve inversion is to have
+a large number of observations, at high SNR, over a wide range of
+time. A guideline is that $\sim$100 measurements of an asteroid over
+$\sim$years, calibrated with a photometric accuracy of
+$\sim$5\% (SNR=20) or better, is sufficient to generate a coarse shape model.
+This sparse data inversion gives correct results for both fast (0.2--2~h) and
 slow ($>$24~h) rotators \citep{2007IAUS..236..191D}.
 
-
+The metric {\tt LightcurveInversionMetric} simply checks to see if the
+observations of a particular object meet these requirements, and if
+so, identifies that object as having the potential for lightcurve
+inversion.
 
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
-The present default OpSim does pretty well for this project.
-Our estimate from existing metrics is that some $10^5$~main
-belt asteroids will be observed $>$500~times in the 
-nominal survey. 
+\begin{figure}
+\includegraphics[width=3.3in]{figs/solarsystem/minion_1016_LightcurveInversion_neo_tno_mba_MOOB_ComboMetricVsH}
+\includegraphics[width=3.3in]{figs/solarsystem/enigma_1282_LightcurveInversion_neo_tno_mba_MOOB_ComboMetricVsH}
+\caption{Fraction of the sample population with the potential for
+  lightcurve inversion, as a function of $H$ magnitude for NEOs, MBAs
+  and TNOs, for simulated surveys \opsimdbref{baseCadence} and \opsimdbref{NEOwithVisitQuads}.
+\label{lightcurveinversion}
+\end{figure}
 
-
+Most solar system objects receive many observations, and bright
+objects will have high SNR in most of those observations, so it's not
+surprising that the the baseline cadence, \opsimdbref{db:baseCadence},
+performs reasonably well with this metric. Running the same metric on
+other simulated surveys tends to show similar results, although
+\opsimdbref{db:NEOswithVisitQuads} demonstrates that a higher fraction
+of NEOs get suitable observations for lightcurve inversion. More
+sophisticated metrics or investigation will be required to discover
+the cause of this, although it seems likely that with visit quads,
+there are just more observations of the bright NEOs total, leading to
+a higher fraction of objects available for lightcurve inversion. The
+difference between these surveys suggests that it is possible to
+significantly increase the numbers of NEOs for which we can determine
+shapes, rotation rates, and spin positions.
 
 % --------------------------------------------------------------------
 
 \subsection{Discussion}
 \label{sec:\secname:discussion}
 
-The success of this experiment is predicated
-on the idea that MOPS will work as advertised, 
-that is, that the linking of tracklets and tracks
-will be successful, so that each object's photometric
-time series can be identified.
+A risk which is not captured by this simple metric is that the
+observations included for the lightcurve inversion estimate here,
+could potentially occur far apart in time such that linking between
+the observations (to determine that they belong to the same object) is
+not possible.
+
+Further work needs to be done to understand the necessary final figure
+of merit, in particular, how many light curve inversion targets are
+necessary, and how should they be spread among different sizes of
+objects? Small objects have different shape and
+rotation distributions than larger objects, so it is interesting
+scientifically to understand objects at a range of $H$ magnitude.
 
 \navigationbar
 
