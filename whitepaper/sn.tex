@@ -1,10 +1,10 @@
 % ====================================================================
 %+
 % SECTION:
-%    sn.tex
+%    sn.tex  
 %
 % CHAPTER:
-%    transients.tex
+%    transients.tex  
 %
 % ELEVATOR PITCH:
 %    Explain in a few sentences what the relevant discovery or
@@ -54,11 +54,11 @@ within the LSST footprint every year. The key questions concerning
 LSST SN science are:
 \begin{itemize}
 \item
-LSST's SN discovery power,
+LSST's SN discovery power, 
 \item
-LSST's discrimination power,
+LSST's discrimination power, 
 \item
-the quality of the statistical sample over time.
+the quality of the statistical sample over time. 
 \end{itemize}
 The first and second topic are \emph{time sensitive}, while the latter
 is not, although it is interesting to understand the pace at which a
@@ -156,7 +156,7 @@ the same epoch, or at epochs separated by 1 day, and we include the
 effects of observational noise by generating datapoints from a draw
 within Gaussian distribution centered at the color measured in the
 previous step and with standard deviation $\sigma_\mathrm{pop} = 0.5$,
-1, and 2. One such lightcurve, with maximal interaction effects, is showin in \autoref{fig:kasenlc}.
+1, and 2. One such lightcurve, with maximal interaction effects, is showin in Figure \ref{fig:kasenlc}.
 We generate populations of $N_\mathrm{pop}=100,
 ~1000,~10000$ observations for $g'-r'$, $u'-r'$, $g'-i'$, and
 $u'-i'$. Because the effect is heavily chromatic and it dissipates
@@ -169,16 +169,11 @@ size $N_\mathrm{pop}$, the ability to distinguish the different
 contributions.
 
 \begin{figure}[hbt]
-\centering\includegraphics[width=0.6\textwidth]{figs/transients/LSST_Kasen_lcv0.pdf}
+\centerline{
+\includegraphics[width=0.6\textwidth]{figs/transients/LSST_Kasen_lcv0.pdf}
+}
 \caption{
-A normal SN Ia light curve at z=0.5 showing the effects of interaction
-with a RG companion as seen from the most favorable viewing angle: the
-effect is of interaction as simulated by \citet{Kasen10} is added on top
-of a lightcurve simulated from the \citealt{Nugent02} templates. The
-data points represnt one possible LSST observations of this transient,
-obtained by running the \texttt{transientAsciiMetric}. This particular
-event is \emph{not} detected in two filters within the first 10 days
-after explosion, and it is thus a non-detection for our purpose.}
+A normal SN Ia lightcure at z=0.5 showing the effects of interaction with a RG companion as seen from the most favorable viewing angle: the effect is of interaction as simulated by \citet{Kasen10} is added on top of a lightcurve simulated from the \citealt{Nugent02} templates. The data points represnt one possible LSST observations of this transient, obtained by running the \texttt{transientAsciiMetric}. This particular event is \emph{not} detected in two filters within the first 10 days after explosion, and it is thus a non-detection for our purpose.}
 \label{fig:kasenlc}
 \end{figure}
 
@@ -187,7 +182,7 @@ after explosion, and it is thus a non-detection for our purpose.}
 In the table below we report our diagnostic power, as the ability to distinguish a population with a $f_\mathrm{SD} > x$ from $f_\mathrm{SD}<0.05$ as a function of noise ($\sigma_\mathrm{pop}$) and population size ($N$)
 
 \begin{center}
-\begin{tabular}{ c | c| c| c | c | c| c| c | }
+\begin{tabular}{ c | c| c| c | c | c| c| c | } 
 $g-i$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000}& $g-r$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000} \\
   \hline
  \bf{$\sigma_\mathrm{pop} = 2.0$}&  -  & -  &  0.2 & &  -  & -  &  0.2 \\
@@ -207,6 +202,8 @@ At this point what remains to do is to evaluate how long it will take for a give
 Then we extract from the  \texttt{transientAsciiMetric}, injecting SN at $z=0.5$, the number of \emph{color observations} (observations in 2 bands within 1 day of each other, each fulfilling our SNR requirement for the color (which for simplicity we translat into a requirement on each observation of $\mathrm{SNR} > \frac{1.0}{2.0~\sigma_\mathrm{pop}/\sqrt{2}}$, which for $\sigma_\mathrm{pop}=2$ is $\mathrm{SNR}>1.5$) for 3-, 6-, and 12 months of survey in year 1.
 
 With the minimum goal of distinguishing a SD contribution of 20\% to the SN Ia population, we need more than 1000 detections, in 2 filters within 1 day, with both datapoints in $SNR \geq 2$. With the  \texttt{transientAsciiMetric} we find that in $g'-r'$ color the baseline survey detects $\sim600$ such SNe in 3 months, $\sim1800$ in 6 months, $\sim9000$ in a year. But these pairs of observations are with any gap in time, within the first 10 days. To include the constraint that the detections should be within 24 hours we refer to the median inter-night gap metric, which is plotted in ~\ref{fig:enigmaGapAll} for the baseline survey, we estimate $~\sim10\%$ of the observation are revisited within a night. With the assumption that this is likely to happen in two different filters, which is \emph{non-conservative}, but neglecting intra-night observations that may happen in the two different filters, which is a \emph{conservative} assumption. Then our numbers drop by a factor 10 to $\sim60$ SNe in 3 months, $\sim180$ in 6 months, $\sim900$. Thus a year is \emph{nearly} enough for us to push our understanding of the progenitor population and constrain the fraction of SD progenitors to fractions smaller than 20\%. In the Table~\ref{tab:SummarySNprojs} we summarize the results of our metric for different LSST cadences, recalling that our figure of metric is the timeline in the LSST survey that enables us to distinguish a SD controbution of less than 20\%.
+
+Figure~\ref{fig:sndetect} shows the detection rate for SN~Ia at $z=0.5$ in absence of shock interaction as a function of SNR (product of $g'$ and $r'$ limit) for 3, 6 months, and a year of \opsimdbref{db:baseCadence} (ideally I will plot it for the aother survey as well tonight) 
 
 
 
@@ -228,3 +225,13 @@ With the minimum goal of distinguishing a SD contribution of 20\% to the SN Ia p
 }
 \label{tab:SummarySNprojs}
 \end{table}
+
+\begin{figure}[hbt]
+  \centerline{
+    \includegraphics[width=0.6\textwidth]{figs/transients/LSST_Iadetected_wcolor.pdf}
+  }
+  \caption{
+    Normal SN Ia lightcure at z=0.5 detected by the \opsimdbref{db:baseCadence} cadence in 3 months, 6 months, and 1 year, that provide color informations useful to constrain the progenitor distrobution. }
+  \label{fig:sndetect}
+\end{figure}
+
