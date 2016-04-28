@@ -277,36 +277,24 @@ LSST's performance for a range of time-domain science:
 \subsection{Metrics}
 \label{sec:\chpname:metrics}
 
-%%\begin{table}
-%%  \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
-%%    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence}}}
-%%	  & {\rotatebox{90}{\opsimdbref{db:NEOwithVisitQuads}}} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
-%%    \hline
-%%     & \footnotesize{\texttt{TripletMetric}}      & - & - & - & - &
-%%    \footnotesize{Number of three-visit triples satisfying specified%%
-%%    user-specified time windows.}\\ 
-%%     & \footnotesize{\texttt{TransientMetric}}      & - & - & - & - &
-%%    \footnotesize{Fraction of transients detected (with
-%%user-specified constraints), assuming a basic
-%%linear rise and fall lightcurve.}\\
-%%     & \footnotesize{\texttt{GRBTransientMetric}}      & - & - & - & - &
-%%    \footnotesize{Fraction of GRB-like transients detected
-%%(with user-specified constraints) using an $F(t) \propto t^{-\alpha}$
-%%lightcurve.} \\
-%%     & \footnotesize{\texttt{transientAsciiMetric}}      & - & - & - & - &
-%%    \footnotesize{Fraction of transients detected (with
-%%user-specified constraints), with
-%%lightcurve specified by ASCII input file.} \\
-%%\end{tabular}
-%%\caption{Summary of figures-of-merit (FoMs) for the Transients science
-%%	cases. The best value of each FoM is indicated in bold.
-%%\textbf{replace with actual metrics used in each section}}
-%%\label{tab_SummaryTransients}
-%%\end{table}
-%%
+%We discuss several science-specific metrics in the sections that follow.
+%Here we describe several \textit{generic} metrics valuable for considering
+%transient performance in general:
 
-%SNe & Number of events adequately sampled\\ 
-%Serendipity & Histogram of median visit series length vs maximum visit spacing within the series\\ 
+%\subsubsection{Observation Gap Metrics (\texttt{intraNightGapMetric},
+%\texttt{interNightGapMetric})}
+%
+%Calculates the median time between consecutive observations of a field in a
+%single night and in more than one night.  SQL queries can be used to
+%restrict to single-filter revisits.
+
+%\subsubsection{Transient Metric (\texttt{transientMetric}, 
+%\texttt{transientAsciiMetric})}
+%
+%Calculate what fraction of transients would be detected using either a
+%sawtooth lightcurve or a user-specified ASCII
+%input file for the lightcurve.
+
 
 Two metrics were developed and are used in this chapter specifically for transient phenomena:
 \begin{itemize}
@@ -357,9 +345,73 @@ ERIC HISTOGRAMS HERE!
 \subsection{OpSim Analysis}
 \label{sec:\chpname:analysis}
 
-Analysis shows that current simulations provide  poor coverage in any one filter for transient events longer than a deep drilling session ($\sim$30 minutes) and shorter than $\sim$ weeks.
-\textbf{delta T histogram}
+The current set of simulated cadences 
+provide poor coverage in any one
+filter for transient events longer than a visit pair ($\sim$30
+minutes) and shorter than $\sim$ weeks (Figure \ref{fig:tgaps}; Table
+\ref{tab:visitgaps}).  
 
+As discussed in the subsequent sections, this
+gap in the sampling hinders characterization of fast-evolving 
+transients.  A cadence with two visits separated by an hour or two rather
+than 20 minutes would provide better discrimination.  A third visit in the
+same night in a different filter would provide 
+color information valuable for realtime classification.  
+If a subset of those third
+visits were in the same filter as the first two, it would improve the shape
+characterization of the fastest-evolving transients.
+
+\begin{table}
+  \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
+    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence}}}
+          & {\rotatebox{90}{\opsimdbref{db:NEOswithVisitTriplets}}} &
+          {\rotatebox{90}{\opsimdbref{db:NoVisitPairs}}} &
+          {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & Notes \\
+    \hline
+
+    \thesection-1 & \footnotesize{\texttt{IntraNightGapsMetric},
+    any filter}      & -- & -- & -- & -- &
+    \footnotesize{Median gap (hours) between consecutive observations of a field 
+	    in any pair
+    of filters in a single night.} \\
+
+    \thesection-2 & \footnotesize{\texttt{IntraNightGapsMetric},
+    $r$ band}      & 0.40 & 0.44 & 0.17 & 0.41 &
+    \footnotesize{Median gap (hours) between consecutive $r$-band observations of a
+	    field in a single night.} \\
+
+    \thesection-3 & \footnotesize{\texttt{InterNightGapsMetric},
+    any filter}      & -- & -- & -- & -- &
+	    \footnotesize{Median gap (days) between consecutive observations of a field 
+	    in any pair
+    of filters over multiple nights.} \\
+
+    \thesection-4 & \footnotesize{\texttt{InterNightGapsMetric},
+    $r$ band}      & 15.0 & 22.8 & 11.0 & 21.9 &
+    \footnotesize{Median gap (days) between consecutive $r$-band observations 
+    of a field over multiple nights.} \\
+
+\end{tabular}
+\caption{
+Inter- and intra-night revisit metrics in any filter and in $r$-band for
+several simulated surveys.
+}
+\label{tab:visitgaps}
+\end{table}
+
+\begin{figure}[hbt]
+\centerline{
+	\includegraphics[width=0.45\textwidth]{figs/transients/median_internight_gap_r.pdf}
+	\includegraphics[width=0.45\textwidth]{figs/transients/median_intranight_gap_r.pdf}
+}
+\caption{
+Histograms of median $r$-band inter- (left) and intra- (right) night visit gaps for several OpSim runs.
+}
+\label{fig:tgaps}
+\end{figure}
+
+% don't just care about gap between consecutive obs, though; first-last obs
+% in a night
 
 
 % --------------------------------------------------------------------
@@ -367,29 +419,22 @@ Analysis shows that current simulations provide  poor coverage in any one filter
 \subsection{Discussion}
 \label{sec:\chpname:discussion}
 
-Community studies are providing improving SNe metrics, and continuing
-communication between the SN and LSST communities is essential to
-tuning the observing strategy to deliver the SN time series that are
-needed and possible.
+LSST's currently simulated cadences have significant cadence gaps for
+timescales between nightly visit pairs and intra-night revisits.
+For many transient science cases, rolling-type cadences that improve the
+sampling of a subset of events may be helpful in maximizing the science
+that can be done with LSST: the minimum lightcurve sampling required to
+adequately discover or characterize them may still be larger than that
+provided by baseline cadences.  However, even moderate adjustments (e.g.,
+lengthening the visit pair spacing, or optimizing the deep drilling filter
+strategy) may yield improvements.
 
-Improving LSST science return for SNe will also improve sampling of
-all transients with similar or somewhat shorter characteristic times.
-Non-uniform survey strategies (rolling cadence) can significantly
-improve the LSST performance for faster transients.  Interpretation of
-multiple filters for novel events may be powerful, or problematic,
-since color may be uncertain.
-
-Some insight into fast transients may be available from image pairs or
-triples (as opposed to more complete series).  These include the pair
-of images in a visit - which could be useful in studying the rise time
-of an extremely fast event.  This includes the characteristic grouping
-of visits (typically 0.5 to 1.0 hour separation) planned for purposes
-of identifying asteroids.  It also includes fortuitous multiple
-sampling due to field overlap, providing additional sampling, which
-may be random or systematic, depending on the scheduling, on a time
-scale of minutes to hours.  The sampling benefits of this fortuitous
-overlap have not yet been investigated.
-
+The metrics presented in these sections are initial efforts towards
+quantifying these goals, and they suggest specific directions for new OpSIM
+experiments.  More detailed efforts to understand and model 
+the challenging problem
+of transient classification with sparse lightcurves will be needed in order
+to better guide LSST's time-domain observing strategy.
 
 \navigationbar
 
