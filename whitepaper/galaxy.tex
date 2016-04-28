@@ -41,7 +41,7 @@ science questions to be answered, can be found in the LSST Science Book
 (particularly chapters 6 and 7) and \citet[][in particular Sections
 2.1.4 and 4.4]{IvezicEtal2008}.\footnote{We do however provide
 motivating details for certain science cases in this Chapter,
-particularly in Section \ref{sec:MW_Disk}, as those cases are not
+particularly in \autoref{sec:MW_Disk}, as those cases are not
 emphasized in the LSST Science Book or the relevant sections of
 \citet{IvezicEtal2008}} As with the rest of this whitepaper, we intend
 to provoke the reader to contribute to the optimization of LSST's
@@ -89,34 +89,40 @@ each of the groupings of science cases, a summary Table is provided that
 presents the figure of merit for each science case within that section
 (one row per figure of merit) evaluated for each tested observing
 strategy (one column per strategy). This summary information appears in
-Tables \ref{tab_SummaryMWDisk} (the Disk), \ref{tab_SummaryMWDust} (the
-ISM), \ref{tab_SummaryMWAstrometry} (Astrometry), and
-\ref{tab_SummaryMWHalo} (the Halo).
+\autoref{tab_SummaryMWDisk} (the Disk),
+% \autoref{tab_SummaryMWDust} (the ISM),
+% \autoref{tab_SummaryMWHalo} (the Halo), and
+\autoref{tab_SummaryMWAstrometry} (Astrometry).
 
 At present, science cases are grouped in the following way:
-Section~\ref{sec:MW_Disk} assesses the impact of observing strategy on
+\autoref{sec:MW_Disk} assesses the impact of observing strategy on
 LSST's ability to map some representative astrophysically important
-populations that are found mostly or exclusively in the Plane.  Section
-\ref{sec:MW_SFH} discusses the use of LSST to probe star formation
-histories through mostly young populations (see also Section 5.6.).
-Section \ref{sec:MW_Dust} discusses the impact of observing strategy on
-ISM constraints. Several observational challenges for LSST find their
+populations that are found mostly or exclusively in the Plane.
+% \autoref{sec:MW_SFH} discusses the use of LSST to probe star formation
+% histories through mostly young populations (see also Section 5.6.).
+% \autoref{sec:MW_Dust} discusses the impact of observing strategy on
+% ISM constraints.
+Several observational challenges for LSST find their
 sharpest expression in Milky Way science, including (but not limited to)
 measurements of stellar parallax, absolute astrometry, and proper
 motions (including the tie-in to the reference frame which will be
 provided by the \textit{Gaia} mission). For this reason, specific issues
 relating to precision astrometry are developed in
-Section~\ref{sec:MW_Astrometry}. Section~\ref{sec:MW_Halo} assesses the
-degree to which structures in the Milky Way's halo can be discriminated
-and mapped, using tracer populations distinguished by variability and/or
-derived stellar parameters. Finally, section \ref{sec:MW_future}
+\autoref{sec:MW_Astrometry}.
+% \autoref{sec:MW_Halo} assesses the
+% degree to which structures in the Milky Way's halo can be discriminated
+% and mapped, using tracer populations distinguished by variability and/or
+% derived stellar parameters.
+Finally, \autoref{sec:MW_future}
 presents descriptions of investigations that are needed to properly
-determine LSST's utility for Milky Way science, but which at this date
-(late-April 2016) are as-yet relatively incompletely developed. Examples
-identified at this stage include the uses of LSST to set constraints on
-Galactic components (including the structure of the Bulge, and the
-impact of radial migration in the Disk) and the study of resolved
-stellar populations in the Local Group.
+determine LSST's utility for Milky Way science, but which
+% at this date (late-April 2016)
+are as yet relatively incompletely developed.
+% Examples
+% identified at this stage include the uses of LSST to set constraints on
+% Galactic components (including the structure of the Bulge, and the
+% impact of radial migration in the Disk) and the study of resolved
+% stellar populations in the Local Group.
 
 %\subsection{Summary tables for Figures of Merit}
 %
@@ -142,15 +148,18 @@ stellar populations in the Local Group.
 % PJM: Perry's content is to be merged with Pat's, in Section 5.6
 % \input{MilkyWay/MW_SFH.tex}
 
-% PJM: moved the following to FutureWork, while the metric is implemented
+% PJM: moved the following to FutureWork, while the metric(s) is/are being implemented
 % \input{MilkyWay/MW_Dust.tex}
 
 \input{MilkyWay/MW_Astrometry.tex}
 
-\input{MilkyWay/MW_Halo.tex}
+% PJM: moved the following to FutureWork, while the metric(s) is/are being implemented
+% \input{MilkyWay/MW_Halo.tex}
 
-%\input{MilkyWay/MW_Bulge.tex}
+% Under development:
+% \input{MilkyWay/MW_Bulge.tex}
 
-%\input{MilkyWay/MW_LocalVolume}
+% Under development:
+% \input{MilkyWay/MW_LocalVolume}
 
 \input{MilkyWay/MW_FutureWork.tex}
