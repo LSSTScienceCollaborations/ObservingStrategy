@@ -128,9 +128,10 @@ distinguish populations with different contribution from DD and SD
 progenitors.  To do this we rely on simulations of the observables of
 the population for different sample sizes, on the
 \texttt{transientAsciiMetric} to determine the detectability of
-interacting, and non-interacting SNe, and on the
-\texttt{colorGapMetric} to assess the gap between of detections in 2
-filters.
+interacting, and non-interacting SNe. We are developing a metric
+(\texttt{colorGapMetric}) to assess the gap between of detections in 2
+filters. In the meantime we rely on the estimated of the gap between
+observations in a single filter, and in any filters (see Section~\ref{sec:transients:analysis}).
 
 We simulate interacting SNe from the Nugent templates \citep{Nugent02}
 injecting the angle dependent effects of interaction with a companion
@@ -145,16 +146,16 @@ the same epoch, or at epochs separated by 1 day, and we include the
 effects of observational noise by generating datapoints from a draw
 within Gaussian distribution centered at the color measured in the
 previous step and with standard deviation $\sigma_\mathrm{pop} = 0.5$,
-1, and 2. One such lightcurve, with maximal interaction effects, is shown in Figure \ref{fig:kasenlc}.
-We generate populations of $N_\mathrm{pop}=100$,
-~1000,~10000 observations for $g'-r'$, $u'-r'$, $g'-i'$, and
-$u'-i'$. Because the effect is heavily chromatic and it dissipates
-becoming essentially negligible by $r$ band, $u'-i'$ gives the most
-leverage. However $g'$ and $r'$ are the best observed LSST bands in
-most cadences, and these considerations drive our choice of colors to
-be simulated. We perform Kolmogorov-Smirnoff ($KS$) an
-Anderson-Darling ($AD$) tests to evaluate, as a function of the sample
-size $N_\mathrm{pop}$, the ability to distinguish the different
+1, and 2. One such lightcurve, with maximal interaction effects, is
+shown in Figure \ref{fig:kasenlc}.  We generate populations of
+$N_\mathrm{pop}=100$, ~1000,~10000 observations for $g'-r'$ as a
+representative case. Because the effect is heavily chromatic and it
+dissipates becoming essentially negligible by $r$ band, $u'-i'$ gives
+the most leverage. However $g'$ and $r'$ are the best observed LSST
+bands in most cadences. An extended work would then conside $g' - r'$,
+$u'-r'$, $g'-i'$, and $u'-i'$.  We perform Kolmogorov-Smirnoff ($KS$)
+an Anderson-Darling ($AD$) tests to evaluate, as a function of the
+sample size $N_\mathrm{pop}$, the ability to distinguish the different
 contributions.
 
 \begin{figure}[hbt]
@@ -167,9 +168,7 @@ angle: the effect is of interaction as simulated by \citet{Kasen10} is
 added on top of a lightcurve simulated from the \citealt{Nugent02}
 templates. The data points represnt one possible LSST observations of
 this transient, obtained by running the \texttt{transientAsciiMetric}.
-This particular event is \emph{not} detected in two filters within the
-first 10 days after explosion, and it is thus a non-detection for our
-purposes.}
+This particular event is detected in $g'$, $r'$, and $i'$ within the first 10 days.}
 \label{fig:kasenlc}
 \end{figure}
 
@@ -178,23 +177,25 @@ distinguish a population with a $f_\mathrm{SD} > x$ from
 $f_\mathrm{SD}<0.05$ as a function of noise ($\sigma_\mathrm{pop}$) and
 population size ($N$)
 
+'''
 \begin{center}
-\begin{tabular}{ c | c| c| c | c | c| c| c | }
-$g-i$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000}& $g-r$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000} \\
+  %\begin{tabular}{ c | c| c| c | c | c| c| c | }
+  \begin{tabular}{ c | c| c| c |  }
+$g-r$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000}\\%& $g-i$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000} \\
   \hline
- \bf{$\sigma_\mathrm{pop} = 2.0$}&  -  & -  &  0.2 & &  -  & -  &  0.2 \\
- \bf{$\sigma_\mathrm{pop} = 1.0$}&  -  & 0.2 & 0.1 & &  -  & 0.2 & 0.1 \\
- \bf{$\sigma_\mathrm{pop} = 0.5$}& 0.4 & 0.1 & 0.1 & & 0.4 & 0.1 & 0.1 \\
-&&&&&&&\\ $u-i$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000} & $u-r$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000}\\
- \bf{$\sigma_\mathrm{pop} = 2.0$}&  -  & -  &  0.2 & &  -  & -  &  0.2 \\
- \bf{$\sigma_\mathrm{pop} = 1.0$}&  -  & 0.2 & 0.1 & &  -  & 0.2 & 0.1 \\
- \bf{$\sigma_\mathrm{pop} = 0.5$}& 0.4 & 0.1 & 0.1 & & 0.4 & 0.1 & 0.1 \\
+ \bf{$\sigma_\mathrm{pop} = 2.0$}&  -  & -  &  0.2 \\%& &  -  & -  &  0.2 \\
+ \bf{$\sigma_\mathrm{pop} = 1.0$}&  -  & 0.2 & 0.1 \\%& &  -  & 0.2 & 0.1 \\
+ \bf{$\sigma_\mathrm{pop} = 0.5$}& 0.4 & 0.1 & 0.1 \\%& & 0.4 & 0.1 & 0.1 \\
+%&&&&&&&\\ $u-i$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000} & $u-r$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000}\\
+% \bf{$\sigma_\mathrm{pop} = 2.0$}&  -  & -  &  0.2 & &  -  & -  &  0.2 \\
+% \bf{$\sigma_\mathrm{pop} = 1.0$}&  -  & 0.2 & 0.1 & &  -  & 0.2 & 0.1 \\
+% \bf{$\sigma_\mathrm{pop} = 0.5$}& 0.4 & 0.1 & 0.1 & & 0.4 & 0.1 & 0.1 \\
 
  \hline
 \end{tabular}
 \end{center}
 
-At this point what remains to do is to evaluate how long it will take
+At this point we can evaluate how long it will take
 for a given LSST cadence to obtain a sufficient number of observations
 in the 2 desired colors, separated by less than 1 day, passing the SNR
 requirements. This should be done in a full Monte Carlo simulation
@@ -205,23 +206,19 @@ and properly adjust the number of detections, according to the injected
 ratio. The relative detectability can be assessed with the
 \texttt{transientAsciiMetric}, injecting observations with realistic
 shapes, and we conclude that for RG progenitor the detectability is
-enhanced by $\sim50\%$.
+enhanced by $\sim50\%$ in $g'$ and $r'$.
 
 Then we extract from the  \texttt{transientAsciiMetric}, injecting SN at
-$z=0.5$, the number of \emph{color observations} (observations in 2
+$z=0.5$, the number of \emph{color observations}, i.e. observations in 2
 bands within 1 day of each other, each fulfilling our SNR requirement
 for the color (which for simplicity we translate into a requirement on
 each observation of $\mathrm{SNR} >
-\frac{1.0}{2.0~\sigma_\mathrm{pop}/\sqrt{2}}$, which for
-$\sigma_\mathrm{pop}=2$ is $\mathrm{SNR}>1.5$) for 3-, 6-, and 12 months
+\frac{1.0}{2.0~\sigma_\mathrm{pop}/\sqrt{2}}$) for 3-, 6-, and 12 months
 of survey in year 1.
 
 With the minimum goal of distinguishing a SD contribution of 20\% to the
 SN Ia population, we need more than 1000 detections, in 2 filters within
-1 day, with both datapoints in $SNR \geq 2$. With the
-\texttt{transientAsciiMetric} we find that in $g'-r'$ color the baseline
-survey detects $\sim600$ such SNe in 3 months, $\sim1800$ in 6 months,
-$\sim9000$ in a year. But these pairs of observations are with any gap
+1 day. But these pairs of observations are with any gap
 in time, within the first 10 days. To include the constraint that the
 detections should be within 24 hours we refer to the median inter-night
 gap metric, which is plotted in ~\ref{fig:enigmaGapAll} for the baseline
@@ -230,34 +227,34 @@ a night. With the assumption that this is likely to happen in two
 different filters, which is \emph{non-conservative}, but neglecting
 intra-night observations that may happen in the two different filters,
 which is a \emph{conservative} assumption. Then our numbers drop by a
-factor 10 to $\sim60$ SNe in 3 months, $\sim180$ in 6 months, $\sim900$.
-Thus a year is \emph{nearly} enough for us to push our understanding of
-the progenitor population and constrain the fraction of SD progenitors
-to fractions smaller than 20\%. In the Table~\ref{tab:SummarySNprojs} we
-summarize the results of our metric for different LSST cadences,
-recalling that our figure of metric is the timeline in the LSST survey
-that enables us to distinguish a SD contribution of less than 20\%.
+factor 10.
+
+With all these assumptions standing, our prelimiary findings are that
+find that 6 months of survey are sufficient to provide a useful,
+sufficiently large and high SNR sample for our purpose, and improve on
+the findings on this topic that were achieved with SDSSII, and 3 years
+od SNLS data. Meanwhile 3 month of survey fall short of the goal for
+\opsimdbref{db:baseCadence}, and
+\opsimdbref{db:NEOswithVisitTriplets}.
 
 \autoref{fig:sndetect} shows the detection rate for SN~Ia at $z=0.5$
 in absence of shock interaction as a function of SNR (product of $g'$
 and $r'$ limit) for 3, 6 months, and a year of
-\opsimdbref{db:baseCadence}.
+\opsimdbref{db:baseCadence} and \opsimdbref{db:NEOswithVisitTriplets}.
 % (ideally I will plot it for the other survey as well tonight) 
 
 
 
 \begin{table}
-  \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
+  \begin{tabular}{l|p{6cm}|c|c|p{3cm}}
     FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence}}}
-	  & {\rotatebox{90}{\opsimdbref{db:NEOswithVisitTriplets}}} &
-	  {\rotatebox{90}{\opsimdbref{db:NoVisitPairs}}} &
-	  {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & Notes \\
+	  & {\rotatebox{90}{\opsimdbref{db:NEOswithVisitTriplets}}} & Notes \\
     \hline
     \thesection-1 & \footnotesize{\texttt{SNIaprojenitorMetric},
-    \texttt{1,000 detections}}      & ? & 1 & ? & ? &
-    \footnotesize{Time to collect 10,00 relevant color observations in  years in 3 month intervals.} \\
+    \texttt{1,000 detections}}      & 3 & 6 & 
+    \footnotesize{Time to collect 1,000 relevant color observations in  years in 3 month intervals.} \\
     \thesection-2     & \footnotesize{\texttt{SNIaprojenitorMetric},
-    \texttt{10,000 detections}}      & ? & ? & ? &? &
+    \texttt{10,000 detections}}      & $>12$ & $>12$ &
     \footnotesize{Time to collect 10,000 relevant color observations in  years in 3 month intervals.}\\
 \end{tabular}
 \caption{Figures-of-merit (FoMs) for statistical SN Ia progenitor studies to assess the contribution of SD progenitors to the SN Ia population.
@@ -270,6 +267,6 @@ and $r'$ limit) for 3, 6 months, and a year of
     \includegraphics[width=0.6\textwidth]{figs/transients/LSST_Iadetected_wcolor.pdf}
   }
   \caption{
-    Normal SN Ia lightcure at z=0.5 detected by the \opsimdbref{db:baseCadence} cadence in 3 months, 6 months, and 1 year, that provide color information useful to constrain the progenitor distribution. }
+    Normal SN Ia lightcure at z=0.5 detected by the \opsimdbref{db:baseCadence} cadence in 3 months, 6 months, and 1 year, that provide color information useful to constrain the progenitor distribution. Line are third-degree polynoial fits.}
   \label{fig:sndetect}
 \end{figure}
