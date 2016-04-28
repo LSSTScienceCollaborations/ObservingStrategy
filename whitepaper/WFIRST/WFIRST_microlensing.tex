@@ -1,35 +1,25 @@
 % ====================================================================
 %+
 % SECTION:
-%    WFIRST/microlensing.tex
+%    WFIRST_microlensing.tex
 %
 % CHAPTER:
 %    wfirst.tex
 %
 % ELEVATOR PITCH:
-%    Explain in a few sentences what the relevant discovery or
-%    measurement is going to be discussed, and what will be important
-%    about it. This is for the browsing reader to get a quick feel
-%    for what this section is about.
-%
-% COMMENTS:
-%
-%
-% BUGS:
 %
 %
 % AUTHORS:
-%    David Bennett(@davidpbennett)  - replace with your name and GitHub username!
+%    David Bennett(@davidpbennett)
 %-
 % ====================================================================
 
 \section{Exoplanetary Microlensing with WFIRST and LSST}
 \def\secname{\chpname:microlensing}\label{sec:\secname}
 
-\credit{davidbennett},
-\credit{matthewpenny},
-\credit{rachelstreet},
-{\it and others to follow}
+\credit{davidpbennett},
+\credit{mtpenny},
+{\it Rachel Street}.
 
 Perhaps the most exciting discovery to come out of gravitational
 microlensing surveys is the discovery of a large population of ``rogue"
@@ -167,7 +157,7 @@ If we assume a 30 deg slew in Azimuth before and after each ML pointing, the sle
 to and from the target should take 22 sec, which is 12 sec above the average. So,
 each observation will take 66 sec out of the regular observing sequence.
 The number of observations per night, assuming a 30 minute cadence, for
-a Spring, 2025 observing session are given in Table 1. We will require
+a Spring, 2025 observing session are given in \autoref{tab:wfirst_ml_survey}. We will require
 that these observations be taken in the $riz$ or $y$ filters with at
 least 3 (or 0) observations in each filter per night. The total number
 of observations with this observing plan is 649 or 11.9 hour per
@@ -193,6 +183,7 @@ Apr 25-28     & 14 \\
 \end{tabular}
 \caption{Observations per night at 30 minute cadence for a Spring
 WFIRST microlensing survey.}
+\label{tab:wfirst_ml_survey}
 \end{table}
 
 The low-cadence (1 observation per day) observations taken when WFIRST
@@ -213,7 +204,8 @@ different observing cadences, however.
 \subsection{Metrics}
 \label{sec:\secname:metrics}
 
-Table 2 shows the results of our simulations of the combined WFIRST-LSST
+\autoref{tab:wfirst_ml_results}
+shows the results of our simulations of the combined WFIRST-LSST
 observing program. We assume that there is 1 planet per main sequence
 star at each of $1\,M_\oplus$, $10\,M_\oplus$, and $100\,M_\oplus$.
 This is the 1-$\sigma$ lower limit found by Sumi et al.\ (2011) at
@@ -238,6 +230,7 @@ $M_L$ measured   &    5.9  &           3.4  &          1.5  &   10.8 \\
 \end{tabular}
 \caption{Number of rogue planets of the given mass detected, assuming
 one such planet per main sequence star.}
+\label{tab:wfirst_ml_results}
 \end{table}
 
 We can see from the final column that the LSST observations should
@@ -254,26 +247,25 @@ and $M_L$, which is 355 for our straw man program.
 % Quantifying the response via MAF metrics: definition of the metrics,
 % and any derived overall figure of merit.
 
-
-% --------------------------------------------------------------------
-
-\subsection{OpSim Analysis}
-\label{sec:\secname:analysis}
-
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
-
-
-% --------------------------------------------------------------------
-
-\subsection{Discussion}
-\label{sec:\secname:discussion}
-
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
-
-
+% % --------------------------------------------------------------------
+%
+% \subsection{OpSim Analysis}
+% \label{sec:\secname:analysis}
+%
+% OpSim analysis: how good would the default observing strategy be, at
+% the time of writing for this science project?
+%
+%
+% % --------------------------------------------------------------------
+%
+% \subsection{Discussion}
+% \label{sec:\secname:discussion}
+%
+% Discussion: what risks have been identified? What suggestions could be
+% made to improve this science project's figure of merit, and mitigate
+% the identified risks?
+%
+%
 % ====================================================================
 
 \navigationbar
