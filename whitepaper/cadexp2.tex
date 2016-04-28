@@ -739,6 +739,133 @@ Unlike the comparison of \opsimdbref{db:UConlyNoVisitPairs} and
 results in a 15\% shorter mean slew time and consequently in 2.4\%
 more visits.
 
+% % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\opsimdb[db:NEOswithVisitTriplets]{enigma\_1281}{NEO test: triplets of visits.}
+\opsimdb[db:NEOwithVisitQuads]{enigma\_1282}{NEO test: quads of
+  visits.}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\bf Motivation and description:} Many science programs can benefit
+from having more than a pair of visits in a night; in particular,
+Solar System science may critically depend on having more than just a
+pair, depending on the performance of the Moving Object Pipeline
+Software (MOPS). These two simulations were run to investigate the
+effects of requiring more than just a pair of visits in each
+night. The first, \opsimdbref{db:NEOswithVisitTriplets}, requests
+sets of three visits (triplets) in each night. The second,
+\opsimdbref{db:NEOwithVisitQuads}, requests sets of four visits (quads)
+in each night. There is no constraint on the filter chosen for these
+sets of visits -- it may be changed or it may remain the same. These
+simulations should be compared to the Baseline Cadence,
+\opsimdbref{db:baseCadence}, and to the \opsimdbref{db:NoVisitPairs},
+which all keep the special surveys, but simply vary the sequences
+requested in the Universal Cadence. \\
+
+{\bf Expectations:} The general expectations are that science cases
+which require many visits on timescales of a few hours will benefit
+with these runs, while science cases which prefer visits to be spaced
+more widely over time will see negative impacts.\\
+
+{\bf Analysis Results:}
+First, we emphasize that ``requested'' is not the same as
+``delivered'': even the ``no pairs''
+simulation \opsimdbref{db:NoVisitPairs} ends
+up having multiple visits in a given night to the same fields, and
+when multiple visits per night are requested, not all fields get to
+have completed sequences. The statistics of how many fields are
+combined into sequences of a given number of visits is shown in
+\autoref{fig:NvisitStats}.  As evident, the highest peak is at the
+requested number of visits in a sequence, but not all visits are
+incorporated into requested sequences: some are in both shorter and
+longer sequences. In particular, even ``no pairs'' simulation includes
+multiple visits to some fields, essentially because the current
+version of the algorithm is not told not to do so. As illustrated in
+\autoref{fig:intranightgapCompare}, such revisits typically happen
+within 10 minutes from the first visit. This (unintended) behavior
+implies that the naive expectation above is probably incorrect, or at
+least softened.
+
+The median inter-night revisit rate is affected by requesting more
+visits within single night, as expected -- there are only so many
+visits available, and if more occur in a particular night, it is
+likely (without some kind of rolling cadence) that the result is
+longer intervals between subsequent nights. This is demonstrated in
+autoref{fig:internightgapCompare}, where it can be seen that the
+inter-night revisit rate increases by about 30\% from 3 nights to 4
+nights if we go from pairs to triplets (or quads).
+
+Details of the impacts on Solar System science is
+left to Chapter~\ref{ch:solarsystem}, in particular the impact on
+completeness is evaluated in Section~\ref{sec:solarsystem:discovery}.
+
+The impact of requesting sequences with 3 or 4 visits to the same
+field on other science programs is not yet analyzed in detail.  The
+impact on static science should be minimal, except perhaps for a bit
+worse behavior of various systematic errors (because fewer nights,
+with their observing conditions, are sampled).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!]
+\vskip -2.5in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/NvisitStats.pdf}
+\vskip -2.7in
+\caption{The distribution of the number of visits used for nightly sequences of
+length given on the horizontal axis. Only $griz$ bands are used. Note that even
+``no pairs'' simulation (\opsimdbref{db:NEOsNoVisitPairs})
+includes multiple visits. The highest peak is at the
+requested number of visits in a sequence.}
+\label{fig:NvisitStats}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!]
+\vskip -1.2in
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/medintranight1.pdf}
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/medintranight2.pdf}
+\vskip -1.3in
+\caption{%
+The comparison of the median intra-night gap (per field) distributions for Baseline Cadence (left)
+and simulation \opsimdbref{db:NoVisitPairs}, which did not request pairs of visits per night.
+Despite no need for pairs, simulation \opsimdbref{db:NoVisitPairs} produced them ``spontaneously'',
+as well as longer sequences (see \autoref{fig:NvisitStats}). The mean field revisit
+time is much shorter (about 6 minutes, see the right panel) than for Baseline Cadence
+(22 minutes).}
+\label{fig:intranightgapCompare}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}[h]
+%\vskip -2.5in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/med-internight.pdf}
+%\vskip -2.7in
+\caption{
+Comparison of the median inter-night gap distribution for
+\opsimdbref{db:baseCadence}, \opsimdbref{db:NoVisitPairs},
+\opsimdbref{db:NEOswithVisitTriplets}, and
+\opsimdbref{db:NEOwithVisitQuads}.
+The peak median inter-night revisit rate (per field) is about 3 days for the
+baseline cadence, \opsimdbref{db:baseCadence}, about 2 days for
+\opsimdbref{db:NoVisitPairs}, and closer to 4 for both
+\opsimdbref{db:NEOswithVisitTriplets} and
+\opsimdbref{db:NEOwithVisitQuads}.}
+\label{fig:internightgapCompare}
+\end{figure}
+
+{\bf Conclusions:}
+The effect of requesting pairs, single visits, triplets or quads, is
+softened with the current behavior of the scheduler, where it is not
+uncommon to receive more than the requested number of visits within a
+night. The inter-night revisit rates are affected, increasing the
+inter-night revisit rate by about a night for triplets and quads and
+reducing the inter-night revisit rate by about a night when no visit
+pairs are requested (from a baseline value of about 3 nights).
+
+
+
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
