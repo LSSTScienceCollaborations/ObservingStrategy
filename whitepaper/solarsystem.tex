@@ -95,25 +95,26 @@ move from Near Earth Objects (NEOs) through the Main Belt Asteroids
 (MBAs) and to Trans-Neptunian Objects (TNOs) and Scattered Disk Objects
 (SDOs), as well as for comets and for other unusual but very
 interesting populations such as Earth minimoons. Due to their small
-heliocentric and geocentric distances, NEOs appear move with
+heliocentric and geocentric distances, NEOs appear to move with
 relatively high velocities and are distributed over a large fraction
-of the sky, far from the ecliptic plane. MBAs are densely distributed,
+of the sky, including regions far from the ecliptic plane. MBAs are densely distributed,
 primarily within about 30 degrees of the ecliptic. TNOs and SDOs move
 slowly, however short time intervals between repeat visits in each night may make these difficult
 to link. Comets and Earth mini-moons may require more complicated
 orbit fitting to allow for non-gravitational or geocentric
-orbits. It also implies that we do not create false objects by
+orbits. The requirements of accurately linking individual detections
+into orbits also implies that we do not create false objects by
 incorrectly linking detections and/or noise.
 
 Much of the answer to this question comes down to the performance of
 various pieces of LSST Data Management software. In particular,
 important questions are the
-rate of false positive detections resulting from difference imaging, the compute
+rate of false positive detections resulting from difference imaging, possible
 limitations of the Moving Object Processing System (MOPS) to extend to high
 apparent velocities, and the capability to unambiguously determine if
 a linkage is `real' or not via orbit determination (done as part of
-MOPS). Thus this question ranges beyond the limits of the OpSim simulated
-surveys, but bears on the observing strategy requirements for
+MOPS). Thus this question includes concerns beyond the limits of the OpSim simulated
+surveys, although it still bears on the observing strategy requirements for
 discovering Solar System Objects. An in-depth study of the performance
 of difference imaging and MOPS is currently ongoing. However, we can
 make a range of assumptions on how MOPS will perform and evaluate how
@@ -126,22 +127,24 @@ many and which objects can be linked under observational cadence, given those as
 \label{sec:\secname:targets}
 
 The criteria for `discovery' with MOPS depends on the number
-of observations of an object acquired per night, within some time
+of observations of an object acquired per night within some time
 window (creating `tracklets'), repeated over a number of nights within window of some
-days (creating `tracks'), linked into an orbit with a threshold on
+days (creating `tracks'), which are then linked into an orbit with a threshold on
 astrometric residuals. The current assumptions are that we can link
 detections into orbits with 2 detections per night within 90 minutes,
-repeated for 3 nights within 15 days. The additional assumptions are
+repeated for 3 nights within a window of 15 days. The additional assumptions are
 that with these 6 observations, we will be able to create low-accuracy orbits that will suffice to link
 additional observations obtained at later (or earlier, in the LSST
 archive) times, and that that the orbit fitting will enable rejection
 of mislinkages.
 
-We can also set other requirements for discovery. Requiring 4
-detections within 90 minutes is a fairly common discovery criteria for
+We can also use other requirements for discovery. Requiring 4
+detections in each night is a fairly common discovery criteria for
 NEO surveys, as it reduces the number of mislinked tracklets to almost
-zero. We could also require 4 nights of pairs, in order to improve the
-initial orbit fitting and mislinkage rejection.
+zero. We could also require 4 nights of pairs within a window of 20 days, in order to improve the
+initial orbit fitting and mislinkage rejection. We can also assume
+MOPS will perform better than the current assumptions, and evaluate
+discovery criteria of 3 pairs within a 30 day window.
 
 With these discovery criteria, we can then evaluate the completeness
 of an LSST simulated survey, for a given population. We can look at
@@ -158,17 +161,16 @@ be used to debias the underlying population models.
 
 Discovery opportunity, and thus the completeness of the underlying
 population, is very sensitive to the time interval between
-observations. For most solar system objects, with a 90 minute window
-within a night, gathering two or more repeat observations within a night requires
-that the field pointing is revisited two or more times. Especially if the time
-interval is much longer than 30 minutes, ensuring that the sky
-observed within a night covers large contiguous blocks (rather than
-narrow disconnected strips), also becomes important to be sure that
-objects are followed between pointings.  Gathering
-observations over multiple nights for a wide variety of Solar System
-objects (moving at a wide variety of apparent velocities) will require covering a large
-neighboring area of sky; thus the internight revisit rate for large contiguous
-blocks of sky is important. An optimal discovery strategy for moving
+observations. Waiting longer between observations within a night means that objects
+may move beyond a single LSST field of view. Longer times between
+revisits means that observing in large contiguous blocks (rather than
+narrow, disconnected strips) within a night becomes more important to make sure that
+objects are followed between pointings, especially if the time
+interval is much longer than 30 minutes. Because the objects must be
+detected on several nights within the window, the inter-night revisit
+rate for similar large contiguous blocks of sky is important.
+
+An optimal discovery strategy for moving
 objects could be ensuring a minimum (default: two) number of revisits
 within a night within a short time window (default: 90 minutes),
 preferably over a large block of sky, and
@@ -186,14 +188,14 @@ approximately 92\% fill factor.
 \subsection{Metrics}
 \label{sec:\secname:metrics}
 
-The {\tt Discovery Metric} can be used to identify sets of detections
+The {\tt DiscoveryChancesMetric} can be used to identify sets of detections
 of a particular object that meet the defined criteria for discovery: X
 detections within T minutes in a night, Y nights within a W day
 window; this describes the number of discovery opportunities for each object. The results from the Discovery Metric can be fed to the {\tt
-  MO\_Completeness} summary metric, where if an object achieves a
+  MoCompletenessMetric} summary metric, where if an object achieves a
 user-defined requirement for the minimum number of discovery
-opportunities (typically 1), then it is counted as `discovered'; then
-the total number of objects discovered at each H magnitude is compared
+opportunities (typically 1), then it is counted as `discovered'.
+The total number of objects discovered at each H magnitude is compared
 to the total number of objects in the population at that H magnitude,
 in order to evaluate `completeness' as a function of H. Discovery
 opportunities can be evaluated as a function of orbital parameters, to
@@ -203,33 +205,123 @@ population at a particular H value, loses this
 capability. Completeness can be evaluated as a differential value
 (completeness @ H=X) or integrated over the size distribution
 (completeness @ H $\leq$ X).
-Figure~\ref{standard_discovery} shows the number of discovery opportunities
-and differential completeness as a function of H magnitude
-for different populations.
- 
-A further simplification of the completeness can be achieved if the
-completeness at a particular H magnitude is the desired value. For
+
+The completeness can be parametrized by the completeness ($C_b$) at
+some bright absolute magnitude ($H_b$), combined with the magnitude at
+which this falls to 50\% ($H_f$). A draft set of requirements for
+these parameters has been written up in the Solar System Object
+Specifications document, although these requirements are still quite
+preliminary. The current goal parameters are described in Table~\ref{ssoreqs}.
+
+\begin{table}[]
+\centering
+\caption{Solar System Object Differential Completeness Goals}
+\label{ssoreqs}
+\begin{tabular}{llll}
+    & $C_b$ & $H_b$ & $H_f$ \\
+NEA & 80\%  & 18.4  & 21.9  \\
+MBA & 90\%  & 19.5  & 20.2  \\
+TNO & 90\%  & 7.0   & 8.1
+\end{tabular}
+\end{table}
+
+A further simplification of the completeness can be achieved by simply
+measuring the completeness at a preset absolute magnitude. For
 example, completeness for PHAs at H=22 is an important summary value.
+
 
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
+The basic output from the {\tt DiscoveryChancesMetric} is the number
+of discovery opportunities (e.g. sets of observations that match the
+required discovery criteria) available. For objects which have at
+least a given number of discovery opportunities (here, we simply use
+one required opportunity), then this object can be considered
+``found'' and marked towards the completeness of the population at a
+given H magnitude with the {\tt MoCompletenessMetric} summary metric.
+Examining the \opsimdbref{db:baseCadence} with these metrics, we find
+that most objects have many discovery opportunities. This is shown in
+Figure~\ref{standard_discovery}. 
 
 \begin{figure}
-\includegraphics[width=3.3in]{figs/solarsystem/discoverychances}
-\includegraphics[width=3.3in]{figs/solarsystem/completeness}
+\includegraphics[width=3.3in]{figs/solarsystem/minion_1016_DiscoveryChances_tno_mba_neo_10_year_3_pairs_in_15_nights_MOOB_ComboMetricVsH}
+\includegraphics[width=3.3in]{figs/solarsystem/minion_1016_CumulativeCompleteness_tno_mba_neo_10_year_3_pairs_in_15_nights_MOOB_ComboMetricVsH}
 \caption{Left: Number of discovery chances as a function of H
-  (median value for all objects), assuming the minimum criteria for
+  (mean value for all objects at each $H$ value), assuming the minimum criteria for
   discovery - 2 visits per night within 90 minutes, repeated for 3
-  nights within 15 days. Right: Resulting differential completeness across the
-  entire population, assuming that only 1 discovery opportunity is
-  required to `discover' each object. 
+  nights within 15 days. Right: Resulting cumulative completeness for
+  each population, assuming that only 1 discovery opportunity is
+  required to `discover' each object.
 \label{standard_discovery}}
 \end{figure}
 
-Add table? Add comparison of various discovery criteria.
+The runs \opsimdbref{db:baseCadence}, \opsimdbref{db:NoVisitPairs},
+\opsimdbref{db:NEOswithVisitTriplets}, \opsimdbref{db:NEOswithVisitQuads}
+are particularly interesting to evaluate in light of the different
+sets of discovery criteria. Because Opsim does not currently require
+only pairs (or singles, triplets or quads), but instead will sometimes
+acquire more than the requested number of visits, changing the
+discovery criteria from pairs within a night to triplets or quads,
+does not automatically cause the completeness to pummet, although it
+does decrease. Looking at the raw numbers of discovery chances offers some
+enlightenment: the number of discovery opportunities does falls dramatically as we go from pairs to quads, however, there
+are still some times when observations are obtained in triplets or
+quads, so there are still some discovery chances. This behavior of the
+scheduler (to frequently acquire more than the requested number of
+visits) is likely to change in the future and make this effect more pronounced, but the completeness will
+clearly be very sensitive to how observations are acquired. This effect is shown in
+Figure~\ref{completeness_changes}. 
+
+\begin{figure}
+\includegraphics[width=3.3in]{figs/solarsystem/minion_1016_CumulativeCompleteness_pairs_20_4_quads_3_30_3_30_triplets_3_30_pairs_3_15_pairs_nights_in_neo_year_10_MOOB_ComboMetricVsH}
+\includegraphics[width=3.3in]{figs/solarsystem/kraken_1043_CumulativeCompleteness_pairs_20_4_quads_3_30_3_30_triplets_3_30_pairs_3_15_pairs_nights_in_neo_year_10_MOOB_ComboMetricVsH} \\
+\includegraphics[width=3.3in]{figs/solarsystem/enigma_1281_CumulativeCompleteness_pairs_20_4_quads_3_30_3_30_triplets_3_30_pairs_3_15_pairs_nights_in_neo_year_10_MOOB_ComboMetricVsH}
+\includegraphics[width=3.3in]{figs/solarsystem/enigma_1282_CumulativeCompleteness_pairs_20_4_quads_3_30_3_30_triplets_3_30_pairs_3_15_pairs_nights_in_neo_year_10_MOOB_ComboMetricVsH}
+\caption{Cumulative completeness for an NEO population, given
+  different sets of discovery criteria, for the \opsimdbref{db:baseCadence}, \opsimdbref{db:NoVisitPairs},
+\opsimdbref{db:NEOswithVisitTriplets},
+\opsimdbref{db:NEOswithVisitQuads} simulated surveys. The results in the
+lower right come from a simulated survey, \opsimdbref{db:NEOswithVisitQuads},
+which attempted to obtain four visits to each field in each
+night; the results on the upper left, come from the baseline simulated
+survey, \opsimdbref{db:baseCadence}, which attempts to obtain pairs of
+visits.
+\label{completeness_changes}}
+\end{figure}
+
+Another aspect to consider is to look at how the completeness
+increases over time. The completeness as a function of time is plotted
+for particular $H$ values, depending on the
+population, in Figure~\ref{completeness_time}. 
+
+\begin{figure}
+\includegraphics[width=2in]{figs/solarsystem/minion_1016_CompletenessOverTime_22_time}
+\includegraphics[width=2in]{figs/solarsystem/minion_1016_CompletenessOverTime_21_time}
+\includegraphics[width=2in]{figs/solarsystem/minion_1016_CompletenessOverTime_8_time}
+\caption{Completeness as a function of time, for NEO, MBA and TNO
+  populations. The completeness increases rapidly for the first few
+  years, then increases more slowly. The NEO completeness continues to
+  rise more rapidly than other populations, as objects which were
+  previously not visible -- either because they were too close to the
+  sun or too far away -- change their positioning relative to Earth.
+\label{completeness_time}}
+\end{figure}
+
+\begin{table}[]
+\centering
+\caption{Solar System Object Differential Completeness in \opsimdbref{db:baseCadence}}
+\label{ssoperf}
+\begin{tabular}{llll}
+    & $C_b$ & $H_b$ & $H_f$ \\
+NEA & 87.5\%  & 18.5  & 21.5  \\
+MBA & 89\%  & 19.5  & 20.2  \\
+TNO & 96\%  & 7.0   & 8.3 
+\end{tabular}
+\end{table}
+
 
 
 % --------------------------------------------------------------------
@@ -237,14 +329,22 @@ Add table? Add comparison of various discovery criteria.
 \subsection{Discussion}
 \label{sec:\secname:discussion}
 
-Add minimum completeness levels from solar system requirements
-document
+A large portion of the risk in being able to discover moving objects
+lies in the currently uncertain performance of the MOPS
+software. Figure~\ref{completeness_changes} clearly shows that with
+the baseline cadence, if we must have triplets or pairs, or even just
+require 4 pairs of observations over 20 nights, that the completeness
+falls. The performance will likely fall even further if the scheduler
+stops obtaining more than the minimum requested number of observations.
 
-
-
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+With the expected MOPS discovery requirements,
+\opsimdb{db:baseCadence} performs adequately for most solar system
+objects, although completeness falls off more rapidly for faint
+objects than desired for NEOs. To investigate this effect, more
+metrics will have to be developed to discover why these fainter NEOs
+are not being discovered (are they simply missing appropriate
+sequences of observations due to the cadence or is something more
+subtle occuring?). 
 
 \navigationbar
 
@@ -331,9 +431,9 @@ be sufficient.
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
-referring to minion 1016:
+%referring to minion 1016:
 
-referring to minion_1016_ObsArc_neos_tnos_mbas_MOOB_ComboMetricVsH.pdf:
+%referring to minion_1016_ObsArc_neos_tnos_mbas_MOOB_ComboMetricVsH.pdf:
 
 In the default observing strategy the median observational
 arclength for NEOs and MBAs is 8~years for bodies
