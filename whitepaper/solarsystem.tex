@@ -73,7 +73,7 @@ evaluations.
 
 % ====================================================================
 
-\section{Discovery: linking Solar System Objects}
+\section{Discovery: Linking Solar System Objects}
 \def\secname{\chpname:discovery}\label{sec:\secname}
 
 Discovering, rather than simply detecting, small objects throughout
@@ -189,7 +189,8 @@ approximately 92\% fill factor.
 The {\tt Discovery Metric} can be used to identify sets of detections
 of a particular object that meet the defined criteria for discovery: X
 detections within T minutes in a night, Y nights within a W day
-window; this describes the number of discovery opportunities for each object. The results from the Discovery Metric can be fed to the {\tt
+window; this describes the number of discovery opportunities for each object.
+The results from the Discovery Metric can be fed to the {\tt
   MO\_Completeness} summary metric, where if an object achieves a
 user-defined requirement for the minimum number of discovery
 opportunities (typically 1), then it is counted as `discovered'; then
@@ -206,17 +207,12 @@ capability. Completeness can be evaluated as a differential value
 Figure~\ref{standard_discovery} shows the number of discovery opportunities
 and differential completeness as a function of H magnitude
 for different populations.
- 
+
 A further simplification of the completeness can be achieved if the
 completeness at a particular H magnitude is the desired value. For
 example, completeness for PHAs at H=22 is an important summary value.
 
-% --------------------------------------------------------------------
-
-\subsection{OpSim Analysis}
-\label{sec:\secname:analysis}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \includegraphics[width=3.3in]{figs/solarsystem/discoverychances}
 \includegraphics[width=3.3in]{figs/solarsystem/completeness}
@@ -225,35 +221,253 @@ example, completeness for PHAs at H=22 is an important summary value.
   discovery - 2 visits per night within 90 minutes, repeated for 3
   nights within 15 days. Right: Resulting differential completeness across the
   entire population, assuming that only 1 discovery opportunity is
-  required to `discover' each object. 
+  required to `discover' each object.
 \label{standard_discovery}}
 \end{figure}
-
-Add table? Add comparison of various discovery criteria.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % --------------------------------------------------------------------
 
-\subsection{Discussion}
-\label{sec:\secname:discussion}
+\subsection{OpSim Analysis of NEO/PHA completeness}
+\label{sec:\secname:analysis}
 
-Add minimum completeness levels from solar system requirements
-document
+% PJM: the following was moved from Chapter 2:
+%
+% \section{Analysis}
+% \def\secname{cadexp:NEOs}\label{sec:\secname}
+
+% \noindent{\it Analysis of NEO/PHA completeness:   ops2\_1094, enigma\_1258, enigma\_1259}
+
+Continuing the analysis of some alternatives to the Baseline Cadence
+started in \autoref{chp:cadexp},
+we now investigate a suite of observing strategies for their
+suitability in supporting Near-Earth Object (NEO) science. As in
+that chapter,
+% the previous section,
+these \OpSim databases are all available for further
+testing with science-based MAF metrics.
+
+The U.S. Congress has given a mandate to NASA to implement a
+Near-Earth Object (NEO) Survey program to detect, track, catalog,
+and characterize the physical characteristics of near-Earth objects
+equal to or greater than 140 meters in diameter\footnote{See
+\url{http://www.gpo.gov/fdsys/pkg/PLAW-109publ155/pdf/PLAW-109publ155.pdf}}.
+The goal is to achieve a completeness of 90\%. In recent practice,
+adopted here, the completeness is evaluated for a subset of NEOs
+called Potentially Hazardous Asteroids\footnote{Potentially Hazardous
+Asteroids (PHAs) are defined as asteroids with a minimum orbit
+intersection distance (MOID) of 0.05 AU or less.}  (PHA), with
+H$\le$22, where H is the absolute magnitude\footnote{Absolute
+magnitude is the magnitude that an asteroid would have at a distance
+of 1 AU from the Sun and from the Earth, viewed at zero phase angle.
+This is an impossible configuration, of course, but the definition is
+motivated by desire to separate asteroid physical characteristics from
+the observing configuration.} in the Johnson's V band. While LSST is
+very competitive in this context, it will also enable analysis of many
+other Solar System populations (e.g.\ main-belt asteroids, comets,
+trans-Neptunian objects). Nevertheless, we focus our analysis here on
+NEOs/PHAs completeness.
 
 
+{\bf Motivation and description:}\\
+The baseline cadence implements observing strategy with two visits to
+a field obtained per night, separated in time by a fraction of an
+hour. Motivation for a simulation that does require pairs of visits is
+to gauge its impact on the survey efficiency and other performance
+parameters. Motivation for simulations with more than two visits to a
+given field per night is to investigate the feasibility of a more
+robust approach to linking individual detections into a plausible
+object track. Although detailed simulations of the performance of
+image differencing software and orbital determination software
+indicate that two visits per night are likely to be sufficient,
+quantitative analysis of other strategies is clearly within the
+purview of the cadence optimization program.  Five simulations are
+analyzed in this section:
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\opsimdb[db:NEOsNoVisitPairs]{kraken\_1043}{NEO test: no request for pairs of visits.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\opsimdb[db:NEOswithVisitPairs]{enigma\_1016}{NEO test: pairs of visits (i.e.\ the Baseline Cadence).}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\opsimdb[db:NEOswithVisitTriplets]{enigma\_1281}{NEO test: triplets of visits.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\opsimdb[db:NEOwithVisitQuads]{enigma\_1282}{NEO test: quads of visits.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+{\bf Expectations:}  Analysis of all simulations is repeated three
+times, with different conditions for what constitutes an object's
+``discovery'':  two, three or four detections per night are required,
+together with at least three such sequences in a 15-day window.  When
+only two detections per night are required, a modest decrease in PHA
+completeness is expected for simulations that request more than two
+visits per night because some visits ``don't live up to their full
+potential''. On the other hand, when more than two detections per
+night are required, a naive expectation is that PHA completeness for
+runs with fewer requested visits will drop significantly. \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!]
+\vskip -2.5in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/NvisitStats.pdf}
+\vskip -2.7in
+\caption{The distribution of the number of visits used for nightly sequences of
+length given on the horizontal axis. Only $griz$ bands are used. Note that even
+``no pairs'' simulation (\opsimdbref{db:NEOsNoVisitPairs})
+includes multiple visits. The highest peak is at the
+requested number of visits in a sequence.}
+\label{fig:NvisitStats}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!]
+\vskip -1.2in
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/medinternight1.pdf}
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/medinternight2.pdf}
+\vskip -1.3in
+\caption{%
+The comparison of the median intra-night gap distributions for Baseline Cadence (left)
+and simulation \opsimdbref{db:NEOsNoVisitPairs}, which did not request pairs of visits per night.
+Despite no need for pairs, simulation \opsimdbref{db:NEOsNoVisitPairs} produced them ``spontaneously'',
+as well as longer sequences (see \autoref{fig:NvisitStats}). The mean field revisit
+time is much shorter (about 6 minutes, see the right panel) than for Baseline Cadence
+(22 minutes).}
+\label{fig:intranightgapCompare}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!]
+\vskip -1.1in
+\includegraphics[angle=0,width=0.56\hsize:,clip]{figs/enigma1189_diffNEOcompleteness.pdf}
+\hskip -0.5in
+\includegraphics[angle=0,width=0.56\hsize:,clip]{figs/enigma1189_cumNEOcompleteness.pdf}
+\vskip -1.2in
+\caption{The PHA completeness for \opsimdbref{db:baseCadence}, as a function of the object's absolute
+visual magnitude H on the horizontal axes (left: differential completeness at a given H;
+right: cumulative completeness for all objects brighter than a given H).
+The completeness for H$\le$22 NEOs (those with diameters larger than 140m)  for this
+simulation is 73\% (blue line in the right panel). The panels also show the effects of ignoring
+chip gaps (a 2\% effect for cumulative H$\le$22 completeness) and of decreasing the
+field-of-view size to a half (i.e.\ to 4.8 sq.\ deg; a 10\% effect).}
+\label{fig:enigmaNEO}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[th!]
+\vskip -1.2in
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/diffNEOpairs.pdf}
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/diffNEOquads.pdf}
+\vskip -1.3in
+\caption{%
+The comparison of differential PHA completeness for the five analyzed simulations
+when requiring two detections per night (left) and four detections per night (right).
+With two detections per night, all simulations perform similarly but when four
+detections per night are required, the simulation that has the largest number
+of such sequences (see \autoref{fig:NvisitStats}), performs the best although at an
+inferior level compared to the left panel (see also \autoref{fig:enigmaNEO}).}
+\label{fig:NEOquads}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+{\bf Analysis Results:}
+First, we emphasize that ``requested'' is not the same as
+``delivered'': even the ``no pairs''
+simulation \opsimdbref{db:NEOsNoVisitPairs} ends
+up having multiple visits in a given night to the same fields, and
+when multiple visits per night are requested, not all fields get to
+have completed sequences. The statistics of how many fields are
+combined into sequences of a given number of visits is shown in
+\autoref{fig:NvisitStats}.  As evident, the highest peak is at the
+requested number of visits in a sequence, but not all visits are
+incorporated into requested sequences: some are in both shorter and
+longer sequences. In particular, even ``no pairs'' simulation includes
+multiple visits to some fields, essentially because the current
+version of the algorithm is not told not to do so. As illustrated in
+\autoref{fig:intranightgapCompare}, such revisits typically happen
+within 10 minutes from the first visit. This (unintended) behavior
+implies that the naive expectation above is probably incorrect, as we
+discuss in more detail below.
+
+
+For baseline reference, the PHA completeness for
+\opsimdbref{db:baseCadence} is shown in \autoref{fig:enigmaNEO}. The
+baseline cadence achieves a cumulative completeness of 73\% for
+H$\le$22 PHAs. This cumulative completeness for H$\le$22 is 17\%
+higher than differential completeness at H=22 of 56\% due to
+increasing completeness towards smaller H (larger objects). Both
+differential and cumulative completeness are relevant metrics: the
+former provides more insight in the behavior of a particular
+simulation, while the latter is a metric given to NASA by the U.S.
+Congress. Analysis of results illustrated in \autoref{fig:NEOquads}
+can be summarized as follows:
+\begin{itemize}
+\item When NEO discovery algorithm requires pairs of visits, all runs
+have very similar PHA completeness, with quads run only about 2\%
+lower than the baseline (a differential completeness of 56\% at H=22
+for \opsimdbref{db:baseCadence})
+\item When NEO discovery algorithm requires 4 detections per night,
+the simulation with quads achieves a differential completeness of
+about 27\% at H=22, or  about 30\% lower completeness than Baseline
+Cadence.
+\item When NEO discovery algorithm requires 4 detections per night,
+Baseline Cadence reaches a differential completeness of about 15\% at
+H=22 (some quads are unintentionally produced by chance, see
+\autoref{fig:NvisitStats}).
+\item When NEO discovery algorithm requires 3 detections per night,
+runs which requested triples and quads achieve a differential
+completeness of about 40\% at H=22 (corresponding to a cumulative
+completeness of about 57\% for H$\le$22).
+\end{itemize}
+
+Therefore, going from pairs of visits to triples (both for cadence and
+NEO detection) reduces completeness (both differential and cumulative)
+for PHAs with H$\le$22 by about 15-20\% (and by about 30\% for quads).
+
+
+\subsubsection{Impact on other science programs}
+
+The impact of requesting sequences with 3 or 4 visits to the same
+field on other science programs is not yet analyzed in detail.  The
+impact on static science should be minimal, except perhaps for a bit
+worse behavior of various systematic errors (because fewer nights,
+with their observing conditions, are sampled).
+
+For time-domain science, the mean revisit time will increase by about
+50\% if we go from pairs to triples, and by about a factor of two for
+quads. This change will have a negative impact on time-domain science
+programs based on SNe, variable stars, and transient objects, which
+remains to be quantified.
 
 \navigationbar
+
 
 % ====================================================================
 
 \section{Orbital Accuracy}
 \def\secname{\chpname:orbits}\label{sec:\secname}
 
-After initial discovery, 
+After initial discovery,
 
 A short preamble goes here. What's the context for this science
 project? Where does it fit in the big picture?
@@ -514,8 +728,8 @@ slow ($>$24~h) rotators \citep{2007IAUS..236..191D}.
 
 The present default OpSim does pretty well for this project.
 Our estimate from existing metrics is that some $10^5$~main
-belt asteroids will be observed $>$500~times in the 
-nominal survey. 
+belt asteroids will be observed $>$500~times in the
+nominal survey.
 
 
 
@@ -525,7 +739,7 @@ nominal survey.
 \label{sec:\secname:discussion}
 
 The success of this experiment is predicated
-on the idea that MOPS will work as advertised, 
+on the idea that MOPS will work as advertised,
 that is, that the linking of tracklets and tracks
 will be successful, so that each object's photometric
 time series can be identified.
