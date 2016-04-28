@@ -277,50 +277,54 @@ LSST's performance for a range of time-domain science:
 \subsection{Metrics}
 \label{sec:\chpname:metrics}
 
-\begin{table}
-  \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
-    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence}}}
-	  & {\rotatebox{90}{\opsimdbref{db:NEOwithVisitQuads}}} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
-    \hline
-     & \footnotesize{\texttt{TripletMetric}}      & - & - & - & - &
-    \footnotesize{Number of three-visit triples satisfying specified
-    user-specified time windows.}\\ 
-     & \footnotesize{\texttt{TransientMetric}}      & - & - & - & - &
-    \footnotesize{Fraction of transients detected (with
-user-specified constraints), assuming a basic
-linear rise and fall lightcurve.}\\
-     & \footnotesize{\texttt{GRBTransientMetric}}      & - & - & - & - &
-    \footnotesize{Fraction of GRB-like transients detected
-(with user-specified constraints) using an $F(t) \propto t^{-\alpha}$
-lightcurve.} \\
-     & \footnotesize{\texttt{transientAsciiMetric}}      & - & - & - & - &
-    \footnotesize{Fraction of transients detected (with
-user-specified constraints), with
-lightcurve specified by ASCII input file.} \\
-\end{tabular}
-\caption{Summary of figures-of-merit (FoMs) for the Transients science
-	cases. The best value of each FoM is indicated in bold.
-\textbf{replace with actual metrics used in each section}}
-\label{tab_SummaryTransients}
-\end{table}
+%%\begin{table}
+%%  \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
+%%    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence}}}
+%%	  & {\rotatebox{90}{\opsimdbref{db:NEOwithVisitQuads}}} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
+%%    \hline
+%%     & \footnotesize{\texttt{TripletMetric}}      & - & - & - & - &
+%%    \footnotesize{Number of three-visit triples satisfying specified%%
+%%    user-specified time windows.}\\ 
+%%     & \footnotesize{\texttt{TransientMetric}}      & - & - & - & - &
+%%    \footnotesize{Fraction of transients detected (with
+%%user-specified constraints), assuming a basic
+%%linear rise and fall lightcurve.}\\
+%%     & \footnotesize{\texttt{GRBTransientMetric}}      & - & - & - & - &
+%%    \footnotesize{Fraction of GRB-like transients detected
+%%(with user-specified constraints) using an $F(t) \propto t^{-\alpha}$
+%%lightcurve.} \\
+%%     & \footnotesize{\texttt{transientAsciiMetric}}      & - & - & - & - &
+%%    \footnotesize{Fraction of transients detected (with
+%%user-specified constraints), with
+%%lightcurve specified by ASCII input file.} \\
+%%\end{tabular}
+%%\caption{Summary of figures-of-merit (FoMs) for the Transients science
+%%	cases. The best value of each FoM is indicated in bold.
+%%\textbf{replace with actual metrics used in each section}}
+%%\label{tab_SummaryTransients}
+%%\end{table}
+%%
 
 %SNe & Number of events adequately sampled\\ 
 %Serendipity & Histogram of median visit series length vs maximum visit spacing within the series\\ 
 
+Two metrics were developed and are used in this chapter specifically for transient phenomena:
+\begin{itemize}
+  \item{\texttt{GRBTransientMetric}: detects the fraction of GRB-like transients detected (with user-specified constraints) using an $F(t) \propto t^{-\alpha}$
+    lightcurve. This metric is used in Section~\ref{sec:grbs}}
+  \item{\texttt{transientAsciiMetric}: accepts an ASCII file in input, so that realistic transient shapes can be used, with different shapes for different filters. The output can be the series of LSST observations (magnitude and error), or the fraction of transients detected (with user-specified constraints). This metric is used in Section~\ref{sec:SNtransients}.}
+\end{itemize}
+    
+Furthermore, metrics relevant to transient science are discused in Chapters~\ref{chp:galaxy},~\ref{chp:cosmo}, and ~\ref{chp:variables}. In particular: 
 \citet{2015arXiv150803175L} discuss
 three metrics that have been incorporated into the MAF. Two of these
 metrics deal explicitly with time variable behavior: a) observational
 triplets, and b) detection of periodic variability. While in this
-chapter w do not deal with periodic phenomena, the first of these
+chapter we do not deal with periodic phenomena, the first of these
 metrics is useful to generically assess the performance of LSST for
-transients of all types. More specialized transients metrics can be
-obtained by simply using a more realistic light curve shape. A metric
-that uses input ASCII files is provided, to enable the assessment of
-discovery and characterization of an arbitrarily shaped transient.
+transients of all types.
 
-\subsubsection{Observational triplets (TripletMetric)}
-
-This metric provides a means of evaluating whether a transient event
+\texttt{TripletMetric}: this metric provides a means of evaluating whether a transient event
 on some time scale of interest has been detected, by testing for a
 sequence of three observations. The object must be detected in
 quiescence, followed by two subsequent detections above some
@@ -342,10 +346,7 @@ calculated for a given OpSim run and then further reduced to a
 histogram in logarithmic time bins; the minimum number of bins to
 construct an interesting sample of objects is source-dependent.
 
-\subsubsection{Transient Metric (transientAsciiMetric)}
-
-Calculate what fraction of transients would be detected using an ASCII
-input file for the light curve.
+Many science cases can be developed and tested with these metrics, and we encourage users to do so. In addition we are collecting a library of representative transient lightcurves in a separate GitHub repository\footnote{\url{https://github.com/LSSTTVS/LSST_TVS_RoadMap}} and we encourage readers to contribute their transient models or observations.
 
 % --------------------------------------------------------------------
 
