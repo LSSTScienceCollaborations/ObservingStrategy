@@ -259,7 +259,7 @@ Figure~\ref{standard_discovery}.
 \end{figure}
 
 The runs \opsimdbref{db:baseCadence}, \opsimdbref{db:NoVisitPairs},
-\opsimdbref{db:NEOswithVisitTriplets}, \opsimdbref{db:NEOswithVisitQuads}
+\opsimdbref{db:NEOswithVisitTriplets}, \opsimdbref{db:NEOwithVisitQuads}
 are particularly interesting to evaluate in light of the different
 sets of discovery criteria. Because Opsim does not currently require
 only pairs (or singles, triplets or quads), but instead will sometimes
@@ -283,8 +283,8 @@ Figure~\ref{completeness_changes}.
 \caption{Cumulative completeness for an NEO population, given
   different sets of discovery criteria, for the \opsimdbref{db:baseCadence}, \opsimdbref{db:NoVisitPairs},
 \opsimdbref{db:NEOswithVisitTriplets},
-\opsimdbref{db:NEOswithVisitQuads} simulated surveys. The results in the
-lower right come from a simulated survey, \opsimdbref{db:NEOswithVisitQuads},
+\opsimdbref{db:NEOwithVisitQuads} simulated surveys. The results in the
+lower right come from a simulated survey, \opsimdbref{db:NEOwithVisitQuads},
 which attempted to obtain four visits to each field in each
 night; the results on the upper left, come from the baseline simulated
 survey, \opsimdbref{db:baseCadence}, which attempts to obtain pairs of
@@ -298,15 +298,20 @@ for particular $H$ values, depending on the
 population, in Figure~\ref{completeness_time}. 
 
 \begin{figure}
-\includegraphics[width=2in]{figs/solarsystem/minion_1016_CompletenessOverTime_22_time}
-\includegraphics[width=2in]{figs/solarsystem/minion_1016_CompletenessOverTime_21_time}
-\includegraphics[width=2in]{figs/solarsystem/minion_1016_CompletenessOverTime_8_time}
+\includegraphics[width=2in]{figs/solarsystem/minion_1016_neo_CompletenessOverTime_22_time}
+\includegraphics[width=2in]{figs/solarsystem/minion_1016_mba_CompletenessOverTime_20_time}
+\includegraphics[width=2in]{figs/solarsystem/minion_1016_tno_CompletenessOverTime_8_time}
 \caption{Completeness as a function of time, for NEO, MBA and TNO
   populations. The completeness increases rapidly for the first few
-  years, then increases more slowly. The NEO completeness continues to
-  rise more rapidly than other populations, as objects which were
-  previously not visible -- either because they were too close to the
-  sun or too far away -- change their positioning relative to Earth.
+  years, then increases more slowly. The NEO completeness rises more
+  slowly than other populations, as more NEOs become available to
+  discover due to changing their orbital positioning relative to Earth
+  (becoming closer and brighter, or moving away from sightlines behind
+  the Sun). The TNO completeness rises most rapidly with time, as
+  these objects move slowly; we find most of these objects within the
+  first two years and then improve their characterization over the
+  rest of the survey (measuring better orbits and obtaining
+  lightcurves and colors).
 \label{completeness_time}}
 \end{figure}
 
@@ -338,7 +343,7 @@ falls. The performance will likely fall even further if the scheduler
 stops obtaining more than the minimum requested number of observations.
 
 With the expected MOPS discovery requirements,
-\opsimdb{db:baseCadence} performs adequately for most solar system
+\opsimdbref{db:baseCadence} performs adequately for most solar system
 objects, although completeness falls off more rapidly for faint
 objects than desired for NEOs. To investigate this effect, more
 metrics will have to be developed to discover why these fainter NEOs
@@ -444,7 +449,7 @@ observable, so this simple proxy makes a reasonable starting point.
 \label{obsarc}}
 \end{figure}
 
-In \opsimdb{db:baseCadence}, the mean observational arc length for
+In \opsimdbref{db:baseCadence}, the mean observational arc length for
 NEOs and MBAs is about 8~years for bodies larger than 1~km, and about 
 6~years for 300~m bodies. With these
 orbital arcs, the orbits will be quite well known
@@ -466,14 +471,16 @@ H mag, for NEOs/MBAs/TNOs. xxx
 \subsection{Discussion}
 \label{sec:\secname:discussion}
 
-The baseline cadence and similar cadences will likely be
-sufficient for most objects and most science cases. However,
-particular attention should be given to cadences that present
-significantly different linking yields for NEOs. NEOs
-have the most difficult orbits for linking, and if the linking
-yield of NEOs decreases then necessarily the mean orbital
-uncertainty will increase, thus jeopardizing the science
-cases described above.
+The simple proxy metric above should be improved to account for
+potential difficulties in linking observations, and to include actual
+orbital fitting to determine orbital uncertainties. The timing of
+observations effects the final orbital accuracy significantly,
+particularly for TNOs, and having a good distribution on the times of
+observations can improve orbital accuracy more quickly than would
+naively be expected from a simple observational arclength scaling. 
+
+A figure of merit, including requirements on the orbital accuracy for
+various classes of objects, should also be developed. 
 
 \navigationbar
 
@@ -576,7 +583,7 @@ perihelion.
 Ensuring that any activity or outgassing of a comet or active asteroid
 is clearly identifiable with LSST DM or contributed Level 3 software is not a
 solved problem, however there is ongoing work toward this goal (xx
-ref? Hsih, other? xx). In the meantime, it does not seem unreasonable
+ref? Hsieh, other? xx). In the meantime, it does not seem unreasonable
 to assume that the main requirement, in terms of cadence, is to actually
 have an observation at a time when activity is visible, as well as at
 surrounding times to determine the start and end points of that activity.
@@ -630,8 +637,9 @@ maximum likelihoods of objects at a particular $H$ value, for various population
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
-Running the metrics above on a sample Main Belt Asteroid population,
-in the baseline survey \opsimdbref{db:baseCadence}, the metric results
+Running these metrics on a sample Main Belt Asteroid population
+generates results illustrated in Figure~\ref{activity}.
+In the baseline survey \opsimdbref{db:baseCadence}, the metric results
 indicate that for bright asteroids with activity lasting more than
 about 60 days, we have between about 18-60\% chance of obtaining at
 least one observation that captures the event. If the activity is
@@ -757,8 +765,8 @@ inversion.
 \includegraphics[width=3.3in]{figs/solarsystem/enigma_1282_LightcurveInversion_neo_tno_mba_MOOB_ComboMetricVsH}
 \caption{Fraction of the sample population with the potential for
   lightcurve inversion, as a function of $H$ magnitude for NEOs, MBAs
-  and TNOs, for simulated surveys \opsimdbref{baseCadence} and \opsimdbref{NEOwithVisitQuads}.
-\label{lightcurveinversion}
+  and TNOs, for simulated surveys \opsimdbref{db:baseCadence} and \opsimdbref{db:NEOwithVisitQuads}.
+\label{lightcurveinversion}}
 \end{figure}
 
 Most solar system objects receive many observations, and bright
@@ -766,8 +774,9 @@ objects will have high SNR in most of those observations, so it's not
 surprising that the the baseline cadence, \opsimdbref{db:baseCadence},
 performs reasonably well with this metric. Running the same metric on
 other simulated surveys tends to show similar results, although
-\opsimdbref{db:NEOswithVisitQuads} demonstrates that a higher fraction
-of NEOs get suitable observations for lightcurve inversion. More
+\opsimdbref{db:NEOwithVisitQuads} demonstrates that a higher fraction
+of NEOs get suitable observations for lightcurve inversion. This is
+illustrated in Figure~\ref{lightcurveinversion}. More
 sophisticated metrics or investigation will be required to discover
 the cause of this, although it seems likely that with visit quads,
 there are just more observations of the bright NEOs total, leading to
@@ -792,7 +801,10 @@ of merit, in particular, how many light curve inversion targets are
 necessary, and how should they be spread among different sizes of
 objects? Small objects have different shape and
 rotation distributions than larger objects, so it is interesting
-scientifically to understand objects at a range of $H$ magnitude.
+scientifically to understand objects at a range of $H$ magnitude. In
+addition, this metric currently uses observations in any filter;
+further work should be done to determine if this is sufficient, or if
+observations must occur in a single filter.
 
 \navigationbar
 
@@ -817,30 +829,31 @@ and, downstream, composition as a function of
 asteroid size, family membership, orbital
 elements, or many other parameters.
 
+% more motivation for color measurements? 
+
 One obstacle to determining asteroid colors
 is that asteroid rotation periods are
 on the order of 2--20~hours, so that after
 an initial measurement all further
 measurements (in the same filter, or other
 filters) are obtained at an arbitrary rotational
-phase.
-However, as described above, asteroid lightcurves
-in a single band (presumably r band, which
-will likely have the most detections) can be
-derived. Any observing of that asteroid
-in a different filter can be corrected
-for the derived lightcurve brightness
-offset at the time of the non-r band observation.
-The intrinsic color of the asteroid can therefore
-be measured.
+phase. Unless the lightcurve is also known (perhaps determined from a
+large series of measurements in the same bandpass, such as described
+in the section above), multi-band measurements must occur at closely
+spaced times in order to minimize the effects of the lightcurve on the
+measured color.
 
 % --------------------------------------------------------------------
 
 \subsection{Target measurements and discoveries}
 \label{sec:\secname:targets}
 
-The relevant measurements are observations of
-a given asteroid in each of the LSST bandpasses.
+xx ref DelSanti, Peixinho 2015?16? xx 
+Analysis of existing databases of TNO multi-band measurements indicate
+that pairs of high SNR measurements ($SNR>10$), acquired within a short time
+period ($<2$ hrs) can provide a color measurement accurate to within a
+few tenths (?) of a magnitude. Currently only about xx (500?) xx TNOs
+have color measurements to this level of accuracy.
 
 
 % --------------------------------------------------------------------
@@ -848,15 +861,16 @@ a given asteroid in each of the LSST bandpasses.
 \subsection{Metrics}
 \label{sec:\secname:metrics}
 
-The metric of interest is the number
-of observations in each band. If an asteroid has
-more than $\sim$100 observations in r band,
-then the lightcurve can be determined, and the
-color can then be derived. The fidelity of the color
-will depend on the number of measurements in
-each band with SNR$>$20 (giving colors good to
-5\%).
-
+The metric {\tt ColorDeterminationMetric} searches for pairs of
+observations, taken within a given number of hours, where the pair
+contains observations in each of two specified filters above a
+specified SNR (e.g., $g$ and $r$ band observations taken within 2
+hours of each other, with $SNR>10$). If an object receives a minimum
+number of pairs of observations (currently set to just a single pair
+of observations), then it is considered as having that color
+'measured'. Thus, this metric can measure the fraction of the sample
+population which receives an adequate color measurement, for a series
+of colors.
 
 
 % --------------------------------------------------------------------
@@ -864,13 +878,30 @@ each band with SNR$>$20 (giving colors good to
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
-xxx
-lynne: i don't see a figure that reports this number
-in the latest tarball, though i have seen that figure
-somewhere i think ....
+\begin{figure}
+\includegraphics[width=3.3in]{figs/solarsystem/minion_1016_ColorDetermination_i-z_u-g_r-i_g-r_color_tno_MOOB_ComboMetricVsH}
+\includegraphics[width=3.3in]{figs/solarsystem/kraken_1043_ColorDetermination_i-z_u-g_r-i_g-r_color_tno_MOOB_ComboMetricVsH}
+\\
+\includegraphics[width=3.3in]{figs/solarsystem/enigma_1281_ColorDetermination_i-z_u-g_r-i_g-r_color_tno_MOOB_ComboMetricVsH}
+\includegraphics[width=3.3in]{figs/solarsystem/enigma_1282_ColorDetermination_i-z_u-g_r-i_g-r_color_tno_MOOB_ComboMetricVsH} 
+\caption{Fraction of the sample population with the potential for
+  color measurements in various bands, as a function of $H$ magnitude
+  for TNOs for simulated surveys \opsimdbref{db:baseCadence},
+  \opsimdbref{db:NoVisitPairs}, \opsimdbref{db:NEOswithVisitTriplets}
+  and \opsimdbref{db:NEOwithVisitQuads}. The fraction of TNOs which
+  could receive high accuracy color measurements, particularly in
+  $r-i$, bounces around significantly.
+\label{colordetermination}}
+\end{figure}
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
+The timing of repeat visits, and whether or not filter changes occur
+between these repeat visits, affects the fraction of objects which can
+receive color measurements with closely spaced observations
+significantly. This can be seen in the metric results shown in
+Figure~\ref{colordetermination}. The difference is most pronounced in
+the $r-i$ color measurements. The baseline survey,
+\opsimdbref{db:baseCadence}, seems to perform rather well - and
+indeed, the best out of this set of runs. 
 
 
 % --------------------------------------------------------------------
@@ -878,14 +909,20 @@ the time of writing for this science project?
 \subsection{Discussion}
 \label{sec:\secname:discussion}
 
-As with many other Solar System science cases, the primary
-risk here is adopting an operational cadence in which
-the observing cadence for a given asteroid is sufficiently
-poor that objects are not successfully linked. In this case,
-objects will not have a large number of observations
-in a given band, which jeopardizes both the lightcurve
-inversion science and color/composition studies described
-above.
+This metric does not yet account for potential linking difficulties
+related to identifying that these two observations are part of a
+particular object, and it should be developed further to determine
+appropriate parameters for objects other than TNOs, as other objects
+may have different ranges of rotation rates. In particular, the
+timescales needed when obtaining observations in multiple filters to
+determine colors need to be explored.
+
+There is some tension between desiring to get observations in the same
+bandpass on a given night (to maximize detection threshholds instead
+of being limited by the shallower bandpass) and obtaining color
+measurements by having observations in multiple bandpasses. The risk
+here is that without at least some nights with multi-band observations
+on short timescales, we may not be able to determine accurate colors.
 
 \navigationbar
 
@@ -914,14 +951,15 @@ understand the distribution of albedos, particularly to look for
 trends with size.
 
 Variations on the basic method of shift-and-stack have been used to
-detect faint TNOs XXX Allen, Bernstein, Gladman, Fuentes, ?
+detect faint TNOs XXX Allen, Bernstein, Gladman, Fuentes, 
 XXX. Computational limitations on these methods mean that, roughly
-and in general for images taken at opposition, images taken over the timespan of about an hour can be
+and in general for images taken at opposition, images taken over the
+timespan of a few hours can be
 combined and searched for main belt asteroids, and images taken over
 the timespan of about 3 days can be combined and searched for more
 distant objects like TNOs.
 
-With extragalactic deep drilling fields as in the baseline enigma\_1189
+With extragalactic deep drilling fields as in the baseline \opsimdbref{db:baseCadence}
 run, where observations are taken in a series of filters (g, r, and i
 would be useful for this purpose) each night, every three or four
 days, we could use shift-and-stack to coadd the 50 images obtained in
