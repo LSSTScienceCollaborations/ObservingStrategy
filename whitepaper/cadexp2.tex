@@ -7,9 +7,11 @@ Chapter editors:
 \credit{ivezic},
 \credit{yoachim},
 \credit{rhiannonlynne}.
-% \noindent {\it
-% and the LSST Simulations Team, LSST Project Science Team, and Others
-% }
+
+Contributing authors:
+\credit{kem0cook},
+\credit{StephenRidgway},
+\credit{drphilmarshall}
 
 % --------------------------------------------------------------------
 
@@ -1008,81 +1010,38 @@ fixed'.}
 
 \input{rollingcadence.tex}
 
-% --------------------------------------------------------------------
-
-\section{Ongoing and Future Work}
-\def\secname{cadexp:ongoing}\label{sec:\secname}
-
-
-\subsection{Ongoing: Extended time-domain metrics}
-
-A number of very sophisticated time-domain metrics have been
-implemented in recent MAF development cycle (and some were contributed
-by the community) but they have not been systematically run yet on all
-available simulations. Time-domain metrics, together with metrics for
-analyzing special programs (e.g. deep drilling programs), will be
-further expanded in the next development cycle.
-
-
-\subsection{Ongoing: Rolling Cadence experiments}
-
-Analysis of a few prototype runs (\texttt{ops2\_1102},
-\texttt{enigma\_1260}, \texttt{enigma\_1261}), which implemented the
-so-called ``swiss cheese rolling cadence'' is in progress.
-
-
-\subsection{Future work}
-
-Based on analysis presented here, several recommendations
-for further cadence exploration, can be made.
-
-\begin{enumerate}
-
-\item Further optimization of the main survey (e.g., exposure time in
-general, and u band exposure time in particular; fixing western bias;
-optimizing airmass limit and sky coverage; investigations of variable,
-perhaps SNR-driven, exposure time).
-
-\item Exploration and optimization of temporal sampling function in
-general, and of Rolling Cadence in particular.
-
-\item NEO completeness studies: what would it take for LSST to reach
-90\% completeness for 140m and larger NEOs?  Based on previous
-analysis, directions to explore are deeper visits along the Ecliptic
-and longer survey duration (about 12 years).
-
-\item Exploration of extending the main survey to the Galactic plane
-(per A. Gould's proposal, arXiv:1304.3455) and further optimization of
-Galactic plane and Bulge science programs.
-
-\item Optimization of LMC/SMC coverage (and somewhat less importantly,
-the South Celestial Pole coverage).
-
-\item Deep drilling optimization (detailed analysis of existing
-proposals; investigation of gains from going to a larger observing
-time allocation, e.g. 20\%).
-
-\item Twilight short-exposure time observing (per internal Stubbs proposal).
-
-\item Planning commissioning observations (e.g. the tension between
-going wide to enable self-calibration and dense temporal sampling to
-obtain various light curve templates and fine tune image differencing
-and multi-epoch data processing and data analysis software tools).
-
-\item Dynamic cadence explorations (the main goal at this time is to
-answer: are our tools good enough to act and react swiftly and
-robustly in operations?).
-
-\end{enumerate}
-
-\navigationbar
-
-% --------------------------------------------------------------------
+% % --------------------------------------------------------------------
+%
+% \section{Future Work}
+% \def\secname{cadexp:future}\label{sec:\secname}
+%
+%
+% \subsection{Ongoing: Extended time-domain metrics}
+%
+% A number of very sophisticated time-domain metrics have been
+% implemented in recent MAF development cycle (and some were contributed
+% by the community) but they have not been systematically run yet on all
+% available simulations. Time-domain metrics, together with metrics for
+% analyzing special programs (e.g. deep drilling programs), will be
+% further expanded in the next development cycle.
+%
+%
+% \subsection{Ongoing: Rolling Cadence experiments}
+%
+% Analysis of a few prototype runs (\texttt{ops2\_1102},
+% \texttt{enigma\_1260}, \texttt{enigma\_1261}), which implemented the
+% so-called ``swiss cheese rolling cadence'' is in progress.
+%
+%
+%
+% \navigationbar
+%
+% % --------------------------------------------------------------------
 
 \section{Summary}
 \def\secname{cadexp:summary}\label{sec:\secname}
 
-The most important conclusion of this study is that the upper limit on
+The most important conclusion of this chapter is that the upper limit on
 possible scheduling efficiency improvements for Baseline Cadence is
 close to 6\%. This conclusion is by and large based on the fact that
 the mean slew time for (candidate) Baseline Cadence is 6.9 sec, and
@@ -1182,6 +1141,7 @@ limit than 1.5, which was used in most simulations to date.
 
 \end{enumerate}
 
+% --------------------------------------------------------------------
 
 \navigationbar
 
