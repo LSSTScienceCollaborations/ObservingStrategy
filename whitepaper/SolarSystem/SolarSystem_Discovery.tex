@@ -79,7 +79,7 @@ detections into orbits with 2 detections per night within 90 minutes,
 repeated for 3 nights within a window of 15 days. The additional assumptions are
 that with these 6 observations, we will be able to create low-accuracy orbits that will suffice to link
 additional observations obtained at later (or earlier, in the LSST
-archive) times, and that that the orbit fitting will enable rejection
+archive) times, and that the orbit fitting will enable rejection
 of mislinkages.
 
 We can also use other requirements for discovery. Requiring 4
@@ -180,14 +180,14 @@ example, completeness for PHAs at H=22 is an important summary value.
 \label{sec:\secname:analysis}
 
 The basic output from the {\tt DiscoveryChancesMetric} is the number
-of discovery opportunities (e.g. sets of observations that match the
+of discovery opportunities (e.g.\ sets of observations that match the
 required discovery criteria) available. For objects which have at
 least a given number of discovery opportunities (here, we simply use
 one required opportunity), then this object can be considered
 ``found'' and marked towards the completeness of the population at a
 given H magnitude with the {\tt MoCompletenessMetric} summary metric.
-Examining the \opsimdbref{db:baseCadence} with these metrics, we find
-that most objects have many discovery opportunities. This is shown in
+Examining the \opsimdbref{db:baseCadence} Baseline Cadence with these metrics,
+we find that most objects have many discovery opportunities. This is shown in
 Figure~\ref{standard_discovery}.
 
 \begin{figure}
@@ -205,11 +205,11 @@ Figure~\ref{standard_discovery}.
 The runs \opsimdbref{db:baseCadence}, \opsimdbref{db:NoVisitPairs},
 \opsimdbref{db:NEOswithVisitTriplets}, \opsimdbref{db:NEOwithVisitQuads}
 are particularly interesting to evaluate in light of the different
-sets of discovery criteria. Because Opsim does not currently require
+sets of discovery criteria. Because OpSim does not currently require
 only pairs (or singles, triplets or quads), but instead will sometimes
 acquire more than the requested number of visits, changing the
 discovery criteria from pairs within a night to triplets or quads,
-does not automatically cause the completeness to pummet, although it
+does not automatically cause the completeness to plummet, although it
 does decrease. Looking at the raw numbers of discovery chances offers some
 enlightenment: the number of discovery opportunities does falls dramatically as we go from pairs to quads, however, there
 are still some times when observations are obtained in triplets or
@@ -293,7 +293,7 @@ objects than desired for NEOs. To investigate this effect, more
 metrics will have to be developed to discover why these fainter NEOs
 are not being discovered (are they simply missing appropriate
 sequences of observations due to the cadence or is something more
-subtle occuring?).
+subtle occurring?).
 
 % --------------------------------------------------------------------
 % PJM: the following content was moved from Chapter 2, before Lynne
