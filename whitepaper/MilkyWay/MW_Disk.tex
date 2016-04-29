@@ -267,17 +267,19 @@ Table \ref{tab_SummaryMWDisk}. Those FoMs are:
   \item FoM 4.2 - Uncertainty in the mass function of intra-disk microlensed planets.
 \end{itemize}
 
-With the exception of FoM 3.1 above, all these Figures of Merit
-  are likely to be impacted by spatial confusion, as the populations
-  of interest tend to lie at low Galactic latitudes. Metrics for
-  assessing the impact of crowding have been developed (e.g. {\tt
-    CrowdingMetrics.ipynb} in {\tt maf\_contrib}), and these should be
-  incorporated into all the FoMs described here. For the present,
-  however, we note that confusion is not a function of source
-  strategy. Running the FoMs without confusion isolates the impact of
-  strategy alone on the science that can be performed, as FoMs can be
-  compared in a relative sense. Inclusion of crowding will later set
-  the absolute scale for each FoM.
+With the exception of FoM 3.1 above, all these Figures of Merit are
+likely to be impacted by spatial confusion, as the populations of
+interest tend to lie at low Galactic latitudes. Metrics for assessing
+the impact of crowding have been developed (e.g. {\tt
+  CrowdingMetrics.ipynb} in {\tt maf\_contrib}), and these should be
+incorporated into all the FoMs described here. For the present,
+however, we note that intrinsic source confusion is not a function of
+observing strategy (assuming the confusion limit is well above the
+formal limiting magnitude without it). Running the FoMs without
+accounting for source confusion isolates the impact of strategy alone
+on the science that can be performed, as FoMs can be compared in a
+relative sense. Inclusion of crowding will later set the absolute
+scale for each FoM.
 
 In these FoMs, ``uncertainty'' can be taken to mean both random and
 systematic uncertainty, likely recorded as separate numbers for each
