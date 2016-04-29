@@ -229,9 +229,9 @@ start to brighten, with sufficient fidelity to trigger the intensive
 follow-up required, the models of \citet{gould13} suggest each field
 should be observed once every few nights. With sparser coverage, the
 survey would lose sensitivity to microlensing events in
-progress. \new{Comparison with a similar sample towards the inner
-  Milky Way would be highly useful, which would argue for observations
-  of the entire visible Plane with similar cadence.}
+progress. Comparison with a similar sample towards the inner Milky Way
+would be highly useful, which would argue for observations of the
+entire visible Plane with similar cadence.
 
 Microlensing is also discussed elsewhere in this document, particularly
 for relatively the Magellanic Clouds (\autoref{chp:MCs}), for AGN
@@ -267,7 +267,7 @@ Table \ref{tab_SummaryMWDisk}. Those FoMs are:
   \item FoM 4.2 - Uncertainty in the mass function of intra-disk microlensed planets.
 \end{itemize}
 
-\new{With the exception of FoM 3.1 above, all these Figures of Merit
+With the exception of FoM 3.1 above, all these Figures of Merit
   are likely to be impacted by spatial confusion, as the populations
   of interest tend to lie at low Galactic latitudes. Metrics for
   assessing the impact of crowding have been developed (e.g. {\tt
@@ -277,9 +277,9 @@ Table \ref{tab_SummaryMWDisk}. Those FoMs are:
   strategy. Running the FoMs without confusion isolates the impact of
   strategy alone on the science that can be performed, as FoMs can be
   compared in a relative sense. Inclusion of crowding will later set
-  the absolute scale for each FoM.}
+  the absolute scale for each FoM.
 
-\new{In these FoMs, ``uncertainty'' can be taken to mean both random and
+In these FoMs, ``uncertainty'' can be taken to mean both random and
 systematic uncertainty, likely recorded as separate numbers for each
 FoM. We anticipate determining the FoMs that record population
 parameter-uncertainty in a Monte Carlo sense. This is particularly
@@ -289,9 +289,9 @@ relevant for FoMs in which the event rate per pointing may be low
 survey (as is the case for FoM 3.1, the First Galactic Supernova). In
 very rare-event cases, the FoM can scale with the stellar density and
 the recovery fraction of that particular transient, and need only be
-evaluated once for the entire survey.}
+evaluated once for the entire survey.
 
-\new{Since (at the time of writing) evaluating a Metric with relaxed
+Since (at the time of writing) evaluating a Metric with relaxed
   SQL constraints typically takes about 0.5-1.5 hours, we do not
   expect to perform Monte Carlo simulations initially. In the
   medium-term, when Monte Carlo experiments in the target populations
@@ -303,30 +303,30 @@ evaluated once for the entire survey.}
   interpolate the stored Metric values at the time of trial-population
   generation. At the present date (2016-04-26) we have begun
   investigating the use of these ``Vector Metrics'' for Figures of
-  Merit. We describe the anticipated FoMs in these cases below.}
+  Merit. We describe the anticipated FoMs in these cases below.
 
 {\bf FoM 1.1 - Fraction of quiescent black hole binaries detectable
-  through ellipsoidal variability:} \new{Table
+  through ellipsoidal variability:} Table
   \ref{table:pseudoFOM_1p1} outlines the steps to evaluate FoM
   1.1. Since the lightcurve {\it shape} matters in addition to the
   detection (i.e. we expect LSST data to be used to characterize
   ellipsoidal variations, not just to trigger followup by other
   observatories) the metric choice for detectability should take the
-  lightcurve shape into account.}
+  lightcurve shape into account.
 
-\new{The main innovation required before this FoM can be run, is the
+The main innovation required before this FoM can be run, is the
   extension of existing periodic Metrics to cases with a lightcurve
   shape more complicated than a sine plus noise. The {\tt
     TransientAsciiMetric} may be a good place to start; or, it might
   be straightforward to extend {\tt periodicStarFit} to lightcurves
   with more than one Fourier coefficient. Or, an entirely new metric
-  might be written including more Fourier terms in the fit.}
+  might be written including more Fourier terms in the fit.
 
-\new{An open question is how best to meaningfully quantify the
+An open question is how best to meaningfully quantify the
   recovery fraction of a population with a wide range in binary
   parameters. However, as an initial FoM, evaluating once for an
   ``average'' population will allow direct comparison between
-  observing strategies.}
+  observing strategies.
 
 {\it Possible higher-order FoM:} errors on the population size (mass
 function?) derived from a survey under a given observing
@@ -350,7 +350,7 @@ completeness-correction that would be crucial in this case.
   5. & {\bf Arrive at FoM 1.1:} Load the result from 4. and sum over the spatial region (to be determined: Galactic Latitude range? Comparison high-latitude clusters?) where the qLMXBs are expected.\\
 \hline
     \end{tabular}
- \caption{\new{Description of Figure of Merit 1.1.}}
+ \caption{Description of Figure of Merit 1.1.}
   \label{table:pseudoFOM_1p1}
 \end{table}
 
@@ -370,7 +370,7 @@ completeness-correction that would be crucial in this case.
 %would be crucial in this case.
 
 {\bf FoM 1.2 - Uncertainty on the recurrence-time distribution of
-  Dwarf Novae:} \new{Table \ref{table:pseudoFOM_1p2} illustrates a
+  Dwarf Novae:} Table \ref{table:pseudoFOM_1p2} illustrates a
   version of this FoM that could be run in the near future. Dwarf
   Novae are a heterogeneous class; in the near future we imagine
   assigning an average lightcurve to a population and determining the
@@ -381,7 +381,7 @@ completeness-correction that would be crucial in this case.
   initially the investigator might compute the FoM for a
   representative range of recurrence timescales (since the error on
   timescale recovery may be expected to scale with the recurrence
-  timescale iself).}
+  timescale iself).
 
 \begin{table}[h]
   \small
@@ -396,7 +396,7 @@ completeness-correction that would be crucial in this case.
   6. & {\bf Arrive at FoM 1.2:} The four numbers from steps 4. and 5. are the characterization of the uncertainty in recurrence timescale required. \\
 \hline
     \end{tabular}
- \caption{\new{Description of Figure of Merit 1.2.}}
+ \caption{Description of Figure of Merit 1.2.}
   \label{table:pseudoFOM_1p2}
 \end{table}
 
@@ -412,9 +412,9 @@ uncertainties in both LIGO event rates and DN population.
 %    \item Histogram of recovery efficiency of maximum brightness of dwarf nova versus duration and recurrence time (if assume subsequent outbursts have similar profiles).
 %    \end{itemize}
 
-{\bf FoMs 2.1 \& 2.2 - Fraction of Novae characterized by LSST; and the fraction detected early enough for followup:} \new{Since the set of Novae is so heterogeneous, one can imagine a two-stage process. In the near-future, a single run of {\tt TransientMetricASCII} using some sense of an ``average'' Nova as tracer to enable comparison between observing strategies. We present this in Table \ref{table:pseudoFOM_2p1}, which includes examples for the specific and total fraction of Novae recovered.}
+{\bf FoMs 2.1 \& 2.2 - Fraction of Novae characterized by LSST; and the fraction detected early enough for followup:} Since the set of Novae is so heterogeneous, one can imagine a two-stage process. In the near-future, a single run of {\tt TransientMetricASCII} using some sense of an ``average'' Nova as tracer to enable comparison between observing strategies. We present this in Table \ref{table:pseudoFOM_2p1}, which includes examples for the specific and total fraction of Novae recovered.
 
-\new{In the longer term, a Monte Carlo simulation could be run on a particular class of Novae depending on the parameters of the overall population whose constraints are desired. This latter effort would likely require further development of the Vector Metrics.}
+In the longer term, a Monte Carlo simulation could be run on a particular class of Novae depending on the parameters of the overall population whose constraints are desired. This latter effort would likely require further development of the Vector Metrics.
 
 \begin{table}[h]
   \small
@@ -432,12 +432,12 @@ uncertainties in both LIGO event rates and DN population.
   8. & {\bf Arrive at FoM 2.2:} Sum the result of step 6. over the spatial region of interest.\\
 \hline
     \end{tabular}
- \caption{\new{Description of Figures of Merit 2.1. \& 2.2.}}
+ \caption{Description of Figures of Merit 2.1. \& 2.2.}
   \label{table:pseudoFOM_2p1}
 \end{table}
 
 
-\new{\it Possible higher-order metrics:} Error on the rate of Type Ia
+{\it Possible higher-order metrics:} Error on the rate of Type Ia
 supernovae using LSST data taken under various observing strategies.
 
 %Dependencies:
@@ -504,13 +504,13 @@ sight-line.\footnote{The notebooks used to evaluate this version of
 % obsolete now!
 
 {\bf FoM 4.1 - Fraction of accurately-triggered Microlens candidates
-  within a spatial region of interest:} \new{Table
+  within a spatial region of interest:} Table
   \ref{table:pseudoFOM_4p1} lays out a possible FoM for the fraction
   of microlens candidates that LSST might catch sufficiently early
   that follow-up observations can be planned for other facilties. This
   low-level FoM should be straightforward to compute, for a microlens
   template lightcurve corresponding to some suitable average over the
-  regime of interest.}
+  regime of interest.
 
 \begin{table}[h]
   \small
@@ -526,12 +526,12 @@ sight-line.\footnote{The notebooks used to evaluate this version of
   4. & {\bf Arrive at FoM 4.1:} Sum the fraction of detected candidates from 3. spatially over the region of interest.\\
 \hline
     \end{tabular}
- \caption{\new{Description of Figure of Merit 4.1}}
+ \caption{Description of Figure of Merit 4.1}
   \label{table:pseudoFOM_4p1}
 \end{table}
 
 {\bf FoM 4.2 - Uncertainty in the mass function of microlensed planets
-  past the Snow Line:} \new{Table \ref{table:pseudoFOM_4p2}
+  past the Snow Line:} Table \ref{table:pseudoFOM_4p2}
   illustrates a possible FoM for a science case concerning uncertainty
   in the parameters of a particular planetary population of
   interest. As with FoM 4.1, in this scenario LSST is used as the
@@ -547,7 +547,7 @@ sight-line.\footnote{The notebooks used to evaluate this version of
   probably be acceptable in the near-term (i.e. formal errors on the
   determination of mass function parameters that are determined from
   the subset of objects that survive LSST's selection function for a
-  particular strategy).}
+  particular strategy).
 
 \begin{table}[h]
   \small
@@ -568,7 +568,7 @@ sight-line.\footnote{The notebooks used to evaluate this version of
   9. & {\bf Arrive at FoM 4.2:} Find the offset (from input) and formal uncertainty on the mass function parameters.\\
 \hline
     \end{tabular}
- \caption{\new{Description of Figure of Merit 4.2}}
+ \caption{Description of Figure of Merit 4.2}
   \label{table:pseudoFOM_4p2}
 \end{table}
 
@@ -612,12 +612,12 @@ used to avoid biases in the FoM estimate by the Magellanic Clouds.
 
 {\it \bf Results:} $FoM_{preSN}$(\opsimdbref{db:baseCadence}) = 0.129,
 while
-$FoM_{preSN}$(\opsimdbref{db:opstwoPS})=0.826.\footnote{\new{2016-04-25
+$FoM_{preSN}$(\opsimdbref{db:opstwoPS})=0.826.\footnote{2016-04-25
 For comparison, when run on 2015-era OpSim runs {\tt enigma\_1189}
 (Baseline strategy) and {\tt ops2\_1092} (PanSTARRS-like strategy) the
 results were 0.251 (Baseline) and 0.852 (PanSTARRS-like strategy). So
 the 2016-era OpSim runs show a sharper disadvantage than before to the
-Baseline cadence for the Galactic Supernova case.}} See Figure
+Baseline cadence for the Galactic Supernova case.} See Figure
 \ref{f_opSim_GalacticSN} for a breakdown of this figure of merit across
 sightlines.
 
@@ -656,8 +656,8 @@ sightlines.
 
 The Figures of Merit listed above must now be implemented within the
 sims\_maf framework and applied to representative science cases.
-\new{See Table \ref{tab_SummaryMWDisk} at the end of this subsection for
-initial efforts along these lines.} We welcome input and volunteers for
+See Table \ref{tab_SummaryMWDisk} at the end of this subsection for
+initial efforts along these lines. We welcome input and volunteers for
 this effort.
 
 Qualitatively, however, we can note immediately that the current
