@@ -1,0 +1,124 @@
+% ====================================================================
+%+
+% SECTION:
+%    SolarSystem_PHA.tex
+%
+% CHAPTER:
+%    solarsystem.tex
+%
+% ELEVATOR PITCH:
+%    Discovery of PHAs in particular. Discussion of wider 'impacts'.
+%
+%-
+% ====================================================================
+
+\section{Discovery of Potentially Hazardous Asteroid Discovery}
+\def\secname{\chpname:phas}\label{sec:\secname}
+
+\credit{ivezic},
+\credit{rhiannonlynne}.
+
+The U.S. Congress has given a mandate to NASA to implement a
+Near-Earth Object (NEO) Survey program to detect, track, catalog, and
+characterize the physical characteristics of near-Earth objects equal
+to or greater than 140 meters in diameter\footnote{See
+\url{http://www.gpo.gov/fdsys/pkg/PLAW-109publ155/pdf/PLAW-109publ155.pdf}}. The
+goal is to achieve a completeness of 90\%. In recent practice, adopted
+here, the completeness is evaluated for a subset of NEOs called
+Potentially Hazardous Asteroids\footnote{Potentially Hazardous
+Asteroids (PHAs) are defined as asteroids with a minimum orbit
+intersection distance (MOID) of 0.05 AU or less.} (PHA), with
+H$\le$22, where H is the absolute magnitude\footnote{Absolute
+magnitude is the magnitude that an asteroid would have at a distance
+of 1 AU from the Sun and from the Earth, viewed at zero phase
+angle. This is an impossible configuration, of course, but the
+definition is motivated by desire to separate asteroid physical
+characteristics from the observing configuration.} in the Johnson's V
+band.
+
+The discovery criteria for PHAs follows the same guidelines and metrics found in the previous
+section, \ref{sec:solarsystem:discovery}, but is worth discussing
+separately to focus on its main figure
+of merit - completeness for PHAs with H$\le$22 magnitudes.
+
+% --------------------------------------------------------------------
+
+\subsection{Target measurements and discoveries}
+\label{sec:\secname:targets}
+
+Using the same range of discovery criteria as in the previous section,
+\ref{sec:solarsystem:discovery}, 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!]
+\vskip -1.1in
+\includegraphics[angle=0,width=0.56\hsize:,clip]{figs/enigma1189_diffNEOcompleteness.pdf}
+\hskip -0.5in
+\includegraphics[angle=0,width=0.56\hsize:,clip]{figs/enigma1189_cumNEOcompleteness.pdf}
+\vskip -1.2in
+\caption{The PHA completeness for \opsimdbref{db:baseCadence}, as a function of the object's absolute
+visual magnitude H on the horizontal axes (left: differential completeness at a given H;
+right: cumulative completeness for all objects brighter than a given H).
+The completeness for H$\le$22 NEOs (those with diameters larger than 140m)  for this
+simulation is 73\% (blue line in the right panel).}
+\label{fig:baselinePHA}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[th!]
+\vskip -1.2in
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/diffNEOpairs.pdf}
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/diffNEOquads.pdf}
+\vskip -1.3in
+\caption{%
+The comparison of differential PHA completeness for the baseline
+\opsimdbref{db:baseCadence}, \opsimdbref{
+when requiring two detections per night (left) and four detections per night (right).
+With two detections per night, all simulations perform similarly but when four
+detections per night are required, the simulation that has the largest number
+of such sequences (see \autoref{fig:NvisitStats}), performs the best although at an
+inferior level compared to the left panel (see also \autoref{fig:baselinePHA}).}
+\label{fig:NEOquads}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+{\bf Analysis Results:}
+
+For baseline reference, the PHA completeness for
+\opsimdbref{db:baseCadence} is shown in \autoref{fig:enigmaNEO}. The
+baseline cadence achieves a cumulative completeness of 73\% for
+H$\le$22 PHAs. This cumulative completeness for H$\le$22 is 17\%
+higher than differential completeness at H=22 of 56\% due to
+increasing completeness towards smaller H (larger objects). Both
+differential and cumulative completeness are relevant metrics: the
+former provides more insight in the behavior of a particular
+simulation, while the latter is a metric given to NASA by the U.S.
+Congress. Analysis of results illustrated in \autoref{fig:NEOquads}
+can be summarized as follows:
+\begin{itemize}
+\item When NEO discovery algorithm requires pairs of visits, all runs
+have very similar PHA completeness, with quads run only about 2\%
+lower than the baseline (a differential completeness of 56\% at H=22
+for \opsimdbref{db:baseCadence})
+\item When NEO discovery algorithm requires 4 detections per night,
+the simulation with quads achieves a differential completeness of
+about 27\% at H=22, or  about 30\% lower completeness than Baseline
+Cadence.
+\item When NEO discovery algorithm requires 4 detections per night,
+Baseline Cadence reaches a differential completeness of about 15\% at
+H=22 (some quads are unintentionally produced by chance, see
+\autoref{fig:NvisitStats}).
+\item When NEO discovery algorithm requires 3 detections per night,
+runs which requested triples and quads achieve a differential
+completeness of about 40\% at H=22 (corresponding to a cumulative
+completeness of about 57\% for H$\le$22).
+\end{itemize}
+
+Therefore, going from pairs of visits to triples (both for cadence and
+NEO detection) reduces completeness (both differential and cumulative)
+for PHAs with H$\le$22 by about 15-20\% (and by about 30\% for quads).
+
+\navigationbar
