@@ -141,9 +141,13 @@ factor.
 
 First we discuss metrics for the observing strategy that affect all of
 LSST's astrometric measurements, then discuss figures of merit for the
-two science cases. (The three general metrics were identified years ago and
-are already in the suite of MAF utilities, but they should be reviewed
-prior to making final decisions.)
+two science cases. (The three general metrics were identified years
+ago and are already in the suite of MAF utilities, but they should be
+reviewed prior to making final decisions. For this reason, in addition
+to the Figures of Merit later in the chapter, we present spatial maps
+and histograms for the metrics themselves in Section
+\ref{sec:\secname:MW_Astrometry_OpSim}, for representative OpSim
+strategies.)
 
 \begin{itemize}
 \item[A)] For each LSST field, the parallax factors at each epoch of
@@ -179,10 +183,10 @@ from each population.
 \label{sec:\secname:MW_Astrometry_OpSim}
 
 Here we present initial analysis of LSST's astrometric
-performance. Two example strategies are assessed: the current (as of
-December 2015) baseline strategy, \opsimdbref{db:baseCadence}, and the
-PanSTARRS-like cadence, \opsimdbref{db:opstwoPS}, which greater
-spatial uniformity and superior coverage of the Galactic Plane.
+performance. Two example strategies are assessed: the current baseline
+strategy, \opsimdbref{db:baseCadence}, and the PanSTARRS-like cadence,
+\opsimdbref{db:opstwoPS}, which greater spatial uniformity and
+superior coverage of the Galactic Plane.
 
 \subsubsection{Metrics: Parallax and proper motion precision}
 
@@ -242,7 +246,7 @@ quantified using the following metrics:
 \begin{itemize}
   \item[I1.] Taking snapshots of the survey at various stages of completion (Figures \ref{fig_astrom_ByTime_PACoverage} -  \ref{fig_astrom_ByTime_paError}), the PanSTARRS-like cadence is no worse than \opsimdbref{db:baseCadence}, and by most measures offers better performance;
 \item[I2.] As might be expected, the distribution of metric values for the PanSTARRS-like cadence is narrower than for \opsimdbref{db:baseCadence} - thus astrometric survey uniformity is improved;
-\item[I3.] For the extremes of object color (objects detected only in the bluest or only in the reddest filter), the differences between strategies is weaker. The run \opsimdbref{db:baseCadence} still shows a population with poorer parallax measures (although this might be due to coverage of regions simply not covered at all by the PanSTARRS-like strategy).
+\item[I3.] For the extremes of object color (objects detected only in the bluest or only in the reddest filter), the differences between strategies is weaker. The histogram of run \opsimdbref{db:baseCadence} still shows a population with poorer parallax measures (although this might be due to coverage of difficult-to-observe regions that are not covered at all by the PanSTARRS-like strategy).
 \end{itemize}
 
 %% In the current incarnation, these will be big figures on the page. Consider
@@ -459,7 +463,7 @@ quantified using the following metrics:
   \label{fig_astrom_ByFilter_paError}
 \end{figure}
 
-\subsubsection{Figures of Merit depening on the Metrics}
+\subsubsection{Figures of Merit depending on the Metrics}
 
 Building on the first-order metrics above, this subsection will communicate scientific figures of merit for the cases identified in \autoref{sec:\secname:MW_Astrometry_measurements} above.
 
@@ -475,7 +479,7 @@ astrometric performance.
 \subsubsection{Further work on science Figures of Merit}
 %\medskip
 
-As of 2016-01-04, the Figures of Merit for both the highlighted
+At the time of writing, the Figures of Merit for both the highlighted
 Science cases need to be implemented and applied to OpSim output,
 preferably in a format that can be summarized in a single Table in
 this section. These figures of merit are discussed above in Section
