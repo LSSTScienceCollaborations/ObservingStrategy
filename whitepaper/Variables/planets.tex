@@ -81,11 +81,29 @@ Additionally, the multiband nature of LSST provides an extra benefit, as
 exoplanet transits are achromatic while many potential astrophysical
 false positives, such as binary stars, are not.
 
+\subsection{Metrics}
+\label{sec:\secname:metrics}
+The detection of transiting planets will be dependent on having observations
+that will provide sufficient phase coverage for transiting planets, with periods
+that can range from less than one day up to tens of days. In order to address
+this range of periods, an intial metric that can be used to address the detection
+of transiting planets is the Periodogram Purity Function, discussed more thoroughly
+in Section~5.2.1.
 
-% % --------------------------------------------------------------------
-%
-% \subsection{Metrics}
-% \label{sec:\secname:metrics}
+\subsection{Discussion}
+\label{sec:\secname:discussion}
+In general, the detection of transiting exoplanets with LSST will rely on
+a small subset of potentially detectable planets that can be sufficiently
+separated from statistical noise, rather than a clear threshold in a planet's
+properties that would distinguish detectable planets vs. nondetectable planets.
+This will mean that the best calculation of planet yields will have to come
+from simulations of light curves for large numbers of stellar systems in order
+to characterize LSST. The computation time involved in this process is sufficiently
+prohibitive to prevent a metric being developed based directly on these
+simulated light curves, however future work may be able to map relationships
+between metric values for individual fields and the corresponding numbers
+of planets that can be detected.
+
 %
 % % --------------------------------------------------------------------
 %

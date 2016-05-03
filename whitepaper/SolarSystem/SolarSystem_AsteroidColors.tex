@@ -18,11 +18,10 @@
 
 The varying compositions of asteroids result in a range of optical
 colors. Sloan filters in general are sufficiently diagnostic to
-discriminate among different compositional class (e.g., Parker et al.\
-2008).
-% http://adsabs.harvard.edu/abs/2008Icar..198..138P
-Therefore, when a Solar System minor body is observed in griz (Solar
-System objects are generally quite faint in u band and many fewer will
+discriminate among different compositional class
+\citep[e.g.,][]{2008Icar..198..138P}.
+Therefore, when a Solar System minor body is observed in $griz$ (Solar
+System objects are generally quite faint in $u$ band and many fewer will
 be detected),
 % ; Y band xxx),
 the color can be used to determine the
@@ -45,15 +44,11 @@ order to minimize the effects of the lightcurve on the measured color.
 \subsection{Target measurements and discoveries}
 \label{sec:\secname:targets}
 
-% xx ref DelSanti, Peixinho 2015?16? xx
 Analysis of existing databases of TNO multi-band measurements indicate
-that pairs of high SNR measurements ($SNR>10$), acquired within a short
-time period ($<2$ hrs) can provide a color measurement accurate to
-within a few tenths
-% (?)
-of a magnitude.
-% Currently only about xx (500?)
-% xx TNOs have color measurements to this level of accuracy.
+that pairs of high SNR measurements (SNR$>10$), acquired within a
+short time period ($<2$ hrs) can provide an accurate color measurement
+\citep{2015A&A...577A..35P}. This is roughly consistent with
+expectations based on the rotation periods.
 
 
 % --------------------------------------------------------------------
@@ -65,7 +60,7 @@ The metric {\tt ColorDeterminationMetric} searches for pairs of
 observations, taken within a given number of hours, where the pair
 contains observations in each of two specified filters above a
 specified SNR (e.g., $g$ and $r$ band observations taken within 2
-hours of each other, with $SNR>10$). If an object receives a minimum
+hours of each other, with SNR$>10$). If an object receives a minimum
 number of pairs of observations (currently set to just a single pair
 of observations), then it is considered as having that color
 ``measured.'' Thus, this metric can measure the fraction of the sample
@@ -100,7 +95,7 @@ receive color measurements with closely spaced observations
 significantly. This can be seen in the metric results shown in
 Figure~\ref{colordetermination}. The difference is most pronounced in
 the $r-i$ color measurements. The baseline survey,
-\opsimdbref{db:baseCadence}, seems to perform rather well - and
+\opsimdbref{db:baseCadence}, seems to perform rather well --- and
 indeed, the best out of this set of runs.
 
 
@@ -118,7 +113,7 @@ timescales needed when obtaining observations in multiple filters to
 determine colors need to be explored.
 
 There is some tension between desiring to get observations in the same
-bandpass on a given night (to maximize detection threshholds instead
+bandpass on a given night (to maximize detection thresholds instead
 of being limited by the shallower bandpass) and obtaining color
 measurements by having observations in multiple bandpasses. The risk
 here is that without at least some nights with multi-band observations

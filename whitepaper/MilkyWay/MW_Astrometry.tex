@@ -465,9 +465,43 @@ quantified using the following metrics:
 
 \subsubsection{Figures of Merit depending on the Metrics}
 
-Building on the first-order metrics above, this subsection will communicate scientific figures of merit for the cases identified in \autoref{sec:\secname:MW_Astrometry_measurements} above.
+Building on the first-order metrics above, this subsection communicates scientific figures of merit for the cases identified in \autoref{sec:\secname:MW_Astrometry_measurements} above.
 
-Table \ref{tab_SummaryMWAstrometry} summarizes the Figures of Merit for Astrometry science cases.
+Table \ref{tab_SummaryMWAstrometry} summarizes the Figures of Merit
+(FoMs) for Astrometry science cases. At the time of writing, FoMs have
+been implemented to summarize the random uncertainty in proper motion
+and parallax, for two regions experiencing extreme values of these
+quantities: the inner Plane (conservatively defined in this section as
+$|b| \lesssim 7^o$~and $|l| \lesssim 80^o$), and the main survey
+(excluding the inner plane and the Southern Polar region, taken
+here as $\delta_{2000.0} < -60.0^o$). Figure
+\ref{fig_astrom_RegionSelKey} illustrates these selection-regions on
+the sky. These form FoM 1.1-1.4, and have to-date been run for the
+OpSim runs \opsimdbref{db:baseCadence} (Baseline cadence),
+\opsimdbref{opstwoPS} (similar to PanSTARRS-1), and the
+recently-completed {\tt astro\_lsst\_01\_1004} (which applies
+Wide-Fast-Deep cadence to the inner Galactic Plane). From the point of
+view of parallax and proper motion, the latter two strategies do not
+negatively impact the non-plane regions, but they {\it substantially}
+improve the sampling for proper motions and parallax (again,
+neglecting the effects of spatial crowding).
+
+At the time of writing, FoMs 2-5 in Table
+\ref{tab_SummaryMWAstrometry} are still at the specification stage,
+and are described in Section
+\ref{sec:\secname:MW_Astrometry_furtherwork}.
+
+%%%% Figures used as ``key'' for the astrometry FoMs:
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_FoM_properMotion_minion_1016_all_skymap.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_FoM_properMotion_minion_1016_plane_skymap.png}
+  \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_FoM_properMotion_minion_1016_nonPlane_skymap.png}
+    \end{center}
+  \caption{Selection regions for the Astrometry Figures of Merit (FoMs) 1.1-1.4. Figures of Merit 1.1 and 1.3 refer to the ``main survey'' region shown in the middle panel (which for the FoM also avoids the region of the South Galactic Pole). The right panel shows the inner Plane region to which FoMs 1.2 \& 1.4 refer. The left-hand panel shows the entire survey region for reference. This example shows run \opsimdbref{db:baseCadence}. See Table \ref{tab_SummaryMWAstrometry} and Section \ref{sec:\secname:MW_Astrometry_metrics}.}
+  \label{fig_astrom_RegionSelKey}
+\end{figure}
 
 \subsection{Topics that will need to be addressed}
 \label{sec:\secname:MW_Astrometry_furtherwork}
@@ -506,10 +540,20 @@ figures of merit might then be:
   \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
     FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence} }} & {\rotatebox{90}{\opsimdbref{db:opstwoPS} }} & {\rotatebox{90}{\scriptsize{\tt astro\_lsst\_01\_1004} }} &  {\rotatebox{90}{future run 2}} & Notes \\
     \hline
-    1.1 & \footnotesize{Median parallax error at $r=21$ (main survey)}      & - & - & - & - & \footnotesize{Summarize the presentation in Figures \ref{fig_astrom_ByTime_PACoverage}-\ref{fig_astrom_ByFilter_paError}} \\
-    1.2. & \footnotesize{Median parallax error at $r=21$ (plane)}   & - & - & - & - &  - \\
-    1.3. & \footnotesize{Median proper motion error at $r=21$ (main survey)}  & - & - & - & - &  \footnotesize{Take median of Figure \ref{fig_astrom_ByTime_pmError} over the ``plane'' region.} \\
-    1.4. & \footnotesize{Median proper motion error at $r=21$ (plane)} & - & - & - & - &  - \\
+    1.1 & \footnotesize{Median parallax error at $r=21$ (main survey)}      & 0.69  & 0.72 & 0.69 & - & 
+%\footnotesize{Summarize the presentation in Figures \ref{fig_astrom_ByTime_PACoverage}-\ref{fig_astrom_ByFilter_paError} }
+\footnotesize{See region definitions in Figure \ref{fig_astrom_RegionSelKey}.}
+\\
+    1.2. & \footnotesize{Median parallax error at $r=21$ (plane)}   & 2.68 & {\bf 0.91} & {\bf 0.89} & - & 
+\footnotesize{Smaller values are better.}\\
+    1.3. & \footnotesize{Median proper motion error at $r=21$ (main survey)}  & 0.19 & 0.19 & 0.19 & - &  
+%\footnotesize{Take median of Figure \ref{fig_astrom_ByTime_pmError} over the ``plane'' region.} 
+\\
+    1.4. & \footnotesize{Median proper motion error at $r=21$ (plane)} & 16.7
+%$^\dagger$ 
+& {\bf 0.26} & {\bf 0.25} & - & 
+%\footnotesize{$^\dagger$no, this is not a typo.} 
+\\
     \hline
     2.1. & \footnotesize{Number of streams LSST can discover via proper motions} & - & - & - & - &  - \\
     3.1. & \footnotesize{Uncertainty and bias in thin- and thick-disk differential age measurement via white dwarfs} & - & - & - & - &  - \\
