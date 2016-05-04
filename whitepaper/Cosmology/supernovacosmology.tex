@@ -452,14 +452,17 @@ distance estimates of supernova Type Ia also show an intrinsic scatter
 of around $0.1$ in previous surveys, which may be expected to decrease
 with better training samples and understanding of underlying
 correlations of SNIa properties and their environments. We compute a
-quality metric for each SNIa as the ratio of the square of the
-uncertainty of the distance indicator from the supernova to the square
-of the intrinsic dispersion. When added up over SN to obtain a value
+quality metric for each SNIa as the ratio of the square of the intrinsic
+dispersion to the square on the 
+uncertainty of the distance indicator from the supernova.
+ When added up over SN to obtain a value
 $QM$, the uncertainty on cosmological parameters may be expected to
 scale as $\sim sqrt(1.0 + \sum QM)$ The quality metric evaluated on the
 example SN plotted is $1.$ if observed in the deep field, and $0.002$ in
 the WFD field.
 
+Given these perSNmetrics associated with each step, it is easy to combine them
+as a total perSNMetric.
 
 % --------------------------------------------------------------------
 
