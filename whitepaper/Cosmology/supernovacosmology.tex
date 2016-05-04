@@ -95,30 +95,26 @@ it is not unlikely  that combinations of some of the steps would still be
 affected by similar requirements.
 
 {\emph{Our first objective is to detect such SNe}}, by which we mean
-selecting SNe from among the transient sources detected by LSST.
-% classify them as SNe (as opposed to an AGN, or an asteroid).
-In brief, this process consists of defining a set of image subtractions
-between a high-resolution `template` image of a sky section, and a set of
+detecting SNe as a transient source in the LSST data. 
+In brief, this process consists of studying a set of image subtractions
+between a high-resolution co-added`template` image of a sky section, and a set of
 single exposures at different times (usually of lower resolution) of the
 same region, after accounting for the different resolutions of images, and
-alignments. These sets of image subtractions associated with a single
-object will be used to detect the object as a transient and then classify
-the transient as an SN. Clearly, detecting an SN depends on the number of
-such images recorded per object, the different filters used for those
-images, and the signal-to-noise ratios of the images. %One might expect
-The efficiency of this step may be summarized as a threshold on the
-joint properties of an astrophysical candidate (apparent brightness, light
-curve characteristics, background) as well as observing conditions
-(astronomical seeing, etc.).
+alignments. Studying such image differences is an efficient way to detect
+ transients such as supernovae, with the probability of inferring the presence
+ of an object with flux changing in these exposures being related to the change in 
+ brightness of the object and noise in the image. Combining a set of difference images 
+ along a supernova light curve results in higher probability of detecting a transient. 
+
 
 {\emph{Our second objective is to photometrically classify different kinds of SNe.}}
 %{\bfseries Photometric SN classification}\\
-Previously, only spectroscopically typed SNe have been used for cosmology. Photometric
+Previously, only spectroscopically typed SNIa have been used for cosmology. Photometric
 typing from light curves alone has only been used to select candidates for spectroscopic
 follow-up (see, e.g., \citet{Sako2008}). However, LSST will simply find far too many
 candidates for even a significant fraction of them to be followed up spectroscopically. In order to avoid
 discarding the majority of the SN dataset, we need to use techniques capable of
-determining cosmological parameters from a potentially contaminated photometric SN dataset.
+determining cosmological parameters from a potentially contaminated photometric SNe dataset.
 
 Several techniques have been proposed recently to solve this problem. One
 approach involves applying stringent cuts to the photometric dataset to obtain a nearly pure sample
@@ -223,11 +219,10 @@ following strategy:
     \item study the sequences of observations in small spatial regions
     of the sky so that the sequences of observations relate to positions
     of astrophysical objects like supernovae. This capability is already
-    built into \verb MAF ~ with multiple slicers like the \verb
-    OpSimFieldSlicer ~ or the \verb Healpix ~ slicer. For example, in
+    built into \verb MAF ~ with multiple slicers like the
+    \verb OpSimFieldSlicer ~ or the \verb Healpixslicer ~. For example, in
     \autoref{fig:SN_sampling}, we show such a sequence for a WFD and
-    DDF field for a single year (This is equivalent to using the \verb
-    OpSimFieldSlicer ~.)
+    DDF field for a single year.
     \item On each such spatial region, we look at sliding time windows,
     each time window of size about 70 days (corresponding roughly to a
     supernova Type Ia  lifetime starting 20 days before peak and
@@ -237,7 +232,7 @@ following strategy:
     \autoref{fig:SN_sampling} and show the timeWindow in
     \autoref{fig:TimeWindow}.
     \item  We assign a metric value that we call \textbf{perSNMetric}
-    $PM$. to each of these time-windows meant to estimate the quality of
+    $PM$ to each of these time-windows meant to estimate the quality of
     observations for a supernova whose rough lifetime matches that time
     window. The prescription for assigning these value to each
     time-window defines our metric and should quantify the success of
@@ -247,17 +242,16 @@ following strategy:
     PM(\rm{observation Sequence, SN properties})$$
     \item We add up the \textbf{perSNMetric} for the time windows to
     estimate the metric values $M$ for the spatial region of the sky
-    surveyed. $$M = \sum_i PM_i $$
+    surveyed. $$M = \sum_i PM_i. $$ This gives us our final metric $M$. 
 \end{itemize}
 
-
-We will use two different approaches to defining the perSNMetric: a) Use
+To define the metric $M,$ we need to define the perSNMetric. Two
+different approaches to defining the perSNMetric are possible: a) Use
 a simulated supernovae Type Ia with specific parameters, observed with
 the sequence of observations in the above time-window, and evaluate the
 success of each step. b) Study heuristics of the observation sequences.
-We will provide some examples of this.
 
-We will first discuss approach (a). As the SN metric in a spatial region
+We will discuss approach (a). As the SN metric in a spatial region
 reflects the contribution of the sample of SN observed in that spatial
 region towards inferring the cosmological parameters. To warm up,
 consider a case where each SN observed with conditions better than a
