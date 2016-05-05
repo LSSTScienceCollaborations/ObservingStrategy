@@ -1,4 +1,4 @@
-% ====================================================================
+
 %+
 % SECTION:
 %    supernovacosmology.tex
@@ -71,7 +71,7 @@ Drilling Fields (DDF) with special enhanced cadence.
 
 This spatio-temporal window should contain millions
 of SNe, that will have apparent magnitudes brighter than the single
-exposure limiting magnitude of LSST.  However, the actual sequence of
+exposure limiting magnitude of LSST. However, the actual sequence of
 observations by LSST, defined by the series of field pointing as a
 function of time in filter bands (along with weather conditions), will
 determine the extent to which each SN can be detected and characterized
@@ -102,15 +102,24 @@ describing each of these steps in turn. Here we focus on steps \ref{it:detection
 and \ref{it:mu}, leaving steps \ref{it:redshift} and \ref{it:cosmology} for future work.
 
 {\emph{Supernova detection}}\\
-In brief, this process consists of studying a set of image subtractions
-between a high-resolution co-added `template' image of a sky section, and a set of
-single exposures at different times (usually of lower resolution) of the
-same region, after accounting for the different resolutions of images, and
-alignments. Studying such image differences is an efficient way to detect
-transients such as supernovae, with the probability of inferring the presence
-of an object with flux changing in these exposures being related to the change in 
-brightness of the object and noise in the image. Combining a set of difference images 
-along a supernova light curve results in higher probability of detecting a transient. 
+Supernova light curves consisting of flux measurements at different times are built through photometry
+at specific locations on each of the observed image. A finite list of such specific locations is
+constructed through a transient detection pipeline studying difference images. In brief, this process 
+consists of studying subtractions between a  `template' image (coadded over time so that a supernova
+flux averages to a small value) and single visit images called `science images` at different times,
+after correcting for differences in resolution, observing conditions and pixel registration. In such
+image differences, one expects to obtain non zero pixel values at locations of transients including
+supernovae, and pixel values at other locations (including locations of static astrophysical sources)
+consistent with zero aside from a noise. The efficiency of detecting a supernova in a single exposures
+depends on a number of factors, the most significant of which is the signal (brightness of the supernova
+in the science image compared to the template) to sky noise in the relevant image.
+
+%Thus, the probability
+%of a supernova being detected in at least a fixed number of the images can be calculated from  
+%transients such as supernovae, with the probability of inferring the presence
+%of an object with flux changing in these exposures being related to the change in 
+%brightness of the object and noise in the image. Combining a set of difference images 
+%along a supernova light curve results in higher probability of detecting a transient. 
 
 {\emph{Supernova classification}}\\
 Because LSST will discover significantly more SNe than can be spectroscopically confirmed, 
@@ -276,17 +285,31 @@ III. SN light curve characterization quality & Given the observations in a time 
 
 \emph{I. Discovery Metric}
 
-This metric is a proxy for the probability of detecting a SN as a
-transient from the set of single epoch (visit) exposures during the
-lifetime of a supernova. Here we assume that a single detection out of
-these visits is sufficient to identify the source as a transient. This
-probability is constructed by comparing the probability of transient
-detection for a point source of given SNR and filter band for a single
-visit and the set of SNR values of a supernova based on the observation
-sequences. This single visit probability currently uses an approximation
-from previous surveys (in particular a SNR-efficiency curve constructed
-from the Dark Energy Survey, and provided by R. Kessler, priv.
-communication).
+This metric is designed to gauge the performance of detection of SNe 
+discussed in \autoref{sec:\secname:targets}.
+This metric is a proxy for the probability that a Supernova will be detected
+ during its lifetiemby the set of images taken in differnt bands by LSST. A larger
+ number of images taken at a time when the supernova is bright enough increases the
+ probability of detection. Assuming that a single detection in any of the images containing
+ the supernova is sufficient to trigger photometry at the location, one can find the
+ probability of detection from a knowledge of SNR-efficiency of detection curve. The Signal to
+Noise ratio can be determined given properties of a supernova (redshift, intrinsic brightness etc.)
+ and the five sigma depth provided in OpSim. While such a SNR-probability of detection curve does not
+ yet exist for the LSST pipeline, one can use such a curve from previous surveys (in particular a
+ SNR-efficiency curve constructed during a stage of the Dark Energy Survey for g, r, i, z bands of DES,
+ and provided by R. Kessler, priv. communication). This is shown in \autoref{fig:SNR_detection}.
+\begin{figure}
+ \centering
+ \includegraphics[width=\textwidth]{figs/supernova/SNR_detection.pdf}
+ \caption{Probability of detecting a transient from a single Different image in different bands as a
+ function of the signal to noise as obtained from Dark Energy Survey, (from R. Kessler). It shows, that 
+for high SNR greater than $\sim 10,$ a single exposure used in difference imaging may be sufficient to detect the SN, while for 
+lower SNR several such image differences may be necessary to have a high probability of detection.}
+ \label{fig:SNR_detection}
+\end{figure}
+
+
+
 
 
 \emph{II. Classification Metric}
