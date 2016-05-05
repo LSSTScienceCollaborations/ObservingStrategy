@@ -11,7 +11,7 @@
 %
 %-
 % ====================================================================
-
+\clearpage
 \section{Supernova Cosmology and Physics}
 \def\secname{supernovae}\label{sec:\secname}
 
@@ -43,7 +43,8 @@ isotropy of the late time universe.
 
 In addition, this large sample will
 enable further sharpening of our understanding of the properties of the
-SN population of different types (see \autoref{sec:SNtransients}). This last point is extremely 
+SN population of different types (see \autoref{sec:transients:SNtransients}). This last point is 
+extremely 
 important
 for SN cosmology goals as the success of SNIa cosmology has always been
 based on the empirical model that intrinsic peak brightnesses are
@@ -103,14 +104,16 @@ and \ref{it:mu}, leaving steps \ref{it:redshift} and \ref{it:cosmology} for futu
 
 {\emph{Supernova detection}}\\
 Supernova light curves consisting of flux measurements at different times are built through photometry
-at specific locations on each of the observed image. A finite list of such specific locations is
+at specific locations on each of the observed images. A finite list of such specific locations is
 constructed through a transient detection pipeline studying difference images. In brief, this process 
 consists of studying subtractions between a  `template' image (coadded over time so that a supernova
 flux averages to a small value) and single visit images called `science images` at different times,
-after correcting for differences in resolution, observing conditions and pixel registration. In such
-image differences, one expects to obtain non zero pixel values at locations of transients including
-supernovae, and pixel values at other locations (including locations of static astrophysical sources)
-consistent with zero aside from a noise. The efficiency of detecting a supernova in a single exposures
+after correcting for differences in resolution, observing conditions and pixel registration. In such 
+difference images, one expects to obtain non zero pixel values at locations of transients including
+supernovae, and pixel values at other locations (including locations of static astrophysical 
+sources) to be
+consistent with zero aside from a noise. The efficiency of detecting a supernova in a single 
+exposure
 depends on a number of factors, the most significant of which is the signal (brightness of the supernova
 in the science image compared to the template) to sky noise in the relevant image.
 
@@ -133,8 +136,8 @@ learning pipeline developed in \citet{Lochner2016}.
 
 {\emph{Estimating intrinsic supernova brightness}}\\
 The ultimate goal of using SNe (type SNIa or
-SNIIP) for cosmology requires estimating the intrinsic brightnesses of
-the SN. The first (and sometimes only, depending on the light curve
+SNIIP) for cosmology requires estimating the intrinsic brightness of each SN. The first (and 
+sometimes only, depending on the light curve
 model) step is fitting the calibrated fluxes to a light curve model with
 a set of parameters. According to the ansatz used in SN cosmology, the
 intrinsic brightness of SNe is largely determined by the parameters of
@@ -151,13 +154,13 @@ the resulting cosmological inference.
 \label{sec:\secname:metrics}
 
 
-Since the steps described above are all necessary for determination of
-SN intrinsic brightnesses, a metric for supernovae cosmology must
+Since the steps described above are all necessary for the determination of
+SN intrinsic brightnesses, a metric for supernova cosmology must
 quantify the ability to perform these steps on each supernova of the
-sample. To connect this to the output of OpSims, we propose the
+sample. To connect this to the output of OpSim, we propose the
 following strategy:
 \begin{itemize}
-    \item study the sequences of observations in small spatial regions
+    \item Study the sequences of observations in small spatial regions
     of the sky so that the sequences of observations relate to positions
     of astrophysical objects like supernovae. This capability is already
     built into \texttt{MAF} with multiple slicers like the
@@ -170,13 +173,13 @@ following strategy:
     extending to about 50 days after peak). As an example, we choose a
     time window around the night=570, which has an MJD value of 49923
     for both the fields (fieldID: 744 and 309) shown in
-    \autoref{fig:SN_sampling} and show the TimeWindow in
+    \autoref{fig:SN_sampling} and show the time window in
     \autoref{fig:TimeWindow}.
     \item  We assign a metric value that we call \textbf{perSNMetric}
-    $PM$ to each of these time-windows to estimate the quality of
+    $PM$ to each of these time windows to estimate the quality of
     observations for a supernova whose rough lifetime matches that time
-    window. The prescription for assigning these value to each
-    time-window defines our metric and should quantify the success of
+    window. The prescription for assigning these values to each
+    time window defines our metric and should quantify the success of
     the steps mentioned above. We would expect this value to be a
     function of the properties of the sequence of observations and the
     properties of the transients (SN) being studied. $$ PM =
@@ -211,12 +214,12 @@ following strategy:
  \includegraphics[width=\textwidth]{figs/supernova/TimeWindow_309_49823.pdf}
  \includegraphics[width=\textwidth]{figs/supernova/TimeWindow_744_49923.pdf}
  %\includegraphics[height=0.2\textheight]{figs/supernova/loc_309_744.pdf}
- \caption{Example of a TimeWindow in a WFD Field (fieldID 309)
- (top-panel) and a second TimeWindow (middle panel) on the same field,
+ \caption{Example of a time window in a WFD Field (fieldID 309)
+ (top-panel) and a second time window (middle panel) on the same field,
  and a Deep Drilling Field (fieldID 744) (bottom panel) all extending
  -20 days before and 50 days after a chosen night or MJD. For the Deep
  Drilling Field in the bottom panel, and the WFD field in the top
- panel, the chosen date around which the TimeWindow is constructed is
+ panel, the chosen date around which the time window is constructed is
  the MJD of 49923, which is also 570 nights into the survey and marked
  by a red vertical line (which can be used to compare the location to
  \autoref{fig:SN_sampling}. The middle panel shows a window in Field
@@ -230,7 +233,7 @@ following strategy:
 To define the metric $M,$ we need to define the perSNMetric. Two
 different approaches to defining the perSNMetric for a given OpSim run are possible: a) Use
 a simulated supernovae Type Ia with specific parameters, observed with
-the sequence of observations in the above time-window, and evaluate the
+the sequence of observations in the above time window, and evaluate the
 success of each step. b) Study heuristics of the observation sequences by using large simulations 
 with randomized parameter values.
 
@@ -287,33 +290,35 @@ III. SN light curve characterization quality & Given the observations in a time 
 
 This metric is designed to gauge the performance of detection of SNe 
 discussed in \autoref{sec:\secname:targets}.
-This metric is a proxy for the probability that a Supernova will be detected
- during its lifetiemby the set of images taken in differnt bands by LSST. A larger
+This metric is a proxy for the probability that a supernova will be detected
+ during its lifetime by the set of images taken in different bands by LSST. A larger
  number of images taken at a time when the supernova is bright enough increases the
  probability of detection. Assuming that a single detection in any of the images containing
  the supernova is sufficient to trigger photometry at the location, one can find the
- probability of detection from a knowledge of SNR-efficiency of detection curve. The Signal to
-Noise ratio can be determined given properties of a supernova (redshift, intrinsic brightness etc.)
- and the five sigma depth provided in OpSim. While such a SNR-probability of detection curve does not
- yet exist for the LSST pipeline, one can use such a curve from previous surveys (in particular a
+ probability of detection from an SNR vs. efficiency of detection curve. The signal-to-noise ratio 
+(SNR) can be determined given properties of a supernova (redshift, intrinsic brightness etc.)
+ and the five sigma depth provided in OpSim. While such a SNR-efficiency curve does not
+ yet exist for the LSST pipeline, one can use such a curve from previous surveys, in particular a
  SNR-efficiency curve constructed during a stage of the Dark Energy Survey for g, r, i, z bands of DES,
- and provided by R. Kessler, priv. communication). This is shown in \autoref{fig:SNR_detection}.
+ and provided by R. Kessler, priv. communication. This is shown in \autoref{fig:SNR_detection}.
 \begin{figure}
  \centering
  \includegraphics[width=\textwidth]{figs/supernova/SNR_detection.pdf}
- \caption{Probability of detecting a transient from a single Different image in different bands as a
- function of the signal to noise as obtained from Dark Energy Survey, (from R. Kessler). It shows, that 
+ \caption{Probability of detecting a transient from a single difference image in different bands as 
+a
+ function of the signal-to-noise as obtained from Dark Energy Survey, (from R. Kessler). It shows, 
+that 
 for high SNR greater than $\sim 10,$ a single exposure used in difference imaging may be sufficient to detect the SN, while for 
 lower SNR several such image differences may be necessary to have a high probability of detection.}
  \label{fig:SNR_detection}
 \end{figure}
 
 Using this information, one can compute the value of the probability that a SN with given properties 
-will be discovered if it occurs with the spatio-tempoal window of LSST. We use this as the perSNmetric 
-value for the discovery metric. While very high redshift (and thus dim) supernovae will not be discovered, it is 
-potentially possible to discover many supernovae whose light curves will not be well characterized or hard to classify.
-
-
+will be discovered if it occurs with the spatio-temporal window of LSST. We use this as the 
+value for the supernova discovery metric (SNDM). While very high redshift (and thus faint) 
+supernovae will not be discovered, it is 
+potentially possible to discover many supernovae whose light curves will in turn not be well 
+characterized or hard to classify.
 
 
 \emph{II. Classification Metric}
