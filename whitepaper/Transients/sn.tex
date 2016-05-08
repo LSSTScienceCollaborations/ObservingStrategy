@@ -23,8 +23,8 @@ discussed in \autoref{sec:supernovae}), and explosion of high mass stars,
 Core collapse (CC) SNe, and even terminal explosions of more exotic
 systems, yet to be understood, like Super Luminous SNe
 (SLSNe). Phenomenologically, the observable of the explosion are
-themselves diverse. The transient duration ranges between weeks and
-months, years. The electromagnetic energy radiated ranges between
+themselves diverse. The transient duration ranges between weeks,
+months, even years. The electromagnetic energy radiated ranges between
 $\sim0.1$ (faintest CC SNe), to $\sim1$ (SN Ia) and $\sim100$ (SLSNe)
 $\times 10^{49}$ erg, corresponding to absolute magnitudes at peak
 ranging between $\sim-19$ and $\sim-22$.
@@ -112,7 +112,7 @@ is best done with a single filter, so prompt characterization also
 needs multiple epochs within a night, although separated by at least a
 few hours, in the same filter, as observing with different
 filters it is impossible (or very hard) to separate shape from
-color. Colors of course allow to learn a lot more about the
+color. Colors allow to learn a lot about the
 statistical sample: as long as the epoch of peak is reliably assessed
 coadded light curves can be studied, which is the goal of the analysis
 that follows.
@@ -129,7 +129,7 @@ an early blue excess in CC~SNe could be assessed, the signature of shock
 breakout, which directly measures the radius of the progenitor
 star. The \emph{figure of merit} for this science case is the time
 within the survey required to achieve a sufficiently large sample of
-SNe satisfying proper quality criteria to enable to distinguish
+SNe satisfying proper quality criteria to enable us to distinguish
 populations with different contribution from DD and SD progenitors.
 To do this we rely on simulations of the observables of the population
 for different sample sizes, and on the \texttt{transientAsciiMetric}
@@ -155,7 +155,7 @@ subtracting the magnitude in different filters at the same epoch
 $\pm~1$~day for each SN, and we include the effects of observational
 noise by generating datapoints from a draw within a Gaussian
 distribution centered at the color measured in the previous step and
-with standard deviation $\sigma_\mathrm{pop} = 0.5$, 1, and 2.  We
+with standard deviation $\sigma_\mathrm{pop} = 0.1$, 0.3, and 0.5.  We
 generate populations of $N_\mathrm{pop}=100$,~1000,~10000 $z~=~0.5$ SNe,
 observed in $g'-r'$, as a representative case. Because the effect is
 heavily chromatic, and it dissipates becoming essentially negligible
@@ -181,8 +181,7 @@ this work should then consider $g'-r'$, $u'-r'$, $g'-i'$, and $u'-i'$.
 We perform Kolmogorov-Smirnoff ($KS$) an Anderson-Darling ($AD$) tests
 to evaluate, as a function of $\sigma_\mathrm{pop}$ and sample size
 $N_\mathrm{pop}$, our diagnostic power. In \autoref{tab:SNprogenitors}
-we report the KS or AD test's (whichever performs best) ability to
-distinguish a population with a $f_\mathrm{SD} > x$ from
+we report the ability to distinguish a population with a $f_\mathrm{SD} > x$ from
 $f_\mathrm{SD}=0.05$; the number reported is the SN~Ia fraction from
 SD progenitors that can be distinguished at a $p\mathrm{-value}~\leq
 ~0.05$.
@@ -193,9 +192,9 @@ SD progenitors that can be distinguished at a $p\mathrm{-value}~\leq
   \begin{tabular}{ c | c| c| c |  }
 $g-r$&\bf{$N_\mathrm{pop}$=100}&\bf{$N_\mathrm{pop}$=1,000}&\bf{$N_\mathrm{pop}$=10,000}\\%& $g-i$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000} \\
   \hline
- \bf{$\sigma_\mathrm{pop} = 2.0$}&  -  & -  &  0.2 \\%& &  -  & -  &  0.2 \\
- \bf{$\sigma_\mathrm{pop} = 1.0$}&  -  & 0.2 & 0.1 \\%& &  -  & 0.2 & 0.1 \\
- \bf{$\sigma_\mathrm{pop} = 0.5$}& 0.4 & 0.1 & 0.1 \\%& & 0.4 & 0.1 & 0.1 \\
+ \bf{$\sigma_\mathrm{pop} = 0.5$}&  -  & 0.2 & 0.1 \\%& &  -  & -  &  0.2 \\
+ \bf{$\sigma_\mathrm{pop} = 0.35$}&  - & 0.2 & 0.1 \\%& &  -  & 0.2 & 0.1 \\
+ \bf{$\sigma_\mathrm{pop} = 0.1$}& 0.2 & 0.1 & 0.1 \\%& & 0.4 & 0.1 & 0.1 \\
 %&&&&&&&\\ $u-i$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000} & $u-r$&\bf{$N$=100}&\bf{$N$=1,000}&\bf{$N$=10,000}\\
 % \bf{$\sigma_\mathrm{pop} = 2.0$}&  -  & -  &  0.2 & &  -  & -  &  0.2 \\
 % \bf{$\sigma_\mathrm{pop} = 1.0$}&  -  & 0.2 & 0.1 & &  -  & 0.2 & 0.1 \\
@@ -221,8 +220,8 @@ $z~=~0.5$ and adjust the number of detections according to
 the injected ratio.  The relative detectability can be assessed with
 the \texttt{transientAsciiMetric}, which allows us to see how OpSims
 recovers observations of transients with realistic shapes. We conclude
-that for RG progenitor the detectability is enhanced by $\sim50\%$ in
- $g'$ and slightly less in $r'$.
+that for RG-WD progenitors the detectability is enhanced by $\sim50\%$ in
+ $g'$ compared to SD progenitors, and slightly less in $r'$.
 
 Then we extract from the \texttt{transientAsciiMetric}, the number of
 \emph{color observations}, i.e. observations in 2 bands within 1 day
@@ -230,33 +229,37 @@ of each other, each fulfilling our SNR requirement for the color for
 3-, 6-, and 12 months of survey in year 1. The SNR requirement is 
 translated into a requirement on each
 observation of $\mathrm{SNR} >
-\frac{1.0}{2.0~\sigma_\mathrm{pop}/\sqrt{2}}$.
+\frac{1.0}{\sqrt{2.0}~\sigma_\mathrm{pop}}$.
 
-With the goal of distinguishing a SD contribution of 20\% to the SN Ia
-population, we need more than 1000 detections, in 2 filters within 1
-day, and a $\sigma_\mathrm{pop}<1.0$ (\autoref{tab:SNprogenitors}. But
-the pairs of observations we recovered at the previous step are within
-the first 10 days but with any gap in time. \emph{Second shortcut}: To
-include the constraint that the detections should be within 24 hours
-we refer to the \texttt{InterNightGapsMetric}, which is plotted in
+With the goal of distinguishing a SD contribution of 10\% to the SN Ia
+population to a three-siga level ($p$-value <0.05), we need more than
+1000 detections, in 2 filters within 1 day, and a
+$\sigma_\mathrm{pop}<0.35$ \autoref{tab:SNprogenitors}. But the pairs
+of observations we recovered at the previous step are within the first
+10 days but with any gap in time. \emph{Second shortcut}: To include
+the constraint that the detections should be within 24 hours we refer
+to the \texttt{InterNightGapsMetric}, which is plotted in
 ~\autoref{fig:enigmaGapAll}.  For the \opsimdbref{db:baseCadence} we
 estimate $~\sim10\%$ of the observation are revisited within a
 night. With the assumption that this is likely to happen in two
 different filters, which is \emph{non-conservative}, but neglecting
 intra-night observations that may happen in the two different filters,
-which is a \emph{conservative} assumption our numbers drop by a
-factor 10.
+which is a \emph{conservative} assumption our numbers drop by a factor
+10.
 
 With all these assumptions standing, we find that
  that only 3  months of survey are sufficient to provide a useful,
 sufficiently large and high SNR sample for our purpose, and improve on
 the findings on this topic that were achieved with SDSS~II~\citep{Hayden2010}, and 3 years
-of SNLS data~\citep{Bianco11} with \opsimdbref{db:baseCadence}! Meanwhile 3 month of survey fall short of the goal for 
-\opsimdbref{db:NEOswithVisitTriplets}. Although the \opsimdbref{db:NEOswithVisitTriplets} requires three visits, thus increasing the timeline for inter-night observations, it does not require the observations to be in any specific filters, and with the addition of the third visit within the same night, it increases the typical intra-night gap. It is possible that a detailed investigation of the true \emph{inter-night gap between different filters}, or the addition of a requirement in the cadence that one of the night filter be different than the others (possibly requiring an increased gap between two of the three images to minimize filter changes) would provide valuable data for this kind of studies even faster. 
+of SNLS data~\citep{Bianco11} with \opsimdbref{db:baseCadence}! With our assumotions, 3 month of survey are just enough to reach the goal for 
+\opsimdbref{db:NEOswithVisitTriplets}. Although the \opsimdbref{db:NEOswithVisitTriplets} requires three visits, thus increasing the timeline for inter-night observations, it does not require the observations to be in any specific filters, and with the addition of the third visit within the same night, it increases the typical intra-night gap. It is possible that a detailed investigation of the true \emph{inter-night gap between different filters}, or the addition of a requirement in the cadence that one of the night filter be different than the others (possibly requiring an increased gap between two of the three images to minimize filter changes) would provide valuable data for this kind of studies even faster.
+
+\emph{This exercise demonstrates the power of LSST in collecting large high SNR samples of transients, but we must remind the reader that these conclusion, and generally large sample analysis, rely on having properly identified both the transient class (normal SN~Ia) and the date of maximum! This, once more, highlights the importance of prompt identification and classification: for SN~Ia this likely will limit this work to objects that could be identified spectroscopically, enhancing the importance of follow-up.}
+
 
 \autoref{fig:sndetect} shows the detection rate for SN~Ia at $z=0.5$
-in absence of shock interaction as a function of SNR (product of $g'$
-and $r'$ limit) for 3, 6 months, and a year of
+in absence of shock interaction as a function of SNR (obtained by summing in quadrature the errors on $g'$
+and $r'$) for 3, 6 months, and a year of
 \opsimdbref{db:baseCadence} and \opsimdbref{db:NEOswithVisitTriplets}.
 % (ideally I will plot it for the other survey as well tonight) 
 
