@@ -1,0 +1,89 @@
+% ====================================================================
+%+
+% SECTION:
+%    WFIRST_weaklensing.tex
+%
+% CHAPTER:
+%    wfirst.tex
+%
+% ELEVATOR PITCH:
+%    Explain in a few sentences what the relevant discovery or
+%    measurement is going to be discussed, and what will be important
+%    about it. This is for the browsing reader to get a quick feel
+%    for what this section is about.
+%
+% COMMENTS:
+%
+%
+% BUGS:
+%
+%
+% AUTHORS:
+%    Phil Marshall (@drphilmarshall)  - replace with your name and GitHub username!
+%-  Jason Rhodes @jasondrhodes
+% ====================================================================
+
+\section{Cosmological Weak Lensing with WFIRST and LSST}
+\def\secname{\chpname:weaklensing}\label{sec:\secname}
+
+%note to Phil-  I am not sure if there will be another section that serves as an intro to WFIRST, but I am doing that here
+%also, I think we should make this about more than just WL.  Can we change the name and focus of the section to the High Latitude Survey.  The driver %is still probably weak lensing!
+
+
+
+\credit{jasondrhodes},
+{\it and others to follow}
+\textbf{Intro to WFIRST} 
+The Wide Field Infrared Survey Telescope (WFIRST) is a NASA mission that entered Phase A in February 2016.  WFIRST was the highest recommendation for large space missions in the 2010 New Worlds New Horizons Decadal Survey.  That recommendation envisioned a wide-field observatory with near infrared (NIR) capabilities to complement LSST's optical capabilities; the Decadal Survey recognized the obvious synergy between WFIRST and LSST.  WFIRST's design has evolved since 2010 and the design being pursued for a mid-2020s launch uses an existing $2.4$m telescope donated to NASA, giving WFIRST capabilities not envisioned by the Decadal Survey.  WFIRST has 3 primary science objectives:
+\begin{itemize}
+\item Determine the nature of the dark energy that is driving the current accelerating expansion of the universe using a combination of weak lensing, galaxy clustering (including Baryon Acoustic Oscillations and Redshift Space Distortions), and supernovae type Ia.
+\item Study exoplanets through a statistical microlensing survey and via direct imaging and spectroscopy with a coronagraph. 
+\item Perform NIR surveys of the galactic and extragalactic sky via a Guest Observer program. 
+\end{itemize}
+WFIRST will be at L2 to enable the thermal stability required for the precise astrometric, photometric, and morphological measurements required for these science goals. The baseline WFIRST mission architecture is described in detail in the final report of the WFIRST Science Definition Team (arxiv/1503.03757). A NIR focal plane with a $\sim0.28$ square degree field of view made up 18 4k$\times$4k Teledyne H4RG NIR detectors will have imaging 
+ 
+
+% --------------------------------------------------------------------
+
+\subsection{Target measurements and discoveries}
+\label{sec:\secname:targets}
+
+Describe the discoveries and measurements you want to make.
+
+Now, describe their response to the observing strategy. Qualitatively,
+how will the science project be affected by the observing schedule and
+conditions? In broad terms, how would we expect the observing strategy
+to be optimized for this science?
+
+
+% --------------------------------------------------------------------
+
+\subsection{Metrics}
+\label{sec:\secname:metrics}
+
+Quantifying the response via MAF metrics: definition of the metrics,
+and any derived overall figure of merit.
+
+
+% --------------------------------------------------------------------
+
+\subsection{OpSim Analysis}
+\label{sec:\secname:analysis}
+
+OpSim analysis: how good would the default observing strategy be, at
+the time of writing for this science project?
+
+
+% --------------------------------------------------------------------
+
+\subsection{Discussion}
+\label{sec:\secname:discussion}
+
+Discussion: what risks have been identified? What suggestions could be
+made to improve this science project's figure of merit, and mitigate
+the identified risks?
+
+
+% ====================================================================
+
+\navigationbar

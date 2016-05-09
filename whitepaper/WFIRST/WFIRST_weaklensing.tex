@@ -1,0 +1,88 @@
+% ====================================================================
+%+
+% SECTION:
+%    WFIRST_weaklensing.tex
+%
+% CHAPTER:
+%    wfirst.tex
+%
+% ELEVATOR PITCH:
+%    Explain in a few sentences what the relevant discovery or
+%    measurement is going to be discussed, and what will be important
+%    about it. This is for the browsing reader to get a quick feel
+%    for what this section is about.
+%
+% COMMENTS:
+%
+%
+% BUGS:
+%
+%
+% AUTHORS:
+%    Phil Marshall (@drphilmarshall)  - replace with your name and GitHub username!
+%-  Jason Rhodes @jasondrhodes
+% ====================================================================
+
+\section{Cosmological Weak Lensing with WFIRST and LSST}
+\def\secname{\chpname:weaklensing}\label{sec:\secname}
+
+%note to Phil-  I am not sure if there will be another section that serves as an intro to WFIRST, but I am doing that here
+%also, I think we should make this about more than just WL.  Can we change the name and focus of the section to the High Latitude Survey.  The driver %is still probably weak lensing!
+
+
+
+\credit{jasondrhodes},
+{\it and others to follow}
+\textbf{Intro to WFIRST} 
+The Wide Field Infrared Survey Telescope (WFIRST) is a NASA mission that entered Phase A in February 2016.  WFIRST was the highest recommendation for large space missions in the 2010 New Worlds New Horizons Decadal Survey.  That recommendation envisioned a wide-field observatory with near infrared (NIR) capabilities to complement LSST's optical capabilities; the Decadal Survey recognized the obvious synergy between WFIRST and LSST.  WFIRST's design has evolved since 2010 and the design being pursued for a mid-2020s launch uses an existing $2.4$m telescope donated to NASA, giving WFIRST capabilities not envisioned by the Decadal Survey.  WFIRST has 3 primary science objectives:
+\begin{itemize}
+\item Determine the nature of the dark energy that is driving the current accelerating expansion of the universe using a combination of weak lensing, galaxy clustering (including Baryon Acoustic Oscillations and Redshift Space Distortions), and supernovae type Ia (SN).
+\item Study exoplanets through a statistical microlensing survey and via direct imaging and spectroscopy with a coronagraph. 
+\item Perform NIR surveys of the galactic and extragalactic sky via a Guest Observer program. 
+\end{itemize}
+WFIRST will be at L2 to enable the thermal stability required for the precise astrometric, photometric, and morphological measurements required for these science goals. The baseline WFIRST mission architecture is described in detail in the final report of the WFIRST Science Definition Team (arxiv/1503.03757). The Wide Field Instrument(WFI) has a NIR focal plane with a $\sim0.28$ square degree field of view made up 18 4k$\times$4k Teledyne H4RG NIR detectors will have imaging capabilities from $0.7-2$ microns and grism spectroscopy capabilities from $1.35-1.89$ microns with $R\sim461\lambda$.  The WFI also contains an Integral Field Unit (IFU) spectrometer with $R\sim100$ resoluton over the range $0.6-2$ microns for SN follow up. The exoplanet coronagraph will have imaging ($0.43-0.97$ microns) and spectroscopic ($0.6-0.97 $ microns) capabilities with a contrast ratio of 1 part in a billion.
+
+WFIRST's  6 year primary mission will have 2 years dedicated to a $\sim2200$ square degree High Latitude Survey (HLS) for weak lensing and galaxy clustering,  1 year of microlensing observations divided into 6 seasons, $0.6$ years of SN search and follow-up, one year dedicated to the coronagraph and 1.4 years dedicated to competitively selected Guest Observer observations. WFIRST has no expendables that would prevent an extended mission of 10 years or longer, and an extended mission would be given over entirely to Guest Observer observations. 
+
+ \textbf{WFIRST's High Latitude Survey (HLS)}
+ WFIRST's HLS will cover 2200 square degrees in 4 NIR photometric filters (3 of which will be sufficiently sampled for weak lensing shape measurements) and NIR grism spectroscopy.  The benefits of overlapping spectroscopic and photometric surveys for dark energy constraints and systematics mitigation are strong.  The primary scientific driver of the photometric portion of the WFIRST HLS is weakg gravitational lensing, but there is a wide range of ancillary science that will be possible with the publicly available WFIRST HLS data (see for instance, the SDT report mentioned above).  However, the requirements on the HLS are largely set by constraints from weak lensing measurements.  Each galaxy in the WFIRST weak lesing survey needs to have an accurate photometric redshift.  This requires optical photometry that reaches the depth of the NIR photometry WFIRST will acquire ($J~27AB$).  \emph{Thus, the WFIRST weak lensing survey will require the full  10-year LSST depth in 4 optical bands for optimal photometric redsfhift determination}. 
+ 
+There is strong benefit not jsut to WFIRT, but to LSST, in coordinating observations of the WFIRST HLS survey field. The combination of full-depth LSST data and WFIRST HLS NIR data will provide the gold standard in photo-zs.  Furthermore, WFIRST grism observations over the same area will provide many millions of high quality slitless spectra and WFIRST’s IFU can be run in parallel with WFI observations to provide many more very accurate spectroscopic redshifts in the survey area.  Thus, the WFIRST photometric data will help to provide better LSST photo-zs and  WFIRST will also provide many of the spectra needed for a training set to calibrate the photo-zs for both missions.  A further benefit to LSST might be the reduced need for LSST observations at the reddest end of the LSST wavelength range (the z and y filters), where both the atmosphere and the physics of CCDs make ground-based observations less efficient than what WFIRST can achieve. Finally, the joint processing of LSST and WFIRST data will provide better object deblending parameters than LSST can achieve alone; WFIRST will be able to provide a morphological prior for the deblending of LSST images.
+
+% --------------------------------------------------------------------
+
+\subsection{Target measurements and discoveries}
+\label{sec:\secname:targets}
+
+We propose an acceleration of the LSST survey over about $10\%$ of the LSST survey area (the $\sim2200$ WFIRST HLS) such that the full LSST ten years survey depth is reached on a timescale that maximizes the joint usefulness of LSST and WFIRST data on that area.  Assuming the two year WFIRST HLS is taken in the first four years of a WFIRST mission that launches in 2024, this would require reaching full LSST depth over that area in $\sim2028$ rather than $\sim2032$. Since the HLS area is roughly $1/8$ as large as the LSST ``Main Survey"'' region, this could be achieved by devoting 1.25 years of LSST observations to the HLS area, assuming that it covers a wide enough range of Right Ascension.  More practically, it could be achieved by devoting 25\% of LSST observing time to this area during each of the first 5 years of the LSST survey, which doubles the time it would naturally be observed during those years at a modest reduction in coverage of the rest of the Main Survey area during that time period.   Given existing plans to speed up the LSST cadence over small sub-areas of the LSST survey, this may only require coordination of the locations of the accelerated LSST area and the WFIRST HLS. As LSST and WFIRST progress, there is a mutual benefit in continuing discussions about the optimal joint observation schedule.
+
+It is possible that the WFIRST data might allow for shallower LSST data in the reddest LSST filter in the overlap region, and this must be quantified. 
+
+
+% --------------------------------------------------------------------
+
+\subsection{Metrics}
+\label{sec:\secname:metrics}
+A simple, first order metric would be the amount of LSST/WFIRST overlapping survey area that reaches the full LSST depth when the WFIRST HLS is completed.  Such a metric is straightforward, but not quantitative until the 2020s, when the WFIRST launch date and survey plan is more definite.  A slightly more complicated metric could include the pace at which the overlapping LSST/WFIRST survey areas are both taken to full depth, since this would make each data set maximally useful to the US community (or anyone with immediate access to both WFIRST and LSST data).  WFIRST data is unlikely to have any proprietary period.  Current plans call for the WFIRST HLS to be conducted in multple passes, but the exact survey pattern is still undecided, so this metric is also not quantifiable yet.   
+
+There may be some reduced need for the the LSST reddest bands in the WFIRST HLS overlap area, which should also be folded into the metric. 
+
+% --------------------------------------------------------------------
+
+\subsection{OpSim Analysis}
+\label{sec:\secname:analysis}
+
+The default survey strategy would only achieve the full LSST photometric depth over the WFIRST HLS after 10 years of survey ($\sim2032).  
+
+
+% --------------------------------------------------------------------
+
+\subsection{Discussion}
+\label{sec:\secname:discussion}
+
+Increasing the cadence of the LSST survey over $\~sim10\%$ of the LSST survey has science benefits that go far beyond the LSST/WFIRST synergy described here.  There are benefits to certain aspects of time-domain science.  Every effort should be made to coordinate all discussions of increased survey cadence (resulting in full LSST depth well before 10 years) over sub-areas of the LSST survey footprint.  Specific attention should be paid to whether the accelerated portions of the LSSt survey can completely overlap the WFIRST HLS, and whether the position of the WFIRST HLS can be determined, in part, by other science drivers within LSST.  This will require close LSST and WFIRST coordination at the Project levels.
+
+
+% ====================================================================
+
+\navigationbar
