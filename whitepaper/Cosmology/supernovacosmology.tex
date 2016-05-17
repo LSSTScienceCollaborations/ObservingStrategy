@@ -1,4 +1,4 @@
-% ====================================================================
+
 %+
 % SECTION:
 %    supernovacosmology.tex
@@ -11,7 +11,7 @@
 %
 %-
 % ====================================================================
-
+\clearpage
 \section{Supernova Cosmology and Physics}
 \def\secname{supernovae}\label{sec:\secname}
 
@@ -27,34 +27,32 @@ Ia (SNIa) and potentially some core-collapse SN (like type IIP) to trace
 the recent expansion history of the universe, and confront models of the
 physics driving the late time accelerated expansion of the universe.
 
-This objective of SN cosmology follows (at least for SNIa) results from
-several highly successful surveys; improvement in knowledge of cosmology
-could come from substantially larger numbers of well-characterized SNe.
-This goal is not directly tied to the unprecedentedly large survey area of
-LSST; the larger number of well-characterized supernovae may be obtained from
-a relatively smaller spatio-temporal region with larger numbers of light curves
-well characterized. However, in practice, even this goal could
-benefit from the spatial scale offered by the WFD component of the LSST
-survey.
+LSST will improve on past surveys by observing a substantial number of well-characterized 
+supernovae, at high redshift. This large sample is not necessarily tied to the large area of LSST 
+and can rather be obtained from a relatively small spatio-temporal region with larger numbers of 
+well-measured light curves.
 
-On the other hand, the WFD aspect will make the LSST survey potentially
-the first to scan the very large area of the entire Southern sky for
+On the other hand, the WFD aspect will make the LSST survey 
+the first to scan a very large area of the entire Southern sky for
 SNe. SNe that are detected and well characterized by LSST can trace
-large scale large scale structure (albeit more noisily than galaxies due
-to smaller numbers) and includes estimates of radial distances, and
-their own redshift estimates which may be used in conjunction with host
-galaxy redshift information. Due to these properties they will probe the
-isotropy of the late time universe.  Peculiar velocities of SNe will
-probe the growth of structure.  In addition, this large sample will
+large scale structure in a novel way, and include estimates of radial distances, as 
+well as
+their own redshift estimates that may be used in conjunction with host
+galaxy redshift information. Due to these properties, they can probe the
+isotropy of the late time universe.    
+
+In addition, this large sample will
 enable further sharpening of our understanding of the properties of the
-SN population of different types. This last point is extremely important
-for SN cosmology goals:  The success of SNIa cosmology has always been
+SN population of different types (see \autoref{sec:transients:SNtransients}). This last point is 
+extremely 
+important
+for SN cosmology goals as the success of SNIa cosmology has always been
 based on the empirical model that intrinsic peak brightnesses are
 related to the certain observable characteristics of SNe.  The WFD SNIa
 sample will dramatically increase the size of the sample available to
-train such an empirical model, as well understand the probability of
+train such an empirical model, as well as understand the probability of
 deviations and scatter from this model. Aside from issues like
-calibration which need to be addressed differently, a larger sample of
+calibration which need to be addressed separately, a larger sample of
 such well measured SNe is probably the only way to address `systematics'
 due to deviations from the empirical model. The anticipated sample can
 be thought of as consisting of two components:  the low-redshift sample
@@ -73,96 +71,81 @@ a WFD cadence, and certain specific locations of the sky called the Deep
 Drilling Fields (DDF) with special enhanced cadence.
 
 This spatio-temporal window should contain millions
-% \todo{RB}{remember to check}
 of SNe, that will have apparent magnitudes brighter than the single
-exposure limiting magnitude of LSST.  However, the actual sequence of
+exposure limiting magnitude of LSST. However, the actual sequence of
 observations by LSST, defined by the series of field pointing as a
 function of time in filter bands (along with weather conditions), will
 determine the extent to which each SN can be detected and characterized
 well.  Characterization of the SNe is at the core of a number of science
 programs that use them as bright, abundant objects with empirically
-determined intrinsic brightnesses. For LSST, this goal entails (a)
-detection of SNe, (b) photometric typing of SNe, (c) estimating photometric
-redshifts of SNe (or identifying host galaxies and obtaining their
-redshifts from photometry or follow-up spectroscopy), (d) estimation of
-intrinsic brightnesses of the SNe, and finally (e) use of these data in
-addressing our science goals of cosmological inference, etc. The efficacy
+determined intrinsic brightnesses. 
+
+For LSST, this goal entails: 
+\begin{enumerate}
+\renewcommand{\theenumi}{\alph{enumi}}
+\item The detection of SNe \label{it:detection}
+\item Photometric classification \label{it:typing}
+\item Estimation of photometric redshifts of SNe (or identifying host galaxies and obtaining their
+redshifts from photometry or follow-up spectroscopy) \label{it:redshift}
+\item Estimation of intrinsic brightnesses of the SNe \label{it:mu}
+\item Constructing a Hubble diagram with this data for cosmological inference \label{it:cosmology}
+\end{enumerate}
+
+The efficacy
 of photometric typing, redshifts and estimation of intrinsic brightnesses
 are all dependent on the amount of information available in the observed
 light curves of SNe. While these steps are not necessarily independent, it
 is useful to think of the requirements on some of these steps separately;
 it is not unlikely  that combinations of some of the steps would still be
-affected by similar requirements.
+affected by similar requirements. Ultimately, any cosmological figure of merit (the $w_0-w_a$ 
+figure of merit described in \citet{Albrecht2006} for example) will depend on intermediate metrics 
+describing each of these steps in turn. Here we focus on steps \ref{it:detection}, \ref{it:typing} 
+and \ref{it:mu}, leaving steps \ref{it:redshift} and \ref{it:cosmology} for future work.
 
-{\emph{Our first objective is to detect such SNe}}, by which we mean
-selecting SNe from among the transient sources detected by LSST.
-% classify them as SNe (as opposed to an AGN, or an asteroid).
-In brief, this process consists of defining a set of image subtractions
-between a high-resolution `template` image of a sky section, and a set of
-single exposures at different times (usually of lower resolution) of the
-same region, after accounting for the different resolutions of images, and
-alignments. These sets of image subtractions associated with a single
-object will be used to detect the object as a transient and then classify
-the transient as an SN. Clearly, detecting an SN depends on the number of
-such images recorded per object, the different filters used for those
-images, and the signal-to-noise ratios of the images. %One might expect
-The efficiency of this step may be summarized as a threshold on the
-joint properties of an astrophysical candidate (apparent brightness, light
-curve characteristics, background) as well as observing conditions
-(astronomical seeing, etc.).
+{\emph{Supernova detection}}\\
+Supernova light curves consisting of flux measurements at different times are built through photometry
+at specific locations on each of the observed images. A finite list of such specific locations is
+constructed through a transient detection pipeline studying difference images. In brief, this process 
+consists of studying subtractions between a  `template' image (coadded over time so that a supernova
+flux averages to a small value) and single visit images called `science images` at different times,
+after correcting for differences in resolution, observing conditions and pixel registration. In such 
+difference images, one expects to obtain non zero pixel values at locations of transients including
+supernovae, and pixel values at other locations (including locations of static astrophysical 
+sources) to be
+consistent with zero aside from a noise. The efficiency of detecting a supernova in a single 
+exposure
+depends on a number of factors, the most significant of which is the signal (brightness of the supernova
+in the science image compared to the template) to sky noise in the relevant image.
 
-{\emph{Our second objective is to photometrically classify different kinds of SNe.}}
-%{\bfseries Photometric SN classification}\\
-Previously, only spectroscopically typed SNe have been used for cosmology. Photometric
-typing from light curves alone has only been used to select candidates for spectroscopic
-follow-up (see, e.g., \citet{Sako2008}). However, LSST will simply find far too many
-candidates for even a significant fraction of them to be followed up spectroscopically. In order to avoid
-discarding the majority of the SN dataset, we need to use techniques capable of
-determining cosmological parameters from a potentially contaminated photometric SN dataset.
+%Thus, the probability
+%of a supernova being detected in at least a fixed number of the images can be calculated from  
+%transients such as supernovae, with the probability of inferring the presence
+%of an object with flux changing in these exposures being related to the change in 
+%brightness of the object and noise in the image. Combining a set of difference images 
+%along a supernova light curve results in higher probability of detecting a transient. 
 
-Several techniques have been proposed recently to solve this problem. One
-approach involves applying stringent cuts to the photometric dataset to obtain a nearly pure sample
-of SNIa \citep{Bernstein2012,Campbell2013} and running the standard SNIa cosmology analysis
-with this sample. Another approach, BEAMS \citep{Kunz2007,Newling2011,Hlozek2012,Knights2013},
-makes use of an entire dataset, coping with contamination by using a mixture model for the
-likelihood, thus allowing for multiple populations. Whichever the technique ultimately used for
-cosmological analysis, it will rely on accurate initial classifications of SN type and
-unbiased estimates for the probability of each type.
-
-Current state-of-the-art photometric classification techniques rely on
-fitting empirically determined templates of SNe to light curves
-\citep{Jha2007,Guy2007,Sako2011}. However in recent years, new approaches
-have been developed in response to the 2010 `Supernova Photometric
-Classification Challenge' \citep{Kessler2010a}. Many of these use novel
-light curve parameterization and employ machine learning algorithms to
-perform the classification (see \citet{Kessler2010b} and references
-therein).
-
-While many of these methods have been tested on standard sets of simulated data and (in some cases)
-on SDSS data, which technique (if any) is superior in all situations is unclear. For
-example, some techniques are more dependent than others on the availability of reliable redshift information, and how
-these techniques will respond to changes in cadence, filter sets, signal-to-noise,
-etc., is unclear.
-
-With this in mind, we propose the use of a multifaceted classification system which
-employs several different methods for extracting features from the light curves (e.g.,
-fitting parametric functions or templates) and several different classification
-algorithms. This system is highly modular, allowing new approaches for direct comparison
-with existing  techniques to be added easily. This also allows direct analysis of
-different observing strategies, without requiring an initial choice of classification
-technique.
+{\emph{Supernova classification}}\\
+Because LSST will discover significantly more SNe than can be spectroscopically confirmed, 
+automated classification of supernova type from multi-band light curves is crucial. While cosmology 
+with a photometric SNe sample with contamination from core collapse SNe is possible (see for 
+example \citet{Kunz2007,Newling2011,Hlozek2012,Knights2013,Bernstein2012,Campbell2013,Rubin2015}), 
+these methods still benefit from accurate class probabilities from classification algorithms. To 
+investigate the effect of observing strategy on SNe classification, we use the multi-faceted machine 
+learning pipeline developed in \citet{Lochner2016}.
 
 
-{\emph{Our third objective is to characterize SNe in terms of empirical
-light curve models.}} The ultimate goal of using SNe (type SNIa or
-SNIIP) for cosmology requires estimating the intrinsic brightnesses of
-the SN. The first (and sometimes only, depending on the light curve
+{\emph{Estimating intrinsic supernova brightness}}\\
+The ultimate goal of using SNe (type SNIa or
+SNIIP) for cosmology requires estimating the intrinsic brightness of each SN. The first (and 
+sometimes only, depending on the light curve
 model) step is fitting the calibrated fluxes to a light curve model with
 a set of parameters. According to the ansatz used in SN cosmology, the
 intrinsic brightness of SNe is largely determined by the parameters of
 the light curve model; hence the uncertainties on the inferred
 parameters largely determine the uncertainties on the inferred peak
-intrinsic brightness or distance moduli of the SNe.
+intrinsic brightness or distance moduli of the SNe. This means the error on the fitted distance 
+modulus parameter is a useful proxy for the quality of the light curve and the accuracy of 
+the resulting cosmological inference.
 
 
 % --------------------------------------------------------------------
@@ -171,38 +154,72 @@ intrinsic brightness or distance moduli of the SNe.
 \label{sec:\secname:metrics}
 
 
+Since the steps described above are all necessary for the determination of
+SN intrinsic brightnesses, a metric for supernova cosmology must
+quantify the ability to perform these steps on each supernova of the
+sample. To connect this to the output of OpSim, we propose the
+following strategy:
+\begin{itemize}
+    \item Study the sequences of observations in small spatial regions
+    of the sky so that the sequences of observations relate to positions
+    of astrophysical objects like supernovae. This capability is already
+    built into \texttt{MAF} with multiple slicers like the
+    \texttt{OpSimFieldSlicer} or the \texttt{Healpixslicer}. For example, in
+    \autoref{fig:SN_sampling}, we show such a sequence for a WFD and
+    DDF field for a single year.
+    \item On each such spatial region, we look at sliding time windows,
+    each time window of size about 70 days (corresponding roughly to a
+    supernova Type Ia  lifetime starting 20 days before peak and
+    extending to about 50 days after peak). As an example, we choose a
+    time window around the night=570, which has an MJD value of 49923
+    for both the fields (fieldID: 744 and 309) shown in
+    \autoref{fig:SN_sampling} and show the time window in
+    \autoref{fig:TimeWindow}.
+    \item  We assign a metric value that we call \textbf{perSNMetric}
+    $PM$ to each of these time windows to estimate the quality of
+    observations for a supernova whose rough lifetime matches that time
+    window. The prescription for assigning these values to each
+    time window defines our metric and should quantify the success of
+    the steps mentioned above. We would expect this value to be a
+    function of the properties of the sequence of observations and the
+    properties of the transients (SN) being studied. $$ PM =
+    PM(\rm{observation Sequence, SN properties})$$
+    \item We add up the \textbf{perSNMetric} for the time windows to
+    estimate the metric values $M$ for the spatial region of the sky
+    surveyed. $$M = \sum_i PM_i. $$ This gives us our final metric $M$. 
+\end{itemize}
+
 \begin{figure}
  \centering
  \includegraphics[width=\textwidth]{figs/supernova/fig_309_2ndYear}
  \includegraphics[width=\textwidth]{figs/supernova/fig_744_2ndYear}
  \includegraphics[height=0.2\textheight]{figs/supernova/loc_309_744.pdf}
- \label{fig:SN_sampling}
  \caption{Example of the cadence in the 2nd season in a WFD Field
  (fieldID 309) (top-panel) and a Deep Drilling Field (fieldID 744)
  (middle panel) and the spatial location of these two fields shown on a
  map. The cadence plots show a heatmap of the number of observations per
- night during the second season in each filter u, g, r, i, z, y. For
- viewing convenience a dotted grid is provided at an interval of 5 days.
- The header shows useful summary statistics: the fieldID and location of
+ night during the second season in each filter u, g, r, i, z, y. 
+ The header shows the fieldID and location of
  the field, the total number of visits during that period, the number of
  distinct nights on which observations are taken, and the number of
- distinct observations (where an observation are considered indistinct
- if they are on the same night and use the same band}
+ distinct observations (where observations are considered indistinct
+ if they are on the same night and use the same band).}
+  \label{fig:SN_sampling}
 \end{figure}
 
-\begin{center}
+
 \begin{figure}
+\centering
  \includegraphics[width=\textwidth]{figs/supernova/TimeWindow_309_49923.pdf}
  \includegraphics[width=\textwidth]{figs/supernova/TimeWindow_309_49823.pdf}
  \includegraphics[width=\textwidth]{figs/supernova/TimeWindow_744_49923.pdf}
  %\includegraphics[height=0.2\textheight]{figs/supernova/loc_309_744.pdf}
- \label{fig:TimeWindow}
- \caption{Example of a TimeWindow in a WFD Field (fieldID 309)
- (top-panel) and a second TimeWindow (middle panel) on the same field,
+ \caption{Example of a time window in a WFD Field (fieldID 309)
+ (top-panel) and a second time window (middle panel) on the same field,
  and a Deep Drilling Field (fieldID 744) (bottom panel) all extending
  -20 days before and 50 days after a chosen night or MJD. For the Deep
  Drilling Field in the bottom panel, and the WFD field in the top
- panel, the chosen date around which the TimeWindow is constructed is
+ panel, the chosen date around which the time window is constructed is
  the MJD of 49923, which is also 570 nights into the survey and marked
  by a red vertical line (which can be used to compare the location to
  \autoref{fig:SN_sampling}. The middle panel shows a window in Field
@@ -210,74 +227,36 @@ intrinsic brightness or distance moduli of the SNe.
  compared to \autoref{fig:SN_sampling}. The plots again show the
  heatmap of observations in each filter in each night as in the cadence
  plots of \autoref{fig:SN_sampling}.}
+  \label{fig:TimeWindow}
 \end{figure}
- \end{center}
 
-
-Since the steps described above are all necessary for determination of
-SN intrinsic brightnesses, a metric for supernovae cosmology must
-quantify the ability to perform these steps on each supernova of the
-sample. To connect this to the output of OpSims, we could employ the
-following strategy:
-\begin{itemize}
-    \item study the sequences of observations in small spatial regions
-    of the sky so that the sequences of observations relate to positions
-    of astrophysical objects like supernovae. This capability is already
-    built into \verb MAF ~ with multiple slicers like the \verb
-    OpSimFieldSlicer ~ or the \verb Healpix ~ slicer. For example, in
-    \autoref{fig:SN_sampling}, we show such a sequence for a WFD and
-    DDF field for a single year (This is equivalent to using the \verb
-    OpSimFieldSlicer ~.)
-    \item On each such spatial region, we look at sliding time windows,
-    each time window of size about 70 days (corresponding roughly to a
-    supernova Type Ia  lifetime starting 20 days before peak and
-    extending to about 50 days after peak). As an example, we choose a
-    time window around the night=570, which has an MJD value of 49923
-    for both the fields (fieldID: 744 and 309) shown in
-    \autoref{fig:SN_sampling} and show the timeWindow in
-    \autoref{fig:TimeWindow}.
-    \item  We assign a metric value that we call \textbf{perSNMetric}
-    $PM$. to each of these time-windows meant to estimate the quality of
-    observations for a supernova whose rough lifetime matches that time
-    window. The prescription for assigning these value to each
-    time-window defines our metric and should quantify the success of
-    the steps mentioned above. We would expect this value to be a
-    function of the properties of the sequence of observations and the
-    properties of the transients (SN) being studied. $$ PM =
-    PM(\rm{observation Sequence, SN properties})$$
-    \item We add up the \textbf{perSNMetric} for the time windows to
-    estimate the metric values $M$ for the spatial region of the sky
-    surveyed. $$M = \sum_i PM_i $$
-\end{itemize}
-
-
-We will use two different approaches to defining the perSNMetric: a) Use
+To define the metric $M,$ we need to define the perSNMetric. Two
+different approaches to defining the perSNMetric for a given OpSim run are possible: a) Use
 a simulated supernovae Type Ia with specific parameters, observed with
-the sequence of observations in the above time-window, and evaluate the
-success of each step. b) Study heuristics of the observation sequences.
-We will provide some examples of this.
+the sequence of observations in the above time window, and evaluate the
+success of each step. b) Study heuristics of the observation sequences by using large simulations 
+with randomized parameter values.
 
-We will first discuss approach (a). As the SN metric in a spatial region
-reflects the contribution of the sample of SN observed in that spatial
-region towards inferring the cosmological parameters. To warm up,
+Here we will discuss the simpler approach (a). The SN metric in a spatial region
+reflects the contribution of the sample of SNe observed in that spatial
+region towards inferring the cosmological parameters. Let us
 consider a case where each SN observed with conditions better than a
-certain threshold contributes equally to the inference, the relevant
+certain threshold contributes equally to the inference. Then the relevant
 metric would be a function of the number of SN in the sample passing
 such selection criteria. More generally, when the quality of all the
-supernovae are not similar enough, the metric should be thought of as
+supernovae are not similar, the metric should be thought of as
 the weighted sum of supernovae, with the weights being related to the
-inverse of the effective variance of the distance modulus.
+inverse of the effective variance of the distance modulus:
 \begin{equation}
-M\sim \sum_i w_i , \qquad  w_i \sim 1.0 /\sigma^2_\mu
+M\sim \sum_i w_i , \qquad  w_i \sim 1.0 /\sigma^2_\mu.
 \end{equation}
 By comparing with the form of the perSNMetric, we see that the
 perSNMetric should be a proxy for $1.0/\sigma^2_\mu,$ where
-$\sigma^2_\mu$ is the effective variance on the measured distance
-modulus of the supernova.
+$\sigma^2_\mu$ is the effective variance on the distance
+modulus of the supernova, as determined by fitting an empirical model to the supernova light curve.
 
 %\subsubsection{ Steps in the PerSNMetric}
-{\it  Steps in the PerSNMetric}
-
+\subsubsection{Steps in the PerSNMetric}
 As described before, the measurement of the distance modulus is the
 result of several steps. Therefore, we expect the perSNMetric to be a
 product of metrics in each of the steps:
@@ -287,7 +266,7 @@ PM_i = \prod_{\rm{steps}} PM_i^{\rm{steps}}
 \end{equation}
 
 These components of perSNMetric constructed in different steps are
-described in \autoref{tab:stepsAndMetrics}
+described in \autoref{tab:stepsAndMetrics}.
 \begin{center}
  \begin{table}
 \begin{tabular}{| p{5cm} |p{10cm}| }
@@ -295,164 +274,76 @@ described in \autoref{tab:stepsAndMetrics}
 \hline
 I. SN discovery  &  Given the observations in a time window corresponding to the lifetime of a supernova, evaluate the  probability of detecting a
 transient \\
-II. SN classification & Given the observations in a time window corresponding to the lifetime of a supernova, evaluate the probability of classifying the transient\\
+II. SN classification & Given the observations in a time window corresponding to the lifetime of a 
+supernova, evaluate the probability of accurately classifying the transient\\
 III. SN light curve characterization quality & Given the observations in a time window corresponding to the lifetime of a supernova, evaluate the quality of characterization\\
-\hline \end{tabular}
+\hline 
+\end{tabular}
+\caption{Components of the perSNMetric}
 \label{tab:stepsAndMetrics}
 \end{table}
 \end{center}
 
 
 
-\subsubsection{I. Discovery Metric}
+\emph{I. Discovery Metric}
 
-This metric is a proxy for the probability of detecting a SN as a
-transient from the set of single epoch (visit) exposures during the
-lifetime of a supernova. Here we assume that a single detection out of
-these visits is sufficient to identify the source as a transient. This
-probability is constructed by comparing the probability of transient
-detection for a point source of given SNR and filter band for a single
-visit and the set of SNR values of a supernova based on the observation
-sequences. This single visit probability currently uses an approximation
-from previous surveys (in particular a SNR-efficiency curve constructed
-from the Dark Energy Survey, and provided by R. Kessler, priv.
-communication).
-
-
-\subsubsection{II. Classification Metric}
-
-The classification metric is based on the output of the multifaceted
-machine learning classification system described in Section
-\ref{sec:\secname:targets}. For a given set of supernovae (simulated or
-real), we run the classification pipeline producing a probability of
-belonging to each class of supernova, for each object. The success of
-the classification can be evaluated in several ways. Here, to allow a
-general and robust metric, we use receiver operating characteristic
-(ROC) curves.
-
-Most machine learning algorithms are capable of producing an estimate of
-the probability for each class, rather than just a single
-classification. Varying the threshold probability at which one considers
-an object belonging to a particular class can dramatically change the
-resulting classification. For example, requiring a threshold probability
-of 0.99 for an object to be considered a type Ia would result in an
-extremely pure Ia sample, albeit a rather small one as many objects
-would be missed. Thus classification problems always result in a
-trade-off between purity and completeness. This is illustrated by ROC
-curves (see \autoref{fig:roc}), where the false positive rate
-(contamination) is plotted against the true positive rate
-(completeness), as a function of probability threshold.
-
-To understand true and false positive rate, consider the confusion
-matrix in \autoref{table:confusion} for a binary classification
-problem. True positive rate (TPR) is then defined as
-\begin{equation}
- \rm{TPR} = \frac{\rm{TP}}{\rm{TP}+\rm{FN}}
-\end{equation}
-and false positive rate (FPR) is defined as
-
-\begin{equation}
- \rm{FPR} = \frac{\rm{FP}}{\rm{FP}+\rm{TN}}.
-\end{equation}
-
-Thus plotting the TPR against the FPR for varying probability threshold
-yields a ROC curve.  Finally, the ROC curve can be summarized into a
-single number, although with some loss of information, by computing the
-area-under-curve (AUC), which is simply the integral under the ROC
-curve. The closer this number is to 1, the better the classifier in
-question is at returning a pure sample with high completeness. The AUC
-allows direct comparison between classifiers for a range of scenarios
-(i.e.\ not simply demanding a pure sample), making it a more general
-metric to use than accuracy, purity or efficiency and is the metric we
-use for the classification part of the supernova analysis.
-
-\begin{table}
-\centering
- \begin{tabular}{|c|c|c|}
- \hline
-  & \multicolumn{2}{|c|}{True class}\\
-  \hline
-  Predicted class & Positive & Negative\\
-  \hline
-  Positive & True positive (TP) & False positive (FP)\\
-  \hline
-  Negative & False negative (FN) & True negative (TN)\\
-  \hline
- \end{tabular}
-
- \label{table:confusion}
- \caption{Confusion matrix for a classification problem with two classes: positive (P) and negative
-(N).}
-\end{table}
-
-
-
-\begin{center}
-\begin{table}
-%\tabletypesize{\scriptsize}
-\begin{tabular}{|p{0.7cm} |p{2.8cm}|p{4cm}|p{1.7cm}|p{1.4cm}|p{0.7cm}|}
-\hline
- Field or No. & (RA,Dec) & No. of LSST data per year (u,g,r,i,z,y)       & Avg. No.&Category (TPR) &Fig. No. \\
-% Field or [No.] & (RA,Dec) & No. of LSST data per year (u,g,r,i,z,y)       & Avg. No. per filter per 50 days   &Category (TPR)\\
-%  or No.      &  (J2000)  & per year (u,g,r,i,z,y) & per filter & (TPR)    \\
-%        &           &                        & per 50days &     \\
-290 DDF  & (349.386,-63.321)  & 2363(398,229,402,414, 522,396) & 53 & A(1)&\ref{fig:SNIaLCopsimdeep}  \\
- 1      & (190,-83) &    239(38,41,41,44,33,42) & 5.3 & B ({\it 0.4}) & \\
- 2      &(20,-83) & 252(52,56,40,21,37,44)  &5.7  & B  & \\
-%old 3      &(120.012,-71.879) &  220(36,38,37,32,44,33) & 5.0 & B &\\
-3      &(116,-66) &  {\it 220(36,38,37,32,44,33)} & 5.0 & B & \ref{fig:SNIaLCminus66} \\
- 4      &(240.05,-62.02) &101(2,5,11,19,19,45) & 2.2  & B & \ref{fig:SNIaLCopsimmain2}\\
- 5      &(120,-50)  &80(4,7,9,18,24,18)        & 1.8 &  C &\\
- 6      & (80,-40)  &      96(5,8,15,17,27,24) &  2.2 & C &\\
- 7      & (280,-40) &      86(4,2,6,4,24,18)   &  2.0& C &\\
- 8      & (30,-20)  &      86(3,4,10,21,27,21) &  1.96& C & \\
- 9      & (100,-20) &      58(4,2,6,4,24,18)   &  1.3& D &\\
-% 000  & (358.41,+0.18)  &                      &     & C({\it 0.1}) & \ref{fig:SNIaLCDecp18}\\
- 309  & (6.097, -1.105) & 80 (4,7,9,18,24,18)  & 1.83   & C({\it 0.1}) & \ref{fig:SNIaLCDecp18}\\
-% 290  & (6.097, -1.105) &                      &     & C({\it 0.1}) & \ref{fig:SNIaLCDecp18}\\
- 11     & (50,+1.5) &      72(3,6,10,12,22,19) &  1.64& D &\\
- 12     & (320, +5) &      7(0,0,2,0,4,0)      &  0.15& E &\\
- 13     & (60,+5)   &      66(0,7,11,20,28,0)  &  1.5  & D& \\
- 14     & (60,+20)  &      72(0,8,13,22,29,0)  &  1.64& D &\\
- 15     & (60,+30)  &      44(0,5,6,15,18,0)   &  1.0& E &\\
-\hline
-\end{tabular}
-\label{tab:lcpositions}
-\end{table}
-\end{center}
-
+This metric is designed to gauge the performance of detection of SNe 
+discussed in \autoref{sec:\secname:targets}.
+This metric is a proxy for the probability that a supernova will be detected
+ during its lifetime by the set of images taken in different bands by LSST. A larger
+ number of images taken at a time when the supernova is bright enough increases the
+ probability of detection. Assuming that a single detection in any of the images containing
+ the supernova is sufficient to trigger photometry at the location, one can find the
+ probability of detection from an SNR vs. efficiency of detection curve. The signal-to-noise ratio 
+(SNR) can be determined given properties of a supernova (redshift, intrinsic brightness etc.)
+ and the five sigma depth provided in OpSim. While such a SNR-efficiency curve does not
+ yet exist for the LSST pipeline, one can use such a curve from previous surveys, in particular a
+ SNR-efficiency curve constructed during a stage of the Dark Energy Survey for g, r, i, z bands of DES,
+ and provided by R. Kessler, priv. communication. This is shown in \autoref{fig:SNR_detection}.
 \begin{figure}
-\centering
-\includegraphics[width=0.7\hsize]{figs/supernova/roc_illustration}
-\label{fig:roc}
-\caption{An example receiver operative characteristic (ROC) curve. Each
-line plotted is an example classifier, ranging from bad (light-colored)
-to (dark-colored). The x-axis is false positive rate (contamination) and
-the y-axis is true positive rate (completeness) and the lines are
-plotted by varying threshold probability to produce different sets of
-classifications (see text for details).}
+ \centering
+ \includegraphics[width=\textwidth]{figs/supernova/SNR_detection.pdf}
+ \caption{Probability of detecting a transient from a single difference image in different bands as 
+a
+ function of the signal-to-noise as obtained from Dark Energy Survey, (from R. Kessler). It shows, 
+that 
+for high SNR greater than $\sim 10,$ a single exposure used in difference imaging may be sufficient to detect the SN, while for 
+lower SNR several such image differences may be necessary to have a high probability of detection.}
+ \label{fig:SNR_detection}
 \end{figure}
 
-
-{\bf Motivation and description:}
-
-The scientific goal of characterizing SNe is to a large extent dependent
-on how well the light curves of individual SNe are sampled in time and
-filters. To study this, we re-index the OpSim output on spatial
-locations rather than use the temporal index. Here we first illustrate
-in terms the cadence in an example LSST field. Our primary goal for
-optimal Observing Strategy for SN observations is to obtain 7-10 epochs
-spread over 50 days or so for more than one filter {\it (we will
-quantify the minimum filters later in the Section)}. This will increase
-the number of well-measured SNe at low redshift (z$<$ 1) and improve
-distinguishing SN Ia from other types of SNe.
+Using this information, one can compute the value of the probability that a SN with given properties 
+will be discovered if it occurs with the spatio-temporal window of LSST. We use this as the 
+value for the supernova discovery metric (SNDM). While very high redshift (and thus faint) 
+supernovae will not be discovered, it is 
+potentially possible to discover many supernovae whose light curves will in turn not be well 
+characterized or hard to classify.
 
 
-\subsubsection{III. Quality Metric}
+\emph{II. Classification Metric}
 
-We construct the quality metric for the perSNmetric by obtaining the
+Separating supernovae from other detected transients is being considered in 
+\autoref{chp:transients}. Here we concern ourselves with problem of classifying subclasses of 
+SNe. Multiple techniques have been proposed to solve this problem and it is not yet clear how the 
+relative success of these techniques are affected by observing strategy. We thus use the 
+multifaceted, machine learning pipeline developed in \citet{Lochner2016} to compare alternative 
+observing strategies. The exact metric used to determine the efficacy of the classification depends 
+on the exact problem at hand. For producing a general purpose, well-classified set of all types of 
+supernovae (for example, to study supernova population statistics), one could use the AUC metric 
+defined in \citet{Lochner2016}, which is a good balance between purity and completeness. 
+Alternatively, if one only considers supernova cosmology, a simpler metric might be the percentage 
+supernova detected if a purity of (for example) 95\% is demanded from the final sample. Work is 
+still ongoing to apply the full classification pipeline to multiple OpSim runs and incorporate a 
+metric into \texttt{MAF}, combining it with the other components of the perSNMetric.
+
+
+\emph{III. Quality Metric}
+
+We construct the quality metric for the perSNMetric by obtaining the
 light curve of the SN in the time window described above. We fit the
-light curve, and approximately estimate the uncertainty in distance from
+light curve, using the SALT2 model \citep{Guy2007}, and approximately estimate the uncertainty in 
+distance from
 the light curve fit alone. Of course, as is well known, luminosity
 distance estimates of supernova Type Ia also show an intrinsic scatter
 of around $0.1$ in previous surveys, which may be expected to decrease
@@ -462,21 +353,96 @@ quality metric for each SNIa as the ratio of the square of the
 uncertainty of the distance indicator from the supernova to the square
 of the intrinsic dispersion. When added up over SN to obtain a value
 $QM$, the uncertainty on cosmological parameters may be expected to
-scale as $\sim sqrt(1.0 + \sum QM)$ The quality metric evaluated on the
-example SN plotted is $1.$ if observed in the deep field, and $0.002$ in
-the WFD field.
+scale as $\sim sqrt(1.0 + \sum QM)$. 
+
+%Move this to OpSim analysis
+% The quality metric evaluated on the example SN plotted is $1.0$ if observed in the deep field 
+% (\autoref{fig:SNIaLCopsimdeep}), and $0.002$ in the WFD field (\autoref{fig:SNIaLCopsimmain}).
+
 
 
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
-
+The scientific goal of characterizing SNe is to a large extent dependent
+on how well the light curves of individual SNe are sampled in time and
+filters. To study this, we re-index the OpSim output on spatial
+locations rather than use the temporal index. Here we first illustrate
+in terms the cadence in two example LSST fields. 
 
 % {\bf Analysis, Results and Discussion}
 
 
-\begin{figure}[tbh!]
+% \begin{figure}[tbh!]
+% %\vskip -1.3in
+% \includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lcavg.pdf}
+% %\vskip -1.3in
+% \caption{Time-interval averaged light curve of
+% \autoref{fig:SNIaLCopsimmain}. The light curve shows only a small number
+% of the data points, which is insufficient to classify this object as a
+% Type Ia and may be also difficult to classify this object as a SN. }
+% \label{fig:SNIaLCopsimmain2}
+% \end{figure}
+
+
+
+
+
+
+
+% \begin{figure*}[!hb]
+%     \begin{minipage}[b]{\linewidth}
+%         \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_0}
+%         \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_1}
+%         \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_2}
+%         \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_3}
+%         \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_4}
+%     \end{minipage}
+% \label{fig:opsimSummary}
+% \caption{Cadence of Observations in the timewindow of a year towards a few sample of
+% positions. Grey-scale indicates the number of visits. {\it add details}
+% }
+% \end{figure*}
+
+
+We analyzed the OpSim output of the Baseline Observing Strategy,
+enigma$\_$1189$\_$sqlite.db{\footnote
+{\url{http://ops2.tuc.noao.edu/runs/}}} which includes Deep Drilling
+Fields (DDF) and the main survey (WFD). Using the OpSim output \texttt{enigma\_1189}, we generated 
+light curves for a type Ia supernova with a with a redshift of z=0.5 at a few different
+locations. A date in MJD is chosen where the LSST simulated data are
+reasonably well populated. We used the SALT2-extended model
+with $x_0$, $x_1$ and $c$ set so that the SNIa would have a specific
+magnitude of $-19.3$ in the rest frame BessellB band. This was performed
+using a version of \texttt{SNCosmo} ~ to interpolate the SALT2 surfaces, and the
+LSST catalog simulation package to calculate the flux for LSST
+bandpasses. 
+
+%[ML] I'm not sure the number of visits is what's relevant here, multiple visits on a single
+%night don't help, except to beat down errors
+\autoref{fig:SNIaLCopsimdeep} shows the light curve in
+different filters in a deep drilling field. The
+number of visits for 50 days (which is the period of the simulated SNIa light curve in
+rest-frame, which translates to 75 days at z=0.5) is 53 per filter. For this light
+curves, the supernova quality metric (SNQM) and the
+discovery metric (SNDM), are both equal to 1. SNDM=1 indicates that this object is a transient that
+will be definitely discovered, and SNQM=1 indicates that the light
+curves will be of high quality enough to contribute extremely well to
+the inference of cosmological parameters. The light curves and
+quantified metric demonstrate that data from Deep Drilling Fields would
+generate high quality light curves, allowing a high rate of supernova
+discovery.
+
+In contrast, \autoref{fig:SNIaLCopsimmain} shows a light curve from the WFD survey. This light 
+curve is
+generated in Field 290 and has an average number
+of data points in the light curve of 2 per filter. Using these light
+curves, the probability (SNDM) of detecting this supernova is less
+than 0.1. \autoref{fig:perSNCadence} directly compares the light curves and cadences of the two 
+fields considered, from the DDF and WFD. 
+
+\begin{figure}
 %\vskip -1.3in
 %*\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_290_lc.pdf}
 \includegraphics[angle=0,width=14truecm]{figs/SN_290_lc.pdf}
@@ -487,9 +453,7 @@ Survey of the LSST Baseline OpSim run.
 \label{fig:SNIaLCopsimdeep}
 \end{figure}
 
-
-
-\begin{figure}[tbh!]
+\begin{figure}
 %\vskip -1.3in
 \includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lc.pdf}
 %\vskip -1.3in
@@ -498,20 +462,7 @@ of the LSST Baseline \OpSim run.}
 \label{fig:SNIaLCopsimmain}
 \end{figure}
 
-\begin{figure}[tbh!]
-%\vskip -1.3in
-\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lcavg.pdf}
-%\vskip -1.3in
-\caption{Time-interval averaged light curve of
-\autoref{fig:SNIaLCopsimmain}. The light curve shows only a small number
-of the data points, which is insufficient to classify this object as a
-Type Ia and may be also difficult to classify this object as a SN. }
-\label{fig:SNIaLCopsimmain2}
-\end{figure}
-
-
-
-\begin{figure}[tbh!]
+\begin{figure}
 \includegraphics[angle=0,width=\textwidth,clip]{figs/SN_Cadence_290.pdf}
 \includegraphics[angle=0,width=\textwidth,clip]{figs/SN_Cadence_309.pdf}
 \caption{Cadence of Observations in the timewindow of a representative
@@ -522,214 +473,254 @@ a distinct filter.}
 \label{fig:perSNCadence}
 \end{figure}
 
+To further study the quality of light curves across the survey, we simulate the same type Ia 
+supernova in 16 different fields, including DDF 290 already studied, from the \texttt{enigma\_1189} 
+OpSim run and record the average number of visits per 50 day time window 
+(\autoref{tab:lcpositions}). A well-known rule of thumb for good quality SN light curves is to 
+demand 7-10 epochs per light curve spread over 50 days or so for more than one filter. Although 
+the averages in \autoref{tab:lcpositions} are only approximations because the cadence is 
+non-uniform, they give a clear indication that with the \texttt{enigma\_1189} observing strategy, 
+the WFD will be largely useless for SNe studies. This motivates our proposal of a rolling cadence 
+strategy to improve the sampling of SNe over a much larger area than the DDFs.
 
 
-\begin{figure*}[!hb]
-    \begin{minipage}[b]{\linewidth}
-        \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_0}
-        \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_1}
-        \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_2}
-        \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_3}
-        \includegraphics[width=\textwidth]{figs/supernova/fig_firstSeason_4}
-    \end{minipage}
-\label{fig:opsimSummary}
-\caption{Cadence of Observations in the timewindow of a year towards a few sample of
-positions. Grey-scale indicates the number of visits. {\it add details}
-}
-\end{figure*}
+% [ML] I've removed this (fairly arbitrary) chategorization, it's more confusing than helpful
+% and it's clear how bad WFD is from the numbers alone
 
+% In column 5, we categorize the positions into 5 categories
+% base on the data points (the value in column 3) per filter for 50 days.
+% When the number of LSST data points (the value in column 3) per filter
+% for 50 days is $>$9 as the category A, 5-9 as B, 1.8 -- 5 for C, 1 --
+% 1.8 for D, and $<$1 for E. An example of light curve of Category A has
+% been shown in Figure \ref{fig:SNIaLCopsimdeep}, Examples light curves of
+% Category B have been shown in Figures \ref{fig:SNIaLCopsimmain} and
+% \ref{fig:SNIaLCopsimmain2}, respectively. An example of a light curve of
+% Category C (ex. Dec.=-40 ;No. 7 in Table \ref{tab:lcpositions}) is shown
+% in \autoref{fig:SNIaLCminus40}.
 
-We analyzed the OpSim output of the Baseline Observing Strategy,
-enigma$\_$1189$\_$sqlite.db{\footnote
-{\url{http://ops2.tuc.noao.edu/runs/}}} which includes Deep Drilling
-Fields (DDF) and the main survey (WFD). Using the OpSim output \verb
-enigma_1189, we generated light curves for type Ia supernovae with a
-typical property with a redshift of z=0.5 toward a few different
-locations. A date in MJD is chosen where the LSST simulated data are
-mostly or reasonably well populated. We used the SALT2-extended model
-with $x1, c=0$ and $x_0 $ set so that the SNIa would have a specific
-magnitude of $-19.3$ in the rest frame BessellB band. This was performed
-using a version of SNCosmo to interpolate the SALT2 surfaces, and the
-LSST catalog simulation package to calculate the flux for LSST
-bandpasses. \autoref{fig:SNIaLCopsimdeep} shows light curves in
-different filters towards a deep drilling field (R.A., Decl.). The
-number of visits for 50 days (which is the perid of SNIa light curve in
-rest-frame and it is 75 days at z=0.5) is 53 per filter. Using the light
-curves, we estimated both the supernova quality metric (SNQM) and the
-discovery metric (SNDM), and find that the quality of SNQM and SNDM is
-1, respectively. SNDM=1 indicates that this object is a transient that
-will be definitely discovered, and SNQM=1 indicates that the light
-curves will be of high quality enough to contribute extremely well to
-the inference of cosmological parameters. The light curves and
-quantified Metric demonstrate that data from Deep Drilling Fields would
-generate high quality light curves, allowing a high rate of supernova
-discovery.
+% \new{An example of Category B toward -66$^{\circ}$ is shown
+% \autoref{fig:SNIaLCminus66} (No. 3 in \autoref{tab:lcpositions}). The
+% light curves in {\it u, g} and {\it r} bands have 3 -- 5 data points,
+% while {\it i} band has 8 or more than data points. The band z and y show
+% relatively large error bars. In order to increase probability to
+% recognize the light curve as a SN and Type Ia, simulated LSST data
+% points could be increased by a factor of 2-3. Our goal is to improve the
+% light curves which belong to Category B and C so that we can distinguish
+% them as a SN and particularly as a Type Ia SN. This will improve values
+% in SNDM and SNQM.}
 
-In contrast, light curves in different filters from the Main Survey in
-\autoref{fig:SNIaLCopsimmain} are limited. This light curve is
-generated towards Field 290 (R.A. of 6.097$^{\circ}$ and Decl. of
--1.105$^{\circ}$; see \autoref{fig:perSNCadence}). An average number
-of data points in the light curve is 2 per filter. Using these light
-curves, the probability (SNDM) we estimated this object as a SN is less
-than 0.1.
+\begin{center}
+\begin{table}
+%\tabletypesize{\scriptsize}
+\centering
+\begin{tabular}{|p{0.9cm} |p{3.3cm}|p{4cm}|p{1.7cm}|}
+\hline
+ Field or No. & (RA,Dec) & No. of LSST visits per year (u,g,r,i,z,y)       & Avg. No.\\
+\hline
+290 DDF  & (349.386,-63.321)  & 2363 (398,229,402,414, 522,396) & 53 \\
+ 1      & (190,-83) &    239 (38,41,41,44,33,42) & 5.3\\
+ 2      &(20,-83) & 252 (52,56,40,21,37,44)  &5.7\\
+%old 3      &(120.012,-71.879) &  220(36,38,37,32,44,33) & 5.0 & B &\\
+3      &(116,-66) &  220 (36,38,37,32,44,33) & 5.0  \\
+ 4      &(240.05,-62.02) &101 (2,5,11,19,19,45) & 2.2  \\
+ 5      &(120,-50)  &80 (4,7,9,18,24,18)        & 1.8\\
+ 6      & (80,-40)  &      96 (5,8,15,17,27,24) &  2.2\\
+ 7      & (280,-40) &      86 (4,2,6,4,24,18)   &  2.0\\
+ 8      & (30,-20)  &      86 (3,4,10,21,27,21) &  1.96\\
+ 9      & (100,-20) &      58 (4,2,6,4,24,18)   &  1.3\\
+% 000  & (358.41,+0.18)  &                      &     & C({\it 0.1}) & \ref{fig:SNIaLCDecp18}\\
+ 309  & (6.097, -1.105) & 80 (4,7,9,18,24,18)  & 1.83\\
+% 290  & (6.097, -1.105) &                      &     & C({\it 0.1}) & \ref{fig:SNIaLCDecp18}\\
+ 11     & (50,+1.5) &      72 (3,6,10,12,22,19) &  1.64\\
+ 12     & (320, +5) &      7 (0,0,2,0,4,0)      &  0.15\\
+ 13     & (60,+5)   &      66 (0,7,11,20,28,0)  &  1.5 \\
+ 14     & (60,+20)  &      72 (0,8,13,22,29,0)  &  1.64\\
+ 15     & (60,+30)  &      44 (0,5,6,15,18,0)   &  1.0\\
+\hline
+\end{tabular}
+\caption{Table of 16 fields in the OpSim \texttt{enigma\_1189}. The first column is simply an 
+index, with the special example fields of the DDF field 290 and WFD field 309 indicated. The 
+position of the fields is shown in column 2. The third column contains the total and per filter 
+band number of visits per year and this is averaged per filter per 50 day time window in column 4. 
+It can be seen that with this observing strategy, only the deep drilling fields are suitable for 
+supernova cosmology, where 7-9 data points per filter band is considered adequate quality.}
+\label{tab:lcpositions}
+\end{table}
+\end{center}
 
-
-\new{We have examined the number of simulated LSST data points by
-selecting 16 positions on the sky as listed in \autoref{tab:lcpositions} .
-Our goal is to generate various light curves of SNe, to apply our
-metrics and to quantify the quality of LSST data using the OpSim output.
-The positions are randomly selected, but to cover the entire, available
-sky from LSST, and serve as a set of representative positions. The first
-column ``Field'' is LSST fieldID of WFD or the number in the entry of
-position in the table. Deep drilling field is marked as ``DDF''. The
-second column is R.A. and Decl. in degree and the third column is the
-number of LSST data points measured for the first year of LSST mission
-and those of each filter are marked in parenthesis as an order of
-(u,g,r,i,z,y) filter. Fourth column (Avg. No.) indicates an average
-number per filter for 50 days derived from the LSST data points (the
-number of LSST data points in the value of column 3 is divided by 6
-(filters) and multiplied by the scaled number of days, 50/365). Note
-that our scientific goal is to obtain 7-9 data points per SN Ia light
-curve period. In column 5, we categorize the positions into 5 categories
-base on the data points (the value in column 3) per filter for 50 days.
-When the number of LSST data points (the value in column 3) per filter
-for 50 days is $>$9 as the category A, 5-9 as B, 1.8 -- 5 for C, 1 --
-1.8 for D, and $<$1 for E. An example of light curve of Category A has
-been shown in Figure \ref{fig:SNIaLCopsimdeep}, Examples light curves of
-Category B have been shown in Figures \ref{fig:SNIaLCopsimmain} and
-\ref{fig:SNIaLCopsimmain2}, respectively. An example of a light curve of
-Category C (ex. Dec.=-40 ;No. 7 in Table \ref{tab:lcpositions}) is shown
-in \autoref{fig:SNIaLCminus40}. }
-
-\new{An example of Category B toward -66$^{\circ}$ is shown
-\autoref{fig:SNIaLCminus66} (No. 3 in \autoref{tab:lcpositions}). The
-light curves in {\it u, g} and {\it r} bands have 3 -- 5 data points,
-while {\it i} band has 8 or more than data points. The band z and y show
-relatively large error bars. In order to increase probability to
-recognize the light curve as a SN and Type Ia, simulated LSST data
-points could be increased by a factor of 2-3. Our goal is to improve the
-light curves which belong to Category B and C so that we can distinguish
-them as a SN and particularly as a Type Ia SN. This will improve values
-in SNDM and SNQM.}
+% \begin{center}
+% \begin{table}
+% %\tabletypesize{\scriptsize}
+% \begin{tabular}{|p{0.7cm} |p{2.8cm}|p{4cm}|p{1.7cm}|p{1.4cm}|p{0.7cm}|}
+% \hline
+%  Field or No. & (RA,Dec) & No. of LSST data per year (u,g,r,i,z,y)       & Avg. No.&Category (TPR) 
+% &Fig. No. \\
+% % Field or [No.] & (RA,Dec) & No. of LSST data per year (u,g,r,i,z,y)       & Avg. No. per filter 
+% per 50 days   &Category (TPR)\\
+% %  or No.      &  (J2000)  & per year (u,g,r,i,z,y) & per filter & (TPR)    \\
+% %        &           &                        & per 50days &     \\
+% 290 DDF  & (349.386,-63.321)  & 2363(398,229,402,414, 522,396) & 53 & 
+% A(1)&\ref{fig:SNIaLCopsimdeep} 
+%  \\
+%  1      & (190,-83) &    239(38,41,41,44,33,42) & 5.3 & B ({\it 0.4}) & \\
+%  2      &(20,-83) & 252(52,56,40,21,37,44)  &5.7  & B  & \\
+% %old 3      &(120.012,-71.879) &  220(36,38,37,32,44,33) & 5.0 & B &\\
+% 3      &(116,-66) &  {\it 220(36,38,37,32,44,33)} & 5.0 & B & \ref{fig:SNIaLCminus66} \\
+%  4      &(240.05,-62.02) &101(2,5,11,19,19,45) & 2.2  & B & \ref{fig:SNIaLCopsimmain2}\\
+%  5      &(120,-50)  &80(4,7,9,18,24,18)        & 1.8 &  C &\\
+%  6      & (80,-40)  &      96(5,8,15,17,27,24) &  2.2 & C &\\
+%  7      & (280,-40) &      86(4,2,6,4,24,18)   &  2.0& C &\\
+%  8      & (30,-20)  &      86(3,4,10,21,27,21) &  1.96& C & \\
+%  9      & (100,-20) &      58(4,2,6,4,24,18)   &  1.3& D &\\
+% % 000  & (358.41,+0.18)  &                      &     & C({\it 0.1}) & \ref{fig:SNIaLCDecp18}\\
+%  309  & (6.097, -1.105) & 80 (4,7,9,18,24,18)  & 1.83   & C({\it 0.1}) & \ref{fig:SNIaLCDecp18}\\
+% % 290  & (6.097, -1.105) &                      &     & C({\it 0.1}) & \ref{fig:SNIaLCDecp18}\\
+%  11     & (50,+1.5) &      72(3,6,10,12,22,19) &  1.64& D &\\
+%  12     & (320, +5) &      7(0,0,2,0,4,0)      &  0.15& E &\\
+%  13     & (60,+5)   &      66(0,7,11,20,28,0)  &  1.5  & D& \\
+%  14     & (60,+20)  &      72(0,8,13,22,29,0)  &  1.64& D &\\
+%  15     & (60,+30)  &      44(0,5,6,15,18,0)   &  1.0& E &\\
+% \hline
+% \end{tabular}
+% \label{tab:lcpositions}
+% \end{table}
+% \end{center}
 
 
 % \emph{To be added: 2 more examples of light curves at different positions of sky.}
 
-
-
-\begin{figure}[tbh!]
-%\vskip -1.3in
-\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/supernova/LCDecminus40no40.pdf}
-%\vskip -1.3in
-\caption{An example of light curve of SN Type Ia (Dec. of -40$^{\circ}$: No. 6) using
-the Main Survey of the LSST Baseline OpSim run. }
-\label{fig:SNIaLCminus40}
-\end{figure}
-
-\begin{figure}[tbh!]
-%\vskip -1.3in
-\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/supernova/s1_lc_coaddedDecminus66RA115.pdf}
-%\vskip -1.3in
-\caption{An example of light curve of Type Ia in the direction to Dec. of -66$^{\circ}$
- using the Main Survey of the LSST Baseline OpSim run.
-}
-\label{fig:SNIaLCminus66}
-\end{figure}
-
-
-\begin{figure}[tbh!]
-%\vskip -1.3in
-\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/supernova/LCfield00Decp18RA358.pdf}
-%\vskip -1.3i
-\caption{}
-%\caption{An example of light curve of Type Ia in the direction (RA, Dec.)=(358.41, +0.18)
-% using the Main Survey of the LSST Baseline OpSim run. A representative lightcurve
-% of Category C.
-%}
-\label{fig:SNIaLCDecp18}
-\end{figure}
+% \begin{figure}[tbh!]
+% %\vskip -1.3in
+% \includegraphics[angle=0,width=0.99\hsize:,clip]{figs/supernova/LCDecminus40no40.pdf}
+% %\vskip -1.3in
+% \caption{An example of light curve of SN Type Ia (Dec. of -40$^{\circ}$: No. 6) using
+% the Main Survey of the LSST Baseline OpSim run. }
+% \label{fig:SNIaLCminus40}
+% \end{figure}
+% 
+% \begin{figure}[tbh!]
+% %\vskip -1.3in
+% \includegraphics[angle=0,width=0.99\hsize:,clip]{figs/supernova/s1_lc_coaddedDecminus66RA115.pdf}
+% %\vskip -1.3in
+% \caption{An example of light curve of Type Ia in the direction to Dec. of -66$^{\circ}$
+%  using the Main Survey of the LSST Baseline OpSim run.
+% }
+% \label{fig:SNIaLCminus66}
+% \end{figure}
+% 
+% 
+% \begin{figure}[tbh!]
+% %\vskip -1.3in
+% \includegraphics[angle=0,width=0.99\hsize:,clip]{figs/supernova/LCfield00Decp18RA358.pdf}
+% %\vskip -1.3i
+% \caption{}
+% %\caption{An example of light curve of Type Ia in the direction (RA, Dec.)=(358.41, +0.18)
+% % using the Main Survey of the LSST Baseline OpSim run. A representative lightcurve
+% % of Category C.
+% %}
+% \label{fig:SNIaLCDecp18}
+% \end{figure}
 
 
 
 % --------------------------------------------------------------------
 
-\subsection{Rolling Cadence of the Main Survey Optimized for Supernova Science}
+\subsection{Discussion}
+For the current baseline observing strategy, the DDF fields will produce an exquisite sample of 
+well-characterized SNe for cosmology and astrophysics studies. Further analysis is required to 
+determine exactly how many (useful) supernovae will be detected and what the resulting cosmological 
+constraints will be, but in this section we have discussed and motivated several important 
+intermediate metrics.
 
-\subsubsection{ Scientific Motivation for Rolling-Cadence}
+\subsubsection{Scientific Motivation for Rolling Cadence}
+It is clear from the above analysis, that the WFD component of the LSST survey will not be useful 
+for supernova cosmology. However, with some changes to the observing strategy, it is likely that a 
+large part of the WFD can be leveraged by implementing a rolling cadence strategy. The idea is to 
+sample a particular field with much higher cadence, at the expense of other fields, for a period of 
+time (such as 50-100 days) and change fields throughout the survey to preserve uniformity by the end 
+of the 10 year period. Ideally, we would propose changing the filter every day, and trebling the 
+average WFD cadence in these smaller fields. This would achieve our goal of 7-9 points per light 
+curve over a 50 day period and in addition, the variety of filters would result in extremely 
+well-characterized SNe in several bands that will thus be also be more easily classified.  
 
-The main survey is important for the discovery of supernovae (SNe) in
-the redshift range of 0.1- 1, which is critical to constraint SN
-cosmological parameters. In order to identify a variable source as a SN
-and to distinguish the source as a Type Ia SN, we need 7-10 epochs
-spread over 45 days or so for each filter based on past experience.
-Universal survey of the Baseline Cadence provides 6 filter data for
-approximately 18 days (assuming a survey with a filter can be done for 3
-days). This provides 15 data points over 45 days and 2.5 data points in
-average for each filter. Our analysis of OpSim run (Baseline Observing
-Strategy) output shows the light curves of SNe from the OpSim data are
-insufficient not only to identify the source as a SN and but also to
-classify the SN if the SN is type Ia or II (or Ib, Ic). Our proposed
-observing strategy is critical to improve the quality of SN light
-curves. The light curves will have at least 3 times densely populated
-data points in time.
-
-\subsubsection{Proposed Rolling-Cadence of the Main Survey Optimized for SN Science }
+% \subsection{Rolling Cadence of the Main Survey Optimized for Supernova Science}
+% 
+% \subsubsection{ Scientific Motivation for Rolling-Cadence}
+% 
+% The main survey is important for the discovery of supernovae (SNe) in
+% the redshift range of 0.1- 1, which is critical to constraint SN
+% cosmological parameters. In order to identify a variable source as a SN
+% and to distinguish the source as a Type Ia SN, we need 7-10 epochs
+% spread over 45 days or so for each filter based on past experience.
+% Universal survey of the Baseline Cadence provides 6 filter data for
+% approximately 18 days (assuming a survey with a filter can be done for 3
+% days). This provides 15 data points over 45 days and 2.5 data points in
+% average for each filter. Our analysis of OpSim run (Baseline Observing
+% Strategy) output shows the light curves of SNe from the OpSim data are
+% insufficient not only to identify the source as a SN and but also to
+% classify the SN if the SN is type Ia or II (or Ib, Ic). Our proposed
+% observing strategy is critical to improve the quality of SN light
+% curves. The light curves will have at least 3 times densely populated
+% data points in time.
+% 
+% 
+% \subsubsection{Proposed Rolling-Cadence of the Main Survey Optimized for SN Science }
 %\label{sec:\secname:discussion}
 
-{\it Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?}
-
-Our goal for observing strategy optimized for SN cosmology is to
-obtain 7-10 epochs spread over 50 days or so for more than one filter. We suggest to
-change the filter every day and LSST can choose a part of sky which has the best airmass,
-centered on Zenith. LSST will observe about 1/3 of visible sky per day (to be confirmed).
-LSST can observe the same part of sky for 6 days with 6 filters, and repeat 9 times for
-the same field. This observing strategy will result in 54 visits (with 6 different
-filters) for the same field. We repeat the same for Field 2 which takes another 54 days.
-Then observe Field 3 for another 54 days.
-
-We propose a new Observing Strategy of the main survey (the Universal Cadence area;
-WFD) in order to generate 3 times densely populated SN light curves in time (i.e. 3
-times higher samples for a SN light curve). Our main goal is to obtain 7-10 epochs
-spread over 45 days per filter. For simplicity, we assume the main survey will cover
-available sky (2293 fields) for 3 days (we divide the available sky into 3 separate
-Sectors, which would be called Sector 1 and 2 and 3. Each Sector of the sky
-corresponds to ~764 fields. The sum of Sector 1 and 2 and 3 is 2293 fields, a total
-number of LSST fields from the Universal Cadence area. For a day, 1/3 of available
-sky would be observed. By changing the filter, every day, it will take 6 days to
-observe 6 filters for 1/3 of available sky. We repeat 9 times for the same Sector of
-sky, which will result in 54 visits (with 6 different filters) for the same Sector
-(1/3 of available sky). We repeat the same for the 2nd Sector of sky which takes
-another 54 days. Then we observe the 3rd Sector for another 54 days.
-
-To visualize this idea, we list our proposed observing strategy day by day; Day 1 :
-Filter 1 (for the 1st Sector), Day 2: Filter 2 (for the 1st Sector), Day 3: Filter 3
-(for the 1st Sector), Day 4: Filter 4 (for the 1st Sector), Day 5: Filter 5 (for the
-1st Sector), and Day 6: Filter 6 (for the 1st Sector). Repeat this sequence 9 times
-for the 1st Sector. This will generate 54 data points for 54 days for a supernova and
-9 data points in average for each filter. This is approximately 3 times higher sample
-of data for 54 days than those from the Universal Cadence. Observe the same sequences
-for the 2nd Sector (it takes 54 days) and then do the same for the 3rd Sector of sky
-(it takes another 54 days). This summarizes overall idea, but since visible sky is
-slightly different every day and observation depends on the weather, an OpSim run is
-needed accounting for all of these factors (and maybe other factors that we haven't
-mentioned here). One may also consider to observe each Sector for 108 days (2x54
-days) instead of 54 days; this may allow us to discover a higher number of SNe in
-stead of for 54 days. Our suggestion is mainly for the sky of Galactic latitude
-greater than 30 degree (|l| > 30) since it would be hard to discover SNe at the
-Galactic plane.
-
-\subsubsection{Expectations}
-
-\begin{enumerate}
-\item SN light curves would have 3 times more densely populated in time as we have designed.
-\item An average airmass of the Main Survey would be significantly lower.
-\item Significantly higher number of SN discovery can be expected because its impact area is
-large. The average number of visits per filter for 50 days is only $\sim$2 for the regions
-located from Dec. -65 to Dec. 0 based on Baseline Observing Strategy, but the number would
-be $\sim$6 with our proposed rolling cadence.
-\end{enumerate}
+% {\it Discussion: what risks have been identified? What suggestions could be
+% made to improve this science project's figure of merit, and mitigate
+% the identified risks?}
+% 
+% Our goal for observing strategy optimized for SN cosmology is to
+% obtain 7-10 epochs spread over 50 days or so for more than one filter. We suggest to
+% change the filter every day and LSST can choose a part of sky which has the best airmass,
+% centered on Zenith. LSST will observe about 1/3 of visible sky per day (to be confirmed).
+% LSST can observe the same part of sky for 6 days with 6 filters, and repeat 9 times for
+% the same field. This observing strategy will result in 54 visits (with 6 different
+% filters) for the same field. We repeat the same for Field 2 which takes another 54 days.
+% Then observe Field 3 for another 54 days.
+% 
+% We propose a new Observing Strategy of the main survey (the Universal Cadence area;
+% WFD) in order to generate 3 times densely populated SN light curves in time (i.e. 3
+% times higher samples for a SN light curve). Our main goal is to obtain 7-10 epochs
+% spread over 45 days per filter. For simplicity, we assume the main survey will cover
+% available sky (2293 fields) for 3 days (we divide the available sky into 3 separate
+% Sectors, which would be called Sector 1 and 2 and 3. Each Sector of the sky
+% corresponds to ~764 fields. The sum of Sector 1 and 2 and 3 is 2293 fields, a total
+% number of LSST fields from the Universal Cadence area. For a day, 1/3 of available
+% sky would be observed. By changing the filter, every day, it will take 6 days to
+% observe 6 filters for 1/3 of available sky. We repeat 9 times for the same Sector of
+% sky, which will result in 54 visits (with 6 different filters) for the same Sector
+% (1/3 of available sky). We repeat the same for the 2nd Sector of sky which takes
+% another 54 days. Then we observe the 3rd Sector for another 54 days.
+% 
+% To visualize this idea, we list our proposed observing strategy day by day; Day 1 :
+% Filter 1 (for the 1st Sector), Day 2: Filter 2 (for the 1st Sector), Day 3: Filter 3
+% (for the 1st Sector), Day 4: Filter 4 (for the 1st Sector), Day 5: Filter 5 (for the
+% 1st Sector), and Day 6: Filter 6 (for the 1st Sector). Repeat this sequence 9 times
+% for the 1st Sector. This will generate 54 data points for 54 days for a supernova and
+% 9 data points in average for each filter. This is approximately 3 times higher sample
+% of data for 54 days than those from the Universal Cadence. Observe the same sequences
+% for the 2nd Sector (it takes 54 days) and then do the same for the 3rd Sector of sky
+% (it takes another 54 days). This summarizes overall idea, but since visible sky is
+% slightly different every day and observation depends on the weather, an OpSim run is
+% needed accounting for all of these factors (and maybe other factors that we haven't
+% mentioned here). One may also consider to observe each Sector for 108 days (2x54
+% days) instead of 54 days; this may allow us to discover a higher number of SNe in
+% stead of for 54 days. Our suggestion is mainly for the sky of Galactic latitude
+% greater than 30 degree (|l| > 30) since it would be hard to discover SNe at the
+% Galactic plane.
+% 
+% \subsubsection{Expectations}
+% 
+% \begin{enumerate}
+% \item SN light curves would have 3 times more densely populated in time as we have designed.
+% \item An average airmass of the Main Survey would be significantly lower.
+% \item Significantly higher number of SN discovery can be expected because its impact area is
+% large. The average number of visits per filter for 50 days is only $\sim$2 for the regions
+% located from Dec. -65 to Dec. 0 based on Baseline Observing Strategy, but the number would
+% be $\sim$6 with our proposed rolling cadence.
+% \end{enumerate}
 
 
 
@@ -747,15 +738,15 @@ be $\sim$6 with our proposed rolling cadence.
 
 
 
-\begin{itemize}
-\item Intrinsic Dispersion, environmental effects, newer analysis methods
-\item Follow-up
-procedures: What is feasible? Where will our training samples for classification and light
-curve models come from (other experiments, our own sub-samples with spectroscopic
-follow-up?), spectroscopic follow-up of host galaxies. Can hosts be identified?
-\item `Systematics': In what ways will the real data not match the assumptions made in analysis.
-Having a large sample of SN, to understand the astrophysics would be useful for this.
-\end{itemize}
+% \begin{itemize}
+% \item Intrinsic Dispersion, environmental effects, newer analysis methods
+% \item Follow-up
+% procedures: What is feasible? Where will our training samples for classification and light
+% curve models come from (other experiments, our own sub-samples with spectroscopic
+% follow-up?), spectroscopic follow-up of host galaxies. Can hosts be identified?
+% \item `Systematics': In what ways will the real data not match the assumptions made in analysis.
+% Having a large sample of SN, to understand the astrophysics would be useful for this.
+% \end{itemize}
 
 
 % ====================================================================
