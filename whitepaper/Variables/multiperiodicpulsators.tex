@@ -51,7 +51,7 @@ variability in multiple passbands.
 \subsection{The Case for ZZ Cetis}
 \label{sec:\secname:targets}
 
-Of all the known classes of pulsating variable star, the ZZ Cetis
+Of the known classes of pulsating variable star, the ZZ Cetis
 (pulsating hydrogen-atmosphere white dwarfs) are the faintest, and among
 those with the lowest pulsation amplitudes.  These will be the most
 difficult for LSST to detect and characterize, and they therefore
@@ -83,7 +83,7 @@ impacts LSST's success in its goal of exploring the variable universe.
 Strategies that maximize photometric precision and the total number of
 visits in all filters optimize the survey toward this goal, but there are
 tradeoffs between these dual requirements related primarily to exposure 
-times that are complicated and must be explored in MAF to be understood.
+time that are complicated and must be explored in MAF to be understood.
 
 While consideration of observations across all filters together provides
 the greatest sensitivity to detecting overall variability, the detection
@@ -114,9 +114,10 @@ essential for gaining leverage on this problem.
 
 We have developed a custom MAF metric that calculates a ``variability
 depth'' for every point on the sky equal to the magnitude limit for
-detecting a population of photometric variables with a given
-root-mean-squared (r.m.s.) underlying signal to a desired level of
-completeness and contamination.  The metric makes the simplifying
+detecting a population of photometric variables with a given 
+disk-integrated root-mean-squared (r.m.s.) underlying signal to a 
+desired level of completeness and a tolerable levels of contamination.  
+The metric makes the simplifying
 assumptions that the typical revisit time for a field is longer than the
 pulsation periods (appropriate for many pulsators, including ZZ Cetis),
 and that the intrinsic variability takes the form of a Gaussian (which,
@@ -124,7 +125,8 @@ for multi-periodic pulsators, is supported by the central limit
 theorem).  The metric relies on the total number of visits and
 signal-to-noise per visit (scaled from the 5$\sigma$-depth, with
 Gaussian errors assumed) for the calculation, and is included in {\tt
-sims\_maf\_contrib} as {\tt VarDepth}.
+sims\_maf\_contrib} as {\tt VarDepth}.  Example output of this metric 
+is displayed in Figure~\ref{fig:vardepth}.
 
 \begin{figure}
   \centering
@@ -134,7 +136,7 @@ sims\_maf\_contrib} as {\tt VarDepth}.
   operations. Input parameters and SQL queries were set to calculate the
   magnitude limit for detecting 90\% of pulsators with 1\% r.m.s.\
   variability from a cut on the measured variance in the $r$ band
-  (allowing 10\% contamination from nonvariable sources).}
+  (allowing contamination from 10\% of nonvariable sources).}
   \label{fig:vardepth}
 \end{figure}
 
@@ -154,7 +156,7 @@ The {\tt ZZCetiCounts} metric calculates the number of ZZ Cetis that we
 expect to detect in each part of the sky, and the sum of the results
 gives the total number of ZZ Cetis with variability detected by LSST.
 
-The measured r.m.s. scatter from pulsations in ZZ Cetis is typically of
+The measured r.m.s.\ scatter from pulsations in ZZ Cetis is typically of
 order $\sim$1\%, with a mean value around 3\%
 \citep{2006ApJ...640..956M}.  Since we aim to statistically determine
 the ensemble amplitude properties in multiple filters for a large
@@ -182,13 +184,13 @@ $u$-band exposure times. We require that 90\% of ZZ Cetis with 1\%
 r.m.s.\  variability are detected to the computed ``variability depth,''
 with a tolerance for up to 10\% of nonvariables with the same $u$ and
 $r$ magnitudes to yield false detections.  The total number of ZZ Cetis
-detected for each of these analyses is provided in
-Table~\ref{tab:zz1pertab}.
+\emph{with this assumed r.m.s.\ variability level} detected for each of these 
+analyses is provided in Table~\ref{tab:zz1pertab}.
 
 
 \begin{table}[h]
 \begin{center}
-    \caption{ZZ Ceti Recovery for 1\% R.M.S. Variability}\label{tab:zz1pertab}
+    \caption{ZZ Ceti Recovery for 1\% R.M.S.\ Variability}\label{tab:zz1pertab}
     \begin{tabular}{| l | l | l |}
     \hline
     OpSim Run & Filter & \# ZZ Cetis \\ \hline
@@ -200,21 +202,23 @@ Table~\ref{tab:zz1pertab}.
 \end{center}
 \end{table}
 
-Clearly LSST falls very short of the proposed figure of merit.  The 1\%
-level of variability assumed for ZZ Cetis in this treatment was chosen
-to ensure that the majority of lower-amplitude ZZ Cetis are detected by
-LSST.  If we relax this constraint and repeat the analysis with ZZ Cetis
-modeled as 3\% r.m.s.\ variables (the mean r.m.s.\ variation observed),
-we get the results shown in Table~\ref{tab:zz3pertab}.  This represents
-a minimum number of ZZ Cetis detected in total, allowing for
+Clearly LSST appears to fall very short of the proposed figure of merit
+by this measure.   The 1\% level of variability assumed for ZZ Cetis in 
+this treatment was chosen to ensure that the majority of lower-amplitude 
+ZZ Cetis are detected by LSST.  If we relax this constraint and repeat the 
+analysis with ZZ Cetis modeled as 3\% r.m.s.\ variables (the mean 
+r.m.s.\ variation observed), we get the results shown in Table~\ref{tab:zz3pertab}.  
+This approximates a total number of ZZ Cetis detected, allowing for
 incompleteness to low amplitude.  While we still do not detect
 $\sim$1000 ZZ Cetis in $u$, overall we see an increase in the total
-number of known ZZ Cetis by roughly an order of magnitude (in $r$).
+number of detected ZZ Cetis by roughly an order of magnitude (in $r$),
+with the {\tt kraken\_1045} simulation reaching markedly closer to the
+$u$-band goal than the {\tt minion\_1016} strategy.
 
 
 \begin{table}[h]
 \begin{center}
-    \caption{ZZ Ceti Recovery for 3\% R.M.S. Variability}\label{tab:zz3pertab}
+    \caption{ZZ Ceti Recovery for 3\% R.M.S.\ Variability}\label{tab:zz3pertab}
     \begin{tabular}{| l | l | l |}
     \hline
     OpSim Run & Filter & \# ZZ Cetis \\ \hline
@@ -246,9 +250,9 @@ The situation for higher amplitude ZZ Cetis and other types of variable
 is better, and LSST observations of ZZ Cetis will certainly still be
 worthy on careful analysis.  We note that the {\tt kraken\_1045}
 strategy with 60\,s exposures in $u$ does a much better job of measuring
-stellar variability at the expense of very few $r$-band detections.  We
-argue that any observing strategy that increases the number of ZZ Cetis
-detected in the $u$ band will improve LSST's scientific yield for
+stellar variability overall, at the expence of a very minor decrease in $r$-band 
+detections.  We argue that any observing strategy that increases the number of 
+ZZ Cetis detected in the $u$ band will improve LSST's scientific yield for
 \emph{all} stellar pulsation studies.
 
 
