@@ -13,43 +13,64 @@
 %    the first year and at each "data release" thereafter.  
 %
 % COMMENTS:
-%
+%    Updated Wed May 18 by MLG.
 %
 % BUGS:
 %
 %
 % AUTHORS:
-%   Eric Gawiser (@egawiser)  (just for the outline, hopefully others soon!) 
+%   Melissa Graham, Sam Schmidt, Andy Connolly, Zeljko Ivezic
 %-
 % ====================================================================
 \clearpage
-\section{Photometric Redshifts:  Sensitivity to Chromatic Survey Uniformity}
+\section{Photometric Redshifts}
 \def\secname{photoz}\label{sec:\secname}
 
-\noindent{\it Andy Connolly, Jeff Newman, Sam Schmidt, TBD???} % (Writing team)
+\credit{MelissaGraham}
+\credit{SamSchmidt}
+\credit{connolly}
+\credit{ivezic}
 
+\textbf{Introduction.} Photometric redshifts are an essential part of every cosmology probe within LSST.  The principal concern for LSST photo-$z$ performance is to meet the stringent requirements on redshift uncertainty, bias, and catastrophic outlier rate as laid out in the Science Requirements document. Photo-$z$'s are dependent on precise measurements of galaxy colors, thus cadence and depth variations must be examined as a function of all six LSST filter bandpasses.  Overall image depth and signal-to-noise is our primary concern. For studies of Large Scale Structure, Weak Lensing, Clusters, and Supernova host galaxies, survey uniformity is desired for the full depth survey, while the temporal details of how we reach full depth are not as important as uniformity both as a function of sky position and observing conditions.  However, as we desire science-grade photometric redshifts after one year of operations, two years, and so forth, the cadence must meet some basic requirements for the six-band system at least on the timescales of the yearly data releases.
 
+\textbf{Specifications.} The Science Requirements Document (SRD) defines the minimum statistical specifications for photometric redshifts for an $i<25$, magnitude-limited sample of $4\times10^9$ galaxies from $0.3<z<3.0$ as: (1) the root-mean-square ($\sigma$) error in photo-$z$, divided by $1+z$, must be $\sigma < 0.02$; (2) the fraction of ``catastrophic" outliers (defined as those with errors exceeding the larger of 0.06 or 3$\sigma$) must be $<10\%$; and (3) the average bias must be $\overline{z_{\rm true} - z_{\rm phot}} < 0.003$. With this in mind, we are developing software to show that our photo-$z$ algorithms can meet specifications for LSST baseline parameters and to simulate the impact of deviations from the 10-year baseline plan on photo-$z$ statistics.
 
-%---------------------------------------------------------------------
+\textbf{Planned Experiments.} This software is designed to allow the user to modify LSST baseline parameters, simulate a set of test galaxy observations (i.e., magnitudes with errors appropriate for the given LSST parameters) from a training catalog with ``true" magnitudes and redshifts and a realistic intrinsic dispersion in color, magnitude, and redshift, run a photometric redshift algorithm on the test galaxies (i.e., matching in color-space to the training catalog), and output statistics for analysis. Modifiable LSST input parameters will include: the limiting magnitude applied to the galaxy catalogs (e.g., $i<25$); the number of visits per filter; the number of years of LSST observations that have passed (this can be a fraction of a year); systematic offsets to the magnitudes in each filter (default $=0$); and coefficients for the magnitude uncertainties in each filter (default $=1$).  Output for user analysis will include catalogs of $z_{\rm true}$ $vs.$ $z_{\rm phot}$ and the aforementioned statistics on the photo-$z$ in any desired redshift range. For example, we will be able to vary the total number of $u$-band visits and examine how this affects the fraction of outliers at 1, 5, and 10-years of the survey. In this software, parameters of the photo-$z$ algorithm itself will also be modifiable, allowing us to test options in the algorithms against various LSST observing strategies.
 
-\subsection{Observing Strategy Sensitivity:  Color Uncertainties}
-\label{sec:\secname:sensitivity}
+\textbf{Currently implemented photo-$z$ algorithm.} We draw $N_{\rm test}$ ``test" galaxies from the training catalog, determine their magnitude uncertainties as appropriate for the LSST parameters, randomly scatter their magnitudes to induce an observational error, and calculate the associated colors and color errors. We calculate the Mahalanobis distance in color space between each test galaxy and all training catalog galaxies, and identify a color-matched subset using a threshold defined by the $\chi^2$ percentage point function at 95\%. We draw a random color-matched training galaxy and use its redshift as the photo-$z$ for that test galaxy. We then calculate our statistical metrics on the photometric redshifts for the test sample, using each test galaxy's original catalog redshift as the ``true'' redshift. This process is open to substituting alternate photometric redshift algorithms, a variety of galaxy catalogs, and/or adding priors based on e.g., apparent magnitude.
 
+\textbf{Metrics.} The primary metrics we will use to evaluate LSST observing strategies with respect to the SRD specifications are the standard deviation, bias, and fraction of outliers. For all test galaxies we calculate $\Delta z = (z_{\rm true} - z_{\rm phot}) / (1+z_{\rm true})$, and identify galaxies in the interquartile range of $\Delta z$. For these interquartile galaxies we determine the standard deviation, $\sigma$, of the $\Delta z$ distribution, and the bias as the median value of $\Delta z$. The interquartile range is used to exclude outliers from influencing these statistics; in other words, they represent the standard deviation and bias for the subset of ``good" photo-$z$'s. The ``catastrophic" outliers are identified as those with $\Delta z$ exceeding the larger of 0.06 or 3$\sigma$. 
 
+\textbf{Initial Results.} To demonstrate this software with a preliminary analysis, we apply the currently implemented photo-$z$ algorithm to a catalog of galaxies that was originally created as an accurate cosmological simulation for Euclid. We first cull the catalog to galaxies with $i$-band magnitude $<25.3$, and then randomly draw training and test galaxy samples (with at least a 4$\times$ more galaxies in the training sample than the test sample). For this demonstration we show how the photo-$z$ metrics evolve with respect to two of the basic LSST parameters: the year of the survey, and the number of $u$-band visits. When we simulate results in a given year of LSST, we assume uniform progression in all filters (i.e., the total number of visits per filter, \texttt{[56, 80, 184, 184, 160, 160]} in \texttt{[u,g,r,i,z,y]}, is distributed evenly over all years). When we simulate the LSST 10-year results for a given number of $u$-band visits, the visits removed/added to $u$-band are added/subtracted evenly to/from the other five filters. The results of these tests are presented in Figure \ref{fig:redshifts} and \ref{fig:metrics}. For example, in this demonstration we can see that the $u$-band is necessary to limit scatter at $z<0.5$ and $z>2.0$.
 
-%---------------------------------------------------------------------
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=5.5cm]{figs/photoz/nyears_cat05.png}
+\includegraphics[width=5.5cm]{figs/photoz/nyears_cat20.png}
+\includegraphics[width=5.5cm]{figs/photoz/nyears_cat100.png}
+\includegraphics[width=5.5cm]{figs/photoz/uvisits_cat1.png}
+\includegraphics[width=5.5cm]{figs/photoz/uvisits_cat4.png}
+\includegraphics[width=5.5cm]{figs/photoz/uvisits_cat6.png}
+\caption{Photometric vs. spectroscopic (i.e., catalog truth) redshifts for our preliminary simulations. Across the top row we show results from 0.5, 2.0 and 10.0 years of the LSST survey using catalogs with 2500 test and 10000 training galaxies. The photo-$z$'s clearly improve with time as the survey progresses. Across the bottom row we show results for $1$, $56$ (baseline), and $96$ $u$-band visits using catalogs with 10000 test and 40000 training galaxies. Between the left-most and middle plot of the bottom row, representing 1 and 56 (baseline) $u$-band visits respectively, we see that $u$-band data is necessary to limit scatter in the photo-$z$'s, especially at $z<0.5$ and $z>2.0$. \label{fig:redshifts}}
+\end{center}
+\end{figure}
 
-\subsection{Metrics}
-\label{sec:\secname:metrics}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=5.5cm]{figs/photoz/nyears_IQR.png}
+\includegraphics[width=5.5cm]{figs/photoz/nyears_fout.png}
+\includegraphics[width=5.5cm]{figs/photoz/nyears_bias.png}
+\includegraphics[width=5.5cm]{figs/photoz/uvisits_IQR.png}
+\includegraphics[width=5.5cm]{figs/photoz/uvisits_fout.png}
+\includegraphics[width=5.5cm]{figs/photoz/uvisits_bias.png}
+\caption{Three photo-$z$ metrics as a function of LSST parameters. From left to right, the y-axis is the standard deviation, the fraction of outliers, and the bias. The top row shows these statistics as a function of the number of years of LSST survey, and the bottom row shows them as a function of the number of $u$-band visits. Colors show these relations for four bins in redshift: 0.3--3.0 (black), 0.0--0.4 (blue), 0.8--1.0 (green), and 2.0--3.0 (red). Dashed lines mark the SRD specification for each metric. The fraction of catastrophic outliers appears erroneously low early in the LSST survey (top middle plot) when the dispersion in $z_{\rm spec}-z_{\rm phot}$ is too large to adequately identify outliers (e.g., see top left plot of Figure \ref{fig:redshifts}).   \label{fig:metrics}}
+\end{center}
+\end{figure}
 
+\textbf{Additional considerations for observing strategy.} As mentioned above, overall image depth and signal-to-noise is our primary concern, so we are not testing changes in e.g., the inter-night gap time or the exposure time of individual visits.  Our software is instead focused on modifying other LSST parameters such as systematic offsets to the magnitudes in each filter and/or coefficients for the magnitude uncertainties in each filter in order to simulate improvements or degradations the system throughput, sky background brightness, and other such factors. We also aim to test airmass distributions (i.e., changes to the effective filter functions), different progression rates for filters (e.g., a scenario in which we complete all $u$-band by year 2), scenarios in which some areas of sky have better/worse coverage at any given time, and so forth. In all respects we are open to suggestions from the community.
 
+\textbf{Considerations for building the real training catalog.} All photometric redshift algorithms require training set data consisting of objects with secure spectroscopic redshifts.  For LSST, many of these will be contained in a small number of training/calibration fields (e.g. COSMOS, VVDS).  Imaging these fields to full depth in all six bands early in the survey (but under the range of observing conditions expected for the ten year survey) will be key to characterizing performance.  Inclusion of these patches of full-depth imaging must be included in any cadence design. Future simulations of photo-$z$ results can include varying the quality of the training catalog obtained by LSST.
 
-%---------------------------------------------------------------------
-
-\subsection{Figure of Merit}
-\label{sec:\secname:fom}
-
-\todo{EG} Determine if clusters will be mentioned here or under LSS below or as a separate section
 
 \navigationbar
 
