@@ -1132,6 +1132,78 @@ Cadence (i.e.\ a simulation like \opsimdbref{db:baseCadence}, with airmass
 limit for the main survey set to 1.3) -- after the ``Western bias'' is
 fixed'.}
 
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\opsimdb[db:NormalGalacticPlane]{astro\_lsst\_01\_1004}{Extend Universal
+  Cadence to the Galactic Plane.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\bf Motivation and description:} What is the effect of extending the
+`normal' Universal Cadence and number of exposures to the region of the
+Galactic Plane within the WFD declination limits?  Fields which were
+previously contained in the Galactic Plane proposal, but which fell
+within the range of the WFD declination limits, were reassigned to the
+standard WFD proposal instead of the much more limited Galactic Plane
+proposal. The remaining proposals were unchanged, and thus we compare
+this to the Baseline Cadence, \opsimdbref{db:baseCadence}.
+
+ {\bf Analysis Results:}  This simulated cadence is named
+ \opsimdbref{db:NormalGalacticPlane}. Compared with the
+ \opsimdbref{db:baseCadence}, there are small to no changes in
+ proposals other than the WFD and Galactic Plane proposals
+ themselves. The fields which remained in the Galactic Plane proposal
+ obtained the same number of visits as expected (30 in each
+ bandpass). There were differences observed in the overall status of
+ observations taken under the Universal cadence, in the WFD proposal,
+ however. The number of fields included in the WFD proposal increased
+ from 2293 to 2470 ($\sim8\%$), as 177 fields were moved from the Galactic Plane
+ proposal into the WFD. The total number of observations obtained by
+ the WFD proposal increased from 2085270 to 2116203; an increase of
+ only $1.5\%$. As a result, the median number of visits per field was
+ reduced in all bands, as well as the corresponding coadded depth;
+ this is shown in table~\ref{tab:normalPlane_wfd} below.
+
+\begin{table}[]
+\centering
+\caption{Visits and Coadded Depth in Universal Proposal comparison}
+\label{tab:normalPlane_wfd}
+\begin{tabular}{lll}
+ & Median Number of Visits (per field, per filter) \\
+    & \opsimdbref{db:baseCadence} &
+                                    \opsimdbref{db:NormalGalacticPlane} \\
+WFD $u$ & 62 & 59 \\
+WFD $g$ & 88 & 83 \\ 
+WFD $r$ & 201 & 189 \\
+WFD $i$ & 200 & 189 \\
+WFD $z$ & 180 & 170 \\
+WFD $y$ & 181 & 170 \\
+ & Median Coadded Depth (per field, per filter) \\
+    & \opsimdbref{db:baseCadence} &
+                                    \opsimdbref{db:NormalGalacticPlane} \\
+WFD $u$ & 25.46 & 25.42 \\
+WFD $g$ & 26.95 & 26.91 \\
+WFD $r$ & 27.07 & 27.04 \\
+WFD $i$ & 26.36 & 26.32 \\
+WFD $z$ & 25.19 & 25.17 \\
+WFD $y$ & 24.43 & 24.39 \\
+\end{tabular}
+\end{table}
+
+{\bf Conclusions:} In both of these runs, the WFD proposal received
+about 85\% of the total number of visits in the survey. Extending the
+Universal cadence to the galactic plane, without increasing the
+overall priority of the Universal proposal, results in slightly fewer
+visits per field as a result, by about 5\%, and a slightly lower
+coadded depth, by about 0.04 magnitudes. It is worthwhile to note that
+increasing the priority of the WFD proposal could increase the total
+fraction of time devoted to WFD, returning the typical number of
+visits and coadded depth to baseline levels while decreasing time
+spent in other proposals. Metrics targeted for specific science cases,
+explored in later chapters, will help determine whether this is a
+worthwhile trade.
+
 \navigationbar
 
 
