@@ -102,7 +102,13 @@ mass measurement from simultaneous WFIRST and LSST observations.
 \label{fig-lc}}
 \end{figure}
 
-We propose simultaneous high cadence observations of the WFIRST microlensing fields
+% --------------------------------------------------------------------
+
+\subsection{A Proposed Observing Strategy}
+\label{sec:\secname:proposal}
+
+Based on the desiderata above, we
+propose simultaneous high cadence observations of the WFIRST microlensing fields
 (which should be covered by a single LSST pointing) by LSST during each
 of the six 72-day WFIRST exoplanet microlensing survey sessions. These
 will allow microlensing parallax measurements to determine the distances
@@ -120,31 +126,8 @@ appear as seperate microlensing signals long before or after the apparent
 rogue planetary signals. They cannot be detected by WFIRST due to the
 limited 72 day WFIRST observing windows.
 
-% This individual section will need to describe the particular
-% discoveries and measurements that are being targeted in this section's
-% science case. It will be helpful to think of a ``science case" as a
-% ``science project" that the authors {\it actually plan to do}. Then,
-% the sections can follow the tried and tested format of an observing
-% proposal: a brief description of the investigation, with references,
-% followed by a technical feasibility piece. This latter part will need
-% to be quantified using the MAF framework, via a set of metrics that
-% need to be computed for any given observing strategy to quantify its
-% impact on the described science case. Ideally, these metrics would be
-% combined in a well-motivated figure of merit. The section can conclude
-% with a discussion of any risks that have been identified, and how
-% these could be mitigated.
-
-% A short preamble goes here. What's the context for this science
-% project? Where does it fit in the big picture?
-
-
-% --------------------------------------------------------------------
-
-\subsection{Target measurements and discoveries}
-\label{sec:\secname:targets}
-
-We will point at a single field, centered on the WFIRST microlensing
-fields, and this should cover all 10 WFIRST microlensing fields.
+A single LSST pointing, centered on the WFIRST microlensing
+fields, would cover all 10 WFIRST microlensing fields.
 
 For our preliminary estimates of the high cadence observing, we assume
 that the bulge is observed every 30 minutes when the bulge is at
@@ -205,7 +188,7 @@ different observing cadences, however.
 \label{sec:\secname:metrics}
 
 \autoref{tab:wfirst_ml_results}
-shows the results of our simulations of the combined WFIRST-LSST
+shows the results of our simulations of the combined proposed WFIRST-LSST
 observing program. We assume that there is 1 planet per main sequence
 star at each of $1\,M_\oplus$, $10\,M_\oplus$, and $100\,M_\oplus$.
 This is the 1-$\sigma$ lower limit found by Sumi et al.\ (2011) at
@@ -229,22 +212,27 @@ $\pi_E$ measured &    22   &           8.2  &          2.7  &   32.9 \\
 $M_L$ measured   &    5.9  &           3.4  &          1.5  &   10.8 \\
 \end{tabular}
 \caption{Number of rogue planets of the given mass detected, assuming
-one such planet per main sequence star.}
+one such planet per main sequence star, and our proposed LSST observation
+program.}
 \label{tab:wfirst_ml_results}
 \end{table}
 
 We can see from the final column that the LSST observations should
 yield more than 30 rogue planet microlensing parallax measurements and
-more than 10 rogue planet mass measurements. These are measurements
-that cannot be made by other methods. 
-\textbf{THE PREVIOUS SENTENCE NEEDS MORE JUSTIFICATION.}
+more than 10 rogue planet mass measurements.
+%
+These are measurements that cannot be made by other methods.
+% \textbf{THE PREVIOUS SENTENCE NEEDS MORE JUSTIFICATION.}
+%
 In addition, this program would
 also yield masses for a somewhat larger number of bound planets
 (Gould, Gaudi \& Han 2003), although many of these will have their
 masses determined by other means as well.
 
-For a figure of merit, we select the product of the number of $\pi_E$
-and $M_L$, which is 355 for our straw man program.
+For a figure of merit, we select the product of the numbers of
+rogue planet microlensing parallax measurements $\pi_E$
+and rogue planet mass measurements $M_L$.
+The value of this product is 355 for our straw man program.
 
 % Quantifying the response via MAF metrics: definition of the metrics,
 % and any derived overall figure of merit.
@@ -258,16 +246,26 @@ and $M_L$, which is 355 for our straw man program.
 % the time of writing for this science project?
 %
 %
-% % --------------------------------------------------------------------
-%
-% \subsection{Discussion}
-% \label{sec:\secname:discussion}
-%
-% Discussion: what risks have been identified? What suggestions could be
-% made to improve this science project's figure of merit, and mitigate
-% the identified risks?
-%
-%
+% % -------------------------------------------------------------------- % %
+
+\subsection{Discussion}
+\label{sec:\secname:discussion}
+
+The rough estimates of our metrics and figure of merit given above were
+carried out using a very simple model for the LSST observations we
+have proposed. We would hope to refine this analysis using the output
+of an `OpSim` run where the WFIRST+LSST microlensing program was included
+as an additional special survey, and our figure of merit coded in the
+MAF. We do not expect the impact of this special survey on other science cases
+to be high, needing as it would only 12 hours per year in total. The risk
+seems similar, but less high, than that of a Deep Drilling Field.
+
+Other science teams may find it useful to think of the WFIRST+LSST microlensing
+survey as a medium deep drilling field located in the bulge: it would be interesting
+to see how some of the Milky Way, galactic transient, and  stellar variable
+metrics changed with the addition of this proposed survey.
+
+
 % ====================================================================
 
 \navigationbar
