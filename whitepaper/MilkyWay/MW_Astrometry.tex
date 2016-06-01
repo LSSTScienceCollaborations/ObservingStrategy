@@ -171,19 +171,24 @@ collections of too many visits during a few short intervals.
   implemented metrics here.}
 
 \new{{\it Parallax factor coverage:} This is {\tt
-    calibrationMetrics.ParallaxCoverageMetric} in sims\_maf. It
-  returns the inverse variance-weighted mean angular separation
-  $\langle r \rangle$~of a star observed at the predicted date, from
-  the guiding center of the path it traces over the course of a year
-  due to parallax. This mean radius is scaled to the maximum angular
-  separation around this annual path, and variances used are the
-  estimates of (uncrowded) astrometric precision returned by OpSim for
-  a star of specified fiducial magnitude at the center of the HEALPIX
-  of interest. What constitutes a ``good'' value depends on the
-  location of the star in ecliptic co-ordinates; near either ecliptic
-  pole a star with uniform parallax coverage would have $\langle r
-  \rangle \approx 1.0$~while on the ecliptic uniform coverage would
-  produce $\langle r \rangle \approx 0.5$.}
+    calibrationMetrics.ParallaxCoverageMetric} in sims\_maf. The
+  inverse-variance weighted mean parallax offset is subtracted from
+  the set of parallax offsets for an object at a given location with
+  unit parallax amplitude, and the inverse-variance weighted mean
+  $\langle r \rangle$~of the resulting residuals is returned, scaled
+  to the range $0 \le \langle r \rangle \le 1$. For each measurement,
+  the variance used in the weighting is the estimate of the
+  (uncrowded) astrometric uncertainty returned by OpSim for a star of
+  specified fiducial magnitude at the center of the HEALPIX of
+  interest. What constitutes a ``good'' value for $\langle r \rangle$~depends on the location
+  of the star in ecliptic co-ordinates. Near either ecliptic pole a
+  star with uniform parallax coverage would have $\langle r \rangle
+  \approx 1.0$~while on the ecliptic uniform coverage would produce
+  $\langle r \rangle \approx 0.5$. For any location, $\langle r
+  \rangle \approx 0$~would mean all the observations were taken with
+  identical parallax factor and therefore any attempt to fit the
+  parallax amplitude would be completely degenerate with the object's
+  position.}
 
 \new{{\it Parallax-Hour angle correlation:} This is metric {\tt
     calibrationMetrics.ParallaxDcrDegenMetric}. At the level of tens
@@ -192,12 +197,13 @@ collections of too many visits during a few short intervals.
   on the hour-angle distribution of observations throughout the year,
   motion due to parallax can become degenerate with motion due to the
   pattern of DCR values sampled. This metric returns the Pearson
-  correlation coefficient $\rho$~between the best-fit parallax and
-  DCR, returning values in the range $-1.0 \le \rho \le +1.0$. The
-  range of acceptable values for this metric is still under
-  investigation; Monte Carlo simulation by one of us (DGM) suggests
-  the parallax error becomes independent of $\rho$~(i.e. other effects
-  dominate) for values $|\rho| \lesssim 0.7$.}
+  correlation coefficient $\rho$~between the best-fit parallax
+  amplitude and DCR amplitude, returning values in the range $-1.0 \le
+  \rho \le +1.0$. The range of acceptable values for this metric is
+  still under investigation; Monte Carlo simulation by one of us (DGM)
+  suggests the parallax error becomes independent of
+  $\rho$~(i.e. other effects dominate) for values $|\rho| \lesssim
+  0.7$.}
 
 
 
