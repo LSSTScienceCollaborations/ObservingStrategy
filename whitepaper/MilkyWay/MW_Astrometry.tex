@@ -165,6 +165,42 @@ reasonable coverage over the duration of the survey and to avoid
 collections of too many visits during a few short intervals.
 \end{itemize}
 
+\new{Within sims\_maf, metrics A (parallax factor distribution) and B
+  (hour angle and parallax correlation) are implemented in a slightly
+  different manner from the prescription above. We describe the
+  implemented metrics here.}
+
+\new{{\it Parallax factor coverage:} This is {\tt
+    calibrationMetrics.ParallaxCoverageMetric} in sims\_maf. It
+  returns the inverse variance-weighted mean angular separation
+  $\langle r \rangle$~of a star observed at the predicted date, from
+  the guiding center of the path it traces over the course of a year
+  due to parallax. This mean radius is scaled to the maximum angular
+  separation around this annual path, and variances used are the
+  estimates of (uncrowded) astrometric precision returned by OpSim for
+  a star of specified fiducial magnitude at the center of the HEALPIX
+  of interest. What constitutes a ``good'' value depends on the
+  location of the star in ecliptic co-ordinates; near either ecliptic
+  pole a star with uniform parallax coverage would have $\langle r
+  \rangle \approx 1.0$~while on the ecliptic uniform coverage would
+  produce $\langle r \rangle \approx 0.5$.}
+
+\new{{\it Parallax-Hour angle correlation:} This is metric {\tt
+    calibrationMetrics.ParallaxDcrDegenMetric}. At the level of tens
+  of milliarcsec, Differential Chromatic Refraction (DCR) shifts the
+  apparent location of the star in a color-dependent manner. Depending
+  on the hour-angle distribution of observations throughout the year,
+  motion due to parallax can become degenerate with motion due to the
+  pattern of DCR values sampled. This metric returns the Pearson
+  correlation coefficient $\rho$~between the best-fit parallax and
+  DCR, returning values in the range $-1.0 \le \rho \le +1.0$. The
+  range of acceptable values for this metric is still under
+  investigation; Monte Carlo simulation by one of us (DGM) suggests
+  the parallax error becomes independent of $\rho$~(i.e. other effects
+  dominate) for values $|\rho| \lesssim 0.7$.}
+
+
+
 For the stream project discussed above, a simple to state (but perhaps complex to implement) figure of merit
 is the number of streams that can be discovered in LSST via their proper motions. As a first
 attempt, it would be reasonable to assume about 100 halo streams from old, metal-poor dwarf galaxies with
@@ -314,7 +350,7 @@ metrics:
   \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDcrDegen_wfdPlane_02y_hst.png}
   \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDcrDegen_wfdPlane_10y_hst.png}
   \end{center}
-  \caption{Parallax degeneracy with hour angle for different epochs within the survey. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:NormalGalacticPlane} (wide-fast-deep extended to much of the inner Plane). Reading left-right, columns represent: {\it Left column:} all observations within the first 365 days of operation; {\it Middle column:} first two years; {\it right column:} the full 10-year survey. Spatial maps are clipped at 95\%, with histogram horizontal scale set to the range $0.0-1.0$.}
+  \caption{Correlation coefficient $\rho$~between parallax and Differential Chromatic Refraction (DCR) up to different epochs within the survey. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:NormalGalacticPlane} (wide-fast-deep extended to much of the inner Plane). Reading left-right, columns represent: {\it Left column:} all observations within the first 365 days of operation; {\it Middle column:} first two years; {\it right column:} the full 10-year survey. Spatial maps are clipped at 95\%, with histogram horizontal scale set to the range $0.0-1.0$.}
   \label{fig_astrom_ByTime_PADegen}
 \end{figure}
 
@@ -422,7 +458,7 @@ metrics:
   \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDcrDegen_wfdPlane_y_hst.png}
   \includegraphics[width=2.0in]{./figs/milkyway/astromPanels/MW_Astrom_paDcrDegen_wfdPlane_10y_hst.png}
   \end{center}
-  \caption{Parallax degeneracy with hour angle, selecting filters for three extremes of object color, over the full 10-year survey. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:NormalGalacticPlane} (wide-fast-deep extended to much of the inner Plane). Reading left-right, columns represent: {\it Left column:} Objects detected only in the bluest filter; {\it Middle column:} objects detected only in the reddest filter; {\it Right column:} objects detected in all filters. Spatial maps are clipped at 95\%, with histogram horizontal scale set to the range $0.0-1.0$.}
+  \caption{Correlation coefficient $\rho$~between parallax and Differential Chromatic Refraction (DCR), selecting filters for three extremes of object color, over the full 10-year survey. {\it Top and Third row:} OpSim run \opsimdbref{db:baseCadence}. {\it Second and bottom row:} OpSim run \opsimdbref{db:NormalGalacticPlane} (wide-fast-deep extended to much of the inner Plane). Reading left-right, columns represent: {\it Left column:} Objects detected only in the bluest filter; {\it Middle column:} objects detected only in the reddest filter; {\it Right column:} objects detected in all filters. Spatial maps are clipped at 95\%, with histogram horizontal scale set to the range $0.0-1.0$.}
   \label{fig_astrom_ByFilter_PADegen}
 \end{figure}
 
