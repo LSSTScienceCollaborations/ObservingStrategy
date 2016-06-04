@@ -23,9 +23,29 @@ the only facility in the forseeable future that will be able to
 identify a statistically meaningful sample. Some (such as the novae
 that allow detailed study of the route to Type Ia Supernovae) offer
 unique laboratories to study processes of fundamental importance to
-astrophysics at all scales. Others \new{(like slow-microlensing events
-  heralding an unseen compact object population)} offer the {\it only}
+astrophysics at all scales. Others (like slow-microlensing events
+  heralding an unseen compact object population) offer the {\it only}
 probe of important populations.
+
+At present, the rapid completion of inner-Plane observations in the
+Baseline strategy (run \opsimdbref{db:baseCadence}) dominates all
+other effects. For example, \opsimdbref{db:baseCadence} allocates 30
+exposures in all six filters to fields in the Galactic ``zone of
+avoidance,'' typically completing these fields within the first 200
+days of the survey (see Figure
+\ref{fig_durationInGalacticCoords}). This imprints a strong signal on
+metrics and FoMs (see for example the right panel of Figure
+\ref{fig:parapmenigma}). Comparison is now needed of multiple
+strategies that do allocate sufficient observations to inner-Plane
+observations, so that the scientific impact of the distribution (in
+time and across filters) of visits within surveys of similar total
+duration can be properly explored.
+
+\begin{figure}
+    \includegraphics[width=6.0in]{./figs/milkyway/durations_minion_1016.png}
+  \caption{The first-order systematics that dominate transient metrics in the Galactic Plane. These panels are plotted for strategy \opsimdbref{db:baseCadence}. {\it Bottom-left:} stars per square arcsecond (at $i < 27.5$). {\it Top-left:} survey duration (defined as the last minus the first MJD for observations in $i$-band). {\it Right:} histogram of durations in $i$-band over the range 0-1000 days. The population below 200 days shows the Plane and South Polar Cap, the population at $\sim 800$~days is the shorter end of the population of Northern Ecliptic observations. Spatial maps are plotted in Galactic co-ordinates.}
+\label{fig_durationInGalacticCoords}
+\end{figure}
 
 %An important collateral benefit of studies in the plane with an
 %LSST-like facility, is improved mapping of the distribution and
@@ -257,10 +277,12 @@ into the first few years of the survey.
 %Quantifying the response via MAF metrics: definition of the metrics,
 %and any derived overall figure of merit.
 
-Here we describe the Figures of Merit (FoMs) we intend to implement and
-evaluate for the candidate observing strategies of interest. Where these
-FoM have already been evaluated, we provide the numerical results in
-Table \ref{tab_SummaryMWDisk}. Those FoMs are:
+Here we describe the Figures of Merit (FoMs) we intend to implement
+and evaluate for the candidate observing strategies of interest. Where
+these FoM have already been evaluated, we provide the numerical
+results in Table \ref{tab_SummaryMWDisk}. At present, FoM 3.1 has been
+implemented and run for three surveys, with the others in
+development. The FoMs are:
 
 \begin{itemize}
   \item FoM 1.1 - Fraction of quiescent black hole binaries detectable through ellipsoidal variability;
@@ -321,13 +343,13 @@ Since (at the time of writing) evaluating a Metric with relaxed
   observatories) the metric choice for detectability should take the
   lightcurve shape into account.
 
-\new{We envisage two levels to implementing FoM 1.1. In the immediate
+  We envisage two levels to implementing FoM 1.1. In the immediate
   future, the ellipsoidal lightcurve could be characterised as a
   sinusoid, with filter-dependent amplitude to match typical quiescent
   Low Mass X-ray Binaries (qLMXBs) from the literature. The next level
   of sophistication would be to input a more complicated shape that
   captures deviations from pure sine-wave behavior; likely with the {\tt
-    TransientAsciiMetric}. }
+    TransientAsciiMetric}. 
 
 An open question is how best to meaningfully quantify the
   recovery fraction of a population with a wide range in binary
@@ -523,7 +545,7 @@ sight-line.\footnote{The notebooks used to evaluate this version of
   template lightcurve corresponding to some suitable average over the
   regime of interest.
 
-\begin{table}[h]
+\begin{table}
   \small
   \begin{tabular}{c p{12cm}}
     & {\it FoM 4.1 - Fraction of microlens events triggered from LSST observations} \\
@@ -560,10 +582,10 @@ sight-line.\footnote{The notebooks used to evaluate this version of
   the subset of objects that survive LSST's selection function for a
   particular strategy).
 
-\begin{table}[h]
+\begin{table}
   \small
   \begin{tabular}{c p{12cm}}
-    & {\it FoM 4.2 - Uncertainty in the mass function for planets beyond the Snoe Line through Microlensing}\\
+    & {\it FoM 4.2 - Uncertainty in the mass function for planets beyond the Snow Line through Microlensing}\\
     \hline
   1. & Parameterize the mass function of the population of interest;\\
   2. & Parameterize its distribution of lens amplitude and timescale;\\
@@ -676,7 +698,7 @@ baseline (see \autoref{fig_astrom_ByTime_pmError} of
 \autoref{sec:MW_Astrometry:MW_Astrometry_OpSim} for a demonstration applied to
 proper motions).
 
-\new{Whether the Plane should be observed as a ``special survey'' or
+Whether the Plane should be observed as a ``special survey'' or
   as part of Wide-Fast-Deep, remains an open question that we expect
   the Figures of Merit (FoM) to answer when fully implemented. For
   example, one can imagine reducing observing time in $u$~(and
@@ -685,7 +707,7 @@ proper motions).
   (e.g. possibly lower sensitivity to directly-detected compact
   objects versus improved coverage for transients in general) should
   become clear when implementation and evaluation of the FoMs
-  described in this Section are complete.}
+  described in this Section are complete.
 
 
 %We have proposed an OpSim run that includes the Galactic Plane in the
