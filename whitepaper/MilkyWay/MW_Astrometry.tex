@@ -25,14 +25,14 @@ to the particular choice of observing strategy.
 %While astrometry is not a science case, high astrometric accuracy enables
 %a large number of science cases.
 Hence, the LSST Observing Strategy needs to be examined for systematic
-trends that might mitigate or even preclude precise measures of
+trends that might limit or even preclude precise measures of
 stellar positions, proper motions, parallaxes, and perturbations that
 arise from unseen companions.
 
 \autoref{sec:\secname:MW_Astrometry_measurements} highlights two
 science cases at opposite scales of distance from the Sun that require
 accurate and precise astrometry and/or proper motion
-measurements. \autoref{sec:\secname:MW_Astrometry_metrics} develops
+measurements. \autoref{sec:\secname:MW_Astrometry_metrics} presents
 Metrics for LSST's astrometric performance, and discusses Figures of
 Merit for the two highlighted science cases. These metrics are applied to two example OpSim runs in
 \autoref{sec:\secname:MW_Astrometry_OpSim}. Finally in Section
@@ -55,14 +55,14 @@ Merit that depend on them.
 \subsection{Target Measurements and Discoveries}
 \label{sec:\secname:MW_Astrometry_measurements}
 
-\begin{itemize}
-\item[1.] Identification of Streams in the Galactic Halo using proper motions.
-\item[2.] A complete sample of stars in the solar neighborhood.
-\end{itemize}
+%\begin{itemize}
+%\item[1.] Identification of Streams in the Galactic Halo using proper motions.
+%\item[2.] A complete sample of stars in the solar neighborhood.
+%\end{itemize}
 %\item The tie between the Radio and Optical realizations of the International Celestial Reference System.
 %\item The specific and ensemble agreement between LSST and Gaia parallaxes.
 
-{\bf 1. Streams in the Galactic halo}
+{\bf 1. Identification of Streams in the Galactic Halo Using Proper Motions}
 
 Much of the Milky Way's stellar halo was built by the accretion of smaller galaxies. Given that these galaxies
 were generally of low mass, their tidal debris should still form coherent structures in phase space, especially
@@ -98,7 +98,7 @@ and accuracy of background galaxies as a secondary link to an inertial reference
 
 %The tie between the radio and optical reference frames relies on measuring accurate positions for objects visible in both wavelength regimes.  Whereas there are optical variable stars with radio emission, most have associated optical nebulosity that degrades the accuracy of the optical positions. The typical radio+optical object is a QSO.  Unfortunately, many QSOs have detectable optical or radio structures that degrade the positions or suggests a displacement between the location of the sources of the radio and optical radiation.  The major contribution from LSST will be the identification of a large number of QSOs based on their colors that have minimal (if any) spatially extended structure.  The impact of this search has no obvious impact on the cadence other than temporal coverage to identify variability.
 
-{\bf 2. A complete sample of stars in the solar neighborhood}
+{\bf 2. A Complete Sample of Stars in the Solar Neighborhood}
 
 The direct solar neighborhood offers our only chance to get make a complete sample of stars, brown dwarfs, and stellar remnants that encompass the entire formation and dynamical history of the Milky Way. While Gaia will offer parallax measurements for perhaps billions of stars, its faint magnitude limit of $G\sim 20$ will limit its measurements of the lowest-mass objects
 and remnants to nearby objects, much less than the thin disk scale height of $\sim 300$ pc. For example, Gaia can only measure parallaxes for $0.2 M_{\odot}$ M dwarfs to about 100 pc
@@ -112,12 +112,8 @@ The measurement of stellar parallax puts the substantial constraints on the obse
 The right ascension parallax factor has maximum amplitude when the star is approximately six hours from the Sun, so the optimum time for parallax observing is when the
 star is on the meridian near evening or morning twilight. Atmospheric refraction displaces the star's apparent position in the direction of the zenith by an amount dependent on both the wavelength of the light and the distance to the zenith. Whereas the measured position of star is a function of the total refraction, the measurement of parallax
 and proper motion depends on the differences in the refraction as a function of the color of each star and the circumstances of the observations.  This
-dependence is called differential color refraction. The combination of parallax factor and differential color refraction leads to two rules:
-\begin{itemize}
-\item [1] Observations need to cover the widest possible range in parallax
-factor.
-\item [2] The correlation between parallax factor and hour angle in the observations needs to be minimized.
-\end{itemize}
+dependence is called differential color refraction. The combination of parallax factor and differential color refraction leads to two rules: (i) Observations need to cover the widest possible range in parallax
+factor, and (ii) The correlation between parallax factor and hour angle in the observations needs to be minimized.
 
 %with respect to the meanmotion of the reference frame.
 
@@ -142,7 +138,7 @@ factor.
 First we discuss metrics for the observing strategy that affect all of
 LSST's astrometric measurements, then discuss figures of merit for the
 two science cases. (The three general metrics were identified years
-ago and are already in the suite of MAF utilities, but they should be
+ago and are already in the suite of MAF utilities, and they should be
 reviewed prior to making final decisions. For this reason, in addition
 to the Figures of Merit later in the chapter, we present spatial maps
 and histograms for the metrics themselves in Section
@@ -257,21 +253,20 @@ metrics:
         \item[4.] Parallax error, for a star at apparent magnitude 21.0 in the filter specified (smaller values are better). See Figures \ref{fig_astrom_ByTime_paError} \& \ref{fig_astrom_ByFilter_paError}.
 \end{itemize}
 
-{\it Limitations of this presentation:}
+{\it Limitations of the results presented in Figures \ref{fig_astrom_ByTime_PACoverage} to \ref{fig_astrom_ByFilter_paError}.:}
 \begin{itemize}
   \item[i.] The spatial maps are clipped at $95\%$~in order to keep
     the color-scale at a sensible range; in some cases this has had
     the side effect of removing parts of the spatial coverage in the
     \opsimdbref{db:baseCadence} maps.
 
-  \item[ii.] No attempt has been made in this subsection to account
-    for spatial confusion in high-density regions. While this
+  \item[ii.] This analysis neglected spatial confusion in high-density regions. While this
     confusion would be the same whatever observing strategy was
-    chosen, the numbers for proper motion and parallax uncertainty
+    chosen, the measurement uncertainties for proper motion and parallax uncertainty
     should be regarded as lower limits.
 
     \item[iii.] The choice of fiducial apparent magnitude $r = u = y =
-      21.0$~is not terribly well-motivated in this subsection. It
+      21.0$~is arbitrary. It
       would be informative to repeat the analysis for a range of
       target apparent magnitudes that are better-matched to the
       specific science cases.
