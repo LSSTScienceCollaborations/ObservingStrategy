@@ -1,6 +1,6 @@
 % --------------------------------------------------------------------
 
-\chapter[Some Example Observing Strategies]{Some Example Observing Strategies}
+\chapter[Some Example Observing Strategies]{The Operations Simulator and its Outputs}
 \def\chpname{cadexp}\label{chp:\chpname}
 
 Chapter editors:
@@ -85,6 +85,20 @@ reports.
 
 % --------------------------------------------------------------------
 
+\section{The Operations Simulator}
+XXX--Extended description of what OpSim is and how it works.
+
+Need to define:
+    -The baseline cadence (old and new) %(By the way, haven't we already decided that minion_1016 is the new baseline?)
+    -The universal cadence
+    -The WFD cadence (same as universal cadence, right?)
+
+Maybe put the config file in an appendix and summerize what it is doing in English here?
+
+XXX-good place to put in discussion of the DD fields. and all the other proposals.  What are the rules for the DD fields? Is it that the baseline sim has 5 DD fields and 4 of them have been anounced?
+
+XXX-include discussion of why filter changes are important (take 2 min, and don't want to wear out the changer)
+
 \section{The Baseline Observing Strategy}
 \def\secname{cadexp:baseline}\label{sec:\secname}
 
@@ -126,7 +140,7 @@ addressed here are available at the end of this document.
 \caption{The median airmass in the $r$ band across the sky for simulated cadence
 \opsimdbref{db:baseCadence} is shown in Aitoff projection of equatorial coordinates
 in the left panel. The red line shows the Ecliptic and the blue line shows the Galactic
-equator (it bifurcates around the so-called ``Galactic confusion zone''). The corresponding
+equator. The blue curve splits to enclose the so-called ``Galactic confusion zone''. The corresponding
 airmass histogram is shown in the right panel. For the main survey area, the maximum
 allowed airmass was set to 1.5. }
 \label{fig:airmassenigma}
@@ -154,6 +168,8 @@ fields, with a median $5\sigma$ depth of 28.6.}
 \vskip -0.0in
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Parallax_Normed_All_Visits_non-dithered_HEAL_SkyMap.pdf}
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Proper_Motion_Normed_All_Visits_non-dithered_HEAL_SkyMap.pdf}
+\includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Parallax_Normed_All_Visits_non-dithered_HEAL_Histogram.pdf}
+\includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Proper_Motion_Normed_All_Visits_non-dithered_HEAL_Histogram.pdf}
 \vskip -0.1in
 \caption{The trigonometric parallax errors (left) and proper motion errors (right), normalized
 by the values for idealized perfectly optimized cadences (parallax: all the observations are taken
@@ -179,16 +195,16 @@ deep drilling fields defined in the baseline cadence can be found at
 \url{https://lsstcorp.org/content/whitepapers32012}.}
 \item The median number of visits {\it per night} is 816, the range is
 88 to 1,104, with 3,026 observing nights. The mean slew time is 6.8
-seconds (median: 4.8 sec) and the total exposure time is 7.34 Msec.
+seconds (median: 4.8 sec) and the total exposure time is 73.4 Msec.
 The surveying efficiency, or the median total open shutter time (per night)
 as a fraction of the observing time (the ratio of the open shutter time and
 the sum of the open shutter time, readout time and slew time) is 73\%.
 \item
 The 25\%-75\% quartiles for the number of filter changes per night are 2
 and 6, with the mean of 4.3 The total number of filter changes is 14,194.
-\item In the $r$ band, the median effective seeing is 0.93 arcsec (for the more
-traditional geometric FWHM, the median is 0.81 arcsec), the median
-airmass is 1.23, and the median $5\sigma$ depth for point sources in WFD
+\item In the $r$ band, the median effective seeing for all proposals is 0.93 arcsec (for the more
+traditional geometric FWHM, the median is 0.81 arcsec).  We define "geometric FWHM" as the actual full-width-at-half-maximum.  The "Effective FWHM" is the FWHM of a single Gaussian describing the PSF and is typically $\sim15$\% larger than the geometric FWHM. The median
+airmass for all filters and all proposals is 1.23. The median single-visit $5\sigma$ depth for point sources in $r$-band in WFD 
 area (also known as the Universal Cadence area) is 24.16 (using the best
 current estimate of the fiducial depth at airmass of one, $m_5(r)=24.39$,
 defined by the SRD Table 5). The variation of the median airmass for the $r$
@@ -208,7 +224,7 @@ the zenith dark time values for two main reasons: the sky is expected to be
 brighter for non-dark time and away from zenith, the sky brightness model
 currently implemented in \OpSim has some shortcomings (a new model will
 be implemented in version 4), and the moon avoidance is not as aggressive
-as it could be. As a result, the limiting depths above are biased bright by close
+as it could be (many observations are taken very close to the moon avoidance limit of 30 degrees, rather than farther away where the sky is darker). As a result, the limiting depths above are biased bright by close
 to 1 mag in the $z$ and $y$ bands, and a few tenths of a magnitude in the
 $u$, $g$ and $i$ bands. The co-added depths are tied to single-visit bands,
 and suffer from the same bias.
@@ -266,7 +282,7 @@ Analysis of the hour angle distribution, shown in
 bias towards observations west from the meridian for the main survey.
 {\it This pattern is not fully understood at this time} and may be
 caused by specific features of the cost function implemented in the
-OpSim code.
+OpSim code. Removing the bias has the potential to increase the survey depth by around $\sim10\%$ (the survey would reach it's current limiting depth in 9 years rather than 10).
 
 
 
@@ -336,13 +352,9 @@ are shown in \autoref{fig:rotator}.
 
 \subsubsection{Time-domain metrics}
 
-The analysis of metrics designed for time-domain science has not been
-performed yet in detail, except for the analysis of asteroid
-completeness discussed in \autoref{sec:solarsystem:discovery}. MAF already includes
+MAF already includes
 several sophisticated metrics, e.g., period recovery for variable
-stars, which will be described in a later version of this report.
-
-As a brief illustration of time-domain analysis,
+stars.  As a brief illustration of time-domain analysis,
 \autoref{fig:enigmaGapAll} shows the median revisit time distribution
 when all bands are considered, and \autoref{fig:enigmaGapr} shows the
 median revisit time distribution in the band.  On average, fields in
@@ -361,7 +373,24 @@ pre-peak, at least 3 post-peak, with observations in at least 3
 filters'').
 
 Intra-night revisit time distribution is discussed in more detail in
-\autoref{sec:solarsystem:discovery}.
+\autoref{sec:solarsystem:discovery}. The analysis of asteroid completeness is
+discussed in \autoref{sec:solarsystem:discovery}. Metrics for transient objects
+are discussed in \autoref{chp:Transients}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!]
+\vskip -0.0in
+\includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Median_Intra-Night_Gap_HEAL_SkyMap.pdf}
+\includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Median_Intra-Night_Gap_HEAL_Histogram.pdf}
+\vskip -0.1in
+\caption{The median intra-night gap (or revisit time) is shown in Aitoff projection
+for all proposals and all filters for candidate Baseline Cadence \opsimdbref{db:baseCadence}.
+On average, when a field is observed multiple times in a night there is a 25 minute gap between the observations.}
+\label{fig:enigmaInterGapAll}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -512,7 +541,7 @@ with science-based MAF metrics.
 \opsimdb[db:opstwo]{minion\_1012}{Only Universal Cadence, with pairs of visits.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\bf Motivation and description:} Formally, $\sim$90\% of observing
+{\bf Motivation and description:} Formally, $\sim$85\% of observing
 time is allocated to the main Universal Cadence program (WFD). The
 remaining observing time is allocated to other programs, such as
 ``Deep Drilling'' programs (see Section 3.4 and Tables 22-26  in the
@@ -554,7 +583,7 @@ proposals does not have a major impact on the surveying efficiency}.
 The minimum number of visits per field for the 2,293 WFD fields in
 Baseline Cadence is 886 (the SRD design value is 825 and the stretch
 goal value is 1000). Although the sky coverage of these 2293 fields is
-about 18,000 sq.deg., their cumulative area is 22,000 sq.deg. With
+about 18,000 sq.deg., that number of fields could cover 22,000 sq.deg if there was no field overlap. With
 proper dithering, the effective number of visits could be increased to
 $886\times22/18 = 1083$ (or the WFD area increased from 18,000 sq. deg.; see
 analysis of \opsimdbref{db:opstwoPS} below). This increase is an improvement of 31\%
@@ -570,13 +599,13 @@ of  visits would be about 20\%).
 \opsimdb[db:opstwoPS]{minion\_1020}{A Pan-STARRS-like observing strategy.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\bf Motivation and description:} ``Pan-STARRS-like cadence" attempts
-to apply a uniform cadence strategy throughout the survey region,
-which is maximized and defined by Dec $< +15$ deg (about 27,400
-deg$^2$). The maximum acceptable airmass is kept at its default value
-of 1.5 (which excludes fields with Dec $< -78$ deg and Dec $> +18$
-deg. This simulation utilizes uniform cadence and no other proposal,
-and requires pairs of visits as in Baseline Cadence. \\
+{\bf Motivation and description:} ``Pan-STARRS-like cadence" attempts to apply a
+uniform cadence strategy throughout the survey region, which is maximized and
+defined by Dec $< +15$ deg (about 27,400 deg$^2$). This is similar to the Pan-
+STARRS' 3PI survey which tries to maximize sky area. The maximum acceptable
+airmass is kept at its default value of 1.5 (which excludes fields with Dec 
+$<-78$ deg and Dec $> +18$ deg. This simulation utilizes uniform cadence and no
+other proposal, and requires pairs of visits as in Baseline Cadence. \\
 
 {\bf Expectations:} The total number of visits should be roughly the
 same as in Baseline Cadence, but spread over a 42\% larger sky area
@@ -640,7 +669,7 @@ visits, and/or iv) execute additional programs (the current baseline).
 \vskip -0.2in
 \caption{The trigonometric parallax errors (left) and proper motion errors (right)  for simulated cadence
 minion\_1020 (``Pan-STARRS-like'' cadence), normalized by the values for idealized perfectly optimized
-cadence, are shown in Aitoff projection of equatorial coordinates (compare to \autoref{fig:parapmenigma}).}
+cadence, are shown in Aitoff projection of equatorial coordinates (compare to \autoref{fig:parapmenigma}). xxx--add in the histograms}
 \label{fig:parapmenigma2}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -781,8 +810,8 @@ combined into sequences of a given number of visits is shown in
 \autoref{fig:NvisitStats}.  As evident, the highest peak is at the
 requested number of visits in a sequence, but not all visits are
 incorporated into requested sequences: some are in both shorter and
-longer sequences. In particular, even ``no pairs'' simulation includes
-multiple visits to some fields, essentially because the current
+longer sequences. The ``no pairs'' simulation includes
+multiple visits to some fields, because the current
 version of the algorithm is not told not to do so. As illustrated in
 \autoref{fig:intranightgapCompare}, such revisits typically happen
 within 10 minutes from the first visit. This (unintended) behavior
@@ -794,7 +823,7 @@ visits within single night, as expected -- there are only so many
 visits available, and if more occur in a particular night, it is
 likely (without some kind of rolling cadence) that the result is
 longer intervals between subsequent nights. This is demonstrated in
-autoref{fig:internightgapCompare}, where it can be seen that the
+\autoref{fig:internightgapCompare}, where it can be seen that the
 inter-night revisit rate increases by about 30\% from 3 nights to 4
 nights if we go from pairs to triplets (or quads).
 
