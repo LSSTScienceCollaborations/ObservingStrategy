@@ -666,6 +666,8 @@ visits, and/or iv) execute additional programs (the current baseline).
 \vskip -0.03in
 \includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Parallax_Normed_All_Visits_non-dithered_HEAL_SkyMap.pdf}
 \includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Proper_Motion_Normed_All_Visits_non-dithered_HEAL_SkyMap.pdf}
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Parallax_Normed_All_Visits_non-dithered_HEAL_Histogram.pdf}
+\includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Proper_Motion_Normed_All_Visits_non-dithered_HEAL_Histogram.pdf}
 \vskip -0.2in
 \caption{The trigonometric parallax errors (left) and proper motion errors (right)  for simulated cadence
 minion\_1020 (``Pan-STARRS-like'' cadence), normalized by the values for idealized perfectly optimized
@@ -839,9 +841,9 @@ with their observing conditions, are sampled).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!]
-\vskip -2.5in
-\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/NvisitStats.pdf}
-\vskip -2.7in
+\vskip -0.03in
+\includegraphics[angle=0,width=0.99\hsize,clip]{figs/ptq/NvisitStats.pdf}
+\vskip -0.2in
 \caption{The distribution of the number of visits used for nightly sequences of
 length given on the horizontal axis. Only $griz$ bands are used. Note that even
 ``no pairs'' simulation (\opsimdbref{db:NEOsNoVisitPairs})
@@ -991,11 +993,13 @@ proposals). Because of these differences, {\it the results of this
 test may not be very robust.}
 \end{enumerate}
 
-{\bf Conclusions:}
-Simple estimates of the total number of visits and the improvement in
-efficiency are in good agreement with delivered values. Of course, the
-increased efficiency comes at the cost of fewer visits, which is
-disadvantageous for time-domain science.
+{\bf Conclusions:} 
+Simple estimates of the total number of visits and the
+improvement in efficiency are in good agreement with delivered values. Of
+course, the increased efficiency comes at the cost of fewer visits, which is
+disadvantageous for time-domain science. There are other consequence of a longer
+exposure time, including saturation at fainter mags, worse bleed trails and
+scattered light from bright stars, and more trailing of fast-moving asteroids.
 
 %{\bf Note to OpSim team: this simulation should be repeated} with the
 %requested number of visits per field set to 60\% of the values used
@@ -1021,16 +1025,18 @@ to darker u band sky. The current best estimates for survey
 performance (see Table 2 in the LSST overview paper, arXiv:0805.2366,
 version 3.1) indicate that the {\it coadded} depth in the $u$ band
 could be improved by 0.24 mag by increasing the exposure time per
-visit from 30 seconds to 60 seconds\footnote{In the background-limited
-case, a factor of two increase of the exposure time results in 0.38
-mag deeper data. Since in the u band the read-out noise is not
-negligible compared to the background noise, the total noise increases
-by less than a factor of $\sqrt{2}$ and there is an extra depth
-improvement of 0.24 mag (see eq.~7 and Table 2 the overview paper).
-Conversely, when exposure time is shorter than 30 seconds, there is an
-extra penalty of 0.16 mag, in addition to a loss of depth of 0.22 mag
-due to shorter exposure time in the limit of negligible read-out
-noise.} (assuming the same total exposure time, which implies a
+visit from 30 seconds to 60 seconds
+%\footnote{In the background-limited
+%case, a factor of two increase of the exposure time results in 0.38
+%mag deeper data. Since in the u band the read-out noise is not
+%negligible compared to the background noise, the total noise increases
+%by less than a factor of $\sqrt{2}$ and there is an extra depth
+%improvement of 0.24 mag (see eq.~7 and Table 2 the overview paper).
+%Conversely, when exposure time is shorter than 30 seconds, there is an
+%extra penalty of 0.16 mag, in addition to a loss of depth of 0.22 mag
+%due to shorter exposure time in the limit of negligible read-out
+%noise.} 
+(assuming the same total exposure time, which implies a
 decrease in the number of visits by a factor of two). To keep the
 total exposure time in the $u$ band unchanged, the requested number of
 visits in this simulation is decreased by a factor of 2 relative to
@@ -1062,7 +1068,7 @@ time-domain science.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:DoubleUbandExptimewithNESpur]{kraken\_1059}{Baseline Cadence, but with doubled $u$-band exp.\ time and Baseline NE Spur.}
+\opsimdb[db:DoubleUbandExptimewithNESpur]{kraken\_1059}{Baseline Cadence, but with doubled $u$-band exp.\ time.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Motivation and description:} This simulation is similar to
@@ -1138,10 +1144,11 @@ fields.
 \opsimdb[db:UConlyStringentAirmass]{minion\_1017}{Only Universal Cadence, with stringent airmass limit.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\bf Motivation and description:} What is the effect of changing the
-airmass limit from 1.5 to 1.3? To avoid complicated analysis, we use
-only the Universal Cadence proposal and thus compare to
-\opsimdbref{db:opstwo}.
+{\bf Motivation and description:} What is the effect of changing the airmass
+limit from 1.5 to 1.3? To avoid complicated analysis, we use only the Universal
+Cadence proposal and thus compare to \opsimdbref{db:opstwo} (i.e., we are not
+including the North Ecliptic Spur, South Celectial Pole, or Deep Drilling Fields
+in this simulation).
 
  {\bf Analysis Results:}  This simulated cadence is named
  \opsimdbref{db:UConlyStringentAirmass}. Compared to
@@ -1191,34 +1198,7 @@ this to the Baseline Cadence, \opsimdbref{db:baseCadence}.
  proposal into the WFD. The total number of observations obtained by
  the WFD proposal increased from 2085270 to 2116203; an increase of
  only $1.5\%$. As a result, the median number of visits per field was
- reduced in all bands, as well as the corresponding coadded depth;
- this is shown in table~\ref{tab:normalPlane_wfd} below.
-
-\begin{table}[]
-\centering
-\caption{Visits and Coadded Depth in Universal Proposal comparison}
-\label{tab:normalPlane_wfd}
-\begin{tabular}{lll}
-& \multicolumn{2}{c}   {Median Number of Visits (per field, per filter)} \\
-    & \opsimdbref{db:baseCadence} &
-                                    \opsimdbref{db:NormalGalacticPlane} \\
-WFD $u$ & 62 & 59 \\
-WFD $g$ & 88 & 83 \\ 
-WFD $r$ & 201 & 189 \\
-WFD $i$ & 200 & 189 \\
-WFD $z$ & 180 & 170 \\
-WFD $y$ & 181 & 170 \\
- & \multicolumn{2}{c}   {Median Coadded Depth (per field, per filter)} \\
-    & \opsimdbref{db:baseCadence} &
-                                    \opsimdbref{db:NormalGalacticPlane} \\
-WFD $u$ & 25.46 & 25.42 \\
-WFD $g$ & 26.95 & 26.91 \\
-WFD $r$ & 27.07 & 27.04 \\
-WFD $i$ & 26.36 & 26.32 \\
-WFD $z$ & 25.19 & 25.17 \\
-WFD $y$ & 24.43 & 24.39 \\
-\end{tabular}
-\end{table}
+ reduced in all bands, as well as the corresponding coadded depth.
 
 {\bf Conclusions:} In both of these runs, the WFD proposal received
 about 85\% of the total number of visits in the survey. Extending the
