@@ -1,4 +1,3 @@
-
 %+
 % SECTION:
 %    supernovacosmology.tex
@@ -15,16 +14,28 @@
 \section{Supernova Cosmology and Physics}
 \def\secname{supernovae}\label{sec:\secname}
 
+\newcommand{\ml}[1]{\textcolor{red}{[{\bf ML}: #1]}}
+
 \credit{jhrlsst},
 \credit{MichelleLochner},
 \credit{rbiswas4},
 \credit{sethdigel}.
 
+The accelerated expansion of the Universe is one of the 
+most exciting and fundamental discoveries in this
+century \citep{Riess1998,Perlmutter1999}.
+This discovery was made using Type Ia supernovae (SNe) as cosmological candles, and
+implies that 76\% of the energy density of the Universe is composed of dark energy
+\citep{Frieman2008}. Type Ia supernovae are believed to be explosions of white
+dwarfs that have approached the Chandrasekhar mass and are disrupted by
+thermonuclear fusion of carbon and oxygen.
+
+
 This section is concerned with the detection and characterization of
 supernovae (SNe) over time with LSST and their various scientific
 applications. A crucial application is the use of supernovae type
-Ia (SNIa) and potentially some core-collapse SN (like type IIP) to trace
-the recent expansion history of the universe, and confront models of the
+Ia (SNIa) %and potentially some core-collapse SN (like type IIP) to trace
+to trace the recent expansion history of the universe, and confront models of the
 physics driving the late time accelerated expansion of the universe.
 
 LSST will improve on past surveys by observing a substantial number of well-characterized 
@@ -257,6 +268,7 @@ modulus of the supernova, as determined by fitting an empirical model to the sup
 
 %\subsubsection{ Steps in the PerSNMetric}
 \subsubsection{Steps in the PerSNMetric}
+\label{sec:persnmetric}
 As described before, the measurement of the distance modulus is the
 result of several steps. Therefore, we expect the perSNMetric to be a
 product of metrics in each of the steps:
@@ -331,7 +343,16 @@ multifaceted, machine learning pipeline developed in \citet{Lochner2016} to comp
 observing strategies. The exact metric used to determine the efficacy of the classification depends 
 on the exact problem at hand. For producing a general purpose, well-classified set of all types of 
 supernovae (for example, to study supernova population statistics), one could use the AUC metric 
-defined in \citet{Lochner2016}, which is a good balance between purity and completeness. 
+defined in \citet{Lochner2016}, which is a good balance between purity and completeness. The 
+probability to determine if SNe are Ia or other types is low, since the light curves from WFD have 
+poor qualities.
+We have hoped to apply SN classification metric to the opsim light curves, but %individual light 
+curves are uncertain. 
+%more effort is required to be able to determine if the light curves are sufficient to determine the 
+types of SNe.
+since SN classification is a challenging task only using photometric data without follow-up 
+spectroscopy, further 
+studied are required to estimate the probability. 
 Alternatively, if one only considers supernova cosmology, a simpler metric might be the percentage 
 supernova detected if a purity of (for example) 95\% is demanded from the final sample. Work is 
 still ongoing to apply the full classification pipeline to multiple OpSim runs and incorporate a 
@@ -445,6 +466,7 @@ fields considered, from the DDF and WFD.
 \begin{figure}
 %\vskip -1.3in
 %*\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_290_lc.pdf}
+\centering
 \includegraphics[angle=0,width=14truecm]{figs/SN_290_lc.pdf}
 %\vskip -1.3in
 \caption{An example of light curve of SN Type Ia using Deep-Drilling
@@ -455,6 +477,7 @@ Survey of the LSST Baseline OpSim run.
 
 \begin{figure}
 %\vskip -1.3in
+\centering
 \includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lc.pdf}
 %\vskip -1.3in
 \caption{An example of light curve of SN Type Ia using the Main Survey
@@ -463,6 +486,7 @@ of the LSST Baseline \OpSim run.}
 \end{figure}
 
 \begin{figure}
+\centering
 \includegraphics[angle=0,width=\textwidth,clip]{figs/SN_Cadence_290.pdf}
 \includegraphics[angle=0,width=\textwidth,clip]{figs/SN_Cadence_309.pdf}
 \caption{Cadence of Observations in the timewindow of a representative
@@ -473,15 +497,73 @@ a distinct filter.}
 \label{fig:perSNCadence}
 \end{figure}
 
+{\bf Analysis Results:}
 To further study the quality of light curves across the survey, we simulate the same type Ia 
 supernova in 16 different fields, including DDF 290 already studied, from the \texttt{enigma\_1189} 
 OpSim run and record the average number of visits per 50 day time window 
 (\autoref{tab:lcpositions}). A well-known rule of thumb for good quality SN light curves is to 
-demand 7-10 epochs per light curve spread over 50 days or so for more than one filter. Although 
-the averages in \autoref{tab:lcpositions} are only approximations because the cadence is 
-non-uniform, they give a clear indication that with the \texttt{enigma\_1189} observing strategy, 
-the WFD will be largely useless for SNe studies. This motivates our proposal of a rolling cadence 
-strategy to improve the sampling of SNe over a much larger area than the DDFs.
+demand 7-10 epochs per light curve spread over 50 days or so for more than one filter. 
+\autoref{tab:lcpositions} list characteristics of light curves towards 15 fields in the OpSim 
+output. 
+
+We summarize results of light curve analysis using opsim output as follows:    
+\begin{itemize}
+\item A high portion of the light curves can be identified as transients using  a SN based on SN 
+discovery metric (SNDM$>$0.5 in \autoref{tab:lcpositions}). 
+This metric is currently using SNR of detections. 
+\item Light curves from WFD show poor qualities (SNQM$<$0.3) whereas the light curves from DDF show 
+high quality($\geq$1). Note that we examined only a few cases of SNe at redshift of 0.5, and the 
+metric will be applied to a much larger range of SNe in future simulations.
+\item We have explored ways to improve SN classification \citep{Lochner2016} and the classification metric is defined in Section 
+\ref{sec:\secname:metrics}. 
+In this analysis, we have not yet considered classification based on individual light curves. 
+This is because, unlike the discovery and quality metric, it is difficult to discuss 
+classification of a single object without having a well-defined training set, which is yet to be 
+determined for LSST. This is discussed in \autoref{sec:persnmetric}
+\item In conclusion, based on the SNQM, we have showed that WFD data alone using the Baseline 
+Observing Strategy are not useful for SN studies. 
+\end{itemize}
+
+
+%Although 
+%the averages in \autoref{tab:lcpositions} are only approximations because the cadence is 
+%non-uniform, they give a clear indication that with the \texttt{enigma\_1189} observing strategy, 
+%the WFD will not be useful for SNe studies. 
+
+{\bf Need for LSST Observing Strategy Optimization for SN Science:}
+
+The results from our OpSim analysis motivate our proposal of a rolling cadence 
+in order to improve the sampling of SNe over a much larger area than the DDFs.
+The DDF are useful for SNe at redshifts between 0.6 and 1.2, the WFD will help us to increase 
+the number of SNe at low redshift
+as shown in Figure 11.1 of LSST science book \citep{2009arXiv0912.0201L}. For example, a higher 
+number of SNe at z $=0.4$ is expected from WFD than DDF.  
+Consequently, DDF will have only a few SNe at low redshift,
+since the DDF sample is limited to small patches of sky. 
+A significant scatter in distance modulus of low redshift SNe is found \citep[e.g.][]{Suzuki2012} which hinders deriving accurate
+cosmological parameters.
+Since the cosmology measurement requires low redshift distance moduli as well as high redshift distance moduli, a large sample 
+of low redshift SN will boost the cosmological parameter inference as well as providing a 
+useful sample of nearby supernovae to better constrain variations in SNe populations (e.g. core-collapse SNe). 
+Light curves from WFD
+with reasonable quality can be achieved using our proposed
+observing strategy.
+
+A larger sample of well-characterized light curves from the WFD can address two key science 
+goals:
+\begin{itemize}
+\item To tightly constrain cosmological parameters ($\Omega_M$ and $\Omega_\Lambda$) 
+by improving the measurement of distance modulus of low redshifted SNe. Without implementing 
+the new observing strategy that we recommend below, LSST will not be able to
+make a significant contribution to SN cosmology below z$<$0.5. 
+\item The WFD offers a unique opportunity for isotropy (complementary to large-scale galaxy 
+surveys) and dynamical dark energy studies. Apparent luminosities and number counts can be 
+estimated for a large range of angular scales and 
+redshifts with WFD. However, this science case will only be possible with a large sample of 
+well-characterized SN Ia in a large field of view, providing further support for our 
+recommendation of a rolling cadence observing strategy.
+\end{itemize}
+
 
 
 % [ML] I've removed this (fairly arbitrary) chategorization, it's more confusing than helpful
@@ -513,37 +595,42 @@ strategy to improve the sampling of SNe over a much larger area than the DDFs.
 \begin{table}
 %\tabletypesize{\scriptsize}
 \centering
-\begin{tabular}{|p{0.9cm} |p{3.3cm}|p{4cm}|p{1.7cm}|}
+\begin{tabular}{|p{1.3cm} |p{3.3cm}|p{4cm}|p{1.9cm}|p{1.7cm}|p{1.7cm}|}
+%\begin{tabular}{|p{0.9cm} |p{3.3cm}|p{4cm}|p{1.9cm}|}
 \hline
- Field or No. & (RA,Dec) & No. of LSST visits per year (u,g,r,i,z,y)       & Avg. No.\\
+ FieldID & (R.A., Decl.) & \# of LSST visits per year (u,g,r,i,z,y)       & \# of Avg. data per SN period per filter & SNDM  & SNQM\\
 \hline
-290 DDF  & (349.386,-63.321)  & 2363 (398,229,402,414, 522,396) & 53 \\
- 1      & (190,-83) &    239 (38,41,41,44,33,42) & 5.3\\
- 2      &(20,-83) & 252 (52,56,40,21,37,44)  &5.7\\
+290 DDF  & (349.386,-63.321)  & 2363 (398,229,402,414, 522,396) & 53 & 1.0  & 1.6 \\
+ 17      & (190,-83) &    239 (38,41,41,44,33,42) & 5.3 & .. & ..\\
+% 290  &(20,-83) & 252 (52,56,40,21,37,44)  &5.7 &&\\
+ 22      &(20,-83) & 252 (52,56,40,21,37,44)  &5.7 &..&..\\
 %old 3      &(120.012,-71.879) &  220(36,38,37,32,44,33) & 5.0 & B &\\
-3      &(116,-66) &  220 (36,38,37,32,44,33) & 5.0  \\
- 4      &(240.05,-62.02) &101 (2,5,11,19,19,45) & 2.2  \\
- 5      &(120,-50)  &80 (4,7,9,18,24,18)        & 1.8\\
- 6      & (80,-40)  &      96 (5,8,15,17,27,24) &  2.2\\
- 7      & (280,-40) &      86 (4,2,6,4,24,18)   &  2.0\\
- 8      & (30,-20)  &      86 (3,4,10,21,27,21) &  1.96\\
- 9      & (100,-20) &      58 (4,2,6,4,24,18)   &  1.3\\
+  217      &(116,-66) &  220 (36,38,37,32,44,33) & 5.0  & .. & ..\\
+% 290(+DDF)  &(116,-66) &  220 (36,38,37,32,44,33) & 5.0  && 1.0 & 8.28\\
+ 309      &(240.05,-62.02) &101 (2,5,11,19,19,45) & 2.2 & 1.00 & 0.10  \\
+ 645      &(120,-50)  &80 (4,7,9,18,24,18)        & 1.8 &0.54 & 0.01\\
+ 949      & (80,-40)  &      96 (5,8,15,17,27,24) &  2.2 & 0.99 & 0.09\\
+ 948      & (280,-40) &      86 (4,2,6,4,24,18)   &  2.0 & 0.99 & $<$0.002\\
+ 1401      & (58,-27)   & 98 (3,3,9,26,31,26) &   2.2 & 0.77 & 0.002\\
+ 1754      & (30,-20)  &      86 (3,4,10,21,27,21) &  2.0 & 1.00 & 0.05\\
+ 1720      & (100,-20) &      58 (4,2,6,4,24,18)   &  1.3 & 0.99 & 0.03 \\
 % 000  & (358.41,+0.18)  &                      &     & C({\it 0.1}) & \ref{fig:SNIaLCDecp18}\\
- 309  & (6.097, -1.105) & 80 (4,7,9,18,24,18)  & 1.83\\
+ 2556  & (6.097, -1.105) & 80 (4,7,9,18,24,18)  & 1.8 & 1.00 & 0.05\\
 % 290  & (6.097, -1.105) &                      &     & C({\it 0.1}) & \ref{fig:SNIaLCDecp18}\\
- 11     & (50,+1.5) &      72 (3,6,10,12,22,19) &  1.64\\
- 12     & (320, +5) &      7 (0,0,2,0,4,0)      &  0.15\\
- 13     & (60,+5)   &      66 (0,7,11,20,28,0)  &  1.5 \\
- 14     & (60,+20)  &      72 (0,8,13,22,29,0)  &  1.64\\
- 15     & (60,+30)  &      44 (0,5,6,15,18,0)   &  1.0\\
+ 2718     & (50,+1.5) &      72 (3,6,10,12,22,19) &  1.6 & 1.00 & 0.09\\
+ 2751     & (320, +5) &      7 (0,0,2,0,4,0)      &  0.2 & 0.09 & 0.02\\
+% 2910     & (60,+5)   &      66 (0,7,11,20,28,0)  &  1.5 &.. & ..&\\
+ 3606     & (60,+20)  &      72 (0,8,13,22,29,0)  &  1.6 &..& ..\\
+% 3959     & (60,+30)  &      44 (0,5,6,15,18,0)   &  1.0 &&\\
 \hline
 \end{tabular}
-\caption{Table of 16 fields in the OpSim \texttt{enigma\_1189}. The first column is simply an 
+\caption{Table of 15 fields in the OpSim \texttt{enigma\_1189}. The first column is simply an 
 index, with the special example fields of the DDF field 290 and WFD field 309 indicated. The 
 position of the fields is shown in column 2. The third column contains the total and per filter 
 band number of visits per year and this is averaged per filter per 50 day time window in column 4. 
 It can be seen that with this observing strategy, only the deep drilling fields are suitable for 
-supernova cosmology, where 7-9 data points per filter band is considered adequate quality.}
+supernova cosmology, where 7-9 data points per filter band is considered adequate quality. SNDM and 
+SNQM are SN discovery and quality metric, respectively.}
 \label{tab:lcpositions}
 \end{table}
 \end{center}
@@ -632,16 +719,76 @@ determine exactly how many (useful) supernovae will be detected and what the res
 constraints will be, but in this section we have discussed and motivated several important 
 intermediate metrics.
 
-\subsubsection{Scientific Motivation for Rolling Cadence}
+\subsubsection{Scientific motivation for rolling cadence}
 It is clear from the above analysis, that the WFD component of the LSST survey will not be useful 
 for supernova cosmology. However, with some changes to the observing strategy, it is likely that a 
 large part of the WFD can be leveraged by implementing a rolling cadence strategy. The idea is to 
 sample a particular field with much higher cadence, at the expense of other fields, for a period of 
 time (such as 50-100 days) and change fields throughout the survey to preserve uniformity by the end 
-of the 10 year period. Ideally, we would propose changing the filter every day, and trebling the 
-average WFD cadence in these smaller fields. This would achieve our goal of 7-9 points per light 
-curve over a 50 day period and in addition, the variety of filters would result in extremely 
-well-characterized SNe in several bands that will thus be also be more easily classified.  
+of the 10 year period. 
+%Ideally, we would propose changing the filter every day, and trebling the 
+%average WFD cadence in these smaller fields. 
+Our primary goal is to  achieve our goal of 7-9 points per light 
+curve over a 50 day period, which would produce light curves of reasonably high quality, that 
+can be well-classified and well-characterized for cosmological parameter estimation.
+
+\subsubsection{Proposed observing strategy optimized for SN cosmology} 
+
+We propose to a new observing strategy that provides a dense sampling in time.
+This cadence is to improve observing strategy of WFD in order to produce SN light curves which are 
+more useful for SN studies.
+We suggest to increase the sampling rate by a factor of 2 or more, and we choose the best option for the sampling rate 
+to be enhanced by a factor of 3 (i.e.$\times$3), hereafter. 
+%We use an increase of the sampling rate by a factor of 3 for our proposed Cadence, hereafter. 
+An example of light curve generated with current Universal cadence 
+and with $\times$3 
+enhanced light curve is shown in Fig. \ref{fig:LCrandom}.
+The enhanced light curve is generated by pseudo-random numbers with uniform distributions in time.
+
+\begin{figure}
+\centering
+\includegraphics[width=13truecm]{figs/supernova/LCrandomseed.pdf}
+\caption{An example of light curve of SN Type Ia generated using OpSim output 
+toward RA. of 58$^{\circ}$ and Decl. of -27$^{\circ}$ (left) and the same light curve
+after the sampling rate is enhanced by a factor of 3 (right).}
+  \label{fig:LCrandom}
+\end{figure}
+
+\subsubsection{Details of rolling cadence of WFD optimized for SN cosmology }
+%Ideally, we would propose changing the filter every day, and trebling the
+%average WFD cadence in these smaller fields. Our primary goal is to  achieve our goal of 7-9 points per light
+There are likely many possible LSST observing strategies one could propose to achieve our 
+goal of increasing the sampling of light curves by a factor of three. We hope to investigate 
+multiple OpSim runs in the future with a variety of implementations of rolling cadence.
+In this section, we show a plausible observing strategy 
+that can achieve a factor of 3 increase in sampling rate in order to obtain reasonable-quality SN light curves.
+
+
+The observing strategy of WDF is defined (see Section 1.6.2 in the LSST science book) as follows. 
+
+\noindent $\bullet$ A revisit time of three days on average per 10,000 deg$^2$ of sky (i.e., the area visible at any given time of the year), with two visits per night (particularly useful for establishing proper motion vectors for fast moving asteroids).
+
+We define the 10,000 deg$^2$ survey area, which is the visible sky for a given time of the 
+year, simply as the ``visible sky". 
+In order to increase the sampling rate by a factor of 3, we propose to make the revisit time of $\sim$1 day (1/3 of three days above) 
+on average visible 
+sky. This means one third of the visible sky ($\sim$3300 deg$^2$) can be chosen. Preference 
+may be given to the part of 
+sky with low air-mass, but at the same time 
+a uniform coverage of LSST needs to be considered. 
+Ideally we would propose a filter change every day, and observe approximately the same 
+patch of visible sky for 
+$\sim$ 50 days before
+going to another part. 
+As a result,
+ the light curves will have  a sampling rate ($\times$3) in time.   
+A total of 1.4$\times$10$^5$ SNe Ia (Section 11.2.2 in \citet{2009arXiv0912.0201L}) expected from 
+WDF would become a factor of 2-3 lower
+(details are to be investigated in future), but
+the SNe that LSST WFD discovered will have  meaningful, reasonable-quality light curves which can be used to 
+classify the types of SNe and to improve cosmological parameters. 
+
+
 
 % \subsection{Rolling Cadence of the Main Survey Optimized for Supernova Science}
 % 
