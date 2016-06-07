@@ -86,18 +86,23 @@ reports.
 % --------------------------------------------------------------------
 
 \section{The Operations Simulator}
-XXX--Extended description of what OpSim is and how it works.
 
-Need to define:
-    -The baseline cadence (old and new) %(By the way, haven't we already decided that minion_1016 is the new baseline?)
-    -The universal cadence
-    -The WFD cadence (same as universal cadence, right?)
+The Operations Simulator (OpSim) is a software tool that runs a survey simulation with given science driven desirables; 
+a software model of the telescope and its control system; and models of weather and other environmental variables. The 
+output of such a simulation is an “observation history”, which is a record of times, pointings and a record of associated 
+environmental  data  and  telescope  activities  throughout  the  simulated  survey.  This history can be examined to assess  
+whether the simulated survey would be useful for any particular purpose or interest. 
 
-Maybe put the config file in an appendix and summerize what it is doing in English here?
+In most of the simulations discussed in this document, the OpSim scheduler balances several different observing proposals:
+\begin{itemize}
+\item {\bf Wide, Fast, Deep (WFD):} The WFD (also called the Universal Cadence) is the primary LSST survey, taking 85-95\% of the observing time and covering 18,000 square degrees of sky. This observing proposal is usually configured to attempt making observing pairs spaced $\sim40$\ minutes apart.  This temporal spacing is designed to optimize the detection of moving solar system objects. This proposal typically balances the six $ugrizy$ filters, observing each field every $\sim3$\ days.
+\item {\bf North Ecliptic Spur (NES):} The NES is an extension to reach the Ecliptic at higher airmass than the WFD survey typically covers.  The NES typically does not include the $u$-filter.
+\item {\bf Galactic Plane:} This proposal covers the region where LSST is expected to be highly confused by the density of stellar sources.  Typically takes fewer total exposures per field than the WFD survey.
+\item {\bf South Celestial Pole (SCP):} The SCP is an extension to higher airmass than the WFD to cover the region south of declination -60 degrees.  This proposal includes $ugrizy$, but takes fewer exposures per field than the WFD.
+\item {\bf Deep Drilling Fields (DD):} The Deep Drilling Fields are single pointings that are observed in extended sequences. The DD proposals often include certain filter combinations to ensure near-simultaneous color information is available for variable and transient objects. Four of the LSST Deep Drilling fields have been selected and announced. It is expected that there will be $\sim10$ DD fields selected for the final survey. Most of the simulations here include five DD fields.
+\end{itemize}
 
-XXX-good place to put in discussion of the DD fields. and all the other proposals.  What are the rules for the DD fields? Is it that the baseline sim has 5 DD fields and 4 of them have been anounced?
-
-XXX-include discussion of why filter changes are important (take 2 min, and don't want to wear out the changer)
+One of the more unique constraints on the OpSim scheduler is that it highly penalizes, and thus avoids, filter changes.  With it's large field of view, LSST filter changes take about two minutes to complete. The filters are also large and heavy enough that we want to minimize wear on the filter changing mechanism.  
 
 \section{The Baseline Observing Strategy}
 \def\secname{cadexp:baseline}\label{sec:\secname}
@@ -375,7 +380,7 @@ filters'').
 Intra-night revisit time distribution is discussed in more detail in
 \autoref{sec:solarsystem:discovery}. The analysis of asteroid completeness is
 discussed in \autoref{sec:solarsystem:discovery}. Metrics for transient objects
-are discussed in \autoref{chp:Transients}.
+are discussed in \autoref{chp:transients}.
 
 
 
@@ -830,7 +835,7 @@ inter-night revisit rate increases by about 30\% from 3 nights to 4
 nights if we go from pairs to triplets (or quads).
 
 Details of the impacts on Solar System science is
-left to \autoref{ch:solarsystem}, in particular the impact on
+left to \autoref{chp:solarsystem}, in particular the impact on
 completeness is evaluated in \autoref{sec:solarsystem:discovery}.
 
 The impact of requesting sequences with 3 or 4 visits to the same
@@ -846,7 +851,7 @@ with their observing conditions, are sampled).
 \vskip -0.2in
 \caption{The distribution of the number of visits used for nightly sequences of
 length given on the horizontal axis. Only $griz$ bands are used. Note that even
-``no pairs'' simulation (\opsimdbref{db:NEOsNoVisitPairs})
+``no pairs'' simulation (\opsimdbref{db:NoVisitPairs})
 includes multiple visits. The highest peak is at the
 requested number of visits in a sequence.}
 \label{fig:NvisitStats}
