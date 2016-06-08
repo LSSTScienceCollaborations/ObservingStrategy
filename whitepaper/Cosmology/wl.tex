@@ -22,27 +22,27 @@ photon signal-to-noise. This is especially true of weak gravitational
 lensing,  which relies on very accurate (\ie low bias), but very low
 signal-to-noise, measurements of the shapes of galaxies, and high
 signal-to-noise measurements of PSF calibration stars. As outlined in the SRD,
-uniformity of seeing in the bands used for WL and special observing strategies 
+uniformity of seeing in the bands used for WL and special observing strategies
 are required in order to reduce additive and multiplicative shear systematics.
 
 Achieving the ultimate sensitivity of the LSST to weak lensing science places
 stringent requirements on our ability to accurately measure galaxy shapes and redshifts,
 which in turn demands precise and accurate knowledge of the point spread function,
 astrometry, and photometry. These measurements are influenced by the interaction of
-light with the Earth’s atmosphere, the telescope optics, and the CCD sensors. Sysematics
-in the shear are introduced in each case.   Methods have been developed for suppressing 
-these systematics in current lensing surveys. These and new methods will be applied to 
+light with the Earth's atmosphere, the telescope optics, and the CCD sensors. Sysematics
+in the shear are introduced in each case.   Methods have been developed for suppressing
+these systematics in current lensing surveys. These and new methods will be applied to
 the LSST survey.
 
 Over the sample of 3-4 billion galaxies, the shear systematics must be below
 one part in 10,000 for additive shear, and one part in 1000 for multiplicative shear.
-Each visit to a sky patch encounters these systematics. Some observing strategies can 
-effectively randomize these over all visits to a field.  Below we discuss the observing 
+Each visit to a sky patch encounters these systematics. Some observing strategies can
+effectively randomize these over all visits to a field.  Below we discuss the observing
 strategies for suppressing shear systematics and metrics for their success.
 
 \subsection{Target Selection}
 
-Image quality must be uniformly good in the bands used for weak lens shear.  These will be 
+Image quality must be uniformly good in the bands used for weak lens shear.  These will be
 the $r$ and $i$ bands.   Depending on the current weather and seeing, the scheduler
 will have a list of priorities for next-field, based on prior history of coverage.
 Nearby fields in need of coverage in these bands will be given high priority if the
@@ -53,9 +53,9 @@ seeing is better than some specified value, likely 0.7 arcsec FWHM.
 
 It is expected that even after maximal optimization of camera optics
 and electronics, that systematic image shape errors will be associated
-with the orientation of the camera focal plane.  Using data from vendor CCDs, simulations 
+with the orientation of the camera focal plane.  Using data from vendor CCDs, simulations
 of LSST observing have shown that a combination of x-y dithering on the sky and
-pipline processing with pixel re-map (to cancel much of the CCD frame fixed
+pipeline processing with pixel re-map (to cancel much of the CCD frame fixed
 distortions) can get well within a factor of ten of the goal for shear
 systematics residuals.  Simulations which add camera angle dithering show
 that the goal can be achieved in fields with relatively uniform seeing history.
@@ -66,13 +66,13 @@ represented by the parameter RotSkyPos: we can construct diagnostic
 metrics that quantify the uniformity of its distribution at each sky
 position.   Given the spin 2 symmetry of shear, if the camera can rotate over a range of +/-
 90 deg, the optimal strategy for shear systematics suppression will be to aim for
-uniformity if the square of the cosine of the camera rotation angle.  i.e. +90 deg 
+uniformity if the square of the cosine of the camera rotation angle.  i.e. +90 deg
 and -90 deg are degenerate, so we want half as much coverage at those angles than at 0 deg.
 
 Similarly, the telescope optics may harbor systematic aberrations, and
 these also could be mitigated by recording images with varying
 parallactic angle.  Another relevant parameter, RotTelPos, is
-indicative of the projected angle of the telescope optics on the sky. More 
+indicative of the projected angle of the telescope optics on the sky. More
 important is the effect of atmospheric chromatic diffraction: re-visits to a given
 field should be distributed over RA, consistent with airmass and seeing limits.
 
@@ -98,7 +98,7 @@ statistics of these distributions.
 
 We can use largescale patterns of distortions of the PSF over the 20,000 stars per exposure for
 PSF regularization in the per-CCD PSF fitting. In the per CCD fits, there is a benefit to
-setting aside some stars for validation tests of PSF extrapolation. 
+setting aside some stars for validation tests of PSF extrapolation.
 In addition to using all the stars in a given visit, there is useful information in the
 wavefront sensors and the guide CCDs that may be used to regularize the PSF
 reconstruction in a visit. We might read out guider CCDs in different ways to better
@@ -119,13 +119,13 @@ radian,  with typical values 1 +- 0.3 radian.  This compares to a
 completely uniform distribution over the half circle with an rms of
 1.14.  As mentioned above, uniformity in cosine squared is the goal.
 Simulated observing of 100 visits to a field show this will produce
-a factor of 10 decrease in CCD-based shear systematics such as edge 
+a factor of 10 decrease in CCD-based shear systematics such as edge
 effects and the brighter-fatter x-y anisotropy.
 
 \subsection{Discussion}
 
 The RotSkyPos metric analysis shows that the majority of fields have a
-good randomization of detector angles projected on the sky. 
+good randomization of detector angles projected on the sky.
 
 There are some limitations to this observation.
 
