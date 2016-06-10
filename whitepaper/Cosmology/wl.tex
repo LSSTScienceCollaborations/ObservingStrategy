@@ -13,9 +13,9 @@
 \section{Weak Lensing}
 \def\secname{wl}\label{sec:\secname}
 
-\credit{StephenRidgway},
+\credit{tonytyson},
 \credit{jmeyers314},
-\credit{tonytyson}.
+\credit{StephenRidgway}.
 
 Much of LSST cosmology may be limited by systematic errors rather than
 photon signal-to-noise. This is especially true of weak gravitational
@@ -94,6 +94,7 @@ selected filter and simulation, a histogram of the distribution of rms
 values of RotSkyPos computed per field. It also computes basic
 statistics of these distributions.
 
+
 \subsection{Ancilliary data}
 
 We can use largescale patterns of distortions of the PSF over the 20,000 stars per exposure for
@@ -104,23 +105,84 @@ wavefront sensors and the guide CCDs that may be used to regularize the PSF
 reconstruction in a visit. We might read out guider CCDs in different ways to better
 monitor the atmosphere.
 
+
 \subsection{OpSim Analysis}
 
-\begin{figure}
-\centering\includegraphics[width=\linewidth]{figs/enigma1189RmsAnglerotSkyPosugrizybandallpropsOPSIComboHistogram.png}
-\caption{The relative angle of the detector plane with respect to the sky, RotSkyPos, as a histogram showing the number of fields vs. rms of the parameter.}
-\label{RotSkyPos}
+% \begin{figure}
+% \centering\includegraphics[width=\linewidth]{figs/enigma1189RmsAnglerotSkyPosugrizybandallpropsOPSIComboHistogram.png}
+% \caption{The relative angle of the detector plane with respect to the sky, RotSkyPos, as a histogram showing the number of fields vs. rms of the parameter.}
+% \label{RotSkyPos}
+% \end{figure}
+
+% The distribution of rms values by filter is shown in
+% \autoref{RotSkyPos} for the current candidate baseline simulation,
+% enigma\_1189.  As shown, the rms values cluster around the value 1
+% radian,  with typical values 1 +- 0.3 radian.  This compares to a
+% completely uniform distribution over the half circle with an rms of
+% 1.14.  As mentioned above, uniformity in cosine squared is the goal.
+% Simulated observing of 100 visits to a field show this will produce
+% a factor of 10 decrease in CCD-based shear systematics such as edge
+% effects and the brighter-fatter x-y anisotropy.
+
+
+\newcommand\plottwo[2]{{%
+\typeout{Plottwo included the files #1 #2}
+\centering
+\leavevmode
+\includegraphics*[width=0.45\columnwidth]{#1}%
+\hfil
+\includegraphics*[width=0.45\columnwidth]{#2}%
+}}%
+
+
+%  rotSkyPos metrics
+
+\begin{figure}[tbh!]
+\plottwo{figs/WL/minion_1016_AngularSpread_rotSkyPos_propID_54_and_i_HEAL_SkyMap.pdf}
+        {figs/WL/minion_1016_AngularSpread_rotSkyPos_u_g_r_i_z_y_propID_54_HEAL_ComboHistogram.pdf}
+\caption{\textbf{Left:} Sky map showing the distribution of the AngularSpread metric applied to the
+    angle rotSkyPos mod $\pi$, where rotSkyPos is the angle between the $+y$ camera direction and
+    North, and the modulus with period $\pi$ is taken to account for the degeneracy of angles
+    separated by $\pi$ radians for spin-2 shear systematics.  An AngularSpread of 0 indicates a
+    maximally anisotropic distribution (all visits have the rotSkyPos angle mod $\pi$), while an
+    AngularSpread of 1 indicates that visits are maximally balanced (the fraction of angles
+    rotSkyPos at $\theta$ and at $\theta + \pi/2$ are the same.)  For complete definition of the
+    AngularSpread metric, please see the text.  To leading order, shear systematics permanently
+    imprinted on the camera or lenses cancel when AngularSpread = 1.  \textbf{Right:} Distribution
+    of the AngularSpread metric applied to (rotSkyPos mod $\pi$) for all LSST filters.}
+\label{fig:WL_AngularSpread_rotSkyPos}
 \end{figure}
 
-The distribution of rms values by filter is shown in
-\autoref{RotSkyPos} for the current candidate baseline simulation,
-enigma\_1189.  As shown, the rms values cluster around the value 1
-radian,  with typical values 1 +- 0.3 radian.  This compares to a
-completely uniform distribution over the half circle with an rms of
-1.14.  As mentioned above, uniformity in cosine squared is the goal.
-Simulated observing of 100 visits to a field show this will produce
-a factor of 10 decrease in CCD-based shear systematics such as edge
-effects and the brighter-fatter x-y anisotropy.
+\begin{figure}[tbh!]
+\plottwo{figs/WL/minion_1016_Kuiper_rotSkyPos_propID_54_and_i_HEAL_SkyMap.pdf}
+        {figs/WL/minion_1016_Kuiper_rotSkyPos_u_g_r_i_z_y_propID_54_HEAL_ComboHistogram.pdf}
+\caption{\textbf{Left:} Sky map showing the distribution of the Kuiper metric (see text for
+    definition) applied to the angle rotSkyPos mod $\pi$.  A Kuiper value of 0 indicates an
+    isotropic distribution of angles (mod $\pi$), while a Kuiper value of 1 indicates a maximally
+    anisotropic distribution. \textbf{Right:} Distribution of the Kuiper metric applied to
+    (rotSkyPos mod $\pi$) for all LSST filters.}
+\label{fig:WL_Kuiper_rotSkyPos}
+\end{figure}
+
+%  ParallacticAngle metrics
+
+\begin{figure}[tbh!]
+\plottwo{figs/WL/minion_1016_AngularSpread_ParallacticAngle_propID_54_and_i_HEAL_SkyMap.pdf}
+        {figs/WL/minion_1016_AngularSpread_ParallacticAngle_u_g_r_i_z_y_propID_54_HEAL_ComboHistogram.pdf}
+\caption{Same as Fig. \ref{fig:WL_AngularSpread_rotSkyPos}, but for the parallactic angle (the angle
+    between North and zenith) instead of rotSkyPos.  The isotropy of the parallactic angle affects
+    the impact of shear systematics due to differential chromatic refraction.}
+\label{fig:WL_AngularSpread_ParallacticAngle}
+\end{figure}
+
+\begin{figure}[tbh!]
+\plottwo{figs/WL/minion_1016_Kuiper_ParallacticAngle_propID_54_and_i_HEAL_SkyMap.pdf}
+        {figs/WL/minion_1016_Kuiper_ParallacticAngle_u_g_r_i_z_y_propID_54_HEAL_ComboHistogram.pdf}
+\caption{Same as Fig. \ref{fig:WL_Kuiper_rotSkyPos}, but for the parallactic angle instead of
+    rotSkyPos.}
+\label{fig:WL_Kuiper_ParallacticAngle}
+\end{figure}
+
 
 \subsection{Discussion}
 
