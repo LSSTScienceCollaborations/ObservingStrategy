@@ -217,7 +217,7 @@ band observations with the position on the sky is shown in
 \autoref{fig:airmassenigma}.
 \item The median single-visit depths for WFD fields are (23.14, 24.47, 24.16,
 23.40, 22.23, 21.57) in the $ugrizy$ bands\footnote{Note that these values
-depend on externally supplied values for fiducial single-epoch
+depend on externally supplied values for fiducial zentih dark time single-epoch
 $5\sigma$ depths; the following values were used in analysis described
 here: (23.62, 24.85, 24.39, 23.94, 23.36, 22.45) in the $ugrizy$
 bands, respectively. These values are similar, but not identical, to the values
@@ -225,14 +225,13 @@ listed in Table 2 from the latest version (v3.1) of the LSST overview
 paper: (23.68, 24.89, 24.43, 24.00, 23.45, 22.60). This discrepancy
 is due to continuing improvements in the system performance estimates.}.
 These values are shallower than
-the zenith dark time values for two main reasons: the sky is expected to be
+the zenith dark time values for three main reasons: the sky is expected to be
 brighter for non-dark time and away from zenith, the sky brightness model
 currently implemented in \OpSim has some shortcomings (a new model will
 be implemented in version 4), and the moon avoidance is not as aggressive
-as it could be (many observations are taken very close to the moon avoidance limit of 30 degrees, rather than farther away where the sky is darker). As a result, the limiting depths above are biased bright by close
+as it could be (many observations are taken very close to the moon avoidance limit of 30 degrees, rather than farther away where the sky is darker). As a result, the median limiting depths above are brighter than typical zenith dark-time images by close
 to 1 mag in the $z$ and $y$ bands, and a few tenths of a magnitude in the
-$u$, $g$ and $i$ bands. The co-added depths are tied to single-visit bands,
-and suffer from the same bias.
+$u$, $g$ and $i$ bands. 
 \item For the 2,293 (overlapping) fields from the WFD area,
 the median number of visits in the $ugrizy$ bands is (62, 88, 199, 201, 180,
 180), respectively. Not only do these medians exceed the requested
@@ -254,7 +253,7 @@ in the $i$ band. The median airmass in the $urz$ bands is 1.25, 1.20 and 1.26
 21.1 mag/arcsec$^2$, and 17.3 mag/arcsec$^2$, respectively (for comparison,
 assumed dark sky brightness in the $ury$ bands is 23.0, 21.2 and 18.6
 mag/arcsec$^2$).  The current model sky brightness in the $y$ band is biased
-high by close to 1 mag.
+very high because most $y$ band (and many $z$ band) observations are taken in twilight where OpSim currently uses a very simple (and bright) sky model.
 \item Restricted to the Universal Cadence fields, a unique area of
 18,000 sq.deg. received at least 888 visits per field (summed over bands;
 the SRD design value is 825).
@@ -509,10 +508,10 @@ functions, that can be further optimized, as discussed in
 \item Several proposals complete after only 3-4 years, resulting in
   regions of sky where the proper motions are poorly constrained due
   to the short observing baseline.  See \autoref{fig:parapmenigma2}.
-\item The sky brightness model has systematic errors in red bands,
-  resulting in estimates of limit depths ($m_5$, both for single
+\item The sky brightness model has systematic errors, particularly in twilight time,
+  resulting in estimates of limit depths ($m_5$ for single
   visits and coadded depths) that are too shallow by about 0.3 mag in
-  the $u$ band, and 0.5 mag in the $z$ and $y$ bands.
+  the $u$ band, and 0.5-1.0 mag in the $z$ and $y$ bands.
 \item The moon avoidance angle of 30 deg. allows too many $z$ band
   observations with elevated sky brightness due to moonshine,
   resulting in about 0.2-0.3 mag shallower depth.
