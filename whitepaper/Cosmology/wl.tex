@@ -232,38 +232,62 @@ varies for a given field is through variations in the hour angle at which that f
 
 \subsection{Discussion}
 
-The RotSkyPos metric analysis shows that the majority of fields have a
-good randomization of detector angles projected on the sky.
+The RotSkyPos metrics show that the majority of fields have good randomization of detector angles
+projected on the sky.  The randomization of parallactic angles is less successful, though this is to
+be expected due to fewer knobs available to adjust the parallactic angle of observations of a given
+field.  In both cases, however, a significant fraction of fields show metric values lower than
+expected for a uniform distribution.  Regardless of the {\emph per field} criterion adopted, it is
+desirable to avoid the incidence of individual discrepant fields.  The recommended criterion for
+randomization of RotSkyPos and parallactic angle is not the behavior of the majority of the fields,
+but of the minority with the least random behavior -- the number of non-random fields should be
+minimized.
 
-There are some limitations to this observation.
+It is certain that actively controlling the statistics of RotSkyPos will require additional slewing
+of the camera rotator.  At present, the operations plan is to only slew (beyond that required to
+track the sky during exposures) when necessary to prepare for a filter change - that could be
+estimated at the equivalent of $\simeq 3$ complete rotations per night.  To engage the rotator by up
+to $\simeq 30$ degrees per visit would require $\simeq 300$ complete rotations per night, though it
+may be possible to increase isotropy with far less additional slewing.  The impact on survey
+efficiency and hardware wear and tear has not been considered.  Whether or not this uniformity could
+be achieved with less slew time if implemented in scheduling remains to be demonstrated.
 
-%First, we do not have at present a quantitative requirement for
-%randomization of this parameter.  In future development of weak
-%lensing analysis, a criterion should be developed.
+Increasing the isotropy of the parallactic angle is trickier, since the parallactic angle is only
+affected by the hour angle of observations (for a given field).  It may be possible, however, to
+adjust the scheduler cost function to better favor parallactic angle isotropy.
 
-A significant fraction of fields  have median values that are
-lower or higher than expected for a random distribution, with some far
-from uniformly distributed.  Regardless of the $per field$ criterion,
-it is desirable to avoid the incidence of individual discrepant
-fields.
 
-The recommended criterion for randomization of RotSkyPos is not the
-behavior of the majority of the fields, but of the minority with the
-least random behavior.  The number of non-random fields should be
-minimized.  A recommended metric is the count of fields with median
-RMS less then 0.8 or greater than 1.5 radians (these values to be
-reviewed again as additional experience is gained with additional
-OpSim schedule simulations and weak lensing analysis.)
-
-It is certain that actively controlling the statistics of RotSkyPos
-will require additional slewing of the camera rotator.  At present,
-the operations plan is to only slew when necessary to prepare for a
-filter change - that could be estimated at the equivalent of $\simeq
-3$ complete rotations per day.  \autoref{RotSkyPos} shows that to
-render the distribution completely uniform would require moving all
-observing angles an average of $\simeq 30$ degrees, or 300 complete
-rotations per night.  The timing of this has not been considered.
-Whether or not this uniformity could be achieved with less slew time
-if implemented in scheduling remains to be demonstrated.
-
-A similar metric for RotTelPos should be developed.
+% The RotSkyPos metric analysis shows that the majority of fields have a
+% good randomization of detector angles projected on the sky.
+%
+% There are some limitations to this observation.
+%
+% %First, we do not have at present a quantitative requirement for
+% %randomization of this parameter.  In future development of weak
+% %lensing analysis, a criterion should be developed.
+%
+% A significant fraction of fields  have median values that are
+% lower or higher than expected for a random distribution, with some far
+% from uniformly distributed.  Regardless of the $per field$ criterion,
+% it is desirable to avoid the incidence of individual discrepant
+% fields.
+%
+% The recommended criterion for randomization of RotSkyPos is not the
+% behavior of the majority of the fields, but of the minority with the
+% least random behavior.  The number of non-random fields should be
+% minimized.  A recommended metric is the count of fields with median
+% RMS less then 0.8 or greater than 1.5 radians (these values to be
+% reviewed again as additional experience is gained with additional
+% OpSim schedule simulations and weak lensing analysis.)
+%
+% It is certain that actively controlling the statistics of RotSkyPos
+% will require additional slewing of the camera rotator.  At present,
+% the operations plan is to only slew when necessary to prepare for a
+% filter change - that could be estimated at the equivalent of $\simeq
+% 3$ complete rotations per day.  \autoref{RotSkyPos} shows that to
+% render the distribution completely uniform would require moving all
+% observing angles an average of $\simeq 30$ degrees, or 300 complete
+% rotations per night.  The timing of this has not been considered.
+% Whether or not this uniformity could be achieved with less slew time
+% if implemented in scheduling remains to be demonstrated.
+%
+% A similar metric for RotTelPos should be developed.
