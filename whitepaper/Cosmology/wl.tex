@@ -64,17 +64,15 @@ Thus shear systematics will be partially reduced by randomization of the
 orientation of the camera with respect to the sky.  This is
 represented by the parameter RotSkyPos: we can construct diagnostic
 metrics that quantify the uniformity of its distribution at each sky
-position.   Given the spin 2 symmetry of shear, if the camera can rotate over a range of +/-
-90 deg, the optimal strategy for shear systematics suppression will be to aim for
-uniformity if the square of the cosine of the camera rotation angle.  i.e. +90 deg
-and -90 deg are degenerate, so we want half as much coverage at those angles than at 0 deg.
+position.   Given the spin 2 symmetry of shear, the optimal strategy for shear systematics
+will be to aim for uniformity of RotSkyPos mod $\pi$, since angles separated by $\pi$ radians
+are degenerate.
 
 Similarly, the telescope optics may harbor systematic aberrations, and
 these also could be mitigated by recording images with varying
-parallactic angle.  Another relevant parameter, RotTelPos, is
-indicative of the projected angle of the telescope optics on the sky. More
-important is the effect of atmospheric differntial chromatic refraction: re-visits to a given
-field should be distributed over HA, consistent with airmass and seeing limits.
+parallactic angle.  More important is the effect of atmospheric differential chromatic
+refraction: re-visits to a given field should be distributed over hour angles, consistent
+with airmass and seeing limits.
 
 Uniformity of depth is important, but less so than uniformity in camera
 rotator shear suppression.  Simulations have shown that for the Gold sample of galaxies,
@@ -84,15 +82,53 @@ largest effect comes from bias in weak lens magnification tomography.
 
 \subsection{Metrics}
 
-Our figure of merit for weak lensing is $\sigma_{\rm sys}$, the
-residual shear systematic error. This is related to the uniformity of
-the sky survey in ways not yet derived, but for now we can prepare by
-calculating some low-level diagnostic metrics.
+For characterizing the isotropy of rotational sampling, both for rotSkyPos and the parallactic
+angle, we investigate two metrics: the AngularSpreadMetric and the KuiperMetric.  The
+AngularSpreadMetric characterizes the balance of a set of angular values, in the sense that opposing
+angles, those separated by $\pi$ radians, have zero contribution to the AngularSpread.  The Kuiper
+statistic, which is related to the well known Kolmogorov Smirnov statistic, characterizes the
+departure of a distribution from uniform, but with the added quality of being invariant under cyclic
+transformations of the input set of angles.
 
-A metric is available for RotSkyPos.  The metric computes, for any
-selected filter and simulation, a histogram of the distribution of rms
-values of RotSkyPos computed per field. It also computes basic
-statistics of these distributions.
+The AngularSpread metric is computed as follows:  Given a set of angles $\{\theta\}_{i=1, ..., N}$,
+map these angles onto a unit circle: $(x_i, y_i) = (\cos \theta_i, \sin \theta_i)$, and find the 2D
+centroid: $(\bar{x}, \bar{y}) = \frac{1}{N} (\sum_i x_i, \sum_i y_i)$.  The AngularSpread is the
+distance of the 2D centroid from the unit circle:
+$\mathrm{AngularSpread} = 1 - \sqrt{\bar{x}^2 + \bar{y}^2}$.  An AngularSpread of 1 therefore
+corresponds to a perfectly balanced distribution, in which the averages of both $\cos \theta$ and
+$\sin \theta$ are zero, while an AngularSpread of 0 indicates a maximally anisotropic distribution
+in which every angle is identical: $\theta_i = \mathrm{const}$.  As mentioned above, weak lensing
+shear systematics cancel to first order when those systematics are separated not by an angle of
+$\pi$ radians, but by an angle of $\pi/2$ radians.  To incorporate this spin-2 nature of shear
+systematics is simple, we just multiply each angle $\theta_i$ by two before applying the
+AngularSpread metric, so that, for example, pairs of angles initially separated by $\pi/2$ radians
+become separated by $\pi$ radians and correctly cancel.
+
+While the AngularSpread metric does a good job at characterizing the balance of a distribution
+defined on a circle, it isn't directly studying the {\emph uniformity} of said distribution.  For
+instance, the AngularSpread of the angles $\{0, 0, 0, 0, \pi, \pi, \pi, \pi\}$ is zero, but the
+distribution is far from uniform.  The Kolmogorov Smirnov (KS) test is well known for investigating
+whether a set of data are consistent with a given distribution.  The KS statistic, off which the
+test is based, is defined as the maximum absolute difference in the empirical cumulative
+distribution function (CDF) of the data and the CDF of the distribution being tested.  The Kuiper
+statistic is a slight modification of the KS statistic, defined as the sum of the maximum difference
+and absolute minimum (maximally negative) difference between the empirical and test CDFs.  This
+modification is convenient for characterizing distributions defined on a circle, since it makes the
+statistic invariant under rotations of the data.  To incorporate the spin-2 nature of shear
+systematics for the Kuiper statistic, we map the values $\theta_i \rightarrow \theta_i \mod \pi$ and
+compare to the uniform distribution between 0 and $\pi$.
+
+%
+%
+% Our figure of merit for weak lensing is $\sigma_{\rm sys}$, the
+% residual shear systematic error. This is related to the uniformity of
+% the sky survey in ways not yet derived, but for now we can prepare by
+% calculating some low-level diagnostic metrics.
+%
+% A metric is available for RotSkyPos.  The metric computes, for any
+% selected filter and simulation, a histogram of the distribution of rms
+% values of RotSkyPos computed per field. It also computes basic
+% statistics of these distributions.
 
 
 \subsection{Ancilliary data}
@@ -123,6 +159,8 @@ monitor the atmosphere.
 % Simulated observing of 100 visits to a field show this will produce
 % a factor of 10 decrease in CCD-based shear systematics such as edge
 % effects and the brighter-fatter x-y anisotropy.
+
+
 
 
 \newcommand\plottwo[2]{{%
