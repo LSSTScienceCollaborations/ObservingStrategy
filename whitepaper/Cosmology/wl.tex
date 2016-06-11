@@ -70,9 +70,10 @@ are degenerate.
 
 Similarly, the telescope optics may harbor systematic aberrations, and
 these also could be mitigated by recording images with varying
-parallactic angle.  More important is the effect of atmospheric differential chromatic
-refraction: re-visits to a given field should be distributed over hour angles, consistent
-with airmass and seeing limits.
+parallactic angle.  Also important is the effect of atmospheric differential chromatic
+refraction which act along the parallactic angle.  Re-visits to a given field should be
+distributed over parallactic angles (or equivalently, hour angles), consistent with
+airmass and seeing limits.
 
 Uniformity of depth is important, but less so than uniformity in camera
 rotator shear suppression.  Simulations have shown that for the Gold sample of galaxies,
@@ -114,21 +115,11 @@ distribution function (CDF) of the data and the CDF of the distribution being te
 statistic is a slight modification of the KS statistic, defined as the sum of the maximum difference
 and absolute minimum (maximally negative) difference between the empirical and test CDFs.  This
 modification is convenient for characterizing distributions defined on a circle, since it makes the
-statistic invariant under rotations of the data.  To incorporate the spin-2 nature of shear
-systematics for the Kuiper statistic, we map the values $\theta_i \rightarrow \theta_i \mod \pi$ and
-compare to the uniform distribution between 0 and $\pi$.
-
-%
-%
-% Our figure of merit for weak lensing is $\sigma_{\rm sys}$, the
-% residual shear systematic error. This is related to the uniformity of
-% the sky survey in ways not yet derived, but for now we can prepare by
-% calculating some low-level diagnostic metrics.
-%
-% A metric is available for RotSkyPos.  The metric computes, for any
-% selected filter and simulation, a histogram of the distribution of rms
-% values of RotSkyPos computed per field. It also computes basic
-% statistics of these distributions.
+statistic invariant under rotations of the data.  The larger the test statistic (which ranges
+between 0 and 1), the larger the difference between the empirical distribution and the test
+distribution.  To incorporate the spin-2 nature of shear systematics in the Kuiper statistic, we map
+the values $\theta_i \rightarrow \theta_i \mod \pi$ and compare to the uniform distribution between
+0 and $\pi$.
 
 
 \subsection{Ancilliary data}
@@ -143,6 +134,23 @@ monitor the atmosphere.
 
 
 \subsection{OpSim Analysis}
+
+The distribution of AngularSpread for $2 \times$ rotSkyPos is shown in
+\autoref{fig:WL_AngularSpread_rotSkyPos} for the lastest baseline OpSim run, minion\_1016.  The left
+panel shows a sky map for the i-band (in this and the following figures, the sky maps vary only
+minimally between the two principal lensing filters, $r$ and $i$), while the right panel shows a
+histogram of values for each LSST filter.  The distribution of the Kuiper statistic for rotSkyPos
+mod $\pi$ is similarly shown in \autoref{fig:WL_Kuiper_rotSkyPos}.  While we do not currently have a
+method to quantitatively connect the distribution of rotSkyPos to cosmological systematics, these
+figures appear to indicate that rotSkyPos is already being well sampled in current simulations.
+
+The distribution of parallactic angles is similarly shown in figures
+\autoref{fig:WL_AngularSpread_ParallacticAngle} and \autoref{fig:WL_Kuiper_ParallacticAngle}.  These
+figures show significantly less isotropy and significantly more structure across the survey
+footprint than those for rotSkyPos, likely due to the fact that, unlike rotSkyPos, the parallactic
+angle is independent of the camera rotator position.  Hence the parallactic angle is more tightly
+constrained by geometry than rotSkyPos.  In fact, the only mechanism by which the parallactic angle
+varies for a given field is through variations in the hour angle at which that field is observed.
 
 % \begin{figure}
 % \centering\includegraphics[width=\linewidth]{figs/enigma1189RmsAnglerotSkyPosugrizybandallpropsOPSIComboHistogram.png}
