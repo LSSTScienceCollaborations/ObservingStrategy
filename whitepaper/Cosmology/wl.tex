@@ -13,11 +13,11 @@
 \section{Weak Lensing}
 \def\secname{wl}\label{sec:\secname}
 
-\credit{tonytyson},
 \credit{jmeyers314},
+\credit{tonytyson},
 \credit{StephenRidgway}.
 
-Much of LSST cosmology may be limited by systematic errors rather than photon
+Much of LSST cosmology may be limited by systematic errors rather than
 signal-to-noise. This is especially true of weak gravitational lensing,  which
 relies on very accurate (\ie low bias), but very low signal-to-noise,
 measurements of the shapes of galaxies, and high signal-to-noise measurements of
@@ -31,24 +31,45 @@ redshifts, which in turn demands precise and accurate knowledge of the point
 spread function, astrometry, and photometry. These measurements are influenced
 by the interaction of light with the Earth's atmosphere, the telescope optics,
 and the CCD sensors. Sysematics in the shear are introduced in each case.
-Methods have been developed for suppressing these systematics in current lensing
-surveys. These and new methods will be applied to the LSST survey.
+Observing strategies have been developed for suppressing these systematics in
+current lensing surveys, such as the DLS. These and new methods will be applied
+to the LSST survey.  The observed shear is a convolution of the PSF with the
+intrinsic galaxy image.  The observed shear thus has additive systematics (some
+of which arise in the CCD due to the anisotropic brighter-fatter effect) as well
+as multiplicative systematics (due to PSF convolution).
 
-Over the sample of 3-4 billion galaxies, the shear systematics must be below one
-part in 10,000 for additive shear, and one part in 1000 for multiplicative
-shear. Each visit to a sky patch encounters these systematics. Some observing
-strategies can effectively randomize these over all visits to a field.  Below we
-discuss the observing strategies for suppressing shear systematics and metrics
-for their success.
+$$ \gamma_{obs} = (1+m) \gamma + c  $$ where $m$ is the multiplicative and $c$
+is the additive systematic.
+
+From the LSST SRD requirements on residual systematics in the shear-shear
+correlation function one can specify the level of residual shear systematics.
+Over the sample of 3-4 billion galaxies, the shear systematics must be below 3
+parts in 10,000 for additive shear $|c|$, and 3 parts in 1000 for multiplicative
+shear $|m|$. Each visit to a sky patch encounters these systematics. In
+particular, each re-visit to a given field generates the same CCD-based additive
+shear systematic.  Some observing strategies can effectively randomize these
+over all visits to a field.  It is important to note that the full survey
+shear-shear correlation error due to these systematics is expected to be no
+better than the corresponding systematic in any given field after all re-visits
+to that field.  This is because the  useful angular scales in cosmic shear are
+less than a field radius, and the systematics floor  in shear-shear correlation
+is set therefore by the floor in any one typical field.  Below we discuss the
+observing strategies for suppressing shear systematics and metrics for their
+success.
 
 \subsection{Target Selection}
 
 Image quality must be uniformly good in the bands used for weak lens shear.
-These will be the $r$ and $i$ bands.   Depending on the current weather and
-seeing, the scheduler will have a list of priorities for next-field, based on
-prior history of coverage. Nearby fields in need of coverage in these bands will
-be given high priority if the seeing is better than some specified value, likely
-0.7 arcsec FWHM.
+These will be mainly the $r$ and $i$ bands. It is possible that the $z$ band
+will also be used for shear measurement.  The decision on which field to observe
+next must be based mainly on its WL priority.  Depending on the current weather
+and seeing, the scheduler will have a list of priorities for next-field, based
+on prior history of coverage.  The relevant parameters are seeing, depth, and
+coverage at some CCD orientation relative to the sky.  Nearby fields in need of
+coverage in these bands will be given high priority if the seeing is better than
+some specified value, likely 0.7 arcsec FWHM. An optimum strategy would also
+consider the needs for coverage at an easily achievable CCD orientation relative
+to sky.
 
 
 \subsection{Target Measurements}
@@ -60,7 +81,8 @@ of LSST observing have shown that a combination of x-y dithering on the sky and
 pipeline processing with pixel re-map (to cancel much of the CCD frame fixed
 distortions) can get well within a factor of ten of the goal for shear
 systematics residuals.  Simulations which add camera angle dithering show that
-the goal can be achieved in fields with relatively uniform seeing history.
+the goal can be achieved in fields with relatively uniform seeing history (Jee
+and Tyson 2011).
 
 Thus shear systematics will be partially reduced by randomization of the
 orientation of the camera with respect to the sky.  This is represented by the
@@ -73,14 +95,18 @@ degenerate.
 Similarly, the telescope optics may harbor systematic aberrations, and these
 also could be mitigated by recording images with varying parallactic angle.
 Also important is the effect of atmospheric differential chromatic refraction
-which act along the parallactic angle.  Re-visits to a given field should be
+which acts along the parallactic angle.  Re-visits to a given field should be
 distributed over parallactic angles (or equivalently, hour angles), consistent
-with airmass and seeing limits.
+with airmass and seeing limits.  Note that wide HA coverage for a given field
+will also  be helpful in order to efficiently achieve full 180 deg coverage in
+CCD sky angle.
 
+As argued below, initial survey depth is more important than survey area.
 Uniformity of depth is important, but less so than uniformity in camera rotator
 shear suppression.  Simulations have shown that for the Gold sample of galaxies,
 uniformity at the 0.2 mag level in limiting magnitude produces little shear
-bias. The largest effect comes from bias in weak lens magnification tomography.
+bias. The largest effect comes from bias in weak lens magnification tomography
+(Morrison et al. 2012).
 
 
 \subsection{Metrics}
@@ -90,7 +116,7 @@ the parallactic angle, we investigate two metrics: the AngularSpreadMetric and
 the KuiperMetric.  The AngularSpreadMetric characterizes the balance of a set of
 angular values, in the sense that opposing angles, those separated by $\pi$
 radians, have zero contribution to the AngularSpread.  The Kuiper statistic,
-which is related to the well known Kolmogorov Smirnov statistic, characterizes
+which is related to the well known Kolmogorov-Smirnov statistic, characterizes
 the departure of a distribution from uniform, but with the added quality of
 being invariant under cyclic transformations of the input set of angles.
 
@@ -111,10 +137,10 @@ AngularSpread metric, so that, for example, pairs of angles initially separated
 by $\pi/2$ radians become separated by $\pi$ radians and correctly cancel.
 
 While the AngularSpread metric does a good job at characterizing the balance of
-a distribution defined on a circle, it isn't directly studying the {\emph
-uniformity} of said distribution.  For instance, the AngularSpread of the angles
-$\{0, 0, 0, 0, \pi, \pi, \pi, \pi\}$ is zero, but the distribution is far from
-uniform.  The Kolmogorov Smirnov (KS) test is well known for investigating
+a distribution defined on a circle, it does not directly address the {\emph
+{uniformity}} of said distribution.  For instance, the AngularSpread of the
+angles $\{0, 0, 0, 0, \pi, \pi, \pi, \pi\}$ is zero, but the distribution is far
+from uniform.  The Kolmogorov-Smirnov (KS) test is well known for investigating
 whether a set of data are consistent with a given distribution.  The KS
 statistic, off which the test is based, is defined as the maximum absolute
 difference in the empirical cumulative distribution function (CDF) of the data
@@ -130,17 +156,6 @@ Kuiper statistic, we map the values $\theta_i \rightarrow \theta_i \mod \pi$ and
 compare to the uniform distribution between 0 and $\pi$.
 
 
-\subsection{Ancilliary data}
-
-We can use largescale patterns of distortions of the PSF over the 20,000 stars
-per exposure for PSF regularization in the per-CCD PSF fitting. In the per CCD
-fits, there is a benefit to setting aside some stars for validation tests of PSF
-extrapolation. In addition to using all the stars in a given visit, there is
-useful information in the wavefront sensors and the guide CCDs that may be used
-to regularize the PSF reconstruction in a visit. We might read out guider CCDs
-in different ways to better monitor the atmosphere.
-
-
 \subsection{OpSim Analysis}
 
 The distribution of AngularSpread for $2 \times$ rotSkyPos is shown in
@@ -149,10 +164,15 @@ minion\_1016.  The left panel shows a sky map for the i-band (in this and the
 following figures, the sky maps vary only minimally between the two principal
 lensing filters, $r$ and $i$), while the right panel shows a histogram of values
 for each LSST filter.  The distribution of the Kuiper statistic for rotSkyPos
-mod $\pi$ is similarly shown in \autoref{fig:WL_Kuiper_rotSkyPos}.  While we do
-not currently have a method to quantitatively connect the distribution of
-rotSkyPos to cosmological systematics, these figures appear to indicate that
-rotSkyPos is already being well sampled in current simulations.
+mod $\pi$ is similarly shown in \autoref{fig:WL_Kuiper_rotSkyPos}. Jee and Tyson
+did a study of the shear residual systematics due to known LSST CCD
+brighter-fatter anisotropy in 100 revisits to a single field with random angular
+orientations and sampling seeing from the expected distribution.  The needed
+factor of 10 suppression of the CCD-based shear systematic was obtained,
+reaching the SRD floor on cosmic shear systematics (WL systematics workshop, Dec
+2015).    While we do not currently have a method to quantitatively connect the
+distribution of rotSkyPos to cosmological systematics, these figures appear to
+indicate that rotSkyPos is already being well sampled in current simulations.
 
 The distribution of parallactic angles is similarly shown in figures
 \autoref{fig:WL_AngularSpread_ParallacticAngle} and
@@ -247,6 +267,80 @@ variations in the hour angle at which that field is observed.
 \end{figure}
 
 
+\subsection{Ancilliary data}
+
+Optimal observing strategy relies on the use of all relevant data, with current
+and historical coverage per field.  Ancilliary data, and auxilliary uses of the
+science exposures, play an important role informing next-field strategy.  We can
+use large scale patterns of distortions of the PSF over the 20,000 stars per
+exposure for PSF regularization in the per-CCD PSF fitting.  In the per CCD fits,
+there is a benefit to setting aside some stars for validation tests of PSF
+extrapolation.  These data may be used as a metric for image quality and thus
+the ranked value of an exposure for shear systematics removal.  Fields with poor
+image quality rise to the top of the priority list for re-observing at that
+camera angle.  In addition to using all the stars in a given visit, there is
+useful information in the wavefront sensors and the guide CCDs that may be used
+to regularize the PSF reconstruction in a visit.  We might read out guider CCDs
+in different ways to better monitor the atmosphere.
+
+\subsection{Deep vs Wide}
+
+As outlined above, many revisits to each field spanning many RotSkyPos angles
+aids the suppression  of shear systematics.  For a given vist exposure time this
+leads to a deep survey.  There are several advantages to a deep survey over a
+shallow-wide survey for WL science.  A stragegy question for LSST is whether to
+go wide first and then deep, or the reverse.
+
+There are actually several drivers for depth over area, given fixed observing
+time and camera+telescope etendue.  This observing strategy maximizes the
+cosmological S/N either by maximizing the signal or minimizing the noise.
+
+First, it boosts the amplitude of the cosmic shear signals due to the increased
+amplitude of the lensing kernel.  Given the same lens mass, the amplitude of
+lensing signals is a simple function of the two distances: observer-to-lens
+versus lens-to-source. For example, when a lens is at z = 0.5, the shear at z =
+1.1 is nearly twice that at z = 0.7, leading to a factor of 4 ratio in
+correlation function amplitudes.  Thus, a deep survey can take advantage of the
+geometric effect of gravitational lensing more efficiently.
+
+Second, it enables a longer redshift baseline to break parameter degeneracies.
+For example, shallower surveys with wider area are not efficient in shrinking
+the length of the "banana" in the $\Omega_M$-$\sigma_8$ plane because of the $\sigma_8 \Omega_M = \mathrm{constant}$ 
+degeneracy.  The deep strategy compensates for the loss of
+volume due to a reduced area by extending the volume along the line of sight.
+
+Third, deep surveys provide more useful galaxies per area.  This merit does not
+entirely overlap with the second point.  In addition to new sources at higher
+redshift, the fainter limiting magnitude enables detection of fainter galaxies
+at a given redshift and better S/N.  Needless to say, the increased source
+density reduces shape noise caused by intrinsic ellipticity dispersion.  Shape
+noise is reduced by larger number of source galaxies per square arcminute 
+$n_\mathrm{eff}$.
+
+Fourth, it mitigates the effects of intrinsic alignments (IA), an important 
+theoretical systematic in precision cosmic
+shear.  Current studies (Heymans et al. 2013) indicate that their effects are
+dominated by LRGs.  Because a deep survey can access fainter galaxies, the net IA
+systematic decreases because the fraction of the LRGs decreases at fainter
+limiting magnitude. Using the approach of Joachimi et al. (2011),  at z = 0.5
+the amplitude of the IA power spectrum is reduced by a factor of two for an
+increase the limiting r magnitude from 24 to 27 mag.
+
+For WL cosmic shear the volume at 5-60 arcmin scales and over a wide range of
+redshift is most important. Once a fair sampling of “cosmic variance” is
+achieved the depth matters most, because of the z-width of the lensing kernel.
+With fixed survey duration on a camera+telescope of fixed etendue, it is better
+to prioritize depth in order to maximize the WL cosmological S/N.  In
+particular, for the LSST survey it would be helpful to have perhaps 5 widely
+spaced deep drilling fields done early and deeper than the main survey, in order
+to explore detailed observing strategies -- particularly the angle dither
+scheme.  By the same reasoning, it would be important to cover  a siginifant
+area [perhaps 2000 sq.deg] to full depth during the first year of the survey.
+This would allow full assment of asystematics, and could be chosen to overlap
+the WFIRST footprint.
+
+
+
 \subsection{Discussion}
 
 The RotSkyPos metrics show that the majority of fields have good randomization
@@ -276,6 +370,15 @@ Increasing the isotropy of the parallactic angle is trickier, since the
 parallactic angle is only affected by the hour angle of observations (for a
 given field).  It may be possible, however, to adjust the scheduler cost
 function to better favor parallactic angle isotropy.
+
+In summary, image quality weighted randomization of RotSkyPos is required at
+10-20\% accuracy.   Randomization of parallactic angle is also desired, but the
+accuracy is TBD.  Interestingly there is an excellent  opportunity to combine
+these two randomizations in an efficient observing strategy which actually
+minimizes the number of camera rotations.   Re-visits to a field over a range of
+HA and with camera rotations assures full 180 deg range coverage for CCD
+coordinates relative to sky.  A metric for this can be written and run with
+OpSim to explore optimization, including minimizing camera rotations. 
 
 
 % The RotSkyPos metric analysis shows that the majority of fields have a
