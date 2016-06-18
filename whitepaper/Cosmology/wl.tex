@@ -30,7 +30,7 @@ stringent requirements on our ability to accurately measure galaxy shapes and
 redshifts, which in turn demands precise and accurate knowledge of the point
 spread function, astrometry, and photometry. These measurements are influenced
 by the interaction of light with the Earth's atmosphere, the telescope optics,
-and the CCD sensors. Sysematics in the shear are introduced in each case.
+and the CCD sensors. Systematics in the shear are introduced in each case.
 Observing strategies have been developed for suppressing these systematics in
 current lensing surveys, such as the DLS.  These and new methods will be applied
 to the LSST survey.
@@ -43,19 +43,21 @@ $$ \gamma_\mathrm{obs} = (1+m) \gamma + c, $$
 
 where $m$ is the multiplicative and $c$ is the additive systematic.  From the
 LSST SRD requirements on residual systematics in the shear-shear correlation
-function one can specify the level of residual shear systematics.  Over the
-sample of 3-4 billion galaxies, the shear systematics must be below 3 parts in
-10,000 for additive shear $|c|$, and 3 parts in 1000 for multiplicative shear
-$|m|$.  Each visit to a sky patch encounters these systematics.  In particular,
-each re-visit to a given field generates the same CCD-based additive shear
-systematic.  Some observing strategies can effectively randomize these over all
-visits to a field.  It is important to note that the full survey shear-shear
-correlation error due to these systematics is expected to be no better than the
-corresponding systematic in any given field after all re-visits to that field.
-This is because the useful angular scales in cosmic shear are less than a field
-radius, and the systematics floor in shear-shear correlation is set therefore
-by the floor in any one typical field.  Below we discuss the observing
-strategies for suppressing shear systematics and metrics for their success.
+function one can specify the level of residual shear systematics at which
+statistical uncertainties become subdominant.  Over the sample of 3-4 billion
+galaxies, the shear systematics must be below 3 parts in 10,000 for additive
+shear $|c|$, and 3 parts in 1000 for multiplicative shear $|m|$.  Each visit to
+a sky patch encounters these systematics.  In particular, each re-visit to a
+given field generates the same CCD-based additive shear systematic.  Some
+observing strategies can effectively randomize these over all visits to a field.
+It is important to note that the full survey shear-shear correlation error due
+to these systematics is expected to be no better than the corresponding
+systematic in any given field after all re-visits to that field. This is because
+the useful angular scales in cosmic shear are less than a field radius, and the
+systematics floor in shear-shear correlation is set therefore by the floor in
+any one typical field.  Below we discuss the observing strategies for
+suppressing shear systematics and metrics for their success.
+
 
 \subsection{Target Selection}
 
@@ -284,13 +286,14 @@ useful information in the wavefront sensors and the guide CCDs that may be used
 to regularize the PSF reconstruction in a visit.  We might read out guider CCDs
 in different ways to better monitor the atmosphere.
 
+
 \subsection{Deep vs Wide}
 
 As outlined above, many revisits to each field spanning many RotSkyPos angles
-aids the suppression  of shear systematics.  For a given vist exposure time this
-leads to a deep survey.  There are several advantages to a deep survey over a
-shallow-wide survey for WL science.  A stragegy question for LSST is whether to
-go wide first and then deep, or the reverse.
+aids the suppression of shear systematics.  For a given visit exposure time
+this leads to a deep survey.  There are several advantages to a deep survey over
+a shallow-wide survey for WL science.  A strategy question for LSST is whether
+to go wide first and then deep, or the reverse.
 
 There are actually several drivers for depth over area, given fixed observing
 time and camera+telescope etendue.  This observing strategy maximizes the
@@ -315,9 +318,8 @@ Third, deep surveys provide more useful galaxies per area.  This merit does not
 entirely overlap with the second point.  In addition to new sources at higher
 redshift, the fainter limiting magnitude enables detection of fainter galaxies
 at a given redshift and better S/N.  Needless to say, the increased source
-density reduces shape noise caused by intrinsic ellipticity dispersion.  Shape
-noise is reduced by larger number of source galaxies per square arcminute
-$n_\mathrm{eff}$.
+density reduces the impact of shape noise caused by intrinsic ellipticity
+dispersion.
 
 Fourth, it mitigates the effects of intrinsic alignments (IA), an important
 theoretical systematic in precision cosmic shear.  Current studies
@@ -342,7 +344,6 @@ This would allow full assessment of systematics, and could be chosen to overlap
 the WFIRST footprint.
 
 
-
 \subsection{Discussion}
 
 The RotSkyPos metrics show that the majority of fields have good randomization
@@ -350,7 +351,7 @@ of detector angles projected on the sky.  The randomization of parallactic
 angles is less successful, though this is to be expected due to fewer knobs
 available to adjust the parallactic angle of observations of a given field.  In
 both cases, however, a significant fraction of fields show metric values lower
-than expected for a uniform distribution.  Regardless of the {\emph per field}
+than expected for a uniform distribution.  Regardless of the \emph{per field}
 criterion adopted, it is desirable to avoid the incidence of individual
 discrepant fields.  The recommended criterion for randomization of RotSkyPos and
 parallactic angle is not the behavior of the majority of the fields, but of the
