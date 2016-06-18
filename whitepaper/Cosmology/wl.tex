@@ -81,8 +81,8 @@ of LSST observing have shown that a combination of x-y dithering on the sky and
 pipeline processing with pixel re-map (to cancel much of the CCD frame fixed
 distortions) can get well within a factor of ten of the goal for shear
 systematics residuals.  Simulations which add camera angle dithering show that
-the goal can be achieved in fields with relatively uniform seeing history (Jee
-and Tyson 2011).
+the goal can be achieved in fields with relatively uniform seeing history
+\citep{Jee&Tyson2011}.
 
 Thus shear systematics will be partially reduced by randomization of the
 orientation of the camera with respect to the sky.  This is represented by the
@@ -106,7 +106,7 @@ Uniformity of depth is important, but less so than uniformity in camera rotator
 shear suppression.  Simulations have shown that for the Gold sample of galaxies,
 uniformity at the 0.2 mag level in limiting magnitude produces little shear
 bias. The largest effect comes from bias in weak lens magnification tomography
-(Morrison et al. 2012).
+\citet{Morrison2012}.
 
 
 \subsection{Metrics}
@@ -164,15 +164,16 @@ minion\_1016.  The left panel shows a sky map for the i-band (in this and the
 following figures, the sky maps vary only minimally between the two principal
 lensing filters, $r$ and $i$), while the right panel shows a histogram of values
 for each LSST filter.  The distribution of the Kuiper statistic for rotSkyPos
-mod $\pi$ is similarly shown in \autoref{fig:WL_Kuiper_rotSkyPos}. Jee and Tyson
-did a study of the shear residual systematics due to known LSST CCD
-brighter-fatter anisotropy in 100 revisits to a single field with random angular
-orientations and sampling seeing from the expected distribution.  The needed
-factor of 10 suppression of the CCD-based shear systematic was obtained,
-reaching the SRD floor on cosmic shear systematics (WL systematics workshop, Dec
-2015).    While we do not currently have a method to quantitatively connect the
-distribution of rotSkyPos to cosmological systematics, these figures appear to
-indicate that rotSkyPos is already being well sampled in current simulations.
+mod $\pi$ is similarly shown in \autoref{fig:WL_Kuiper_rotSkyPos}.
+\citet{Jee&Tyson2011} did a study of the shear residual systematics due to known
+LSST CCD brighter-fatter anisotropy in 100 revisits to a single field with
+random angular orientations and sampling seeing from the expected distribution.
+The needed factor of 10 suppression of the CCD-based shear systematic was
+obtained, reaching the SRD floor on cosmic shear systematics (WL systematics
+workshop, Dec 2015).    While we do not currently have a method to
+quantitatively connect the distribution of rotSkyPos to cosmological
+systematics, these figures appear to indicate that rotSkyPos is already being
+well sampled in current simulations.
 
 The distribution of parallactic angles is similarly shown in figures
 \autoref{fig:WL_AngularSpread_ParallacticAngle} and
