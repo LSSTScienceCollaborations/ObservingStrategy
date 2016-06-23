@@ -1,0 +1,14 @@
+# A Camera Speed Test
+ 
+How fast can we push this camera?
+ 
+*Proposer(s): Wesley C. Fraser*
+ 
+ 
+# Proposed Commissioning Observation/Experiment
+ 
+I propose we take a series of shorter, ~1-4 s, exposures to test how quickly this camera can be read out. Short exposures would enable a series of stellar occultation experiments, including occultations of known asteroids and trans-Neptunian objects, or searches fo large (>1000 km), distant (>200 AU) objects that would not be detectable through normal image surveys. Conversations with people inside the LSST team have suggested the camera will overheat if read out too frequently. I would like to determine what the highest imaging frequency is that can be achieved without risking the equipement. 
+ 
+# Technical and/or Science Motivation
+ 
+I suspect shorter exposures will stress the system harder than longer exposures. Thus, I suggest the use of ~1s exposure times, though this time could be adjusted shorter or longer a bit to satisfy other engineering requirement. As any occultations experiment that uses the full field camera will likely run for many hours, it seems prudent to perform a commissioning experiment that is not too much shorter. Roughly an hour's duration sounds about right. Further, there will be a trade off between exposure duration and capable read-out cadence. So I suggest we run a series of roughly 3 twenty minute runs, each using a separate exposure time. eg. 0.5, 2, and 5 seconds. With appropriate temperature monitoring, we can assess the engineering camera performance, and understand the scientific capabilities at once.
