@@ -34,14 +34,15 @@ spread function, astrometry, and photometry.  These measurements are influenced
 by the interaction of light with the Earth's atmosphere, the telescope optics,
 and the CCD sensors.  Systematics in the shear are introduced in each case.
 Observing strategies have been developed for suppressing these systematics in
-current lensing surveys, such as the DLS \red{citation needed}.  These and new
-methods will be applied to the LSST survey.
+current lensing surveys, such as the Deep Lens
+Survey\footnote{\url{dls.physics.ucdavis.edu}}.  These and new methods will be
+applied to the LSST survey.
 
 To leading order, we can express the effect of shear systematics in the observed
 shear $\gamma^\mathrm{obs}_i$ as a small linear perturbation of the true shear
 $\gamma_i$,
 
-$$ \gamma^\mathrm{obs} = (1+m_i) \gamma_i + c_i, $$
+$$ \gamma_i^\mathrm{obs} = (1+m_i) \gamma_i + c_i, $$
 
 where $m_i$ is the multiplicative and $c_i$ is the additive systematic in the
 ith shear component.  From the LSST SRD requirements on residual systematics in
@@ -66,14 +67,14 @@ for suppressing shear systematics and metrics for their success.
 Image quality must be uniformly good in the bands used for weak lensing shear.
 These will be mainly the $r$ and $i$ bands, though it is possible that the $z$
 band will also be used for shear measurement.  The decision on which field to
-observe next must be based mainly on its weak lensing priority \red{citation
-needed. Also, is this really decided yet?  Isn't figuring this out part of the
-point of this paper?}.  Depending on the current weather and seeing, the
-scheduler will have a list of priorities for next-field, based on prior history
-of coverage.  The relevant parameters are seeing, depth, and camera rotation
-angle with respect to North and to zenith.  Nearby fields in need of coverage in
-these bands will be \red{should be?} given high priority if the seeing is better
-than some specified value, likely 0.7 arcsec FWHM.
+observe next must be based mainly on its weak lensing priority \citep[Sec 3.1
+and Figure 14.4]{2009arXiv0912.0201L}.  Depending on the current weather and
+seeing, the scheduler will have a list of priorities for next-field, based on
+prior history of coverage.  The relevant parameters are seeing, depth, and
+camera rotation angle with respect to North and to zenith. Nearby fields in need
+of coverage in these bands should be given high priority if the seeing is better
+than some specified value, likely 0.7 arcsec FWHM \citep[Sec
+14.5.2]{2009arXiv0912.0201L}.
 
 \subsection{Target Measurements}
 
@@ -103,8 +104,9 @@ mitigated by varying the parallactic angle, though the exact relationship is
 complex since the parallactic angle sets both the DCR magnitude and direction
 for a given observation.  Re-visits to a given field should be distributed over
 parallactic angles (or equivalently, hour angles), consistent with airmass and
-seeing limits.  Note that wide HA coverage for a given field will also be
-helpful in order to efficiently achieve full 180 deg coverage in CCD sky angle.
+seeing limits.  Note that wide hour angle coverage for a given field will also
+be helpful in order to efficiently achieve full 180 deg coverage in CCD sky
+angle.
 
 As argued below, survey depth is more important than survey area early in the
 survey.  Uniformity of depth is important, but less so than uniformity in camera
@@ -171,18 +173,19 @@ minion\_1016.  The left panel shows a sky map for the i-band (in this and the
 following figures, the sky maps vary only minimally between the two principal
 lensing filters, $r$ and $i$), while the right panel shows a histogram of values
 for each LSST filter.  The distribution of the Kuiper statistic for rotSkyPos
-mod $\pi$ is similarly shown in \autoref{fig:WL_Kuiper_rotSkyPos}.
-\citet{Jee&Tyson2011} did a study of the shear residual systematics due to known
-LSST CCD brighter-fatter anisotropy in 100 revisits to a single field with
-random angular orientations and seeing sampled from the expected distribution.
-The needed factor of 10 suppression of the CCD-based shear systematic was
-obtained, reaching the SRD floor on cosmic shear systematics (weak lensing
-systematics workshop, Dec 2015).    While we do not currently have a method to
-quantitatively connect the distribution of rotSkyPos to cosmological
-systematics, these figures appear to indicate that rotSkyPos is already being
-well sampled in current simulations due to the rotator tracking the sky during
-exposures, being subject to cable wrap limits, and occasionally reseting to
-0-degrees for filter changes.
+mod $\pi$ is similarly shown in \autoref{fig:WL_Kuiper_rotSkyPos}. Using
+techniques similar to \citet{Jee&Tyson2011}, they did a study of the shear
+residual systematics due to known LSST CCD brighter-fatter anisotropy in 100
+revisits to a single field with random angular orientations and seeing sampled
+from the expected distribution. The needed factor of 10 suppression of the
+CCD-based shear systematic was obtained, reaching the SRD floor on cosmic shear
+systematics (presented at weak lensing systematics workshop, Dec 2015)
+\footnote{\url{https://indico.bnl.gov/conferenceDisplay.py?confId=1604}}. While
+we do not currently have a method to quantitatively connect the distribution of
+rotSkyPos to cosmological systematics, these figures appear to indicate that
+rotSkyPos is already being well sampled in current simulations due to the
+rotator tracking the sky during exposures, being subject to cable wrap limits,
+and occasionally reseting to 0-degrees for filter changes.
 
 The distribution of parallactic angles is similarly shown in
 \autoref{fig:WL_AngularSpread_ParallacticAngle} and
@@ -283,8 +286,8 @@ Optimal observing strategy relies on the use of all relevant data, with current
 and historical coverage per field.  Ancilliary data, and auxilliary uses of the
 science exposures, play an important role informing next-field strategy.  We can
 use large scale patterns of distortions of the PSF over the 20,000 stars per
-exposure for PSF regularization in the per-CCD PSF fitting.  In the per CCD fits,
-there is a benefit to setting aside some stars for validation tests of PSF
+exposure for PSF regularization in the per-CCD PSF fitting.  In the per CCD
+fits, there is a benefit to setting aside some stars for validation tests of PSF
 extrapolation.  These data may be used as a metric for image quality and thus
 the ranked value of an exposure for shear systematics removal.  Fields with poor
 image quality rise to the top of the priority list for re-observing at that
@@ -297,10 +300,10 @@ in different ways to better monitor the atmosphere.
 \subsection{Deep vs Wide}
 
 As outlined above, many revisits to each field spanning many RotSkyPos angles
-aids the suppression of shear systematics.  For a given total survey exposure
-time this leads to a deep survey.  There are several advantages to a deep survey
-over a shallow-wide survey for weak lensing science.  A strategy question for
-LSST is whether to go wide first and then deep, or the reverse.
+aids the suppression of shear systematics.  For a given per-visit exposure time
+this leads to a deep survey.  There are several advantages to a deep survey over
+a shallow-wide survey for weak lensing science.  A strategy question for LSST is
+whether to go wide first and then deep, or the reverse.
 
 There are actually several drivers for depth over area, given fixed observing
 time and camera+telescope etendue.  A deep observing strategy maximizes the
@@ -331,12 +334,12 @@ ellipticity dispersion.
 
 Fourth, it mitigates the effects of intrinsic alignments (IA), an important
 theoretical systematic in precision cosmic shear.  Current studies
-\citep{Heymans2013} indicate that their effects are dominated by LRGs.  Because
-a deep survey can access fainter galaxies, the net IA systematic decreases
-because the fraction of the LRGs decreases at fainter limiting magnitude. Using
-the approach of \citet{Joachimi2011},  at z = 0.5 the amplitude of the IA power
-spectrum is reduced by a factor of two for an increase in the limiting r
-magnitude from 24 to 27 mag.
+\citep{Heymans2013} indicate that IA effects are dominated by luminous red
+galaxies (LRGs).  Because a deep survey can access fainter galaxies, the net IA
+systematic decreases because the fraction of the LRGs decreases at fainter
+limiting magnitude.  Using the approach of \citet{Joachimi2011}, at z = 0.5 the
+amplitude of the IA power spectrum is reduced by a factor of two for an increase
+in the limiting r magnitude from 24 to 27 mag.
 
 For cosmic shear the volume at 5-60 arcmin scales and over a wide range of
 redshift is most important. Once a fair sampling of “cosmic variance” is
@@ -344,7 +347,7 @@ achieved the depth matters most, because of the z-width of the lensing kernel.
 With fixed survey duration on a camera+telescope of fixed etendue, it is better
 to prioritize depth in order to maximize the weak lensing cosmological
 signal-to-noise ratio.  In particular, for the LSST survey it would be helpful
-to have perhaps 5 widely spaced deep drilling fields done early and deeper than
+to have several widely spaced deep drilling fields done early and deeper than
 the main survey, in order to explore detailed observing strategies --
 particularly the angle dither scheme.  By the same reasoning, it would be
 important to cover a significant area [perhaps 2000 sq.deg] to full depth during
@@ -383,14 +386,15 @@ given field).  It may be possible, however, to adjust the scheduler cost
 function to better favor parallactic angle isotropy.
 
 In summary, image quality weighted randomization of RotSkyPos is required at
-10-20\% accuracy \red{What does randomization accuracy mean?  Source?}.
-Randomization of parallactic angle is also desired, but the accuracy is TBD.
-Interestingly there is an excellent  opportunity to combine these two
-randomizations in an efficient observing strategy which actually minimizes the
-number of camera rotations.   Re-visits to a field over a range of HA and with
-camera rotations assures full 180 deg range coverage for CCD coordinates
-relative to sky.  A metric for this can be written and run with OpSim to explore
-optimization, including minimizing camera rotations.
+10-20\% scatter in image quality over the sample of visits (2015 simulation
+mentioned above).  Randomization of parallactic angle is also desired, but a
+requirement is yet to be determined.  Interestingly, there is an excellent
+opportunity to combine these two randomizations in an efficient observing
+strategy which actually minimizes the number of camera rotations.   Re-visits to
+a field over a range of hour angles and with camera rotations assures full 180
+degree range coverage for CCD coordinates relative to sky.  A metric for this
+can be written and run with OpSim to explore optimization, including minimizing
+camera rotations.
 
 
 % The RotSkyPos metric analysis shows that the majority of fields have a
