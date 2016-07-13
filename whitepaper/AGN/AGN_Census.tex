@@ -11,7 +11,7 @@
 % ====================================================================
 
 % \section{AGN Selection and Census}
-\section{AGN Selection and Census}
+\section{AGN Selection and Census}\label{sec:AGNCensus}
 \def\secname{\chpname:census}\label{sec:\secname}
 
 \credit{ohadshemmer},
@@ -20,10 +20,15 @@
 \credit{AstroVPK},
 \credit{ScottAnderson}
 
-The primary goal for AGN science is to maximize the discovery of AGN
-with the LSST and construct the largest possible inventory of sources
-spanning the widest possible ranges in the redshift-luminosity parameter
-space. This, in turn, will provide tighter constraints within the context
+The basic figure of merit for AGN science is the total number of AGNs
+discovered in the entire LSST survey, as a function of luminosity and
+redshift. The main goal is therefore to adjust the Observing Strategy
+in order to maximize this number.
+%The primary goal for AGN science is to maximize the discovery of AGN
+%with the LSST and construct the largest possible inventory of sources
+%spanning the widest possible ranges in the redshift-luminosity parameter
+%space. This, in turn, will provide 
+Doing so will provide tighter constraints within the context
 of various cosmological science cases, such as quasar clustering,
 $z>6$ quasars and reionization, and strong gravitational lensing.
 
@@ -36,8 +41,9 @@ $z>6$ quasars and reionization, and strong gravitational lensing.
 It is expected that $\approx 10^7 - 10^8$ AGNs will be selected in the
 main LSST survey using a combination of criteria, split broadly into
 four categories: colors, astrometry, variability, and multiwavelength
-matching with other surveys. The LSST observing strategy will affect
-mostly the first three of these categories as described further below.
+matching with other surveys \citep{2009arXiv0912.0201L, 2013AAS...22124710S}.
+The LSST Observing strategy will mostly affect the first three of these
+categories as described further below.
 
 {\bf Colors:} The LSST observing strategy will determine the depth in each band,
 as a function of position on the sky, and will thus affect the color selection
@@ -83,7 +89,7 @@ distribution of the observations.
 
 The most critical measurement for the AGN census is having a reliable
 and precise redshift for each source, obtained both from a photometric
-and an astrometric redshift.
+and an `astrometric' redshift from DCR.
 
 
 % --------------------------------------------------------------------
@@ -111,9 +117,9 @@ corresponding uncertainties on the photomteric redshift.
 2) Estimate the {\bf number of quasars at $z>6$ that LSST can discover}
 during a single visit, as well as in the entire survey, and verify that
 these numbers do not fall short of the original predictions. This
-requires computing the limiting $Y$-band magnitude, averaged
-across the sky for the nominal OpSim, as well as assessing the
-ability to reject L and T dwarfs via astrometry.
+simply requires computing the maximum depth in the $Y$-band (for both 
+single visits and the coadd), averaged across the sky for the nominal
+OpSim, as well as assessing the ability to reject L and T dwarfs via astrometry.
 
 3) Assess the effect of {\bf non-simultaneous colors on AGN selection.}
 First, the term color should be clearly defined. Potential definitions
@@ -166,11 +172,19 @@ and precise astrometric redshifts.
 For predicting the number of detected $z>6$ quasars
 %Compare this magnitude to the
 %one required for identifying $\geq1000$ quasars at $z\geq6$.
-the current enigma\_1189 OpSim for the main, i.e., WFD survey, gives a
+the current 
+%enigma\_1189{}
+aquila\_{}1110 OpSim for the main, i.e., WFD survey, gives a
 single-visit $5\sigma$-depth
 %old number computed in Bremerton: $Y=22.36$ mag,
-$Y=21.51$ mag, and for the final co-added $5\sigma$-depth the median is $Y=24.36$.
-These limits are correspondingly deeper (i.e., better) than the original predictions
+%$Y=21.51$ enigma_\_{}1189
+$Y = 21.45$ mag, and for the final co-added $5\sigma$-depth the median is 
+%$Y=24.36$. Enigma\_{}1189
+$Y = 23.07$
+These limits are 
+%correspondingly deeper (i.e., better) than enigma\_{}1189
+comparable to
+the original predictions
 (see Fig.~\ref{fig:zgt6}).
 % (See the AAS poster from 2013: http://www.lsst.org/sites/default/files/221-RC-247.10-AAS_shemmer.pptx.pdf).
 
