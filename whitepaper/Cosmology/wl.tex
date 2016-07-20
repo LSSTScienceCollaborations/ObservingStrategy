@@ -52,7 +52,7 @@ $$ \gamma_i^\mathrm{obs} = (1+m_i) \gamma_i + c_i, $$
 where $m_i$ is the multiplicative and $c_i$ is the additive systematic in the
 ith shear component.  These systematics have contributions from the atmosphere
 and the detector+optics.  Systematic errors in the PSF of the relatively
-brighter calibation stars in the field are propagated to errors in the galaxy
+brighter calibration stars in the field are propagated to errors in the galaxy
 shear, depending on the relative half-light sizes of the  galaxy and star.  To
 leading order, the PSF contributions to the additive systematic are a linear
 function of the PSF ellipticity.  The best observing strategies cause the
@@ -98,7 +98,7 @@ camera focal plane.  Using data from vendor CCDs, simulations of LSST observing
 have shown that a combination of x-y dithering on the sky and pipeline
 processing with pixel re-map (to cancel much of the CCD frame fixed distortions)
 can get well within a factor of ten of the goal for shear systematics residuals.
-Simulations which add camera angle dithering show that the residual sgear
+Simulations which add camera angle dithering show that the residual shear
 systematics goal can be achieved in fields with relatively uniform seeing
 history \citep{Jee&Tyson2011}.  To average down the PSF systematics over many
 re-visits we benefit from uniformly distributed image quality over the ensemble.
@@ -133,7 +133,7 @@ galaxies, uniformity at the 0.2 mag level in limiting magnitude produces little
 shear bias.  The largest effect comes from bias in weak lensing magnification
 tomography \citet{Morrison2012}.  This is important in the joint analysis of
 LSST multi probes of cosmology.  Trends in survey depth can also propagate to
-tends in photometric redshift.  These trends must be understood, if not
+trends in photometric redshift.  These trends must be understood, if not
 minimized.
 
 
@@ -196,7 +196,7 @@ multiplicative systematics would be useful in our next OpSim runs.  A useful
 metric to be applied to full observing simulations is the mean ratio (and
 spatial variance) of observed vs simulated shear amplitudes over a large sample
 vs z-bins.  Since {\it Multi-Fit} joint star-galaxy fits to individual visits
-will be used for data analysis, thse PSF effects will be inherited for each
+will be used for data analysis, these PSF effects will be inherited for each
 exposure and over that full field in a properly weighted fashion.  Other science
 cases value uniformity of image quality as well, and this type of metric may be
 applied during observing.
@@ -205,7 +205,7 @@ applied during observing.
 \subsection{OpSim Analysis}
 
 The distribution of AngularSpread for $2 \times$ rotSkyPos is shown in
-\autoref{fig:WL_AngularSpread_rotSkyPos} for the lastest baseline OpSim run,
+\autoref{fig:WL_AngularSpread_rotSkyPos} for the latest baseline OpSim run,
 minion\_1016.  The left panel shows a sky map for the i-band (in this and the
 following figures, the sky maps vary only minimally between the two principal
 lensing filters, $r$ and $i$), while the right panel shows a histogram of values
@@ -228,7 +228,7 @@ of the CCD-based shear systematic residuals (post pixel remap pipeline
 correction) was obtained, reaching the SRD floor on cosmic shear systematics
 (presented at weak lensing systematics workshop, Dec 2015)
 \footnote{\url{https://indico.bnl.gov/conferenceDisplay.py?confId=1604}}.  Of
-course, the requirements for spatial dithering for shear systematics residual
+course, the requirements for spatial dithering for shear systematics residuals
 depend on the precision of the pixel processing for removal of the CCD based
 additive shear systematic.  We assume that this pixel level remap in the DM
 pipeline cannot correct to better than 3 times the rms errors in the lab tests
@@ -351,7 +351,7 @@ aids the suppression of additive shear systematics.  For a given per-visit
 exposure time this leads to a deep survey, due to the multitude of visits.
 There are several advantages to a deep survey over a shallow-wide survey for
 weak lensing science, especially for dark energy where a range of lens redshifts
-is required to sample the growth of dark matter structure from low redshit to
+is required to sample the growth of dark matter structure from low redshift to
 redshift beyond 1.  A strategy question for LSST is whether to go wide first and
 then deep, or the reverse.  There are actually several drivers for depth over
 area, given fixed observing time and camera+telescope etendue.  Provided that
