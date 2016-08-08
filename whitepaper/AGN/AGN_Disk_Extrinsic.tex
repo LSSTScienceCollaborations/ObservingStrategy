@@ -21,22 +21,25 @@
 
 \credit{tanguita}
 
-Microlensing due to stars projected on top of individual
-gravitationally-lensed quasar images produces additional magnification.
-Using the fact that the Einstein radii of stars in lensing galaxies
-closely match the scales of different emission regions in
-high-redshift AGNs (micro-arcseconds), analyzing microlensing induced
-flux variations statistically on individual systems allows us to
-measure ``sizes'' of AGN regions.
+Microlensing test due to stars projected on top of individual
+gravitationally-lensed quasar images produces additional magnification which can be used to probe the structure of the background high-redshift AGN.
 
-Assuming a thermal profile for accretion disks, sizes in different emission
-wavelengths will be probed and as such, placing constraints on the slope of this
-thermal profile. Given the sheer number of lensed systems that LSST is expected
-to discover ($\sim8000$), this will allow us to stack systems for better
+
+The microlensing method is based on the fact that the variability amplitude depends on the quasar size relative to the Einstein radius of a star (projected into the source plane). By comparing the variability amplitudes at different wavelengths, we can determine the relative source sizes and test the predicted wavelength scaling: Assuming a thermal profile for accretion disks, sizes in different emission
+wavelengths can be probed and as such, constraints on the slope of this
+thermal profile can be obtained. Given the sheer number of lensed systems that LSST is expected to discover ($\sim8000$), this will allow us to stack systems for better
 constraints and hopefully determine the {\it luminosity and redshift evolution
 of the disk size and profile.} Due to the typical relative velocities of lenses,
 microlenses, observers (Earth) and source AGN, the microlensing variation
 timescales are between months to a few decades.
+
+
+%Using the fact that the Einstein radii of stars in lensing galaxies
+%closely match the scales of different emission regions in
+%high-redshift AGNs (micro-arcseconds), analyzing microlensing induced
+%flux variations statistically on individual systems allows us to
+%measure ``sizes'' of AGN regions.
+
 
 % --------------------------------------------------------------------
 
@@ -113,21 +116,17 @@ we could perhaps consider close consecutive photometric bands as
 equivalent accretion disk regions, however this would mean weaker
 constraints on the thermal profile.
 
-{\bf Caveats:} The above estimates correspond to those obtained by
-\citet{MosqueraandKochanek2011} for all \emph{currently} known lensed quasars.
-It is important to take into consideration that the timescales directly depend
-on the projected velocities of the three-plane system: the redshifts of the lens
-and source as well as their respective peculiar velocites along the CMB dipole
-velocity in the direction towards the lensing galaxies (observer's peculiar
-velocity). Therefore, every new system will have a different timescale.
-Furthermore, the discussion above is centered on high magnification events. Even
-though these produce the most valuable information, low magnification events or
+Note that the discussion above is centered on high magnification events. Even
+though these produce the most valuable information on short timescales (e.g., \citealt{Anguita2008, eigenbrod2008}), low magnification events or
 \emph{no} magnification events can set constraints on the structure of high
-redshift AGN as well as the lensing galaxies (e.g. \citealt{gilmerino2005}).
-Finally, long timescale high accuracy multiband data as will be delivered by
+redshift AGN as well as the lensing galaxies (e.g. \citealt{gilmerino2005}). In particular, since isolated high magnification events are rare, accretion disk size studies with microlensing are done by a Bayesian analysis of long (several years) light curves of microlensing in every lensed image simultaneously compared to source plane microlensing magnification patterns (e.g., \citealt{kochanek2004,blackburne2014}). Constraints using this method rely on the fact that even when not strong, several uncorrelated microlensing induced variations in all lensed images as well as anomalous (single epoch) flux ratios (e.g., \citealt{bate2008,rojas2014}) in all available bands need to be consistent with the underlying geometrical structure of the background accretion disk. It is important to take into consideration that the timescales directly depend on the projected velocities of the three-plane system: the redshifts of the lens
+and source as well as their respective peculiar velocites along the CMB dipole velocity in the direction towards the lensing galaxies (observer's peculiar velocity).
+
+Long timescale high accuracy multi-band data as will be delivered by
 LSST have never been obtained to date for any lensed system. Coupling this fact
 to a factor $\sim$10 increase on the number of lensed quasars known, LSST will
 enable of totally new and unprecedented perspectives for microlensing studies.
+
 %
 % Important Note: all this science needs to be done on lensed quasars
 % with measured or very short time delays to remove the intrinsic
@@ -144,6 +143,13 @@ accretion disk structure as explained above and the Broad Emission Line Region (
 requirement is one spectroscopic observation to constrain the ``macro''
 magnification ratios from narrow emission lines.
 
+\begin{center}
+	\begin{figure}[hbt]
+		\includegraphics[width=\textwidth]{figs/agn/sim_ex.png}
+		\caption{Ten year long simulated light curve for image A of RXJ1131-1231 using $\sigma_0$=2.0 light days at 2000\AA{}, $\alpha$=0.75, $\kappa$=0.494, $\gamma$=0.562 and 40\% of matter in compact form (stars). The left panel shows the concentric Gaussian emission regions observed by the LSST filters projected on top of the magnification pattern. The center panel shows the light curves with a ``perfect'' cadence. The right panel shows the magnitude values interpolated at epochs observed by LSST at the location of the system according the the ``Baseline Cadence'' (\opsimdbref{db:baseCadence})) Opsim output. The quasar was assumed to have the same intrinsic brightness in each band for easier comparison of variations between bands.}
+		\label{microsimcurve}
+	\end{figure}
+\end{center}
 
 % --------------------------------------------------------------------
 
@@ -163,6 +169,8 @@ number of high magnification events recovered/missed considering the
 cadence and season length in every LSST band and as the precision of the
 brightness measurement.
 
+
+
 Accretion disk size and slope metric: This metric will do a full
 analysis of the ``pure'' microlensing light curves to recover these two
 physical AGN parameters. The figure of merit would be the accuracy of
@@ -180,9 +188,24 @@ independently. Time Delay Challenge submissions will thus include recovered
 ``pure'' microlensing
 light curves in addition to measured time-delays. By doing the reverse
 procedure, i.e. using these ``pure'' microlensing light curves to statistically
-re obtain the input accretion disk sizes and thermal slopes, we will be able to
+re-obtain the input accretion disk sizes and thermal slopes, we will be able to
 quantitatively measure the accuracy of the intrinsic accretion disk parameter
 estimations for a given survey strategy.
+
+
+
+We have build a preliminary tool that extracts micro lensing light curves from source plane magnification patterns as will be observed by LSST, taking into account:
+\begin{itemize}
+\item Projected peculiar velocities of the observer (projected CMB dipole in the direction of the system), lens and source.
+\item Bulk motion of stars in the lensing galaxy (from the stellar velocity dispersion of the lens).
+\item Specific LSST observing epochs in the direction of the system (from Opsim outputs).
+\item Thermal profile slope of the accretion disk $\alpha$.
+\item Scale size of the accretion disk $\sigma_{0}(\lambda)$ at a given wavelength $\lambda$.
+\item Smooth (dark matter) to compact (stars) matter ratio on top of lensed quasar images.
+\item ´´Macro'' lens model parameters on top of lensed quasar images: Surface mass density $\kappa$ and shear $\gamma$.
+\end{itemize}
+
+\noindent In its current state, the tool assumes simple face-on concentric Gaussian emission regions for the accretion disk. An example of such a curve is shown in figure \ref{microsimcurve}. To recover the figure of merit, (measurement accuracy of $\alpha$ and $\sigma_0$), light curves generated with this tool for a given realistic lensed quasar system ($\kappa$, $\gamma$, s and velocity dispersion of the lensing galaxy as well as time delays between lensed images) for every region in the sky need to analyzed using the above mentioned statistical analyses to recover the input accretion disk parameters.
 
 
 % microlensing - convolve microlensing timescales for QSOs we already know
@@ -195,7 +218,7 @@ estimations for a given survey strategy.
 \label{sec:\secname:analysis}
 
 Much like the cosmology with lensed quasar time delays, we expect a strong
-dependence of both proposed metrics with night-to-night cadence, uniformity and
+dependence of the proposed metrics with night-to-night cadence, uniformity and
 season length. Maximizing these will maximize the likelihood of recovering high
 magnification events, which in turn will provide the most stringent constraints
 on
@@ -204,7 +227,7 @@ faster and stronger magnification events, in an ideal scenario, bluer bands woul
 tighter night-to-night cadence.
 
 \begin{center}
-	\begin{figure}
+	\begin{figure}[hbt]
 		\includegraphics[width=\textwidth]{figs/agn/NightSep_seasonLength.pdf}
 		\caption{Median Night Separation in days (left) and median season length in months (right) for all bands in the current ``Baseline Cadence'' (\opsimdbref{db:baseCadence}, top) and ``No Visit Pairs''	(\opsimdbref{db:NoVisitPairs}, bottom) opsim outputs.}
 		\label{microfig}
@@ -217,6 +240,20 @@ strategy in comparison to the baseline strategy due to the smaller inter-night
 gaps and longer season lengths in the g band. In both cases the night-to-night
 cadence in the longer wavebands are compatible with the detection of most
 microlensing events. On the other hand, in the u and g bands in both survey strategies it might compromise the results. Furthermore, in all LSST bands the spread in the night-to-night cadence (uniformity) and season length will likely dominate the uncertainties.
+
+\begin{center}
+	\begin{figure}[hbt]
+		\includegraphics[width=\textwidth]{figs/agn/ulens_sim.png}
+		\caption{Relative brightness fluctuations seen by LSST compared to ``perfect'' cadence for four systems as described in the text. The current ``Baseline Cadence'' (\opsimdbref{db:baseCadence}) and ``No Visit Pairs''	(\opsimdbref{db:NoVisitPairs}) opsim outputs are shown.All systems assumed to have accretion disk parameters of $\sigma_0$=2.0 light days and $\alpha$=0.75. Ratios are the median of 10000 simulated light curves.}
+		\label{ulens_sim}
+	\end{figure}
+\end{center}
+
+
+Given the nature of the commonly used statistical analyses to constrain the structure of accretion disk (accretion disk and slope metric), the accuracy of the recovery of the parameters will depend on the amount of brightness variations seen in the light curves even if no high magnification events are seen. As a first assessment, we have used the light curve simulation tool outlined above to generate 10000 light curves for images A of three well known lensed systems where microlensing has been studied: RXJ1131-1231, HE0230-2130 and Q2237+0305. Additionally, given the very fast time scales expected for Q2237+0305 due to the relative redshifts of the source and lens, we also generate 10000 light curves for this system as if it was located in one of the LSST Deep Drilling Fields. All systems where assumed to have a size ($\sigma_0$) and slope ($\alpha$) parameters of 2.0 light days at $\lambda$=2000\AA{} and 0.75, respectively. Even when this experiment does not yield our proposed figure of merit, it does allow to compare the relative performance of different observing strategy regarding microlensing signal recovery.
+
+The results of this experiment are shown in Figure \ref{ulens_sim}. For this analysis, at least for the four systems studied, we can see that even when the ``No Visit Pairs'' observing strategy shows a slightly better prospect compared to the ``Baseline Cadence'' for our science case, the difference is negligible. Note also that with the exception of Q2227+0305 (due to its very short time scales), both observing strategies will be able to map the expected microlensing induced brightness variations at a very high rate. It is important to consider that this is an optimistic analysis because the photometric uncertainties (including the dominating ones that come from the intrinsic variability correction from time delay measurements) have not been taken into account.
+
 
 
 % % --------------------------------------------------------------------
