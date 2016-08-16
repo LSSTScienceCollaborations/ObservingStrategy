@@ -1,32 +1,22 @@
 % ====================================================================
 %+
 % SECTION:
-%    section-name.tex  % eg lenstimedelays.tex
+%    MW_SFH.tex
 %
 % CHAPTER:
-%    chapter.tex  % eg cosmology.tex
+%    galaxy.tex
 %
 % ELEVATOR PITCH:
-%    Explain in a few sentences what the relevant discovery or
-%    measurement is going to be discussed, and what will be important
-%    about it. This is for the browsing reader to get a quick feel
-%    for what this section is about.
 %
-% COMMENTS:
-%
-%
-% BUGS:
-%
-%
-% AUTHORS:
-%    Phil Marshall (@drphilmarshall)  - put your name and GitHub username here!
 %-
 % ====================================================================
 
 \section{Star Formation History of the Milky Way}
-\def\secname{MW_SFH}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
+\def\secname{MW_SFH}\label{sec:\secname}
 
-\noindent{\it Author Name(s)} % (Writing team)
+\credit{pmmcgehee}
+
+\label{sec:\secname:targets}
 
 % This individual section will need to describe the particular
 % discoveries and measurements that are being targeted in this section's
@@ -42,35 +32,73 @@
 % with a discussion of any risks that have been identified, and how
 % these could be mitigated.
 
-Summary: this important topic does not seem to have been developed in
-previous versions of the LSST science book or Ivezic et
-al. (2008). LSST gives the opportunity to survey extensive areas
+LSST gives the opportunity to survey extensive areas
 around star formation regions in the Southern hemisphere. Among
 others, it would allow to study the Initial Mass Function down to the
 sub-stellar limit across different environments. Young stars are
 efficiently identified by their variability.
 
-A short preamble goes here. What's the context for this science
-project? Where does it fit in the big picture?
+Section 8.10.2 in the LSST Science Book (p298--299) provides a
+  thorough scientific motivation for the characterization of young
+  stars through variability, including discussion of the observational
+  signatures of the diverse physical phenomena driving observed time
+  variability. The general observable is strong, irregular flaring
+  across the entire $ugrizy$~bandpass of LSST. Flaring can last from
+  minutes to years, and at amplitudes from a few tenths to several
+  magnitudes.
+
+% WIC - the following para has been removed since it's already present
+% verbatim at the end of Section 8.10.2 in the LSST Science Book.
+
+%LSST will increase the sample size for detailed follow-up observations
+%due its ability to survey star formations at large heliocentric
+%distances and to detect variability in embedded and highly extincted
+%young objects that would otherwise be missed in shallower
+%surveys. During its operations LSST will also provide statistics on
+%the durations of high states, for at least one important tracer
+%population (the shorter-duration EXor variables).
 
 % --------------------------------------------------------------------
 
 \subsection{Target measurements and discoveries}
-\label{sec:keyword:targets}
+\label{sec:\secname:targets}
 
-In order to assess the ability of LSST to 1) identify and 2) classify
-YSO we need to quantify the variability timescales and amplitudes of
-both Class I/II (stars with disks) and Class III (WTTS). Inclusion of
-eruptive variables (FUor/Exor) is appropriate as well - see section
-8.10.2 in the Science Book.
+The nature of the variability in young stars changes with evolutionary
+status. For the youngest stars still undergoing significant mass
+accretion, FU Orionis and related outbursts can occur due to
+circumstellar disk instabilities. As the natal environment dissipates
+and the accretion rates drops, the stars take on a Classical T Tauri
+appearance where the variability is primarily due to changes in the
+accretion flow and rotational modulation of hot spots resulting from
+accretion shocks on the protostellar photosphere. Also present are the
+signature of cool spots arising from strong magnetic fields. This cool
+spot rotational modulation is responsible for the variability in the
+disk-less, and older, weak-line T Tauri stars.
 
-In brief, WTTS are quasi-periodic with amplitudes of 0.1 to 0.3 mag
-and periods 1 to ~15 days - so comparable to gamma Dor stars (see
-Figure 8.17 in the SB). Given the temporal evolution of cool spots, a
-period recovery analysis such as shown for RRL stars (se FIgure 8.20
-in the SB) is likely difficult. The embedded systems and CTTS are
-irregular variables but shown have distinctive colors due to
-extinction + UB/blue excess arising from to accretion shocks.
+Of particular interest are the FUor and EXor variables, which are
+  named after the prototype objects FU Orionis \citep{hartmann96}
+  and EX Lupi \citep{herbig01} respectively, and for which
+  only a relatively small number of examples are known. In these
+  pre-main sequence objects, eruptive outbursts of up to 6 magnitudes
+  have been observed, with high state durations from years to
+  decades. In addition to triggering follow-up observations, LSST
+  should be able to set the first population constraints on the
+  duration of high states, particularly for the short end of the
+  timescale distribution for these eruptive variables.
+
+
+% \new{(WIC: Material already in LSST Science Book removed.)}
+
+
+%{\bf CTTS and WTTS material goes here.}
+
+%Here are the references cited above:\\
+%Hartmann \& Kenyon 1996, ARA\&A, 34, 207 \\
+%Herbig et al. 2001, PASP, 113, 1547 \\
+%Herbig 1977, ApJ, 217, 693 \\
+%Aspin et al. 2009, ApJ, 692L, 67 \\
+%Hodapp et al. 1996, ApJ, 468, 861 \\
+%McGehee et al. 2004, ApJ, 616, 1058 \\
 
 
 %Describe the discoveries and measurements you want to make.
@@ -84,30 +112,79 @@ extinction + UB/blue excess arising from to accretion shocks.
 % --------------------------------------------------------------------
 
 \subsection{Metrics}
-\label{sec:keyword:metrics}
+\label{sec:\secname:metrics}
 
-Quantifying the response via MAF metrics: definition of the metrics,
-and any derived overall figure of merit.
+In order to assess the ability of LSST to 1) identify and 2) classify
+Young Stellar Objects we need to quantify the variability timescales
+and amplitudes of both Class I/II (stars with disks, including
+Classical T Tauris) and Class III (Weak-line T Tauris).  Inclusion of
+eruptive variables (FUor/EXor) is appropriate as well.
+
+In brief, Weak-line T-Tauris are quasi-periodic with amplitudes of 0.1
+to 0.3 mag and periods 1 to $\sim$15 days, so their variability is
+comparable to that of $\gamma$ Dor stars. Given the temporal evolution
+of cool spots, a period recovery analysis such as shown for RR Lyrae
+stars is likely difficult.  The embedded systems and Classical T
+Tauris are irregular variables but have been shown to have distinctive
+colors due to extinction and the ultraviolet and blue excess arising
+from accretion shocks.
+
+\autoref{table:pseudoForExor} shows a possible Figure of Merit for the
+recovery by LSST of the distribution of EXor high-state duration in
+outburst.
+
+
+\begin{table}
+\small
+\begin{tabular}{c p{12cm}}
+& {\it Figure of Merit for recovery of EXor high--state duration distribution}\\
+\hline
+1.  & Produce ASCII lightcurve for eruptive outburst \\
+2.  & Initialise large array to store the maps of fraction detected as a function of duration and amplitude. \\
+2.  & for {\it duration T} in range \{min, max\}:  \\
+3.  & ~~~~ for {\it amplitude A} in range \{min, max\}: \\
+4.  & ~~~~~~~~~~ run {\tt mafContrib/transientAsciiMetric} \\
+5.  & ~~~~~~~~~~ store the spatial map of the fraction detected for this (A, T) pair \\
+6.  & Initialise master arrays to hold the run of duration distribution measurements.\\
+7. & Produce distribution of high--state durations and amplitudes from which the simulations will be drawn. \\
+8.  & for {\it iDraw} in range \{1, nDraws\}:\\
+9.  & ~~~~ construct model population with input duration distribution \\
+10.  & ~~~~ Apply the stored metrics from 2-5 to measure fraction recovered \\
+11.  & ~~~~ Characterize the duration distribution for this draw \\
+12. & ~~~~ Fill the {\it iDraw}'th entry in the master arrays. \\
+13. & {\bf FoM 1:} Compute the median and variance of the upper/lower quintiles. \\
+14. & {\bf FoM 2:} Evaluate the bias between recovered and input high-state duration. \\
+\hline
+\end{tabular}
+\caption{\new{Steps for Figure of Merit recovering the distribution
+  for the duration of EXor high states. See Section \ref{sec:MW_SFH:targets} }}
+\label{table:pseudoForExor}
+\end{table}
 
 
 % --------------------------------------------------------------------
 
-\subsection{OpSim Analysis}
-\label{sec:keyword:analysis}
+%\subsection{OpSim Analysis}
+%\label{sec:\secname:analysis}
 
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
-
+%OpSim analysis: how good would the default observing strategy be, at
+%the time of writing for this science project?
 
 % --------------------------------------------------------------------
 
 \subsection{Discussion}
-\label{sec:keyword:discussion}
+\label{sec:\secname:discussion}
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+Galactic star formation regions are largely found at low Galactic
+latitudes or within the Gould Belt structure. As such study of young
+stars with LSST is closely tied to other science goals concerning the
+Milky Way Disk and is subject to the concerns of both crowded field
+photometry and the observing cadence along the Milky Way.
 
+The embedded and Classical T Tauri stars also undergo significant and
+rapid color changes due to accretion processes. The ability of LSST to
+track these variations in color could be limited by the interval
+between filter changes.
 
 % ====================================================================
 

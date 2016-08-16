@@ -1,7 +1,7 @@
 % ====================================================================
 
 \chapter{The Magellanic Clouds}
-\def\secname{\chpname:MCs}\label{sec:\secname}
+\def\chpname{MCs}\label{chp:\chpname}
 
 Chapter Editors:
 \credit{dnidever},
@@ -38,7 +38,7 @@ Finally, the large number of observing opportunities that the LSST
 mosaic of the main bodies of the Clouds with extraordinary image
 quality, an invaluable legacy product of LSST.
 
-We have several important scientific goals:
+We have several important scientific questions:
 \begin{enumerate}
 
 \item What are the stellar and dark matter mass profiles of the
@@ -55,7 +55,7 @@ form in them (REFS)
 motions from HST and from the ground (REFS) have measured the bulk
 motions of the Clouds and have, in combination with spectroscopy,
 begun to unravel the three dimensional internal dynamics of the
-Clouds...
+Clouds.
 
 \item How do exoplanet statistics in the Magellanic Clouds compare to
 those in the Milky Way?  Lund calculation shows can measure transits
@@ -69,10 +69,10 @@ DD white paper.
 \item Light echoes from supernovae and explosive events.  Echoes can
 give view of such events unavailable by any other means, ref. papers
 by Rest et al.
-
 \end{enumerate}
 
-These can be grouped into main overarching science themes:
+
+These questions can be grouped into main overarching science themes:
 \begin{enumerate}
 \item {\bf Galaxy formation evolution}: The study of the formation and
 evolution of the Large and Small Magellanic Clouds (LMC and SMC,
@@ -104,7 +104,7 @@ LMC stars detected at $\sim$21$^{\circ}$ ($\sim$18 kpc) and SMC stars
 at $\sim$10$^{\circ}$ ($\sim$11 kpc) from their respective centers.
 The extended stellar debris from their interaction likely extends to
 even larger distances.  Therefore, to get a complete picture of the
-complex strucure of the MCs will require a mini-survey that covers
+complex structure of the MCs will require a mini-survey that covers
 $\sim$2000 deg$^2$.  At this point, it not entirely clear how to
 include this into the metrics.  Note, that for the second science case
 this is not as much of an issue since the large majority of the
@@ -125,11 +125,12 @@ of the MCs.
 % --------------------------------------------------------------------
 
 \new{Below is a generic list of things we want to measure in the
-Magellanic Clouds. These will need to be divided among a small set of
-science sections, each describing a focused science project that has a
-figure of merit, that is a function of various diagnostic metrics. The
-final version of the chapter tex file probably will not contain this
-list.}
+Magellanic Clouds.}
+% These will need to be divided among a small set of
+% science sections, each describing a focused science project that has a
+% figure of merit, that is a function of various diagnostic metrics. The
+% final version of the chapter tex file probably will not contain this
+% list.
 
 \begin{enumerate}
 
@@ -145,53 +146,6 @@ list.}
 %  bulk proper motion
 %  LMC spiral motion, streaming motions
 %  internal velocity dispersion
-
-In the last decade work with $HST$ has been able to measure the bulk
-tangential (in the plane of the sky) velocities ($\sim$300 km/s) of
-the Magellanic Clouds (Kallivayalil et al.\ 2016a,b,2013) and even the
-rotation of the LMC disk (van der Marel \& Kallivayalil 2014). Gaia
-will measure precise proper motions of stars to $\sim$20th magnitude
-which will include the Magellanic red giant branch stars. LSST will be
-complementary to Gaia and measure proper motions of stars in the
-$\sim$20--24 mag range that includes Magellanic main-squence stars
-which are far more numerous than giants, and, therefore, more useful
-for mapping extended stellar structures. The LSST 10-year survey
-proper motion precision will be $\sim$0.3--0.4 mas/yr at LMC
-main-sequence turnoff at r$\approx$22.5--23.  This will allow for
-accurate measmurent of proper motions of {\em individual stars} at the
-$\sim$5$\sigma$ level.
-
-Besides measuring kinematics, the LSST proper motions can be used to
-produce clean samples of Magellanic stars clean samples of background
-galaxies (no proper motions) and this is commonly done with $HST$ data
-of
-
-In addition, LSST proper motions can be used to improve star/galaxy
-separation which is quite significant for faint, blue Magellanic
-main-sequence stars.
-
-streaming motions
-%can we do individual LMC stars with LSST, or small groups?
-
-% SRD says want 0.2 mas/yr accuracy over the course of the survey
-% 0.2 mas/yr at r=20.5 (similar to Gaia)
-% ~0.25 mas/yr at r=22
-% ~0.3 mas/yr at r=22.5 LMC turnoff
-% ~0.4 mas/yr at r=23
-% 1 mas/yr for r=24
-% See Figure 21 from Ivezic et al. (2012) or slide 46 of overview-sci-reqs.pdf
-%have the astrometric precision to measure the proper motions of individual
-%Proper motion cleaning to find the giants?? gaia does that already
-%lsst can use proper motion cleaning to do star/galaxy separation as well
-%
-%The
-%The Magellanic Clouds have a large tangential velocity (in the plane of the sky) that has been
-%Gaia will be able to see the bright stuff, need lsst to get the MSTO
-%gaia/lsst synergy
-%
-%metric that calculates the proper motion accuracy of LMC MSTO stars at r=23 and calculates the sigma-level of
-%the proper motion measurement (2.0 mas/yr / sigma_pm ).
-
 
 
 %\item Parallaxes
@@ -226,8 +180,8 @@ streaming motions
 % -cadence?  cover all timescales properly
 % -what's the expected period distribution
 
-See Lund et al.\ (2015) and the exoplanet discussion in previous part
-of this paper.
+% See Lund et al.\ (2015) and the exoplanet discussion in previous part
+% of this paper.
 
 % PASP
 
@@ -257,44 +211,14 @@ of this paper.
 
 \end{enumerate}
 
-% --------------------------------------------------------------------
-
-\subsection{Common Metrics}
-\label{sec:\secname:metrics}
-
-\new{In this section we give the common diagnostic metrics that the Magellanic Clouds
-figures of merit will depend on. Many of these are defined elsewhare in this paper,
-so in the end we will probably just refer to them here.}
-
-% metric on surface brightness limit in different parts of the sky
-% to MC structure
-% could use metric for how much of the Besla stellar debris we can detect
-%  even just that region of the sky covered
-
-\begin{itemize}
-
-\item  Magellanic Clouds proper motion metric.
-It would be useful to calculate a metric that's the significance level ($\sigma$-level) of the proper motion measurement of one Magellanic MSTO star (r=23 mag).
-This would be $\sim$2.0 mas yr$^{-1}$ / $\sigma_{\rm pm}$.
-%  the precision proper motion metric that
-%  Metric that calculates the proper motion accuracy of LMC MSTO stars at r=23 and calculates the sigma-level of
-%the proper motion measurement (2.0 mas/yr / sigma_pm ).
-
-\item Another useful metric would be to calculate the surface
-brightness limit of the Magellanic structures using MSTO stars.
-
-\item Metric of how much of the expected Magellanic debris/structure
-(from Besla et al.\ 2012 model) we can detect.  This would depend
-mostly on the area covered, but we could also use the surface
-brightness limit (calculated above) directly.
-
-\end{itemize}
-
 
 % ====================================================================
 
-% TO DO: KNUT AND DAVID: \input{} science sections here!
+% PJM: moved to Future Work while MAF analysis is pending:
+% \input{MagellanicClouds/MCs_ProperMotion.tex}
 
 % ====================================================================
 
-\navigationbar
+\input{MagellanicClouds/MCs_FutureWork.tex}
+
+% ====================================================================

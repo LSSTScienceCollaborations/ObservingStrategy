@@ -1,0 +1,134 @@
+% ====================================================================
+%+
+% NAME:
+%    planets.tex
+%
+% CHAPTER:
+%    variables.tex
+%
+% ELEVATOR PITCH:
+%-
+% ====================================================================
+
+% \section{Probing Planet Populations with LSST}
+\subsection{Probing Planet Populations with LSST}
+\def\secname{planets}\label{sec:\secname}
+
+\credit{lundmb},
+\credit{shporer},
+\credit{stassun}
+
+This section describes the unique discovery space for
+extrasolar planets with LSST, namely,
+planets in relatively unexplored environments.
+
+% \subsubsection{Planets In Relatively Unexplored Environments}
+
+A large number of exoplanets have been discovered over the past few
+decades, with over 1500 exoplanets now confirmed. These discoveries are
+primarily the result of two detection methods: The radial velocity (RV)
+method where the planet's minimum mass is measured, and the transit
+method where the planet radius is measured and RV follow-up allows the
+measurement of the planet's mass and hence mean density. Other methods
+are currently being developed and use to discover an increasing number of
+planets, including the microlensing method and direct imaging. In
+addition, the Gaia mission is expected to discover a large number of
+planets using astrometry \citep{2014exha.book.....P}.
+
+The {\it Kepler} mission has an additional almost 4000 planet
+candidates. While these planet candidates have not been confirmed, the
+sample is significant enough that planet characteristics can be studied
+statistically, including radius and period distributions and planet
+occurrence rates. LSST will extend previous transiting planet searches
+by observing stellar populations that have generally not been
+well-studied by previous transiting planet searches, including star
+clusters, the galactic bulge, red dwarfs, white dwarfs (see below), and
+the magellanic clouds (see Section~7). Most known exoplanets have been
+found relatively nearby, as exoplanet systems with measured distances
+have a median distance of around 80~pc, and 80\% of these systems are
+within 320~pc (exoplanets.org). LSST is able to recover transiting
+exoplanets at much larger distances, including in the galactic bulge and
+the Large Magellanic Cloud, allowing for measurements of planet
+occurrence rates in these other stellar 
+environments \citep{2015AJ....149...16L,2015AJ....150...34J}.
+Red dwarfs have often been
+underrepresented in searches that have focused on solar-mass stars, however red
+dwarfs are plentiful, and better than 1 in 7 are expected to host earth-sized
+planets in the habitable zone \citep{2015ApJ...807...45D}.
+
+Another currently unexplored environment where LSST will be able to
+probe the exoplanet population is planets orbiting white dwarfs (WDs).
+Such systems teach us about the future evolution of planetary systems
+with main-sequence primaries, including that of the Solar System. When a
+WD is eclipsed by a planet (or any other faint low-mass object,
+including a brown dwarf or a small star) the radius and temperature
+ratios lead to a very deep eclipse, possibly a complete occultation,
+where during eclipse the target can drop below the detection threshold.
+The existence of planets orbiting WDs has been suggested
+observationally
+\citep[e.g.,][]{2009ApJ...694..805F,2009AJ....137.3191J,2010ApJ...722..725Z,2012ApJ...747..148D}.
+and theoretically \citep[e.g.,][]{2010MNRAS.408..631N}.
+A few brown dwarf companions were already discovered
+\citep[e.g.,][]{2006Natur.442..543M,2012ApJ...759L..34C,2006Sci...314.1578L,2014MNRAS.445.2106L},
+and \citet{2015Natur.526..546V}
+recently discovered a disintegrating planetary body orbiting a WD
+\citep[see also][]{2015arXiv151006434C,2016ApJ...818L...7G,2016MNRAS.458.3904R}.
+
+While most of the sky that LSST will survey will be at much lower
+cadences than transiting planet searches employ, a sufficient
+understanding of the LSST efficiency for detecting planets combined with
+the large number of targets may still provide significant results.
+Additionally, the multiband nature of LSST provides an extra benefit, as
+exoplanet transits are achromatic while many potential astrophysical
+false positives, such as binary stars, are not.
+Indeed, as demonstrated by \citet{2015AJ....149...16L}, the multi-band LSST light curves 
+can likely be combined to create merged light curves with denser sampling and effectively 
+higher cadence, enabling detection of transiting exoplanets. The deep-drilling fields in
+particular should prove to be a rich trove of transiting exoplanet detections, with 
+transit-period recoverability rates as high as $\sim$50\% or more among Hot Jupiters around 
+solar-type stars out to distances of many kpc and even the Magellanic Clouds in some cases 
+\citep{2015AJ....149...16L,2015AJ....150...34J}.
+Yields may be expected perhaps as early as the third year of LSST operations 
+(Jacklin et al., in prep).
+The ability to detect transiting planets outside of the deep-drilling fields is less certain;
+here the details of the cadence among the various passbands will likely be particularly
+important to assess carefully.
+
+
+\subsection{Metrics}
+\label{sec:\secname:metrics}
+The detection of transiting planets will be dependent on having observations
+that will provide sufficient phase coverage for transiting planets, with periods
+that can range from less than one day up to tens of days. In order to address
+this range of periods, an initial metric that can be used to address the detection
+of transiting planets is the Periodogram Purity Function, discussed more thoroughly
+in Section~5.2.1.
+
+\subsection{Discussion}
+\label{sec:\secname:discussion}
+In general, the detection of transiting exoplanets with LSST will rely on
+a small subset of potentially detectable planets that can be sufficiently
+separated from statistical noise, rather than a clear threshold in a planet's
+properties that would distinguish detectable planets vs. nondetectable planets.
+This will mean that the best calculation of planet yields will have to come
+from simulations of light curves for large numbers of stellar systems in order
+to characterize LSST. The computation time involved in this process is sufficiently
+prohibitive to prevent a metric being developed based directly on these
+simulated light curves, however future work may be able to map relationships
+between metric values for individual fields and the corresponding numbers
+of planets that can be detected.
+
+%
+% % --------------------------------------------------------------------
+%
+% \subsection{OpSim Analysis}
+% \label{sec:\secname:analysis}
+%
+% % --------------------------------------------------------------------
+%
+% \subsection{Discussion}
+% \label{sec:\secname:discussion}
+%
+% ====================================================================
+
+\navigationbar

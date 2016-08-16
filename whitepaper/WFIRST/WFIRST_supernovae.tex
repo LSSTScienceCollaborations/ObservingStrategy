@@ -1,0 +1,89 @@
+% ====================================================================
+%+
+% SECTION:
+%    WFIRST_supernovae.tex
+%
+% CHAPTER:
+%    wfirst.tex
+%
+% ELEVATOR PITCH:
+%-
+% ====================================================================
+
+\section{Supernova Cosmology with WFIRST and LSST}
+\def\secname{\chpname:supernovae}\label{sec:\secname}
+
+\credit{rubind}
+
+% This individual section will need to describe the particular
+% discoveries and measurements that are being targeted in this section's
+% science case. It will be helpful to think of a ``science case" as a
+% ``science project" that the authors {\it actually plan to do}. Then,
+% the sections can follow the tried and tested format of an observing
+% proposal: a brief description of the investigation, with references,
+% followed by a technical feasibility piece. This latter part will need
+% to be quantified using the MAF framework, via a set of metrics that
+% need to be computed for any given observing strategy to quantify its
+% impact on the described science case. Ideally, these metrics would be
+% combined in a well-motivated figure of merit. The section can conclude
+% with a discussion of any risks that have been identified, and how
+% these could be mitigated.
+%
+% A short preamble goes here. What's the context for this science
+% project? Where does it fit in the big picture?
+
+The WFIRST SN survey seeks to measure thousands of SNe Ia with excellent systematics control over a two-year period. The Science Definition Team (SDT) outlined a three-tiered cadenced imaging survey: wide to $z=0.4$ (27.44 square degrees), medium to $z=0.8$ (8.96 square degrees), deep to $z=1.7$ (5.04 square degrees). SNe discovered in the imaging would followed with IFU spectrophotometry, helping to monitor changes in SN physical parameters and the extinction distribution with redshift. However, due to the slew time (now believed to be higher than was used in the SDT survey), and high read noise in short exposures, the wide survey was very inefficient, spending a bit more than half of its time on slews, while the medium survey would spend a significant fraction of its time slewing. However, the LSST DDFs offer a path to high signal-to-noise, well calibrated, multi-band optical imaging over an even larger area than WFIRST can survey. If the wide and medium tiers are replaced with LSST DDF discoveries, then WFIRST can offer spectrophotometry (with good host-galaxy subtraction) for $\sim$ 2,000 LSST SNe, with screening spectra for $\sim$ 1-2,000 more. As the WFI and IFU operate in parallel, this survey could provide sparsely sampled NIR imaging for $\sim$ 5,000 SNe up to $z = 1$ at the same time as the spectroscopy. The joint survey would thus provide systematics control (almost certainly better than either survey alone), as well as a cross-check of LSST photometric typing and host-galaxy-only redshift assignment.
+
+
+% --------------------------------------------------------------------
+
+\subsection{Target measurements and discoveries}
+\label{sec:\secname:targets}
+
+% Describe the discoveries and measurements you want to make.
+%
+% Now, describe their response to the observing strategy. Qualitatively,
+% how will the science project be affected by the observing schedule and
+% conditions? In broad terms, how would we expect the observing strategy
+% to be optimized for this science?
+
+
+The targets of the measurements are related to those enumerated in Section~\ref{sec:supernovae:targets}. The SNe must be detected $\sim$ 10 observer-frame days before maximum light, so that there is time for a shallow screening spectrum before deeper spectrophotmetry around maximum. There should be enough visits per filter so that some photometric screening can be done before WFIRST triggers any spectroscopy. There should be an identification of the host galaxy (if seen), so that joint WFIRST/LSST photometric redshifts can be used to provide a distance-limited sample (minimizing selection effects). Finally, the light curve should continue after the SN has been sent to WFIRST, so that important light-curve parameters (date of maximum, rise time and decline time, etc.) can be measured.
+
+%All these goals can be likely be met with $\sim 3$ day rest-frame cadence ($\sim 5$ observer-frame days). LSST would measure NUV to rest-frame $V$-band (with WFIRST providing redder wavelength coverage), or observer-frame $grizY$. For a plausible SN Ia (based on the rising light curve), a series of typing/sub-typing spectra would be triggered, with increasing depth, as the confidence grew that the transient was a SN Ia. DR: in my simulations, I've assumed a depth for each filter of 26th magnitude (probably not realistic for $Y$-band, but very feasible for the other filters); is this too shallow? LSST would contribute 4 transients per day to the pool of objects observed by WFIRST. In practice, the LSST DDFs will contain more SNe Ia than this, so a random sample (perhaps sculpted in redshift) should be sent for observations.
+
+
+% --------------------------------------------------------------------
+
+\subsection{Metrics}
+\label{sec:\secname:metrics}
+
+% Quantifying the response via MAF metrics: definition of the metrics,
+% and any derived overall figure of merit.
+
+The primary metrics are based on constraining cosmological parameters; the DETF FoM is standard (although other cosmological FoMs can be constructed using eigenmode constraints). For the joint observations proposed here, we anticipate an increase in the FoM of about 20\% (DR is still working to optimize the WFIRST side of the joint survey for the best possible constraints).
+
+The cosmological metric will essentially depend on the number of SNe meeting the above targets. It will degrade if CC SNe mistakenly sent to WFIRST for followup, if SNe Ia are sent to WFIRST but the LC is lost due to weather gaps, or if the cadence and depth simply do not allow the measurement of light curve parameters. These metrics will be strongly related to those in Section~\ref{sec:supernovae:metrics}, but with more emphasis on the rising portion of the light curve.
+
+% --------------------------------------------------------------------
+
+%\subsection{OpSim Analysis}
+%\label{sec:\secname:analysis}
+
+% OpSim analysis: how good would the default observing strategy be, at
+% the time of writing for this science project?
+
+
+% --------------------------------------------------------------------
+
+%\subsection{Discussion}
+%\label{sec:\secname:discussion}
+
+% Discussion: what risks have been identified? What suggestions could be
+% made to improve this science project's figure of merit, and mitigate
+% the identified risks?
+
+
+% ====================================================================
+
+\navigationbar

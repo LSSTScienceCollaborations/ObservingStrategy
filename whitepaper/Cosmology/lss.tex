@@ -1,0 +1,201 @@
+% ====================================================================
+%+
+% SECTION NAME:
+%    lss.tex
+%
+% CHAPTER:
+%    cosmology.tex
+%
+% ELEVATOR PITCH:
+%    Large Scale Structure, Weak Lensing, and Clusters all require
+%    survey uniformity in the static 10-year survey.  A key contributor
+%    to this is the pattern of dithers adopted.
+%
+% AUTHORS:
+%   Eric Gawiser (@egawiser)
+%-
+% ====================================================================
+
+\section{Large Scale Structure:  Testing Dithering Patterns and Timescales to Improve Survey Uniformity}
+\def\secname{lss}\label{sec:\secname}
+
+\credit{HumnaAwan},
+\credit{egawiser}
+\credit{PeterKurczynski},
+\credit{rhiannonlynne}
+
+Three of the key cosmology probes available with LSST represent ``static
+science'' insensitive to time-domain concerns.  These are Weak Lensing,
+Large-Scale Structure, and Galaxy Clusters.  Nonetheless, due to the
+need to track and correct for the survey ``window function'' in all of
+these probes, cosmology with LSST will benefit greatly from achieving
+survey depth as uniform as possible over the WFD area.  OpSim tiles the
+sky in hexagons inscribed within the nearly-circular LSST field-of-view.
+It has been shown in \citet{CarrollEtal2014} that the default LSST
+survey strategy implemented in OpSim runs leads to a strongly
+non-uniform ``honeycomb'' pattern due to overlapping regions on the
+edges of these hexagons receiving double the observing time.  A pattern
+of large dithers proves sufficient to greatly reduce these overlaps,
+leading to an increase in median survey depth in each filter of 0.08
+magnitudes.
+
+In this section, we report results from an investigation by Awan et al.
+(in preparation) of several geometrical patterns for dithers performed
+on timescales varying from once per observing season to once per night
+to every visit.
+
+% \todo{EG}{Flesh out WL, LSS, and Clusters dependence on survey
+% uniformity to make this section more clearly science-driven.}
+
+% --------------------------------------------------------------------
+
+\subsection{Dithering Patterns and Timescales}
+\label{sec:\secname:strategies}
+
+
+% --------------------------------------------------------------------
+
+\subsection{Metrics}
+\label{sec:\secname:metrics}
+
+% Quantifying the response via MAF metrics: definition of the metrics,
+% and any derived overall figure of merit.
+
+Our primary metric is the total uncertainty in the derived window function
+over relevant angular scales, modeled via variations in the angular
+power spectrum of fake galaxy fluctuations between $gri$ bands.
+Intermediate metrics include the number of galaxies in each pixel,
+fluctuations in this number, total power in the angular power spectrum
+of a skymap of those fluctuations, and residual power that angular power
+spectrum after subtracting a smooth fit to it.
+
+
+% --------------------------------------------------------------------
+
+\subsection{OpSim Analysis}
+\label{sec:\secname:analysis}
+
+In this section we present our ongoing \OpSim / MAF analysis, as we try
+to answer the question ``what dithering strategies produce acceptable
+variations in survey uniformity, and which appears optimal?''
+
+What we show here are selected highlights from the paper by Awan et al (2015).
+
+%We used the
+%\simsMAFcontrib{SeasonStacker}{mafContrib/seasonStacker.py} to work
+%with seasons.
+
+%We used \texttt{ops2\_1075} for most of our tests, but we need to now
+%re-run on \opsimdbref{db:baseCadence}, and others from \autoref{chp:cadence2015}.
+
+
+%\citeauthor{LiaoEtal2015}). These sky maps show that, over the main
+
+%\autoref{tab:lenstimedelays:results} shows the global (i.e. al-sky)
+
+
+% %--------------------------------------------------------------------
+%
+% \subsection{Results}
+% \label{sec:\secname:results}
+
+
+% \todo{EG}{Improve figures to originals rather than screen-captures.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[tbh!]
+\vskip -0.1in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/awan_fig1.png}
+%\vskip -1.3in
+\caption{}
+\label{fig:seasonal_dithers}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[tbh!]
+\vskip -0.1in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/awan_fig2.png}
+%\vskip -1.3in
+\caption{}
+\label{fig:nightly_dithers}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[tbh!]
+\vskip -0.1in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/awan_fig4.png}
+%\vskip -1.3in
+\caption{}
+\label{fig:dithering_histograms}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[tbh!]
+\vskip -0.1in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/awan_fig5.png}
+%\vskip -1.3in
+\caption{}
+\label{fig:dithering_skymaps}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[tbh!]
+\vskip -0.1in
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/awan_fig6.png}
+%\vskip -1.3in
+\caption{}
+\label{fig:dithering_power_spectra}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure*}[!ht]
+%  \capstart
+%  \begin{minipage}[b]{\linewidth}
+%    \begin{minipage}[b]{0.32\linewidth}
+%      \centering\includegraphics[width=\linewidth]{figs/Accuracy_season_nca.pdf}
+%    \end{minipage} \hfill
+%    \begin{minipage}[b]{0.32\linewidth}
+%      \centering\includegraphics[width=\linewidth]{figs/Precision_cadence_nca.pdf}
+%    \end{minipage} \hfill
+%    \begin{minipage}[b]{0.32\linewidth}
+%      \centering\includegraphics[width=\linewidth]{figs/Fraction_season_nca.pdf}
+%    \end{minipage}
+%  \end{minipage}
+%\caption{Examples of changes in accuracy $A$ (left), precision $P$ (center) and success fraction $f$ (right) with schedule properties, as seen in the different TDC submissions. The gray
+%approximate power law model was derived by visual inspection of the
+%pyCS-SPL results; the signs of the indices were pre-determined according to our expectations. Reproduced from \citet{LiaoEtal2015}.}
+%\label{fig:tdcresults}
+%\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \todo{EG}{Input fuller results and text from Awan et al. draft.}
+
+% %---------------------------------------------------------------------
+%
+% \subsection{Figure of Merit}
+% \label{sec:\secname:fom}
+%
+%
+
+% % --------------------------------------------------------------------
+%
+% \subsection{Discussion}
+% \label{sec:\secname:discussion}
+%
+% Discussion: what risks have been identified? What suggestions could be
+% made to improve this science project's figure of merit, and mitigate
+% the identified risks?
+
+\navigationbar
+
+% ====================================================================
