@@ -1,10 +1,10 @@
-"Coordination Strategy with EUCLID"
+# "Coordination Strategy with EUCLID"
 
 A Proposed OpSim Experiment.
 
-*Proposer(s): Andrew Connolly, Tony Tyson
+*Proposer(s): Andrew Connolly, Tony Tyson*
 
-*Issue Thread: [#01](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/01)*
+*Issue Thread: [#530](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/530)*
 
 
 ## Proposed Changes to the Observing Strategy
@@ -24,4 +24,4 @@ of the sky to approximately AB=24.7 in the near-infrared bands. A
 comparable depth in the optical can be achieved with a small number of
 LSST pointings which would enable photometric redshifts to be
 generated. Given that Euclid is expected to launch in 2020 early LSST
-observations will maximize the early science from Euclid 
+observations will maximize the early science from Euclid. 
