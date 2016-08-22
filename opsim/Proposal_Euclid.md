@@ -1,4 +1,4 @@
-# "Coordination Strategy with EUCLID"
+# Coordinating with EUCLID
 
 A Proposed OpSim Experiment.
 
