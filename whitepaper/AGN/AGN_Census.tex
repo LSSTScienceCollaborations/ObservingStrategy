@@ -212,72 +212,24 @@ and how these depend on the cadence should be simulated.
 
 \subsection{Ten Questions}
 
-GTR will answer Zeljko's 10 questions here.
-
-1) Can you place constraints on the tradeoff between the sky coverage and coadded depth?
-For example, should we maximize the sky coverage (to ~30,000 sq. deg., as e.g. Pan-STARRS)
-or the number of detected galaxies (the current baseline with 18,000 sq. deg.)?
-
-A: Weak lensing science scales with the number of well-measured galaxies. The main
-survey area should be optimized to maximize the size of galaxy sample.
-
-2) Can you place constraints on the trade between uniformity of sampling and frequency of
-sampling? For example, a rolling cadence can provide enhanced sample rates over part or all
-of the survey part of the time, at the cost of reduced sample rate the rest of the time (while
-maintaining the nominal total visit counts).
-
-A: For Type Ia SNe science, light-curve sampling should be about twice as frequent as
-for the current baseline cadence. The benefits of this improved sampling would outweigh
-the loss of active sky area.
-
-3) Can you place constraints on the tradeoff between the single-visit depth and the number
-of visits? Especially in the u band, where longer exposures would minimize the impact of the
-readout noise.
-
-A: The single-visit depth required for detecting RR Lyrae stars to the presumed tidal radius
-of the Milky Way is at least r~24.5. The single-visit depth required for detecting SNe to redshifts
-of about 1, that can be probed with LSST filter complement, is at least r~24.5. The increased
-number of visits that could be obtained with shallower data would not benefit either science
-case.
-
-4) Can you place constraints on the Galactic plane coverage (spatial coverage, temporal
-sampling, visits per band)?
-
-A: Our science program cannot place any constraints on the Galactic plane coverage.
-
-5) Can you place constraints on the fractions of observing time allocated to each band?
-
-A: Photometric redshift estimates for galaxies require that each band receives at least
-10% of the total observing time.
-
-6) Can you place constraints on the cadence for deep drilling fields?
-
-A: In order to obtain good light-curve templates for SNe, at least one deep drilling field
-has to be observed each night in all 6 bands for at least 4 months.
-
-7) Assuming two visits per night, should they be obtained in the same band or not?
-
-A: The completeness considerations for asteroids suggest that two visits in a given
-night should be obtained with the same band.
-
-8) Would your science benefit from a special cadence prescription during commissioning or
-early in the survey, such as: acquiring a full 10-yr count of visits for a small area (either in
-all or in selected bands); a greatly enhanced cadence for a small area.
-
-A: The deep drilling fields with multi-wavelength data would enable early science results
-if LSST data were obtained early.
-
-9) Do you have constraints for sampling of observing conditions (e.g. seeing, dark sky,
-airmass), possibly as a function of band, etc.?
-
-A: Weak lensing science would greatly benefit if the r and i band data were obtained during
-the best seeing nights.
-
-10) Do you have science drivers that would require real-time exposure time optimization
-to obtain nearly constant single-visit limiting depth?
-
-A: Science programs requiring a minimum single-visit depth (such as Near-Earth Object
-survey) would benefit from its uniform distribution. 
-
+As noted at the beginning of this section, the main FoM for AGN
+science is maximizing the number of AGNs detected.  As the co-added
+depth is already pushing well into the regime of low-luminosity AGNs
+that suggests that area is preferred over depth.  It should be
+possible to do a MAF analysis to determine the relative selection
+completeness and efficiency for opSims with different
+uniformity/frequency of sampling---similarly for constraining the
+fraction of observing time in each band (where $u$ is the most
+important for $z<\sim3$) and for determining whether nightly visits
+should be in the same band or not.  The same goes for the trade-off of
+single-visit depth and number of visit, but the AGN census is unlikely
+to be the driver in these decisions.  Given the desire for maximal
+area, added Galactic plane coverage would be detrimental to AGN
+science.  Nearly any cadence discussed for the deep drilling fields
+will be more than adequate for AGN selection (as opposed to AGN
+physics, which will provide constraints); however added depth during
+commissioning would enable more robust truth tables.  The census of
+AGNs is unlikely to be the determining factor in terms of observing
+conditions and does not require nearly constant single-visit depths.
 
 \navigationbar
