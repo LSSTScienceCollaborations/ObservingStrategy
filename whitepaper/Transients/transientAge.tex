@@ -28,7 +28,7 @@
 
 \credit{svalenti}, \credit{fedhere} % (Writing team)
 
-For many transients, the first few hours after event beginning reveal a tremendous amount of fundamental information. A large number of resources in the transient community are devoted to the study of the very early phases of transients (e.g. SNe, GRBs). Since real-time discrimination is a very hard task, it is then important to be able to select, among the large number of transients discovered by LSST, the youngest objects, in order to devise follow-up plans and best distribute precious follow-up resources. In this section we investigate the feasibility of identification of young transients from the LSST data alone, using the intra-night visits.
+For many transients, the first few hours after event beginning reveal a tremendous amount of fundamental information. A large number of resources in the transient community are devoted to the study of the very early phases of transients (e.g. SNe, GRBs). Since real-time discrimination is a very hard task, it is then important to be able to select, among the large number of transients discovered by LSST, the youngest objects, in order to devise follow-up plans and best distribute precious follow-up resources. In this section we investigate the feasibility of identification of young transients (identified within few hours after the event occurs) from the LSST data alone, using the intra-night visits.
 
 The Baseline Cadence~\opsimdbref{db:baseCadence} predicts that, on average,
 fields in the main survey are revisited every $\sim3$ days in any filter
@@ -40,11 +40,10 @@ them within a few days of explosion.  The challenge is to discriminate
 these truly young events from newly-discovered SN that are near peak
 brightness.
 Within the~\opsimdbref{db:baseCadence} cadence, and most cadences
-realized thus far, the second intra-night visit occurs around 30
-after the first visit (to maximize the Solar System
-moving objects recovery,~\autoref{chp:solarsystem}). We want to understand {\bf\emph{how the intra-night gap enables, affects, and can be used to maximize the identification of new transients as young}}, where, by young, we mean within a day of outburst/explosion.
+realized thus far, the second intra-night visit occurs around 30 minutes (left panel of \autoref{fig:tgaps_r}).
+after the first visit (to maximize the Solar System moving objects recovery,~\autoref{chp:solarsystem}). We want to understand {\bf\emph{how the intra-night gap enables, affects, and can be used to maximize the identification of new transients as young}}, where, by young, we mean within a day of outburst/explosion.
 
-To begin to answer this question, we limit our investigation to light curve shape in just the r band, and specifically to what can be done in $r$ band. We have selected a representative set of transients with good photometric coverage in the first week after the the outburst/explosion (left panel of \autoref{fig:earlyslope}) and computed the light curve slope as a function of time in magnitudes per day (right panel of \autoref{fig:earlyslope}). In \autoref{fig:earlyrise} we report the change in $r$ brightness between the first and the second visit for the same set of transients as function of phase.
+To begin to answer this question, we limit our investigation to light curve shape in just the $r$ band, and specifically to what can be done in $r$ band. We have selected a representative set of transients with good photometric coverage in the first week after the the outburst/explosion (left panel of \autoref{fig:earlyslope}) and computed the light curve slope as a function of time in magnitudes per day (right panel of \autoref{fig:earlyslope}). In \autoref{fig:earlyrise} we report the change in $r$ brightness between the first and the second visit for the same set of transients as function of phase.
 
 Despite the heterogeneity in light curve shapes, most of the transients show a similar change in brightness on short time scales. 
 This confirms that early classification of the transient sub-type is a
@@ -90,8 +89,9 @@ the two.
     two in the same band, but spaced by two hours or more, and a third
     in a different band. This criteria could be limited to the
     observations above and below the ecliptic plane, where recovery of
-    Solar System objects puts less strain on the cadence
-    requirements. }}
+    Solar System objects puts less strain on the cadence requirements. 
+    The current 3-visit OpSim (enigma1281) is inadequate since does not 
+    include the constraint of one visit being in a different filter.}}
 
 {\bf\emph{Furthermore, we note that the currently envisioned
     deep drilling cadence prioritizes depth per visit at the expense
