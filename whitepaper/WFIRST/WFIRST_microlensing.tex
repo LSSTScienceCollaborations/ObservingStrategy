@@ -22,6 +22,22 @@
 \credit{poleski},
 {\it Rachel Street}.
 
+Overview Questions  %Answered by DB 08/09/16, minor changes by RP 08/10/16, added by MP 08/15/16
+
+\begin{enumerate}
+\item \textbf{Can you place constraints on the tradeoff between the sky coverage and coadded depth?} This is irrelevant to the microlensing survey. We have specific cadence requirements and much less interest in coadded depth.
+\item \textbf{Can you place constraints on the trade between uniformity of sampling and frequency of sampling?} During the microlensing survey, we must maintain the requested 30 or 15 minute cadence to within 3 minutes. Outside of the microlensing survey, we must maintain our daily cadence to within 4 hours.
+\item \textbf{Can you place constraints on the tradeoff between the single-visit depth and the number of visits?} There is no trade-off. We cannot reduce our cadence. We also require observations to be in a passband at least as red as the r-band.
+\item \textbf{Can you place constraints on the Galactic plane coverage (spatial coverage, temporal sampling, visits per band)?} All of the observations must take place in a field that we will specify near the Galactic Center, at Galactic coordinates of roughly $l = 1$~deg, $b = -1.5$~deg.
+\item \textbf{Can you place constraints on the fractions of observing time allocated to each band?} We require that 0\% of the observing time be in the u or g-bands.
+\item \textbf{Can you place constraints on the cadence for deep drilling fields?} Our proposal may amount to a new deep drilling field in the central Galactic bulge. In this case, the constraints would be 15 or 30 min cadence during 6 WFIRST microlensing seasons, and 1 day cadence otherwise.
+\item \textbf{Assuming two visits per night, should they be obtained in the same band or not?} We propose between 3 and 14 visits per night during the WFIRST microlensing survey, and 1 visit per night otherwise. We have no restrictions other than the restriction to no visits in the u and g-bands.
+\item\textbf{ Would your science benefit from a special cadence prescription during commissioning or early in the survey, such as: acquiring a full 10-yr count of visits for a small area (either in all or in selected bands); a greatly enhanced cadence for a small area?} We require many visits during the WFIRST exoplanet microlensing seasons, starting in 2025. Before that, we require only one observation per night.
+\item \textbf{Do you have constraints for sampling of observing conditions (e.g. seeing, dark sky, airmass), possibly as a function of band, etc.?} There is value in relaxing a default airmass constraint, where it would mean no observations were taken. We only have strict cadence requirements. 
+\item \textbf{Do you have science drivers that would require real-time exposure time optimization to obtain nearly constant single-visit limiting depth?} No.
+\end{enumerate}
+
+
 Perhaps the most exciting discovery to come out of gravitational
 microlensing surveys is the discovery of a large population of ``rogue"
 planets by the MOA Collaboration \citep{2011Natur.473..349S}. These planets
@@ -40,7 +56,7 @@ and OGLE samples.
 A major weakness with the microlensing data that indicates this
 large population of rogue planets is that, thus far, the properties
 of this population have only been inferred by their Einstein radius
-crossing time, $t_{rm E}$, distribution. But, the Einstein radius crossing
+crossing time, $t_{\rm E}$, distribution. But, the Einstein radius crossing
 time depends not only on the lens mass, but also on its distance and
 transverse velocity. As a result, we cannot directly infer the mass or distance
 distribution of the rogue planet sample.
@@ -74,7 +90,7 @@ disk, while for a lens in the bulge, the magnitude of the projected velocity
 is $\tilde{v} \gtsim 200\,$km/sec. A microlensing parallax measurement also
 yields a mass distance relationship,
 \begin{equation}
-   M_L = {\tilde{v}^2 t_{rm E}^2 c^2 \over 4 G} {D_S-D_L \over D_L D_S} \ .
+   M_{\rm L} = {\tilde{v}^2 t_{\rm E}^2 c^2 \over 4 G} {D_S-D_L \over D_L D_S} \ .
    \label{eq-m_vt}
 \end{equation}
 Because the $\tilde{\bf v}$ value places a fairly strong constraint
@@ -84,12 +100,12 @@ events, we can do even better. For high magnification events or events
 with low-mass lenses, the finite angular size of the source star is
 resolved, and the light curve provides a measurement of the source
 radius crossing time, $t_*$. This allows the angular Einstein radius
-to be determined, $\theta_{rm E} = t_{rm E} \theta_*/t_*$, where the angular
+to be determined, $\theta_{\rm E} = t_{\rm E} \theta_*/t_*$, where the angular
 source radius, $\theta_*$ can be determined from the color and brightness
 of the source star \citep{2014AJ....147...47B}. When both $\tilde{v}$ and
-$\theta_{rm E}$ are known, the mass of the lens is measured to be
+$\theta_{\rm E}$ are known, the mass of the lens is measured to be
 \begin{equation}
-M_L = {c^2\over 4G} \tilde{v} t_{rm E} \theta_{rm E} = {\theta_{rm E}\tilde{v} t_{rm E} \over (8.14\,{\rm mas\, AU})} M_{\odot} \ .
+M_{\rm L} = {c^2\over 4G} \tilde{v} t_{\rm E} \theta_{\rm E} = {\theta_{\rm E}\tilde{v} t_{\rm E} \over (8.14\,{\rm mas\, AU})} M_{\odot} \ .
 \label{eq-m}
 \end{equation}
 Figure~\ref{fig-lc} shows an example of the light curves for one of the
@@ -113,7 +129,7 @@ their properties may not be well constrained by WFIRST or it may be hard to dist
 between a wide orbit planet and a rogue planet, particularly for planets on the widest
 orbits or when the source trajectory does not closely approach the host star.
 The two main parameters that can be derived for bound planets are
-the mass ration, $q$, and the projected separation ,$s$, in units of Einstein radius.
+the mass ration, $q$, and the projected separation, $s$, in units of Einstein radius.
 Wide orbit planet adds an additional peak to the otherwise
 standard microlensing light curve produced by the planet host.
 The time separation of the two peaks, $\Delta t$, is directly related
@@ -129,6 +145,8 @@ it may not observe the host event and hence poorly constrain planet properties. 
 monitoring of the WFIRST microlensing field over whole bulge observing season
 will reveal the peaks of planet host microlensing events that are unobservable
 to the WFIRST and will help to constrain projected separation and mass ratio.
+The same observations will improve constraints on possible stellar hosts for 
+the free floating planet candidates.
 
 
 % --------------------------------------------------------------------
@@ -222,7 +240,7 @@ shows the results of our simulations of the combined proposed WFIRST-LSST
 observing program. We assume that there is 1 planet per main sequence
 star at each of $1\,M_\oplus$, $10\,M_\oplus$, and $100\,M_\oplus$.
 This is the 1-$\sigma$ lower limit found by \citet{2011Natur.473..349S} at
-$M_L \approx 300\,M_\oplus$, and the rogue planet mass function is
+$M_{\rm L} \approx 300\,M_\oplus$, and the rogue planet mass function is
 thought to increase toward lower masses, so this is a conservative
 assumption. The first row gives the number of events that will be
 observed by WFIRST. The second row gives the number of these events
@@ -238,8 +256,8 @@ Category & $100\,M_\oplus$ & $10\,M_\oplus$ & $1\,M_\oplus$ & Total \\
 \hline
 WFIRST-events    &   417   &         127    &         33    &  577  \\
 $i \leq 23$      &    88   &          30    &         13    &  131  \\
-$\pi_{rm E}$ measured &    22   &           8.2  &          2.7  &   32.9 \\
-$M_L$ measured   &    5.9  &           3.4  &          1.5  &   10.8 \\
+$\pi_{\rm E}$ measured &    22   &           8.2  &          2.7  &   32.9 \\
+$M_{\rm L}$ measured   &    5.9  &           3.4  &          1.5  &   10.8 \\
 \end{tabular}
 \caption{Number of rogue planets of the given mass detected, assuming
 one such planet per main sequence star, and our proposed LSST observation
@@ -262,14 +280,14 @@ also yield masses for a somewhat larger number of bound planets
 masses determined by other means as well.
 
 For a proxy for a Figure of Merit, we select the product of the numbers of
-rogue planet microlensing parallax measurements $\pi_{rm E}$
-and rogue planet mass measurements $M_L$.
+rogue planet microlensing parallax measurements $\pi_{\rm E}$
+and rogue planet mass measurements $M_{\rm L}$.
 % Added by PJM:
 We expect this quantity to be simply related to the ultimate precision
 on any rogue planet population hyperparameter we may try to infer from
 the LSST-WFIRST sample.
 Some additional
-work is still needed to test and develop this metric so that it can be easily incorporated into the MAF based on OpSim runs.
+work is still needed to test and develop this metric so that it can be easily incorporated into the \MAF based on \OpSim runs.
 The value of this product is 355 for our straw man program.
 
 
@@ -283,19 +301,20 @@ and $10\,M_\oplus$ that follow logarithmic mass function with
 normalization extrapolated from Cassan et al. (2012). We narrow the sample of
 planets detected by WFIRST in a number of steps. First, we reject the events
 with host peak during the LSST high-cadence observations, i.e., during one of six
-76-day long campaigns. Second, we exclude the events with host event reaching
-at least $0.75$ of the event maximum flux increase, because in these cases WFIRST
+76-day long campaigns. Second, we exclude the events for which flux increase 
+during the WFIRST observing season is at least $0.75$ of the event maximum 
+flux increase, because in these cases WFIRST
 data will strongly constrain the host peak even though it is not fully observed.
 Third, we require at least a single LSST observation within $\pm0.05t_{\rm E}$ of
 the host peak and the magnified source flux to be brighter than SDSS-$z$ of $23~{\rm mag}$.
 The expected number of $0.1\,M_\oplus$, $1\,M_\oplus$, and $10\,M_\oplus$
 planets for which host peak is detected are 2.1, 8.7, and 36.9, respectively.
 We chose a sum of those as a proxy for a Figure of Merit. For the observing strategy
-presented above the value of this FoM is 47.7. If a maximum airmass is chosen to be
-2.0 instead of 2.5, then the requested time decreases by $6\%$ and FoM decreases by $12\%$.
+presented above the value of this Figure of Merit is 47.7. If a maximum airmass is chosen to be
+2.0 instead of 2.5, then the requested time decreases by $6\%$ and Figure of Merit decreases by $12\%$.
 The metric is based solely on the distribution of peak times and source magnitudes
 for a given WFIRST simulation, so once this is set, the metric can
-be easily computed for any OpSim run.
+be easily computed for any \OpSim run.
 
 
 % Quantifying the response via MAF metrics: definition of the metrics,
@@ -318,16 +337,17 @@ be easily computed for any OpSim run.
 The rough estimates of our metrics and Figure of Merit given above were
 carried out using a very simple model for the LSST observations we
 have proposed. We would hope to refine this analysis using the output
-of an `OpSim` run where the WFIRST+LSST microlensing program was included
+of an \OpSim run where the WFIRST+LSST microlensing program was included
 as an additional special survey, and our Figure of Merit coded in the
-MAF. We do not expect the impact of this special survey on other science cases
+\MAF. We do not expect the impact of this special survey on other science cases
 to be high, as it would only need 12 hours per year in total. The risk
-seems similar, but smaller than that of a Deep Drilling Field.
+is minimal because we based our predictions on conservative estimate of free 
+floating planets abundance. If the WFIRST+LSST program finds significantly 
+different abundance than previous searches, this will also be an important result.
 
-Other science teams may find it useful to think of the WFIRST+LSST microlensing
-survey as a medium deep drilling field located in the bulge: it would be interesting
-to see how some of the Milky Way, galactic transient, and  stellar variable
-metrics changed with the addition of this proposed survey.
+WFIRST microlesning field will have the highest cadence among LSST bulge fields, 
+hence, should be significantly affect Figures of Merit for Milky Way, 
+galactic transients, and stellar variability.
 
 
 % ====================================================================
