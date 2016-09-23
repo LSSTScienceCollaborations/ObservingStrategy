@@ -17,8 +17,7 @@
 \def\secname{wl}\label{sec:\secname}
 
 \credit{jmeyers314},
-\credit{tonytyson},
-\credit{StephenRidgway}.
+\credit{tonytyson}.
 
 Much of LSST cosmology may be limited by systematic rather than statistical
 errors.  This is especially true of weak gravitational lensing, which relies on
@@ -460,6 +459,65 @@ a field over a range of hour angles and with camera rotations assures full 180
 degree range coverage for CCD coordinates relative to sky.  A metric for this
 can be written and run with OpSim to explore optimization, including minimizing
 camera rotations.
+
+\subsection{Conclusions}
+
+Randomization of camera angle covering 180 deg can effictively suppress residual shear systematics
+remaining after DM pipleine first-order correction.   More simulations are required, using intelligent dithering,
+in order to assess the efficinecy and the remaing WL shear systematics.
+
+A 10 point questionaire was sent to all science cases. Ours is addressed below:
+
+1) Can you place constraints on the tradeoff between the sky coverage and coadded depth?
+For example, should we maximize the sky coverage (to ~30,000 sq. deg., as e.g. Pan-STARRS)
+or the number of detected galaxies (the current baseline with 18,000 sq. deg.)?
+
+Our answer comes here: On the scale of thousands of sq.deg, the WL signal and control of systematics is enhanced by deeper (larger cosmological volume) rather than wider surveying. These considerations led to the 18,000 sq.deg per ten years baseline.
+
+2) Can you place constraints on the trade between uniformity of sampling and frequency of 
+sampling? For example, a rolling cadence can provide enhanced sample rates over part or all 
+of the survey part of the time, at the cost of reduced sample rate the rest of the time (while 
+maintaining the nominal total visit counts).
+
+Our answer: WL is generally agnostic on this issue. Total good IQ x depth is most important, and this might benefit from rolling cadences if the mean airmass is lower, resulting in a higher IQ.
+
+3) Can you place constraints on the tradeoff between the single-visit depth and the number 
+of visits? Especially in the u band, where longer exposures would minimize the impact of the 
+readout noise.
+
+Our answer: 30-sec or longer u band exposures will help S/N.
+
+4) Can you place constraints on the Galactic plane coverage (spatial coverage, temporal 
+sampling, visits per band)?
+
+Our answer: WL ugrizy imaging must avoid low Galactic latitudes due to stellar crowding, bright stars, and dust. Data at low latitudes will not be used for WL.
+
+5) Can you place constraints on the fractions of observing time allocated to each band?
+
+Our answer: This depends on the relative system throughput vs wavelength. For the case of high u band QE CCDs, approximately u10\%, g10\%, r22\%, i22\%, z18\%, y18\%. The comes from 80, 80, 184, 184, 160, 160 ugrizy 30-sec visits per 9.6 sq.deg fields over 18,000 sq.deg per ten years -- from the SRD, driven by required low surface brightness shear measurement and the needed S/N for photo-z for the gold sample of galaxies. The longer integrations at longer wavelengths is due to the red color of the sky background.
+
+6) Can you place constraints on the cadence for deep drilling fields?
+
+Our answer: It will be helpful if the individual exposure times in all bands are similar to the main survey. A long series of exposures in each filter would be good. Dithering in x-y-theta between exposures using “intelligent dithering” is needed in order to detect low level systematics and to help calibrate the main survey galaxy blending. Emphasis on excellent seeing is important. Spreading the DD observing over many half nights, maximizing the HA coverage, will be needed.
+
+7) Assuming two visits per night, should they be obtained in the same band or not?
+
+Our answer: Not necessarily. In fact, occasional back-to back gr exposures help calibrate systematics from chromatic refraction.
+
+8) Would your science benefit from a special cadence prescription during commissioning or 
+early in the survey, such as: acquiring a full 10-yr count of visits for a small area (either in all or in selected bands); a greatly enhanced cadence for a small area?
+
+Our answer: Yes, ugrizy full depth over at least 1000 sq.deg. Suppression of WL systematics will depend on early detection of issues. This, and the development and validation of MultiFit pipline, shear measurement algorithms, cosmological analysis algorithms, and associated covariances will rely on early deep surveying of a few thousand square degrees. This also benefits co-analysis with WFIRST or Euclid data.
+
+9) Do you have constraints for sampling of observing conditions (e.g. seeing, dark sky,
+airmass), possibly as a function of band, etc.?
+
+Our answer: WL benefits significantly from good uniform seeing, IQ, and depth in the r and I bands. For example, imaging in the r and i bands in seeing worse than 1 arcsec is not productive, and revisits to that field should await better seeing. The associated photo-z relies on uniform depth spatially. This means low airmass.
+
+10) Do you have science drivers that would require real-time exposure time optimization 
+to obtain nearly constant single-visit limiting depth?
+
+Our answer: Yes. Uniform residual shear is even more important than depth. Dithering in x-y-theta between exposures using “intelligent dithering” is needed in order to detect low level systematics and to help calibrate the main survey galaxy blending. In intelligent dithering the scheduler is aware of the past history of the IQ in that field in the two bands used for WL shear (nominally r and i). The algorithm tries to uniformly sample camera angles relative to north with uniformly good IQ. Rotation angles of previous poor IQ visits need to be repeated.
 
 
 % The RotSkyPos metric analysis shows that the majority of fields have a
