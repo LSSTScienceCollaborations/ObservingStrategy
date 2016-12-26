@@ -1,3 +1,6 @@
+
+
+
 % ====================================================================
 %+
 % SECTION:
@@ -25,7 +28,6 @@
 Microlensing due to stars projected on top of individual
 gravitationally-lensed quasar images produces additional magnification which can be used to probe the structure of the background high-redshift AGN.
 
-
 The microlensing method is based on the fact that the variability amplitude depends on the quasar size relative to the Einstein radius of a star (projected into the source plane). By comparing the variability amplitudes at different wavelengths, we can determine the relative source sizes and test the predicted wavelength scaling: Assuming a thermal profile for accretion disks, sizes in different emission
 wavelengths can be probed and as such, constraints on the slope of this
 thermal profile can be obtained. Given the sheer number of lensed systems that LSST is expected to discover ($\sim8000$), this will allow us to stack systems for better
@@ -48,11 +50,13 @@ timescales are between months to a few decades.
 \label{sec:\secname:targets}
 
 Analysis of microlensing induced variability will allow the measurement of
-accretion disk sizes $R_\lambda$ and their thermal profile slope $\alpha$. This
-needs to be done per system discovered. Assuming $\sim$1000 lensed quasars with
+accretion disk sizes $R_\lambda$ and their thermal profile slope $\alpha$, 
+which together strongly contrain the physics of accretion. 
+This needs to be done per system discovered. Assuming $\sim$1000 lensed quasars with
 high quality light curves (i.e. that allow time delay measurements, see
-\autoref{sec:lenstimedelays}), a relationship between size, thermal profile
-slope, black hole mass and accretion disk luminosity will likely be derived.
+\autoref{sec:lenstimedelays}), a relationship between the size, thermal profile
+slope, and luminosity of the accretion disk and the mass of the black hole 
+will likely be derived.
 
 How precisely are we going to be able to measure these parameters for a given
 survey strategy? This is not a simple question to answer due to the significant
@@ -72,7 +76,13 @@ the degeneracies and sensitivities.
 % measurement.}
 
 The quasar microlensing optical depth is $\sim1$, so every lensed quasar should
-be affected by microlensing at any given point in time to a different extent.
+be affected by microlensing at any given point in time to a different extent. 
+This continuous, low-level microlensing can provide useful statistical constraints on 
+size and geometry for both accretion disks (e.g., \citealt{kochanek2004}; \citealt{bate2008}; \citealt{floyd2009}; \citealt{blackburne2011,blackburne2014}; \citealt{jimenez2014}) and 
+broad emission line regions  (e.g. ; \citealt{kochanek2004}; \citealt{richards2004}; \citealt{wayth2005}; \citealt{sluse2011}; \citealt{odowd2011}; \citealt{guerras2013}). Over LSST's 10-year life, 
+the resulting library of light curves will enable a statistical analysis of this 
+low-level microlensing that will far exceed previous efforts.
+
 Note, however, that the larger the apparent magnification, the more stringent are
 the constraints on the geometric information that can be obtained of the source.
 \citet{MosqueraandKochanek2011} studied the expected microlensing
@@ -83,10 +93,17 @@ of $\sim20$~yr (with a distribution between 10 and 40~yr). Additionally, the sou
 crossing time (duration of a high magnification event) is $\sim7.3$~months (with
 a distribution tail up to 3~yr). This basically means that out of all the lensed
 quasar {\em images} (microlensing between images is completely uncorrelated)
-about half of them will be quiescent during the 10~yr baseline of LSST. However,
+about half of them will undergo strong microlensing events during the 10~yr 
+baseline of LSST. However,
 since the typical number of lensed images is either two or four, this means
 that, statistically, in every system, one (for doubles) or two (for quads) high
-magnification events should be observed in 10~yr of LSST monitoring.
+magnification events should be observed in 10~yr of LSST monitoring. 
+
+Strong lensing events are also our best chance investigate anomalies in accretion 
+disk geometries. For example, warps due to multiple accretion events or magnetic 
+fields, fragmentation due to gravitational instability, and hot spots due to 
+embedded star formation can all result in deviations from smooth temperature profiles.
+Such anomalies are expected to have an effect on the light curves of strong microlensing events.
 
 Note that, the important cadence parameter is the source crossing time. Ideally,
 high magnification events would need to be as uniformly sampled as possible. The
@@ -199,7 +216,7 @@ We have build a preliminary tool that extracts micro lensing light curves from s
 \item Thermal profile slope of the accretion disk $\alpha$.
 \item Scale size of the accretion disk $\sigma_{0}(\lambda)$ at a given wavelength $\lambda$.
 \item Smooth (dark matter) to compact (stars) matter ratio on top of lensed quasar images.
-\item Â´Â´Macro'' lens model parameters on top of lensed quasar images: Surface mass density $\kappa$ and shear $\gamma$.
+\item ´´Macro'' lens model parameters on top of lensed quasar images: Surface mass density $\kappa$ and shear $\gamma$.
 \end{itemize}
 
 \noindent In its current state, the tool assumes simple face-on concentric Gaussian emission regions for the accretion disk. An example of such a curve is shown in figure \ref{microsimcurve}. To recover the figure of merit, (measurement accuracy of $\alpha$ and $\sigma_0$), light curves generated with this tool for a given realistic lensed quasar system ($\kappa$, $\gamma$, s and velocity dispersion of the lensing galaxy as well as time delays between lensed images) for every region in the sky need to analyzed using the above mentioned statistical analyses to recover the input accretion disk parameters.
@@ -308,3 +325,4 @@ to obtain nearly constant single-visit limiting depth?} No
 % ====================================================================
 
 \navigationbar
+Contact GitHub API Training Shop Blog About
