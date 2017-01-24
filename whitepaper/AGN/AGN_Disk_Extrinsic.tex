@@ -1,3 +1,6 @@
+
+
+
 % ====================================================================
 %+
 % SECTION:
@@ -12,18 +15,18 @@
 %    and a large sample of detected strongly-lensed AGN.
 %
 % AUTHORS:
-%    Timo Anguita (@tanguita)
+%    Timo Anguita (@tanguita), Matthew O'Dowd
 %-
 % ====================================================================
 
 \section{AGN Size and Structure with Microlensing}\label{sec:AGNMicrolensing}
 \def\secname{\chpname:microlensing}\label{sec:\secname}
 
-\credit{tanguita}
+\credit{tanguita},
+\credit{mattodowd}
 
 Microlensing due to stars projected on top of individual
 gravitationally-lensed quasar images produces additional magnification which can be used to probe the structure of the background high-redshift AGN.
-
 
 The microlensing method is based on the fact that the variability amplitude depends on the quasar size relative to the Einstein radius of a star (projected into the source plane). By comparing the variability amplitudes at different wavelengths, we can determine the relative source sizes and test the predicted wavelength scaling: Assuming a thermal profile for accretion disks, sizes in different emission
 wavelengths can be probed and as such, constraints on the slope of this
@@ -47,11 +50,13 @@ timescales are between months to a few decades.
 \label{sec:\secname:targets}
 
 Analysis of microlensing induced variability will allow the measurement of
-accretion disk sizes $R_\lambda$ and their thermal profile slope $\alpha$. This
-needs to be done per system discovered. Assuming $\sim$1000 lensed quasars with
+accretion disk sizes $R_\lambda$ and their thermal profile slope $\alpha$, 
+which together strongly contrain the physics of accretion. 
+This needs to be done per system discovered. Assuming $\sim$1000 lensed quasars with
 high quality light curves (i.e. that allow time delay measurements, see
-\autoref{sec:lenstimedelays}), a relationship between size, thermal profile
-slope, black hole mass and accretion disk luminosity will likely be derived.
+\autoref{sec:lenstimedelays}), a relationship between the size, thermal profile
+slope, and luminosity of the accretion disk and the mass of the black hole 
+will likely be derived.
 
 How precisely are we going to be able to measure these parameters for a given
 survey strategy? This is not a simple question to answer due to the significant
@@ -71,7 +76,13 @@ the degeneracies and sensitivities.
 % measurement.}
 
 The quasar microlensing optical depth is $\sim1$, so every lensed quasar should
-be affected by microlensing at any given point in time to a different extent.
+be affected by microlensing at any given point in time to a different extent. 
+This continuous, low-level microlensing can provide useful statistical constraints on 
+size and geometry for both accretion disks (e.g., \citealt{kochanek2004}; \citealt{bate2008}; \citealt{floyd2009}; \citealt{blackburne2011,blackburne2014}; \citealt{jimenez2014}) and 
+broad emission line regions  (e.g. ; \citealt{kochanek2004}; \citealt{richards2004}; \citealt{wayth2005}; \citealt{sluse2011}; \citealt{odowd2011}; \citealt{guerras2013}). Over LSST's 10-year life, 
+the resulting library of light curves will enable a statistical analysis of this 
+low-level microlensing that will far exceed previous efforts.
+
 Note, however, that the larger the apparent magnification, the more stringent are
 the constraints on the geometric information that can be obtained of the source.
 \citet{MosqueraandKochanek2011} studied the expected microlensing
@@ -82,10 +93,17 @@ of $\sim20$~yr (with a distribution between 10 and 40~yr). Additionally, the sou
 crossing time (duration of a high magnification event) is $\sim7.3$~months (with
 a distribution tail up to 3~yr). This basically means that out of all the lensed
 quasar {\em images} (microlensing between images is completely uncorrelated)
-about half of them will be quiescent during the 10~yr baseline of LSST. However,
+about half of them will undergo strong microlensing events during the 10~yr 
+baseline of LSST. However,
 since the typical number of lensed images is either two or four, this means
 that, statistically, in every system, one (for doubles) or two (for quads) high
-magnification events should be observed in 10~yr of LSST monitoring.
+magnification events should be observed in 10~yr of LSST monitoring. 
+
+Strong lensing events are also our best chance investigate anomalies in accretion 
+disk geometries. For example, warps due to multiple accretion events or magnetic 
+fields, fragmentation due to gravitational instability, and hot spots due to 
+embedded star formation can all result in deviations from smooth temperature profiles.
+Such anomalies are expected to have an effect on the light curves of strong microlensing events.
 
 Note that, the important cadence parameter is the source crossing time. Ideally,
 high magnification events would need to be as uniformly sampled as possible. The
@@ -132,11 +150,7 @@ enable of totally new and unprecedented perspectives for microlensing studies.
 % with measured or very short time delays to remove the intrinsic
 % variability signal, which might significantly reduce the sample.
 
-{\bf Microlensing Aided Reverberation Mapping:} Given that microlensing mostly
-affects continuum emission rather than  broad line emission, microlensing can enable
-the disentangling of the broad line emission plus the continuum emission in single
-photometric bands, allowing the use of single broad band PRM measurements
-\citep{SluseandTewes2014}. As with the two-band PRM method discussed above, the
+{\bf Microlensing Aided Reverberation Mapping:} Quasar broad emission lines exhibit a very wide range of ionization energies. This implies differences in the incident ionizing flux, and suggests that we may expect a radial stratification of ionization species This is indeed observed in both reverberation mapping (see review by \citealt{gaskell2009}) and gravitational microlensing (\citealt{guerras2013}). However proximity to the ionizing source alone isn't enough to explain the wide range of ionizations observed in AGN broad-line flows; the details of self-shielding, gas density, and overall flow geometry will define where a given line will be efficiently produced within the flow. As such, measurement of size as a function of ionization potential can be highly constraining of broad line models. LSST's bands will provide reasonable isolation of prominent broad emission lines or line pairs at all redshifts. In particular, two or more of H$\beta$, H$\gamma$ + H$\delta$, MgII, CIII], and CIV + SiIV dominate broad line emission in single bands at most redshifts. These emission line species or pairs span a broad range of ionization potentials and so will measure its relationship to emission region size. Photometric Reverberation Mapping (PRM) may produce this measurement over a fraction of the LSST quasar sample. Now, given that microlensing mostly affects continuum emission rather than  broad line emission, microlensing can enable the disentangling of the broad line emission plus the continuum emission in single photometric bands, allowing the use of even single broad band PRM measurements \citep{SluseandTewes2014} in the lensed subsample. Note that at all redshifts at least one and often two bands are relatively free of broad line emission and so provide a rough measure of continuum strength for both variability and relative microlensing magnification measurement. As with the two-band PRM method discussed in section \ref{sec:AGNBELR}, the
 denser (and the longer) the sampling, the more accurate are the constraints that
 can be obtained for the time delays. This method allows constraining both the
 accretion disk structure as explained above and the Broad Emission Line Region (BELR). The only additional
@@ -202,7 +216,7 @@ We have build a preliminary tool that extracts micro lensing light curves from s
 \item Thermal profile slope of the accretion disk $\alpha$.
 \item Scale size of the accretion disk $\sigma_{0}(\lambda)$ at a given wavelength $\lambda$.
 \item Smooth (dark matter) to compact (stars) matter ratio on top of lensed quasar images.
-\item Â´Â´Macro'' lens model parameters on top of lensed quasar images: Surface mass density $\kappa$ and shear $\gamma$.
+\item ´´Macro'' lens model parameters on top of lensed quasar images: Surface mass density $\kappa$ and shear $\gamma$.
 \end{itemize}
 
 \noindent In its current state, the tool assumes simple face-on concentric Gaussian emission regions for the accretion disk. An example of such a curve is shown in figure \ref{microsimcurve}. To recover the figure of merit, (measurement accuracy of $\alpha$ and $\sigma_0$), light curves generated with this tool for a given realistic lensed quasar system ($\kappa$, $\gamma$, s and velocity dispersion of the lensing galaxy as well as time delays between lensed images) for every region in the sky need to analyzed using the above mentioned statistical analyses to recover the input accretion disk parameters.
@@ -254,6 +268,48 @@ Given the nature of the commonly used statistical analyses to constrain the stru
 
 The results of this experiment are shown in Figure \ref{ulens_sim}. For this analysis, at least for the four systems studied, we can see that even when the ``No Visit Pairs'' observing strategy shows a slightly better prospect compared to the ``Baseline Cadence'' for our science case, the difference is negligible. Note also that with the exception of Q2227+0305 (due to its very short time scales), both observing strategies will be able to map the expected microlensing induced brightness variations at a very high rate. It is important to consider that this is an optimistic analysis because the photometric uncertainties (including the dominating ones that come from the intrinsic variability correction from time delay measurements) have not been taken into account.
 
+\subsection{10 questions}
+\label{sec:\secname:questions}
+
+\begin{enumerate}
+
+\item \textbf{Can you place constraints on the tradeoff between the sky coverage and coadded depth?
+For example, should we maximize the sky coverage (to ~30,000 sq. deg., as e.g. Pan-STARRS)
+or the number of detected galaxies (the current baseline with 18,000 sq. deg.)?} Given that lensed quasars are rare, maximizing the area coverage would increase the number of systems to study. Even if this comes at a cadence cost given that in most cases the studied OpSim experiments provide sufficient temporal constraints.
+
+\item \textbf{Can you place constraints on the trade between uniformity of sampling and frequency of 
+sampling? For example, a rolling cadence can provide enhanced sample rates over part or all 
+of the survey part of the time, at the cost of reduced sample rate the rest of the time (while 
+maintaining the nominal total visit counts).} Given the long timescales of microlensing events and the inability of predicting high magnification events, uniform sampling would be better.
+
+
+\item \textbf{Can you place constraints on the tradeoff between the single-visit depth and the number 
+of visits? Especially in the u band, where longer exposures would minimize the impact of the 
+readout noise.} ???
+
+\item \textbf{Can you place constraints on the Galactic plane coverage (spatial coverage, temporal 
+sampling, visits per band)?} No.
+
+\item \textbf{Can you place constraints on the fractions of observing time allocated to each band?} Ideally, shorter wavelengths should get denser (uniform) sampling.
+
+\item \textbf{Can you place constraints on the cadence for deep drilling fields?} No
+
+\item \textbf{Assuming two visits per night, should they be obtained in the same band or not?} Not very important for our since case. Given a choice, different bands would be better
+
+\item \textbf{Would your science benefit from a special cadence prescription during commissioning or 
+early in the survey, such as: acquiring a full 10-yr count of visits for a small area (either in all or in selected bands); a greatly enhanced cadence for a small area?} No
+
+\item \textbf{Do you have constraints for sampling of observing conditions (e.g. seeing, dark sky,
+airmass), possibly as a function of band, etc.?} Seeing and Airmass are directly related to the ability to accurately separate the flux from possibly blended lensed images. As with most transient science cases, excellent seeing images are required as templates for image substraction.
+
+\item \textbf{Do you have science drivers that would require real-time exposure time optimization 
+to obtain nearly constant single-visit limiting depth?} No
+
+\end{enumerate}
+
+
+
+
 
 
 % % --------------------------------------------------------------------
@@ -269,3 +325,4 @@ The results of this experiment are shown in Figure \ref{ulens_sim}. For this ana
 % ====================================================================
 
 \navigationbar
+Contact GitHub API Training Shop Blog About
