@@ -42,7 +42,7 @@ In this section, we report the results from an investigation into different type
 \label{sec:\secname:strategies}
 As in \citet{AwanEtal2016}, we consider three timescales to capture the range of time intervals on which dithers can be implemented: by visit, by night, and by season. Both visit and night timescales are well-defined in OpSim \citep[see]{IvezicEtal2008}. For the seasons, we use the \href{https://github.com/lsst/sims_maf/blob/master/python/lsst/sims/maf/stackers/generalStackers.py}{SeasonStacker}, which assigns a season to every observation by tracking when each field's RA is overhead in the middle of the day. The season assignment leads to 11 seasons, and for our purposes, we treat the 0th and 10th seasons the same by assigning them the same dither position.
 
-Another variation in the implementation timescale is added by dithering each field independently as opposed to dithering all fields collectively. For instance, FieldPerNight timescale assigns a new dither position to a field when it is observed on a new night, while PerNight implementation assigns a new dither to all fields every night regardless of whether a particular field is observed or not. 
+Another variation in the implementation timescale is added by dithering each field independently as opposed to dithering all fields collectively. For instance, FieldPerNight timescale assigns a new dither position to a field when it is observed on a new night, while PerNight implementation assigns a new dither to all fields every night regardless of whether a particular field is observed or not.
 
 In \citet{AwanEtal2016}, we study five different geometries for the dither positions, where one geometry is specifically for PerSeason assignment and the rest are implemented on three timescales, namely FieldPerVisit, FieldPerNight, and PerNight. Here, we focus only on three combinations of the different geometries and timescales as an illustration of the impacts of these combinations: RepulsiveRandomDitherFieldPerVisit, FermatSpiralDitherPerNight,  and PentagonDitherPerSeason. These geometries are shown in \autoref{fig: dithGeometries}, adapted from Figure 1 in \citet{AwanEtal2016}.
 
@@ -71,7 +71,7 @@ We then account for the effects of photometric calibrations in our estimated num
 \begin{equation}
 	\Delta_{i}= \frac{k \Delta s_{i}}{\sqrt{N_{\mathrm{obs}, i}}}
 \end{equation}
-where $k$ is a constant such that $\sigma_{\Delta_i}$ matches the LSST photometric calibration goal of 1$\%$  \citep{2009arXiv0912.0201L}. Since the calibration uncertainties are pixel-dependent, we use the \href{https://github.com/humnaawan/sims_maf_contrib/blob/master/mafContrib/galaxyCounts_withPixelCalibration.py}{pseudo-GalaxyCountsMetric}, which handles pixel-by-pixel calculation to modify the upper limit in the integral in \autoref{eq: Ngal} to be $m_{\mathrm{max}} + \Delta_{i}$, thereby accounting for the fluctuations in the galaxy counts due to the calibration errors. We then calculate the fluctuations in the galaxy counts in each pixel, $\delta_i= \Delta N_i/\overline{N}$. 
+where $k$ is a constant such that $\sigma_{\Delta_i}$ matches the LSST photometric calibration goal of 1$\%$  \citep{2009arXiv0912.0201L}. Since the calibration uncertainties are pixel-dependent, we use the \href{https://github.com/humnaawan/sims_maf_contrib/blob/master/mafContrib/galaxyCounts_withPixelCalibration.py}{pseudo-GalaxyCountsMetric}, which handles pixel-by-pixel calculation to modify the upper limit in the integral in \autoref{eq: Ngal} to be $m_{\mathrm{max}} + \Delta_{i}$, thereby accounting for the fluctuations in the galaxy counts due to the calibration errors. We then calculate the fluctuations in the galaxy counts in each pixel, $\delta_i= \Delta N_i/\overline{N}$.
 
 % ====================================================================
 % Subsection: Figure of Metric
@@ -80,7 +80,7 @@ where $k$ is a constant such that $\sigma_{\Delta_i}$ matches the LSST photometr
 \label{sec:\secname:FoM}
 As derived and discussed in \citet{AwanEtal2016}, the spurious power from the artificial fluctuations in the galaxy counts induced by the observing strategy (OS) represents a bias in our measurement of the LSS. Hence the uncertainty in this bias becomes the limiting factor in our ability to correct for the OS-induced structure. More quantitatively, for an optimized LSS study, the OS-induced uncertainties, \sigmaOS, must be subdominant to the statistical uncertainty \statFloor\ inherent to the measured power spectrum due to ``cosmic variance'' \citep{Dodelson}:
 \begin{equation}
-	\Delta C_\ell= C_{\ell,\mathrm{LSS}} \sqrt{\frac{2}{f_{\mathrm{sky}} (2\ell + 1)}} 
+	\Delta C_\ell= C_{\ell,\mathrm{LSS}} \sqrt{\frac{2}{f_{\mathrm{sky}} (2\ell + 1)}}
 	\label{eq: statFloor}
 \end{equation}
 where $f_{\rm{sky}}$ is the fraction of the sky observed, accounting for the reduction in the observed information due to incomplete sky coverage.
@@ -188,19 +188,108 @@ Finally, we show the simulated results for different cadences after the 10-year 
 % ====================================================================
 % Science Case Conclusions
 % ====================================================================
-\subsection{Science Case Conclusions}
-While we have discussed the implications of different observing strategies on LSS studies above, here we answer the ten questions posed in \autoref{sec:intro:evaluation:caseConclusions}:
+\subsection{Conclusions}
+
+Here we answer the ten questions posed in
+\autoref{sec:intro:evaluation:caseConclusions}:
+
 \begin{description}
-\item[A1:] As we see in \autoref{sec:\secname: analysis}, a deeper catalog is more effective, though it makes the choice of the dither strategy more important especially in the first year of survey. While the gold sample leads to large uncertainties in the OS-induced bias in the baseline cadence, it is not detrimental after the full, ten-year survey if effective dithers are implemented. We also see that the wider-coverage cadence \opsimdbref{db:opstwoPS} performs only marginally better for LSS systematics after the full, ten-year survey with dithers, while it performs much poorly without dithers. Based on these preliminary analyses of the cadences, LSS systematics may be optimized as long as effective dithers are implemented. 
-\item[A2:] Depth uniformity is critical for LSS systematics, as we've demonstrated in \autoref{sec:\secname: analysis}. From the analysis of three different cadences, it appears that we should be fine as long as we dither effectively.
-\item[A3:] From our investigation into the large uncertainties in the OS-induced bias observed in the gold sample in the baseline cadence, in comparison with the shallower and deeper catalogs, we find that $u$-band-induced artifacts add the most to the uncertainties in the bias. Hence there could be a significant penalty from reducing the number of $u$-band visit. At minimum, doing so would make the choice of dither pattern more important. This issue still needs to be further investigated.
-\item[A4:] LSS systematics do not place any constraints on the Galactic plane coverage.
-\item[A5:] Increasing the number of visits leads to greater survey uniformity. At present, this is worst (among $ugri$) in the $u$-band, so increasing the fraction of $u$-band observing time would likely help.
-\item[A6:] LSS systematics do not constrain the cadence for deep drilling fields as long as the main survey dithers are not affected.
-\item[A7:] We do not see significant difference between obtaining two visits per night in the same band or not, although we do see a mild benefit in not obtaining the visits in the same band as it allows greater variation in atmospheric conditions in each band.
-\item[A8:] We will request full, 10-year depth during commissioning to validate our choice of dither pattern.
-\item[A9:] Seeing will play a role in the photometric calibration errors. However, these errors appear to be subdominant to the artifacts induced by the observing strategy.
+
+\item[Q1:] {\it Does the science case place any constraints on the
+tradeoff between the sky coverage and coadded depth? For example, should
+the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+Pan-STARRS) or the number of detected galaxies (the current baseline but
+with 18,000 deg$^2$)?}
+
+\item[A1:] As we see in \autoref{sec:\secname: analysis}, a deeper
+catalog is more effective, though it makes the choice of the dither
+strategy more important especially in the first year of survey. While
+the gold sample leads to large uncertainties in the OS-induced bias in
+the baseline cadence, it is not detrimental after the full, ten-year
+survey if effective dithers are implemented. We also see that the
+wider-coverage cadence \opsimdbref{db:opstwoPS} performs only marginally
+better for LSS systematics after the full, ten-year survey with dithers,
+while it performs much poorly without dithers. Based on these
+preliminary analyses of the cadences, LSS systematics may be optimized
+as long as effective dithers are implemented.
+
+\item[Q2:] {\it Does the science case place any constraints on the
+tradeoff between uniformity of sampling and frequency of  sampling? For
+example, a rolling cadence can provide enhanced sample rates over a part
+of the survey or the entire survey for a designated time at the cost of
+reduced sample rate the rest of the time (while maintaining the nominal
+total visit counts).}
+
+\item[A2:] Depth uniformity is critical for LSS systematics, as we've
+demonstrated in \autoref{sec:\secname: analysis}. From the analysis of
+three different cadences, it appears that we should be fine as long as
+we dither effectively.
+
+\item[Q3:] {\it Does the science case place any constraints on the
+tradeoff between the single-visit depth and the number of visits
+(especially in the $u$-band where longer exposures would minimize the
+impact of the readout noise)?}
+
+\item[A3:] From our investigation into the large uncertainties in the
+OS-induced bias observed in the gold sample in the baseline cadence, in
+comparison with the shallower and deeper catalogs, we find that
+$u$-band-induced artifacts add the most to the uncertainties in the
+bias. Hence there could be a significant penalty from reducing the
+number of $u$-band visit. At minimum, doing so would make the choice of
+dither pattern more important. This issue still needs to be further
+investigated.
+
+\item[Q4:] {\it Does the science case place any constraints on the
+Galactic plane coverage (spatial coverage, temporal sampling, visits per
+band)?}
+
+\item[A4:] LSS systematics do not place any constraints on the Galactic
+plane coverage.
+
+\item[Q5:] {\it Does the science case place any constraints on the
+fraction of observing time allocated to each band?}
+
+\item[A5:] Increasing the number of visits leads to greater survey
+uniformity. At present, this is worst (among $ugri$) in the $u$-band, so
+increasing the fraction of $u$-band observing time would likely help.
+
+\item[Q6:] {\it Does the science case place any constraints on the
+cadence for deep drilling fields?}
+
+\item[A6:] LSS systematics do not constrain the cadence for deep
+drilling fields as long as the main survey dithers are not affected.
+
+\item[Q7:] {\it Assuming two visits per night, would the science case
+benefit if they are obtained in the same band or not?}
+
+\item[A7:] We do not see significant difference between obtaining two
+visits per night in the same band or not, although we do see a mild
+benefit in not obtaining the visits in the same band as it allows
+greater variation in atmospheric conditions in each band.
+
+\item[Q8:] {\it Will the case science benefit from a special cadence
+prescription during commissioning or early in the survey, such as:
+acquiring a full 10-year count of visits for a small area (either in all
+the bands or in a  selected set); a greatly enhanced cadence for a small
+area?}
+
+\item[A8:] We will request full, 10-year depth during commissioning to
+validate our choice of dither pattern.
+
+\item[Q9:] {\it Does the science case place any constraints on the
+sampling of observing conditions (e.g., seeing, dark sky, airmass),
+possibly as a function of band, etc.?}
+
+\item[A9:] Seeing will play a role in the photometric calibration
+errors. However, these errors appear to be subdominant to the artifacts
+induced by the observing strategy.
+
+\item[Q10:] {\it Does the case have science drivers that would require
+real-time exposure time optimization to obtain nearly constant
+single-visit limiting depth?}
+
 \item[A10:] We do not require any real-time exposure time optimization.
+
 \end{description}
 
 % ====================================================================
@@ -208,9 +297,29 @@ While we have discussed the implications of different observing strategies on LS
 % ====================================================================
 \subsection{Discussion}
 \label{sec:\secname:discussion}
-In this section, we presented results for the impacts of LSST observing strategy on LSS studies. Using the OpSim cadence baseline \opsimdbref{db:baseCadence}, we demonstrate that dithers are necessary for both 1-year and 10-year surveys. The 1-year strategy needs to be chosen very carefully to allow optimal LSS studies in the first year, while the options are more flexible in years 2-10. We also analyze two other cadences and find that, in general, LSS studies do not place any stringent constraints on the cadence as long as effective dithers are implemented.
 
-Future work will entail improving our analysis to better constrain the artifacts induced by the observing strategy by, e.g., including uncertainties in the dust extinction, using improved models for the photometric calibration uncertainties, more realistic galaxy colors, incorporating improved mock catalogs to better estimate the galaxy counts as well as its uncertainties, and a better estimate of the uncertainties in the OS-induced by a more thorough accounting of the effects of each band. Also, the development and the analysis of the effectiveness of various systematics correction methods needs to be carried out, especially for the 1-year survey, as the observing strategy alone will likely not minimize the artifacts. Finally, the effectiveness of various dithers still needs to be assessed for other science probes.
+In this section, we presented results for the impacts of LSST observing
+strategy on LSS studies. Using the OpSim cadence baseline
+\opsimdbref{db:baseCadence}, we demonstrate that dithers are necessary
+for both 1-year and 10-year surveys. The 1-year strategy needs to be
+chosen very carefully to allow optimal LSS studies in the first year,
+while the options are more flexible in years 2-10. We also analyze two
+other cadences and find that, in general, LSS studies do not place any
+stringent constraints on the cadence as long as effective dithers are
+implemented.
+
+Future work will entail improving our analysis to better constrain the
+artifacts induced by the observing strategy by, e.g., including
+uncertainties in the dust extinction, using improved models for the
+photometric calibration uncertainties, more realistic galaxy colors,
+incorporating improved mock catalogs to better estimate the galaxy
+counts as well as its uncertainties, and a better estimate of the
+uncertainties in the OS-induced by a more thorough accounting of the
+effects of each band. Also, the development and the analysis of the
+effectiveness of various systematics correction methods needs to be
+carried out, especially for the 1-year survey, as the observing strategy
+alone will likely not minimize the artifacts. Finally, the effectiveness
+of various dithers still needs to be assessed for other science probes.
 
 
 \navigationbar
