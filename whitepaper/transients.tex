@@ -26,6 +26,13 @@ Contributing Authors:
 \credit{svalenti},
 \credit{Zauderer}
 
+\section*{Summary}
+\addcontentsline{toc}{section}{~~~~~~~~~Summary}
+
+Executive summary goes here, highlighting the primary conclusions from
+the chapter's science cases. This should be abstract length, no more:
+say, 200 words.
+
 % --------------------------------------------------------------------
 
 \section{Introduction}
@@ -73,7 +80,7 @@ triggering followup resources in real time from the live event stream.
 Characterization, on the other hand, implies
 that basic properties of the event may be determined from the
 LSST observations, including but not limited to the classification of
-the event. 
+the event.
 It is particular relevant for science cases requiring analysis of large
 samples of completed lightcurves.
 
@@ -181,14 +188,14 @@ transients \citep[adapted from][]{2011PhDT........35K}.
 \subsection{Transient time scales}
 
 Optical transients display a wide range of intrinsic timescales
-(\autoref{fig:transient_phase_space}), and even some long-lived events 
+(\autoref{fig:transient_phase_space}), and even some long-lived events
 have short-duration features of interest.
 
 For very short-lived phenomena (stellar flares, GRBs),
 the main function of LSST will be to provide discoveries and/or simple
 characterization.  Followup to discovery/identification, if required,
 must take place elsewhere. This implies that the LSST observations
-must be sufficient to recognize in real time that an event is fast-evolving 
+must be sufficient to recognize in real time that an event is fast-evolving
 in order to to trigger followup. However, assessing the rise
 slope is best done with a single filter, so prompt characterization
 also needs multiple epochs within a night, preferably separated by at
@@ -288,15 +295,15 @@ Two metrics were developed and are used in this chapter specifically for transie
     lightcurve. This metric is used in \autoref{sec:\chpname:grbs}}.
 \end{itemize}
 
-Additionally, the standard MAF metrics 
+Additionally, the standard MAF metrics
 that quantify the gaps between consecutive visits to
-a field within a night and over multiple nights 
-(\texttt{IntraNightGapsMetric} and \texttt{InterNightGapsMetric}) 
+a field within a night and over multiple nights
+(\texttt{IntraNightGapsMetric} and \texttt{InterNightGapsMetric})
 are of great value and are
 heavily used throughout this chapter, in \autoref{sec:\chpname:transientsAge},
 ~\autoref{sec:\chpname:SNtransients}, and~\autoref{sec:\chpname:gw} for example.
 
-Further metrics relevant to transient science are discused in \autoref{chp:galaxy},~\autoref{chp:cosmo}, and ~\autoref{chp:variables}. 
+Further metrics relevant to transient science are discused in \autoref{chp:galaxy},~\autoref{chp:cosmo}, and ~\autoref{chp:variables}.
 
 Many science cases can be developed and tested with these metrics, and we
 encourage users to do so. In addition, we are collecting a library of representative transient lightcurves in a separate GitHub repository\footnote{\url{https://github.com/LSSTTVS/LSST_TVS_RoadMap}} and we encourage readers to contribute their transient models or observations.
@@ -310,7 +317,7 @@ encourage users to do so. In addition, we are collecting a library of representa
 The current set of simulated cadences
 provide poor coverage in any one
 filter for transient events longer than a visit pair ($\sim$30
-minutes) and shorter than $\sim$ weeks (\autoref{fig:tgaps} and 
+minutes) and shorter than $\sim$ weeks (\autoref{fig:tgaps} and
 \autoref{fig:tgaps_r}; \autoref{tab:visitgaps}).
 
 As discussed in the subsequent sections, this
@@ -401,7 +408,7 @@ sampling required to adequately discover or characterize them may
 still be larger than that provided by baseline cadences.  However,
 even moderate adjustments (e.g., lengthening the visit pair spacing,
 or optimizing the deep drilling filter strategy) may yield
-improvements.  
+improvements.
 
 
 The metrics presented in these sections are initial efforts towards

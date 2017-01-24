@@ -27,7 +27,7 @@ in order to maximize this number.
 %The primary goal for AGN science is to maximize the discovery of AGN
 %with the LSST and construct the largest possible inventory of sources
 %spanning the widest possible ranges in the redshift-luminosity parameter
-%space. This, in turn, will provide 
+%space. This, in turn, will provide
 Doing so will provide tighter constraints within the context
 of various cosmological science cases, such as quasar clustering,
 $z>6$ quasars and reionization, and strong gravitational lensing.
@@ -117,7 +117,7 @@ corresponding uncertainties on the photomteric redshift.
 2) Estimate the {\bf number of quasars at $z>6$ that LSST can discover}
 during a single visit, as well as in the entire survey, and verify that
 these numbers do not fall short of the original predictions. This
-simply requires computing the maximum depth in the $Y$-band (for both 
+simply requires computing the maximum depth in the $Y$-band (for both
 single visits and the coadd), averaged across the sky for the nominal
 OpSim, as well as assessing the ability to reject L and T dwarfs via astrometry.
 
@@ -172,7 +172,7 @@ and precise astrometric redshifts.
 For predicting the number of detected $z>6$ quasars
 %Compare this magnitude to the
 %one required for identifying $\geq1000$ quasars at $z\geq6$.
-the current 
+the current
 %enigma\_1189{}
 aquila\_{}1110 OpSim for the main, i.e., WFD survey, gives a
 single-visit $5\sigma$-depth
@@ -180,9 +180,9 @@ single-visit $5\sigma$-depth
 %$Y=21.51$ enigma_\_{}1189
 {\it Y} $= 21.45$ mag as compared to {\it Y} $= 21.51$ for the older enigma\_{}1189 OpSim.
 For the final co-added $5\sigma$-depth the median magnitude from the aquila\_{}1110
-OpSim is 
+OpSim is
 %$Y=24.36$. Enigma\_{}1189
-{\it Y}$ = 23.07$ which is more than a magnitude shallower than the older enigma\_{}1189 
+{\it Y}$ = 23.07$ which is more than a magnitude shallower than the older enigma\_{}1189
 depth of {\it Y}$ = 24.36$.
 {\bf The lower {\it Y}-band depth may reduce the total number of quasars at $z > 6$ discovered by LSST by
 a factor of $\sim 2$
@@ -210,26 +210,84 @@ and how these depend on the cadence should be simulated.
 %
 % ====================================================================
 
-\subsection{Ten Questions}
+\subsection{Conclusions}
 
-As noted at the beginning of this section, the main FoM for AGN
-science is maximizing the number of AGNs detected.  As the co-added
-depth is already pushing well into the regime of low-luminosity AGNs
-that suggests that area is preferred over depth.  It should be
-possible to do a MAF analysis to determine the relative selection
-completeness and efficiency for opSims with different
-uniformity/frequency of sampling---similarly for constraining the
-fraction of observing time in each band (where $u$ is the most
-important for $z<\sim3$) and for determining whether nightly visits
-should be in the same band or not.  The same goes for the trade-off of
-single-visit depth and number of visit, but the AGN census is unlikely
-to be the driver in these decisions.  Given the desire for maximal
-area, added Galactic plane coverage would be detrimental to AGN
-science.  Nearly any cadence discussed for the deep drilling fields
+Here we answer the ten questions posed in
+\autoref{sec:intro:evaluation:caseConclusions}:
+
+\begin{description}
+
+\item[Q1:] {\it Does the science case place any constraints on the
+tradeoff between the sky coverage and coadded depth? For example, should
+the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+Pan-STARRS) or the number of detected galaxies (the current baseline but
+with 18,000 deg$^2$)?}
+
+\item[A1:] The main FoM for AGN science is maximizing the number of AGNs
+detected.  Since the co-added depth is already pushing well into the
+regime of low-luminosity AGNs, that suggests that area is preferred over
+depth.
+
+\item[Q2,3,5:] {\it Does the science case place any constraints on the
+tradeoff between uniformity of sampling and frequency of  sampling? Does
+the science case place any constraints on the tradeoff between the
+single-visit depth and the number of visits (especially in the $u$-band
+where longer exposures would minimize the impact of the readout noise)?
+Does the science case place any constraints on the fraction of observing
+time allocated to each band?}
+
+\item[A2,3,5:] It should be possible to do a MAF analysis to determine
+the relative selection completeness and efficiency for OpSim outputs
+with different uniformity/frequency of sampling. The same can be said
+for constraining the fraction of observing time in each band (where $u$
+is the most important for $z<\sim3$) and for determining whether nightly
+visits should be in the same band or not, and for the trade-off of
+single-visit depth and number of visits. However, the AGN census is
+unlikely to be the driver in these decisions.
+
+\item[Q4:] {\it Does the science case place any constraints on the
+Galactic plane coverage (spatial coverage, temporal sampling, visits per
+band)?}
+
+\item[A4:] Given the desire for maximal area, added Galactic plane
+coverage would be detrimental to AGN science.
+
+\item[Q6:] {\it Does the science case place any constraints on the
+cadence for deep drilling fields?}
+
+\item[A6:] Nearly any cadence discussed for the deep drilling fields
 will be more than adequate for AGN selection (as opposed to AGN
 physics, which will provide constraints); however added depth during
-commissioning would enable more robust truth tables.  The census of
-AGNs is unlikely to be the determining factor in terms of observing
-conditions and does not require nearly constant single-visit depths.
+commissioning would enable more robust truth tables.
+
+\item[Q7:] {\it Assuming two visits per night, would the science case
+benefit if they are obtained in the same band or not?}
+
+\item[A7:] ...
+
+\item[Q8:] {\it Will the case science benefit from a special cadence
+prescription during commissioning or early in the survey, such as:
+acquiring a full 10-year count of visits for a small area (either in all
+the bands or in a  selected set); a greatly enhanced cadence for a small
+area?}
+
+\item[A8:] ...
+
+\item[Q9:] {\it Does the science case place any constraints on the
+sampling of observing conditions (e.g., seeing, dark sky, airmass),
+possibly as a function of band, etc.?}
+
+\item[A9:] ...
+
+\item[Q10:] {\it Does the case have science drivers that would require
+real-time exposure time optimization to obtain nearly constant
+single-visit limiting depth?}
+
+\item[A10:] The census of AGNs is unlikely to be the determining factor
+in terms of observing conditions and does not require nearly constant
+single-visit depths.
+
+\end{description}
+
 
 \navigationbar

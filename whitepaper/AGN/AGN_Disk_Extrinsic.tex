@@ -50,12 +50,12 @@ timescales are between months to a few decades.
 \label{sec:\secname:targets}
 
 Analysis of microlensing induced variability will allow the measurement of
-accretion disk sizes $R_\lambda$ and their thermal profile slope $\alpha$, 
-which together strongly contrain the physics of accretion. 
+accretion disk sizes $R_\lambda$ and their thermal profile slope $\alpha$,
+which together strongly contrain the physics of accretion.
 This needs to be done per system discovered. Assuming $\sim$1000 lensed quasars with
 high quality light curves (i.e. that allow time delay measurements, see
 \autoref{sec:lenstimedelays}), a relationship between the size, thermal profile
-slope, and luminosity of the accretion disk and the mass of the black hole 
+slope, and luminosity of the accretion disk and the mass of the black hole
 will likely be derived.
 
 How precisely are we going to be able to measure these parameters for a given
@@ -76,11 +76,11 @@ the degeneracies and sensitivities.
 % measurement.}
 
 The quasar microlensing optical depth is $\sim1$, so every lensed quasar should
-be affected by microlensing at any given point in time to a different extent. 
-This continuous, low-level microlensing can provide useful statistical constraints on 
-size and geometry for both accretion disks (e.g., \citealt{kochanek2004}; \citealt{bate2008}; \citealt{floyd2009}; \citealt{blackburne2011,blackburne2014}; \citealt{jimenez2014}) and 
-broad emission line regions  (e.g. ; \citealt{kochanek2004}; \citealt{richards2004}; \citealt{wayth2005}; \citealt{sluse2011}; \citealt{odowd2011}; \citealt{guerras2013}). Over LSST's 10-year life, 
-the resulting library of light curves will enable a statistical analysis of this 
+be affected by microlensing at any given point in time to a different extent.
+This continuous, low-level microlensing can provide useful statistical constraints on
+size and geometry for both accretion disks (e.g., \citealt{kochanek2004}; \citealt{bate2008}; \citealt{floyd2009}; \citealt{blackburne2011,blackburne2014}; \citealt{jimenez2014}) and
+broad emission line regions  (e.g. ; \citealt{kochanek2004}; \citealt{richards2004}; \citealt{wayth2005}; \citealt{sluse2011}; \citealt{odowd2011}; \citealt{guerras2013}). Over LSST's 10-year life,
+the resulting library of light curves will enable a statistical analysis of this
 low-level microlensing that will far exceed previous efforts.
 
 Note, however, that the larger the apparent magnification, the more stringent are
@@ -93,15 +93,15 @@ of $\sim20$~yr (with a distribution between 10 and 40~yr). Additionally, the sou
 crossing time (duration of a high magnification event) is $\sim7.3$~months (with
 a distribution tail up to 3~yr). This basically means that out of all the lensed
 quasar {\em images} (microlensing between images is completely uncorrelated)
-about half of them will undergo strong microlensing events during the 10~yr 
+about half of them will undergo strong microlensing events during the 10~yr
 baseline of LSST. However,
 since the typical number of lensed images is either two or four, this means
 that, statistically, in every system, one (for doubles) or two (for quads) high
-magnification events should be observed in 10~yr of LSST monitoring. 
+magnification events should be observed in 10~yr of LSST monitoring.
 
-Strong lensing events are also our best chance investigate anomalies in accretion 
-disk geometries. For example, warps due to multiple accretion events or magnetic 
-fields, fragmentation due to gravitational instability, and hot spots due to 
+Strong lensing events are also our best chance investigate anomalies in accretion
+disk geometries. For example, warps due to multiple accretion events or magnetic
+fields, fragmentation due to gravitational instability, and hot spots due to
 embedded star formation can all result in deviations from smooth temperature profiles.
 Such anomalies are expected to have an effect on the light curves of strong microlensing events.
 
@@ -216,7 +216,7 @@ We have build a preliminary tool that extracts micro lensing light curves from s
 \item Thermal profile slope of the accretion disk $\alpha$.
 \item Scale size of the accretion disk $\sigma_{0}(\lambda)$ at a given wavelength $\lambda$.
 \item Smooth (dark matter) to compact (stars) matter ratio on top of lensed quasar images.
-\item ´´Macro'' lens model parameters on top of lensed quasar images: Surface mass density $\kappa$ and shear $\gamma$.
+\item ï¿½ï¿½Macro'' lens model parameters on top of lensed quasar images: Surface mass density $\kappa$ and shear $\gamma$.
 \end{itemize}
 
 \noindent In its current state, the tool assumes simple face-on concentric Gaussian emission regions for the accretion disk. An example of such a curve is shown in figure \ref{microsimcurve}. To recover the figure of merit, (measurement accuracy of $\alpha$ and $\sigma_0$), light curves generated with this tool for a given realistic lensed quasar system ($\kappa$, $\gamma$, s and velocity dispersion of the lensing galaxy as well as time delays between lensed images) for every region in the sky need to analyzed using the above mentioned statistical analyses to recover the input accretion disk parameters.
@@ -268,48 +268,87 @@ Given the nature of the commonly used statistical analyses to constrain the stru
 
 The results of this experiment are shown in Figure \ref{ulens_sim}. For this analysis, at least for the four systems studied, we can see that even when the ``No Visit Pairs'' observing strategy shows a slightly better prospect compared to the ``Baseline Cadence'' for our science case, the difference is negligible. Note also that with the exception of Q2227+0305 (due to its very short time scales), both observing strategies will be able to map the expected microlensing induced brightness variations at a very high rate. It is important to consider that this is an optimistic analysis because the photometric uncertainties (including the dominating ones that come from the intrinsic variability correction from time delay measurements) have not been taken into account.
 
-\subsection{10 questions}
+
+\subsection{Conclusions}
 \label{sec:\secname:questions}
 
-\begin{enumerate}
+Here we answer the ten questions posed in
+\autoref{sec:intro:evaluation:caseConclusions}:
 
-\item \textbf{Can you place constraints on the tradeoff between the sky coverage and coadded depth?
-For example, should we maximize the sky coverage (to ~30,000 sq. deg., as e.g. Pan-STARRS)
-or the number of detected galaxies (the current baseline with 18,000 sq. deg.)?} Given that lensed quasars are rare, maximizing the area coverage would increase the number of systems to study. Even if this comes at a cadence cost given that in most cases the studied OpSim experiments provide sufficient temporal constraints.
+\begin{description}
 
-\item \textbf{Can you place constraints on the trade between uniformity of sampling and frequency of 
-sampling? For example, a rolling cadence can provide enhanced sample rates over part or all 
-of the survey part of the time, at the cost of reduced sample rate the rest of the time (while 
-maintaining the nominal total visit counts).} Given the long timescales of microlensing events and the inability of predicting high magnification events, uniform sampling would be better.
+\item[Q1:] {\it Does the science case place any constraints on the
+tradeoff between the sky coverage and coadded depth? For example, should
+the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+Pan-STARRS) or the number of detected galaxies (the current baseline but
+with 18,000 deg$^2$)?}
 
+\item[A1:] Given that lensed quasars are rare, maximizing the area
+coverage would increase the number of systems to study. Even if this
+comes at a cadence cost given that in most cases the studied OpSim
+experiments provide sufficient temporal constraints.
 
-\item \textbf{Can you place constraints on the tradeoff between the single-visit depth and the number 
-of visits? Especially in the u band, where longer exposures would minimize the impact of the 
-readout noise.} ???
+\item[Q2:] {\it Does the science case place any constraints on the
+tradeoff between uniformity of sampling and frequency of  sampling? For
+example, a rolling cadence can provide enhanced sample rates over a part
+of the survey or the entire survey for a designated time at the cost of
+reduced sample rate the rest of the time (while maintaining the nominal
+total visit counts).}
 
-\item \textbf{Can you place constraints on the Galactic plane coverage (spatial coverage, temporal 
-sampling, visits per band)?} No.
+\item[A2:] Given the long timescales of microlensing events and the inability of predicting high magnification events, uniform sampling would be better.
 
-\item \textbf{Can you place constraints on the fractions of observing time allocated to each band?} Ideally, shorter wavelengths should get denser (uniform) sampling.
+\item[Q3:] {\it Does the science case place any constraints on the
+tradeoff between the single-visit depth and the number of visits
+(especially in the $u$-band where longer exposures would minimize the
+impact of the readout noise)?}
 
-\item \textbf{Can you place constraints on the cadence for deep drilling fields?} No
+\item[A3:] No.
 
-\item \textbf{Assuming two visits per night, should they be obtained in the same band or not?} Not very important for our since case. Given a choice, different bands would be better
+\item[Q4:] {\it Does the science case place any constraints on the
+Galactic plane coverage (spatial coverage, temporal sampling, visits per
+band)?}
 
-\item \textbf{Would your science benefit from a special cadence prescription during commissioning or 
-early in the survey, such as: acquiring a full 10-yr count of visits for a small area (either in all or in selected bands); a greatly enhanced cadence for a small area?} No
+\item[A4:] No.
 
-\item \textbf{Do you have constraints for sampling of observing conditions (e.g. seeing, dark sky,
-airmass), possibly as a function of band, etc.?} Seeing and Airmass are directly related to the ability to accurately separate the flux from possibly blended lensed images. As with most transient science cases, excellent seeing images are required as templates for image substraction.
+\item[Q5:] {\it Does the science case place any constraints on the
+fraction of observing time allocated to each band?}
 
-\item \textbf{Do you have science drivers that would require real-time exposure time optimization 
-to obtain nearly constant single-visit limiting depth?} No
+\item[A5:] Ideally, shorter wavelengths should get denser (uniform) sampling.
 
-\end{enumerate}
+\item[Q6:] {\it Does the science case place any constraints on the
+cadence for deep drilling fields?}
 
+\item[A6:] No.
 
+\item[Q7:] {\it Assuming two visits per night, would the science case
+benefit if they are obtained in the same band or not?}
 
+\item[A7:] Not very important for our since case. Given a choice, different bands would be better.
 
+\item[Q8:] {\it Will the case science benefit from a special cadence
+prescription during commissioning or early in the survey, such as:
+acquiring a full 10-year count of visits for a small area (either in all
+the bands or in a  selected set); a greatly enhanced cadence for a small
+area?}
+
+\item[A8:] No.
+
+\item[Q9:] {\it Does the science case place any constraints on the
+sampling of observing conditions (e.g., seeing, dark sky, airmass),
+possibly as a function of band, etc.?}
+
+\item[A9:] Seeing and Airmass are directly related to the ability to
+accurately separate the flux from possibly blended lensed images. As
+with most transient science cases, excellent seeing images are required
+as templates for image substraction.
+
+\item[Q10:] {\it Does the case have science drivers that would require
+real-time exposure time optimization to obtain nearly constant
+single-visit limiting depth?}
+
+\item[A10:] No.
+
+\end{description}
 
 
 % % --------------------------------------------------------------------

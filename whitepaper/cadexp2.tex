@@ -15,7 +15,10 @@ Contributing authors:
 
 % --------------------------------------------------------------------
 
-\noindent{\bf Summary:} In this chapter
+\section*{Summary}
+\addcontentsline{toc}{section}{~~~~~~~~~Summary}
+
+In this chapter
 %(which was originally prepared as \href{http://www.astro.washington.edu/users/ivezic/lsst/cadexp2.pdf}{an
 %LSST DM Sims standalone report})
 we analyze and compare the performance of a number of simulated LSST
@@ -87,11 +90,11 @@ reports.
 
 \section{The Operations Simulator}
 
-The Operations Simulator (OpSim) is a software tool that runs a survey simulation with given science driven desirables; 
-a software model of the telescope and its control system; and models of weather and other environmental variables. The 
-output of such a simulation is an “observation history”, which is a record of times, pointings and a record of associated 
-environmental  data  and  telescope  activities  throughout  the  simulated  survey.  This history can be examined to assess  
-whether the simulated survey would be useful for any particular purpose or interest. 
+The Operations Simulator (OpSim) is a software tool that runs a survey simulation with given science driven desirables;
+a software model of the telescope and its control system; and models of weather and other environmental variables. The
+output of such a simulation is an “observation history”, which is a record of times, pointings and a record of associated
+environmental  data  and  telescope  activities  throughout  the  simulated  survey.  This history can be examined to assess
+whether the simulated survey would be useful for any particular purpose or interest.
 
 In most of the simulations discussed in this document, the OpSim scheduler balances several different observing proposals:
 \begin{itemize}
@@ -102,7 +105,7 @@ In most of the simulations discussed in this document, the OpSim scheduler balan
 \item {\bf Deep Drilling Fields (DD):} The Deep Drilling Fields are single pointings that are observed in extended sequences. The DD proposals often include certain filter combinations to ensure near-simultaneous color information is available for variable and transient objects. Four of the LSST Deep Drilling fields have been selected and announced. It is expected that there will be $\sim10$ DD fields selected for the final survey. Most of the simulations here include five DD fields.
 \end{itemize}
 
-One of the more unique constraints on the OpSim scheduler is that it highly penalizes, and thus avoids, filter changes.  With it's large field of view, LSST filter changes take about two minutes to complete. The filters are also large and heavy enough that we want to minimize wear on the filter changing mechanism.  
+One of the more unique constraints on the OpSim scheduler is that it highly penalizes, and thus avoids, filter changes.  With it's large field of view, LSST filter changes take about two minutes to complete. The filters are also large and heavy enough that we want to minimize wear on the filter changing mechanism.
 
 \section{The Baseline Observing Strategy}
 \def\secname{cadexp:baseline}\label{sec:\secname}
@@ -209,7 +212,7 @@ The 25\%-75\% quartiles for the number of filter changes per night are 2
 and 6, with the mean of 4.3 The total number of filter changes is 14,194.
 \item In the $r$ band, the median effective seeing for all proposals is 0.93 arcsec (for the more
 traditional geometric FWHM, the median is 0.81 arcsec).  We define "geometric FWHM" as the actual full-width-at-half-maximum.  The "Effective FWHM" is the FWHM of a single Gaussian describing the PSF and is typically $\sim15$\% larger than the geometric FWHM. The median
-airmass for all filters and all proposals is 1.23. The median single-visit $5\sigma$ depth for point sources in $r$-band in WFD 
+airmass for all filters and all proposals is 1.23. The median single-visit $5\sigma$ depth for point sources in $r$-band in WFD
 area (also known as the Universal Cadence area) is 24.16 (using the best
 current estimate of the fiducial depth at airmass of one, $m_5(r)=24.39$,
 defined by the SRD Table 5). The variation of the median airmass for the $r$
@@ -217,7 +220,7 @@ band observations with the position on the sky is shown in
 \autoref{fig:airmassenigma}.
 \item The median single-visit depths for WFD fields are (23.14, 24.47, 24.16,
 23.40, 22.23, 21.57) in the $ugrizy$ bands\footnote{Note that these values
-depend on externally supplied values for fiducial zentih dark time single-epoch
+depend on externally supplied values for fiducial zenith dark time single-epoch
 $5\sigma$ depths; the following values were used in analysis described
 here: (23.62, 24.85, 24.39, 23.94, 23.36, 22.45) in the $ugrizy$
 bands, respectively. These values are similar, but not identical, to the values
@@ -231,7 +234,7 @@ currently implemented in \OpSim has some shortcomings (a new model will
 be implemented in version 4), and the moon avoidance is not as aggressive
 as it could be (many observations are taken very close to the moon avoidance limit of 30 degrees, rather than farther away where the sky is darker). As a result, the median limiting depths above are brighter than typical zenith dark-time images by close
 to 1 mag in the $z$ and $y$ bands, and a few tenths of a magnitude in the
-$u$, $g$ and $i$ bands. 
+$u$, $g$ and $i$ bands.
 \item For the 2,293 (overlapping) fields from the WFD area,
 the median number of visits in the $ugrizy$ bands is (62, 88, 199, 201, 180,
 180), respectively. Not only do these medians exceed the requested
@@ -607,7 +610,7 @@ of  visits would be about 20\%).
 uniform cadence strategy throughout the survey region, which is maximized and
 defined by Dec $< +15$ deg (about 27,400 deg$^2$). This is similar to the Pan-
 STARRS' 3PI survey which tries to maximize sky area. The maximum acceptable
-airmass is kept at its default value of 1.5 (which excludes fields with Dec 
+airmass is kept at its default value of 1.5 (which excludes fields with Dec
 $<-78$ deg and Dec $> +18$ deg. This simulation utilizes uniform cadence and no
 other proposal, and requires pairs of visits as in Baseline Cadence. \\
 
@@ -997,7 +1000,7 @@ proposals). Because of these differences, {\it the results of this
 test may not be very robust.}
 \end{enumerate}
 
-{\bf Conclusions:} 
+{\bf Conclusions:}
 Simple estimates of the total number of visits and the
 improvement in efficiency are in good agreement with delivered values. Of
 course, the increased efficiency comes at the cost of fewer visits, which is
@@ -1039,7 +1042,7 @@ visit from 30 seconds to 60 seconds
 %Conversely, when exposure time is shorter than 30 seconds, there is an
 %extra penalty of 0.16 mag, in addition to a loss of depth of 0.22 mag
 %due to shorter exposure time in the limit of negligible read-out
-%noise.} 
+%noise.}
 (assuming the same total exposure time, which implies a
 decrease in the number of visits by a factor of two). To keep the
 total exposure time in the $u$ band unchanged, the requested number of
@@ -1151,7 +1154,7 @@ fields.
 {\bf Motivation and description:} What is the effect of changing the airmass
 limit from 1.5 to 1.3? To avoid complicated analysis, we use only the Universal
 Cadence proposal and thus compare to \opsimdbref{db:opstwo} (i.e., we are not
-including the North Ecliptic Spur, South Celectial Pole, or Deep Drilling Fields
+including the North Ecliptic Spur, South Celestial Pole, or Deep Drilling Fields
 in this simulation).
 
  {\bf Analysis Results:}  This simulated cadence is named
