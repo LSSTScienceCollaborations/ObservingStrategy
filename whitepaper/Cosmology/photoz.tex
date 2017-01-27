@@ -234,79 +234,79 @@ Figure of Merit MAF metric is developed.
 
 % --------------------------------------------------------------------
 %
-% \subsection{Conclusions}
-%
-% Here we answer the ten questions posed in
-% \autoref{sec:intro:evaluation:caseConclusions}:
-%
-% \begin{description}
-%
-% \item[Q1:] {\it Does the science case place any constraints on the
-% tradeoff between the sky coverage and coadded depth? For example, should
-% the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline but
-% with 18,000 deg$^2$)?}
-%
-% \item[A1:] ...
-%
-% \item[Q2:] {\it Does the science case place any constraints on the
-% tradeoff between uniformity of sampling and frequency of  sampling? For
-% example, a rolling cadence can provide enhanced sample rates over a part
-% of the survey or the entire survey for a designated time at the cost of
-% reduced sample rate the rest of the time (while maintaining the nominal
-% total visit counts).}
-%
-% \item[A2:] ...
-%
-% \item[Q3:] {\it Does the science case place any constraints on the
-% tradeoff between the single-visit depth and the number of visits
-% (especially in the $u$-band where longer exposures would minimize the
-% impact of the readout noise)?}
-%
-% \item[A3:] ...
-%
-% \item[Q4:] {\it Does the science case place any constraints on the
-% Galactic plane coverage (spatial coverage, temporal sampling, visits per
-% band)?}
-%
-% \item[A4:] ...
-%
-% \item[Q5:] {\it Does the science case place any constraints on the
-% fraction of observing time allocated to each band?}
-%
-% \item[A5:] ...
-%
-% \item[Q6:] {\it Does the science case place any constraints on the
-% cadence for deep drilling fields?}
-%
-% \item[A6:] ...
-%
-% \item[Q7:] {\it Assuming two visits per night, would the science case
-% benefit if they are obtained in the same band or not?}
-%
-% \item[A7:] ...
-%
-% \item[Q8:] {\it Will the case science benefit from a special cadence
-% prescription during commissioning or early in the survey, such as:
-% acquiring a full 10-year count of visits for a small area (either in all
-% the bands or in a  selected set); a greatly enhanced cadence for a small
-% area?}
-%
-% \item[A8:] ...
-%
-% \item[Q9:] {\it Does the science case place any constraints on the
-% sampling of observing conditions (e.g., seeing, dark sky, airmass),
-% possibly as a function of band, etc.?}
-%
-% \item[A9:] ...
-%
-% \item[Q10:] {\it Does the case have science drivers that would require
-% real-time exposure time optimization to obtain nearly constant
-% single-visit limiting depth?}
-%
-% \item[A10:] ...
-%
-% \end{description}
+ \subsection{Conclusions}
+
+ Here we answer the ten questions posed in
+ \autoref{sec:intro:evaluation:caseConclusions}:
+
+ \begin{description}
+
+ \item[Q1:] {\it Does the science case place any constraints on the
+ tradeoff between the sky coverage and coadded depth? For example, should
+ the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+ Pan-STARRS) or the number of detected galaxies (the current baseline but
+ with 18,000 deg$^2$)?}
+
+ \item[A1:] Since increasing the areal coverage comes at the expense of depth per pointing, this will adversely affect the photometric redshift quality. We estimate that only ~80\% of the galaxies would then meet the signal-to-noise threshold for photo-z analysis, but that this would be more than offset by the extra area and the final catalog would be ~108\% the size. Although this appears to be a net gain, it would change the redshift range for analysis.
+
+ \item[Q2:] {\it Does the science case place any constraints on the
+ tradeoff between uniformity of sampling and frequency of  sampling? For
+ example, a rolling cadence can provide enhanced sample rates over a part
+ of the survey or the entire survey for a designated time at the cost of
+ reduced sample rate the rest of the time (while maintaining the nominal
+ total visit counts).}
+
+ \item[A2:] The sampling frequency is not important to photo-z, but building a uniform depth as a function of time would enable early science that relies on photo-z, so long as this depth is distributed across all filters. This distribution probably does not need to be exactly even, but tolerances have yet to be studied (e.g. rolling cadence may lead to seasonal variations that induce large-scale patchiness in the depth). However, sampling to full depth in all of the bands except g would have a negative impact, for example.
+
+ \item[Q3:] {\it Does the science case place any constraints on the
+ tradeoff between the single-visit depth and the number of visits
+ (especially in the $u$-band where longer exposures would minimize the
+ impact of the readout noise)?}
+
+ \item[A3:] Photo-z would be improved if the u-band magnitude uncertainties could be further minimized, so long as this does not take away visits from other filters. If this could be done by longer u-band exposures during single-visits but less overall u-band visits, that would be good for photo-z.
+
+ \item[Q4:] {\it Does the science case place any constraints on the
+ Galactic plane coverage (spatial coverage, temporal sampling, visits per
+ band)?}
+
+ \item[A4:] Galactic plane coverage is not applicable to photo-z.
+
+ \item[Q5:] {\it Does the science case place any constraints on the
+ fraction of observing time allocated to each band?}
+
+ \item[A5:] We find that at least ~20 u-band visits are necessary for the photo-z statistics to meet specifications.
+
+ \item[Q6:] {\it Does the science case place any constraints on the
+ cadence for deep drilling fields?}
+
+ \item[A6:] Cadence of the DDF is not applicable to photo-z.
+
+ \item[Q7:] {\it Assuming two visits per night, would the science case
+ benefit if they are obtained in the same band or not?}
+
+ \item[A7:] Intra-night filter changes do not affect photo-z.
+
+ \item[Q8:] {\it Will the case science benefit from a special cadence
+ prescription during commissioning or early in the survey, such as:
+ acquiring a full 10-year count of visits for a small area (either in all
+ the bands or in a  selected set); a greatly enhanced cadence for a small
+ area?}
+
+ \item[A8:] Photometric redshift analysis would be greatly assisted by acquiring a full 10-yr count of visits in all six bands for a small area during commissioning or early in the survey, especially if these assets are in regions covered by existing spectroscopic surveys.
+
+ \item[Q9:] {\it Does the science case place any constraints on the
+ sampling of observing conditions (e.g., seeing, dark sky, airmass),
+ possibly as a function of band, etc.?}
+
+ \item[A9:] Preliminary analysis shows that photometric redshifts may benefit by sampling in airmass, especially in the u-band, but a full assessment of the tradeoffs is pending. In general, a more uniform distribution of conditions is a guard against systematics.
+
+ \item[Q10:] {\it Does the case have science drivers that would require
+ real-time exposure time optimization to obtain nearly constant
+ single-visit limiting depth?}
+
+ \item[A10:] No
+
+ \end{description}
 
 
 \navigationbar
