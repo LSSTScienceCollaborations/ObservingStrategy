@@ -313,79 +313,108 @@ highest quality PSDs.
 
 % ====================================================================
 %
-% \subsection{Conclusions}
-%
-% Here we answer the ten questions posed in
-% \autoref{sec:intro:evaluation:caseConclusions}:
-%
-% \begin{description}
-%
-% \item[Q1:] {\it Does the science case place any constraints on the
-% tradeoff between the sky coverage and coadded depth? For example, should
-% the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline but
-% with 18,000 deg$^2$)?}
-%
-% \item[A1:] ...
-%
-% \item[Q2:] {\it Does the science case place any constraints on the
-% tradeoff between uniformity of sampling and frequency of  sampling? For
-% example, a rolling cadence can provide enhanced sample rates over a part
-% of the survey or the entire survey for a designated time at the cost of
-% reduced sample rate the rest of the time (while maintaining the nominal
-% total visit counts).}
-%
-% \item[A2:] ...
-%
-% \item[Q3:] {\it Does the science case place any constraints on the
-% tradeoff between the single-visit depth and the number of visits
-% (especially in the $u$-band where longer exposures would minimize the
-% impact of the readout noise)?}
-%
-% \item[A3:] ...
-%
-% \item[Q4:] {\it Does the science case place any constraints on the
-% Galactic plane coverage (spatial coverage, temporal sampling, visits per
-% band)?}
-%
-% \item[A4:] ...
-%
-% \item[Q5:] {\it Does the science case place any constraints on the
-% fraction of observing time allocated to each band?}
-%
-% \item[A5:] ...
-%
-% \item[Q6:] {\it Does the science case place any constraints on the
-% cadence for deep drilling fields?}
-%
-% \item[A6:] ...
-%
-% \item[Q7:] {\it Assuming two visits per night, would the science case
-% benefit if they are obtained in the same band or not?}
-%
-% \item[A7:] ...
-%
-% \item[Q8:] {\it Will the case science benefit from a special cadence
-% prescription during commissioning or early in the survey, such as:
-% acquiring a full 10-year count of visits for a small area (either in all
-% the bands or in a  selected set); a greatly enhanced cadence for a small
-% area?}
-%
-% \item[A8:] ...
-%
-% \item[Q9:] {\it Does the science case place any constraints on the
-% sampling of observing conditions (e.g., seeing, dark sky, airmass),
-% possibly as a function of band, etc.?}
-%
-% \item[A9:] ...
-%
-% \item[Q10:] {\it Does the case have science drivers that would require
-% real-time exposure time optimization to obtain nearly constant
-% single-visit limiting depth?}
-%
-% \item[A10:] ...
-%
-% \end{description}
+\subsection{Conclusions}
+
+Here we answer the ten questions posed in
+\autoref{sec:intro:evaluation:caseConclusions}:
+
+\begin{description}
+
+\item[Q1:] {\it Does the science case place any constraints on the
+tradeoff between the sky coverage and coadded depth? For example, should
+the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+Pan-STARRS) or the number of detected galaxies (the current baseline but
+with 18,000 deg$^2$)?}
+
+\item[A1:] The disc-intrinsic variability science case places no direct
+constraints on the tradeoff between the sky coverage and the coadded depth.
+
+\item[Q2:] {\it Does the science case place any constraints on the
+tradeoff between uniformity of sampling and frequency of sampling? For
+example, a rolling cadence can provide enhanced sample rates over a part
+of the survey or the entire survey for a designated time at the cost of
+reduced sample rate the rest of the time (while maintaining the nominal
+total visit counts).}
+
+\item[A2:] Preliminary studies of the impact of the survey strategy on
+the disc-intrinsic variability science case indicate that
+\begin {enumerate}
+\item having the longest-possible temporal baseline i.e. interval between
+the first and last observations, is mandatory. The temporal baseline
+\emph{must} be atleast 2-3 $\times$ the longest timescale ($\tau$) built
+into the light curve \citep{2017A&A...597A.128K}. \citet{2010ApJ...721.1014M}
+find that $\max \tau \sim 1000$ d suggesting that survey strategy strategies
+that do not visit every field at both the beginning and end of the survey will
+be sub-optimal for this science case.
+\item having intervals of time during which the survey is performed with
+higher sampling frequency is mandatory. Fig. \ref{fig:PSDvsFreq} demonstrates
+that in order to accurately distinguish between various stochastic models of
+AGN variability, the high frequency behavior of the light curve must be
+sufficiently explored
+\end{enumerate}
+In summary, non-uniform sampling is preferred. Some variant of the rolling-cadences
+strategies that provides a long temporal baseline but also periods of very high
+frequency observing is ideal.
+
+\item[Q3:] {\it Does the science case place any constraints on the
+tradeoff between the single-visit depth and the number of visits
+(especially in the $u$-band where longer exposures would minimize the
+impact of the readout noise)?}
+
+\item[A3:] The disc-intrinsic variability science case is best benefited by a
+survey strategy that maximizes the number of visits.
+
+\item[Q4:] {\it Does the science case place any constraints on the
+Galactic plane coverage (spatial coverage, temporal sampling, visits per
+band)?}
+
+\item[A4:] The disc-intrinsic variability science case places no constraints on
+the Galactic plane coverage.
+
+\item[Q5:] {\it Does the science case place any constraints on the
+fraction of observing time allocated to each band?}
+
+\item[A5:] The disc-intrinsic variability science case places no constraints on
+the fraction of observing time allocated to each band.
+
+\item[Q6:] {\it Does the science case place any constraints on the
+cadence for deep drilling fields?}
+
+\item[A6:] The disc-intrinsic variability science case places the same constraints
+on the DDFs as it does on the WFD survey. See the answer to Q2 for details.
+
+\item[Q7:] {\it Assuming two visits per night, would the science case
+benefit if they are obtained in the same band or not?}
+
+\item[A7:] Both continuum-continuum lag studies as well as color-variability studies
+of AGN would be strongly benefited by having the two (or more) visits per night be in
+\emph{different} bands.
+
+\item[Q8:] {\it Will the case science benefit from a special cadence
+prescription during commissioning or early in the survey, such as:
+acquiring a full 10-year count of visits for a small area (either in all
+the bands or in a  selected set); a greatly enhanced cadence for a small
+area?}
+
+\item[A8:] The disc-intrinsic variability science case would be benefited by having a
+greatly enhanced cadence for a small commissioning area of the sky as long as this area
+is followed up with the normal revisit schedule later during the survey in order to
+ensure that the temporal baseline for this region is as long as possible.
+
+\item[Q9:] {\it Does the science case place any constraints on the
+sampling of observing conditions (e.g., seeing, dark sky, airmass),
+possibly as a function of band, etc.?}
+
+\item[A9:] The disc-intrinsic variability science case places no constraints on
+the sampling of observing conditions.
+
+\item[Q10:] {\it Does the case have science drivers that would require
+real-time exposure time optimization to obtain nearly constant
+single-visit limiting depth?}
+
+\item[A10:] No
+
+\end{description}
 
 % ====================================================================
 
