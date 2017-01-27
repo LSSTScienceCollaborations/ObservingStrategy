@@ -770,81 +770,189 @@ Whether the Plane should be observed as a ``special survey'' or
 
 % ====================================================================
 %
-% \subsection{Conclusions}
-%
-% Here we answer the ten questions posed in
-% \autoref{sec:intro:evaluation:caseConclusions}:
-%
-% \begin{description}
-%
-% \item[Q1:] {\it Does the science case place any constraints on the
-% tradeoff between the sky coverage and coadded depth? For example, should
-% the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline but
-% with 18,000 deg$^2$)?}
-%
-% \item[A1:] ...
-%
-% \item[Q2:] {\it Does the science case place any constraints on the
-% tradeoff between uniformity of sampling and frequency of  sampling? For
-% example, a rolling cadence can provide enhanced sample rates over a part
-% of the survey or the entire survey for a designated time at the cost of
-% reduced sample rate the rest of the time (while maintaining the nominal
-% total visit counts).}
-%
-% \item[A2:] ...
-%
-% \item[Q3:] {\it Does the science case place any constraints on the
-% tradeoff between the single-visit depth and the number of visits
-% (especially in the $u$-band where longer exposures would minimize the
-% impact of the readout noise)?}
-%
-% \item[A3:] ...
-%
-% \item[Q4:] {\it Does the science case place any constraints on the
-% Galactic plane coverage (spatial coverage, temporal sampling, visits per
-% band)?}
-%
-% \item[A4:] ...
-%
-% \item[Q5:] {\it Does the science case place any constraints on the
-% fraction of observing time allocated to each band?}
-%
-% \item[A5:] ...
-%
-% \item[Q6:] {\it Does the science case place any constraints on the
-% cadence for deep drilling fields?}
-%
-% \item[A6:] ...
-%
-% \item[Q7:] {\it Assuming two visits per night, would the science case
-% benefit if they are obtained in the same band or not?}
-%
-% \item[A7:] ...
-%
-% \item[Q8:] {\it Will the case science benefit from a special cadence
-% prescription during commissioning or early in the survey, such as:
-% acquiring a full 10-year count of visits for a small area (either in all
-% the bands or in a  selected set); a greatly enhanced cadence for a small
-% area?}
-%
-% \item[A8:] ...
-%
-% \item[Q9:] {\it Does the science case place any constraints on the
-% sampling of observing conditions (e.g., seeing, dark sky, airmass),
-% possibly as a function of band, etc.?}
-%
-% \item[A9:] ...
-%
-% \item[Q10:] {\it Does the case have science drivers that would require
-% real-time exposure time optimization to obtain nearly constant
-% single-visit limiting depth?}
-%
-% \item[A10:] ...
-%
-% \end{description}
+\subsection{Conclusions}
 
 
-% ====================================================================
+\new{Here we answer the ten questions posed in \autoref{sec:intro:evaluation:caseConclusions}:}
+
+\begin{description}
+
+ \item[Q1:] {\it Does the science case place any constraints on the
+ tradeoff between the sky coverage and coadded depth? For example, should
+ the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+ Pan-STARRS) or the number of detected galaxies (the current baseline but
+ with 18,000 deg$^2$)?}
+
+ \new{ \item[A1:] Figures of Merit addressing this question have been
+   specified in this chapter, but implementation and execution are
+   still in progress. Co-added depth is less important to this science
+   than temporal coverage sufficient to measure the variability (at a
+   range of timescales) central to the science cases in this chapter
+   section. {\it Qualitatively,} we expect the FoMs will indicate that
+   the sky coverage within the inner Disk should be maximized subject
+   to the constraint that all fields experience LSST coverage in all
+   filters throughout the full ten-year survey (a condition currently
+   {\it not} satisfied by the current baseline cadence,
+   \opsimdbref{db:baseCadence}). This is because some of the important
+   transients are relatively rare, and/or the spatial distribution of
+   the population within the Milky Way disk is of scientific
+   importance. To our knowledge, only two OpSim runs currently exist
+   (\opsimdbref{db:opstwoPS} and \opsimdbref{db:NormalGalacticPlane})
+   which subject the populations of interest in this section to
+   coverage approaching that of Wide-Fast-Deep. A greater variety of
+   strategies of inner-plane coverage is needed to explore any
+   tradeoffs between time coverage and spatial coverage within the
+   inner Disk. One example might be an OpSim run with (say) 50\%
+   spatial coverage at Wide-Fast-Deep-like levels, the other 50\% at
+   coverage similar to the Plane mini-survey in
+   \opsimdbref{db:baseCadence}.}
+
+ \item[Q2:] {\it Does the science case place any constraints on the
+ tradeoff between uniformity of sampling and frequency of  sampling? For
+ example, a rolling cadence can provide enhanced sample rates over a part
+ of the survey or the entire survey for a designated time at the cost of
+ reduced sample rate the rest of the time (while maintaining the nominal
+ total visit counts).}
+
+\new{ \item[A2:] The frequency of sampling is critical for the science
+  cases in this section. Requirement on the uniformity of the sampling
+  depends on the timescale of variability and is difficult to project
+  without the FoMs being evaluated. A FoM to quantify the relative
+  importance of each has been outlined in the chapter, but its
+  implementation and execution are still in progress. A greater
+  variety of observing strategy simulations that offer
+  full-time-baseline coverage of the inner Plane are also needed on
+  which to run the FoMs. We require suggestions for OpSim runs with a
+  variety of temporal distributions of exposures within the ten-year
+  survey lifetime, towards the inner Plane.}
+
+ \item[Q3:] {\it Does the science case place any constraints on the
+ tradeoff between the single-visit depth and the number of visits
+ (especially in the $u$-band where longer exposures would minimize the
+ impact of the readout noise)?}
+
+\new{ \item[A3:] This depends strongly on the line of sight,
+  especially in $u$-band where reddening reduces sensitivity in any
+  individual visit (thus impacting variability-searches for very blue
+  objects). In those lines of sight, however, large co-added depth in
+  $u$~would still be useful for static population studies. For some
+  science cases, single-visit photometric depth provides diminishing
+  returns even in the redder filters (for example, once depth
+  $i\gtrsim 24$~were reached, going deeper would likely not result in
+  finding more dwarf novae, since this depth would already be
+  sufficient to find such sources beyond the far side of the
+  Bulge). However, OpSim coverage is still relatively sparse in the
+  spatial regions discussed. We suggest augmenting the OpSim coverage
+  towards the inner Milky Way with runs with a variety of u-band
+  depths (see for example the discussion of strategies
+  \opsimdbref{db:DoubleUbandExptime} and
+  \opsimdbref{db:DoubleUbandExptimewithNESpur} in Chapter
+  \ref{chp:cadexp}). To-date, sufficient OpSim coverage to answer
+  questions about preferred coverage vs. filter for the inner plane
+  simply does not exist.}
+
+ \item[Q4:] {\it Does the science case place any constraints on the
+ Galactic plane coverage (spatial coverage, temporal sampling, visits per
+ band)?}
+
+ \new{\item[A4:] Yes. Galactic plane coverage (in most cases, the inner Plane)
+   is crucial to all the science cases in this Section, because the
+   populations of interest are not found outside the plane in
+   sufficient numbers. In most cases, this coverage must be
+   sufficiently spread out in time for discovery through variability
+   to be possible over the entire ten-year survey.}
+
+ \item[Q5:] {\it Does the science case place any constraints on the
+ fraction of observing time allocated to each band?}
+
+\new{ \item[A5:] We do not have quantitative answers to this question
+  yet since the FoMs are mostly still under development and await a
+  sufficient range of OpSim runs to answer them. {\it Qualitatively,}
+  however: LSST will likely be crucial in providing prompt color
+  information for the rare-but-important events in the inner plane
+  (including unusual or scientifically critical microlensing events
+  alerted by LSST or other facilities), so we urge nonzero coverage in
+  all six filters. Taking the specific case of outbursts from compact
+  objects: having two red filters (e.g. $r-i$) would help tremendously
+  in breaking degeneracies between distance and luminosity since the
+  spectrum of the outbursts discussed here is typically vega-like (so
+  any unusual $r-i$~color should be the result largely of interstellar
+  reddening). To be most generally useful for static population
+  studies (e.g. constraining reddening, $T_{eff}$~and
+  $[Fe/H]$~photometrically following the manner of the SDSS tomography
+  studies and described in the LSST science book), coverage in at
+  least $ugriz$~will be required that affords precise photometry at
+  least down to the confusion limit. We do not as-yet have
+  quantitative limits on what this would mean for the distribution of observing time across filters, however.}
+
+\item[Q6:] {\it Does the science case place any constraints on the cadence for deep drilling fields?}
+
+\new{ \item[A6:] The science cases in this chapter do not place any
+  constraints on the deep-drilling fields already identified. Were
+  deep-drilling-like cadence to be possible for a few fields within
+  the inner plane, however, it would be hugely useful. For example, to
+  recover ellipsoidal variables at short periods, the shortest gap in
+  observations should be $\sim$20 minutes. Not all observations need
+  to be so close together, but it is important to have at least a few
+  baselines that short in order to reliably recover periods between 80
+  minutes and 2 hours, where the majority of CVs (and potentially a
+  new population of X-ray faint short period XRB outbursts) should
+  be.}
+
+ \item[Q7:] {\it Assuming two visits per night, would the science case
+ benefit if they are obtained in the same band or not?}
+
+\new{ \item[A7:] Qualitatively, visits in two different filters are weakly preferred. Science cases requiring discrimination of
+   the class of object would benefit from color information afforded
+   by observing in different filters during the same night, and for
+   most of the science cases in this section the variation plays out
+   in days rather than hours. However, for a subset of the science
+   cases (e.g. ellipsoidal variations of counterparts to eRosita
+   sources), observations at the same filter would be preferred. If
+   the color variation with phase is smaller than the orbital
+   variations, then having the colors could give the best of both
+   worlds.}
+
+ \item[Q8:] {\it Will the case science benefit from a special cadence
+ prescription during commissioning or early in the survey, such as:
+ acquiring a full 10-year count of visits for a small area (either in all
+ the bands or in a  selected set); a greatly enhanced cadence for a small
+ area?}
+
+\new{ \item[A8:] No, as long as all fields obtain at least some
+  coverage in all filters throughout the full 10-year survey
+  lifetime. Our expectation is that a given field will experience
+  nonuniform cadence over the ten-year survey, with some intervals of
+  high cadence followed by some intervals of low cadence. It would be
+  useful for some fields to experience their high-cadence intervals
+  during the first year in order to better understand detectability
+  and systematics, and to update any population simulations as LSST's
+  performance is better constrained.}
+
+ \item[Q9:] {\it Does the science case place any constraints on the
+ sampling of observing conditions (e.g., seeing, dark sky, airmass),
+ possibly as a function of band, etc.?}
+
+\new{ \item[A9:] At this stage we do not believe that any special
+   conditions are required. The inner plane is somewhat unusual in
+   that it will likely be confusion-limited rather than
+   sky-limited. Thus better seeing would obviously be better for the
+   science, however we do not at this stage have any quantitative
+   constraints. }
+
+ \item[Q10:] {\it Does the case have science drivers that would require
+ real-time exposure time optimization to obtain nearly constant
+ single-visit limiting depth?}
+
+\new{ \item[A10:] Not as long as the achieved limiting depth is accurately
+   understood once observations have been taken. In these
+   confusion-limited regions, this question is probably constrained
+   more by the performance of the photometry software than by
+   real-time observing considerations.}
+
+ \end{description}
+
+
+ % ====================================================================
 
 \navigationbar
