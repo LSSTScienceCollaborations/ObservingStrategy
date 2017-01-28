@@ -46,6 +46,17 @@ days of the survey (see Figure
 metrics and FoMs (see for example the right panel of Figure
 \ref{fig:parapmenigma}).  In this section, we consider the scientific merit of \opsimdbref{db:baseCadence} and other observing strategies to study the relative impacts of the distribution and number of visits on Galactic plane science.
 
+\new{Before proceeding further, we point out that static science
+  should not be sacrificed completely to variability studies. LSST's
+  adopted observing strategy must retain at least a minimum total
+  depth in each of the $\left\{u,g,r,i,z\right\}$~filters, along all
+  sight-lines (and evaluated appropriately for each field), in order
+  to constrain and disentangle populations photometrically
+  \citep[e.g.][]{2012ApJ...757..166B, ivezic08}. If there are any filters deemed
+  unimportant to variability studies in any fields, it will likely be the
+  photometric confusion limit (for static science) that sets the
+  minimum total integration times in those cases.} 
+
 %Comparison is now needed of multiple
 %strategies that do allocate sufficient observations to inner-Plane
 %observations, so that the scientific impact of the distribution (in
@@ -773,7 +784,25 @@ Whether the Plane should be observed as a ``special survey'' or
 \subsection{Conclusions}
 
 
-\new{Here we answer the ten questions posed in \autoref{sec:intro:evaluation:caseConclusions}:}
+\new{We answer below the ten questions posed in \autoref{sec:intro:evaluation:caseConclusions}.} 
+
+\new{While the science cases developed thus far all rest on
+  variability sensitivity in one way or another, we should point out
+  that static science should not be sacrificed completely to
+  variability studies. This suggests that any strategy covering the
+  inner Milky Way must retain at least a minimum total depth in each
+  of the $\left\{u,g,r,i,z\right\}$~filters, along all sight-lines, in
+  order to constrain stellar effective temperatures, metallicities,
+  and interstellar extinction directly from LSST photometry \citep[see
+    for example the presentation in][and associated
+    papers]{ivezic08}. The implied figure of merit for static science
+  is straightforward in principle - simply evaluate the photometric
+  depth in each filter at which the confusion limit is reached at the
+  required photometric precision - but in practice depends on the
+  actual set stellar populations along each line of sight. This figure of
+  merit is likely to set the minimum acceptable exposure time in each
+  filter in each field, and will require a combination of modeling
+  work and experience with existing photometric datasets.}
 
 \begin{description}
 
@@ -790,9 +819,9 @@ Whether the Plane should be observed as a ``special survey'' or
    range of timescales) central to the science cases in this chapter
    section. {\it Qualitatively,} we expect the FoMs will indicate that
    the sky coverage within the inner Disk should be maximized subject
-   to the constraint that all fields experience LSST coverage in all
-   filters throughout the full ten-year survey (a condition currently
-   {\it not} satisfied by the current baseline cadence,
+   to the constraint that all fields experience LSST coverage
+   throughout the full ten-year survey (a condition currently {\it
+     not} satisfied by the current baseline cadence,
    \opsimdbref{db:baseCadence}). This is because some of the important
    transients are relatively rare, and/or the spatial distribution of
    the population within the Milky Way disk is of scientific
@@ -877,13 +906,14 @@ Whether the Plane should be observed as a ``special survey'' or
   in breaking degeneracies between distance and luminosity since the
   spectrum of the outbursts discussed here is typically vega-like (so
   any unusual $r-i$~color should be the result largely of interstellar
-  reddening). To be most generally useful for static population
-  studies (e.g. constraining reddening, $T_{eff}$~and
-  $[Fe/H]$~photometrically following the manner of the SDSS tomography
-  studies and described in the LSST science book), coverage in at
-  least $ugriz$~will be required that affords precise photometry at
-  least down to the confusion limit. We do not as-yet have
-  quantitative limits on what this would mean for the distribution of observing time across filters, however.}
+  reddening). The minimum observing time allocated to each band is likely to be set by the requirement to retain static science goals such as population dissection \citep[see, e.g.][]{ivezic08}; at the present date, however, figures of merit for static science in the inner plane have not yet been evaluated.}
+%To be most generally useful for static population
+%  studies, such as those constraining reddening, $T_{eff}$~and
+%  $[Fe/H]$~photometrically following the manner of the SDSS tomography
+%  studies \citep[see, e.g.][and references therein]{ivezic08}, coverage in at
+%  least $ugriz$~will be required that affords precise photometry at
+%  least down to the confusion limit. We do not as-yet have
+%  quantitative limits on what this would mean for the distribution of observing time across filters, however.}
 
 \item[Q6:] {\it Does the science case place any constraints on the cadence for deep drilling fields?}
 
@@ -897,7 +927,7 @@ Whether the Plane should be observed as a ``special survey'' or
   baselines that short in order to reliably recover periods between 80
   minutes and 2 hours, where the majority of CVs (and potentially a
   new population of X-ray faint short period XRB outbursts) should
-  be.}
+  be. These considerations also apply to any LSST observational campaign that will complement WFIRST observations of the Bulge (Section \ref{sec:wfirst:microlensing}).}
 
  \item[Q7:] {\it Assuming two visits per night, would the science case
  benefit if they are obtained in the same band or not?}
