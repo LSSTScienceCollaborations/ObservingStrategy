@@ -76,7 +76,7 @@ sample the pulsations randomly in phase.
 
 The ability to detect pulsations relies on the recognition that scatter
 in the flux measurements significantly exceeds what can be attributed to
-noise.  LSST's sensitivity to these pulsations depends on two things:
+noise.  LSST's sensitivity to these pulsations depends primarily on two things:
 the photometric precision and the total number of measurements.  By
 affecting these survey characteristics, the choice of observing strategy
 impacts LSST's success in its goal of exploring the variable universe.
@@ -86,11 +86,11 @@ tradeoffs between these dual requirements related primarily to exposure
 time that are complicated and must be explored in MAF to be understood.
 
 While consideration of observations across all filters together provides
-the greatest sensitivity to detecting overall variability, the detection
+the greatest sensitivity to detecting overall variability, the measurement
 of pulsational power in individual filters serves the science needs for
 pulsating stars best.  Since sparse temporal sampling will make measuring 
-the individual periods of complex, multi-modal pulsating stars difficult, 
-LSST's greatest contributions to this field likely lie
+the individual periods of complex, multi-modal pulsating stars challenging, 
+LSST's greatest contributions to this field may lie
 in its ability to measure relative pulsational power across many
 passbands.  For ZZ Cetis in particular, there is a dependence of
 the relative amplitudes measured in different filters on the geometry of
@@ -101,7 +101,7 @@ essential for comparing measured pulsation frequencies with those
 calculated for asteroseismic stellar models.  The difficulty in
 determining $\ell$ is currently the greatest limitation on white dwarf
 asteroseismology. LSST has the potential to statistically constrain the
-relative contributions of modes of different $\ell$ values to the
+relative contributions of modes of different $\ell$ to the
 overall photometric variations.  The calculations by
 \citet{1995ApJS...96..545B} of relative pulsation amplitudes in
 different filters show that measuring the amplitude in the $u$ band is
@@ -119,7 +119,7 @@ disk-integrated root-mean-squared (r.m.s.)\ underlying signal to a
 desired level of completeness and a tolerable level of contamination.
 The metric makes the simplifying
 assumptions that the typical revisit time for a field is longer than the
-pulsation periods (appropriate for many pulsators, including ZZ Cetis),
+pulsation periods (appropriate for many pulsators, including ZZ Cetis)
 and that the intrinsic variability takes the form of a Gaussian (which,
 for multi-periodic pulsators, is supported by the central limit
 theorem).  The metric relies on the total number of visits and
@@ -163,7 +163,7 @@ the ensemble amplitude properties in multiple filters for a large
 population of ZZ Cetis (particularly in the $u$ filter), we adopt the
 following figure of merit for LSST's ability to study pulsating stars:
 that significant variability should be detected in the $u$ band for at
-least 1000 ZZ Cetis with r.m.s pulsational power of 1\% by the end of
+least 1000 ZZ Cetis by the end of
 the 10\,yr survey operations.  A sample of this size can be binned to track
 changes in pulsational power as white dwarfs cool across the ZZ Ceti
 instability strip, without the results being unduly influenced by random
@@ -243,7 +243,7 @@ expected ZZ Ceti detections \emph{from excess scatter alone} for
 the OpSim runs considered.  More sophisticated analysis
 of the LSST data will recover additional variables, especially since the
 information about the timing of visits has been completely ignored here.
-The statistical treatment of populations of stars will also improve the 
+The statistical treatment of large populations of stars will also improve the 
 detection of variability over this star-by-star treatment. 
 Still, it appears that the science results for the lowest amplitude ZZ Cetis 
 will be severely limited, and therefore LSST will capture a less-than-complete 
@@ -261,80 +261,123 @@ ZZ Cetis detected in the $u$ band will improve LSST's scientific yield for
 \emph{all} stellar pulsation studies.
 
 % ====================================================================
-%
-% \subsection{Conclusions}
-%
-% Here we answer the ten questions posed in
-% \autoref{sec:intro:evaluation:caseConclusions}:
-%
-% \begin{description}
-%
-% \item[Q1:] {\it Does the science case place any constraints on the
-% tradeoff between the sky coverage and coadded depth? For example, should
-% the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline but
-% with 18,000 deg$^2$)?}
-%
-% \item[A1:] ...
-%
-% \item[Q2:] {\it Does the science case place any constraints on the
-% tradeoff between uniformity of sampling and frequency of  sampling? For
-% example, a rolling cadence can provide enhanced sample rates over a part
-% of the survey or the entire survey for a designated time at the cost of
-% reduced sample rate the rest of the time (while maintaining the nominal
-% total visit counts).}
-%
-% \item[A2:] ...
-%
-% \item[Q3:] {\it Does the science case place any constraints on the
-% tradeoff between the single-visit depth and the number of visits
-% (especially in the $u$-band where longer exposures would minimize the
-% impact of the readout noise)?}
-%
-% \item[A3:] ...
-%
-% \item[Q4:] {\it Does the science case place any constraints on the
-% Galactic plane coverage (spatial coverage, temporal sampling, visits per
-% band)?}
-%
-% \item[A4:] ...
-%
-% \item[Q5:] {\it Does the science case place any constraints on the
-% fraction of observing time allocated to each band?}
-%
-% \item[A5:] ...
-%
-% \item[Q6:] {\it Does the science case place any constraints on the
-% cadence for deep drilling fields?}
-%
-% \item[A6:] ...
-%
-% \item[Q7:] {\it Assuming two visits per night, would the science case
-% benefit if they are obtained in the same band or not?}
-%
-% \item[A7:] ...
-%
-% \item[Q8:] {\it Will the case science benefit from a special cadence
-% prescription during commissioning or early in the survey, such as:
-% acquiring a full 10-year count of visits for a small area (either in all
-% the bands or in a  selected set); a greatly enhanced cadence for a small
-% area?}
-%
-% \item[A8:] ...
-%
-% \item[Q9:] {\it Does the science case place any constraints on the
-% sampling of observing conditions (e.g., seeing, dark sky, airmass),
-% possibly as a function of band, etc.?}
-%
-% \item[A9:] ...
-%
-% \item[Q10:] {\it Does the case have science drivers that would require
-% real-time exposure time optimization to obtain nearly constant
-% single-visit limiting depth?}
-%
-% \item[A10:] ...
-%
-% \end{description}
+
+ \subsection{Conclusions}
+
+ Here we answer the ten questions posed in
+ \autoref{sec:intro:evaluation:caseConclusions}:
+
+ \begin{description}
+
+ \item[Q1:] {\it Does the science case place any constraints on the
+ tradeoff between the sky coverage and coadded depth? For example, should
+ the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+ Pan-STARRS) or the number of detected galaxies (the current baseline but
+ with 18,000 deg$^2$)?}
+
+ \item[A1:] Coadded depth is not directly a limitation on detecting variability,
+ but both improve with the number of revisits to the same field, $N$, 
+ as roughly $\sqrt{N}$.  A larger field of view also increases the potential population
+ of variable stars discovered, but pushing to higher airmass where data quality is 
+ poorer does not make for a good trade unless the survey area is extended to strategically
+ target more variable stars, e.g., over more of the Galactic plane.
+
+ \item[Q2:] {\it Does the science case place any constraints on the
+ tradeoff between uniformity of sampling and frequency of  sampling? For
+ example, a rolling cadence can provide enhanced sample rates over a part
+ of the survey or the entire survey for a designated time at the cost of
+ reduced sample rate the rest of the time (while maintaining the nominal
+ total visit counts).}
+
+ \item[A2:] While the time distribution of observations has not been considered 
+ here, this will significantly impact variable star science with LSST. 
+ Future development of MAF metrics should address specifically how
+ the distribution of visits (rather than only number, area, and signal-to-noise as addressed 
+ above) ease the challenges of amplitude and \emph{period} recovery in sparely sampled
+ observations.  Revisit times much shorter than pulsation timescales ($< \sim$5\,min)
+ can help to constrain the periods.  Perhaps more importantly, cadences that
+ produce the least complicated spectral windows and the highest 
+ ``effective Nyquist frequencies'' will best facilitate period recovery \citep[e.g.,][]{1999A&AS..135....1E}.
+
+ \item[Q3:] {\it Does the science case place any constraints on the
+ tradeoff between the single-visit depth and the number of visits
+ (especially in the $u$-band where longer exposures would minimize the
+ impact of the readout noise)?}
+
+ \item[A3:] We specifically support increased time spent in the 
+ $u$-band, with the goal of measuring the relative pulsation amplitudes
+ in multiple filters. Increased signal-to-noise per $u$-band exposure enables 
+ more measurements of pulsational power in $u$, though pulsating star
+ science would be hurt by a corresponding decrease in the total number of 
+ $u$-band visits per field.
+
+ \item[Q4:] {\it Does the science case place any constraints on the
+ Galactic plane coverage (spatial coverage, temporal sampling, visits per
+ band)?}
+
+ \item[A4:] The Galactic plane contains a higher concentration of multi-periodic 
+ pulsating stars that LSST will be able to characterize in the time domain.
+ Pulsating star science benefits from more survey time spent in the Galactic
+ plane.
+
+ \item[Q5:] {\it Does the science case place any constraints on the
+ fraction of observing time allocated to each band?}
+
+ \item[A5:] For the ZZ Ceti case study, $u$-band observations are particularly
+ important for potentially constraining pulsation geometries. The metric
+ developed in this section measures the expected number of ZZ Cetis
+ detected in the $u$-band, and we advocate for observing strategies
+ that increase this number.
+
+ \item[Q6:] {\it Does the science case place any constraints on the
+ cadence for deep drilling fields?}
+
+ \item[A6:] The results of the {\tt VarDepth} MAF metric run on the
+ current baseline cadence, {\tt minion\_1016}, shows that after 10 years, 
+ deep drilling fields are sensitive to pulsation \emph{amplitude} measurements
+ in the $r$-band $\approx$1.5\,mag fainter than for identical objects in 
+ the main survey.  The improvement to period recoverability 
+ could be far greater in deep drilling fields, but new MAF metrics must
+ be developed to demonstrate this and to help select between specific
+ proposed cadences.
+
+ \item[Q7:] {\it Assuming two visits per night, would the science case
+ benefit if they are obtained in the same band or not?}
+
+ \item[A7:] Analyses that will successfully extract the maximum pulsation
+ science from LSST will have to address data across all passbands together,
+ and there is no current indication of how or if the nightly revisit filter selection
+ will affect this.
+
+ \item[Q8:] {\it Will the case science benefit from a special cadence
+ prescription during commissioning or early in the survey, such as:
+ acquiring a full 10-year count of visits for a small area (either in all
+ the bands or in a  selected set); a greatly enhanced cadence for a small
+ area?}
+
+ \item[A8:] A few hours of continuous sampling of a few fields during 
+ commissioning would produce immediate science results for many 
+ multi-modal pulsating stars, as well as help accelerate LSST's ultimate 
+ characterization of variable stars in these fields.
+ 
+
+ \item[Q9:] {\it Does the science case place any constraints on the
+ sampling of observing conditions (e.g., seeing, dark sky, airmass),
+ possibly as a function of band, etc.?}
+
+ \item[A9:] The {\tt VarDepth} MAF metric can help assess how the 
+ adjustments made by the observing strategy to observing conditions 
+ affect the variable star science output.
+ 
+
+ \item[Q10:] {\it Does the case have science drivers that would require
+ real-time exposure time optimization to obtain nearly constant
+ single-visit limiting depth?}
+
+ \item[A10:] No. Consistent exposure times are simpler to interpret as they
+ smooth over any underlying variability by a consistent amount.
+
+ \end{description}
 
 % ====================================================================
 
