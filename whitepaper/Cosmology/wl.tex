@@ -438,11 +438,12 @@ only slew (beyond that required to track the sky during exposures) when
 necessary to prepare for a filter change -- that could be estimated at the
 equivalent of $\simeq 3$ complete rotations per night.  To engage the rotator by
 up to $\simeq 30$ degrees per visit would require $\simeq 300$ complete
-rotations per night, though it may be possible to increase isotropy with far
-less additional rotational slewing.  The impact on survey efficiency and
-hardware wear and tear has not been considered.  Whether or not this uniformity
-could be achieved with less slew time if implemented in scheduling remains to be
-demonstrated.
+rotations per night - an upper limit to the additional rotations, but one which might be approached by a requirement for
+rigorous distribution over relatively short timescales.  On the other hand, a very significant improvement
+in distribution could be achieved by simply introducing a constrained randomized rotator
+offset after each filter change, with little or possibly no loss in observing efficiency.  
+Guidance is needed from simulations for the randomization requirement(s), and from science strategy
+for the time scale over which it must be achieved.
 
 Increasing the isotropy of the parallactic angle is trickier, since the
 parallactic angle is only affected by the hour angle of observations (for a
@@ -462,10 +463,10 @@ camera rotations.
 
 \subsection{Conclusions}
 
-Randomization of camera angle covering 180 deg can effictively suppress
-residual shear systematics remaining after DM pipleine first-order
+Randomization of camera angle covering 180 deg can effectively suppress
+residual shear systematics remaining after DM pipeline first-order
 correction.   More simulations are required, using intelligent
-dithering, in order to assess the efficinecy and the remaing WL shear
+dithering, in order to assess the efficiency and the remaining WL shear
 systematics.
 
 
