@@ -329,82 +329,131 @@ dataset with a sparse but long baseline study maxmizes the scientific return
 for both methods, and allows LSST to address all of the accretion and
 rotational variability associated with young stars.
 
+\subsection{Conclusions}
+\begin{description}
+\item[Q1:] {\it Does the science case place any constraints on the
+tradeoff between the sky coverage and coadded depth? For example, should
+the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+Pan-STARRS) or the number of detected galaxies (the current baseline but
+with 18,000 deg$^2$)?}
+%
+\item[A1:] 
+Most young stars congregate into clusters in specific regions, though there is an older
+population that is more distributed. The vast majority are within $\sim$ 25 degrees of the
+galactic plane. As long as that swath of sky is covered to the degree possible from Chile,
+the survey will provide the young star community with the monitoring capability needed to
+identify transient outbursts and to study periodic and aperiodic phenomena in young stars.
+While it may be useful to have deep coadded images of some regions, for example, to identify
+optical counterparts to X-ray point sources, dust extinction typically limits such efforts
+in the optical towards most regions of interest.  Hence, deep coadded frames are a secondary
+priority.
 
-% ====================================================================
-%
-% \subsection{Conclusions}
-%
-% Here we answer the ten questions posed in
-% \autoref{sec:intro:evaluation:caseConclusions}:
-%
-% \begin{description}
-%
-% \item[Q1:] {\it Does the science case place any constraints on the
-% tradeoff between the sky coverage and coadded depth? For example, should
-% the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline but
-% with 18,000 deg$^2$)?}
-%
-% \item[A1:] ...
-%
-% \item[Q2:] {\it Does the science case place any constraints on the
-% tradeoff between uniformity of sampling and frequency of  sampling? For
-% example, a rolling cadence can provide enhanced sample rates over a part
-% of the survey or the entire survey for a designated time at the cost of
-% reduced sample rate the rest of the time (while maintaining the nominal
-% total visit counts).}
-%
-% \item[A2:] ...
-%
-% \item[Q3:] {\it Does the science case place any constraints on the
-% tradeoff between the single-visit depth and the number of visits
-% (especially in the $u$-band where longer exposures would minimize the
-% impact of the readout noise)?}
-%
-% \item[A3:] ...
-%
-% \item[Q4:] {\it Does the science case place any constraints on the
-% Galactic plane coverage (spatial coverage, temporal sampling, visits per
-% band)?}
-%
-% \item[A4:] ...
-%
-% \item[Q5:] {\it Does the science case place any constraints on the
-% fraction of observing time allocated to each band?}
-%
-% \item[A5:] ...
-%
-% \item[Q6:] {\it Does the science case place any constraints on the
-% cadence for deep drilling fields?}
-%
-% \item[A6:] ...
-%
-% \item[Q7:] {\it Assuming two visits per night, would the science case
-% benefit if they are obtained in the same band or not?}
-%
-% \item[A7:] ...
-%
-% \item[Q8:] {\it Will the case science benefit from a special cadence
-% prescription during commissioning or early in the survey, such as:
-% acquiring a full 10-year count of visits for a small area (either in all
-% the bands or in a  selected set); a greatly enhanced cadence for a small
-% area?}
-%
-% \item[A8:] ...
-%
-% \item[Q9:] {\it Does the science case place any constraints on the
-% sampling of observing conditions (e.g., seeing, dark sky, airmass),
-% possibly as a function of band, etc.?}
-%
-% \item[A9:] ...
-%
-% \item[Q10:] {\it Does the case have science drivers that would require
-% real-time exposure time optimization to obtain nearly constant
-% single-visit limiting depth?}
-%
-% \item[A10:] ...
-%
-% \end{description}
+\item[Q2:] {\it Does the science case place any constraints on the
+tradeoff between uniformity of sampling and frequency of  sampling? For
+example, a rolling cadence can provide enhanced sample rates over a part
+of the survey or the entire survey for a designated time at the cost of
+reduced sample rate the rest of the time (while maintaining the nominal
+total visit counts).}
+
+\item[A2:] 
+We discussed cadences in some detail above. To obtain the best constraints on periods, a time-intensive
+($\sim$ one week/year) campaign on a few selected regions is warranted. Nominal coverage over the
+galactic plane will suffice to identify eruptive variables.
+
+\item[Q3:] {\it Does the science case place any constraints on the
+tradeoff between the single-visit depth and the number of visits
+(especially in the $u$-band where longer exposures would minimize the
+impact of the readout noise)?}
+
+\item[A3:] 
+This item is discussed in section A above. In young stars, the u-band is particularly useful
+as a measure of accretion. At the same time, for period determinations, denser cadences produce
+fewer problems with aliasing for the typical young star variable with a rotation period between
+a day and two weeks.
+
+\item[Q4:] {\it Does the science case place any constraints on the
+Galactic plane coverage (spatial coverage, temporal sampling, visits per
+band)?}
+
+\item[A4:] 
+A nominal sampling of once every few days will suffice to identify interesting
+eruptive variables as long as the galactic plane coverage is good (item A1).
+However, a sparse temporal sampling such as this will make it difficult to interpret
+the lightcurves of the tens of thousands of T Tauri stars observed by LSST. A single
+week's campaign of dense sampling, e.g., 2-3 times per night, of targeted regions
+will greatly improve our ability to separate periodic variables from aperiodic ones. 
+Knowing the rotation periods of thousands of young stars within a given star forming
+region will be a major contribution that LSST makes to this field of research. Such data
+will allow us to learn how angular momentum is distributed among newborn
+stars, whether it changes with mass and location in the cloud, 
+and how it varies as the stars age. 
+
+\item[Q5:] {\it Does the science case place any constraints on the
+fraction of observing time allocated to each band?}
+
+\item[A5:] 
+In the case we made above for dense sampling, we argued for z, r, and u. The
+u-band allows us to follow mass accretion variability, while r and z (for most
+objects) will be dominated by photospheric flux. The r-z color is an important
+constraint for models of star spots. More colors are always useful, but having
+a photospheric color index plus one accretion measure are the science drivers 
+for filter choices. Once u, r, and z are observed, having higher cadences
+is preferable to having more bands.
+The exposure times and magnitudes for typical objects are described in section A
+above.
+
+\item[Q6:] {\it Does the science case place any constraints on the
+cadence for deep drilling fields?}
+
+\item[A6:] 
+Absolutely. We argue in the `Summary and Recommendations' section above
+for the advantages of a single week of denser monitoring for specific
+regions, with the goal of having several observations per night, separated
+in time by at least an hour from one another. The goal here is to provide
+some basis in reality for interpreting the irregular lightcurves of young
+stars, which also typically have a periodic component. Depending on the longevity of
+the star spots, a period might be obvious in high-cadence data taken over
+a week, but disappear over a year if some spots vanish and others form. 
+
+\item[Q7:] {\it Assuming two visits per night, would the science case
+benefit if they are obtained in the same band or not?}
+
+\item[A7:] 
+If the data are taken in the same band
+it means better sampling for periods. With different bands it means a lightcurve in two bands,
+which is also useful. It's probably a wash, and we can follow whatever the drivers are for the
+other science cases of LSST.
+
+\item[Q8:] {\it Will the case science benefit from a special cadence
+prescription during commissioning or early in the survey, such as:
+acquiring a full 10-year count of visits for a small area (either in all
+the bands or in a  selected set); a greatly enhanced cadence for a small
+area?}
+
+\item[A8:] 
+Yes, definitely. We ought to see what we can get out of a dedicated week-long
+LSST cadence on specifc regions. If the results are impressive we follow up 
+on different regions every year (or even return to the same regions).
+
+\item[Q9:] {\it Does the science case place any constraints on the
+sampling of observing conditions (e.g., seeing, dark sky, airmass),
+possibly as a function of band, etc.?}
+
+\item[A9:] 
+
+Better seeing helps with unresolved binaries and for regions where contamination comes
+into play, for example, in the plane but away from dark clouds. Some of the fainter objects
+will be affected if the Moon is very bright and close. However generally these constraints
+are probably in a 'typical' category and will not affect the design of the survey.
+
+\item[Q10:] {\it Does the case have science drivers that would require
+real-time exposure time optimization to obtain nearly constant
+single-visit limiting depth?}
+
+\item[A10:] 
+No.
+
+\end{description}
 
 % ====================================================================
 
