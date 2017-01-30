@@ -35,8 +35,8 @@ in their Appendix A.
 Sections 8.6 and 8.7 of the Science Book express the anticipated
 contributions that LSST will make to the study of pulsating variables.
 While the sparseness of observations (low duty cycle) over the LSST
-survey lifetime will make exact period solutions impossible for most
-multiperiodic, short-period pulsating variables, the Science Book
+survey lifetime will make exact period solutions difficult, if not impossible for 
+most multiperiodic, short-period pulsating variables, the Science Book
 correctly emphasizes that the photometric precision and multi-color
 information will yield detections of variability that can be treated
 statistically to determine the ensemble properties of different classes
@@ -66,13 +66,13 @@ analysis, so we direct the interested reader to recent reviews by
 \citet{2010A&ARv..18..471A}.
 
 As white dwarfs with atmospheres spectroscopically dominated by hydrogen
-cool to between 12,500 and 10,600\,K, they are observed as the
+cool to between roughly 12,500 and 10,600\,K, they are observed as the
 photometrically variable ZZ Cetis.  The square root of the total
 observed pulsational power (intrinsic root-mean-squared signal) in these
 objects is on the order of 1\% and the mean pulsation periods are
-$\sim$10\,min \citep{2006ApJ...640..956M}.  Because the pulsation
-periods are $\ll$ the typical LSST revisit time, the survey will sample
-the pulsations randomly in phase.
+$\sim$10\,min \citep[e.g.,][]{2006ApJ...640..956M}.  Because the pulsation
+periods are $\ll$ the typical LSST revisit time, the survey will essentially 
+sample the pulsations randomly in phase.
 
 The ability to detect pulsations relies on the recognition that scatter
 in the flux measurements significantly exceeds what can be attributed to
@@ -88,11 +88,11 @@ time that are complicated and must be explored in MAF to be understood.
 While consideration of observations across all filters together provides
 the greatest sensitivity to detecting overall variability, the detection
 of pulsational power in individual filters serves the science needs for
-pulsating stars best.  Since LSST will not measure the specific periods
-of complex, multi-periodic pulsating stars (at least not in the main
-survey), LSST's potential to contribute significantly to this field lies
-in the ability to measure relative pulsation power across many
-passbands.  For ZZ Cetis in particular, there is a strong dependence of
+pulsating stars best.  Since sparse temporal sampling will make measuring 
+the individual periods of complex, multi-modal pulsating stars difficult, 
+LSST's greatest contributions to this field likely lie
+in its ability to measure relative pulsational power across many
+passbands.  For ZZ Cetis in particular, there is a dependence of
 the relative amplitudes measured in different filters on the geometry of
 the pulsations---specifically the spherical degrees, $\ell$, of the
 spherical harmonic wave patterns associated with the pulsation modes.
@@ -105,7 +105,7 @@ relative contributions of modes of different $\ell$ values to the
 overall photometric variations.  The calculations by
 \citet{1995ApJS...96..545B} of relative pulsation amplitudes in
 different filters show that measuring the amplitude in the $u$ band is
-essential for gaining leverage on this problem.
+crucial for gaining leverage on this problem.
 
 % --------------------------------------------------------------------
 
@@ -115,8 +115,8 @@ essential for gaining leverage on this problem.
 We have developed a custom MAF metric that calculates a ``variability
 depth'' for every point on the sky equal to the magnitude limit for
 detecting a population of photometric variables with a given
-disk-integrated root-mean-squared (r.m.s.) underlying signal to a
-desired level of completeness and a tolerable levels of contamination.
+disk-integrated root-mean-squared (r.m.s.)\ underlying signal to a
+desired level of completeness and a tolerable level of contamination.
 The metric makes the simplifying
 assumptions that the typical revisit time for a field is longer than the
 pulsation periods (appropriate for many pulsators, including ZZ Cetis),
@@ -184,8 +184,8 @@ $u$-band exposure times. We require that 90\% of ZZ Cetis with 1\%
 r.m.s.\  variability are detected to the computed ``variability depth,''
 with a tolerance for up to 10\% of nonvariables with the same $u$ and
 $r$ magnitudes to yield false detections.  The total number of ZZ Cetis
-\emph{with this assumed r.m.s.\ variability level} detected for each of these
-analyses is provided in Table~\ref{tab:zz1pertab}.
+detected for each of these analyses, \emph{if all ZZ Cetis exhibit exactly 
+the assumed level of r.m.s.\ variability}, is provided in Table~\ref{tab:zz1pertab}.
 
 
 \begin{table}[h]
@@ -203,12 +203,13 @@ analyses is provided in Table~\ref{tab:zz1pertab}.
 \end{table}
 
 Clearly LSST appears to fall very short of the proposed figure of merit
-by this measure.   The 1\% level of variability assumed for ZZ Cetis in
-this treatment was chosen to ensure that the majority of lower-amplitude
-ZZ Cetis are detected by LSST.  If we relax this constraint and repeat the
-analysis with ZZ Cetis modeled as 3\% r.m.s.\ variables (the mean
+by this measure.   However, the 1\% level of variability assumed for ZZ Cetis in
+this treatment was chosen to assess how well the lowest-amplitude
+ZZ Cetis are recovered by LSST and doesn't fairly represent the more typical, 
+higher amplitude variables.  If we relax this constraint and repeat the
+analysis with ZZ Cetis all modeled as 3\% r.m.s.\ variables (the mean
 r.m.s.\ variation observed), we get the results shown in Table~\ref{tab:zz3pertab}.
-This approximates a total number of ZZ Cetis detected, allowing for
+This better represents a total number of ZZ Cetis expected, allowing for
 incompleteness to low amplitude.  While we still do not detect
 $\sim$1000 ZZ Cetis in $u$, overall we see an increase in the total
 number of detected ZZ Cetis by roughly an order of magnitude (in $r$),
@@ -236,21 +237,25 @@ $u$-band goal than the {\tt minion\_1016} strategy.
 \subsection{Discussion}
 \label{sec:\secname:discussion}
 
-We emphasize again that ZZ Cetis make up the most difficult class of
-pulsator to detect variability in, and that while other pulsators will
-be better served by LSST, the currently proposed cadences capture a
-less-than-complete census of pulsating variable stars.  More
-sophistocated statistical techniques may come partially to the rescue
-here as our MAF metric simply treats every star on a case-by-case basis,
-rather than searching for increased scatter in a population of similar
-stars.  Still, it appears that the science results for individual
-low-amplitude ZZ Cetis will be severely limited.
+This simplistic analysis ignores most subtleties of ZZ Ceti variables, 
+but Table~\ref{tab:zz3pertab} captures the order of magnitude of 
+expected ZZ Ceti detections \emph{from excess scatter alone} for
+the OpSim runs considered.  More sophisticated analysis
+of the LSST data will recover additional variables, especially since the
+information about the timing of visits has been completely ignored here.
+The statistical treatment of populations of stars will also improve the 
+detection of variability over this star-by-star treatment. 
+Still, it appears that the science results for the lowest amplitude ZZ Cetis 
+will be severely limited, and therefore LSST will capture a less-than-complete 
+census of pulsating variable stars. 
 
-The situation for higher amplitude ZZ Cetis and other types of variable
-is better, and LSST observations of ZZ Cetis will certainly still be
+We emphasize again that low-amplitude ZZ Cetis are the most difficult pulsating 
+stars to observe. LSST will capture variability in higher amplitude ZZ Cetis and 
+other types of variable star more completely, and LSST observations of all 
+candidate pulsating white dwarfs will certainly still be
 worthy on careful analysis.  We note that the {\tt kraken\_1045}
 strategy with 60\,s exposures in $u$ does a much better job of measuring
-stellar variability overall, at the expence of a very minor decrease in $r$-band
+stellar variability overall, at the expense of a practically negligible decrease in $r$-band
 detections.  We argue that any observing strategy that increases the number of
 ZZ Cetis detected in the $u$ band will improve LSST's scientific yield for
 \emph{all} stellar pulsation studies.
