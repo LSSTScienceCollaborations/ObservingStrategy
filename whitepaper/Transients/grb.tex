@@ -249,82 +249,112 @@ single-filter rolling cadences should substantially improve LSST's
 discovery and characterization of relativistic explosions.
 
 
-% ====================================================================
-%
-% \subsection{Conclusions}
-%
-% Here we answer the ten questions posed in
-% \autoref{sec:intro:evaluation:caseConclusions}:
-%
-% \begin{description}
-%
-% \item[Q1:] {\it Does the science case place any constraints on the
-% tradeoff between the sky coverage and coadded depth? For example, should
-% the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline but
-% with 18,000 deg$^2$)?}
-%
-% \item[A1:] ...
-%
-% \item[Q2:] {\it Does the science case place any constraints on the
-% tradeoff between uniformity of sampling and frequency of  sampling? For
-% example, a rolling cadence can provide enhanced sample rates over a part
-% of the survey or the entire survey for a designated time at the cost of
-% reduced sample rate the rest of the time (while maintaining the nominal
-% total visit counts).}
-%
-% \item[A2:] ...
-%
-% \item[Q3:] {\it Does the science case place any constraints on the
-% tradeoff between the single-visit depth and the number of visits
-% (especially in the $u$-band where longer exposures would minimize the
-% impact of the readout noise)?}
-%
-% \item[A3:] ...
-%
-% \item[Q4:] {\it Does the science case place any constraints on the
-% Galactic plane coverage (spatial coverage, temporal sampling, visits per
-% band)?}
-%
-% \item[A4:] ...
-%
-% \item[Q5:] {\it Does the science case place any constraints on the
-% fraction of observing time allocated to each band?}
-%
-% \item[A5:] ...
-%
-% \item[Q6:] {\it Does the science case place any constraints on the
-% cadence for deep drilling fields?}
-%
-% \item[A6:] ...
-%
-% \item[Q7:] {\it Assuming two visits per night, would the science case
-% benefit if they are obtained in the same band or not?}
-%
-% \item[A7:] ...
-%
-% \item[Q8:] {\it Will the case science benefit from a special cadence
-% prescription during commissioning or early in the survey, such as:
-% acquiring a full 10-year count of visits for a small area (either in all
-% the bands or in a  selected set); a greatly enhanced cadence for a small
-% area?}
-%
-% \item[A8:] ...
-%
-% \item[Q9:] {\it Does the science case place any constraints on the
-% sampling of observing conditions (e.g., seeing, dark sky, airmass),
-% possibly as a function of band, etc.?}
-%
-% \item[A9:] ...
-%
-% \item[Q10:] {\it Does the case have science drivers that would require
-% real-time exposure time optimization to obtain nearly constant
-% single-visit limiting depth?}
-%
-% \item[A10:] ...
-%
-% \end{description}
+====================================================================
 
-% ====================================================================
+\subsection{Conclusions}
+
+Here we answer the ten questions posed in
+\autoref{sec:intro:evaluation:caseConclusions}:
+
+\begin{description}
+
+\item[Q1:] {\it Does the science case place any constraints on the
+tradeoff between the sky coverage and coadded depth? For example, should
+the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+Pan-STARRS) or the number of detected galaxies (the current baseline but
+with 18,000 deg$^2$)?}
+
+\item[A1:] No strong constraint, although on average
+	larger sky coverage provides fewer epochs for the dense time sampling
+	required to detect fast-fading events like GRBs.
+
+\item[Q2:] {\it Does the science case place any constraints on the
+tradeoff between uniformity of sampling and frequency of  sampling? For
+example, a rolling cadence can provide enhanced sample rates over a part
+of the survey or the entire survey for a designated time at the cost of
+reduced sample rate the rest of the time (while maintaining the nominal
+total visit counts).}
+
+\item[A2:]  Frequency of sampling is far more important than uniformity of
+	sampling for fast transients like GRBs.  Rolling cadences with
+		three or more epochs per night or two are needed for
+		realtime discovery of young events.
+
+\item[Q3:] {\it Does the science case place any constraints on the
+tradeoff between the single-visit depth and the number of visits
+(especially in the $u$-band where longer exposures would minimize the
+impact of the readout noise)?}
+
+\item[A3:]  While greater single visit depth probes a greater cosmological
+	volume within which to detect GRBs and other fast transients,
+		our efficiency at discovering
+		GRBs with LSST is driven entirely by the time sampling.
+		Accordingly we prefer a larger number of visits per field
+		to greater single-exposure depth, independent of band..
+
+\item[Q4:] {\it Does the science case place any constraints on the
+Galactic plane coverage (spatial coverage, temporal sampling, visits per
+band)?}
+
+\item[A4:] As GRBs are cosmological events, we expect to detect very few at
+	low Galactic latitudes due to extinction.  Accordingly this
+		science case is insensitive to observing plans in the Plane
+		except insofar as they limit the number and cadence of
+		exposures at higher latitudes.
+
+\item[Q5:] {\it Does the science case place any constraints on the
+fraction of observing time allocated to each band?}
+
+\item[A5:] No strong constraints, although detection of faint afterglows
+	will benefit from exposures taken in the bands with deepest
+		single-exposure depth.
+
+\item[Q6:] {\it Does the science case place any constraints on the
+cadence for deep drilling fields?}
+
+\item[A6:] Deep drilling fields provide an excellent opportunity to achieve
+	the high time sampling required to discover GRBs while they are
+		young.  As discussed above, a good fast transient cadence
+		might have a \textit{minimum} of three visits
+		in a night separated by an hour or two, preferably in a
+		single filter, with revisits every night.
+
+\item[Q7:] {\it Assuming two visits per night, would the science case
+benefit if they are obtained in the same band or not?}
+
+\item[A7:] Due to the need to constrain the lightcurve shape, it is best if
+	the observations are in the same filter--especially with only two
+	visits per night.  Otherwise there is a degeneracy between the
+	(evolving) color of the event and its lightcurve shape.
+
+\item[Q8:] {\it Will the case science benefit from a special cadence
+prescription during commissioning or early in the survey, such as:
+acquiring a full 10-year count of visits for a small area (either in all
+the bands or in a  selected set); a greatly enhanced cadence for a small
+area?}
+
+\item[A8:] A dedicated experiment providing enhanced cadences over a small
+	area  (as described above) would provide an ideal
+	experiment to determine the rate of fast transients.  Such an
+	observing strategy would also
+	facilitate organizing necessary followup resources
+	(spectroscopy, X-ray followup) because the observing period would
+	be known in advance.
+
+\item[Q9:] {\it Does the science case place any constraints on the
+sampling of observing conditions (e.g., seeing, dark sky, airmass),
+possibly as a function of band, etc.?}
+
+\item[A9:] None unique to the science.
+
+\item[Q10:] {\it Does the case have science drivers that would require
+real-time exposure time optimization to obtain nearly constant
+single-visit limiting depth?}
+
+\item[A10:] No.
+
+\end{description}
+
+====================================================================
 
 \navigationbar
