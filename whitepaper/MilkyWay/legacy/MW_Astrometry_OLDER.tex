@@ -1,0 +1,155 @@
+%\chapter{Mapping Our Galaxy: Positions, Proper Motions and Parallax}
+%\def\chpname{astrometry}\label{chp:\chpname}
+\section{Astrometry with LSST: Positions, Proper Motions, and Parallax}
+\def\secname{MW_Astrometry}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
+
+\noindent {\it Dave Monet, Dana Casetti, John Gizis, Michael Liu}
+
+\subsection{Introduction: Astrometry as a special case}
+\label{sec:keyword:MW_Astrometry_intro}
+
+A number of Milky Way science cases of interest to the Astronomical
+community will depend critically on the astrometric accuracy LSST will
+deliver. While ``astrometry'' is not a science case in the framework
+of this Whitepaper, LSST's astrometric performance will be sensitive
+to the particular choice of observing strategy.
+%While astrometry is not a science case, high astrometric accuracy enables
+%a large number of science cases.  
+Hence, the LSST Observing Strategy needs to be examined for systematic
+trends that might mitigate or even preclude precise measures of
+stellar positions, proper motions, parallaxes, and perturbations that
+arise from unseen companions. To illustrate the broad impact of
+strategy-enabled astrometry, three example impacted science cases are:
+%that illustrate the various impacts of the observing strategy might
+%be:
+%To highlight the
+%various astrometric impacts of the strategy, three science cases have
+%been chosen for particular attention:
+\begin{itemize}
+\item The tie between the Radio and Optical realizations of the
+International Celestial Reference System.
+\item Identification of Streams in the Galactic Halo using proper motions.
+\item The specific and ensemble agreement between LSST and Gaia parallaxes.
+\end{itemize}
+Each of these cases stresses different aspects of the LSST hardware, software,
+and observing strategies.
+
+\subsection{Sensitivity of parallax measurements to observing strategy}
+\label{sec:keyword:MW_Astrometry_cadence}
+
+%\medskip
+The measurement of stellar parallax puts the most constraints on the
+observing cadence.  There are two major issues:
+\begin{itemize}
+\item Sampling over a wide range of parallax factor.
+\item Breaking the correlation between Differential Color Refraction
+and parallax factor.
+\end{itemize}
+The parallax factors characterize the ellipse of the star's apparent motion
+as seen during the year.  The shape of the ellipse is given by the Earth's
+orbit and is not a free parameter in the astrometric solution.  The
+amplitude of the RA parallax factor is close to unity while the amplitude
+of the Dec parallax factor is dominated by the sine of ecliptic latitude.
+The RA parallax factor has maximum amplitude when the star is approximately
+six hours from the Sun, so the optimum time for parallax observing is when the
+star is on the meridian near evening or morning twilight.
+Atmospheric refraction displaces the star's apparent position in the
+direction of the zenith by an amount characterized by both the wavelength
+of the light and the distance to the zenith.  Whereas the measured position
+of star is a function of the total refraction, the measurement of parallax
+and proper motion depends on the differences in the refraction as a function
+of the color of each star and the circumstances of the observations.  This
+dependence is called Differential Color Refraction (DCR).
+The combination of parallax factor and DCR leads to the these two rules
+well known to those who make astrometric observations.
+\begin{itemize}
+\item [1] Observations need to cover the widest possible range in parallax
+factor.
+\item [2] The correlation between parallax factor and hour angle in the
+observations needs to be minimized.
+\end{itemize}
+
+The search for faint proper motion stars has two key components.  The first
+is the need to identify stars that move from the ensemble of other image
+features that can cause confusion.  For example, a compact group of stars
+that contains one or more stars of variable brightness can confuse the catalog
+correlation algorithm.  The other is the need to establish the zero point.
+For the case of relative astrometry, meaning the measurement of relative
+positions in an image, the question remains on how to remove the mean motion
+of the reference frame.  For example, astrometry on certain classes of galaxies
+might produce a zero point of sufficient accuracy.  This leads to a third
+constraint on the observing cadence.
+\begin{itemize}
+\item [3)] Observations must cover a sufficient range of epochs so that stars with
+linear or periodic motions can be identified at a high level of confidence.
+\end{itemize}
+
+The tie between the radio and optical reference frames relies on measuring
+accurate positions for objects visible in both wavelength regimes.  Whereas
+there are optical variable stars with radio emission, most have associated
+optical nebulosity that degrades the accuracy of the optical positions.
+The typical radio+optical object is a QSO.  Unfortunately, many QSOs have
+detectable optical or radio structures that degrade the positions or
+suggests a displacement between the location of the sources of the radio
+and optical radiation.  The major contribution from LSST will be the
+identification of a large number of QSOs based on their colors that have
+minimal (if any) spatially extended structure.  The impact of this search
+has no obvious impact on the cadence other than temporal coverage to
+identify variability.
+
+\subsection{Metrics for LSST's delivered astrometric accuracy}
+\label{sec:keyword:MW_Astrometry_metrics}
+
+%\medskip
+In summary, there are three metrics for the observing strategy that have direct
+relevance
+on the quality of LSST astrometric measurements.  These were identified years
+ago and are already in the suite of MAF utilities, but they should be
+reviewed prior to making final decisions.
+
+\begin{itemize}
+\item[A)] For each LSST field, the parallax factors at each epoch of
+observation need to be computed.  The ensemble of these must be checked for
+sufficient coverage of the parallactic ellipse.  In particular, the number of
+measures with RA parallax factor less than -0.5 and greater than +0.5
+needs to be tallied because these carry the most weight in the solution
+for the amplitude (parallax).
+\item[B)] For each LSST field, the hour angle of the observation needs to be
+computed, and the correlation between hour angle and parallax factor
+needs to be examined for significance.  The observing strategy must minimize
+the number of fields with this correlation.
+\item[C)] The epochs of observation for each field must be checked for a
+reasonable coverage over the duration of the survey and to avoid
+collections of too many visits during a few short intervals.
+\end{itemize}
+
+\subsection{Topics that will need to be addressed}
+\label{sec:keyword:MW_Astrometry_furtherwork}
+
+%\medskip
+Finally, it must be noted that these MAF metrics are only part of the
+study of LSST's predicted astrometric performance.  Detailed simulations
+and studies need to be done in many other areas as part of the
+prediction and verification of LSST's astrometric performance.  Among
+the most important are the following.
+
+\begin{itemize}
+\item Can we use galaxies as reference objects, and if so are certain
+shapes or colors better than others?
+\item Can we identify QSOs and sense optical structure that might
+mitigate using certain ones in the Radio-Optical reference frame link?
+\item Given the LSST exposure time, site, and physical characteristics,
+how can we mitigate the limitations on astrometric accuracy imposed
+by the seeing and local atmospheric turbulence?
+\item At what star densities does the measurement of a centroid become
+difficult or impossible, and does difference imaging allow us to work
+in these crowded areas?
+\item What tools do we need to compare the general and specific agreement
+between the {\it Gaia} results and the LSST results?
+\item Does the ``brighter-wider" effect in the deep depletion CCDs introduce
+a magnitude term into the centroid positions?
+\end{itemize}
+
+\navigationbar
+
+% --------------------------------------------------------------------

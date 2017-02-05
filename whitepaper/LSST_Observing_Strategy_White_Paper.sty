@@ -96,6 +96,8 @@
 %%%%%
 % Adding useful figure package tools
 \usepackage{wrapfig}
+\usepackage{caption}	  % caption package must be loaded before subcaption
+\usepackage{subcaption}   % added by ZI to support 2-panel figures
 
 %%%%%
 % Attempt to allow astro journal style citations (eg citep and citet...)
@@ -294,7 +296,7 @@ colorlinks=true]{hyperref}
 % the introduction section:
 \newcommand{\listofopsimdbs}{
   \vskip\baselineskip
-  {\OpSim databases investigated in this section:}
+  {\OpSim databases investigated in this section (name format: machineName\_runNumber):}
   \phantomsection\label{tab:opsimdbnames}
   \medskip
   \hrule
@@ -307,7 +309,7 @@ colorlinks=true]{hyperref}
 \newcommand{\opsimdbname}[1]{\texttt{#1}}
 
 % \opsimdbref is the function to use when referring to an opsim run.
-% "\opsimdbref{db:enigma}"  -> "{\sc OpSim} database \texttt{enigma1189}"
+% "\opsimdbref{db:baseCadence}"  -> "{\sc OpSim} database \texttt{minion\_1016}"
 \newcommand{\opsimdbref}[1]{\nameref{#1}}
 \newcommand{\fullopsimdbref}[1]{\hyperref[#1]{\OpSim database \nameref{#1}}}
 

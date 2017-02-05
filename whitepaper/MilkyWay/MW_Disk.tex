@@ -1,49 +1,20 @@
 % ====================================================================
 %+
 % SECTION:
-%    section-name.tex  % eg lenstimedelays.tex
+%    MW_Disk.tex
 %
 % CHAPTER:
-%    chapter.tex  % eg cosmology.tex
+%    galaxy.tex
 %
 % ELEVATOR PITCH:
-%    Explain in a few sentences what the relevant discovery or
-%    measurement is going to be discussed, and what will be important
-%    about it. This is for the browsing reader to get a quick feel
-%    for what this section is about.
 %
-% COMMENTS:
-%
-%
-% BUGS:
-%
-%
-% AUTHORS:
-%    Phil Marshall (@drphilmarshall)  - put your name and GitHub username here!
 %-
 % ====================================================================
 
-\section{Mapping the Milky Way Disk}
-\def\secname{MW_Disk}\label{sec:\secname} % For example, replace "keyword" with "lenstimedelays"
+\section{Populations in the Milky Way Disk}
+\def\secname{MW_Disk}\label{sec:\secname}
 
-\noindent{\it Will Clarkson, Peregrine McGehee, Jay Strader, Chris Britt}  % (Writing team)
-
-% This individual section will need to describe the particular
-% discoveries and measurements that are being targeted in this section's
-% science case. It will be helpful to think of a ``science case" as a
-% ``science project" that the authors {\it actually plan to do}. Then,
-% the sections can follow the tried and tested format of an observing
-% proposal: a brief description of the investigation, with references,
-% followed by a technical feasibility piece. This latter part will need
-% to be quantified using the MAF framework, via a set of metrics that
-% need to be computed for any given observing strategy to quantify its
-% impact on the described science case. Ideally, these metrics would be
-% combined in a well-motivated figure of merit. The section can conclude
-% with a discussion of any risks that have been identified, and how
-% these could be mitigated.
-
-%A short preamble goes here. What's the context for this science
-%project? Where does it fit in the big picture?
+\credit{willclarkson}, \credit{caprastro}, \credit{cbritt4}, \credit{chomiuk}
 
 Many populations of great importance to Astronomy exist predominantly
 in or near the Galactic Plane, and yet are sufficiently
@@ -52,12 +23,60 @@ the only facility in the forseeable future that will be able to
 identify a statistically meaningful sample. Some (such as the novae
 that allow detailed study of the route to Type Ia Supernovae) offer
 unique laboratories to study processes of fundamental importance to
-astrophysics at all scales. Others (like intra-disk microlensing
-events) offer the {\it only} probe of important populations. An
-important collateral benefit of studies in the plane with an LSST-like
-facility, is improved mapping of the distribution and observational
-effects of the ISM (particularly dust), which is of importance to all
-IR/Optical/UV observational studies.
+astrophysics at all scales. Others \citep[like slow-microlensing events
+  heralding an unseen compact object population; e.g.][]{2016MNRAS.458.3012W} offer the {\it only}
+probe of important populations.
+
+We remind the reader that {\it variability} studies can be performed
+in regions where stars are substantially more spatially crowded than could be
+tolerated for aperture photometry. Microlensing studies provide a good
+example, routinely using difference imaging \citep[e.g.][]{1998ApJ...503..325A, 2010MNRAS.409..247K} to detect variability in highly crowded regions, with observations by
+facilities with higher spatial resolution used for follow-up
+characterization.
+
+%the rapid completion of inner-Plane observations in the
+%Baseline strategy (run \opsimdbref{db:baseCadence}) dominates all
+%other effects.
+
+At present, \opsimdbref{db:baseCadence} allocates 30
+exposures in all six filters to fields in the Galactic ``zone of
+avoidance,'' typically completing these fields within the first 200
+days of the survey (see Figure
+\ref{fig_durationInGalacticCoords}). This rapid completion of inner-plane observations imprints a strong signal on
+metrics and FoMs (see for example the right panel of Figure
+\ref{fig:parapmenigma}).  In this section, we consider the scientific merit of \opsimdbref{db:baseCadence} and other observing strategies to study the relative impacts of the distribution and number of visits on Galactic plane science.
+
+\new{Before proceeding further, we point out that static science
+  should not be sacrificed completely to variability studies. LSST's
+  adopted observing strategy must retain at least a minimum total
+  depth in each of the $\left\{u,g,r,i,z\right\}$~filters, along all
+  sight-lines (and evaluated appropriately for each field), in order
+  to constrain and disentangle populations photometrically
+  \citep[e.g.][]{2012ApJ...757..166B, ivezic08}. If there are any filters deemed
+  unimportant to variability studies in any fields, it will likely be the
+  photometric confusion limit (for static science) that sets the
+  minimum total integration times in those cases.} 
+
+%Comparison is now needed of multiple
+%strategies that do allocate sufficient observations to inner-Plane
+%observations, so that the scientific impact of the distribution (in
+%time and across filters) of visits within surveys of similar total
+%duration can be properly explored.
+
+\begin{figure}
+    \includegraphics[width=6.0in]{./figs/milkyway/durations_minion_1016.png}
+  \caption{The first-order systematics that dominate transient metrics in the Galactic Plane. These panels are plotted for strategy \opsimdbref{db:baseCadence}. {\it Bottom-left:} stars per square arcsecond (at $i < 27.5$). {\it Top-left:} survey duration (defined as the last minus the first MJD for observations in $i$-band). {\it Right:} histogram of durations in $i$-band over the range 0-1000 days. The population below 200 days shows the Plane and South Polar Cap, the population at $\sim 800$~days is the shorter end of the population of Northern Ecliptic observations. Spatial maps are plotted in Galactic co-ordinates.}
+\label{fig_durationInGalacticCoords}
+\end{figure}
+
+%An important collateral benefit of studies in the plane with an
+%LSST-like facility, is improved mapping of the distribution and
+%observational effects of the ISM (particularly dust), which is of
+%importance to all IR/Optical/UV observational studies. \new{Due to its
+%  importance for {\it all} Milky Way Astronomy, a separate Section is
+%  devoted to the impact of observing strategy on the utility of LSST
+% data to constrain the distribution of interstellar dust in three
+%  dimensions (\autoref{sec:MW_Dust}).}
 
 % --------------------------------------------------------------------
 
@@ -71,31 +90,36 @@ IR/Optical/UV observational studies.
 %conditions? In broad terms, how would we expect the observing strategy
 %to be optimized for this science?
 
-We have identified five science cases within the general area of Milky
-Way Disk studies, that will have a diversity of dependencies on
+Four Milky Way disk science cases that have complementary dependencies on
 observing strategy (e.g. slow intrinsic variability vs fast intrinsic
-variability vs no variability). When the figures of merit have been
-computed for these science cases, the results will be summarized in a Table in Section~\ref{sec:\secname:MW_Disk_discussion}.
+variability vs no variability) are:
 
-\begin{itemize}
-  \item 1. Quantifying the large quiescent compact binary population via variability;
-  \item 2. New insights into the behavior of Novae and the route to Type Ia Superovae;
-  \item 3. The next Galactic Supernova;
-  \item 4. Measuring population parameters of planets outside the Snow Line with Microlensing;
-  \item 5. A three-dimensional Dust map and improvements in the reddening law
-\end{itemize}
+\begin{enumerate}
+  \item Quantifying the large quiescent compact binary population via variability;
+  \item New insights into the behavior of Novae and the route to Type Ia Superovae;
+  \item The next Galactic Supernova;
+  \item Measuring population parameters of planets outside the Snow Line with Microlensing;
+  %\item A three-dimensional Dust map and improvements in the reddening law
+\end{enumerate}
 
-Motivation and qualitative description of response to observing strategy:
+Below we provide more detail on these science cases, including
+qualitative discussions of the expected impact of observing
+strategy, as these science cases are not discussed in detail elsewhere
+(in the LSST Science Book or the \citet{IvezicEtal2008} summary paper).
+
+%When the figures of merit have been
+%computed for these science cases, the results will be summarized in a
+%Table in \autoref{sec:\secname:MW_Disk_discussion}.
 
 {\bf 1. Probing quiescent compact binaries via variability:} Of the
 millions of stellar-mass black holes formed through the collapse of
 massive stars over the lifetime of the Milky Way, only $\sim 20$ have
-been dynamically confirmed through spectroscopic measurements (e.g.,
-Corral-Santana et al.~2015). Many questions central to modern
+been dynamically confirmed through spectroscopic measurements
+\citep[e.g.,][]{2015arXiv151008869C}.  Many questions central to modern
 astrophysics can only be answered by enlarging this sample: which
 stars produce neutron stars and which black holes; whether there is a
 true gap in mass between neutron stars and black holes; whether
-supernova explosions result in large black hole kicks. 
+supernova explosions result in large black hole kicks.
 
 There is expected to be a large population of black hole binaries in quiescence
 with low X-ray luminosities from $\sim 10^{30}$--$10^{33}$ erg/s.
@@ -109,8 +133,9 @@ will make a large contribution to the optical light which results in
 intrinsic, random, and fast variations in the light curve. The disk
 contribution to optical light can change over time, and several years
 of data is necessary to properly subtract the accretion disk
-contribution in order to properly fit ellipsoidal veriations (Cantrell
-et al. 2010). The brighter sources will be amenable to spectroscopy
+contribution in order to properly fit ellipsoidal variations
+\citep{2010ApJ...710.1127C}.
+The brighter sources will be amenable to spectroscopy
 with the current generation of 4-m to 10-m telescopes to dynamically
 confirm new black holes; spectroscopy of all candidates should be
 possible with the forthcoming generation of large telescopes. Thus,
@@ -118,23 +143,25 @@ LSST would trigger a rich variety of observational investigations of
 the accretion/outflow process through studies of this large, dark
 population.
 
-While we have focused above on black hole binaries, we note that LSST
-would be crucial for investigations of neutron star and white dwarf
-binaries. For example, the total number of compact binaries 
-is presently
-poorly understood---Population models of neutron star X-ray binaries diverge by orders 
-of magnitude, largely due to uncertainties in the common envelope phase of binary evolution (e.g. Pfahl et al, 2003; Kiel \& Hurley, 2006; van Haaften et al, 2015). This is
-poorly constrained but has a large impact on, for example, LIGO event
-rates. A simple test case of common envelope evolution is available in the number of dwarf novae (DNe) 
-(accretion disk instability outbursts around white dwarfs), a population that does not suffer from
-some of the complicating factors that neutron star and black hole binaries do (e.g. supernova kicks). 
-Theoretical estimates routinely yield a significantly higher number of DNe than are observed in the solar
-neighborhood. Understanding the true specific frequency of these
-systems provides a key check on common envelope evolution.  LSST will detect dwarf novae, which last at least several days
-with typical amplitudes of 4--6 mag,
-out to kpc scales. This will allow a test of not only the number of
-cataclysmic variables, but also of the 3D distribution within the
-Galaxy and dependence on metallicity gradients (Britt et al. 2015).
+While we have focused above on black hole binaries, we note that LSST would be
+crucial for investigations of neutron star and white dwarf binaries. For
+example, the total number of compact binaries is presently poorly
+understood---Population models of neutron star X-ray binaries diverge by orders
+of magnitude, largely due to uncertainties in the common envelope phase of
+binary evolution
+\citep[e.g.,][]{2003ApJ...597.1036P,2006MNRAS.369.1152K,2015A&A...579A..33V}.
+This is poorly constrained but has a large impact on, for example,
+LIGO event rates. A simple test case of common envelope evolution is available
+in the number of dwarf novae (DNe) (accretion disk instability outbursts around
+white dwarfs), a population that does not suffer from some of the complicating
+factors that neutron star and black hole binaries do (e.g. supernova kicks).
+Theoretical estimates routinely yield a significantly higher number of DNe than
+are observed in the solar neighborhood. Understanding the true specific
+frequency of these systems provides a key check on common envelope evolution.
+LSST will detect dwarf novae, which last at least several days with typical
+amplitudes of 4--6 mag, out to kpc scales. This will allow a test of not only
+the number of cataclysmic variables, but also of the 3D distribution within the
+Galaxy and dependence on metallicity gradients \citep{2015MNRAS.448.3455B}.
 
 {\it Response to observing strategy:} Since most black hole candidates
 have been identified near the plane in the inner Milky Way (68\%, 92\%
@@ -148,7 +175,7 @@ within $5^{\circ}, 10^{\circ}$~of the Plane), this science case {\it
   for at least parts of the Plane should be considered. For dwarf novae, the cadence of observations
   is critical in obtaining an accurate measure of the population of
   cataclysmic variables, as a long baseline is necessary to recover
-  low duty cycle systems while widely-space observations
+  low duty cycle systems while widely-spaced observations
  would miss short outbursts.
 
 %Describe the discoveries and measurements you want to make.
@@ -161,8 +188,9 @@ within $5^{\circ}, 10^{\circ}$~of the Plane), this science case {\it
 {\bf 2. Novae and the route to Type Ia Supernovae:} Only $\sim 15$
 novae (explosions on the surfaces of white dwarfs) are discovered in
 the Milky Way each year, while observations of external galaxies show
-that the rate should be a factor of $\sim 3$ higher (Shafter et
-al.~2014). Evidently, we are missing 50--75\% of novae due to their
+that the rate should be a factor of $\sim 3$ higher
+\citep{2014ASPC..490...77S}.
+Evidently, we are missing 50--75\% of novae due to their
 location in crowded, extinguished regions, where they are not bright
 enough to be discovered at the magnitude limits of existing transient
 surveys. Fundamental facts about novae are unknown: how much mass is
@@ -171,7 +199,7 @@ typically gain or lose mass; whether the binary companion is important
 in shaping the observed properties of nova explosions. Novae can serve
 as scaled-down models of supernova explosions that can be tested in
 detail, e.g., in the interaction of the explosion with circumstellar
-material (e.g., Chomiuk et al.~2015). Further, since accreting white
+material \citep[e.g.,][]{2015arXiv151007662C}.  Further, since accreting white
 dwarfs are prime candidates as progenitors of Type Ia supernovae, only
 detailed study of novae can reveal whether particular systems are
 increasing toward the Chandrasekhar mass as necessary in this
@@ -190,7 +218,7 @@ would be among the most important astronomical events of our lifetime,
 with enormous impacts on stellar astrophysics, compact objects,
 nucleosynthesis, and neutrino and gravitational wave astronomy. The
 estimated rate of supernovae (both core-collapse and Type Ia) in the
-Milky Way is about 1 per 20--25 years (Adams et al.~2013); hence there
+Milky Way is about 1 per 20--25 years \citep{2013ApJ...778..164A}; hence there
 is a 40--50\% chance that this would occur during the 10-year LSST
 survey. If fortunate, such an event will be located relatively close
 to the Sun and will be an easily observed (perhaps even naked-eye)
@@ -199,10 +227,10 @@ supernova could go off in the mid-Plane close to the Galactic Center
 or on the other side of the Milky Way---both regions covered by
 LSST. While any core-collapse event will produce a substantial
 neutrino flux, alerting us to its existence, such observations will
-not offer precise spatial localization. The models of Adams et
-al.~(2013) indicate that LSST is the \emph{only} planned facility that
+not offer precise spatial localization. The models of \citet{2013ApJ...778..164A}
+indicate that LSST is the \emph{only} planned facility that
 can offer an optical transient alert of nearly all Galactic
-supernovae. 
+supernovae.
 
 {\it Response to observing strategy:} Even if the supernova is not too
 faint, LSST will likely be the sole facility with synoptic
@@ -211,64 +239,55 @@ data leading up to the event---but only if LSST covers the Plane at a
 frequent cadence. Just {\it how} frequent is open to exploration at
 present, but the prospect of high-sensitivity observations of the
 location of such a supernova {\it before} it takes place are clearly
-of enormous scientific value. A secondary issue is the prospect that
-an easily-observed Milky Way supernova might be too bright for LSST to
-measure precisely with its planned exposure time, with a roughly 82\%
-chance of a core-collapse supernova reaching one or two magnitudes
-brighter than LSST's nominal saturation limit (with a 1/3 chance that
-a ccSN would reach $m_V \sim 5$~(Adams et al. 2013). For a Type Ia in
-the Milky Way, Adams et al. (2013) estimate $m_{V, max} \lesssim
-13.5$~in 92\% of cases.
+of enormous scientific value.
 
-{\bf 4. Population parameters of planets beyond the Snow Line with Microlensing:} Gould
-(2013) shows that LSST could be an effective intra-disk microlensing
-survey (in which disk stars are lensed by other objects in the disk,
-such as exoplanets, brown dwarfs, or compact objects). The lower
-stellar density compared to past bulge-focused microlensing surveys
-would be offset by the larger area covered by LSST. The predicted rate
-of high magnification microlensing events that are very sensitive to
-planets would be $\sim 25$ per year. This survey would be able to
-detect planets at moderate distances from their host stars, a regime
-poorly probed by standard Doppler and transit techniques. The LSST
-data alone would not be sufficient: the detection of a slow ($\sim$
-days) timescale increase in brightness of a disk star would need to
-trigger intensive photometric observations from small (1-m to 2-m
-class) telescopes that would observe at high cadence for the 1--2
-months of the microlensing event. This would represent an excellent
-synergy between LSST and the wider observing community, and would
-directly take advantage of the capabilities unique to LSST.
+% WIC 2016-06-03 - removed following feeback
+
+%A secondary issue is the prospect that
+%an easily-observed Milky Way supernova might be too bright for LSST to
+%measure precisely with its planned exposure time, with a roughly 82\%
+%chance of a core-collapse supernova reaching one or two magnitudes
+%brighter than LSST's nominal saturation limit \citep[with a 1/3 chance that
+%a ccSN would reach $m_V \sim 5$;][]{2013ApJ...778..164A}. For a Type Ia in
+%the Milky Way,
+%\citet{2013ApJ...778..164A} estimate $m_{V, max} \lesssim 13.5$~in 92\% of
+%cases.
+
+{\bf 4. Population parameters of planets beyond the Snow Line with
+  Microlensing:} \citet{gould13}  shows that, LSST could contribute a
+highly valuable survey for intra-disk microlensing (in which disk
+stars are lensed by other objects in the disk, such as exoplanets,
+brown dwarfs, or compact objects). The lower stellar density compared
+to past bulge-focused microlensing surveys would be offset by the
+larger area covered by LSST. The predicted rate of high magnification
+microlensing events that are very sensitive to planets would be $\sim
+25$ per year. This survey would be able to detect planets at moderate
+distances from their host stars, a regime poorly probed by standard
+Doppler and transit techniques. The LSST data alone would not be
+sufficient: the detection of a slow ($\sim$ days) timescale increase
+in brightness of a disk star would need to trigger intensive
+photometric observations from small (1-m to 2-m class) telescopes that
+would observe at high cadence for the 1--2 months of the microlensing
+event. This would represent an excellent synergy between LSST and the
+wider observing community, and would directly take advantage of the
+capabilities unique to LSST.
 
 {\it Response to observing strategy:} To catch lensing events as they
 start to brighten, with sufficient fidelity to trigger the intensive
-follow-up required, the models of Gould (2013) suggest each field
-should be observed once every few nights. With sparser coverage,
-the survey would lose sensitivity to microlensing events in progress.
+follow-up required, the models of \citet{gould13} suggest each field
+should be observed once every few nights. With sparser coverage, the
+survey would lose sensitivity to microlensing events in
+progress. Comparison with a similar sample towards the inner Milky Way
+would be highly useful, which would argue for observations of the
+entire visible Plane with similar cadence.
 
-{\bf 5. Dust in the Milky Way disk:} The Pan-STARRS1 survey (PS1) has
-produced a three-dimensional dust map of the region of the sky covered
-in their 3$\pi$ survey (which excludes a large part of the Galactic
-Plane toward the south). Such maps are necessary to accurately measure
-the intrinsic luminosities and colors of both Galactic and
-extragalactic sources. The PS1 map (Schlafly et al.~2014) saturates at
-extinctions $E(B-V) > 1.5$ as their tracer stars fall out of the
-survey catalogs fainter than $g\sim 22$, meaning that this
-high-fidelity map does not extend uniformly to within a few degrees of
-the midplane. In addition, it only extends to a distance of about 4.5
-kpc. Deep LSST data will allow this map to be extended to much higher
-extinctions and larger distances. Owing to the high extinction and the
-use of blue filters, this project is less affected by crowding than
-other projects requiring photometry in the Plane. 
-
-{\it Response to observing strategy:} When focusing on dust in the ISM (as
-opposed to time-domain studies, e.g., dust around star-forming
-regions or young stars), the main drivers of feasibility are
-coverage of the few degrees around the Plane with sufficient photometric depth
-and accuracy. This project is less affected by crowding than other
-projects requiring photometry in the Plane owing to its use of blue
-filters and the high extinction.  Nonetheless, quantiative estimates of
-the expected photometric accuracy in coadded $u$ and $g$ images at low
-Galactic latitude are desirable.
-
+Microlensing is also discussed elsewhere in the context of exoplanets \autoref{sec:planets}, of the Magellanic Clouds (\autoref{chp:MCs}), of AGN
+(\autoref{sec:agn:microlensing}), and of WFIRST fields towards the
+Bulge (\autoref{sec:wfirst:microlensing}).  Although the WFIRST
+discussion in \autoref{sec:wfirst:microlensing} assumes that Bulge
+fields will be observed at least at low cadence ($\sim 1$~observation per
+day) for the first {\it eight} years of the survey, this is inconsistent with the Baseline strategy that puts all the Galactic Plane observations
+into the first few years of the survey.
 
 % --------------------------------------------------------------------
 
@@ -278,54 +297,206 @@ Galactic latitude are desirable.
 %Quantifying the response via MAF metrics: definition of the metrics,
 %and any derived overall figure of merit.
 
-Unpolished notes about likely (reasonably straightforward) figures of
-merit (FoM) follow, along with (in some cases) possible directions for
-future higher-level FoM. In many cases, dependencies on
-Metrics are identified.  \new{WIC - Note to co-authors: these FoM
-  were chosen to build off existing metrics in development. To take
-  one example, Peter Y has developed some nice ipython Notebooks that
-  illustrate representative Monte Carlo tests for periodicity
-  detection including spatial variation - thus I think the Figures of Merit
-  below should be straightforward to implement by modification of
-  existing tools.}
+Here we describe the Figures of Merit (FoMs) we intend to implement
+and evaluate for the candidate observing strategies of interest. Where
+these FoM have already been evaluated, we provide the numerical
+results in Table \ref{tab_SummaryMWDisk}. At present, FoM 3.1 has been
+implemented and run for three surveys, with the others in
+development. The FoMs are:
 
-
-{\bf FoM 1.1 - Fraction of quiescent
-  black hole binaries detectable through ellipsoidal variability, as a function of location on sky and distance.}
-Dependencies:
 \begin{itemize}
-  \item Monte Carlo in period, phase and shape parameters (ASCII input?) for variables as measured in a particular OpSim run. Likely run Monte Carlo for a representative number (ten?) of well-chosen orbital periods within the 0.1-5d range;
-  \item (Since these are short-period objects): the ``PeriodicMetric'' of Lund et al. (2015);
-  \item Will likely need reasonably high-spatial-resolution HEALPIX slices and a prescription for population density as a function of position on-sky (can be analytic).
+  \item FoM 1.1 - Fraction of quiescent black hole binaries detectable through ellipsoidal variability;
+  \item FoM 1.2 - Uncertainty on the recurrence time distribution of Dwarf Novae;
+  \item FoM 2.1 - Fraction of Novae detected by LSST (specific and total);
+  \item FoM 2.2 - Fraction of Novae caught early enough by LSST to schedule followup observations;
+  \item FoM 3.1 - Fraction of Galactic supernovae for which LSST would detect variability {\it before} the main Supernova event;
+  \item FoM 4.1 - Fraction of accurately-triggered Microlens candidates;
+  \item FoM 4.2 - Uncertainty in the mass function of intra-disk microlensed planets.
 \end{itemize}
-Possible higher-order FoM: errors on the population size (mass
-function??) derived from a survey under a given observing
-strategy. Can imagine just adding up the ``recovered'' qLMXB
-population and comparing it to that simulated. Some white noise componant of varying strengths could be
-added to the light curves to simulate various contributions of the accretion disk to the continuum light. 
-Note that the survey will necessarily be highly incomplete (inclination effects, etc.), it
-is the likely {\it uncertainty} on the completeness-correction that
-would be crucial in this case. 
 
-{\bf FoM 1.2 - Fraction of dwarf novae detected in a given survey
-  run as a function of location and distance.}
-Dependencies:
-\begin{itemize}
-  \item Monte Carlo in distribution of maximum brightness and rise/decay timescale;
-    \item "Triples" without filter constraints (given a prior detection in each filter)- what fraction are recovered?
-    \item Histogram of duty cycle recovery efficiency versus duration of outburst and recurrence time.
-    \item Histogram of recovery efficiency of maximum brightness of dwarf nova versus duration and recurrence time (if assume subsequent outbursts have similar profiles).
-    \end{itemize}
-Higher-level FoM: Uncertainty in LIGO event rates due to
-uncertainties in common envelope evolution, which drives uncertainties in both LIGO event rates and DN population.
+With the exception of FoM 3.1 above, all these Figures of Merit are
+likely to be impacted by spatial confusion, as the populations of
+interest tend to lie at low Galactic latitudes. Metrics for assessing
+the impact of crowding have been developed (e.g. {\tt
+  CrowdingMetrics.ipynb} in {\tt maf\_contrib}), and these should be
+incorporated into all the FoMs described here. For the present,
+however, we note that intrinsic source confusion is not a function of
+observing strategy (assuming the confusion limit is well above the
+formal limiting magnitude without it). Running the FoMs without
+accounting for source confusion isolates the impact of strategy alone
+on the science that can be performed, as FoMs can be compared in a
+relative sense. Inclusion of crowding will later set the absolute
+scale for each FoM.
 
-{\bf FoM 2.1 - Fraction of identified Novae as a function of location on-sky, distance, and time since initial rise.}
-Dependencies:
-\begin{itemize}
-  \item Is the ``Triplets'' metric sufficient (i.e. is this ``just'' a case of supplying the metric the correct $\Delta t$~parameter values)?;
-    \item What is the maximum interval since initial rise that would be acceptable? (Is this a function of waveband for followup?)
-\end{itemize}
-Possible higher-order FoM: error on inferred rate of Type Ia supernovae?
+In these FoMs, ``uncertainty'' can be taken to mean both random and
+systematic uncertainty, likely recorded as separate numbers for each
+FoM. We anticipate determining the FoMs that record population
+parameter-uncertainty in a Monte Carlo sense. This is particularly
+relevant for FoMs in which the event rate per pointing may be low
+($\lesssim 1$~event per pointing per decade) but not so low that only
+1-few events are expected over the whole sky over the lifetime of the
+survey (as is the case for FoM 3.1, the First Galactic Supernova). In
+very rare-event cases, the FoM can scale with the stellar density and
+the recovery fraction of that particular transient, and need only be
+evaluated once for the entire survey.
+
+Since (at the time of writing) evaluating a Metric with relaxed
+  SQL constraints typically takes about 0.5-1.5 hours, we do not
+  expect to perform Monte Carlo simulations initially. In the
+  medium-term, when Monte Carlo experiments in the target populations
+  are desired, the best strategy may be to evaluate the
+  run of a particular metric against a parameter of interest (apparent
+  magnitude, say, which is also expected to lead to a turnover in the
+  importance of confusion error), and the investigator's preferred
+  Monte Carlo framework for their population of interest can
+  interpolate the stored Metric values at the time of trial-population
+  generation. At the present date (2016-04-26) we have begun
+  investigating the use of these ``Vector Metrics'' for Figures of
+  Merit. We describe the anticipated FoMs in these cases below.
+
+{\bf FoM 1.1 - Fraction of quiescent black hole binaries detectable
+  through ellipsoidal variability:} Table
+  \ref{table:pseudoFOM_1p1} outlines the steps to evaluate FoM
+  1.1. Since the lightcurve {\it shape} matters in addition to the
+  detection (i.e. we expect LSST data to be used to characterize
+  ellipsoidal variations, not just to trigger followup by other
+  observatories) the metric choice for detectability should take the
+  lightcurve shape into account.
+
+  We envisage two levels to implementing FoM 1.1. In the immediate
+  future, the ellipsoidal lightcurve could be characterised as a
+  sinusoid, with filter-dependent amplitude to match typical quiescent
+  Low Mass X-ray Binaries (qLMXBs) from the literature. The next level
+  of sophistication would be to input a more complicated shape that
+  captures deviations from pure sine-wave behavior; likely with the {\tt
+    TransientAsciiMetric}.
+
+An open question is how best to meaningfully quantify the
+  recovery fraction of a population with a wide range in binary
+  parameters. However, as an initial FoM, evaluating once for an
+  ``average'' population will allow direct comparison between
+  observing strategies.
+
+{\it Possible higher-order FoM:} A higher-order FoM for the fraction
+of qLMXBs recovered might take the form of the uncertainty on the
+population size (or physical population parameter like mass function
+slope) derived from a survey under a given observing strategy. One can
+imagine summing the ``recovered'' qLMXB population count and comparing
+it to that simulated. Some white noise componant of varying strengths
+could be added to the light curves to simulate various contributions
+of the accretion disk to the continuum light.  Note that the survey
+will necessarily be highly incomplete (due to inclination effects,
+etc.), it is the likely {\it uncertainty} on the
+completeness-correction that would be crucial in this case.
+
+\begin{table}[h]
+  \small
+  \begin{tabular}{c p{12cm}}
+    & {\it FoM 1.1 - Fraction of quiescent black hole binaries (qLMXB) detectable by LSST through ellipsoidal variability} \\
+    \hline
+  1. & Pick a typical binary mass ratio and separation for $qLMXB$ \\
+  2. & Identify typical ellipsoidal variation amplitude and period, for each filter \\
+  3a. & {\it Near-term:} Run {\tt periodicStarMetric} to determine the fraction of typical qLMXBs that would be recovered. Or; \\
+  3b. & Run a variant of {\tt periodicStarFit.ipynb} that allows the appropriate double-humped lightcurve shape. \\
+  4. & {\bf Arrive at FoM 1.1:} Load the result from 4. and sum over the spatial region (to be determined: Galactic Latitude range? Comparison high-latitude clusters?) where the qLMXBs are expected.\\
+\hline
+    \end{tabular}
+ \caption{Description of Figure of Merit 1.1.}
+  \label{table:pseudoFOM_1p1}
+\end{table}
+
+%Dependencies:
+%\begin{itemize}
+%  \item Monte Carlo in period, phase and shape parameters (ASCII input?) for va%riables as measured in a particular OpSim run. Likely run Monte Carlo for a rep%resentative number (ten?) of well-chosen orbital periods within the 0.1-5d range;%
+%  \item (Since these are short-period objects): the ``PeriodicMetric'' of Lund et al. (2015);
+%  \item Will likely need reasonably high-spatial-resolution HEALPIX slices and a prescription for population density as a function of position on-sky (can be analytic).
+%\end{itemize}
+%Possible higher-order FoM: errors on the population size (mass
+%function??) derived from a survey under a given observing
+%strategy. Can imagine just adding up the ``recovered'' qLMXB
+%population and comparing it to that simulated. Some white noise componant of va%rying strengths could be
+%added to the light curves to simulate various contributions of the accretion di%sk to the continuum light.
+%Note that the survey will necessarily be highly incomplete (inclination effects, etc.), it
+%is the likely {\it uncertainty} on the completeness-correction that
+%would be crucial in this case.
+
+{\bf FoM 1.2 - Uncertainty on the recurrence-time distribution of
+  Dwarf Novae:} Table \ref{table:pseudoFOM_1p2} illustrates a
+  version of this FoM that could be run in the near future. Dwarf
+  Novae are a heterogeneous class; in the near future we imagine
+  assigning an average lightcurve to a population and determining the
+  recovered vs input recurrence timescale, under the assumption that
+  the spatial distribution of recurrent Dwarf Novae is uniform. This
+  isolates the impact of observing strategy alone due to gaps in
+  coverage. Rather than a full Monte Carlo in Novae populations,
+  initially the investigator might compute the FoM for a
+  representative range of recurrence timescales (since the error on
+  timescale recovery may be expected to scale with the recurrence
+  timescale iself).
+
+\begin{table}[h]
+  \small
+  \begin{tabular}{c p{12cm}}
+    & {\it FoM 1.2 - Uncertainty in the Dwarf Nova Recurrence timescale} \\
+    \hline
+  1. & Pick a typical lightcurve for the Dwarf Nova class of interest; \\
+  2. & Assign a recurrence timescale; \\
+  3. & Run {\tt TransientMetricASCII} using this lightcurve and recurrence timescale; \\
+  4. & Combine the (spatially distributed) results of 3. into a median and formal random uncertainty estimate on the recurrence time estimated from each line of sight; \\
+  5. & Compute the offset and its formal error, between the median from 4. and the input recurrence timescale from 2;\\
+  6. & {\bf Arrive at FoM 1.2:} The four numbers from steps 4. and 5. are the characterization of the uncertainty in recurrence timescale required. \\
+\hline
+    \end{tabular}
+ \caption{Description of Figure of Merit 1.2.}
+  \label{table:pseudoFOM_1p2}
+\end{table}
+
+{\it Possible higher-order FoM:} The uncertainty in LIGO event rates
+due to uncertainties in common envelope evolution, which drives
+uncertainties in both LIGO event rates and DN population.
+
+%Dependencies:
+%\begin{itemize}
+%  \item Monte Carlo in distribution of maximum brightness and rise/decay timescale;
+%    \item "Triples" without filter constraints (given a prior detection in each filter)- what fraction are recovered?
+%    \item Histogram of duty cycle recovery efficiency versus duration of outburst and recurrence time.
+%    \item Histogram of recovery efficiency of maximum brightness of dwarf nova versus duration and recurrence time (if assume subsequent outbursts have similar profiles).
+%    \end{itemize}
+
+{\bf FoMs 2.1 \& 2.2 - Fraction of Novae characterized by LSST; and the fraction detected early enough for followup:} Since the set of Novae is so heterogeneous, one can imagine a two-stage process. In the near-future, a single run of {\tt TransientMetricASCII} using some sense of an ``average'' Nova as tracer to enable comparison between observing strategies. We present this in Table \ref{table:pseudoFOM_2p1}, which includes examples for the specific and total fraction of Novae recovered.
+
+In the longer term, a Monte Carlo simulation could be run on a particular class of Novae depending on the parameters of the overall population whose constraints are desired. This latter effort would likely require further development of the Vector Metrics.
+
+\begin{table}[h]
+  \small
+  \begin{tabular}{c p{12cm}}
+    & {\it FoMs 2.1 \& 2.2 - Novae identified from LSST data} \\
+    \hline
+  1. & Pick a typical lightcurve for the Nova class of interest; \\
+  2. & Run {\tt TransientMetricASCII} using this lightcurve; \\
+  3. & {\bf Arrive at FoM 2.1a: Specific fraction of Novae discovered:} Sum the result from 2. over the spatial region of interest; \\
+  4. & {\bf Arrive at FoM 2.1b:} Multiply the result of 2. by the result of the {\tt Starcounts} metric. Sum this to find the fraction of Novae recovered if their spatial density follows the stellar density in the Milky Way. \\
+  \hline
+  5. & From the typical lightcurve and a typical follow-up scenario, determine the time interval before outburst peak that would be required to schedule followu-up observations;\\
+  6. & Use these to produce appropriate parameters for a transient metric that returns the fraction of events detected; \\
+  7. & {\bf Arrive at FoM 2.2:} Sum the result of step 6. over the spatial region of interest.\\
+\hline
+    \end{tabular}
+ \caption{Description of Figures of Merit 2.1. \& 2.2.}
+  \label{table:pseudoFOM_2p1}
+\end{table}
+
+
+{\it Possible higher-order metrics:} Uncertainty on the specific rate
+of Type Ia supernovae using LSST data taken under various observing
+strategies.
+
+%Dependencies:
+%\begin{itemize}
+%  \item Is the ``Triplets'' metric sufficient (i.e. is this ``just'' a case of supplying the metric the correct $\Delta t$~parameter values)?;
+%    \item What is the maximum interval since initial rise that would be acceptable? (Is this a function of waveband for followup?)
+%\end{itemize}
+%Possible higher-order FoM: error on inferred rate of Type Ia supernovae?
 
 %{\bf FoM 3.1 - Maximum time-interval {\it before} triggering of a SN in the Milky Way that LSST would h%ave taken precursor data.}
 %Dependencies:
@@ -337,149 +508,269 @@ Possible higher-order FoM: error on inferred rate of Type Ia supernovae?
 %{\bf FoM 3.2 - Maximum time-interval {\it after} the SN event for triggering followup.}
 %Dependencies:
 %\begin{itemize}
-%  \item Similar to FoM 3.1. 
+%  \item Similar to FoM 3.1.
 %    \item Is it important to know the discovery space for LSST? If a
 %      supernova at $m_V~15$~goes off, other facilities are likely to
 %      spot it...
 %\end{itemize}
 
 
-\new{\bf FoM 3.1 - Fraction of Galactic supernovae for which LSST would detect variability {\it before} the main Supernova event. Dependencies:}
-\begin{itemize}
-  \item \new{Assume the probability of a SN going off scales with the number of stars along the line of sight to some depth. The ``starcount'' metric in sims-maf-contrib (by Mike Lund and collaborators) calculates this value out to some fiducial distance. Additionally}; 
-\item \new{This FoM requires an assessment of the ability of LSST to detect a particular lightcurve shape. Several options are possible at this time; we have selected ``metrics.TransientMetric'' from the baseline lsst-sims. Therefore also};
-\item \new{a lightcurve shape for the pre-SN variability must be assumed.}
-\end{itemize}
+{\bf FoM 3.1 - Fraction of Galactic supernovae for which LSST would
+  detect variability {\it before} the main Supernova event:} We have
+implemented a simple FoM for the Galactic Supernova case, using the
+parameters of SN2010mc as an example whose pre-SN outburst could be
+discovered first by LSST. The FoM is defined as the density-weighted
+average fraction of transient events recovered, where the average is
+taken over the sight-lines within the simulated strategy:
+\begin{equation}
+  FoM_{preSN} \equiv \frac{ \sum^{sightlines}_{i} f_{var, i} N_{\ast, i} } {\sum^{sightlines}_{i} N_{\ast, i}}
+\label{eqn:def_FOM_3p1}
+\end{equation}
+Here $f_{var, i}$~is the fraction of transient events that
+LSST would detect for observing strategy including the $i$'th
+sightline, $N_{\ast,i}$~the number of stars present along the $i$'th
+sightline, and the FoM is normalized by the total number of stars
+returned by the density model over all sightlines. (For the OpSim
+runs tested here, \opsimdbref{db:baseCadence} and
+\opsimdbref{db:opstwoPS} and \opsimdbref{db:NormalGalacticPlane}, the normalization factors differ by $\sim
+2\%$.) FoM values are in the range $0.0 \le FoM_{preSN} \le 1.0$.
 
-% WIC - removed this one since it's a bit low-level...
-%
-%{\bf FoM 3.2 - Maximum time-interval {\it after} the SN event for triggering followup.}
+We assume the Pre-SN variability similar to the pre-SN outburst of
+SN2010mc \citep{2013Natur.494...65O}. The pre-SN variability is
+modeled as a sawtooth lightcurve (in apparent magnitude). We assume
+this transient event will always reach brightness sufficient for LSST
+to observe, so opt for a very bright peak apparent magnitude in all
+filters. We assume that the probability of a supernova going off is
+proportional to the number of stars along a particular line of
+sight.
+
+In definition (\ref{eqn:def_FOM_3p1}), a lightly-modified version of
+{\tt CountMetric} was used to determine $N_{\ast, i}$~with the output
+summed over all sight-lines to produce $N_{\ast}$. Module {\tt
+  TransientMetric} was used to determine $f_{var, i}$~for each
+sight-line.\footnote{The notebooks used to evaluate this version of
+  FoM 3.1 can be found in subdirectory {\tt notebooks} of the
+  experimental github repository {\tt lsstScratchWIC}, available at
+  this link: \url{https://github.com/willclarkson/lsstScratchWIC}}
+
+% WIC 2016-04-26 - removed the old bullets here since they are
+% obsolete now!
+
+{\bf FoM 4.1 - Fraction of accurately-triggered Microlens candidates
+  within a spatial region of interest:} Table
+  \ref{table:pseudoFOM_4p1} lays out a possible FoM for the fraction
+  of microlens candidates that LSST might catch sufficiently early
+  that follow-up observations can be planned for other facilties. This
+  low-level FoM should be straightforward to compute, for a microlens
+  template lightcurve corresponding to some suitable average over the
+  regime of interest.
+
+\begin{table}
+  \small
+  \begin{tabular}{c p{12cm}}
+    & {\it FoM 4.1 - Fraction of microlens events triggered from LSST observations} \\
+    \hline
+  1. & Decide on the typical microlens scenario of particular interest; \\
+  2. & Produce a template ASCII lightcurve for this scenario; \\
+  3. & Determine the characteristics for a trigger; \\
+     & ~~~~ e.g. slow rise to 20\% flux above baseline at 7$\sigma$~significance;\\
+     & ~~~~ e.g. must be at most $T$~days after the initial rise to schedule follow-up; \\
+  3. & run the metric {\tt transientASCII} on this template; \\
+  4. & {\bf Arrive at FoM 4.1:} Sum the fraction of detected candidates from 3. spatially over the region of interest.\\
+\hline
+    \end{tabular}
+ \caption{Description of Figure of Merit 4.1}
+  \label{table:pseudoFOM_4p1}
+\end{table}
+
+{\bf FoM 4.2 - Uncertainty in the mass function of microlensed planets
+  past the Snow Line:} Table \ref{table:pseudoFOM_4p2}
+  illustrates a possible FoM for a science case concerning uncertainty
+  in the parameters of a particular planetary population of
+  interest. As with FoM 4.1, in this scenario LSST is used as the
+  initial trigger for follow-up observations by other facilities, but
+  the observing strategy imposes uncertainty and bias on the eventual
+  derived parameters through its removal of parts of the population
+  from further study. The investigator could assume a particular
+  uncertainty imposed on the mass determination from follow-up
+  observations, but this should be fixed for all evaluations of the
+  FoM so that LSST strategies can be compared. Strictly speaking, a
+  Monte Carlo simulation over many realizations of the input planetary
+  population should probably be run. However, formal errors would
+  probably be acceptable in the near-term (i.e. formal errors on the
+  determination of mass function parameters that are determined from
+  the subset of objects that survive LSST's selection function for a
+  particular strategy).
+
+\begin{table}
+  \small
+  \begin{tabular}{c p{12cm}}
+    & {\it FoM 4.2 - Uncertainty in the mass function for planets beyond the Snow Line through Microlensing}\\
+    \hline
+  1. & Parameterize the mass function of the population of interest;\\
+  2. & Parameterize its distribution of lens amplitude and timescale;\\
+  3. & Parameterize the scaling of event rate with local stellar density;\\
+  4. & Generate a sample population over the sky; \\
+     & ~~~ Scaling from 3. might be used in conjunction with {\tt maf\_contrib/starcounts}; \\
+  5. & Run the transient-recovery metric for this population; \\
+     & ~~~ Choice of metric needs to handle spatially varying lightcurve template; \\
+     & ~~~ Or, the time-interval parameters should be allowed to spatially vary; \\
+  6. & Determine the population of microlens planets that would have been triggered by LSST. Do not sum, but record the indices of the surviving objects; \\
+  7. & Apply typical measurement uncertainty from a likely followup campaign; \\
+  8. & Fit the determined mass function from this sample of survivors only; \\
+  9. & {\bf Arrive at FoM 4.2:} Find the offset (from input) and formal uncertainty on the mass function parameters.\\
+\hline
+    \end{tabular}
+ \caption{Description of Figure of Merit 4.2}
+  \label{table:pseudoFOM_4p2}
+\end{table}
+
+
+%{\bf FoM 5.1 - Errors in derived $E(B-V)$, $n_H$~as a function of
+%  location in the Plane.}
 %Dependencies:
 %\begin{itemize}
-%  \item Similar to FoM 3.1. 
-%    \item Is it important to know the discovery space for LSST? If a
-%      supernova at $m_V~15$~goes off, other facilities are likely to
-%      spot it...
+%  \item SNR scaling with apparent magnitude
+%    \item For the M dwarf based technique, the relation between
+%      reddening-invariant index $[Q_{gri}]$~and intrinsic $g-i$~are
+%      expressed as polynomials, so expect non-linear relation with
+%      photometric error.
+%      \item This uses a 5th-order polynomial to describe the
+%        $(Q_{gri}, g-i)$~stellar locus for M dwarfs $(g-i > 1.6)$.
+%        \item Care must be taken to correctly propagate errors through
+%          the various indices used - not trivial with so many choices
+%          of flux ratio used.
+%          \item Uncertainties in the parameterizations used for e.g. color-$M_V$~relationships.
+%            \item The above are all for every location probed on the map.
 %\end{itemize}
-
-
-
-{\bf FoM 4.1 - Fraction of accurately-triggered Microlens candidates as a function of location, distance, lens mass.}
-Dependencies:
-\begin{itemize}
-  \item Analytic (?) model for microlens lightcurve for representative sample of microlens parameters;
-    \item transientASCIIMetric may well already do what we need! 
-\end{itemize}
-
-{\bf FoM 4.2 - errors in the (mass function, distance distribution) of intra-disk microlensed planets.}
-Dependencies:
-\begin{itemize}
-  \item Event rate with sufficient-cadence observations to trigger followup as a function of (distance, lens mass);
-\end{itemize}
-
-{\bf FoM 5.1 - Errors in derived $E(B-V)$, $n_H$~as a function of
-  location in the Plane.}
-Dependencies:
-\begin{itemize}
-  \item SNR scaling with apparent magnitude
-    \item For the M dwarf based technique, the relation between
-      reddening-invariant index $[Q_{gri}]$~and intrinsic $g-i$~are
-      expressed as polynomials, so expect non-linear relation with
-      photometric error.  
-      \item This uses a 5th-order polynomial to describe the
-        $(Q_{gri}, g-i)$~stellar locus for M dwarfs $(g-i > 1.6)$.
-        \item Care must be taken to correctly propagate errors through
-          the various indices used - not trivial with so many choices
-          of flux ratio used.
-          \item Uncertainties in the parameterizations used for e.g. color-$M_V$~relationships.
-            \item The above are all for every location probed on the map.
-\end{itemize}
-
-
 
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
 \label{sec:\secname:MW_Disk_analysis}
 
-\new{(To stimulate input from collaborators, we have implemented a mock-up of a simple figure of merit for the Galactic Supernova case. We choose FoM 3.1 - the fraction of galactic supernovae for which an SN2010mc-like pre-SN outburst could be discovered by LSST. The results of all FoM's for this Section are collected in Table \ref{tab_SummarMWDisk}.)}
+{\bf FoM 3.1: the First Galactic Supernova:} This FoM is described in
+Definition (\ref{eqn:def_FOM_3p1}) of
+\autoref{sec:MW_Disk:MW_Disk_metrics}.
 
-\new{{\bf FoM 3.1: Fraction of Galactic supernovae for which LSST would detect variability {\it before} the main Supernova brightening:}}
-\begin{itemize}
-\item \new{{\it Definition:} 
-\begin{equation}
-  FoM_{preSN} \equiv \frac{ \sum^{sightlines}_{i} f_{var, i} N_{\ast, i} } {\sum^{sightlines}_{i} N_{ast, i}}
-\end{equation}
-where $f_{var, i}$~is the fraction of transient events that LSST would detect for observing strategy including the $i$'th sightline, $N_{\ast,i}$~the number of stars present along the $i$'th sightline, and the FoM is normalized by the total number of stars returned by the density model over all sightlines. (For the two OpSim runs tested here, enigma-1189 and ops2-1092, the normalization factors differ by $\sim 0.1\%$.) Therefore $0.0 \le FoM_{preSN} \le 1.0$.}
-\item \new{{\it Assumptions (observational):} Pre-SN variability similar to the pre-SN outburst of SN2010mc (Ofek et al. Nature). The pre-SN variability is modeled as a sawtooth lightcurve (in apparent magnitude). We assume this transient event will always reach brightness sufficient for LSST to observe, so opt for a very bright peak apparent magnitude in all filters. We assume that the probability of a supernova going off is proportional to the number of stars along a particular line of sight.}
-\item \new{{\it Parameters used:} The pre-SN outburst is simulated using the lsst-sims metrics.TransientMetric module. The lightcurve used has the following parameters: rise slope $-2.4$; time to peak; $20$~days; decline slope: $0.08$; total transient duration: 80 days. All filters are used in the detections, and 20 evenly-spaced phases are simulated for sensitivity to pathological cases (parameter nPhaseCheck=20). Peak apparent magnitudes used: $\{ 11,9,8,7,6,6\}$~in $\{u,g,r,i,z,y\}$. Then, $f_{var, i}$~is taken as the ``Sawtooth Alert'' quantity returned by metrics.TransientMetric. The starcounts metric (in sims-maf-contrib) is used to estimate the number of stars along a given line of sight, using fiducial distance limits ($10$pc $\le d \le 80$kpc).}
-\item \new{{\it \bf Results:} $FoM_{preSN}$(enigma-1189) = 0.251, while $FoM_{preSN}$(ops2-1092)=0.852. See Figure \ref{f_opSim_GalacticSN} for a breakdown of this figure of merit across sightlines.}
+{\it Parameters used:} The lightcurve used has the following parameters:
+rise slope $-2.4$; time to peak; $20$~days; decline slope: $0.08$; total
+transient duration: 80 days. All filters are used in the detections, and
+20 evenly-spaced phases are simulated for sensitivity to pathological
+cases (parameter nPhaseCheck=20). Peak apparent magnitudes used: $\{
+11,9,8,7,6,6\}$~in $\{u,g,r,i,z,y\}$. Then, $f_{var, i}$~is taken as the
+``Sawtooth Alert'' quantity returned by {\tt TransientMetric}. For the
+stellar density metric, distance limits ($10$pc $\le d \le 80$kpc) are
+used to avoid biases in the FoM estimate by the Magellanic Clouds.
 
-\end{itemize}
+{\it \bf Results:} $FoM_{preSN}$(\opsimdbref{db:baseCadence})=0.13,
+while
+$FoM_{preSN}$(\opsimdbref{db:opstwoPS})=0.83.\footnote{2016-04-25 For
+  comparison, when run on 2015-era OpSim runs {\tt enigma\_1189}
+  (Baseline strategy) and {\tt ops2\_1092} (PanSTARRS-like strategy)
+  the results were 0.251 (Baseline) and 0.852 (PanSTARRS-like
+  strategy). So the 2016-era OpSim runs show a sharper disadvantage
+  suffered by the Baseline cadence, than before the update.} This FoM
+suggests that \opsimdbref{db:opstwoPS} is the best of the cadences we
+have tested thus far. However, it is covers less total area on the sky
+(spending no time at all on certain regions of community interest like
+the South Polar regions) and thus might be unfairly advantaged
+compared to \opsimdbref{db:baseCadence}. Exposures are spread over a
+smaller area, thus regions including the inner Plane receive better
+coverage than they might under a strategy that meets the needs of all
+stakeholders).
+
+A more direct comparison includes the recently-completed (at the time
+of writing) OpSim run \opsimdbref{db:NormalGalacticPlane}, which
+covers the same regions on the sky as \opsimdbref{db:baseCadence} but
+applies the Wide-Fast-Deep strategy to the inner Galactic Plane. This
+survey therefore covers the same regions on the sky as the Baseline
+cadence. The stragegy \opsimdbref{db:NormalGalacticPlane} still shows
+a strong advantage compared to the Baseline survey, with
+$FoM_{preSN}$(\opsimdbref{db:NormalGalacticPlane})=0.73, compared to
+0.13 for Baseline cadence. See Table \ref{tab_SummaryMWDisk}. Figure
+\ref{f_opSim_GalacticSN} presents a breakdown of this figure of merit
+across sightlines, for the three observing strategies considered.
+
 \begin{figure}
 \begin{center}
-  \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_1092.pdf}
-  \includegraphics[width=7cm]{./figs/milkyway/galacticSN_SkyMap_1189.pdf}
+  \includegraphics[width=5.25cm]{./figs/milkyway/galacticSN_SkyMap_Baseline.png}
+  \includegraphics[width=5.25cm]{./figs/milkyway/galacticSN_SkyMap_PanSTARRS.png}
+  \includegraphics[width=5.25cm]{./figs/milkyway/galacticSN_SkyMap_PlaneWFD.png}
 %  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1092.pdf}
-%  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1189.pdf} 
-  \caption{\new{Figure of merit $FoM_{preSN}$~describing LSST's sensitivity to any pre-Supernova outburst, broken down by sightline, as sky-maps. $FoM_{preSN}$~is estimated for two OpSim runs (to-date); ops2-1092 (left) and enigma-1189 (right). The normalizing factors $N_{\ast, total}$ are $1.120\times 10^{12}$~for ops2-1092 and $1.121 \times 10^{12}$~for enigma-1189. The imprint of reduced sampling towards the inner plane can be clearly seen for enigma-1189.}}
-\end{center}
+%  \includegraphics[width=6cm]{./figs/milkyway/galacticSN_Histogram_1189.pdf}
+  \caption{Figure of merit $FoM_{preSN}$~describing LSST's sensitivity
+  to any pre-Supernova outburst for the Galactic Supernova science case,
+  broken down by sightline. $FoM_{preSN}$~is estimated for
+  three OpSim runs (to-date); \opsimdbref{db:baseCadence} (left; Baseline
+  cadence), \opsimdbref{db:opstwoPS} (center; PanSTARRS-like
+  strategy), and \opsimdbref{db:NormalGalacticPlane} (which assigns Wide-Fast-Deep cadence to the inner Galactic Plane). The normalizing factors $N_{\ast, total}$ are $3.793 \times 10^{10}$~for both \opsimdbref{db:baseCadence} and \opsimdbref{db:NormalGalacticPlane} (that both strategies have the same $N_\ast$~is not a surprise since both cover the same area) and $3.692\times
+  10^{10}$~for \opsimdbref{db:opstwoPS}. The imprint of reduced sampling towards
+  the inner plane can be clearly seen for \opsimdbref{db:baseCadence}.
+  Notice the difference in color scale between the panels. See \autoref{sec:MW_Disk:MW_Disk_analysis}}
 \label{f_opSim_GalacticSN}
+\end{center}
 \end{figure}
 
 
-%The current baseline cadence (${\tt enigma\_1189}$) partially excludes the Galactic Plane from the% deep-wide-fast survey and instead adopts a 
-%nominal 30 visits per filter as part of a special proposal. We have proposed an OpSim run that inc%ludes the Galactic Plane in the 
-%deep-wide-fast survey:
-
-%\url{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_GP.md}
-
 % The Figures of Merit listed above must now be implemented and applied to the OpSim databases.
 
-%The metrics listed above should be carefully compared between our proposed run and the baseline cadence.
+% The metrics listed above should be carefully compared between our proposed run and the baseline cadence.
 
 
 % --------------------------------------------------------------------
 
-\subsection{Discussion: required work}
+\subsection{Discussion}
 \label{sec:\secname:MW_Disk_discussion}
 
 The Figures of Merit listed above must now be implemented within the
-sims\_maf framework and applied to representative science
-cases. \new{See Table \ref{tab_SummaryMWDisk} at the end of this subsection for initial
-  efforts along these lines.}
-
-We welcome input and volunteers for this effort. 
+sims\_maf framework and applied to representative science cases.
+See Table \ref{tab_SummaryMWDisk} at the end of this subsection for
+initial efforts along these lines. We welcome input and volunteers for
+this effort.
 
 Qualitatively, however, we can note immediately that the current
-baseline cadence (${\tt enigma\_1189}$) partially excludes the
+baseline cadence (\opsimdbref{db:baseCadence}) partially excludes the
 Galactic Plane from the deep-wide-fast survey and instead adopts a
 nominal 30 visits per filter as part of a special proposal - which
 also tends to cluster the visits in the inner Plane within the first
 few years of the survey. This already seriously compromises the time
-baseline (see figure 4.3 of Section
-\ref{sec:MW_Astrometry:MW_Astrometry_OpSim} for a demonstration applied to
+baseline (see \autoref{fig_astrom_ByTime_pmError} of
+\autoref{sec:MW_Astrometry:MW_Astrometry_OpSim} for a demonstration applied to
 proper motions).
 
-We have proposed an OpSim run that includes the Galactic Plane in the
-deep-wide-fast survey:
+Whether the Plane should be observed as a ``special survey'' or
+  as part of Wide-Fast-Deep, remains an open question that we expect
+  the Figures of Merit (FoM) to answer when fully implemented. For
+  example, one can imagine reducing observing time in $u$~(and
+  possibly $g$) bands towards heavily extincted regions at the lowest
+  galactic latitudes. The scientific impact of such a strategy
+  (e.g. possibly lower sensitivity to directly-detected compact
+  objects versus improved coverage for transients in general) should
+  become clear when implementation and evaluation of the FoMs
+  described in this Section are complete.
 
-\url{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_GP.md}
+
+%We have proposed an OpSim run that includes the Galactic Plane in the
+%deep-wide-fast survey:
+
+%\url{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/Proposal_GP.md}
 
 \begin{table}
   \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
-    FoM & Brief description & {\rotatebox{90}{enigma-1189}} & {\rotatebox{90}{ops2-1092}} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
+    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence}}} & {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & {\rotatebox{90}{\opsimdbref{db:NormalGalacticPlane}  }} &  {\rotatebox{90}{future run 2}} & Notes \\
     \hline
     1.1 & \footnotesize{LMXB ellipsoidal variations}      & - & - & - & - & - \\
     1.2 & \footnotesize{Uncertainty in dwarf nova duty cycle}   & - & - & - & - &  \footnotesize{LSST as initial trigger} \\
     2.1 & \footnotesize{Fraction of Novae detected}       & - & - & - & - &  - \\
-    3.1 & \footnotesize{Galactic Supernova pre-variability} & 0.25 & {\bf 0.85} & - & - & \footnotesize{Fraction of SN2010mc-like outbursts that LSST would detect; $FoM_{preSN} = f_{var} \times N_{\ast}$} \\
-    4.1 & \footnotesize{Fraction of triggered microlens candidates} & - & - & - & - & - \\
-    4.2 & \footnotesize{Uncertainty in disk-disk microlens distribution parameters due to missed events} & - & - & - & - & \footnotesize{LSST as initial microlens trigger} \\
-    5.1a & \footnotesize{Median (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & \footnotesize{(Most useful FoM probably a spatial map of the uncertainty.)} \\
-    5.1b & \footnotesize{Variance (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & - \\
+    2.2 & \footnotesize{Fraction of Nova alerts}       & - & - & - & - &  - \\
+    3.1 & \footnotesize{Galactic Supernova pre-variability} & 0.13 & {\bf 0.83} & 0.73 & - & \footnotesize{Fraction of SN2010mc-like outbursts that LSST would detect; $FoM_{preSN} = f_{var} \times N_{\ast}$} \\
+    4.1 & \footnotesize{Fraction of LSST-triggered microlens candidates} & - & - & - & - & - \\
+    4.2 & \footnotesize{Uncertainty in derived planetary mass function} & - & - & - & - & \footnotesize{LSST as initial microlens trigger} \\
+%    5.1a & \footnotesize{Median (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & \footnotesize{(Most useful FoM probably a spatial map of the uncertainty.)} \\
+%    5.1b & \footnotesize{Variance (over sight-lines) of the uncertainty in $E(B-V)$} & - & - & - & - & - \\
   \end{tabular}
-\caption{Summary of figures-of-merit for the Galactic Disk science cases. The best value of each FoM is indicated in bold.}
+\caption{Summary of figures-of-merit for the Galactic Disk science cases. The best value of each FoM is indicated in bold. Runs \opsimdbref{db:baseCadence} and \opsimdbref{db:opstwoPS} refer to the Baseline and PanSTARRS-like strategies, respectively. Column \opsimdbref{db:NormalGalacticPlane} refers to a recently-completed OpSim run that includes the Plane in Wide-Fast-Deep observations. See \autoref{sec:MW_Disk:MW_Disk_analysis}. }
 \label{tab_SummaryMWDisk}
 \end{table}
 
@@ -488,8 +779,210 @@ deep-wide-fast survey:
 %made to improve this science project's figure of merit, and mitigate
 %the identified risks?
 
-
-
 % ====================================================================
+%
+\subsection{Conclusions}
+
+
+\new{We answer below the ten questions posed in \autoref{sec:intro:evaluation:caseConclusions}.} 
+
+\new{While the science cases developed thus far all rest on
+  variability sensitivity in one way or another, we should point out
+  that static science should not be sacrificed completely to
+  variability studies. This suggests that any strategy covering the
+  inner Milky Way must retain at least a minimum total depth in each
+  of the $\left\{u,g,r,i,z\right\}$~filters, along all sight-lines, in
+  order to constrain stellar effective temperatures, metallicities,
+  and interstellar extinction directly from LSST photometry \citep[see
+    for example the presentation in][and associated
+    papers]{ivezic08}. The implied figure of merit for static science
+  is straightforward in principle - simply evaluate the photometric
+  depth in each filter at which the confusion limit is reached at the
+  required photometric precision - but in practice depends on the
+  actual set stellar populations along each line of sight. This figure of
+  merit is likely to set the minimum acceptable exposure time in each
+  filter in each field, and will require a combination of modeling
+  work and experience with existing photometric datasets.}
+
+\begin{description}
+
+ \item[Q1:] {\it Does the science case place any constraints on the
+ tradeoff between the sky coverage and coadded depth? For example, should
+ the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+ Pan-STARRS) or the number of detected galaxies (the current baseline but
+ with 18,000 deg$^2$)?}
+
+ \new{ \item[A1:] Figures of Merit addressing this question have been
+   specified in this chapter, but implementation and execution are
+   still in progress. Co-added depth is less important to this science
+   than temporal coverage sufficient to measure the variability (at a
+   range of timescales) central to the science cases in this chapter
+   section. {\it Qualitatively,} we expect the FoMs will indicate that
+   the sky coverage within the inner Disk should be maximized subject
+   to the constraint that all fields experience LSST coverage
+   throughout the full ten-year survey (a condition currently {\it
+     not} satisfied by the current baseline cadence,
+   \opsimdbref{db:baseCadence}). This is because some of the important
+   transients are relatively rare, and/or the spatial distribution of
+   the population within the Milky Way disk is of scientific
+   importance. To our knowledge, only two OpSim runs currently exist
+   (\opsimdbref{db:opstwoPS} and \opsimdbref{db:NormalGalacticPlane})
+   which subject the populations of interest in this section to
+   coverage approaching that of Wide-Fast-Deep. A greater variety of
+   strategies of inner-plane coverage is needed to explore any
+   tradeoffs between time coverage and spatial coverage within the
+   inner Disk. One example might be an OpSim run with (say) 50\%
+   spatial coverage at Wide-Fast-Deep-like levels, the other 50\% at
+   coverage similar to the Plane mini-survey in
+   \opsimdbref{db:baseCadence}.}
+
+ \item[Q2:] {\it Does the science case place any constraints on the
+ tradeoff between uniformity of sampling and frequency of  sampling? For
+ example, a rolling cadence can provide enhanced sample rates over a part
+ of the survey or the entire survey for a designated time at the cost of
+ reduced sample rate the rest of the time (while maintaining the nominal
+ total visit counts).}
+
+\new{ \item[A2:] The frequency of sampling is critical for the science
+  cases in this section. Requirement on the uniformity of the sampling
+  depends on the timescale of variability and is difficult to project
+  without the FoMs being evaluated. A FoM to quantify the relative
+  importance of each has been outlined in the chapter, but its
+  implementation and execution are still in progress. A greater
+  variety of observing strategy simulations that offer
+  full-time-baseline coverage of the inner Plane are also needed on
+  which to run the FoMs. We require suggestions for OpSim runs with a
+  variety of temporal distributions of exposures within the ten-year
+  survey lifetime, towards the inner Plane.}
+
+ \item[Q3:] {\it Does the science case place any constraints on the
+ tradeoff between the single-visit depth and the number of visits
+ (especially in the $u$-band where longer exposures would minimize the
+ impact of the readout noise)?}
+
+\new{ \item[A3:] This depends strongly on the line of sight,
+  especially in $u$-band where reddening reduces sensitivity in any
+  individual visit (thus impacting variability-searches for very blue
+  objects). In those lines of sight, however, large co-added depth in
+  $u$~would still be useful for static population studies. For some
+  science cases, single-visit photometric depth provides diminishing
+  returns even in the redder filters (for example, once depth
+  $i\gtrsim 24$~were reached, going deeper would likely not result in
+  finding more dwarf novae, since this depth would already be
+  sufficient to find such sources beyond the far side of the
+  Bulge). However, OpSim coverage is still relatively sparse in the
+  spatial regions discussed. We suggest augmenting the OpSim coverage
+  towards the inner Milky Way with runs with a variety of u-band
+  depths (see for example the discussion of strategies
+  \opsimdbref{db:DoubleUbandExptime} and
+  \opsimdbref{db:DoubleUbandExptimewithNESpur} in Chapter
+  \ref{chp:cadexp}). To-date, sufficient OpSim coverage to answer
+  questions about preferred coverage vs. filter for the inner plane
+  simply does not exist.}
+
+ \item[Q4:] {\it Does the science case place any constraints on the
+ Galactic plane coverage (spatial coverage, temporal sampling, visits per
+ band)?}
+
+ \new{\item[A4:] Yes. Galactic plane coverage (in most cases, the inner Plane)
+   is crucial to all the science cases in this Section, because the
+   populations of interest are not found outside the plane in
+   sufficient numbers. In most cases, this coverage must be
+   sufficiently spread out in time for discovery through variability
+   to be possible over the entire ten-year survey.}
+
+ \item[Q5:] {\it Does the science case place any constraints on the
+ fraction of observing time allocated to each band?}
+
+\new{ \item[A5:] We do not have quantitative answers to this question
+  yet since the FoMs are mostly still under development and await a
+  sufficient range of OpSim runs to answer them. {\it Qualitatively,}
+  however: LSST will likely be crucial in providing prompt color
+  information for the rare-but-important events in the inner plane
+  (including unusual or scientifically critical microlensing events
+  alerted by LSST or other facilities), so we urge nonzero coverage in
+  all six filters. Taking the specific case of outbursts from compact
+  objects: having two red filters (e.g. $r-i$) would help tremendously
+  in breaking degeneracies between distance and luminosity since the
+  spectrum of the outbursts discussed here is typically vega-like (so
+  any unusual $r-i$~color should be the result largely of interstellar
+  reddening). The minimum observing time allocated to each band is likely to be set by the requirement to retain static science goals such as population dissection \citep[see, e.g.][]{ivezic08}; at the present date, however, figures of merit for static science in the inner plane have not yet been evaluated.}
+%To be most generally useful for static population
+%  studies, such as those constraining reddening, $T_{eff}$~and
+%  $[Fe/H]$~photometrically following the manner of the SDSS tomography
+%  studies \citep[see, e.g.][and references therein]{ivezic08}, coverage in at
+%  least $ugriz$~will be required that affords precise photometry at
+%  least down to the confusion limit. We do not as-yet have
+%  quantitative limits on what this would mean for the distribution of observing time across filters, however.}
+
+\item[Q6:] {\it Does the science case place any constraints on the cadence for deep drilling fields?}
+
+\new{ \item[A6:] The science cases in this chapter do not place any
+  constraints on the deep-drilling fields already identified. Were
+  deep-drilling-like cadence to be possible for a few fields within
+  the inner plane, however, it would be hugely useful. For example, to
+  recover ellipsoidal variables at short periods, the shortest gap in
+  observations should be $\sim$20 minutes. Not all observations need
+  to be so close together, but it is important to have at least a few
+  baselines that short in order to reliably recover periods between 80
+  minutes and 2 hours, where the majority of CVs (and potentially a
+  new population of X-ray faint short period XRB outbursts) should
+  be. These considerations also apply to any LSST observational campaign that will complement WFIRST observations of the Bulge (Section \ref{sec:wfirst:microlensing}).}
+
+ \item[Q7:] {\it Assuming two visits per night, would the science case
+ benefit if they are obtained in the same band or not?}
+
+\new{ \item[A7:] Qualitatively, visits in two different filters are weakly preferred. Science cases requiring discrimination of
+   the class of object would benefit from color information afforded
+   by observing in different filters during the same night, and for
+   most of the science cases in this section the variation plays out
+   in days rather than hours. However, for a subset of the science
+   cases (e.g. ellipsoidal variations of counterparts to eRosita
+   sources), observations at the same filter would be preferred. If
+   the color variation with phase is smaller than the orbital
+   variations, then having the colors could give the best of both
+   worlds.}
+
+ \item[Q8:] {\it Will the case science benefit from a special cadence
+ prescription during commissioning or early in the survey, such as:
+ acquiring a full 10-year count of visits for a small area (either in all
+ the bands or in a  selected set); a greatly enhanced cadence for a small
+ area?}
+
+\new{ \item[A8:] No, as long as all fields obtain at least some
+  coverage in all filters throughout the full 10-year survey
+  lifetime. Our expectation is that a given field will experience
+  nonuniform cadence over the ten-year survey, with some intervals of
+  high cadence followed by some intervals of low cadence. It would be
+  useful for some fields to experience their high-cadence intervals
+  during the first year in order to better understand detectability
+  and systematics, and to update any population simulations as LSST's
+  performance is better constrained.}
+
+ \item[Q9:] {\it Does the science case place any constraints on the
+ sampling of observing conditions (e.g., seeing, dark sky, airmass),
+ possibly as a function of band, etc.?}
+
+\new{ \item[A9:] At this stage we do not believe that any special
+   conditions are required. The inner plane is somewhat unusual in
+   that it will likely be confusion-limited rather than
+   sky-limited. Thus better seeing would obviously be better for the
+   science, however we do not at this stage have any quantitative
+   constraints. }
+
+ \item[Q10:] {\it Does the case have science drivers that would require
+ real-time exposure time optimization to obtain nearly constant
+ single-visit limiting depth?}
+
+\new{ \item[A10:] Not as long as the achieved limiting depth is accurately
+   understood once observations have been taken. In these
+   confusion-limited regions, this question is probably constrained
+   more by the performance of the photometry software than by
+   real-time observing considerations.}
+
+ \end{description}
+
+
+ % ====================================================================
 
 \navigationbar

@@ -1,51 +1,21 @@
 % ====================================================================
 %+
 % SECTION:
-%    section-name.tex  % eg lenstimedelays.tex
+%    AGN_Disk_Intrinsic.tex
 %
 % CHAPTER:
-%    chapter.tex  % eg cosmology.tex
+%    agn.tex
 %
 % ELEVATOR PITCH:
-%    Explain in a few sentences what the relevant discovery or
-%    measurement is going to be discussed, and what will be important
-%    about it. This is for the browsing reader to get a quick feel
-%    for what this section is about.
-%
-% COMMENTS:
-%
-%
-% BUGS:
-%
-%
-% AUTHORS:
-%    Phil Marshall (@drphilmarshall)  - put your name and GitHub username here!
 %-
 % ====================================================================
 
-\section{Disc Intrinsic AGN Variability}
+\section{Disc Intrinsic AGN Variability}\label{sec:AGNContinuum}
 \def\secname{\chpname:variability}\label{sec:\secname}
 
 \credit{ohadshemmer},
 \credit{AstroVPK},
-{\it Robert Wagoner, and others to follow}
-
-% This individual section will need to describe the particular
-% discoveries and measurements that are being targeted in this section's
-% science case. It will be helpful to think of a ``science case" as a
-% ``science project" that the authors {\it actually plan to do}. Then,
-% the sections can follow the tried and tested format of an observing
-% proposal: a brief description of the investigation, with references,
-% followed by a technical feasibility piece. This latter part will need
-% to be quantified using the MAF framework, via a set of metrics that
-% need to be computed for any given observing strategy to quantify its
-% impact on the described science case. Ideally, these metrics would be
-% combined in a well-motivated figure of merit. The section can conclude
-% with a discussion of any risks that have been identified, and how
-% these could be mitigated.
-
-% A short preamble goes here. What's the context for this science
-% project? Where does it fit in the big picture?
+{\it Robert Wagoner}
 
 A variety of AGN variability studies will be enabled by LSST. These are
 intended to probe the physical properties of the unresolved inner regions
@@ -126,7 +96,7 @@ For instance, for $m_g  <  23$ and the optimal $z =  2.7$, the HFQPO period is $
 Searching for HFQPOs in the DDFs will be most effective if the sampling frequency
 in those fields for the $u$ and $g$ bands is at least nightly, i.e., $\gtsim3000$
 visits, per band, during the entire survey. Given that the period of a typical HFQPO is
-related to the SMBH mass by $P({\rm hr}) \approx (1.1-4.0)(1+z)(M/10^{7}M_{\odot}$,
+related to the SMBH mass by $P({\rm hr}) \approx (1.1-4.0)(1+z)(M/10^{7}M_{\odot})$,
 LSST will be sensitive to probing SMBHs with $M < 10^{7}~M_{\odot}$ using HFQPOs.
 
 %In addition, there's a need for an "ultradeep" field, e.g., the MCs, that will
@@ -180,20 +150,38 @@ the spectral index of its PSD is mathematically constrained to be 2
 curve (e.g., a few times a month), can therefore result in the erroneous conclusion
 that a DRW model adequately characterizes the variability.
 
-
 \begin{figure}
-\centering\includegraphics[width=0.9\linewidth]{figs/agn/AGN_Variability_01.pdf}
-\caption{PSD of Zw 229-15 as a function of frequency, obtained from {\em Kepler}
-photometry. The PSD (purple) is the ratio of an even polynomial numerator (orange)
-to an even polynomial denominator (brown). This AGN is well-described by a
-C-ARMA(2,1) model; different powers of frequency dominate its PSD at different
-frequencies depending on the hyperparameters of this model. The wide
-frequency range enables detection of PSD spectral index variations ranging
-between 0 and 4. Clearly, the light curve of this AGN must be sampled on
-timescales {\em shorter} than $1-5$ days in order to observe the $\nu^{-4}$
-behavior characteristic of a higher order random walk.
-}
-\label{PSDvsFreq}
+  \begin{subfigure}[t]{0.5\textwidth}
+    \centering\includegraphics[width=0.9\linewidth]{figs/agn/AGN_Variability_01.pdf}
+    \centering
+    \caption{}
+    \label{fig:PSDvsFreq}
+  \end{subfigure}
+  %\medskip
+  \begin{subfigure}[t]{0.5\textwidth}
+    \centering\includegraphics[width=0.9\linewidth]{figs/agn/PowerOfSDSSK2.jpg}
+    \centering
+    \caption{}
+    \label{fig:SDSSK2Power}
+  \end{subfigure}
+  \caption{(\subref{fig:PSDvsFreq}) shows the PSD of Zw 229-15 as a function of frequency,
+  obtained from {\em Kepler} photometry. The PSD (purple) is the ratio of an even
+  polynomial numerator (orange) to an even polynomial denominator (brown).
+  This AGN is well-described by a C-ARMA(2,1) model; different powers of frequency
+  dominate its PSD at different frequencies depending on the hyperparameters of
+  this model. The wide frequency range enables detection of PSD spectral index variations
+  ranging between 0 and 4. Clearly, the light curve of this AGN must be sampled on
+  timescales {\em shorter} than $1-5$ days in order to observe the $\nu^{-4}$ behavior
+  characteristic of a higher order random walk. This is illustrated in (\subref{fig:SDSSK2Power})
+  where we see the frequencies and time intervals probed by SDSS, Kepler and a light curve
+  constructed by combining the two datasets (SDSS+K2). Each vertical dashed line corresponds to
+  a pair of observations seperated by the indicated $\delta t$ (top axis). We plot (for
+  illustration), two C-ARMA models with the same overall power - a damped random walk, i.e. a
+  C-ARMA(1.0) process, and a damped harmonic oscillator, i.e a C-ARMA(2,1) process.
+  It is clear that SDSS (Kepler) cannot probe the highest (lowest) frequencies. However the
+  combination of the two can cover the full frequency range. The LSST cadence should be chosen
+  to provide similar temporal coverage in the DDFs.}
+  \label{PSDvsFreq}
 \end{figure}
 
 Accurate recovery of the PSD parameters can be greatly enhanced by increasing the
@@ -246,8 +234,8 @@ the cadence requirements for LSST.
 \subsection{Metrics}
 \label{sec:\secname:metrics}
 
-Quantifying the response via MAF metrics: definition of the metrics,
-and any derived overall figure of merit.
+% Quantifying the response via MAF metrics: definition of the metrics,
+% and any derived overall figure of merit.
 
 %\new{In lieu of a simulated AGN population, we focus on a few
 %particular {\it diagnostic} metrics that capture  our likely ability
@@ -259,75 +247,174 @@ and any derived overall figure of merit.
 %with the nominal OpSim, and point out potential perturbations in the
 %cadence to improve the number and quality of such time delays.
 
-While additional work is required for determining the optimal cadence
-in order to fully capture AGN accretion physics and to enhance AGN selection,
-it is clear that even the nominal DDF sampling (in enigma\_1189)
-is barely sufficient, and more frequent sampling would have been ideal.
+While additional work is required for determining the optimal cadence in order
+to fully capture AGN accretion physics and to enhance AGN selection, it is clear
+that even the nominal DDF sampling (in enigma\_1189) is barely sufficient, and
+more frequent sampling would have been ideal. The ability to detect HFQPOs
+should also improve by increasing the sampling frequency, the amplitudes of such
+features are quite uncertain, as are the (short) duty cycles. Observations,
+theory and numerical simulations have only suggested that the fractional
+modulation should be small (less than a few percent). Thus it is not obvious how
+to choose a metric and observing strategy to maximize it, other than increasing
+the sampling frequency to at least nightly samplings in the $g$ and $u$ bands
+(i.e., increasing the sampling frequency in the DDFs at least by a factor of
+$\sim 3$).
 
-One particular metric for which LSST can make a significant contribution
-using the C-ARMA formalism is the selection of low-luminosity AGN (LLAGN),
-i.e., sources with $L \ltsim 10^{42}$~erg~s$^{-1}$, in the DDFs. Such
-sources are likely to be missed by traditional color-variability selection
-algorithms due to a strong host contribution. The metric to be developed should
-assess how the number of selected LLAGN depends on the sampling frequency in
-each band.
+Specific metrics include:
 
-% QPOs - Will the cadence and duration give you the proper range on the
-% power spectrum to detect QPOs with a given mass, spin, and L/Ledd?
-% (Bob Wagoner)
+1) LSST can make a significant contribution using
+the C-ARMA formalism is the selection of low-luminosity AGN (LLAGN), i.e.,
+sources with $L \ltsim 10^{42}$~erg~s$^{-1}$, in the DDFs. Such sources are
+likely to be missed by traditional color-variability selection algorithms due to
+a strong host contribution. The metric to be developed should assess how the
+number of selected LLAGN depends on the sampling frequency in each band.
 
-While the ability to detect HFQPOs should also improve by increasing the
-sampling frequency, the amplitudes of such features are quite uncertain,
-as are the (short) duty cycles. Observations, theory and numerical simulations
-have only suggested that the fractional modulation should be small (less than
-a few percent). Thus it is not obvious how to choose a metric and observing
-strategy to maximize it, other than increasing the sampling frequency to
-at least nightly samplings in the $g$ and $u$ bands (i.e., increasing
-the sampling frequency in the DDFs at least by a factor of $\sim 3$).
+2) Assessing the standard deviation of the error in recovered time-lag between
+bands, $\tau$, using a cross-correlation analysis. The goal is to minimize
+$\sigma_{\Delta \tau}$. Additionally, one should assess the worst case estimate of
+the time-lag between bands, i.e., minimizing $\max \vert \Delta \tau \vert$.
 
-Additional metrics include:
+3) Determining the fractional error on the slopes and features of the PSD.
+Assuming that AGN variability is parametrized by a C-ARMA process with
+autoregressive roots $\{\rho_{i}:1 \leq i \leq p\}$, the damping timescales and
+QPO centers are given by $\tau_{i} = 1/|\Re(\rho_{i})|$ and ${\rm QPO}_{i} =
+2\pi/|\Im(\rho_{i})|$, respectively. One needs to investigate how well different
+sampling strategies recover each damping timescale and QPO center for a range of
+assumed models. The choice of appropriate models can be guided by using
+variability data from K2 observations of SDSS quasars.
 
-1. Assesing the standard deviation of the error in recovered time-lag between bands
-using a cross-correlation analysis and the maximum value of the same error for a
-range of simulated time-lags for a number of sources spread over the sky. There is
-a need to investigate whether there are sky regions that do not perform well, as well
-as investigate more sophisticated algorithms for estimating lagged correlations from
-time-series analysis.
-
-2. Determining the fractional error in the accuracy of the locations of PSD features
-for a range of variability models. Assuming that AGN variability is parametrized by
-a C-ARMA process with autoregressive roots $\{\rho_{i}:1 \leq i \leq p\}$, the
-damping timescales and QPO centers are given by $\tau_{i} = 1/|\Re(\rho_{i})|$ and
-${\rm QPO}_{i} = 2\pi/|\Im(\rho_{i})|$ respectively. One needs to investigate how well
-different sampling strategies recover each damping timescale and QPO center for a
-range of assumed models. The choice of appropriate models will be guided by using
-variability data from K2 observations of SDSS quasars. 
-
-% --------------------------------------------------------------------
-
-\subsection{OpSim Analysis}
-\label{sec:\secname:analysis}
-
-OpSim analysis: how good would the default observing strategy be, at
-the time of writing for this science project?
-
-
-% --------------------------------------------------------------------
+% % --------------------------------------------------------------------
+%
+% \subsection{OpSim Analysis}
+% \label{sec:\secname:analysis}
+%
+% OpSim analysis: how good would the default observing strategy be, at
+% the time of writing for this science project?
+%
+%
+% % --------------------------------------------------------------------
 
 \subsection{Discussion}
+% \subsubsection{Discussion}
 \label{sec:\secname:discussion}
 
-Discussion: what risks have been identified? What suggestions could be
-made to improve this science project's figure of merit, and mitigate
-the identified risks?
+% Discussion: what risks have been identified? What suggestions could be
+% made to improve this science project's figure of merit, and mitigate
+% the identified risks?
 
-Overall, the key requirement is to increase the nominal sampling frequency
-in the DDFs by at least a factor of 3, i.e., having at least 3000 visits,
-per band, during the entire survey. Alternatively, if this sampling is not
-feasible for all the DDFs, it would be beneficial to identify a subset of
-``special'' DDFs which would be sampled by this frequency. Such DDFs would
-also benefit from being circumpolar, e.g., the Magellanic Clouds, enabling
-a more uniform sampling to produce the highest quality PSDs.
+Overall, the key requirement is to increase the nominal sampling
+frequency in the DDFs by at least a factor of 3, i.e., having at least
+3000 visits, per band, during the entire survey. Alternatively, if this
+sampling is not feasible for all the DDFs, it would be beneficial to
+identify a subset of ``special'' DDFs which would be sampled by this
+frequency. Such DDFs would also benefit from being circumpolar, e.g.,
+the Magellanic Clouds, enabling a more uniform sampling to produce the
+highest quality PSDs.
+
+% ====================================================================
+%
+\subsection{Conclusions}
+
+Here we answer the ten questions posed in
+\autoref{sec:intro:evaluation:caseConclusions}:
+
+\begin{description}
+
+\item[Q1:] {\it Does the science case place any constraints on the
+tradeoff between the sky coverage and coadded depth? For example, should
+the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+Pan-STARRS) or the number of detected galaxies (the current baseline but
+with 18,000 deg$^2$)?}
+
+\item[A1:] The disc-intrinsic variability science case places no direct
+constraints on the tradeoff between the sky coverage and the coadded depth.
+
+\item[Q2:] {\it Does the science case place any constraints on the
+tradeoff between uniformity of sampling and frequency of sampling? For
+example, a rolling cadence can provide enhanced sample rates over a part
+of the survey or the entire survey for a designated time at the cost of
+reduced sample rate the rest of the time (while maintaining the nominal
+total visit counts).}
+
+\item[A2:] Preliminary studies of the impact of the survey strategy on
+the disc-intrinsic variability science case indicate that
+\begin {enumerate}
+\item having the longest-possible temporal baseline i.e. interval between
+the first and last observations, is mandatory. The temporal baseline
+\emph{must} be atleast 2-3 $\times$ the longest timescale ($\tau$) built
+into the light curve \citep{2017A&A...597A.128K}. \citet{2010ApJ...721.1014M}
+find that $\max \tau \sim 1000$ d suggesting that survey strategy strategies
+that do not visit every field at both the beginning and end of the survey will
+be sub-optimal for this science case.
+\item having intervals of time during which the survey is performed with
+higher sampling frequency is mandatory. Fig. \ref{fig:PSDvsFreq} demonstrates
+that in order to accurately distinguish between various stochastic models of
+AGN variability, the high frequency behavior of the light curve must be
+sufficiently explored
+\end{enumerate}
+In summary, non-uniform sampling is preferred. Some variant of the rolling-cadences
+strategies that provides a long temporal baseline but also periods of very high
+frequency observing is ideal.
+
+\item[Q3:] {\it Does the science case place any constraints on the
+tradeoff between the single-visit depth and the number of visits
+(especially in the $u$-band where longer exposures would minimize the
+impact of the readout noise)?}
+
+\item[A3:] The disc-intrinsic variability science case is best benefited by a
+survey strategy that maximizes the number of visits.
+
+\item[Q4:] {\it Does the science case place any constraints on the
+Galactic plane coverage (spatial coverage, temporal sampling, visits per
+band)?}
+
+\item[A4:] The disc-intrinsic variability science case places no constraints on
+the Galactic plane coverage.
+
+\item[Q5:] {\it Does the science case place any constraints on the
+fraction of observing time allocated to each band?}
+
+\item[A5:] The disc-intrinsic variability science case places no constraints on
+the fraction of observing time allocated to each band.
+
+\item[Q6:] {\it Does the science case place any constraints on the
+cadence for deep drilling fields?}
+
+\item[A6:] The disc-intrinsic variability science case places the same constraints
+on the DDFs as it does on the WFD survey. See the answer to Q2 for details.
+
+\item[Q7:] {\it Assuming two visits per night, would the science case
+benefit if they are obtained in the same band or not?}
+
+\item[A7:] Both continuum-continuum lag studies as well as color-variability studies
+of AGN would be strongly benefited by having the two (or more) visits per night be in
+\emph{different} bands.
+
+\item[Q8:] {\it Will the case science benefit from a special cadence
+prescription during commissioning or early in the survey, such as:
+acquiring a full 10-year count of visits for a small area (either in all
+the bands or in a  selected set); a greatly enhanced cadence for a small
+area?}
+
+\item[A8:] The disc-intrinsic variability science case would be benefited by having a
+greatly enhanced cadence for a small commissioning area of the sky as long as this area
+is followed up with the normal revisit schedule later during the survey in order to
+ensure that the temporal baseline for this region is as long as possible.
+
+\item[Q9:] {\it Does the science case place any constraints on the
+sampling of observing conditions (e.g., seeing, dark sky, airmass),
+possibly as a function of band, etc.?}
+
+\item[A9:] The disc-intrinsic variability science case places no constraints on
+the sampling of observing conditions.
+
+\item[Q10:] {\it Does the case have science drivers that would require
+real-time exposure time optimization to obtain nearly constant
+single-visit limiting depth?}
+
+\item[A10:] No
+
+\end{description}
 
 % ====================================================================
 
