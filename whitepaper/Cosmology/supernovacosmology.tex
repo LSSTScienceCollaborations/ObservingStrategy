@@ -16,6 +16,7 @@
 
 \newcommand{\ml}[1]{\textcolor{red}{[{\bf ML}: #1]}}
 
+Lead authors and editors:
 \credit{jhrlsst},
 \credit{MichelleLochner},
 \credit{rbiswas4},
@@ -878,6 +879,152 @@ WDF would become a factor of 2-3 lower
 (details are to be investigated in future), but
 the SNe that LSST WFD discovered will have  meaningful, reasonable-quality light curves which can be used to
 classify the types of SNe and to improve cosmological parameters.
+
+\subsection{Conclusion}
+
+Here we answer the ten questions posed in Sub-section 1.2.1:
+
+\begin{description}
+\item[Q1:] {\it Does the science case place any constraints on the
+tradeoff between the sky coverage and coadded depth? For example, should
+the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+Pan-STARRS) or the number of detected galaxies (the current baseline but
+with 18,000 deg$^2$)?}
+
+\item[A1:] For supernova observations, the most important aspect is cadence: we need a
+good sampling of well-measured light curves of supernovae. If the sky
+coverage can be increased without sacrificing the number of observations
+per supernova (i.e., over one season), such as using a rolling cadence
+strategy, this will greatly improve supernova science. Inasmuch as
+requiring increased sky coverage could negatively affect cadence over one
+season, our preference is not to increase to a larger sky coverage.
+
+\item[Q2:] {\it Does the science case place any constraints on the
+tradeoff between uniformity of sampling and frequency of  sampling? For
+example, a rolling cadence can provide enhanced sample rates over a part
+of the survey or the entire survey for a designated time at the cost of
+reduced sample rate the rest of the time (while maintaining the nominal
+total visit counts).}
+
+
+\item[A2:] Frequency of sampling is much more important than uniformity over long time
+scales for all forms of supernova science. For SN Ia cosmology, light-curve
+sampling should be about three times as frequent as for the current
+baseline WFD cadence. While further investigation is needed, a reasonable
+length of a season with enhanced rates is around 120-150 days. A rolling
+cadence will allow this improved sampling while still keeping the sky
+coverage and co-added depth, by concentrating on different fields in
+different seasons (see Section 9.5 for details).
+
+\item[Q3:] {\it Does the science case place any constraints on the
+tradeoff between the single-visit depth and the number of visits
+(especially in the $u$-band where longer exposures would minimize the
+impact of the readout noise)?}
+
+\item[A3:] In general for supernova science, the number of visits is more important to
+the single-visit depth, though we would not advocate any decrease in
+single-visit exposure time (below 2x15 sec). The U band  is useful for the
+low-z (wide-area) sample and and their calibration of the Hubble diagram.
+It is not obvious if longer exposures are helpful at this time for
+supernova science.
+
+\item[Q4:] {\it Does the science case place any constraints on the
+Galactic plane coverage (spatial coverage, temporal sampling, visits per
+band)?}
+
+\item[A4:] Our supernova science is extragalactic and will use high Galactic-latitude
+fields almost exclusively (to minimize Milky Way extinction systematic
+uncertainties). Survey time spent on Galactic fields takes away from survey
+time for our science; we would optimize for less time in the Galactic
+plane.
+
+\item[Q5:] {\it Does the science case place any constraints on the
+fraction of observing time allocated to each band?}
+
+
+\item[A5:] For supernova science, we have no strong preference for any band and would
+benefit from roughly uniform depth per band. While redder bands are more
+useful for higher redshift supernovae, the bluer bands are helpful
+especially for lower redshift objects. Visits in each band should be
+uniformly spread in time. A higher number of visits to redder bands is
+preferred for DDF.
+
+\item[Q6:] {\it Does the science case place any constraints on the
+cadence for deep drilling fields?}
+
+
+\item[A6:] Our optimal cadence would for the DDFs would be nightly or every other
+night; every three nights would be acceptable. Beyond this we run the risk
+of large gaps more than $\sim$7 days, which would be detrimental to supernova
+science. Ideally, the DDFs would be observed in all available filters,
+though not all filters are needed every night (so for instance some filters
+could be observed on night 1, the others on night 2, and repeat). The
+single-night depth should be 1-2 mag deeper than a WFD field, but not much
+more; any extra time is better spent on a different night.
+
+We would like a suitable number of extragalactic DDFs in total so that at
+least a few ($\sim$3 to 5) are being observed at any time in the survey: we
+would limit an increase in the number of DDFs if it came at the expense of
+our preferred high cadence. Each field should be observed for a $``$season" of
+length at least $\sim$120-150 days, staggering the fields so new fields cycle in
+as old ones cycle out. In addition, for DDFs, the u-band exposure time
+could be increased to minimize readout noise.
+
+\item[Q7:] {\it Assuming two visits per night, would the science case
+benefit if they are obtained in the same band or not?}
+
+
+
+\item[A7:]Supernova science benefits enormously from having color information,
+particularly in discovery and early epochs to help classification. Two
+visits in the same band will be less useful than visits in different bands.
+
+\item[Q8:] {\it Will the case science benefit from a special cadence
+prescription during commissioning or early in the survey, such as:
+acquiring a full 10-year count of visits for a small area (either in all
+the bands or in a  selected set); a greatly enhanced cadence for a small
+area?}
+
+
+
+\item[A8:] During commissioning, we would like as many DDFs as possible observed in
+all filters (with few times the per-night exposure time) so that templates
+can be created for each of the DD fields we consider. This will allow us to
+find useful supernovae in these DDFs as soon as the survey starts, and
+provide us with useful time to deal with any issues in the image
+subtraction etc. before the survey begins.
+
+Early in the survey, we must build templates for all fields (more broadly
+than just the DDFs). Our favored method for doing this is to devote the
+bulk of year 1 to covering the full sky area, with a rolling cadence survey
+commencing thereafter. As above, the templates should be at least a few
+times the exposure time of a single visit (so that the template noise does
+not dominate the subtraction). This is particularly important in the first
+3-5 weeks of the survey, to ensure that we get useful data from the rest of
+the critical first year.
+
+\item[Q9:] {\it Does the science case place any constraints on the
+sampling of observing conditions (e.g., seeing, dark sky, airmass),
+possibly as a function of band, etc.?}
+
+
+\item[A9:] While supernova observations benefit from good seeing, it is not as strong
+a requirement as it is for other science cases. Moreover we would like to limit
+any image coaddition issues for very good seeing (under the assumption that
+these remain): we can make good use of observing conditions with slightly
+poorer seeing.
+
+
+\item[Q10:] {\it Does the case have science drivers that would require
+real-time exposure time optimization to obtain nearly constant
+single-visit limiting depth?}
+
+\item[A10:]A sufficiently long (or nominal), fixed exposure time should be adequate
+for supernova science. No real-time optimization is necessary, and
+single-visit science is not the limiting factor for SNe science.
+
+
+\end{description}
 
 
 
