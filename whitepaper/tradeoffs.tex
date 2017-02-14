@@ -19,11 +19,12 @@ say, 200 words.
 
 The LSST survey will be carried out with physical and operational
 constraints that will impact all science objectives.  These include
-design limitations, such as the aperture of the telescope, or the
-limited number of filter changes that can be supported during the
-lifetime of the survey.  They include natural constraints, such as the
-quantity of useful observing time in 10 years. They include practical
-constraints such as the detector noise and readout time.
+design limitations, such as the aperture of the telescope, the detector 
+noise and readout time, or the limited number of filter changes that 
+can be supported during the lifetime of the survey.  They include 
+natural constraints, such as the quantity of useful observing time 
+in 10 years. They include system optimization constraints such as 
+exposure time and sky coverage. 
 
 The LSST observing schedule can be designed, to some extent, to minimize
 the impact that these limitations have on any one or few science
@@ -141,8 +142,8 @@ done with triples, in case that should prove necessary for asteroid
 characterization.  The possibility of using a different revisit pattern
 in different parts of the sky (e.g. less frequent away from the
 ecliptic) has been mentioned.  Different patterns for different filters
-(e.g. not using pairs for u-filter visits) has been suggested, but not
-yet investigated.  The use of visit pairs is clearly a very large impact
+(e.g. not using pairs for visits in the $u$ and $y$ bands) have been 
+suggested and investigated. The use of visit pairs is clearly a very large impact
 decision, for practical purposes reducing by 2X the effective revisit
 rate for other targets. However, rapid pairs is very effective for
 measuring brightness gradients for rapidly varying objects, and thus
@@ -178,12 +179,12 @@ barely been scratched.
 
 Commissioning survey - the highest priority of the commissioning
 schedule is - of course - commissioning.  A second objective is to
-demonstrate telescope operation in the planned survey mode - presumably
+demonstrate system operation in the planned survey mode - presumably
 including main survey, deep drilling, rolling cadences, etc.  There have
-been ambitious suggestions, going beyond these basics, such as
+been other suggestions, going beyond these basics, such as
 integrating some fields to the full survey depth, or acquiring some
-special cadences.  However, there is no assurance that any of these will
-be possible, as they have lower priority than the formal commissioning
+special cadences.  However, there is no assurance that all of these will
+be possible, and they will be prioritized following formal commissioning
 objectives.
 
 \subsection{Other options for special cadences}
@@ -221,11 +222,15 @@ around.
 Multi-color visits are a very special case for LSST.  Moving the large
 (huge) optical filters involves substantial structure and mechanisms.
 While filter change time is not fully characterized, it will be slow
-enough that filter change frequency competes directly with efficiency.
-Furthermore, the mechanisms have a finite lifetime and are not designed
-to allow an indefinite number of changes.  These are practical
+enough (about 2 minutes) that filter change frequency competes directly with efficiency.
+Furthermore, the mechanisms have a finite lifetime and are designed
+to allow a finite number of changes (about 100,000 changes over 15 years;
+state-state statistics imply that the main survey will have fewer than
+about 10 filter changes per night). These are practical
 limitations of the facility. Combined, they ensure that ``rapid''
-multi-color sequences will be the exception rather than the rule.
+multi-color sequences will be the exception rather than the rule
+(6 consecutive filter changes every 3 minutes will be fine, as well as
+a rare night with changes every 10 minutes).
 Science objectives which need near-simultaneous multi-color photometry
 will be in competition for a limited resource.
 
@@ -245,9 +250,9 @@ is important to identify when and if rapid filter changes are essential.
 
 In summary, we can readily identify competing demands for very different
 cadences, including fast cadences in multiple ranges. For characteristic
-times ranging from  $<\approx$1 minute to $~\approx$1 month, a uniform
+times ranging from  $\lesssim$1 minute to $\sim$1 month, a uniform
 visit distribution cannot be fully satisfactory, and in some cases it
-may be concluded to be totally unsatisfactory.  A number of concepts for
+may turn out to be totally unsatisfactory.  A number of concepts for
 alternate cadences are available.  None can provide rapid cadence all
 the time over all the sky. It may be possible to provide cadences
 matched to most requirements over part of the sky all of the time, and
@@ -324,7 +329,7 @@ for example by actively running the camera rotator when advancing from
 one sky position to the next, in order to populate under represented
 camera angles. The rotation takes time, and could reduce the overall
 efficiency of the survey.  Only simulations can explore the impact of
-these additional mechanical motions
+these additional mechanical motions.
 
 Dithering - dithering of visits is a powerful method of improving
 homogeneity of sky coverage passively. Few compromises have been
