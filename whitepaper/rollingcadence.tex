@@ -13,7 +13,7 @@
 %-
 % ====================================================================
 
-\section{Temporarily Denser Time Sampling: Rolling Cadence}
+\section{Future Work: Rolling Cadence}
 \def\secname{rolling}\label{sec:\secname}
 
 \credit{StephenRidgway}
@@ -29,9 +29,9 @@ sky all of the time and all of the sky some of the time, while
 maintaining a sufficient uniformity for survey objectives that require
 it. In this section we provide an introduction to the concept of rolling
 cadence, and give some examples of ways in which it can be implemented.
-We also present three preliminary \OpSim experiments, that serve to
-illustrate some of the features and challenges of the rolling cadence
-strategy.
+% We also present three preliminary \OpSim experiments, that serve to
+% illustrate some of the features and challenges of the rolling cadence
+% strategy.
 
 % --------------------------------------------------------------------
 
@@ -94,72 +94,72 @@ for the observing rate.
 and S. Ridgway, contains more detailed discussion and analysis.
 
 % --------------------------------------------------------------------
-
-\subsection{Some Example Rolling Cadence \OpSim Runs}
-
-In this section we present a set of three experimental ``Swiss Cheese''
-rolling cadence strategies, and a uniform strategy for use as a control.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:SwissCheeseRollingCadence1]{ops2\_1102}{``Swiss Cheese'' rolling cadence, version 1.}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% {\bf Motivation and description:}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:SwissCheeseRollingCadence2]{enigma\_1260}{``Swiss Cheese'' rolling cadence, version 2.}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% {\bf Motivation and description:}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:SwissCheeseRollingCadence3]{enigma\_1261}{``Swiss Cheese'' rolling cadence, version 3.}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% {\bf Motivation and description:}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:RollingCadenceControl]{ops2\_1098}{``Control'' simulation for comparison with the ``Swiss Cheese'' experimental rolling cadence simulations}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% {\bf Motivation and description:}
-
-
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-\autoref{fig:rollingcadence} illustrates the difference in how survey
-depth (characterized by the number of visits) builds up between uniform
-cadence (\opsimdbref{db:RollingCadenceControl}) and rolling cadence
-(\opsimdbref{db:SwissCheeseRollingCadence2}) strategies.
-
-\begin{figure}
-  \includegraphics[width=2.3in]{figs/ops2_1098_Count_expMJD_r_and_night_lt_365_HEAL_SkyMap.pdf}\includegraphics[width=2.3in]{figs/ops2_1098_Count_expMJD_r_and_night_lt_730_HEAL_SkyMap.pdf}\includegraphics[width=2.3in]{figs/ops2_1098_Count_expMJD_r_and_night_lt_3653_HEAL_SkyMap.pdf} \\
-  \includegraphics[width=2.3in]{figs/enigma_1260_Count_expMJD_r_and_night_lt_365_HEAL_SkyMap.pdf}\includegraphics[width=2.3in]{figs/enigma_1260_Count_expMJD_r_and_night_lt_730_HEAL_SkyMap.pdf}\includegraphics[width=2.3in]{figs/enigma_1260_Count_expMJD_r_and_night_lt_3653_HEAL_SkyMap.pdf}
-  \caption{Example of a regular uniform survey
-  (\opsimdbref{db:RollingCadenceControl}, top row) and a rolling
-  cadence survey (\opsimdbref{db:SwissCheeseRollingCadence2}, bottom row)
-  after 1, 2, and 10 years in the $r$ filter.
-  For the regular survey, the number of visits for any part of the sky
-  is relatively constant throughout the survey.  For the rolling cadence
-  simulation, there are regions with many more exposures in year one
-  which then fade in year two as other parts of the sky are
-  emphasized.}
-  \label{fig:rollingcadence}
-\end{figure}
-
-
+%
+% \subsection{Some Example Rolling Cadence \OpSim Runs}
+%
+% In this section we present a set of three experimental ``Swiss Cheese''
+% rolling cadence strategies, and a uniform strategy for use as a control.
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \opsimdb[db:SwissCheeseRollingCadence1]{ops2\_1102}{``Swiss Cheese'' rolling cadence, version 1.}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% % {\bf Motivation and description:}
+%
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \opsimdb[db:SwissCheeseRollingCadence2]{enigma\_1260}{``Swiss Cheese'' rolling cadence, version 2.}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% % {\bf Motivation and description:}
+%
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \opsimdb[db:SwissCheeseRollingCadence3]{enigma\_1261}{``Swiss Cheese'' rolling cadence, version 3.}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% % {\bf Motivation and description:}
+%
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \opsimdb[db:RollingCadenceControl]{ops2\_1098}{``Control'' simulation for comparison with the ``Swiss Cheese'' experimental rolling cadence simulations}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% % {\bf Motivation and description:}
+%
+%
+%
+% % % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+%
+% \autoref{fig:rollingcadence} illustrates the difference in how survey
+% depth (characterized by the number of visits) builds up between uniform
+% cadence (\opsimdbref{db:RollingCadenceControl}) and rolling cadence
+% (\opsimdbref{db:SwissCheeseRollingCadence2}) strategies.
+%
+% \begin{figure}
+%   \includegraphics[width=2.3in]{figs/ops2_1098_Count_expMJD_r_and_night_lt_365_HEAL_SkyMap.pdf}\includegraphics[width=2.3in]{figs/ops2_1098_Count_expMJD_r_and_night_lt_730_HEAL_SkyMap.pdf}\includegraphics[width=2.3in]{figs/ops2_1098_Count_expMJD_r_and_night_lt_3653_HEAL_SkyMap.pdf} \\
+%   \includegraphics[width=2.3in]{figs/enigma_1260_Count_expMJD_r_and_night_lt_365_HEAL_SkyMap.pdf}\includegraphics[width=2.3in]{figs/enigma_1260_Count_expMJD_r_and_night_lt_730_HEAL_SkyMap.pdf}\includegraphics[width=2.3in]{figs/enigma_1260_Count_expMJD_r_and_night_lt_3653_HEAL_SkyMap.pdf}
+%   \caption{Example of a regular uniform survey
+%   (\opsimdbref{db:RollingCadenceControl}, top row) and a rolling
+%   cadence survey (\opsimdbref{db:SwissCheeseRollingCadence2}, bottom row)
+%   after 1, 2, and 10 years in the $r$ filter.
+%   For the regular survey, the number of visits for any part of the sky
+%   is relatively constant throughout the survey.  For the rolling cadence
+%   simulation, there are regions with many more exposures in year one
+%   which then fade in year two as other parts of the sky are
+%   emphasized.}
+%   \label{fig:rollingcadence}
+% \end{figure}
+%
+%
 % --------------------------------------------------------------------
 
 \subsection{Supernovae and Rolling Cadence}
 \label{sec:rolling:supernovae}
 
-Supernovae as a science topic are addressed elsewhere.
-In this section, the demands of SN are used to directly constrain or
-orient the rolling cadence development.
+% Supernovae as a science topic are addressed elsewhere.
+% In this section, the demands of SN are used to directly constrain or
+% orient the rolling cadence development.
 
 Pending more quantitative guidance, the SN objective for rolling cadence
 is to obtain multi-band time series that are significantly longer than
@@ -282,14 +282,14 @@ those targeted by rolling cadence development.
 
 % --------------------------------------------------------------------
 
-\subsection{Directions for Future Work with Rolling Cadences}
+\subsection{Directions}
 \label{sec:rolling:directions}
 
 While preliminary experiments with rolling cadences have been carried
-out with OpSim, these experiments have significant deficiencies, and are
-not suited for in-depth study as of this writing.
-However, analysis of the cadences described above may guide
-development of objectives for enhancement by rolling cadence.
+out with \OpSim, these experiments have significant deficiencies, and
+are not suited for in-depth study as of this writing.
+% However, analysis of the cadences described above may guide
+% development of objectives for enhancement by rolling cadence.
 
 Rolling cadences will be required to pass the same metrics as for other
 cadences, and general requirements such as sky area, depth and visit
@@ -299,58 +299,58 @@ metrics that measure schedule performance for variable targets, and
 especially those with strong sampling requirements, or more rapid
 variability.
 
-\subsubsection{Future Rolling Cadence Metrics}
-
-The following metrics, based on similar metrics developed for particular
-science objectives, may be useful in tuning rolling cadence performance:
-
-\begin{itemize}
-
-\item Observation Pairs histograms.  Visit pairs are simple and easy to
-quantify.  A pair of visits in the same filter describe a brightness
-change and constrain the rate of change. A visit pair in different
-filters (probably not coeval) constrain a color.  These metrics will
-describe how rapidly LSST can detect a change in the source fluxes. They
-will be useful for such science as early discovery of SNe, and
-identification of interesting galactic microlensing events.
-
-\item Observation Triplets histograms. Similar to Pairs, but with
-closely spaced triplets allowing detection and confirmation of transient
-events \citep[as described by][]{LundEtal2016}.
-
-\item Period determination metric.  Compute a measure of the period
-determination accuracy after a given time interval, as a function of
-period. A complete analysis would allow use of real light curves for
-various object types with realistic brightness distributions.  A simpler
-approach would use a single example light curve and a fixed measurement
-error value. A simplest approach would be based on the sampling function
-and its power spectrum \citep{LundEtal2016}.  This metric group would
-rate simulation performance for period determination of periodic
-variables - mostly stars.
-
-\item Sampling of SNe light curves.  The most complete metric would
-count the number of SNe (of various types) light curves that would be
-well sampled (according to defined criteria), based on analysis of
-realistic simulated data.  A simpler metric would be based on estimated
-sampling requirements and cadence without considering brightness. The
-latter could be used initially, pending replacement (or calibration)
-with more extensive simulations.
-
-\item Time series count. For any transient or irregular variable, the
-optimum observational data will require multiple time and color samples
-within the duration of the event. Since the category of transients may
-include discoveries, it is not possible to exhaustively specify the
-source characteristics. A time series can be defined to consist of a
-series of samples, over some total duration T, with sampling interval t
-to tolerance d. The count of time series depends on the total duration,
-the number of samples, as well as the filter selection, so the challenge
-is how to visualize this information, and how to extract useful
-characteristic summary measures of performance.  This type of data can
-be valuable for identification and study of rapid phenomena such as
-stellar flares, binary mass transfer events, and exoplanet transits, and
-for slower events such as AGN reverberation mapping.
-
-\end{itemize}
+% \subsubsection{Future Rolling Cadence Metrics}
+%
+% The following metrics, based on similar metrics developed for particular
+% science objectives, may be useful in tuning rolling cadence performance:
+%
+% \begin{itemize}
+%
+% \item Observation Pairs histograms.  Visit pairs are simple and easy to
+% quantify.  A pair of visits in the same filter describe a brightness
+% change and constrain the rate of change. A visit pair in different
+% filters (probably not coeval) constrain a color.  These metrics will
+% describe how rapidly LSST can detect a change in the source fluxes. They
+% will be useful for such science as early discovery of SNe, and
+% identification of interesting galactic microlensing events.
+%
+% \item Observation Triplets histograms. Similar to Pairs, but with
+% closely spaced triplets allowing detection and confirmation of transient
+% events \citep[as described by][]{LundEtal2016}.
+%
+% \item Period determination metric.  Compute a measure of the period
+% determination accuracy after a given time interval, as a function of
+% period. A complete analysis would allow use of real light curves for
+% various object types with realistic brightness distributions.  A simpler
+% approach would use a single example light curve and a fixed measurement
+% error value. A simplest approach would be based on the sampling function
+% and its power spectrum \citep{LundEtal2016}.  This metric group would
+% rate simulation performance for period determination of periodic
+% variables - mostly stars.
+%
+% \item Sampling of SNe light curves.  The most complete metric would
+% count the number of SNe (of various types) light curves that would be
+% well sampled (according to defined criteria), based on analysis of
+% realistic simulated data.  A simpler metric would be based on estimated
+% sampling requirements and cadence without considering brightness. The
+% latter could be used initially, pending replacement (or calibration)
+% with more extensive simulations.
+%
+% \item Time series count. For any transient or irregular variable, the
+% optimum observational data will require multiple time and color samples
+% within the duration of the event. Since the category of transients may
+% include discoveries, it is not possible to exhaustively specify the
+% source characteristics. A time series can be defined to consist of a
+% series of samples, over some total duration T, with sampling interval t
+% to tolerance d. The count of time series depends on the total duration,
+% the number of samples, as well as the filter selection, so the challenge
+% is how to visualize this information, and how to extract useful
+% characteristic summary measures of performance.  This type of data can
+% be valuable for identification and study of rapid phenomena such as
+% stellar flares, binary mass transfer events, and exoplanet transits, and
+% for slower events such as AGN reverberation mapping.
+%
+% \end{itemize}
 
 % ====================================================================
 
