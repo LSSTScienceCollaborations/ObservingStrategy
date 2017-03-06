@@ -29,6 +29,9 @@ sky all of the time and all of the sky some of the time, while
 maintaining a sufficient uniformity for survey objectives that require
 it. In this section we provide an introduction to the concept of rolling
 cadence, and give some examples of ways in which it can be implemented.
+We also present three preliminary \OpSim experiments, that serve to
+illustrate some of the features and challenges of the rolling cadence
+strategy.
 
 % --------------------------------------------------------------------
 
@@ -94,7 +97,7 @@ and S. Ridgway, contains more detailed discussion and analysis.
 
 \subsection{Some Example Rolling Cadence \OpSim Runs}
 
-In this section we describe a set of three experimental ``Swiss Cheese''
+In this section we present a set of three experimental ``Swiss Cheese''
 rolling cadence strategies, and a uniform strategy for use as a control.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -129,8 +132,8 @@ rolling cadence strategies, and a uniform strategy for use as a control.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 \autoref{fig:rollingcadence} illustrates the difference in how survey
-depth (characterized by the number of visits) builds up between
-uniform cadence (\opsimdbref{db:RollingCadenceControl}) and rolling cadence
+depth (characterized by the number of visits) builds up between uniform
+cadence (\opsimdbref{db:RollingCadenceControl}) and rolling cadence
 (\opsimdbref{db:SwissCheeseRollingCadence2}) strategies.
 
 \begin{figure}
@@ -284,9 +287,8 @@ those targeted by rolling cadence development.
 
 While preliminary experiments with rolling cadences have been carried
 out with OpSim, these experiments have significant deficiencies, and are
-not suited for in-depth study as of this writing.  Progress in rolling
-cadence simulations is expected no sooner than mid to late-2016.
-Preparatory to that, analysis of cadences described above can guide
+not suited for in-depth study as of this writing.
+However, analysis of the cadences described above may guide
 development of objectives for enhancement by rolling cadence.
 
 Rolling cadences will be required to pass the same metrics as for other
@@ -322,9 +324,9 @@ period. A complete analysis would allow use of real light curves for
 various object types with realistic brightness distributions.  A simpler
 approach would use a single example light curve and a fixed measurement
 error value. A simplest approach would be based on the sampling function
-and its power spectrum \citep{LundEtal2016}.  This metric group would rate
-simulation performance for period determination of periodic variables -
-mostly stars.
+and its power spectrum \citep{LundEtal2016}.  This metric group would
+rate simulation performance for period determination of periodic
+variables - mostly stars.
 
 \item Sampling of SNe light curves.  The most complete metric would
 count the number of SNe (of various types) light curves that would be
@@ -349,52 +351,6 @@ stellar flares, binary mass transfer events, and exoplanet transits, and
 for slower events such as AGN reverberation mapping.
 
 \end{itemize}
-
-
-\subsubsection{Rolling Cadence Recommendations}
-
-Based on the analysis presented above, several recommendations
-for further cadence exploration can be made:
-
-\begin{enumerate}
-
-\item Further optimization of the main survey (e.g., exposure time in
-general, and $u$ band exposure time in particular; fixing western bias;
-optimizing airmass limit and sky coverage; investigations of variable,
-perhaps SNR-driven, exposure time).
-
-\item Exploration and optimization of temporal sampling function in
-general, and of Rolling Cadence in particular.
-
-\item NEO completeness studies: what would it take for LSST to reach
-90\% completeness for 140m and larger NEOs?  Based on previous
-analysis, directions to explore are deeper visits along the Ecliptic
-and longer survey duration (about 12 years).
-
-\item Exploration of extending the main survey to the Galactic plane
-\citep{Gould2013}, and further optimization of
-Galactic plane and Bulge science programs.
-
-\item Optimization of LMC/SMC coverage (and somewhat less importantly,
-the South Celestial Pole coverage).
-
-\item Deep drilling optimization (detailed analysis of existing
-proposals; investigation of gains from going to a larger observing
-time allocation, e.g. 20\%).
-
-\item Twilight short-exposure time observing (per internal Stubbs proposal).
-
-\item Planning commissioning observations (e.g. the tension between
-going wide to enable self-calibration and dense temporal sampling to
-obtain various light curve templates and fine tune image differencing
-and multi-epoch data processing and data analysis software tools).
-
-\item Dynamic cadence explorations (the main goal at this time is to
-answer: are our tools good enough to act and react swiftly and
-robustly in operations?).
-
-\end{enumerate}
-
 
 % ====================================================================
 

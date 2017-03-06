@@ -17,8 +17,6 @@ We then discuss the tensions and tradeoffs apparent in these findings.
 \section{Summary of Cadence Constraints}
 
 \credit{ivezic}
-\credit{drphilmarshall},
-\credit{connolly}
 
 The authors of the preceding chapters' science cases provided guidelines
 for improving the baseline LSST cadence, via their 10-question
@@ -194,6 +192,8 @@ the upcoming Zwicky Transient Facility.
 
 \section{Tensions and Tradeoffs}
 
+\credit{StephenRidgway}
+
 The LSST survey will be carried out with physical and operational
 constraints that will impact all science objectives.  These include
 design limitations, such as the aperture of the telescope, the detector
@@ -229,7 +229,7 @@ now evident, and where tradeoffs may become necessary. Most potential
 tensions within the main survey concern {\it temporal sampling for
 variable targets}.  Tensions among static science objectives, and
 between static science and variable science, may be less likely and
-mild. The strongest points of tension may prove to be between
+mild. The strongest points of tension {\it may} turn out to be between
 mini-surveys and the main survey.
 
 % --------------------------------------------------------------------
@@ -340,15 +340,15 @@ mini-surveys and the main survey is discussed below.
 re-deploying visits within the main survey so as to respond to special
 cadence demands without compromising main survey goals (or, perhaps in
 principle, trading against main survey goals in a measured and optimum
-way). Rolling cadences are discussed in Chapter 2.  As an example, the
-average 9 visit pairs per year in the r filter, which would be
+way). Rolling cadences were introduced, and some preliminary experiments discussed, in \autoref{sec:rolling}.  As an example, the
+average 9 visit pairs per year in the $r$ filter, which would be
 distributed over a season in a uniform survey, could be distributed over
 2 months, 1 month, 1 week, or 1 day, in a rolling cadence (leaving no
-visits in r for the rest of the season).  Or, more conservatively for
+visits in $r$ for the rest of the season).  Or, more conservatively for
 the main survey, half (4-5 visit pairs) could be spent in an enhanced
 visit rate, reserving the other half to maintain visit pairs in the rest
 of the season.  Also, a rolling cadence can concern any number of
-filters - for example, one filter could be used to provide short bursts
+filters; for example, one filter could be used to provide short bursts
 of rapid sampling, while other filters could maintain a uniform
 distribution.  Different rolling cadences can be used in different parts
 of the sky, or at different times during the survey.  There is an
@@ -369,23 +369,25 @@ objectives.
 
 \subsubsection{Other options for special cadences}
 
-Pre-survey options - there are a number of survey instruments (CTIO,
-CFHT, Subaru) that can easily reach the single visit depth of LSST.
-These resources could be used to explore limited sky regions
+\begin{description}
+
+\item{Pre-survey options} -- there are a number of survey instruments
+(CTIO, CFHT, Subaru) that can easily reach the single visit depth of
+LSST. These resources could be used to explore limited sky regions
 ($\approx$1\% of the LSST sky) with cadences that are planned for LSST
 (or cadences that are not planned for LSST), providing touchstone
 datasets especially for the more common target types that will dominate
 the survey.
 
-Twilight survey - chapter 10 describes a concept for twilight data
-acquisition, using short exposures to tolerate bright sky.  This time is
-not required for current LSST science, and in principle could be
-allocated to z,y filters in short bursts (20 minutes) of fast cadence
-($<~$15 seconds) imagery, within the sensitivity limits of the twilight
-sky.
+\item{Twilight survey} -- \autoref{sec:shortexp} describes a concept for
+twilight data acquisition, using short exposures to tolerate bright sky.
+This time is not required for current LSST science, and in principle
+could be allocated to $z$, $y$ filters in short bursts (20 minutes) of
+fast cadence ($<~$15 seconds) imaging, within the sensitivity limits of
+the twilight sky.
 
-Follow-up - LSST is, in large part, a variable discovery tool.  It is
-not realistic to expect LSST to provide its own follow-up for all
+\item{Follow-up} -- LSST is, in large part, a discovery machine. It is
+not realistic to expect LSST to provide its own follow-up for {\it all}
 possible target types and characteristics. Fortunately, many of the most
 useful discoveries will be bright enough to follow-up with smaller, more
 accessible apertures.  Follow-up can be far more customized to the
@@ -393,26 +395,25 @@ science needs than a general purpose LSST cadence.  Faint targets of
 sufficient value may likewise merit followup with exceptional  ground
 and space-based resources.
 
-Post-survey options - will LSST operate for more than 10 years? It's
-possible, maybe even probable, but at present too speculative to plan
-around.
+\end{description}
+
 
 \subsubsection{Frequency of filter changes}
 
 Multi-color visits are a very special case for LSST.  Moving the large
 (huge) optical filters involves substantial structure and mechanisms.
 While filter change time is not fully characterized, it will be slow
-enough (about 2 minutes) that filter change frequency competes directly with efficiency.
-Furthermore, the mechanisms have a finite lifetime and are designed
-to allow a finite number of changes (about 100,000 changes over 15 years;
-state-state statistics imply that the main survey will have fewer than
-about 10 filter changes per night). These are practical
+enough (about 2 minutes) that filter change frequency competes directly
+with efficiency. Furthermore, the mechanisms have a finite lifetime and
+are designed to allow a finite number of changes (about 100,000 changes
+over 15 years; state-state statistics imply that the main survey will
+have fewer than about 10 filter changes per night). These are practical
 limitations of the facility. Combined, they ensure that ``rapid''
-multi-color sequences will be the exception rather than the rule
-(6 consecutive filter changes every 3 minutes will be fine, as well as
-a rare night with changes every 10 minutes).
-Science objectives which need near-simultaneous multi-color photometry
-will be in competition for a limited resource.
+multi-color sequences will be the exception rather than the rule (6
+consecutive filter changes every 3 minutes will be fine, as well as a
+rare night with changes every 10 minutes). Science objectives which need
+near-simultaneous multi-color photometry will be in competition for a
+limited resource.
 
 With a limited number of filter changes per night, it is possible for
 visit pairs to be acquired (sometimes) in different filters.  Deep
@@ -426,28 +427,29 @@ For periodic variables, simultaneous multi-color photometry is a
 convenience.  For non-periodic or transient targets, it is desirable. It
 is important to identify when and if rapid filter changes are essential.
 
+
 \subsubsection{Tension between rapid and slow cadences}
 
 In summary, we can readily identify competing demands for very different
 cadences, including fast cadences in multiple ranges. For characteristic
-times ranging from  $\lesssim$1 minute to $\sim$1 month, a uniform
-visit distribution cannot be fully satisfactory, and in some cases it
-may turn out to be totally unsatisfactory.  A number of concepts for
-alternate cadences are available.  None can provide rapid cadence all
-the time over all the sky. It may be possible to provide cadences
-matched to most requirements over part of the sky all of the time, and
-over all of the sky at some time. For transient targets, a complex
-survey cadence may obtain limited duration but ``appropriate'' sampling
-of a fraction of the actual events, with the fraction TBD, but
+times ranging from  $\lesssim$1 minute to $\sim$1 month, a uniform visit
+distribution cannot be fully satisfactory, and in some cases it may turn
+out to be totally unsatisfactory.  A number of concepts for alternate
+cadences are available.  None can provide rapid cadence all the time
+over all the sky. It may be possible to provide cadences matched to most
+requirements over part of the sky all of the time, and over all of the
+sky at some time. For transient targets, a complex survey cadence may
+obtain limited duration but ``appropriate'' sampling of a fraction of
+the actual events, with the exact fraction still to be decided but
 inevitably significantly less than one.
 
 The tension in scheduling is, first and foremost, not between competing
 science objectives, but between science objectives and limited
-scheduling flexibility The confrontation between science requirements
+scheduling flexibility. The confrontation between science requirements
 and schedule performance leans on the metrics and merit functions that
-are the major goal of this white paper.  It should be clear from the 10
+are the major goal of this white paper.  It should be clear from the
 foregoing chapters that the difficult goal of metrics analysis is not in
-describing sampling for the science, which is ``easy''.  The more
+describing sampling for the science, which is ``easy.''  The more
 difficult part is in determining the number of science targets for which
 adequate sampling can be provided by a simulation, and perhaps the
 greatest challenge is determining how many such targets with the
@@ -464,17 +466,19 @@ The needs of static target science appear to have fewer points of
 potential tension among them than variable targets.  The major
 cadence-related concerns are:
 
-Photometry - the best photometric performance will be achieved after the
-calibration has been closed around the sky with superior image quality
-and superior photometric quality visits to every field.  While this is
-probable due to randomization of conditions over 10 years, the sooner
-that it is achieved during the survey, the sooner high quality
+\begin{description}
+
+\item{Photometry} -- the best photometric performance will be achieved
+after the calibration has been closed around the sky with superior image
+quality and superior photometric quality visits to every field.  While
+this is probable due to randomization of conditions over 10 years, the
+sooner that it is achieved during the survey, the sooner high quality
 photometry will be available.  This could be a target of active schedule
 control, with corresponding decreasing flexibility in some other
 schedule variables.
 
-Astrometry - both proper motions and parallaxes are served by any
-schedule that spreads visits well over the duration of the survey.
+\item{Astrometry} -- both proper motions and parallaxes are served by
+any schedule that spreads visits well over the duration of the survey.
 Parallaxes benefit from observing at a range of hour angles, which is
 slightly in competition with the preference to observe at small airmass
 for best image quality, but typical simulated schedules show good
@@ -484,26 +488,26 @@ impact the astrometric performance (either for better or for worse),
 though as long as the fraction of visits concerned was small, the effect
 would correspondingly be small.
 
-Homogeneity - an  example of required homogeneity is image quality.
-Just as the atmosphere allows a range of image quality during a night
-and from night to night, each point on the sky will be observed with a
-range of image quality.  To enable understanding of selection effects,
-and to compare sky regions on an even playing field, it is desirable
-that for each filter, all parts of the sky should be observed with a
-similar distribution of image quality, and in particular with similar
-best image quality. Achieving homogeneity of conditions actively could
-be quite challenging, but simulations show that with a large number of
-independent visits, it occurs naturally to good approximation.  Any
-cadence that relied on concentrated bursts of visits in a short interval
-would tend to reduce the spread of conditions observed. However, such an
-extreme has not been proposed or studied
+\item{Homogeneity} -- an  example of required homogeneity is image
+quality. Just as the atmosphere allows a range of image quality during a
+night and from night to night, each point on the sky will be observed
+with a range of image quality.  To enable understanding of selection
+effects, and to compare sky regions on an even playing field, it is
+desirable that for each filter, all parts of the sky should be observed
+with a similar distribution of image quality, and in particular with
+similar best image quality. Achieving homogeneity of conditions actively
+could be quite challenging, but simulations show that with a large
+number of independent visits, it occurs naturally to good approximation.
+Any cadence that relied on concentrated bursts of visits in a short
+interval would tend to reduce the spread of conditions observed.
+However, such an extreme has not been proposed or studied.
 
-Randomization - closely related to homogeneity, randomization is means
-of achieving homogeneity in some observing parameters.  Examples are the
-projected angles of camera and telescope optics on the sky. These are
-less random than sky conditions, as they depend on instrument setup and
-schedule history.  Simulations show that optics angles are well
-randomized passively (i.e. without scheduler optimization) for most
+\item{Randomization} -- closely related to homogeneity, randomization is
+means of achieving homogeneity in some observing parameters.  Examples
+are the projected angles of camera and telescope optics on the sky.
+These are less random than sky conditions, as they depend on instrument
+setup and schedule history.  Simulations show that optics angles are
+well randomized passively (i.e. without scheduler optimization) for most
 points on the sky, but not for all.  Randomization could be improved,
 for example by actively running the camera rotator when advancing from
 one sky position to the next, in order to populate under represented
@@ -511,13 +515,15 @@ camera angles. The rotation takes time, and could reduce the overall
 efficiency of the survey.  Only simulations can explore the impact of
 these additional mechanical motions.
 
-Dithering - dithering of visits is a powerful method of improving
-homogeneity of sky coverage passively. Few compromises have been
-identified with dithering thus far.  Dithering for small regions has a
-price. Imagine the loss in depth due to large dithers with a single FOV,
-e.g. a deep drilling field (this has not been proposed).  Due to this
-effect, certain rolling cadences can have a potential small loss of
-efficiency or efficacity when implemented with dithering.
+\item{Dithering} -- dithering of visits is a powerful method of
+improving homogeneity of sky coverage passively. Few compromises have
+been identified with dithering thus far.  Dithering for small regions
+has a price. Imagine the loss in depth due to large dithers with a
+single FOV, e.g. a deep drilling field (this has not been proposed).
+Due to this effect, certain rolling cadences can have a potential small
+loss of efficiency or efficacity when implemented with dithering.
+
+\end{description}
 
 The foregoing shows that within the static science domain, there are few
 and mild points of tension and potential competition.
@@ -539,26 +545,27 @@ small, and it can be readily quantified.
 
 % --------------------------------------------------------------------
 
-\subsection{Discussion: Mini-surveys and Main Survey -- Tension for Sure}
+\subsection{Discussion: Mini-surveys and the Main Survey -- Tension for Sure}
 
 The LSST proposal and current plan allow a fraction of the total survey
-time for mini-survey. These may cover special sky regions or cadences.
-The fraction 10\% has been carried for mini-surveys.  This is not
-necessarily a sacred number. In Chapter 2, current scheduling experience
-has shown that the main survey program, to design depth, can be
-accomplished in $\approx$ 85\% of the available time. However,
-improvements in simulations could move this estimate up or down.
-Adequacy of the design depths could be reconsidered.  And of course the
-execution of the survey could encounter unprecedented circumstances.
+time for mini-survey. These may cover either special sky regions,
+special cadences, or both. The fraction 10\% has been carried for
+mini-surveys, but this is not necessarily a sacred number. In
+\autoref{chp:cadexp}, current scheduling experience has shown that the
+main survey program, to design depth, can be accomplished in $\approx$
+85\% of the available time. However, improvements in simulations could
+move this estimate up or down. Adequacy of the design depths could be
+reconsidered.  And of course the execution of the survey could encounter
+unprecedented circumstances.
 
 Proposals for mini-surveys include deep drilling fields, the northern
 ecliptic, and the Magellanic clouds. Notional suggestions for deep
 drilling fields alone would exceed 10\%.   Most schedule simulations
 have allocated a limited number of visits to the galactic plane (based
 on the expectation that crowding would limit the useful stacked depth).
-However, as detailed in Chapter 4, many areas of galactic science could
-benefit from a more aggressive visit plan, perhaps similar to the main
-survey.
+However, as detailed in \autoref{chp:galaxy}, many areas of galactic
+science could benefit from a more aggressive visit plan, perhaps similar
+to the main survey.
 
 At present there is no evidence that the trade between main and
 mini-surveys will require difficult compromises.  But it is a natural
@@ -571,14 +578,15 @@ the life of the survey.
 \subsection{Final Thoughts}
 
 The likely points of technical and scientific tension in scheduling are
-apparent from the schedule simulation experience (Chapter 2) and the
-science objectives and metrics (Chapters 3-10).  Static science has
-relatively few and mild points of concern.  Variable science has little
-and moderate tension with static science.  Variable science has many
-points of tension between different variable science objectives, owing
-to the wide range of time scales. These lead to contrasting technical
-demands, and may or may not prove to be areas of scientific
-competition.
+apparent from the schedule simulation experience (\autoref{chp:cadexp})
+and the science objectives and metrics
+(\autoref{chp:solarsystem}--\autoref{chp:specialsurveys}).  Static
+science has relatively few and mild points of concern.  Variable science
+has little and moderate tension with static science.  Variable science
+has many points of tension between different variable science
+objectives, owing to the wide range of time scales. These lead to
+contrasting technical demands, and may or may not prove to be areas of
+scientific competition.
 
 The essential information needed to clarify tensions is the
 determination, for each science objective, of three things.
