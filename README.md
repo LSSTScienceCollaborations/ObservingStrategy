@@ -1,6 +1,8 @@
 # Science-Driven Optimization of the LSST Observing Strategy
 
-A community white paper about LSST survey strategy ("cadence"), with quantifications via the Metric Analysis Framework. We are drafting some individual science cases, that are either very important, and somehow stress the observing strategy, and descriing how we expect them to be sensitive to LSST observing strategy. MAF metric calculations are then being designed and implemented - we started this during the 2015 LSST Observing Strategy Workshop (in Bremerton, WA, August 17-21): these  will form the quantitative backbone of the document. You may have heard of the coming  "Cadence Wars" - this document represents the Cadence Diplomacy that will allow us, as a community, to avoid, or at least manage, that conflict. We welcome contributions from all around the LSST Science community.
+Welcome to the online community thinking about LSST survey strategy ("cadence"), with quantifications via the Metric Analysis Framework.
+
+We are writing a white paper on this topic, primarily composed of a set of individual science cases that are either very important, and somehow stress the observing strategy, and describing how we expect them to be sensitive to LSST observing strategy. MAF metric calculations are then being designed and implemented: these form the quantitative backbone of the document. You may have heard of the coming  "Cadence Wars" - this white paper represents the "Cadence Diplomacy" that will allow us, as a community, to avoid, or at least manage, that conflict. We welcome contributions from all around the LSST Science community.
 
 * **[Read the current draft of the white paper](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)** (automatically generated PDF, updated every hour, in principle - [log file is here](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.log))
 [![Build Status](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy.svg?branch=master)](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy)
@@ -16,12 +18,13 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 
 #### Shortcuts
 
-* Guidelines for how to get involved are [in the preface of the white paper itself](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/preface.tex)
+* Guidelines for how to get involved are [in the introduction of the white paper itself, in Section 1.4](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/whitepaper/preface.tex)
 * For help getting started with git and GitHub, see this [handy guide](https://github.com/drphilmarshall/GettingStarted#top).
 * Shortened URL for this repository (for passing around): [http://ls.st/o5k](http://ls.st/o5k)
 * Community-contributed MAF metric code at the [`sims_maf_contrib` repository](https://github.com/LSST-nonproject/sims_maf_contrib/wiki)
 
-## The 2015 MAF Workshop, Bremerton 
+
+## The 2015 MAF Workshop, Bremerton
 
 *August 19-21, 2015.*
 
@@ -41,4 +44,4 @@ A community white paper about LSST survey strategy ("cadence"), with quantificat
 
 This effort is being coordinated by [Zeljko Ivezic](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@ivezic) and [Beth Willman](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@bethwillman), while [Phil Marshall](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@drphilmarshall) is the white paper's editor-in-chief. Any of them can propagate your privately-communicated concerns into a redacted issue on this repository. Contributions are very welcome from all round the LSST science collaborations, and beyond. Perhaps we are missing a science case? Or an idea for how to perturb the observing strategy? We'd like to hear from you! Please send all your feedback to [this repo's issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues).
 
-All white paper content is Copyright 2015 The Authors. If you make use of the ideas and results in the white paper in your research, please cite it as **"(LSST Science Collaborations in preparation)"**, and provide the URL of this repository: https://github.com/LSSTScienceCollaborations/ObservingStrategy. Thanks!
+All white paper content is Copyright 2015, 2016, 2017 The Authors. If you make use of the ideas and results in the white paper in your research, please cite it as **"(LSST Science Collaborations in preparation)"**, and provide the URL of this repository: https://github.com/LSSTScienceCollaborations/ObservingStrategy. Thanks!
