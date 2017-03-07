@@ -16,7 +16,7 @@
 
 \newcommand{\ml}[1]{\textcolor{red}{[{\bf ML}: #1]}}
 
-Lead authors: 
+Lead authors:
 \credit{jhrlsst},
 \credit{rbiswas4},
 \credit{MichelleLochner}
@@ -447,16 +447,16 @@ in terms the cadence in two example LSST fields.
 % \end{figure*}
 
 
-We analyzed the OpSim output of the Baseline Observing Strategy,
-enigma$\_$1189$\_$sqlite.db{\footnote
-{\url{http://ops2.tuc.noao.edu/runs/}}} which includes Deep Drilling
+We analyzed the OpSim output of an older version of the Baseline Observing Strategy,
+\opsimdbname{enigma\_1189},\footnote
+{\url{http://ops2.tuc.noao.edu/runs/}} which includes Deep Drilling
 Fields (DDF) and the main survey (WFD). While this is no longer the current baseline observing
-strategy, we do not anticipate our conclusions would change with the use of
-\texttt{minion\_1016}. Future work will include repeating our analyses with new OpSim runs, such as
-\texttt{kraken\_1043}, which does not enforce visit pairs, and the new experimental rolling
+strategy, we do not anticipate our conclusions will change with the use of
+\opsimdbref{db:baseCadence} instead. Future work will include repeating our analyses with new OpSim runs, such as
+\opsimdbref{db:NoVisitPairs}, which does not enforce visit pairs, and the new experimental rolling
 cadences.
 
-Using the OpSim output \texttt{enigma\_1189}, we generated
+Using the OpSim output \opsimdbname{enigma\_1189}, we generated
 light curves for a type Ia supernova with a with a redshift of z=0.5 at a few different
 locations. A date in MJD is chosen where the LSST simulated data are
 reasonably well populated. We used the SALT2-extended model
@@ -495,7 +495,7 @@ fields considered, from the DDF and WFD.
 \includegraphics[angle=0,width=14truecm]{figs/SN_290_lc.pdf}
 %\vskip -1.3in
 \caption{An example of a light curve, in six filter bands, of a SN Ia from a DDF in
-\texttt{enigma\_1189}.
+\opsimdbname{enigma\_1189}.
 }
 \label{fig:SNIaLCopsimdeep}
 \end{figure}
@@ -507,7 +507,7 @@ fields considered, from the DDF and WFD.
 %\vskip -1.3in
 \caption{An example of a light curve, where only four filter bands are available, of a SN Ia from
 the WFD survey in
-\texttt{enigma\_1189}.
+\opsimdbname{enigma\_1189}.
 }
 \label{fig:SNIaLCopsimmain}
 \end{figure}
@@ -526,7 +526,7 @@ a distinct filter.}
 
 {\bf Analysis Results:}
 To further study the quality of light curves across the survey, we simulate the same type Ia
-supernova in 16 different fields, including DDF 290 already studied, from the \texttt{enigma\_1189}
+supernova in 16 different fields, including DDF 290 already studied, from the \opsimdbname{enigma\_1189}
 OpSim run and record the average number of visits per 50 day time window
 (\autoref{tab:lcpositions}). A well-known rule of thumb (R. Foley, priv. communication) for good
 quality SN light curves is to
@@ -657,7 +657,7 @@ per SN period per filter & SNDM  & SNQM\\
 % 3959     & (60,+30)  &      44 (0,5,6,15,18,0)   &  1.0 &&\\
 \hline
 \end{tabular}
-\caption{Table of 15 fields in the OpSim run \texttt{enigma\_1189}. The first column is simply an
+\caption{Table of 15 fields in the OpSim run \opsimdbname{enigma\_1189}. The first column is simply an
 index, with the special example fields of the DDF field 290 indicated. The
 position of the fields is shown in column 2. The third column contains the total and per filter
 band number of visits per year and this is averaged per filter per 50 day time window in column 4.
@@ -822,7 +822,8 @@ rectified in future.}
 % --------------------------------------------------------------------
 
 \subsection{Discussion}
-For \texttt{enigma\_1189} (and also, most likely, for the current baseline strategy), the DDF
+
+For \opsimdbname{enigma\_1189} (and also, most likely, for the current baseline strategy), the DDF
 fields will produce an exquisite sample of
 well-characterized SNe for cosmology and astrophysics studies. Further analysis is required to
 determine exactly how many (useful) supernovae will be detected and what the resulting cosmological
