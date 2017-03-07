@@ -35,7 +35,7 @@ in their Appendix A.
 Sections 8.6 and 8.7 of the Science Book express the anticipated
 contributions that LSST will make to the study of pulsating variables.
 While the sparseness of observations (low duty cycle) over the LSST
-survey lifetime will make exact period solutions difficult, if not impossible for 
+survey lifetime will make exact period solutions difficult, if not impossible for
 most multiperiodic, short-period pulsating variables, the Science Book
 correctly emphasizes that the photometric precision and multi-color
 information will yield detections of variability that can be treated
@@ -71,7 +71,7 @@ photometrically variable ZZ Cetis.  The square root of the total
 observed pulsational power (intrinsic root-mean-squared signal) in these
 objects is on the order of 1\% and the mean pulsation periods are
 $\sim$10\,min \citep[e.g.,][]{2006ApJ...640..956M}.  Because the pulsation
-periods are $\ll$ the typical LSST revisit time, the survey will essentially 
+periods are $\ll$ the typical LSST revisit time, the survey will essentially
 sample the pulsations randomly in phase.
 
 The ability to detect pulsations relies on the recognition that scatter
@@ -88,8 +88,8 @@ time that are complicated and must be explored in MAF to be understood.
 While consideration of observations across all filters together provides
 the greatest sensitivity to detecting overall variability, the measurement
 of pulsational power in individual filters serves the science needs for
-pulsating stars best.  Since sparse temporal sampling will make measuring 
-the individual periods of complex, multi-modal pulsating stars challenging, 
+pulsating stars best.  Since sparse temporal sampling will make measuring
+the individual periods of complex, multi-modal pulsating stars challenging,
 LSST's greatest contributions to this field may lie
 in its ability to measure relative pulsational power across many
 passbands.  For ZZ Cetis in particular, there is a dependence of
@@ -132,7 +132,7 @@ is displayed in Figure~\ref{fig:vardepth}.
   \centering
   \includegraphics[width=0.76\columnwidth]{figs/vardepth.png}
   \caption{Example output of the {\tt VarDepth} MAF metric run on the
-  current baseline cadence, {\tt minion\_1016}, after 10 years of survey
+  current baseline cadence, \opsimdbref{db:baseCadence}, after 10 years of survey
   operations. Input parameters and SQL queries were set to calculate the
   magnitude limit for detecting 90\% of pulsators with 1\% r.m.s.\
   variability from a cut on the measured variance in the $r$ band
@@ -173,19 +173,20 @@ number of ZZ Cetis known.
 
 % --------------------------------------------------------------------
 
-\subsection{OpSim Analysis}
+\subsection{\OpSim Analysis}
 \label{sec:\secname:analysis}
 
 For comparison purposes, we calculate the number of ZZ Cetis detected in
 both the $u$ and $r$ filters, assuming intrinsic r.m.s.\ variability of
-1\% for two of the currently available OpSim runs: {\tt minion\_1016},
-the current baseline cadence, and {\tt kraken\_1045}, with doubled
-$u$-band exposure times. We require that 90\% of ZZ Cetis with 1\%
-r.m.s.\  variability are detected to the computed ``variability depth,''
-with a tolerance for up to 10\% of nonvariables with the same $u$ and
-$r$ magnitudes to yield false detections.  The total number of ZZ Cetis
-detected for each of these analyses, \emph{if all ZZ Cetis exhibit exactly 
-the assumed level of r.m.s.\ variability}, is provided in Table~\ref{tab:zz1pertab}.
+1\% for two of the currently available \OpSim runs:
+\opsimdbref{db:baseCadence}, the current baseline cadence, and
+\opsimdbref{db:DoubleUbandExptime}, with doubled $u$-band exposure
+times. We require that 90\% of ZZ Cetis with 1\% r.m.s.\  variability
+are detected to the computed ``variability depth,'' with a tolerance for
+up to 10\% of nonvariables with the same $u$ and $r$ magnitudes to yield
+false detections.  The total number of ZZ Cetis detected for each of
+these analyses, \emph{if all ZZ Cetis exhibit exactly the assumed level
+of r.m.s.\ variability}, is provided in \autoref{tab:zz1pertab}.
 
 
 \begin{table}[h]
@@ -193,28 +194,29 @@ the assumed level of r.m.s.\ variability}, is provided in Table~\ref{tab:zz1pert
     \caption{ZZ Ceti Recovery for 1\% R.M.S.\ Variability}\label{tab:zz1pertab}
     \begin{tabular}{| l | l | l |}
     \hline
-    OpSim Run & Filter & \# ZZ Cetis \\ \hline
-     {\tt minion\_1016} & $u$ & 9  \\
+    \OpSim Run & Filter & \# ZZ Cetis \\ \hline
+      \opsimdbref{db:baseCadence} & $u$ & 9  \\
       & $r$ & 127 \\ \hline
-    {\tt kraken\_1045}  & $u$ & 17\\
-    & $r$ & 123  \\ \hline
+      \opsimdbref{db:DoubleUbandExptime} & $u$ & 17\\
+      & $r$ & 123  \\ \hline
     \end{tabular}
 \end{center}
 \end{table}
 
 Clearly LSST appears to fall very short of the proposed figure of merit
-by this measure.   However, the 1\% level of variability assumed for ZZ Cetis in
-this treatment was chosen to assess how well the lowest-amplitude
-ZZ Cetis are recovered by LSST and doesn't fairly represent the more typical, 
-higher amplitude variables.  If we relax this constraint and repeat the
-analysis with ZZ Cetis all modeled as 3\% r.m.s.\ variables (the mean
-r.m.s.\ variation observed), we get the results shown in Table~\ref{tab:zz3pertab}.
-This better represents a total number of ZZ Cetis expected, allowing for
-incompleteness to low amplitude.  While we still do not detect
-$\sim$1000 ZZ Cetis in $u$, overall we see an increase in the total
-number of detected ZZ Cetis by roughly an order of magnitude (in $r$),
-with the {\tt kraken\_1045} simulation reaching markedly closer to the
-$u$-band goal than the {\tt minion\_1016} strategy.
+by this measure.   However, the 1\% level of variability assumed for ZZ
+Cetis in this treatment was chosen to assess how well the
+lowest-amplitude ZZ Cetis are recovered by LSST and doesn't fairly
+represent the more typical, higher amplitude variables.  If we relax
+this constraint and repeat the analysis with ZZ Cetis all modeled as 3\%
+r.m.s.\ variables (the mean r.m.s.\ variation observed), we get the
+results shown in \autoref{tab:zz3pertab}. This better represents a
+total number of ZZ Cetis expected, allowing for incompleteness to low
+amplitude.  While we still do not detect $\sim$1000 ZZ Cetis in $u$,
+overall we see an increase in the total number of detected ZZ Cetis by
+roughly an order of magnitude (in $r$), with the
+\opsimdbref{db:DoubleUbandExptime} simulation reaching markedly closer
+to the $u$-band goal than the \opsimdbref{db:baseCadence} strategy.
 
 
 \begin{table}[h]
@@ -222,10 +224,10 @@ $u$-band goal than the {\tt minion\_1016} strategy.
     \caption{ZZ Ceti Recovery for 3\% R.M.S.\ Variability}\label{tab:zz3pertab}
     \begin{tabular}{| l | l | l |}
     \hline
-    OpSim Run & Filter & \# ZZ Cetis \\ \hline
-     {\tt minion\_1016} & $u$ & 197  \\
+    \OpSim Run & Filter & \# ZZ Cetis \\ \hline
+     \opsimdbref{db:baseCadence} & $u$ & 197  \\
       & $r$ & 1601 \\ \hline
-    {\tt kraken\_1045}  & $u$ & 325\\
+     \opsimdbref{db:DoubleUbandExptime}  & $u$ & 325\\
     & $r$ & 1534  \\ \hline
     \end{tabular}
 \end{center}
@@ -237,28 +239,30 @@ $u$-band goal than the {\tt minion\_1016} strategy.
 \subsection{Discussion}
 \label{sec:\secname:discussion}
 
-This simplistic analysis ignores most subtleties of ZZ Ceti variables, 
-but Table~\ref{tab:zz3pertab} captures the order of magnitude of 
+This simplistic analysis ignores most subtleties of ZZ Ceti variables,
+but Table~\ref{tab:zz3pertab} captures the order of magnitude of
 expected ZZ Ceti detections \emph{from excess scatter alone} for
-the OpSim runs considered.  More sophisticated analysis
+the \OpSim runs considered.  More sophisticated analysis
 of the LSST data will recover additional variables, especially since the
 information about the timing of visits has been completely ignored here.
-The statistical treatment of large populations of stars will also improve the 
-detection of variability over this star-by-star treatment. 
-Still, it appears that the science results for the lowest amplitude ZZ Cetis 
-will be severely limited, and therefore LSST will capture a less-than-complete 
-census of pulsating variable stars. 
+The statistical treatment of large populations of stars will also improve the
+detection of variability over this star-by-star treatment.
+Still, it appears that the science results for the lowest amplitude ZZ Cetis
+will be severely limited, and therefore LSST will capture a less-than-complete
+census of pulsating variable stars.
 
-We emphasize again that low-amplitude ZZ Cetis are the most difficult pulsating 
-stars to observe. LSST will capture variability in higher amplitude ZZ Cetis and 
-other types of variable star more completely, and LSST observations of all 
-candidate pulsating white dwarfs will certainly still be
-worthy on careful analysis.  We note that the {\tt kraken\_1045}
-strategy with 60\,s exposures in $u$ does a much better job of measuring
-stellar variability overall, at the expense of a practically negligible decrease in $r$-band
-detections.  We argue that any observing strategy that increases the number of
-ZZ Cetis detected in the $u$ band will improve LSST's scientific yield for
+We emphasize again that low-amplitude ZZ Cetis are the most difficult
+pulsating stars to observe. LSST will capture variability in higher
+amplitude ZZ Cetis and other types of variable star more completely, and
+LSST observations of all candidate pulsating white dwarfs will certainly
+still be worthy on careful analysis.  We note that the
+\opsimdbref{db:DoubleUbandExptime} strategy with 60\,s exposures in $u$
+does a much better job of measuring stellar variability overall, at the
+expense of a practically negligible decrease in $r$-band detections.  We
+argue that any observing strategy that increases the number of ZZ Cetis
+detected in the $u$ band will improve LSST's scientific yield for
 \emph{all} stellar pulsation studies.
+
 
 % ====================================================================
 
@@ -276,9 +280,9 @@ ZZ Cetis detected in the $u$ band will improve LSST's scientific yield for
  with 18,000 deg$^2$)?}
 
  \item[A1:] Coadded depth is not directly a limitation on detecting variability,
- but both improve with the number of revisits to the same field, $N$, 
+ but both improve with the number of revisits to the same field, $N$,
  as roughly $\sqrt{N}$.  A larger field of view also increases the potential population
- of variable stars discovered, but pushing to higher airmass where data quality is 
+ of variable stars discovered, but pushing to higher airmass where data quality is
  poorer does not make for a good trade unless the survey area is extended to strategically
  target more variable stars, e.g., over more of the Galactic plane.
 
@@ -289,14 +293,14 @@ ZZ Cetis detected in the $u$ band will improve LSST's scientific yield for
  reduced sample rate the rest of the time (while maintaining the nominal
  total visit counts).}
 
- \item[A2:] While the time distribution of observations has not been considered 
- here, this will significantly impact variable star science with LSST. 
+ \item[A2:] While the time distribution of observations has not been considered
+ here, this will significantly impact variable star science with LSST.
  Future development of MAF metrics should address specifically how
- the distribution of visits (rather than only number, area, and signal-to-noise as addressed 
+ the distribution of visits (rather than only number, area, and signal-to-noise as addressed
  above) ease the challenges of amplitude and \emph{period} recovery in sparely sampled
  observations.  Revisit times much shorter than pulsation timescales ($< \sim$5\,min)
  can help to constrain the periods.  Perhaps more importantly, cadences that
- produce the least complicated spectral windows and the highest 
+ produce the least complicated spectral windows and the highest
  ``effective Nyquist frequencies'' will best facilitate period recovery \citep[e.g.,][]{1999A&AS..135....1E}.
 
  \item[Q3:] {\it Does the science case place any constraints on the
@@ -304,18 +308,18 @@ ZZ Cetis detected in the $u$ band will improve LSST's scientific yield for
  (especially in the $u$-band where longer exposures would minimize the
  impact of the readout noise)?}
 
- \item[A3:] We specifically support increased time spent in the 
+ \item[A3:] We specifically support increased time spent in the
  $u$-band, with the goal of measuring the relative pulsation amplitudes
- in multiple filters. Increased signal-to-noise per $u$-band exposure enables 
+ in multiple filters. Increased signal-to-noise per $u$-band exposure enables
  more measurements of pulsational power in $u$, though pulsating star
- science would be hurt by a corresponding decrease in the total number of 
+ science would be hurt by a corresponding decrease in the total number of
  $u$-band visits per field .
 
  \item[Q4:] {\it Does the science case place any constraints on the
  Galactic plane coverage (spatial coverage, temporal sampling, visits per
  band)?}
 
- \item[A4:] The Galactic plane contains a higher concentration of multi-periodic 
+ \item[A4:] The Galactic plane contains a higher concentration of multi-periodic
  pulsating stars that LSST will be able to characterize in the time domain.
  Pulsating star science benefits from more survey time spent in the Galactic
  plane.
@@ -335,13 +339,13 @@ ZZ Cetis detected in the $u$ band will improve LSST's scientific yield for
  cadence for deep drilling fields?}
 
  \item[A6:] The results of the {\tt VarDepth} MAF metric run on the
- current baseline cadence, {\tt minion\_1016}, shows that after 10 years, 
- deep drilling fields are sensitive to pulsation \emph{amplitude} measurements
- in the $r$-band $\approx$1.5\,mag fainter than for identical objects in 
- the main survey.  The improvement to period recoverability 
- could be far greater in deep drilling fields, but new MAF metrics must
- be developed to demonstrate this and to help select between specific
- proposed cadences.
+ current baseline cadence, \opsimdbref{db:baseCadence}, shows that after
+ 10 years, deep drilling fields are sensitive to pulsation
+ \emph{amplitude} measurements in the $r$-band $\approx$1.5\,mag fainter
+ than for identical objects in the main survey.  The improvement to
+ period recoverability could be far greater in deep drilling fields, but
+ new MAF metrics must be developed to demonstrate this and to help
+ select between specific proposed cadences.
 
  The possibility to obtain data at a high cadence for extended periods of time in the deep drilling fields will also facilitate the asteroseismology of solar-like oscillators ($\sim$minutes for main-sequence stars and $\sim$hours for red giants). However, an MAF metric is required to determine the specific requirements.
 
@@ -359,22 +363,22 @@ ZZ Cetis detected in the $u$ band will improve LSST's scientific yield for
  the bands or in a  selected set); a greatly enhanced cadence for a small
  area?}
 
- \item[A8:] A few hours of continuous sampling of a few fields during 
- commissioning would produce immediate science results for many 
- multi-modal pulsating stars, as well as help accelerate LSST's ultimate 
+ \item[A8:] A few hours of continuous sampling of a few fields during
+ commissioning would produce immediate science results for many
+ multi-modal pulsating stars, as well as help accelerate LSST's ultimate
  characterization of variable stars in these fields.
 
  Furthermore, by mimicking the 10-yr survey for a small area, the scientific community can obtain evidence-based estimates of the yeild of different variable classes and example power spectra. This will also provide proof-of-concept data that will facilitate the recruitment of scientists to work on LSST.
- 
+
 
  \item[Q9:] {\it Does the science case place any constraints on the
  sampling of observing conditions (e.g., seeing, dark sky, airmass),
  possibly as a function of band, etc.?}
 
- \item[A9:] The {\tt VarDepth} MAF metric can help assess how the 
- adjustments made by the observing strategy to observing conditions 
+ \item[A9:] The {\tt VarDepth} MAF metric can help assess how the
+ adjustments made by the observing strategy to observing conditions
  affect the variable star science output.
- 
+
 
  \item[Q10:] {\it Does the case have science drivers that would require
  real-time exposure time optimization to obtain nearly constant
