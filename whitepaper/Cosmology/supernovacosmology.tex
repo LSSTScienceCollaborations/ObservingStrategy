@@ -22,11 +22,9 @@ Lead authors:
 \credit{MichelleLochner}
 
 Contributing authors:
+\credit{antilogus},
 \credit{sethdigel},
 \credit{astrofoley},
-\credit{lgalbany},
-\credit{pgris},
-\credit{ryanfoley},
 \credit{lgalbany},
 \credit{pgris},
 \credit{ReneeHlozek},
@@ -34,6 +32,7 @@ Contributing authors:
 \credit{saurabhwjha},
 \credit{RickKessler},
 \credit{AlexGKim},
+\credit{oferlahav},
 \credit{aimalz},
 \credit{jasonmcewen},
 \credit{janewman-pitt-edu},
@@ -42,7 +41,6 @@ Contributing authors:
 \credit{rlschuhmann},
 \credit{astrostubbs},
 \credit{wmwv}
-\credit{pgris}
 
 \subsection{Introduction}
 The acceleration of the rate of expansion of the Universe at late times is one of the
@@ -379,7 +377,7 @@ classification a very difficult metric to include on the per-object level. This 
 
 We construct the quality metric for the perSNMetric by obtaining the
 light curve of the SN in the time window described above. We fit the
-light curve, using the SALT2 model \citep{Guy2007,2014ApJ...793...16M}, and approximately estimate the uncertainty in
+light curve, using the SALT2 model \citep{Guy2007,2014A&A...568A..22B}, and approximately estimate the uncertainty in
 distance from
 the light curve fit alone. Of course, as is well known, luminosity
 distance estimates of supernova Type Ia also show an intrinsic scatter
@@ -390,7 +388,7 @@ quality metric for each SN Ia as the ratio of the square of the
 intrinsic dispersion to variance of the distance indicator from the supernova. 
 $$ QM = 0.05^2/\sigma^2_{\mu}.$$ If our sample had a perfect discovery rate, and good classification (for example if we had spectroscopic classification), the uncertainty on
 cosmological parameters would be entirely due to this quality metric and would be expected to scale with the quality metric as 
-$$\sigma \sim \sqrt{\sum{\frac{1.0}{1.0 + QM}}}$$
+$$\frac{1}{\sigma} \sim \sqrt{\sum{\frac{1.0}{1.0 + 1.0 / QM}}}$$
 where the sum is over the SNe in the sample.
 
 %Move this to OpSim analysis
