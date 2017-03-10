@@ -22,29 +22,28 @@ Lead authors:
 \credit{MichelleLochner}
 
 Contributing authors:
-\credit{antilogus},
 \credit{sethdigel},
-\credit{ryanfoley},
-\credit{egawiser},
+\credit{astrofoley},
+\credit{lgalbany},
+\credit{pgris},
 \credit{ReneeHlozek},
 \credit{ivezic},
-\credit{SaurabhJha},
-\credit{rickkessler},
-\credit{alexkim},
-\credit{oferlahav},
+\credit{saurabhwjha},
+\credit{RickKessler},
+\credit{AlexGKim},
 \credit{aimalz},
 \credit{jasonmcewen},
-\credit{jeffnewman},
+\credit{janewman-pitt-edu},
 \credit{hiranyapeiris},
 \credit{kponder},
 \credit{rlschuhmann},
 \credit{astrostubbs},
-\credit{michaelwoodvasey}
+\credit{wmwv}
 
-The accelerated expansion of the Universe is one of the
-most exciting and fundamental discoveries of this
-century \citep{Riess1998,Perlmutter1999}.
-This discovery was made using Type Ia supernovae (SNe) as cosmological candles, and
+\subsection{Introduction}
+The acceleration of the rate of expansion of the Universe at late times is one of the
+most exciting and fundamental discoveries\citep{Riess1998,Perlmutter1999} in recent times.
+This discovery was made using Type Ia supernovae (SNe) as standardizable candles, and
 implies that 76\% of the energy density of the Universe is composed of dark energy
 \citep{Frieman2008}. Type Ia supernovae are believed to be explosions of white
 dwarfs that have approached the Chandrasekhar mass and are disrupted by
@@ -60,35 +59,34 @@ physics driving the late time accelerated expansion of the universe.
 
 LSST will improve on past surveys by observing a substantial number of well-characterized
 supernovae, at high redshift. This large sample is not necessarily tied to the large area of LSST
-and can rather be obtained from a relatively small spatio-temporal region with larger numbers of
-well-measured light curves.
+and can rather be obtained from a relatively small spatial region, such as the Deep Drilling Fields
+(DDF) with larger numbers of well-measured light curves due to the long time interval and high volume
+at high redshifts.
 
 On the other hand, the Wide-Fast-Deep (WFD) aspect will make the LSST survey
-the first to scan a very large area of the entire Southern sky for
-SNe. SNe that are detected and well characterized by LSST can trace
-large scale structure in a novel way, and include estimates of radial distances, as
-well as
-their own redshift estimates that may be used in conjunction with host
-galaxy redshift information. Due to these properties, they can probe the
-isotropy of the late time universe.
-
-In addition, this large sample will
-enable further sharpening of our understanding of the properties of the
-SN population of different types (see \autoref{sec:transients:SNtransients}). This last point is
-extremely
-important
-for SN cosmology goals as the success of SN Ia cosmology has always been
-based on the empirical model that intrinsic peak brightnesses are
-related to the certain observable characteristics of SNe.  The WFD SN Ia
+the first to scan a very large area of the sky for SNe. SNe that are detected
+and well characterized by the WFD will provide 
+\begin{itemize}
+    \item a large, well-calibrated low redshift sample ($z \lesssim 0.1$) to replace/supplement the current  set of low redshift supernovae from a mixture of surveys. Such a large, clean low redshift sample is crucial in {\emph{providing a longer lever arm for the determination of cosmological parameters from supernovae.}}
+    \item  a low and medium redshift ($z \lesssim 0.5$) spanning large areas of the sky and therefore with the ability of {\emph{tracing large scale structure}} in a novel way, particularly due to the inclusion of estimates radial distances. This will be possible by combining redshift estimates from supernova light curve in conjuncion with photometric redshifts from host galaxies.  Such a sample could also be used to probe the {\emph{isotropy of the late time universe.}}
+    \item This large sample of SNIa will also enable further sharpening of our understanding of the properties of the SN 
+population of both Type Ia and core-collapse SNe (see \autoref{sec:transients:SNtransients}). Aside from the science 
+described in \autoref{sec:transients:SNtransients}, this understanding will also be extremely important to the goal of 
+SN cosmology from LSST. When selecting supernovae satisfying specific criteria from observations in magnitude limited 
+surveys, a lack of understanding of the population properties leads to selection biases in SNIa cosmology as well as the 
+steps in photometric classification~\cite{Scolnic2016, Kessler2017}. 
+The WFD SN Ia
 sample will dramatically increase the size of the sample available to
 train such an empirical model, as well as understand the probability of
 deviations and scatter from this model. Aside from issues like
 calibration which need to be addressed separately, a larger sample of
 such well measured SNe is probably the only way to address `systematics'
-due to deviations from the empirical model. The anticipated WFD sample can
-be thought of as consisting of two components:  the low-redshift sample
-which is more likely to be complete, and the higher-redshift sample that
-will be able to constrain evolution.
+due to deviations from the empirical model. 
+\end{itemize}
+%The anticipated WFD sample can
+%be thought of as consisting of two components:  the low-redshift sample
+%which is more likely to be complete, and the higher-redshift sample that
+%will be able to constrain evolution.
 
 % --------------------------------------------------------------------
 
@@ -102,37 +100,29 @@ a WFD cadence, and certain specific locations of the sky called the Deep
 Drilling Fields (DDF) with special enhanced cadence.
 
 This spatio-temporal window should contain millions
-of SNe, that will have apparent magnitudes brighter than the single
-exposure limiting magnitude of LSST. However, the actual sequence of
+of SNe. However, the actual sequence of
 observations by LSST, defined by the series of field pointing as a
-function of time in filter bands (along with weather conditions), will
-determine the extent to which each SN can be detected and characterized
-well.  Characterization of the SNe is at the core of a number of science
+function of time in filter bands (along with weather conditions), and
+conditions used for detection will determine the extent to which each
+SN can be detected and characterized well.  Characterization of the SNe
+is at the core of a number of science
 programs that use them as bright, abundant objects with empirically
 determined intrinsic brightnesses. While type IIP supernovae may prove to be useful standard
 candles \citep{Sanders2014}, we will focus this work on the more well-established type Ia SNe.
 
-For LSST, this goal entails:
+Ultimately, the study of dark energy using LSST supernovae will be performed by an analysis inferring the parameters of a cosmological model using a sample of supernovae constructed from the LSST observations, and astrophysical models of supernovae that allow one to relate the peak intrinsic brightness to observed properties of the supernova. We should emphasize that while such analyses have been performed on previous SN surveys, the analyses that would be performed on a really large dataset would be different and is currently under study. Estimates of the potential of such surveys have often been measured using figures of merit such as the Dark Energy Task Force figure of merit~\citep{Albrecht2006}. The main goal of such a metric is to estimate the potential of a survey in elucidating the understanding of dark energy. However, our primary aim here is to study the relative impact that different LSST Observing strategies would have on such dark energy analysis, rather than absolute impact, and to communicate the characteristics of the survey that make a strategy better than others. This necessitates studying the quality of observations corresponding to typical individual supernovae or groups of supernovae rather than producing a single output for a survey. Therefore we identify some of the key steps in the supernova analysis which are directly related to observational characteristics of survey, and define metrics in terms of such quantities. In fact, these metrics should be  thought of as a total of scores, where these scores characterize the sequences of observation on small patches of the sky in small time windows. The key steps we have chosen are
 \begin{enumerate}
 \renewcommand{\theenumi}{\alph{enumi}}
 \item The detection of SNe \label{it:detection}
+\item Estimating the intrinsic peak brightness of a supernovae and its redshift
 \item Photometric classification \label{it:typing}
-\item Estimation of photometric redshifts of SNe (or identifying host galaxies and obtaining their
-redshifts from photometry or follow-up spectroscopy) \label{it:redshift}
-\item Estimation of intrinsic brightnesses of the SNe \label{it:mu}
-\item Constructing a Hubble diagram with this data for cosmological inference \label{it:cosmology}
 \end{enumerate}
-
-The efficacy
-of photometric typing, redshifts and estimation of intrinsic brightnesses
+The efficacy of photometric typing, redshifts and estimation of intrinsic brightnesses
 are all dependent on the amount of information available in the observed
 light curves of SNe. While these steps are not necessarily independent, it
 is useful to think of the requirements on some of these steps separately;
 it is not unlikely  that combinations of some of the steps would still be
-affected by similar requirements. Ultimately, any cosmological figure of merit (the $w_0-w_a$
-figure of merit described in \citet{Albrecht2006} for example) will depend on intermediate metrics
-describing each of these steps in turn. Here we focus on steps \ref{it:detection}, \ref{it:typing}
-and \ref{it:mu}, leaving steps \ref{it:redshift} and \ref{it:cosmology} for future work.
+affected by similar requirements. Further, in the absence of a complete analysis, we opt for certain ad-hoc criteria in determining the threshold for such observations. This would be necessary even if we were to perform an analysis similar to past surveys.
 
 {\emph{Supernova detection}}\\
 Supernova light curves consisting of flux measurements at different times are built through photometry
@@ -147,7 +137,7 @@ sources) to be
 consistent with zero aside from a noise. The efficiency of detecting a supernova in a single
 exposure
 depends on a number of factors, the most significant of which is the signal (brightness of the supernova
-in the science image compared to the template) to sky noise (SNR) in the relevant image.
+in the science image compared to the template) to noise (SNR) in the relevant image.
 
 %Thus, the probability
 %of a supernova being detected in at least a fixed number of the images can be calculated from
@@ -158,17 +148,19 @@ in the science image compared to the template) to sky noise (SNR) in the relevan
 
 {\emph{Supernova classification}}\\
 Because LSST will discover significantly more SNe than can be spectroscopically confirmed,
-automated classification of supernova type from multi-band light curves is crucial. While cosmology
+photometric classification of supernova type from multi-band light curves is crucial. While cosmology
 with a photometric SNe sample with contamination from core collapse SNe is possible (see for
-example \citet{Kunz2007,Newling2011,Hlozek2012,Knights2013,Bernstein2012,Campbell2013,Rubin2015}),
+example 
+\citet{Kunz2007,Newling2011,Hlozek2012,Knights2013,Bernstein2012,Gjergo2013,Campbell2013,Rubin2015,Jones2016})
+,
 these methods still benefit from accurate class probabilities from classification algorithms. To
 investigate the effect of observing strategy on SNe classification, we use the multi-faceted machine
 learning pipeline developed in \citet{Lochner2016}.
 
 
-{\emph{Estimating intrinsic supernova brightness}}\\
+{\emph{Estimating intrinsic supernova brightness at peak}}\\
 The ultimate goal of using SNe (type SN Ia or
-SN IIP) for cosmology requires estimating the intrinsic brightness of each SN. The first (and
+SN IIP) for cosmology requires estimating the intrinsic brightness of each SN at peak. The first (and
 sometimes only, depending on the light curve
 model) step is fitting the calibrated fluxes to a light curve model with
 a set of parameters. According to the ansatz used in SN cosmology, the
@@ -267,25 +259,25 @@ different approaches to defining the perSNMetric for a given OpSim run are possi
 a simulated supernovae Type Ia with specific parameters, observed with
 the sequence of observations in the above time window, and evaluate the
 success of each step. b) Study heuristics of the observation sequences by using large simulations
-with randomized parameter values.
+with randomized parameter values. Here we will discuss the simpler approach (a).
 
-Here we will discuss the simpler approach (a). The SN metric in a spatial region
-reflects the contribution of the sample of SNe observed in that spatial
-region towards inferring the cosmological parameters. Let us
-consider a case where each SN observed with conditions better than a
-certain threshold contributes equally to the inference. Then the relevant
-metric would be a function of the number of SN in the sample passing
-such selection criteria. More generally, when the quality of all the
-supernovae are not similar, the metric should be thought of as
-the weighted sum of supernovae, with the weights being related to the
-inverse of the effective variance of the distance modulus:
-\begin{equation}
-M\sim \sum_i w_i , \qquad  w_i \sim 1.0 /\sigma^2_\mu.
-\end{equation}
-By comparing with the form of the perSNMetric, we see that the
-perSNMetric should be a proxy for $1.0/\sigma^2_\mu,$ where
-$\sigma^2_\mu$ is the effective variance on the distance
-modulus of the supernova, as determined by fitting an empirical model to the supernova light curve.
+%The SN metric in a spatial region
+%reflects the contribution of the sample of SNe observed in that spatial
+%region towards inferring the cosmological parameters. Let us
+%consider a case where each SN observed with conditions better than a
+%certain threshold contributes equally to the inference. Then the relevant
+%metric would be a function of the number of SN in the sample passing
+%such selection criteria. More generally, when the quality of all the
+%supernovae are not similar, the metric should be thought of as
+%the weighted sum of supernovae, with the weights being related to the
+%inverse of the effective variance of the distance modulus:
+%begin{equation}
+%M\sim \sum_i w_i , \qquad  w_i \sim 1.0 /\sigma^2_\mu.
+%\end{equation}
+%By comparing with the form of the perSNMetric, we see that the
+%perSNMetric should be a proxy for $1.0/\sigma^2_\mu,$ where
+%$\sigma^2_\mu$ is the effective variance on the distance
+%modulus of the supernova, as determined by fitting an empirical model to the supernova light curve.
 
 %\subsubsection{ Steps in the PerSNMetric}
 \subsubsection{Steps in the PerSNMetric}
@@ -326,10 +318,12 @@ corresponding to the lifetime of a supernova, evaluate the quality of characteri
 
 This metric is designed to gauge the performance of detection of SNe
 discussed in \autoref{sec:\secname:targets}.
-This metric is a proxy for the probability that a supernova will be detected
- during its lifetime by the set of images taken in different bands by LSST. A larger
+This metric is a proxy for the potential for a supernova to be detected
+ during its lifetime by the set of images taken in different bands by LSST. The actual
+ detection of SN during LSST is likely to use more stringent criteria, leading to 
+ smaller numbers of supernovae in order to deal with possibly large numbers of false positives in detection. A larger
  number of images taken at a time when the supernova is bright enough increases the
- probability of detection. Assuming that a single detection in any of the images containing
+ probability of detection. Technically, Assuming that a single detection in any of the images containing
  the supernova is sufficient to trigger photometry at the location, one can find the
  probability of detection from an SNR vs. efficiency of detection curve. The signal-to-noise ratio
 (SNR) can be determined given properties of a supernova (redshift, intrinsic brightness etc.)
@@ -351,7 +345,7 @@ detection.}
 \end{figure}
 
 Using this information, one can compute the value of the probability that a SN with given properties
-will be discovered if it occurs with the spatio-temporal window of LSST. We use this as the
+will be discovered if from a set of images where the SN have a known signal to noise ratio. We use this as the
 value for the supernova discovery metric (SNDM). While very high redshift (and thus faint)
 supernovae will not be discovered, it is
 potentially possible to discover many supernovae whose light curves will in turn not be well
@@ -362,13 +356,16 @@ characterized or hard to classify.
 
 Separating supernovae from other detected transients is being considered in
 \autoref{chp:transients}. Here we concern ourselves with problem of classifying subclasses of
-SNe. Multiple techniques have been proposed to solve this problem and it is not yet clear how the
-relative success of these techniques are affected by observing strategy. We thus use the
+SNe. Multiple techniques have been proposed to solve this problem \citep{Frieman2008,sako2008, kessler2010b, 
+ishida2012, sako2014} and it is not yet clear how the
+relative success of these techniques are affected by observing strategy. Work is ongoing to use the
 multifaceted, machine learning pipeline developed in \citet{Lochner2016} to compare alternative
-observing strategies. The exact metric used to determine the efficacy of the classification depends
+observing strategies. As this pipeline employs a variety of different feature extraction and machine learning
+techniques, it is ideal to investigate the effect of observing strategy on the supernova classification. The exact 
+metric used to determine the efficacy of the classification depends
 on the exact problem at hand. For producing a general purpose, well-classified set of all types of
 supernovae (for example, to study supernova population statistics), one could use the AUC metric
-defined in \citet{Lochner2016}, which is a good balance between purity and completeness. Ideally,
+used in \citet{Lochner2016}, which is a good balance between purity and completeness. Ideally,
 one would like a metric to be evaluated per object and included in the PerSNMetric. This is,
 however, challenging as the success of classification will depend strongly on the nature of the
 available training set, which will in turn depend on the spectroscopic follow-up program of LSST
@@ -376,14 +373,14 @@ and the availability of additional training data. Once a training set is determi
 classification algorithm trained, a useful per-object metric is the classification probability of an
 object being a Ia, which will be higher if the light curve is well-measured. This probability is
 confounded by other factors (for example, other types appearing similar to Ia's), making
-classification a very difficult metric to include on the per-object level.
+classification a very difficult metric to include on the per-object level. This is therefore left for future work.
 
 
 \emph{III. Quality Metric}
 
 We construct the quality metric for the perSNMetric by obtaining the
 light curve of the SN in the time window described above. We fit the
-light curve, using the SALT2 model \citep{Guy2007}, and approximately estimate the uncertainty in
+light curve, using the SALT2 model \citep{Guy2007, Mosher2014}, and approximately estimate the uncertainty in
 distance from
 the light curve fit alone. Of course, as is well known, luminosity
 distance estimates of supernova Type Ia also show an intrinsic scatter
@@ -391,10 +388,11 @@ of around $0.1$ in previous surveys, which may be expected to decrease
 with better training samples and understanding of underlying
 correlations of SN Ia properties and their environments. We compute a
 quality metric for each SN Ia as the ratio of the square of the
-uncertainty of the distance indicator from the supernova to the square
-of the intrinsic dispersion. When added up over SNe to obtain a value
-$QM$, the uncertainty on cosmological parameters may be expected to
-scale as $\sim sqrt(1.0 + \sum QM)$.
+intrinsic dispersion to variance of the distance indicator from the supernova. 
+$$ QM = 0.05^2/\sigma^2_{\mu}.$$ If our sample had a perfect discovery rate, and good classification (for example if we had spectroscopic classification), the uncertainty on
+cosmological parameters would be entirely due to this quality metric and would be expected to scale with the quality metric as 
+$$\sigma \sim \sqrt{\sum{\frac{1.0}{1.0 + QM}}}$$
+where the sum is over the SNe in the sample.
 
 %Move this to OpSim analysis
 % The quality metric evaluated on the example SN plotted is $1.0$ if observed in the deep field
@@ -447,16 +445,16 @@ in terms the cadence in two example LSST fields.
 % \end{figure*}
 
 
-We analyzed the OpSim output of an older version of the Baseline Observing Strategy,
-\opsimdbname{enigma\_1189},\footnote
-{\url{http://ops2.tuc.noao.edu/runs/}} which includes Deep Drilling
+We analyzed the OpSim output of the Baseline Observing Strategy,
+enigma$\_$1189$\_$sqlite.db{\footnote
+{\url{http://ops2.tuc.noao.edu/runs/}}} which includes Deep Drilling
 Fields (DDF) and the main survey (WFD). While this is no longer the current baseline observing
-strategy, we do not anticipate our conclusions will change with the use of
-\opsimdbref{db:baseCadence} instead. Future work will include repeating our analyses with new OpSim runs, such as
-\opsimdbref{db:NoVisitPairs}, which does not enforce visit pairs, and the new experimental rolling
+strategy, we do not anticipate our conclusions would change with the use of
+\texttt{minion\_1016}. Future work will include repeating our analyses with new OpSim runs, such as
+\texttt{kraken\_1043}, which does not enforce visit pairs, and the new experimental rolling
 cadences.
 
-Using the OpSim output \opsimdbname{enigma\_1189}, we generated
+Using the OpSim output \texttt{enigma\_1189}, we generated
 light curves for a type Ia supernova with a with a redshift of z=0.5 at a few different
 locations. A date in MJD is chosen where the LSST simulated data are
 reasonably well populated. We used the SALT2-extended model
@@ -495,7 +493,7 @@ fields considered, from the DDF and WFD.
 \includegraphics[angle=0,width=14truecm]{figs/SN_290_lc.pdf}
 %\vskip -1.3in
 \caption{An example of a light curve, in six filter bands, of a SN Ia from a DDF in
-\opsimdbname{enigma\_1189}.
+\texttt{enigma\_1189}.
 }
 \label{fig:SNIaLCopsimdeep}
 \end{figure}
@@ -507,7 +505,7 @@ fields considered, from the DDF and WFD.
 %\vskip -1.3in
 \caption{An example of a light curve, where only four filter bands are available, of a SN Ia from
 the WFD survey in
-\opsimdbname{enigma\_1189}.
+\texttt{enigma\_1189}.
 }
 \label{fig:SNIaLCopsimmain}
 \end{figure}
@@ -526,7 +524,7 @@ a distinct filter.}
 
 {\bf Analysis Results:}
 To further study the quality of light curves across the survey, we simulate the same type Ia
-supernova in 16 different fields, including DDF 290 already studied, from the \opsimdbname{enigma\_1189}
+supernova in 16 different fields, including DDF 290 already studied, from the \texttt{enigma\_1189}
 OpSim run and record the average number of visits per 50 day time window
 (\autoref{tab:lcpositions}). A well-known rule of thumb (R. Foley, priv. communication) for good
 quality SN light curves is to
@@ -657,7 +655,7 @@ per SN period per filter & SNDM  & SNQM\\
 % 3959     & (60,+30)  &      44 (0,5,6,15,18,0)   &  1.0 &&\\
 \hline
 \end{tabular}
-\caption{Table of 15 fields in the OpSim run \opsimdbname{enigma\_1189}. The first column is simply an
+\caption{Table of 15 fields in the OpSim run \texttt{enigma\_1189}. The first column is simply an
 index, with the special example fields of the DDF field 290 indicated. The
 position of the fields is shown in column 2. The third column contains the total and per filter
 band number of visits per year and this is averaged per filter per 50 day time window in column 4.
@@ -822,8 +820,7 @@ rectified in future.}
 % --------------------------------------------------------------------
 
 \subsection{Discussion}
-
-For \opsimdbname{enigma\_1189} (and also, most likely, for the current baseline strategy), the DDF
+For \texttt{enigma\_1189} (and also, most likely, for the current baseline strategy), the DDF
 fields will produce an exquisite sample of
 well-characterized SNe for cosmology and astrophysics studies. Further analysis is required to
 determine exactly how many (useful) supernovae will be detected and what the resulting cosmological
