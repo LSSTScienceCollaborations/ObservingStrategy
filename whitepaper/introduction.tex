@@ -71,6 +71,11 @@ Science Book.
 \section{Synoptic Sky Surveying at Universal Cadence}
 \def\secname{intro:baseline}\label{sec:\secname}
 
+\credit{ivezic},
+\credit{drphilmarshall},
+\credit{michaelstrauss}
+
+
 The LSST defined a so-called ``baseline cadence'', described in the
 \href{http://adsabs.harvard.edu/abs/2008arXiv0805.2366I}{LSST overview
 paper} and Chapter 3 of the Science Book.  This was used
@@ -153,32 +158,33 @@ requests from the community.
 \section{Evaluating and Optimizing the LSST Observing Strategy}
 \def\secname{intro:evaluation}\label{sec:\secname}
 
-The next step is to quantify how well any given realization of the
-LSST observing strategy (i.e., an output of \OpSim) supports the (many)
+\credit{drphilmarshall}
+
+Given a realization of the LSST observing strategy (i.e., an output of
+\OpSim), our first task is to quantify how well it supports the (many)
 science projects that LSST will enable.  As the algorithms controlling
-\OpSim are varied, some projects will benefit, while others may
-suffer.  By quantifying this for each projects, we can determine which cadence
+\OpSim are varied, some projects will benefit, while others may suffer.
+By quantifying this for each projects, we can determine which cadence
 maximizes the science potential overall of the project.
 
-Therefore, we need
-a {\it science-based evaluation of the baseline
-LSST observing strategy and its variants}. After simulating a sample
+Therefore, we need a {\it science-based evaluation of the baseline LSST
+observing strategy and its variants}. After simulating a sample
 observing schedule consistent with this strategy (see
 \autoref{chp:cadexp}), we then need to quantify its value to each
-science team.  This is what the LSST Simulations team's ``Metric Analysis
-Framework'' was designed to enable: science case investigators can
-now design quantitative evaluations of the outputs of \OpSim, to answer
-the question, ``how good would that observing strategy be, for my
+science team.  This is what the LSST Simulations team's ``Metric
+Analysis Framework'' was designed to enable: science case investigators
+can now design quantitative evaluations of the outputs of \OpSim, to
+answer the question, ``how good would that observing strategy be, for my
 science?'' These ``metrics'' can be coded against the \MAF API, and
 shared among the LSST science community at the
 \href{https://sims-maf.lsst.io/metricList.html#contributed-mafcontrib-metrics}{\simsMafContrib}
-online repository. All of the \MAF metrics described in this paper can be
-found there.
+online repository. All of the \MAF metrics described in this paper can
+be found there.
 
 Once the fiducial strategy has
 been evaluated in this way, then any other strategy can be evaluated
-in the same terms, using the same code.  We will then be able to %start
-optimize the strategy through iterations between \OpSim and \MAF.
+in the same terms, using the same code.  We will then be able to iterate towards an
+science-optimized strategy.
 
 With this program in mind, it makes sense to define {\it one ``Figure
 of Merit'' (FoM) per science project}, that captures the value of  the
@@ -229,22 +235,41 @@ works towards defining the observatory's observing schedule. How will
 the findings presented in this paper be taken forward?
 
 In this section we describe the mechanisms by which community input to
-the developing observing schedule will be absorbed, and then explain how
+the developing observing schedule will be absorbed, and explain how
 we will distil the vital information that the project needs from our
-\OpSim / \MAF analyses.
+\OpSim / \MAF analyses. We then provide a target timeline for the provision of community input.
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 \subsection{How will the results of our analyses be used?}
 \label{sec:\secname:useage}
 
-% Beth to write this, with Andy Connolly and guidance from
-% Michael Strauss and the SAC.
+\credit{bethwillman}, \credit{connolly}, \credit{ivezic}
+
+Through the end of construction and commissioning, this community
+Observing Strategy White Paper will remain a living document that is
+{\it the vehicle for the community to communicate to the LSST Project
+regarding the Wide-Fast-Deep and mini-survey observing strategies.}
+{\it The Project Scientist will synthesize and act on the results
+presented in this paper,} with support from the Science Advisory
+Committee and Survey Strategy Committee (see below).
+
+As described in the LSST Operations Plan (LPM-181), the observing
+strategy will continue to be refined and optimized during operations:
+the Survey Scientist will chair a survey evaluation working group that
+will evaluate quarterly the current and expected performance of the
+survey and scheduler software. This group may include representation
+from the Survey Support Scientist, the Pipelines and Data Products
+group, the Data Processing group, the Camera team, and science
+community.  The science community representation may be implemented as a
+sub-group of the Science Advisory Committee.
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-\subsection{Science Case Conclusions}
+\subsection{Communicating via Science Case Conclusions}
 \label{sec:\secname:caseConclusions}
+
+\credit{ivezic}
 
 In order to consolidate the various constraints on the observing
 strategy by different science cases, and provide high signal to noise
@@ -327,6 +352,127 @@ single-visit limiting depth?}
 \item[A10:] ...
 
 \end{description}
+
+\navigationbar
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+\subsection{Timeline}
+\label{sec:\secname:timeline}
+
+\credit{connolly},
+\credit{drphilmarshall}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht!]
+\includegraphics[angle=0,width=0.9\linewidth,clip]{figs/opsim_timeline.pdf}
+\caption{Target timeline for the iterated optimization of the LSST observing strategy through 2020.}
+\label{fig:timeline}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The intersection between the community and the scheduler development,
+and the expected support that can be provided by the Project, is
+outlined in \autoref{fig:timeline}. From the point of view of the community, this timeline contains a number of interesting features:
+
+\begin{description}
+
+\item{\textbf{Update of the Baseline Cadence and Exploration of Rolling
+Cadences.}} During development of version 1.0 of this white paper, the
+Project has been developing an enhanced operations simulator code,
+\OpSim~4. This will be used to generate, by September 2017, a new set of
+observing strategies, including some that have a ``rolling cadence''
+component. This is in response to the results presented in the science
+chapters of this paper. Analysis of these simulations would form the
+backbone of an updated, version 2.0 of this white paper, with existing
+science cases being updated to include quantitative assessment of the
+new \OpSim~4 simulations, and new science cases being identified and
+investigated.
+
+\item{\textbf{The definition of the Deep Drilling Fields (DDFs) and
+associated cadences.}} The September 2017 simulations will all continue
+to use the baseline DDF cadence. However, by September 2017, the LSST
+will issue a call for proposals to define the cadence and properties of
+the currently selected DDFs, and to propose a new set of DDFs. To enable
+this, the project will publish the known boundary conditions for
+additional DDFs (e.g.\ the definition of a DDF, the current division of
+survey time, constraints on the number of filter exchanges that can be
+accomplished within a night, the expected range of integration times).
+This call will include a request to describe the science objectives of
+new DDFs, the position on the sky of these DDFs, the depth required as a
+function of filter, the required cadence of observations, and the
+metrics that will demonstrate that the DDF observations meet their
+science requirements (these metrics do not need to be written within the
+framework of MAF). Delivery of these white papers by the community will
+expected by the end of 2017.  The LSST Observing Strategy GitHub
+repository can support the development and aggregation of these DDF
+white papers. The SAC will be asked to make a recommendation to the
+project by the end of April 2018 on which DDFs and cadences should be
+considered, and the project will respond to these recommendations by
+September 2018. The Project's ``SOCS and Scheduler'' team will support
+this effort by evaluating the proposed cadences and DDFs. This may be in
+the form of simulations (for new cadence proposals) or through an
+evaluation of the visibility and properties of the fields relative to
+the nominal performance of the LSST system.
+
+\item \textbf{The definition of Figures of Merit (FOMs) for the LSST
+survey strategy}. By September 2018 the project will issue a request to
+to the community to update this Observing Strategy white paper with
+MAF-coded Figures of Merit, to evaluate both the Wide-Fast-Deep and the
+mini-surveys (Galactic plane, Northern Ecliptic Spur, South Celestial
+Cap) for their impacts on specific science cases. These FOMs will be
+required for the Project to evaluate the efficacy of different survey
+strategies on a range of LSST science (e.g.\ the trade-off between a
+rolling cadence for supernova classification vs transient detection or
+long period variability will need to be explored quantitatively). The
+requested delivery date for these MAF FOMs into the Observing Strategy
+White Paper will be April 2019.  This will leave time for a Survey
+Strategy Committee (see below) to undertake trade studies that
+incorporate the community-provided FOMs. Details of the design of the
+FOMs (including units, thresholds, speed) will be described at a later
+date (prior to September 2018). If Project resources can be allocated to
+the process, then the SOCS and Scheduler team will support the writing
+of the FOMs with advice and tutorials on the use of \OpSim~4~v1.4, but
+the Observing Strategy white paper community will be expected to deliver
+their metrics as MAF code.
+
+\item \textbf{Establishment of a Survey Strategy Committee (SSC)}. Given
+the delivery of the FOMs, the project will establish a committee by July
+2019 to evaluate competing survey strategy proposals and to propose a
+survey strategy for commissioning and operation of the full LSST camera.
+This committee will be chaired by the LSST Project Scientist and be
+comprised of project and non-project personnel. The SAC will be asked to
+make recommendations for committee membership. The SSC will report to
+the LSST Director until the end of LSST construction and commissioning.
+In December 2019, based on the recommendation made by the SSC, the
+project will announce an initial survey strategy and publish a baseline
+simulation that reproduces that strategy. If Project resources can be
+allocated to the process, then the SOCS and Scheduler team might support
+the committee by helping to generate the proposed survey strategies.
+
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t!]
+\includegraphics[angle=0,width=0.9\linewidth,clip]{figs/opsim_timeline.pdf}
+\caption{Target timeline for the iterated optimization of the LSST observing strategy through 2020.}
+\label{fig:timeline}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+It's important to note that the dates for this timeline are {\it
+targets}. Since the deliverables are dependent on the availability of
+project resources, these milestones should be considered as those we
+could achieve given our best effort. Likewise, given the limited
+availability of resources in the SOCS and Scheduler engineering team,
+support of community members who wish to use \OpSim v4 will be on a best
+effort basis. \OpSim v4 will be delivered as a Docker container and its
+use and operation will be documented, but there will be no guarantee of
+support for, or timeliness in response to requests for support from,
+community users. The solution to this problem is to work together: the LSST Observing Strategy community, represented here by this white paper, is already developing the skills to perform and analyze LSST operations simulations: by learning from each other, we can produce high quality quantitative conclusions for the Project to act upon.
+
+
 
 \navigationbar
 
