@@ -11,3 +11,13 @@ before_install:
      texlive-latex-extra
      texlive-latex-recommended
      texlive-xetex
+# Finally, if it's the master branch being updated, force-push the
+# resulting PDF to an otherwise empty "pdf" branch:
+after_success: |
+    if [ -n "$GITHUB_API_KEY" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+        git checkout --orphan pdf
+        git rm -rf .
+        git add -f whitepaper/LSST_Observing_Strategy_White_Paper.pdf
+        git -c user.name='travis' -c user.email='travis' commit -m init
+        git push -q -f https://drphilmarshall:$GITHUB_API_KEY@github.com/LSSTScienceCollaborations/ObservingStrategy pdf
+    fi
