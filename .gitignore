@@ -21,6 +21,7 @@ LSST_Observing_Strategy_White_Paper.pdf
 # *.ps
 # *.eps
 # *.pdf
+version.tex
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
