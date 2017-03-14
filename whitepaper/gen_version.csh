@@ -74,6 +74,9 @@ set date = `git log --date=rfc | head -3 | grep Date | cut -d':' -f2-`
 # Get URL of latest commit:
 set commit_url = "https://github.com/LSSTScienceCollaborations/ObservingStrategy/commit/${SHA}?diff=split"
 
+# Append commit ID to version number:
+set version = "${version}.${short_SHA}"
+
 # Write tex file for input into paper:
 set texfile = "version.tex"
 \rm -f $texfile ; touch $texfile
