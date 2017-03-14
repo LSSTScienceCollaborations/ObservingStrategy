@@ -15,6 +15,7 @@
 #
 # OPTIONAL INPUTS:
 #   -h --help           Print this header
+#   -v --version        Manual version number
 #
 # OUTPUTS:
 #   version.tex         Tex file for input into white paper
@@ -27,6 +28,7 @@
 # ======================================================================
 
 set help = 0
+set version = 0.0
 
 while ( $#argv > 0 )
    switch ($argv[1])
@@ -38,6 +40,16 @@ while ( $#argv > 0 )
       shift argv
       set help = 1
       breaksw
+   case -v:
+      shift argv
+      set version = $argv[1]
+      shift argv
+      breaksw
+   case --{version}:
+      shift argv
+      set version = $argv[1]
+      shift argv
+      breaksw
    endsw
 end
 
@@ -46,9 +58,13 @@ if ($help) then
   goto FINISH
 endif
 
-# Get most recent tag name:
-set version = `git describe --tags | cut -d'-' -f1`
-set version_url = "https://github.com/LSSTScienceCollaborations/ObservingStrategy/releases/tag/${version}"
+# # Get most recent tag name:
+# set version = `git describe --tags | cut -d'-' -f1`
+# set version_url = "https://github.com/LSSTScienceCollaborations/ObservingStrategy/releases/tag/${version}"
+# Abandoning this - the problem is that when we make a new release,
+# it won't update the tags until *after we've made it, at which
+# point the PDF has already become part of the release. I think we have
+# to set the Version number by hand.
 
 # Get most recent commit ID and its date:
 set SHA = `git show | head -1 | cut -d' ' -f2`
@@ -63,9 +79,11 @@ set texfile = "version.tex"
 \rm -f $texfile ; touch $texfile
 
 echo "\begin{center}{" >> $texfile
+echo "    {\large\bf Version ${version}}\\ " >> $texfile
+echo "    \vspace*{\stretch{0.1}}" >> $texfile
 echo "    Most recent commit: \href{${commit_url}}{\texttt{$short_SHA}}\\ " >> $texfile
 echo "    \vspace*{\stretch{0.1}}" >> $texfile
-echo "    (${date}, building on release \href{${version_url}}{$version})}\\ " >> $texfile
+echo "    (${date})}\\ " >> $texfile
 echo "\end{center}" >> $texfile
 
 cat $texfile
