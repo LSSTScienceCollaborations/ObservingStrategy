@@ -12,12 +12,15 @@ vclean: clean
 
 pdf: $(PAPER)
 
-LSST_Observing_Strategy_White_Paper.pdf: LSST_Observing_Strategy_White_Paper.tex LSST_Observing_Strategy_White_Paper.sty $(BIBFILES) $(TEXFILES)
+LSST_Observing_Strategy_White_Paper.pdf: version LSST_Observing_Strategy_White_Paper.tex LSST_Observing_Strategy_White_Paper.sty $(BIBFILES) $(TEXFILES)
 	pdflatex LSST_Observing_Strategy_White_Paper.tex
 	pdflatex LSST_Observing_Strategy_White_Paper.tex
 	bibtex   LSST_Observing_Strategy_White_Paper
 	pdflatex LSST_Observing_Strategy_White_Paper.tex
 	pdflatex LSST_Observing_Strategy_White_Paper.tex
+
+version:
+	tcsh gen_version.csh --version 0.99
 
 run: $(ARG)_standalone.tex LSST_Observing_Strategy_White_Paper.sty  $(BIBFILES) $(TEXFILES)
 	pdflatex $(ARG)_standalone.tex
