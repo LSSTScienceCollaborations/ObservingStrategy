@@ -4,7 +4,11 @@ Welcome to the online community thinking about LSST survey strategy ("cadence"),
 
 We are writing a white paper on this topic, primarily composed of a set of individual science cases that are either very important, and somehow stress the observing strategy, and describing how we expect them to be sensitive to LSST observing strategy. MAF metric calculations are then being designed and implemented: these form the quantitative backbone of the document. You may have heard of the coming  "Cadence Wars" - this white paper represents the "Cadence Diplomacy" that will allow us, as a community, to avoid, or at least manage, that conflict. We welcome contributions from all around the LSST Science community.
 
-* **[Read the current draft of the white paper](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)** (automatically generated PDF, updated every hour, in principle - [log file is here](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.log))
+<!--
+* **[Read the current draft of the white paper](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)** (automatically generated PDF, updated every hour, in principle - [log file is here](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.log)) -->
+
+* **[Read the current draft of the white paper](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/pdf/whitepaper/LSST_Observing_Strategy_White_Paper.pdf
+)** (automatically generated PDF, rebuilt every time the `master` branch is updated)
 [![Build Status](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy.svg?branch=master)](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy)
 
 * **[Join the conversation about this project at its issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
