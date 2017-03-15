@@ -78,16 +78,15 @@ set commit_url = "https://github.com/LSSTScienceCollaborations/ObservingStrategy
 set version = "${version}.${short_SHA}"
 
 # Write tex file for input into paper:
-set texfile = "version.tex"
+set texfile = "thisversion.tex"
+set template = "version.tex"
 \rm -f $texfile ; touch $texfile
 
-echo "\begin{center}{" >> $texfile
-echo "    {\large\bf Version ${version}}\\ " >> $texfile
-echo "    \vspace*{\stretch{0.1}}" >> $texfile
-echo "    Most recent commit: \href{${commit_url}}{\texttt{$short_SHA}}\\ " >> $texfile
-echo "    \vspace*{\stretch{0.1}}" >> $texfile
-echo "    (${date})}\\ " >> $texfile
-echo "\end{center}" >> $texfile
+cat $template | \
+    sed s%XX%"${version}"%g | \
+    sed s%URL%"${commit_url}"%g | \
+    sed s%SHA%"${short_SHA}"%g | \
+    sed s%DATE%"${date}"%g > $texfile
 
 cat $texfile
 
