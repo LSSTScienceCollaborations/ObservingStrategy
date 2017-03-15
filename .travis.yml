@@ -2,7 +2,8 @@ language: ruby
 rvm:
 - 1.9.3
 script: /bin/bash whitepaper/travis.sh
-# before_install:
+before_install:
+  - sudo apt-get install -qq bc tcsh
 # - yes "" | sudo apt-add-repository ppa:texlive-backports/ppa
 # - sudo apt-get update -y
 # - sudo apt-get install -y
