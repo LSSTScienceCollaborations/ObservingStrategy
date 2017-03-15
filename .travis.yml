@@ -2,15 +2,15 @@ language: ruby
 rvm:
 - 1.9.3
 script: /bin/bash whitepaper/travis.sh
-before_install:
-- yes "" | sudo apt-add-repository ppa:texlive-backports/ppa
-- sudo apt-get update -y
-- sudo apt-get install -y
-     inkscape
-     texlive-fonts-recommended
-     texlive-latex-extra
-     texlive-latex-recommended
-     texlive-xetex
+# before_install:
+# - yes "" | sudo apt-add-repository ppa:texlive-backports/ppa
+# - sudo apt-get update -y
+# - sudo apt-get install -y
+#      inkscape
+#      texlive-fonts-recommended
+#      texlive-latex-extra
+#      texlive-latex-recommended
+#      texlive-xetex
 # Finally, if it's the master branch being updated, force-push the
 # resulting PDF to an otherwise empty "pdf" branch:
 after_success: |
