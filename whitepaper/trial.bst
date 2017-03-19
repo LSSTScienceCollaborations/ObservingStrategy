@@ -74,7 +74,7 @@ ENTRY
     type
     volume
     year
-    archive
+    archivePrefix
     eprint
     report
     collaboration
@@ -284,11 +284,11 @@ FUNCTION {format.authors}
 FUNCTION {format.eprint}
 { eprint empty$
      { ""}
-     { archive empty$
+     { archivePrefix empty$
           {"\href{http://xxx.lanl.gov/abs/" eprint * "}" * 
              "{{" * eprint * "}}" *}
-          {"\href{http://xxx.lanl.gov/abs/" archive *  "/" * eprint * "}" * 
-             "{{" * archive * "/" * eprint * "}}" *}
+          {"\href{http://xxx.lanl.gov/abs/" ", " * archivePrefix *  "/" * eprint * "}" * 
+             "{{" * archivePrefix * "/" * eprint * "}}" *}
        if$
      }
      if$
