@@ -287,8 +287,8 @@ FUNCTION {format.eprint}
      { archivePrefix empty$
           {"\href{http://xxx.lanl.gov/abs/" eprint * "}" * 
              "{{" * eprint * "}}" *}
-          {"\href{http://xxx.lanl.gov/abs/" ", " * archivePrefix *  "/" * eprint * "}" * 
-             "{{" * archivePrefix * "/" * eprint * "}}" *}
+          {"\href{http://xxx.lanl.gov/abs/" * eprint * "}" * 
+             "{{" * ", " * archivePrefix * ":" * eprint * "}}" *}
        if$
      }
      if$
