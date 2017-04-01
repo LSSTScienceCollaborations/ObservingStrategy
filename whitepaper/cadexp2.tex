@@ -77,7 +77,7 @@ potential of LSST\@. The cadence set also includes a candidate baseline
 cadence replacement.
 
 An initial analysis of these
-\href{http://ops2.lsst.org:8888}{simulated surveys} is presented here,
+\href{http://ops2.lsst.org:8282}{simulated surveys} is presented here,
 and based on \href{https://confluence.lsstcorp.org/display/SIM/MAF+documentation}{MAF}
 reports.
 
@@ -162,7 +162,7 @@ allowed airmass was set to 1.5. }
 across the sky for simulated cadence \opsimdbref{db:baseCadence} is shown
 in Aitoff projection of equatorial coordinates. The red line shows the Ecliptic and
 the blue line shows the Galactic equator (it bifurcates around the so-called
-``Galactic confusion zone''). The median value across the Universal Cadence area
+``Galactic confusion zone''). The median value across the WFD Cadence area
 is 27.1, with RMS scatter of only 0.04 mag. The small dark dots are deep drilling
 fields, with a median $5\sigma$ depth of 28.6.}
 \label{fig:coaddm5enigma}
@@ -193,7 +193,8 @@ The Baseline Cadence,
 properties\footnote{For MAF output, see \url{http://ls.st/5ep}}:
 \begin{enumerate}
 \item The total number of visits is 2,447,931, with 85.1\% spent on
-the Universal proposal (the main Wide, Fast, Deep (WFD) survey), 6.5\% on the
+the Universal proposal (the main Wide, Fast, Deep (WFD) survey and henceforth 
+known as the WFD proposal), 6.5\% on the
 North Ecliptic Spur proposal, 1.7\% on the Galactic Plane proposal, 2.2\%
 on the South Celestial Pole proposal, and 4.5\% on the Deep Drilling
 Cosmology proposal (5 fields).\footnote{The community-contributed white papers leading to the
@@ -210,7 +211,7 @@ The 25\%-75\% quartiles for the number of filter changes per night are 2
 and 6, with the mean of 4.3 The total number of filter changes is 14,194.
 \item In the $r$ band, the median effective seeing for all proposals is 0.93 arcsec (for the more
 traditional geometric FWHM, the median is 0.81 arcsec).  We define ``geometric FWHM'' as the actual full-width-at-half-maximum.  The ``Effective FWHM'' is the FWHM of a single Gaussian describing the PSF and is typically $\sim15$\% larger than the geometric FWHM. The median
-airmass for all filters and all proposals is 1.23. The median single-visit $5\sigma$ depth for point sources in $r$-band in the WFD area is 24.16 (using the best
+airmass for all filters and all proposals is 1.23. The median single-visit $5\sigma$ depth for point sources in $r$ band in the WFD area is 24.16 (using the best
 current estimate of the fiducial depth at airmass of one, $m_5(r)=24.39$,
 defined by the SRD Table 5). The variation of the median airmass for the $r$
 band observations with the position on the sky is shown in
@@ -240,28 +241,28 @@ Science Requirements Document (SRD) is available as
 \url{http://ls.st/lpm-17}}) of (56, 80, 184, 184, 160, 160) in the $ugrizy$
 bands, but the minimum number of visits per field over this area does
 so, too. This result is quite encouraging given that
-only 85\% of observing time was spent on the Universal Cadence proposal.
+only 85\% of observing time was spent on the WFD Cadence proposal.
 \item The median coadded $5\sigma$ depth
 for point sources in the $ugrizy$ bands is (25.4, 27.0, 27.1, 26.4,
-25.2, 24.4), respectively, for the Universal Cadence area. The distribution
+25.2, 24.4), respectively, for the WFD area. The distribution
 of coadded depth across the sky is fairly uniform, as illustrated in \autoref{fig:coaddm5enigma}.
-\item For the 2,293 fields from the Universal Cadence area, the median
+\item For the 2,293 fields from the WFD area, the median
 geometric FWHM for seeing is 0.78 arcsec in the $r$ band and 0.77 arcsec
 in the $i$ band. The median airmass in the $urz$ bands is 1.25, 1.20 and 1.26
-(the maximum allowed airmass for the Universal Cadence area was set to
+(the maximum allowed airmass for the WFD area was set to
 1.5).  The median sky brightness in the $ury$ bands is 22.0 mag/arcsec$^2$,
 21.1 mag/arcsec$^2$, and 17.3 mag/arcsec$^2$, respectively (for comparison,
 assumed dark sky brightness in the $ury$ bands is 23.0, 21.2 and 18.6
 mag/arcsec$^2$).  The current model sky brightness in the $y$ band is biased
 very high because most $y$ band (and many $z$ band) observations are taken in twilight where \OpSim currently uses a very simple (and bright) sky model.
-\item Restricted to the Universal Cadence fields, a unique area of
+\item Restricted to the WFD fields, a unique area of
 18,000 sq.deg. received at least 888 visits per field (summed over bands;
 the SRD design value is 825).
 \item The median trigonometric parallax and proper motion errors are
 0.62 mas and 0.17 mas/yr, respectively, for bright sources (limited by
 assumed systematic errors in relative astrometry of 10 mas), and 7.9
 mas and 2.3 mas/yr for points sources with $r=24$ (assuming flat
-spectral energy distribution), over the Universal Cadence fields. The
+spectral energy distribution), over the WFD fields. The
 variation of parallax and proper motion errors across the sky is
 visualized in \autoref{fig:parapmenigma}.
 \end{enumerate}
@@ -278,8 +279,7 @@ version). Perhaps the most important (and undesired!) difference
 between the two simulations is that the Baseline Cadence
 spent 6.5\% of the observing time on North Ecliptic Spur proposal (vs.
 4\% spent on the corresponding Universal North proposal in
-\texttt{opsim3.61}), and less than 90\% of time on the Universal
-proposal (the main Wide, Fast, Deep survey).
+\texttt{opsim3.61}), and less than 90\% of time on the WFD proposal.
 
 Analysis of the hour angle distribution, shown in
 \autoref{fig:HAenigma} and \autoref{fig:AltAzenigma}, reveals a strong
@@ -314,8 +314,8 @@ all observations in the $r$ band. }
 \caption{The color-coded map in the left panel shows the visit count from the 
 Baseline Cadence simulation \opsimdbref{db:baseCadence} in the equal-area Lambert projection of the
 horizontal coordinate system (altitude-azimuth), with north on top and west towards the
-right, for all six bands and proposals (Universal, Galactic Plane, Deep Drilling
-fields, North Ecliptic Spur, and South Celestial Pole region). The Universal cadence was
+right, for all six bands and proposals (Wide, Fast Deep, Galactic Plane, Deep Drilling
+fields, North Ecliptic Spur, and South Celestial Pole region). The WFD Cadence was
 limited to airmass below 1.5, while other proposals sampled higher airmass, too (see the
 histogram in \autoref{fig:airmassenigma}).  Note the strong propensity of fields
 for westward observations (the median airmass is about 1.2). The right panel is analogous,
@@ -363,8 +363,8 @@ stars.  As a brief illustration of time-domain analysis,
 when all bands are considered, and \autoref{fig:enigmaGapr} shows the
 median revisit time distribution in the band.  On average, fields in
 the main survey get revisited about every 3 days using all filters,
-and every 15 days when using only r band visits (30 days when using
-only u band visits is the longest median revisit time).
+and every 15 days when using only $r$ band visits (30 days when using
+only $u$ band visits is the longest median revisit time).
 \autoref{fig:enigmaMAXGapAll} shows the maximum inter-night gap, which
 on average is about 5-6 months.
 
@@ -416,9 +416,9 @@ On average, fields in the main survey get revisited about every 3 days.}
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Median_Inter-Night_Gap_r_HEAL_SkyMap.pdf}
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Median_Inter-Night_Gap_r_HEAL_Histogram.pdf}
 \vskip -0.1in
-\caption{The median inter-night gap for r band visits is shown in Aitoff projection
+\caption{The median inter-night gap for $r$ band visits is shown in Aitoff projection
 for all proposals and all filters for the Baseline Cadence \opsimdbref{db:baseCadence}.
-On average, fields in the main survey get revisited in the r band about every two weeks.}
+On average, fields in the main survey get revisited in the $r$ band about every two weeks.}
 \label{fig:enigmaGapr}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -479,7 +479,7 @@ the main survey: the median values are (27.8, 28.4, 28.6, 28.0, 27.6,
 {\bf Conclusions:}
 
 The Baseline Cadence, \opsimdbref{db:baseCadence}, appears to
-be an adequate replacement for the old baseline cadence
+be an adequate replacement for the old Baseline Cadence
 (\texttt{opsim3.61}). Based on this preliminary analysis, there are no
 major problems with its performance. While there are patterns which
 are not fully understood (most notably the observing bias towards
@@ -487,7 +487,7 @@ west),  or undesired (unnecessary revisits of the same field in the
 same night), \opsimdbref{db:baseCadence} is used as a benchmark cadence,
 and referred to as the ``Baseline Cadence'', in the rest of this
 document\footnote{This simulation was proposed by the Project Science Team
-and adopted as the new Baseline Cadence by the Change Control Board in July 
+and adopted as the new Baseline Cadence by the Change Control Board in August 
 2016.}
 
 An important feature of \opsimdbref{db:baseCadence} simulation is that
@@ -543,34 +543,34 @@ with science-based MAF metrics.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:opstwo]{minion\_1012}{Only Universal Cadence, with pairs of visits.}
+\opsimdb[db:opstwo]{minion\_1012}{Only Wide, Fast, Deep Cadence, with pairs of visits.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Motivation and description:} Formally, $\sim$85\% of observing
-time is allocated to the main Universal Cadence program (WFD). The
+time is allocated to the main WFD Cadence program. The
 remaining observing time is allocated to other programs, such as
 ``Deep Drilling'' programs (see Section 3.4 and Tables 22-26  in the
 SRD). With this simulation, we wished to find out what would be the
 effect of ignoring special programs and spending all of the observing
-time on the main Universal Cadence program. \\
+time on the main WFD Cadence program. \\
 
 {\bf Expectations:} About 2.08 million visits (85\% of 2.44 million
-visits) from Baseline Cadence (\opsimdbref{db:baseCadence}) were allocated
-to WFD cadence. Here we expect that all of these 2.44 million visits
-will be allocated to WFD cadence. \\
+visits) from the Baseline Cadence (\opsimdbref{db:baseCadence}) were allocated
+to WFD Cadence. Here we expect that all of these 2.44 million visits
+will be allocated to WFD Cadence. \\
 
 {\bf Analysis Results:} This simulated cadence is named \opsimdbref{db:opstwo}.
 Compared to the Baseline Cadence \opsimdbref{db:baseCadence}:
 \begin{enumerate}
 \item The total number of visits is close to the expected value: 2.42
   million.  The minimum number of visits per field for the 2,293 WFD
-  fields in Baseline Cadence is 965 for this simulation, compared to
-  888 for Baseline Cadence.
+  fields in the Baseline Cadence is 965 for this simulation, compared to
+  888 for the Baseline Cadence.
 \item The median number of visits per night and the mean slew time are
-  essentially the same as for Baseline Cadence (807 vs. 816 and 7.2
+  essentially the same as for the Baseline Cadence (807 vs. 816 and 7.2
   sec vs. 6.8 sec).
-\item The median seeing, sky brightness and airmass in the r and i bands are
-      essentially the same as for WFD fields in Baseline Cadence.
+\item The median seeing, sky brightness and airmass in the $r$ and $i$ bands are
+      essentially the same as for WFD fields in the Baseline Cadence.
 \item The median trigonometric parallax and proper motion errors are
   improved by about 8\%, with improvements commensurate with the
   increase in the number of visits and the elimination of regions
@@ -581,16 +581,16 @@ Compared to the Baseline Cadence \opsimdbref{db:baseCadence}:
 \end{enumerate}
 
 
-{\bf Conclusions:} \opsimdbref{db:opstwo}, using only uniform cadence
-proposal, delivered 99.2\% of the number of visits obtained by
+{\bf Conclusions:} \opsimdbref{db:opstwo}, using only the WFD Cadence
+proposal, delivered 99.2\% of the number of visits obtained by the 
 Baseline Cadence. Therefore, {\it the ``filler'' aspect of other
 proposals does not have a major impact on the surveying efficiency}.
-The minimum number of visits per field for the 2,293 WFD fields in
+The minimum number of visits per field for the 2,293 WFD fields in the 
 Baseline Cadence is 886 (the SRD design value is 825 and the stretch
 goal value is 1000). Although the sky coverage of these 2293 fields is
 about 18,000 sq.deg., that number of fields could cover 22,000 sq.deg if there was no field overlap. With
 proper dithering, the effective number of visits could be increased to
-$886\times22/18 = 1083$ (or the WFD area increased from 18,000 sq. deg.; see
+$886\times22/18 = 1083$ (or the WFD area increased from 18,000 sq.deg.; see
 analysis of \opsimdbref{db:opstwoPS} below). This increase is an improvement of 31\%
 relative to the SRD design specification of 825 visits over 18,000
 sq.deg. However, note again that there are no other programs in this
@@ -610,40 +610,40 @@ defined by Dec $< +15$ deg (about 27,400 deg$^2$). This is similar to the Pan-
 STARRS' 3PI survey which tries to maximize sky area. The maximum acceptable
 airmass is kept at its default value of 1.5 (which excludes fields with Dec
 $<-78$ deg and Dec $> +18$ deg. This simulation utilizes uniform cadence and no
-other proposal, and requires pairs of visits as in Baseline Cadence. \\
+other proposal, and requires pairs of visits as in the Baseline Cadence. \\
 
 {\bf Expectations:} The total number of visits should be roughly the
-same as in Baseline Cadence, but spread over a 42\% larger sky area
+same as in the Baseline Cadence, but spread over a 42\% larger sky area
 (3,255 fields instead of 2,293), with fewer visits per field. \\
 
 {\bf Analysis Results:}  This simulated cadence is named \opsimdbref{db:opstwoPS}.
 Compared to the Baseline Cadence \opsimdbref{db:baseCadence}:
 \begin{enumerate}
 \item The total number of visits is 2.42 million, and essentially identical to the
-number of visits in Baseline cadence.
+number of visits in the Baseline cadence.
 \item
 The mean number of visits per field is 740, which is 81\% of the number of visits %minion_1016 median 912 visits per feild WFD
-for WFD fields obtained by Baseline Cadence (but here the sky area is 42\% larger).
+for WFD fields obtained by the Baseline Cadence (but here the sky area is 42\% larger).
 \item The median number of visits per night and the mean slew time are
-  essentially the same as for Baseline Cadence.
-\item The median seeing, sky brightness and airmass in the r and i
-  bands for WFD fields are essentially the same as in Baseline
+  essentially the same as for the Baseline Cadence.
+\item The median seeing, sky brightness and airmass in the $r$ and $i$
+  bands for WFD fields are essentially the same as in the Baseline
   Cadence.
 \item The median trigonometric parallax and proper motion errors show
   uniform behavior over the entire enlarged area (see
   \autoref{fig:parapmenigma2}), with the values similar to those
-  obtained for Baseline Cadence.
+  obtained for the Baseline Cadence.
 \item This simulation also shows observing bias towards west.
 \end{enumerate}
 
 Due to increased sky area, which samples regions that can never
 achieve low airmass, the median coadded depth is about 0.15 mag
-shallower for this simulation than for Baseline Cadence. As a result,
+shallower for this simulation than for the Baseline Cadence. As a result,
 the counts of galaxies per unit area down to a fixed SNR would
 decrease by about 15-20\%. At the same time, the area outside the
 Galactic plane is increased by about 30\%, and thus the total number
 of galaxies would be increased by about 10\%, compared to WFD fields
-in Baseline Cadence. However, the increased median airmass also
+in the Baseline Cadence. However, the increased median airmass also
 results in larger seeing, especially for the borderline regions, as
 illustrated in \autoref{fig:PS-seeing}. The increased median seeing
 would decrease the number of galaxies effectively resolved for weak
@@ -653,12 +653,12 @@ galaxy counts (this impact of dust extinction on galaxy counts is not
 yet implemented in MAF). As a result of these effects, the two
 strategies result in similar weak lensing galaxy samples.
 
-{\bf Conclusions:} When only the Universal Cadence proposal is
+{\bf Conclusions:} When only the WFD Cadence proposal is
 employed, the survey area could be increased by about 40\%, while
 still delivering the mean number of fields at the level of 81\% of
-that in Baseline Cadence (or 90\% of the SRD design value of 825).
+that in the Baseline Cadence (or 90\% of the SRD design value of 825).
 Hence, simulations \opsimdbref{db:opstwoPS} and \opsimdbref{db:opstwo}
-demonstrate that the ``survey reserve'', relative to the Universal
+demonstrate that the ``survey reserve'', relative to the WFD 
 Cadence design specifications from the SRD, can be used to i) increase
 the number of visits per field over the WFD area, or ii) increase the
 surveyed area while keeping the number of visits per field
@@ -674,8 +674,8 @@ visits, and/or iv) execute additional programs (the current baseline).
 \includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Parallax_Normed_All_Visits_non-dithered_HEAL_Histogram.pdf}
 \includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Proper_Motion_Normed_All_Visits_non-dithered_HEAL_Histogram.pdf}
 \vskip -0.2in
-\caption{The trigonometric parallax errors (left) and proper motion errors (right)  for simulated cadence
-minion\_1020 (``Pan-STARRS-like'' cadence), normalized by the values for idealized perfectly optimized
+\caption{The trigonometric parallax errors (left) and proper motion errors (right) for simulated cadence
+minion\_1020 (``Pan-STARRS-like'' Cadence), normalized by the values for idealized perfectly optimized
 cadence, are shown in Aitoff projection of equatorial coordinates (compare to \autoref{fig:parapmenigma}). xxx--add in the histograms}
 \label{fig:parapmenigma2}
 \end{figure}
@@ -687,10 +687,10 @@ cadence, are shown in Aitoff projection of equatorial coordinates (compare to \a
 \includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Median_FWHMeff_r_band_all_props_OPSI_SkyMap.pdf}
 \includegraphics[angle=0,width=0.49\hsize:,clip]{figs/cadence/minion_1020_Median_FWHMeff_r_band_all_props_OPSI_Histogram.pdf}
 \vskip -0.2in
-\caption{The median seeing in $r$ filter, for simulated cadence minion\_1020 (``Pan-STARRS-like'' cadence),
+\caption{The median seeing in $r$ filter, for simulated cadence minion\_1020 (``Pan-STARRS-like'' Cadence),
 normalized by expected value (0.83$^{\prime\prime}$). Note that fields with the most positive and most negative
 declination have on average larger values. For comparison, the median normalized seeing for WFD fields
-in Baseline Cadence is 1.08, with a negligible fraction of fields with values above 1.18.}
+in the Baseline Cadence is 1.08, with a negligible fraction of fields with values above 1.18.}
 \label{fig:PS-seeing}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -699,16 +699,16 @@ in Baseline Cadence is 1.08, with a negligible fraction of fields with values ab
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:UConlyNoVisitPairs]{minion\_1013}{Only Universal Cadence, no visit pairs.}
+\opsimdb[db:UConlyNoVisitPairs]{minion\_1013}{Only Wide, Fast, Deep Cadence, no visit pairs.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Motivation and description:} The main goal of this simulation was
 to assess the impact of the requirement for visit pairs on the survey
-efficiency (Baseline Cadence requests two visits per night to the same
+efficiency (the Baseline Cadence requests two visits per night to the same
 field, separated in time by about an hour, and driven by asteroid
 orbit determination). It is plausible that the removal of this
 requirement could result in a more efficient survey. In order to allow
-as simple analysis as possible, only the Universal Cadence proposal is
+as simple analysis as possible, only the WFD Cadence proposal is
 requested. Hence, this simulation should be directly compared to
 simulation \opsimdbref{db:opstwo}. \\
 
@@ -746,28 +746,28 @@ science (and, of course, it's crucial for asteroid science).
 {\bf Motivation and description:} The main goal of this simulation was
 to assess the impact of the requirement for visit pairs on the survey
 efficiency. Instead of the idealized case above which compared only
-the Universal Cadence proposal fields, in this more realistic case
-{\it all proposals from Baseline Cadence are executed}. Hence, this
-simulation should be compared to Baseline Cadence
+the WFD Cadence proposal fields, in this more realistic case
+{\it all proposals from the Baseline Cadence are executed}. Hence, this
+simulation should be compared to the Baseline Cadence
 (\opsimdbref{db:baseCadence}). \\
 
 {\bf Expectations:} A slight, or no, increase in surveying efficiency
-and thus the total number of visits is expected when compared to
+and thus the total number of visits is expected when compared to the 
 Baseline Cadence. \\
 
 {\bf Analysis Results:}  This simulated cadence is named
 \opsimdbref{db:NoVisitPairs}. Compared to \opsimdbref{db:baseCadence},
 \begin{enumerate}
 \item The total number of visits is 2.51 million, or 2.4\% more than
-in Baseline Cadence.
-\item The mean slew time is 5.8 sec, or 15\% shorter than for Baseline
+in the Baseline Cadence.
+\item The mean slew time is 5.8 sec, or 15\% shorter than for the Baseline
 Cadence. This decrease in the mean slew time implies an efficiency
 increase of 2.8\% and explains the actual 2.4\% improvement implied by
 the total number of visits.  Note that this simulation has the
 shortest mean slew time of all simulations investigated here (the
 nominal shortest slew and settle time is about 4.5 sec).
-\item The median airmass in the r band is slightly larger for this
-simulation than for Baseline Cadence: 1.29 vs. 1.22.
+\item The median airmass in the $r$ band is slightly larger for this
+simulation than for the Baseline Cadence: 1.29 vs. 1.22.
 \end{enumerate}
 
 
@@ -799,7 +799,7 @@ sets of visits -- it may be changed or it may remain the same. These
 simulations should be compared to the Baseline Cadence,
 \opsimdbref{db:baseCadence}, and to the \opsimdbref{db:NoVisitPairs},
 which all keep the special surveys, but simply vary the sequences
-requested in the Universal Cadence. \\
+requested in the WFD Cadence. \\
 
 {\bf Expectations:} The general expectations are that science cases
 which require many visits on timescales of a few hours will benefit
@@ -865,11 +865,12 @@ requested number of visits in a sequence.}
 \includegraphics[angle=0,width=0.49\hsize:,clip]{figs/medintranight2.pdf}
 \vskip -1.3in
 \caption{%
-The comparison of the median intra-night gap (per field) distributions for Baseline Cadence (left)
+The comparison of the median intra-night gap (per field) distributions for the 
+Baseline Cadence (left)
 and simulation \opsimdbref{db:NoVisitPairs}, which did not request pairs of visits per night.
 Despite no need for pairs, simulation \opsimdbref{db:NoVisitPairs} produced them ``spontaneously'',
 as well as longer sequences (see \autoref{fig:NvisitStats}). The mean field revisit
-time is much shorter (about 6 minutes, see the right panel) than for Baseline Cadence
+time is much shorter (about 6 minutes, see the right panel) than for the Baseline Cadence
 (22 minutes).}
 \label{fig:intranightgapCompare}
 \end{figure}
@@ -917,7 +918,7 @@ at all times, is in the range of about 20--60 seconds (see Section
 simulation investigates the effect of decreasing the exposure time per
 visit to 20 seconds (from its nominal value of 30 seconds). The
 shorter exposure time results in 0.22 mag shallower faint limit per
-visit (the effect is larger in the $u$-band, see
+visit (the effect is larger in the $u$ band, see
 \opsimdbref{db:DoubleUbandExptime}). \\
 
 {\bf Expectations:} The total number of visits is expected to increase
@@ -930,23 +931,23 @@ number of visits is about 32\% and the expected number of visits is
 3.2 million.  \\
 
 {\bf Analysis Results:}  This simulated cadence is named
-\opsimdbref{db:ShortExptime}. Compared to Baseline Cadence:
+\opsimdbref{db:ShortExptime}. Compared to the Baseline Cadence:
 \begin{enumerate}
 \item The total number of visits is 3.23 million, representing an
 increase of 31\% that is very close to the expected value of 32\%.
 \item The median number of visits per night is 1079, or about 32\%
-more than for Baseline Cadence. The total open shutter time is 14\%
+more than for the Baseline Cadence. The total open shutter time is 14\%
 smaller for this simulation, and easily understood as due to expected
 11\% decrease due to smaller surveying efficiency (the mean slew time
-is the same as in Baseline Cadence, 6.9 sec).
+is the same as in the Baseline Cadence, 6.9 sec).
 % 2.8 vs 2.1
-\item The main survey (WFD, 18,000 sq. deg.) fields received 33\% more
-visits than in Baseline Cadence. The increase in the minimum number of
+\item The main survey (WFD, 18,000 sq.deg.) fields received 33\% more
+visits than in the Baseline Cadence. The increase in the minimum number of
 visits over that area is 9\% (from 886 to 963). In addition, another
-1,000 sq. deg. (6\% of the nominal WFD) area has more than 961 visits.
+1,000 sq.deg. (6\% of the nominal WFD) area has more than 961 visits.
 \item Most other performance parameters are essentially unchanged: the
 fraction of visits spent on the main survey (88\% vs. 85\%), the
-median seeing in the r band (0.93 arcsec vs. 0.94 arcsec), and the
+median seeing in the $r$ band (0.93 arcsec vs. 0.94 arcsec), and the
 median airmass (1.23 vs. 1.22).
 \end{enumerate}
 
@@ -971,28 +972,28 @@ all proposals) increases by 32\%.
 effect of increasing the exposure time per visit to 60 seconds (from
 its nominal value of 30 seconds). The longer exposure time results in
 0.38 mag deeper faint limit per visit (the effect is larger in the
-$u$-band, see \opsimdbref{db:DoubleUbandExptime}). \\
+$u$ band, see \opsimdbref{db:DoubleUbandExptime}). \\
 
 {\bf Expectations:} The total number of visits is expected to decrease by about
 a factor of 2 in case of no significant impact on the survey efficiency.
 However, the longer exposure time improves efficiency by a factor of
 $2\times(34+7)/(64+7)-1=15\%$, and thus the expected total number of visits is
-$0.5\times1.15 = 58\%$ of the number of visits in Baseline Cadence (assuming
+$0.5\times1.15 = 58\%$ of the number of visits in the Baseline Cadence (assuming
 the same mean slew time of 7 seconds).
 
 {\bf Analysis Results:} This simulated cadence is named \opsimdbref{db:LongExptime}.
-Compared to Baseline Cadence:
+Compared to the Baseline Cadence:
 \begin{enumerate}
 \item The total number of visits is 1.42 million or 58\% of the visits
-obtained with Baseline Cadence, and the total open-shutter time is
-16\% higher than for Baseline Cadence. Both results are in good
+obtained with the Baseline Cadence, and the total open-shutter time is
+16\% higher than for the Baseline Cadence. Both results are in good
 agreement with above expectations.
 \item The median number of visits per night is 467, or 57\% of the
-value obtained with Baseline Cadence. The mean slew time is 0.5 sec
-longer than that obtained with Baseline Cadence.
+value obtained with the Baseline Cadence. The mean slew time is 0.5 sec
+longer than that obtained with the Baseline Cadence.
 \item This simulation has significantly different time allocation per
-proposal, compared to Baseline Cadence: 74\% spent on the Universal
-proposal (vs. 85\%) and 11\%  spent on the North Ecliptic proposal
+proposal, compared to the Baseline Cadence: 74\% spent on the WFD 
+proposal (vs. 85\%) and 11\%  spent on the North Ecliptic Spur proposal
 (vs. 6\%)  (with smaller and less important differences for other
 proposals). Because of these differences, {\it the results of this
 test may not be very robust.}
@@ -1012,7 +1013,7 @@ scattered light from bright stars, and more trailing of fast-moving asteroids.
 %(75, 105, 240, 240, 210, 210) for Universal-18-0824B proposal, (45,
 %63, 144, 144, 126, 126) should be used.  This way the additional
 %observing time due to improved surveying efficiency will be allocated
-%to all proposals, including Universal Cadence. {\it This simulation
+%to all proposals, including WFD Cadence. {\it This simulation
 %will be repeated with the same North Ecliptic Spur proposal as used
 %for \opsimdbref{db:baseCadence}, and with the modified requested number of
 %visits.}
@@ -1021,19 +1022,19 @@ scattered light from bright stars, and more trailing of fast-moving asteroids.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:DoubleUbandExptime]{kraken\_1045}{Baseline Cadence, but with doubled $u$-band exposure time.}
+\opsimdb[db:DoubleUbandExptime]{kraken\_1045}{Baseline Cadence, but with doubled $u$ band exposure time.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\bf Motivation and description:} The read-out noise in the u band is
+{\bf Motivation and description:} The read-out noise in the $u$ band is
 not negligible compared to the background noise as in other bands, due
-to darker u band sky. The current best estimates for survey
+to darker $u$ band sky. The current best estimates for survey
 performance (see Table 2 in the LSST overview paper, arXiv:0805.2366,
 version 3.1) indicate that the {\it coadded} depth in the $u$ band
 could be improved by 0.24 mag by increasing the exposure time per
 visit from 30 seconds to 60 seconds
 %\footnote{In the background-limited
 %case, a factor of two increase of the exposure time results in 0.38
-%mag deeper data. Since in the u band the read-out noise is not
+%mag deeper data. Since in the $u$ band the read-out noise is not
 %negligible compared to the background noise, the total noise increases
 %by less than a factor of $\sqrt{2}$ and there is an extra depth
 %improvement of 0.24 mag (see eq.~7 and Table 2 the overview paper).
@@ -1044,61 +1045,61 @@ visit from 30 seconds to 60 seconds
 (assuming the same total exposure time, which implies a
 decrease in the number of visits by a factor of two). To keep the
 total exposure time in the $u$ band unchanged, the requested number of
-visits in this simulation is decreased by a factor of 2 relative to
+visits in this simulation is decreased by a factor of 2 relative to the 
 Baseline Cadence specification. \\
 
-{\bf Expectations:} The total exposure time in the u band should
+{\bf Expectations:} The total exposure time in the $u$ band should
 remain unchanged. The single visits depth should be 0.38 mag deeper
 due to twice as long exposure time (the gain of 0.24 mag related to
 read-out noise effects is not yet implemented in the \OpSim code so MAF
 outputs may be a bit confusing). \\
 
 {\bf Analysis Results:} This simulated cadence is named \opsimdbref{db:DoubleUbandExptime}.  Compared
-to Baseline Cadence (\opsimdbref{db:baseCadence}):
+to the Baseline Cadence (\opsimdbref{db:baseCadence}):
 \begin{enumerate}
 \item The total number of visits is 2.32 million or 95\% of the
 Baseline Cadence values. The fraction of time allocated to the main
-survey is 84\% vs. 85\% for Baseline Cadence, and for the NE spur
+survey is 84\% vs. 85\% for the Baseline Cadence, and for the NES 
 proposal 7\% vs. 6\%. %Given that the NE spur proposal was different
 %than for \opsimdbref{db:baseCadence}, this simulation needs to be rerun.
 \end{enumerate}
 
-{\bf Conclusions:} The u band exposure time can be increased from 30
+{\bf Conclusions:} The $u$ band exposure time can be increased from 30
 seconds to 60 seconds without a significant impact on the survey
 efficiency. This change would result in a gain of about 0.2 mag in the
-coadded depth. However, the number of visits in the u band would be
+coadded depth. However, the number of visits in the $u$ band would be
 decreased by about a factor of two, with a negative impact on
 time-domain science.
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:DoubleUbandExptimewithNESpur]{kraken\_1059}{Baseline Cadence, but with doubled $u$-band exp.\ time.}
+\opsimdb[db:DoubleUbandExptimewithNESpur]{kraken\_1059}{Baseline Cadence, but with doubled $u$ band exp.\ time, halved num.\ visits.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Motivation and description:} This simulation is similar to
 \opsimdbref{db:DoubleUbandExptime}, which increased the exposure time
-per visit in the $u$-band from 30 seconds to 60 seconds, with the
+per visit in the $u$ band from 30 seconds to 60 seconds, with the
 requested number of visits decreased by a factor of 2. This change
 resulted in a gain of about 0.24 mag in the coadded depth. Since the
 number of $u$ band visits in \opsimdbref{db:DoubleUbandExptime} was
 decreased by about a factor of two, with a negative impact on
 time-domain science, this simulation does not change the nominal
 requested number of visits per field. Hence, the coadded depth in the
-u band in this simulation would be improved by about 0.6 mag. \\
+$u$ band in this simulation would be improved by about 0.6 mag. \\
 
 {\bf Expectations:}  Given that about 5\% of all visits are allocated
 to the $u$ band, the total number of visits may decrease by up to
 about 5\%, resulting in about 0.03 mag shallower data in bands other
-than u band. \\
+than $u$ band. \\
 
 {\bf Analysis Results:}  This simulated cadence is named
-\opsimdbref{db:DoubleUbandExptimewithNESpur}.  Compared to Baseline
+\opsimdbref{db:DoubleUbandExptimewithNESpur}.  Compared to the Baseline
 Cadence (\opsimdbref{db:baseCadence}):
 \begin{enumerate}
 \item The total number of visits is 2.36 million or 95.5\% of the
 Baseline Cadence values. The fraction of time allocated to the main
-survey is 85\% vs. 85\% for Baseline Cadence, and for the NE spur
+survey is 85\% vs. 85\% for the Baseline Cadence, and for the NES 
 proposal 7\% vs. 6\%.
 
 The median number of visits in the $grizy$ filters in the main survey
@@ -1116,12 +1117,12 @@ other bands (with about 0.01 mag shallower coadded depths).
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:UConlyRelaxedAirmass]{minion\_1022}{Only Universal Cadence, with relaxed airmass limit.}
+\opsimdb[db:UConlyRelaxedAirmass]{minion\_1022}{Only Wide, Fast, Deep Cadence, with relaxed airmass limit.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Motivation and description:}  What is the effect of changing the
 airmass limit from 1.5 to 2.0?  To avoid complicated analysis, use
-only Universal Cadence proposal and thus compare to
+only the WFD Cadence proposal and thus compare to
 \opsimdbref{db:opstwo}.
 
 
@@ -1131,8 +1132,8 @@ only Universal Cadence proposal and thus compare to
 identical to the loss of efficiency due to slightly longer mean slew
 time: 7.2 sec vs. 6.8 sec. In addition,
 \opsimdbref{db:UConlyRelaxedAirmass} has much worse airmass
-distributions than \opsimdbref{db:opstwo},  extending to the allowed
-maximum of 2.0. For example, the median for the r band and WFD fields
+distributions than \opsimdbref{db:opstwo}, extending to the allowed
+maximum of 2.0. For example, the median for the $r$ band and WFD fields
 is 1.30, compared to 1.19 for \opsimdbref{db:opstwo}.
 
 {\bf Conclusions:} This simulation confirms that it's a bad idea to
@@ -1146,11 +1147,11 @@ fields.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:UConlyStringentAirmass]{minion\_1017}{Only Universal Cadence, with stringent airmass limit.}
+\opsimdb[db:UConlyStringentAirmass]{minion\_1017}{Only Wide, Fast, Deep Cadence, with stringent airmass limit.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Motivation and description:} What is the effect of changing the airmass
-limit from 1.5 to 1.3? To avoid complicated analysis, we use only the Universal
+limit from 1.5 to 1.3? To avoid complicated analysis, we use only the WFD 
 Cadence proposal and thus compare to \opsimdbref{db:opstwo} (i.e., we are not
 including the North Ecliptic Spur, South Celestial Pole, or Deep Drilling Fields
 in this simulation).
@@ -1160,15 +1161,15 @@ in this simulation).
  \opsimdbref{db:opstwo}, it collected essentially the same number of
  visits. The mean slew time is also essentially unchanged (7.4 sec vs.
  7.2 sec). The airmass distributions is improved compared to
- \opsimdbref{db:opstwo}. For example, the median for the r band and
+ \opsimdbref{db:opstwo}. For example, the median for the $r$ band and
  WFD fields is 1.11, compared to 1.18 for \opsimdbref{db:opstwo}.  The
- limiting coadded depth in u and g bands is about 0.1 mag deeper than
- for Baseline Cadence.
+ limiting coadded depth in $u$ and $g$ bands is about 0.1 mag deeper than
+ for the Baseline Cadence.
 
 {\bf Conclusions:}  It is possible to achieve the same surveying
 efficiency with much more stringent airmass limit than 1.5, which was
 used in most simulations to date.  {\it Given this encouraging
-behavior, an analogous experiment should be executed for Baseline
+behavior, an analogous experiment should be executed for the Baseline
 Cadence (i.e.\ a simulation like \opsimdbref{db:baseCadence}, with airmass
 limit for the main survey set to 1.3) -- after the ``Western bias'' is
 fixed'.}
@@ -1177,12 +1178,12 @@ fixed'.}
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:NormalGalacticPlane]{astro\_lsst\_01\_1004}{Extend Universal
+\opsimdb[db:NormalGalacticPlane]{astro\_lsst\_01\_1004}{Extend Wide, Fast, Deep 
   Cadence to the Galactic Plane.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Motivation and description:} What is the effect of extending the
-`normal' Universal Cadence and number of exposures to the region of the
+`normal' WFD Cadence and number of exposures to the region of the
 Galactic Plane within the WFD declination limits?  Fields which were
 previously contained in the Galactic Plane proposal, but which fell
 within the range of the WFD declination limits, were reassigned to the
@@ -1191,13 +1192,13 @@ proposal. The remaining proposals were unchanged, and thus we compare
 this to the Baseline Cadence, \opsimdbref{db:baseCadence}.
 
  {\bf Analysis Results:}  This simulated cadence is named
- \opsimdbref{db:NormalGalacticPlane}. Compared with the
+ \opsimdbref{db:NormalGalacticPlane}. Compared with 
  \opsimdbref{db:baseCadence}, there are small to no changes in
  proposals other than the WFD and Galactic Plane proposals
  themselves. The fields which remained in the Galactic Plane proposal
  obtained the same number of visits as expected (30 in each
  bandpass). There were differences observed in the overall status of
- observations taken under the Universal cadence, in the WFD proposal,
+ observations taken under the WFD Cadence, in the WFD proposal,
  however. The number of fields included in the WFD proposal increased
  from 2293 to 2470 ($\sim8\%$), as 177 fields were moved from the Galactic Plane
  proposal into the WFD. The total number of observations obtained by
@@ -1207,8 +1208,8 @@ this to the Baseline Cadence, \opsimdbref{db:baseCadence}.
 
 {\bf Conclusions:} In both of these runs, the WFD proposal received
 about 85\% of the total number of visits in the survey. Extending the
-Universal cadence to the galactic plane, without increasing the
-overall priority of the Universal proposal, results in slightly fewer
+WFD Cadence to the Galactic Plane, without increasing the
+overall priority of the WFD proposal, results in slightly fewer
 visits per field as a result, by about 5\%, and a slightly lower
 coadded depth, by about 0.04 magnitudes. It is worthwhile to note that
 increasing the priority of the WFD proposal could increase the total
@@ -1257,9 +1258,9 @@ worthwhile trade.
 \def\secname{cadexp:summary}\label{sec:\secname}
 
 The most important conclusion of this chapter is that the upper limit on
-possible scheduling efficiency improvements for Baseline Cadence is
+possible scheduling efficiency improvements for the Baseline Cadence is
 close to 6\%. This conclusion is by and large based on the fact that
-the mean slew time for (candidate) Baseline Cadence is 6.9 sec, and
+the mean slew time for the Baseline Cadence is 6.9 sec, and
 thus only slightly larger than the design specifications for the
 system slew and settle time of 4.5 sec.  Nevertheless, there are a
 number of features to understand, and some to fix, and there is
@@ -1275,27 +1276,27 @@ The main other questions addressed here are:
 \begin{enumerate}
 
 \item {\it By what factor could we exceed the SRD design specification
-for the number of visits if only Universal Cadence proposal was
+for the number of visits if only the WFD Cadence proposal was
 implemented?}
 
-A simulation that only implemented Universal Cadence proposal exceeded
+A simulation that only implemented the WFD Cadence proposal exceeded
 the design specification for the number of visits by about 40\% (over
 the design specification for the sky area of 18,000 sq.deg.)
 
 \item {\it By what factor could we exceed the SRD design specification
-for the sky coverage if only Universal Cadence proposal was
+for the sky coverage if only the WFD Cadence proposal was
 implemented with the design specification for the number of visits?}
 
-This Pan-STARRS-like strategy results in about 40\% larger sky
+The Pan-STARRS-like strategy results in about 40\% larger sky
 coverage (about 25,000 sq.deg.), with the mean number of visits at
 92\% of the design specification. The total number of visits is the
-same as for Baseline Cadence, implying similar surveying efficiency.
+same as for the Baseline Cadence, implying similar surveying efficiency.
 
 Therefore, the available ``margin'' relative to the SRD design specifications
 for the main survey is equivalent to about 30-40\% larger sky coverage, or
 about 30-40\% more visits per field. The SRD assumes that 10\% margin
 will be available for other programs. The implied ``survey reserve'',
-relative to the Universal Cadence design specifications from the SRD, can
+relative to the WFD Cadence design specifications from the SRD, can
 be used to:
   \begin{enumerate}
   \item increase the number of visits per field over the WFD area,  or
@@ -1308,7 +1309,7 @@ be used to:
 \item {\it What is the effect of auxiliary proposals on surveying
 efficiency?}
 
-A comparison of simulations which only implemented Universal Cadence
+A comparison of simulations which only implemented the WFD Cadence
 proposal to those that included all other programs did not show a
 significant change of efficiency (older simulations, not analyzed
 here, showed increases in surveying efficiency of up to about 3\% due
@@ -1330,7 +1331,7 @@ Simple estimates based on comparing exposure (open shutter) and total
 visit times are in good agreement with simulations. Decreasing the
 visit exposure time to 20 seconds decreases the total open shutter
 time by 10\%, and increasing it to 60 seconds increases the total open
-shutter time by 16\%, relative to Baseline Cadence and standard
+shutter time by 16\%, relative to the Baseline Cadence and standard
 exposure time of 30 seconds. The number of visits changes by factors
 of 1.35 and 0.58.
 
@@ -1347,11 +1348,11 @@ the number of requested visits unchanged, is a decrease in the number
 of visits in other bands by about 6\%.
 
 
-\item {\it What is the impact of hard airmass limit, $X<1.5$, on the
+\item {\it What is the impact of the hard airmass limit, $X<1.5$, on the
 surveying efficiency?}
 
-It is a very bad idea to relax airmass limit! It is possible to
-achieve the same surveying efficiency with much more stringent airmass
+It is a very bad idea to relax the airmass limit! It is possible to
+achieve the same surveying efficiency with a much more stringent airmass
 limit than 1.5, which was used in most simulations to date.
 
 \end{enumerate}
