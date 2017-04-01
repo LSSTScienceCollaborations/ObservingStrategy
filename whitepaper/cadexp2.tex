@@ -24,10 +24,10 @@ In this chapter
 we analyze and compare the performance of a number of simulated LSST
 observing strategies (``cadences'')
 which were developed in support of the LSST 2015 Observing
-Strategy Workshop.  A candidate new Baseline Cadence,
-\opsimdbref{db:baseCadence}, was found adequate and is proposed as  a
-replacement for the previous Baseline Cadence (\texttt{opsim3.61}).
-Simulations that only implemented Universal Cadence proposal imply a
+Strategy Workshop.  The new Baseline Cadence,
+\opsimdbref{db:baseCadence}, was found adequate and has replaced the previous 
+Baseline Cadence (\texttt{opsim3.61}).
+Simulations that only implemented the Wide, Fast, Deep Cadence proposal imply a
 ``best-case scenario'' margin for the number of visits of about 40\% relative to the design
 specifications for the main survey sky coverage (18,000 sq.deg.) and the number of
 visits per field (825, summed over all bands) from the Science Requirements Document (SRD),
@@ -52,7 +52,7 @@ investigations and detailed coverage of special sky regions.
 \def\secname{cadexp:intro}\label{sec:\secname}
 
 With the release of the latest version of Operations Simulations
-(hereafter \OpSim) code (version 3.2.1)  for simulating LSST
+(hereafter \OpSim) code (version 3.3.5)  for simulating LSST
 deployment, and the active development of Metrics Analysis Framework
 (\MAF,  currently version 0.2) for analyzing \OpSim outputs, we can
 now begin to undertake systematic and  massive investigations of
@@ -71,7 +71,7 @@ the LSST 2015 meeting} in Bremerton, WA, August 20-22, 2015.
 In part as a preparation for the second workshop, the LSST
 Simulations Team and the Project Science Team have designed, executed
 and analyzed a number of simulated surveys.  The cadence strategies
-for these surveys, while similar to Baseline Cadence, are modified to
+for these surveys, while similar to the Baseline Cadence, are modified to
 study the impact of various strategy variations on the scientific
 potential of LSST\@. The cadence set also includes a candidate baseline
 cadence replacement.
@@ -90,30 +90,28 @@ reports.
 
 \section{The Operations Simulator}
 
-The Operations Simulator (OpSim) is a software tool that runs a survey simulation with given science driven desirables;
+The Operations Simulator (\OpSim) is a software tool that runs a survey simulation with given science driven desirables;
 a software model of the telescope and its control system; and models of weather and other environmental variables. The
-output of such a simulation is an “observation history”, which is a record of times, pointings and a record of associated
-environmental  data  and  telescope  activities  throughout  the  simulated  survey.  This history can be examined to assess
+output of such a simulation is an “observation history”, which is a record of times, pointings and associated environmental  data  and  telescope  activities  throughout  the  simulated  survey.  This history can be examined to assess
 whether the simulated survey would be useful for any particular purpose or interest.
 
-In most of the simulations discussed in this document, the OpSim scheduler balances several different observing proposals:
+In most of the simulations discussed in this document, the \OpSim scheduler balances several different observing proposals:
 \begin{itemize}
-\item {\bf Wide, Fast, Deep (WFD):} The WFD (also called the Universal Cadence) is the primary LSST survey, taking 85-95\% of the observing time and covering 18,000 square degrees of sky. This observing proposal is usually configured to attempt making observing pairs spaced $\sim40$\ minutes apart.  This temporal spacing is designed to optimize the detection of moving solar system objects. This proposal typically balances the six $ugrizy$ filters, observing each field every $\sim3$\ days.
-\item {\bf North Ecliptic Spur (NES):} The NES is an extension to reach the Ecliptic at higher airmass than the WFD survey typically covers.  The NES typically does not include the $u$-filter.
-\item {\bf Galactic Plane:} This proposal covers the region where LSST is expected to be highly confused by the density of stellar sources.  Typically takes fewer total exposures per field than the WFD survey.
-\item {\bf South Celestial Pole (SCP):} The SCP is an extension to higher airmass than the WFD to cover the region south of declination -60 degrees.  This proposal includes $ugrizy$, but takes fewer exposures per field than the WFD.
+\item {\bf Wide, Fast, Deep (WFD):} The WFD is the primary LSST survey, taking 85-95\% of the observing time and covering 18,000 square degrees of sky. This observing proposal is usually configured to attempt observing pairs spaced $\sim40$\ minutes apart.  This temporal spacing is designed to optimize the detection of moving solar system objects. This proposal typically balances the six $ugrizy$ filters, observing each field every $\sim3$\ days.
+\item {\bf North Ecliptic Spur (NES):} The NES is an extension to reach the Ecliptic at higher airmass than the WFD survey typically covers.  The NES typically does not include the $uy$ filters.
+\item {\bf Galactic Plane:} This proposal covers the region where LSST is expected to be highly confused by the density of stellar sources.  Typically takes fewer total exposures per field than the WFD survey and does not collect in pairs.
+\item {\bf South Celestial Pole (SCP):} The SCP is an extension to higher airmass than the WFD to cover the region south of declination -60 degrees.  This proposal includes $ugrizy$, but takes fewer exposures per field than the WFD and does not collect in pairs.
 \item {\bf Deep Drilling Fields (DD):} The Deep Drilling Fields are single pointings that are observed in extended sequences. The DD proposals often include certain filter combinations to ensure near-simultaneous color information is available for variable and transient objects. Four of the LSST Deep Drilling fields have been selected and announced. It is expected that there will be $\sim10$ DD fields selected for the final survey. Most of the simulations here include five DD fields.
 \end{itemize}
 
-One of the more unique constraints on the OpSim scheduler is that it highly penalizes, and thus avoids, filter changes.  With it's large field of view, LSST filter changes take about two minutes to complete. The filters are also large and heavy enough that we want to minimize wear on the filter changing mechanism.
+One of the more unique constraints on the \OpSim scheduler is that it highly penalizes, and thus avoids, filter changes.  With it's large field of view, LSST filter changes take about two minutes to complete. The filters are also large and heavy enough that we want to minimize wear on the filter changing mechanism.
 
 \section{The Baseline Observing Strategy}
 \def\secname{cadexp:baseline}\label{sec:\secname}
 
-The current ``official'' (managed by the LSST Change Control Board)
-Baseline Cadence, \texttt{opsim3.61},  was produced with an old version of
-\OpSim code. We first introduce a candidate replacement simulation
-that was produced using  the latest version (v3.2.1) of \OpSim code,
+The official (managed by the LSST Change Control Board)
+Baseline Cadence, \opsimdbref{db:baseCadence}, was produced by the 3.3.5 version of
+\OpSim. We first introduce the Baseline Cadence,
 and then proceed with the analysis of other simulations that modify baseline
 observing strategy in various informative ways. Suggestions for
 further tool development, and a summary of the main cadence questions
@@ -122,7 +120,7 @@ addressed here are available at the end of this document.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:baseCadence]{minion\_1016}{The New Baseline Cadence.}
+\opsimdb[db:baseCadence]{minion\_1016}{The Baseline Cadence.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   RunName minion_1016
 %   MinDist2Moon 30
@@ -190,15 +188,15 @@ coordinates.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-The candidate replacement ``Baseline Cadence'' candidate,
+The Baseline Cadence,
 \opsimdbref{db:baseCadence}, has the following basic
 properties\footnote{For MAF output, see \url{http://ls.st/5ep}}:
 \begin{enumerate}
 \item The total number of visits is 2,447,931, with 85.1\% spent on
-the Universal proposal (the main wide-fast-deep, WFD, survey), 6.5\% on the
-North Ecliptic proposal, 1.7\% on the Galactic plane proposal, 2.2\%
-on the South Celestial pole proposal, and 4.5\% on the Deep Drilling
-cosmology proposal (5 fields).\footnote{The community-contributed white papers leading to the
+the Universal proposal (the main Wide, Fast, Deep (WFD) survey), 6.5\% on the
+North Ecliptic Spur proposal, 1.7\% on the Galactic Plane proposal, 2.2\%
+on the South Celestial Pole proposal, and 4.5\% on the Deep Drilling
+Cosmology proposal (5 fields).\footnote{The community-contributed white papers leading to the
 deep drilling fields defined in the baseline cadence can be found at
 \url{https://lsstcorp.org/content/whitepapers32012}.}
 \item The median number of visits {\it per night} is 816, the range is
@@ -212,8 +210,7 @@ The 25\%-75\% quartiles for the number of filter changes per night are 2
 and 6, with the mean of 4.3 The total number of filter changes is 14,194.
 \item In the $r$ band, the median effective seeing for all proposals is 0.93 arcsec (for the more
 traditional geometric FWHM, the median is 0.81 arcsec).  We define ``geometric FWHM'' as the actual full-width-at-half-maximum.  The ``Effective FWHM'' is the FWHM of a single Gaussian describing the PSF and is typically $\sim15$\% larger than the geometric FWHM. The median
-airmass for all filters and all proposals is 1.23. The median single-visit $5\sigma$ depth for point sources in $r$-band in WFD
-area (also known as the Universal Cadence area) is 24.16 (using the best
+airmass for all filters and all proposals is 1.23. The median single-visit $5\sigma$ depth for point sources in $r$-band in the WFD area is 24.16 (using the best
 current estimate of the fiducial depth at airmass of one, $m_5(r)=24.39$,
 defined by the SRD Table 5). The variation of the median airmass for the $r$
 band observations with the position on the sky is shown in
@@ -256,7 +253,7 @@ in the $i$ band. The median airmass in the $urz$ bands is 1.25, 1.20 and 1.26
 21.1 mag/arcsec$^2$, and 17.3 mag/arcsec$^2$, respectively (for comparison,
 assumed dark sky brightness in the $ury$ bands is 23.0, 21.2 and 18.6
 mag/arcsec$^2$).  The current model sky brightness in the $y$ band is biased
-very high because most $y$ band (and many $z$ band) observations are taken in twilight where OpSim currently uses a very simple (and bright) sky model.
+very high because most $y$ band (and many $z$ band) observations are taken in twilight where \OpSim currently uses a very simple (and bright) sky model.
 \item Restricted to the Universal Cadence fields, a unique area of
 18,000 sq.deg. received at least 888 visits per field (summed over bands;
 the SRD design value is 825).
@@ -273,23 +270,23 @@ visualized in \autoref{fig:parapmenigma}.
 
 
 
-For comparison, the current Baseline Cadence, \texttt{opsim3.61}
-(obtained with old OpSim code), delivered 2,651,588 visits, or 8.3\%
+For comparison, the old Baseline Cadence, \texttt{opsim3.61}
+(obtained with old \OpSim code), delivered 2,651,588 visits, or 8.3\%
 more than \opsimdbref{db:baseCadence}  (this is due to known effects and
 changes in the code,  such as more pre-scheduled down time in the new
 version). Perhaps the most important (and undesired!) difference
-between the two simulations is that the new candidate Baseline Cadence
+between the two simulations is that the Baseline Cadence
 spent 6.5\% of the observing time on North Ecliptic Spur proposal (vs.
 4\% spent on the corresponding Universal North proposal in
 \texttt{opsim3.61}), and less than 90\% of time on the Universal
-proposal (the main wide-deep-fast survey).
+proposal (the main Wide, Fast, Deep survey).
 
 Analysis of the hour angle distribution, shown in
 \autoref{fig:HAenigma} and \autoref{fig:AltAzenigma}, reveals a strong
 bias towards observations west from the meridian for the main survey.
 {\it This pattern is not fully understood at this time} and may be
 caused by specific features of the cost function implemented in the
-OpSim code. Removing the bias has the potential to increase the survey depth by around $\sim10\%$ (the survey would reach it's current limiting depth in 9 years rather than 10).
+\OpSim code. Removing the bias has the potential to increase the survey depth by around $\sim10\%$ (the survey would reach it's current limiting depth in 9 years rather than 10).
 
 
 
@@ -314,7 +311,7 @@ all observations in the $r$ band. }
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Nvisits_as_function_of_Alt_Az_all_observations_HEAL_SkyMap.pdf}
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Nvisits_as_function_of_Alt_Az_r_Universal-18-0824B_HEAL_SkyMap.pdf}
 \vskip -0.1in
-\caption{The color-coded map in the left panel shows the visit count from
+\caption{The color-coded map in the left panel shows the visit count from the 
 Baseline Cadence simulation \opsimdbref{db:baseCadence} in the equal-area Lambert projection of the
 horizontal coordinate system (altitude-azimuth), with north on top and west towards the
 right, for all six bands and proposals (Universal, Galactic Plane, Deep Drilling
@@ -393,7 +390,7 @@ are discussed in \autoref{chp:transients}.
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Median_Intra-Night_Gap_HEAL_Histogram.pdf}
 \vskip -0.1in
 \caption{The median intra-night gap (or revisit time) is shown in Aitoff projection
-for all proposals and all filters for candidate Baseline Cadence \opsimdbref{db:baseCadence}.
+for all proposals and all filters for the Baseline Cadence \opsimdbref{db:baseCadence}.
 On average, when a field is observed multiple times in a night there is a 25 minute gap between the observations.}
 \label{fig:enigmaInterGapAll}
 \end{figure}
@@ -407,7 +404,7 @@ On average, when a field is observed multiple times in a night there is a 25 min
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Median_Inter-Night_Gap_HEAL_Histogram.pdf}
 \vskip -0.1in
 \caption{The median inter-night gap (or revisit time) is shown in Aitoff projection
-for all proposals and all filters for candidate Baseline Cadence \opsimdbref{db:baseCadence}.
+for all proposals and all filters for the Baseline Cadence \opsimdbref{db:baseCadence}.
 On average, fields in the main survey get revisited about every 3 days.}
 \label{fig:enigmaGapAll}
 \end{figure}
@@ -420,7 +417,7 @@ On average, fields in the main survey get revisited about every 3 days.}
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Median_Inter-Night_Gap_r_HEAL_Histogram.pdf}
 \vskip -0.1in
 \caption{The median inter-night gap for r band visits is shown in Aitoff projection
-for all proposals and all filters for candidate Baseline Cadence \opsimdbref{db:baseCadence}.
+for all proposals and all filters for the Baseline Cadence \opsimdbref{db:baseCadence}.
 On average, fields in the main survey get revisited in the r band about every two weeks.}
 \label{fig:enigmaGapr}
 \end{figure}
@@ -433,7 +430,7 @@ On average, fields in the main survey get revisited in the r band about every tw
 \includegraphics[angle=0,width=0.49\hsize,clip]{figs/cadence/minion_1016_Max_Inter-Night_Gap_HEAL_Histogram.pdf}
 \vskip -0.1in
 \caption{The maximum inter-night gap (or revisit time) is shown in Aitoff projection
-for all proposals and all filters for candidate Baseline Cadence \opsimdbref{db:baseCadence}.}
+for all proposals and all filters for the Baseline Cadence \opsimdbref{db:baseCadence}.}
 \label{fig:enigmaMAXGapAll}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -448,7 +445,7 @@ for all proposals and all filters for candidate Baseline Cadence \opsimdbref{db:
 \vskip -0.1in
 
 \caption{The fraction of simulated Type Ia SNe at a redshift of 0.5 detected
-pre-peak in any filter for candidate Baseline Cadence \opsimdbref{db:baseCadence}. About
+pre-peak in any filter for the Baseline Cadence \opsimdbref{db:baseCadence}. About
 40\% of all such SNe from the main survey will be detected before their
 maximum brightness.}
 \label{fig:enigmaEarlySNe}
@@ -462,16 +459,16 @@ maximum brightness.}
 Regarding the special proposals, here we only provide the basic
 performance parameters. With the exception of the Deep Drilling
 proposal, these proposals are essentially strawman placeholders. The
-North Ecliptic proposal (6.4\% of the observing time) obtained an
+North Ecliptic Spur proposal (6.4\% of the observing time) obtained an
 additional 300 visits per field, summed over $griz$ bands. These
 fields are placed along the northern part of the Ecliptic. The
-Galactic plane proposal (1.7\%) obtained 30 visits per band in all six
+Galactic Plane proposal (1.7\%) obtained 30 visits per band in all six
 bands, across the region extending in Galactic latitude 10 degrees
 from the Galactic center, with the boundary approaching the Galactic
 equator linearly with longitude, and the zone ending at $l=90$ deg.
-and at $l=270$ deg. The South Celestial pole proposal (2.1\%) obtained
+and at $l=270$ deg. The South Celestial Pole proposal (2.1\%) obtained
 30 visits per band in all six bands, for fields centers with Dec $<
--62.5$ deg. The Deep Drilling cosmology proposal (4.5\%) included 5
+-62.5$ deg. The Deep Drilling Cosmology proposal (4.5\%) included 5
 fields, with each obtaining several thousand visits per band. The
 coadded $5\sigma$ depths for these fields are much fainter than for
 the main survey: the median values are (27.8, 28.4, 28.6, 28.0, 27.6,
@@ -481,16 +478,17 @@ the main survey: the median values are (27.8, 28.4, 28.6, 28.0, 27.6,
 \vskip 0.2in
 {\bf Conclusions:}
 
-The candidate “Baseline Cadence”, \opsimdbref{db:baseCadence}, appears to
-be an adequate replacement for the current baseline cadence
+The Baseline Cadence, \opsimdbref{db:baseCadence}, appears to
+be an adequate replacement for the old baseline cadence
 (\texttt{opsim3.61}). Based on this preliminary analysis, there are no
 major problems with its performance. While there are patterns which
 are not fully understood (most notably the observing bias towards
 west),  or undesired (unnecessary revisits of the same field in the
 same night), \opsimdbref{db:baseCadence} is used as a benchmark cadence,
-and referred to as ``Baseline Cadence'',  in the rest of this
+and referred to as the ``Baseline Cadence'', in the rest of this
 document\footnote{This simulation was proposed by the Project Science Team
-for adoption as the new Baseline Cadence to the Change Control Board.}
+and adopted as the new Baseline Cadence by the Change Control Board in July 
+2016.}
 
 An important feature of \opsimdbref{db:baseCadence} simulation is that
 the mean slew time of 6.8 sec (which includes filter change time) is
