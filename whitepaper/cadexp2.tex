@@ -36,7 +36,7 @@ field of view, it takes 1.72 million visits to meet the SRD specifications when 
 redistribution of the field overlap coverage is assumed.}.
 This margin can be used to increase the sky coverage of the main survey, the total
 number of visits per field, or to enhance special programs, such as
-deep drilling fields and Galactic plane coverage. Several  simulations
+Deep Drilling fields and Galactic plane coverage. Several  simulations
 analyzed here quantitatively explore these strategic options.
 Additional simulations show that the effects of variations of the
 visit exposure time in the  range 20-60 seconds on surveying
@@ -51,9 +51,9 @@ investigations and detailed coverage of special sky regions.
 \section{Introduction}
 \def\secname{cadexp:intro}\label{sec:\secname}
 
-With the release of the latest version of Operations Simulations
+With the release of the latest version of the Operations Simulations
 (hereafter \OpSim) code (version 3.3.5)  for simulating LSST
-deployment, and the active development of Metrics Analysis Framework
+deployment, and the active development of the Metrics Analysis Framework
 (\MAF,  currently version 0.2) for analyzing \OpSim outputs, we can
 now begin to undertake systematic and  massive investigations of
 various LSST deployment strategies.
@@ -112,7 +112,7 @@ One of the more unique constraints on the \OpSim scheduler is that it highly pen
 The official (managed by the LSST Change Control Board)
 Baseline Cadence, \opsimdbref{db:baseCadence}, was produced by the 3.3.5 version of
 \OpSim. We first introduce the Baseline Cadence,
-and then proceed with the analysis of other simulations that modify baseline
+and then proceed with the analysis of other simulations that modify the baseline
 observing strategy in various informative ways. Suggestions for
 further tool development, and a summary of the main cadence questions
 addressed here are available at the end of this document.
@@ -163,7 +163,7 @@ across the sky for simulated cadence \opsimdbref{db:baseCadence} is shown
 in Aitoff projection of equatorial coordinates. The red line shows the Ecliptic and
 the blue line shows the Galactic equator (it bifurcates around the so-called
 ``Galactic confusion zone''). The median value across the WFD Cadence area
-is 27.1, with RMS scatter of only 0.04 mag. The small dark dots are deep drilling
+is 27.1, with RMS scatter of only 0.04 mag. The small dark dots are Deep Drilling
 fields, with a median $5\sigma$ depth of 28.6.}
 \label{fig:coaddm5enigma}
 \end{figure}
@@ -190,7 +190,8 @@ coordinates.}
 
 The Baseline Cadence,
 \opsimdbref{db:baseCadence}, has the following basic
-properties\footnote{For MAF output, see \url{http://ls.st/5ep}}:
+properties\footnote{For MAF output, see \url{http://ls.st/rik} and 
+\url{http://ls.st/xhx}}:
 \begin{enumerate}
 \item The total number of visits is 2,447,931, with 85.1\% spent on
 the Universal proposal (the main Wide, Fast, Deep (WFD) survey and henceforth 
@@ -198,9 +199,9 @@ known as the WFD proposal), 6.5\% on the
 North Ecliptic Spur proposal, 1.7\% on the Galactic Plane proposal, 2.2\%
 on the South Celestial Pole proposal, and 4.5\% on the Deep Drilling
 Cosmology proposal (5 fields).\footnote{The community-contributed white papers leading to the
-deep drilling fields defined in the baseline cadence can be found at
+Deep Drilling fields defined in the Baseline Cadence can be found at
 \url{https://lsstcorp.org/content/whitepapers32012}.}
-\item The median number of visits {\it per night} is 816, the range is
+\item The median number of visits per night is 816, the range is
 88 to 1,104, with 3,026 observing nights. The mean slew time is 6.8
 seconds (median: 4.8 sec) and the total exposure time is 73.4 Msec.
 The surveying efficiency, or the median total open shutter time (per night)
@@ -314,7 +315,7 @@ all observations in the $r$ band. }
 \caption{The color-coded map in the left panel shows the visit count from the 
 Baseline Cadence simulation \opsimdbref{db:baseCadence} in the equal-area Lambert projection of the
 horizontal coordinate system (altitude-azimuth), with north on top and west towards the
-right, for all six bands and proposals (Wide, Fast Deep, Galactic Plane, Deep Drilling
+right, for all six bands and proposals (Wide, Fast, Deep, Galactic Plane, Deep Drilling
 fields, North Ecliptic Spur, and South Celestial Pole region). The WFD Cadence was
 limited to airmass below 1.5, while other proposals sampled higher airmass, too (see the
 histogram in \autoref{fig:airmassenigma}).  Note the strong propensity of fields
@@ -480,7 +481,7 @@ the main survey: the median values are (27.8, 28.4, 28.6, 28.0, 27.6,
 
 The Baseline Cadence, \opsimdbref{db:baseCadence}, appears to
 be an adequate replacement for the old Baseline Cadence
-(\texttt{opsim3.61}). Based on this preliminary analysis, there are no
+(\texttt{opsim3.61}). Based on this analysis, there are no
 major problems with its performance. While there are patterns which
 are not fully understood (most notably the observing bias towards
 west),  or undesired (unnecessary revisits of the same field in the
@@ -676,7 +677,7 @@ visits, and/or iv) execute additional programs (the current baseline).
 \vskip -0.2in
 \caption{The trigonometric parallax errors (left) and proper motion errors (right) for simulated cadence
 minion\_1020 (``Pan-STARRS-like'' Cadence), normalized by the values for idealized perfectly optimized
-cadence, are shown in Aitoff projection of equatorial coordinates (compare to \autoref{fig:parapmenigma}). xxx--add in the histograms}
+cadence, are shown in Aitoff projection of equatorial coordinates (compare to \autoref{fig:parapmenigma}).}
 \label{fig:parapmenigma2}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
