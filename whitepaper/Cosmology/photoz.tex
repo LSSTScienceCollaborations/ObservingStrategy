@@ -52,15 +52,14 @@ requirements for the six-band system at least on the timescales of the
 yearly data releases.
 
 
-\textbf{Specifications.} The Science Requirements Document (SRD) defines
+\textbf{Specifications.} The Science Requirements Document (SRD; \citealt{LPM-17}) defines
 the minimum statistical specifications for photometric redshifts for an
 $i<25$, magnitude-limited sample of $4\times10^9$ galaxies from
-$0.3<z<3.0$ as: (1) the root-mean-square ($\sigma$) error in photo-$z$,
-divided by $1+z$, must be $\sigma < 0.02$; (2) the fraction of
-``catastrophic" outliers (defined as those with errors exceeding the
-larger of 0.06 or 3$\sigma$) must be $<10\%$; and (3) the average bias
-must be $\overline{z_{\rm true} - z_{\rm phot}} < 0.003$. With this in
-mind, we are developing software to show that our photo-$z$ algorithms
+$0.3<z<3.0$ as: (1) the root-mean-square of the error in photo-$z$
+must be $\sigma < 0.02$; (2) the fraction of outliers must be $<10\%$;
+and (3) the average bias must be $<0.003$.
+The details for how these statistics are calculated are discussed in the Metrics section below.
+With this in mind, we are developing software to show that our photo-$z$ algorithms
 can meet specifications for LSST baseline parameters and to simulate the
 impact of deviations from the 10-year baseline plan on photo-$z$
 statistics.
@@ -78,8 +77,8 @@ the number of visits per filter; the number of years of LSST
 observations that have passed (this can be a fraction of a year);
 systematic offsets to the magnitudes in each filter (default $=0$); and
 coefficients for the magnitude uncertainties in each filter (default
-$=1$).  Output for user analysis will include catalogs of $z_{\rm true}$
-$vs.$ $z_{\rm phot}$ and the aforementioned statistics on the photo-$z$
+$=1$).  Output for user analysis will include catalogs of $z_{\rm phot}$
+and the aforementioned statistics on the photo-$z$
 in any desired redshift range. For example, we will be able to vary the
 total number of $u$-band visits and examine how this affects the
 fraction of outliers at 1, 5, and 10-years of the survey. In this
@@ -88,44 +87,45 @@ modifiable, allowing us to test options in the algorithms against
 various LSST observing strategies.
 
 \textbf{Currently implemented photo-$z$ algorithm.} We draw $N_{\rm
-test}$ ``test" galaxies from the training catalog, determine their
+test}$ ``test" and $N_{\rm train}$ ``training" galaxies from a catalog of
+simulated galaxies (ensuring no overlap), determine their
 magnitude uncertainties as appropriate for the LSST parameters, randomly
 scatter their magnitudes to induce an observational error, and calculate
 the associated colors and color errors. We calculate the Mahalanobis
-distance in color space between each test galaxy and all training
+distance \citep{Mahalanobis1936} in color space between each test galaxy and all training
 catalog galaxies, and identify a color-matched subset using a threshold
-defined by the $\chi^2$ percentage point function at 95\%. We draw a
+defined by the $\chi^2$ percentage point function at 68\%. We draw a
 random color-matched training galaxy and use its redshift as the
 photo-$z$ for that test galaxy. We then calculate our statistical
 metrics on the photometric redshifts for the test sample, using each
 test galaxy's original catalog redshift as the ``true'' redshift. This
 process is open to substituting alternate photometric redshift
 algorithms, a variety of galaxy catalogs, and/or adding priors based on
-e.g., apparent magnitude.
-
+e.g., apparent magnitude. For this experiment, we always assume that the
+training set galaxies have photometric errors equivalent to that of the
+full-depth (i.e., 10-year) LSST catalog.
 
 \subsection{Metrics}
 
 The primary metrics we will use to evaluate LSST
 observing strategies with respect to the SRD photo-z specifications are the
-standard deviation, bias, and fraction of outliers. For all test
+robust standard deviation, the robus bias, and the fraction of outliers. For all test
 galaxies we calculate $\Delta z = (z_{\rm true} - z_{\rm phot}) /
-(1+z_{\rm true})$, and identify galaxies in the interquartile range of
-$\Delta z$. For these interquartile galaxies we determine the standard
-deviation, $\sigma$, of the $\Delta z$ distribution, and the bias as the
-median value of $\Delta z$. The interquartile range is used to exclude
-outliers from influencing these statistics; in other words, they
-represent the standard deviation and bias for the subset of ``good"
-photo-$z$'s. The ``catastrophic" outliers are identified as those with
-$\Delta z$ exceeding the larger of 0.06 or 3$\sigma$.
-
+(1+z_{\rm true})$, and identify galaxies in the interquartile range (IQR) of $\Delta z$.
+The robust standard deviation is calculated by dividing the full-width of the IQR by 1.349.
+The robust bias is the mean value of $\Delta z$ for IQR galaxies.
+Outlier galaxies are identified as those with $\Delta z$ exceeding the larger of 0.06 or 3$\sigma$, 
+where $\sigma$ is the robust standard deviation for all galaxies with $0.3 \leq z_{\rm phot} \leq 3.0$.
+The IQR is used to exclude outliers from influencing these statistics; in other words, the robust
+standard deviation and bias are for a subset of ``good" photo-$z$'s.
 
 \subsection{Initial Results}
 
 To demonstrate this software with a
 preliminary analysis, we apply the currently implemented photo-$z$
-algorithm to a catalog of galaxies that was originally created as an
-accurate cosmological simulation for Euclid. We first cull the catalog
+algorithm to a galaxy catalog based on the Millennium simulation \citep{2005Natur.435..629S}, which uses the galaxy formation models of \citep{2014MNRAS.439..264G} and was constructed using the lightcone techniques described by \cite{2013MNRAS.429..556M}.
+
+We first cull the catalog
 to galaxies with $i$-band magnitude $<25.3$, and then randomly draw
 training and test galaxy samples (with at least a 4$\times$ more
 galaxies in the training sample than the test sample). For this
