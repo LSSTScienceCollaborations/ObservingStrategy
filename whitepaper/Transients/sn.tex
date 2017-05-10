@@ -226,7 +226,7 @@ that for RG-WD progenitors the detectability is enhanced by $\sim50\%$ in
 Then we extract from the \texttt{transientAsciiMetric}, the number of
 \emph{color observations}, i.e. observations in 2 bands within 1 day
 of each other, each fulfilling our SNR requirement for the color for
-3-, 6-, and 12 months of survey in year 1. The SNR requirement is 
+3-, 6-, and 12 months of survey in year 1. The SNR requirement is
 translated into a requirement on each
 observation of $\mathrm{SNR} >
 \frac{1.0}{\sqrt{2.0}~\sigma_\mathrm{pop}}$.
@@ -251,7 +251,7 @@ With all these assumptions standing, we find that
  that only 3  months of survey are sufficient to provide a useful,
 sufficiently large and high SNR sample for our purpose, and improve on
 the findings on this topic that were achieved with SDSS~II~\citep{Hayden2010}, and 3 years
-of SNLS data~\citep{Bianco11} with \opsimdbref{db:baseCadence}! With our assumotions, 3 month of survey are just enough to reach the goal for 
+of SNLS data~\citep{Bianco11} with \opsimdbref{db:baseCadence}! With our assumotions, 3 month of survey are just enough to reach the goal for
 \opsimdbref{db:NEOswithVisitTriplets}. Although the \opsimdbref{db:NEOswithVisitTriplets} requires three visits, thus increasing the timeline for inter-night observations, it does not require the observations to be in any specific filters, and with the addition of the third visit within the same night, it increases the typical intra-night gap. It is possible that a detailed investigation of the true \emph{inter-night gap between different filters}, or the addition of a requirement in the cadence that one of the night filter be different than the others (possibly requiring an increased gap between two of the three images to minimize filter changes) would provide valuable data for this kind of studies even faster.
 
 \emph{This exercise demonstrates the power of LSST in collecting large high SNR samples of transients, but we must remind the reader that these conclusion, and generally large sample analysis, rely on having properly identified both the transient class (normal SN~Ia) and the date of maximum! This, once more, highlights the importance of prompt identification and classification: for SN~Ia this likely will limit this work to objects that could be identified spectroscopically, enhancing the importance of follow-up.}
@@ -261,7 +261,7 @@ of SNLS data~\citep{Bianco11} with \opsimdbref{db:baseCadence}! With our assumot
 in absence of shock interaction as a function of SNR (obtained by summing in quadrature the errors on $g'$
 and $r'$) for 3, 6 months, and a year of
 \opsimdbref{db:baseCadence} and \opsimdbref{db:NEOswithVisitTriplets}.
-% (ideally I will plot it for the other survey as well tonight) 
+% (ideally I will plot it for the other survey as well tonight)
 
 
 
@@ -271,7 +271,7 @@ and $r'$) for 3, 6 months, and a year of
 	  & {\rotatebox{90}{\opsimdbref{db:NEOswithVisitTriplets}}} & Notes \\
     \hline
     \thesection-1 & \footnotesize{\texttt{SNIaprojenitorMetric},
-    \texttt{1,000 detections}}      & 3 & 6 & 
+    \texttt{1,000 detections}}      & 3 & 6 &
     \footnotesize{Time to collect 1,000 relevant color observations in  years in 3 month intervals.} \\
     \thesection-2     & \footnotesize{\texttt{SNIaprojenitorMetric},
     \texttt{10,000 detections}}      & $>12$ & $>12$ &
@@ -290,3 +290,79 @@ and $r'$) for 3, 6 months, and a year of
     Normal SN Ia lightcure at z=0.5 detected by the \opsimdbref{db:baseCadence} cadence in 3 months, 6 months, and 1 year, that provide color information useful to constrain the progenitor distribution. Line are third-degree polynomial fits.}
   \label{fig:sndetect}
 \end{figure}
+
+% ====================================================================
+%
+% \subsection{Conclusions}
+%
+% Here we answer the ten questions posed in
+% \autoref{sec:intro:evaluation:caseConclusions}:
+%
+% \begin{description}
+%
+% \item[Q1:] {\it Does the science case place any constraints on the
+% tradeoff between the sky coverage and coadded depth? For example, should
+% the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+% Pan-STARRS) or the number of detected galaxies (the current baseline but
+% with 18,000 deg$^2$)?}
+%
+% \item[A1:] ...
+%
+% \item[Q2:] {\it Does the science case place any constraints on the
+% tradeoff between uniformity of sampling and frequency of  sampling? For
+% example, a rolling cadence can provide enhanced sample rates over a part
+% of the survey or the entire survey for a designated time at the cost of
+% reduced sample rate the rest of the time (while maintaining the nominal
+% total visit counts).}
+%
+% \item[A2:] ...
+%
+% \item[Q3:] {\it Does the science case place any constraints on the
+% tradeoff between the single-visit depth and the number of visits
+% (especially in the $u$-band where longer exposures would minimize the
+% impact of the readout noise)?}
+%
+% \item[A3:] ...
+%
+% \item[Q4:] {\it Does the science case place any constraints on the
+% Galactic plane coverage (spatial coverage, temporal sampling, visits per
+% band)?}
+%
+% \item[A4:] ...
+%
+% \item[Q5:] {\it Does the science case place any constraints on the
+% fraction of observing time allocated to each band?}
+%
+% \item[A5:] ...
+%
+% \item[Q6:] {\it Does the science case place any constraints on the
+% cadence for deep drilling fields?}
+%
+% \item[A6:] ...
+%
+% \item[Q7:] {\it Assuming two visits per night, would the science case
+% benefit if they are obtained in the same band or not?}
+%
+% \item[A7:] ...
+%
+% \item[Q8:] {\it Will the case science benefit from a special cadence
+% prescription during commissioning or early in the survey, such as:
+% acquiring a full 10-year count of visits for a small area (either in all
+% the bands or in a  selected set); a greatly enhanced cadence for a small
+% area?}
+%
+% \item[A8:] ...
+%
+% \item[Q9:] {\it Does the science case place any constraints on the
+% sampling of observing conditions (e.g., seeing, dark sky, airmass),
+% possibly as a function of band, etc.?}
+%
+% \item[A9:] ...
+%
+% \item[Q10:] {\it Does the case have science drivers that would require
+% real-time exposure time optimization to obtain nearly constant
+% single-visit limiting depth?}
+%
+% \item[A10:] ...
+%
+% \end{description}

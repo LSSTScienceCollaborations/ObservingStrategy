@@ -11,8 +11,8 @@
 %-
 % ====================================================================
 
-% \section{Mapping the Milky Way Halo}
-\subsection{Mapping the Milky Way Halo}
+\section{Mapping the Milky Way Halo}
+%\subsection{Mapping the Milky Way Halo}
 \def\secname{MW_Halo}\label{sec:\secname}
 
 \credit{akvivas}, \credit{ctslater}, \credit{dnidever}, \credit{bethwillman}
@@ -91,8 +91,8 @@ all the way to the outermost parts of the Galaxy.
 
 % --------------------------------------------------------------------
 
-% \subsection{Target measurements and discoveries}
-\subsubsection{Target measurements and discoveries}
+\subsection{Target measurements and discoveries}
+%\subsubsection{Target measurements and discoveries}
 \label{sec:\secname:MW_Halo_targets}
 
 Accurate measurement of these three tracer populations implies the following requirements:
@@ -159,8 +159,8 @@ by M-giants of different metallicities assuming limiting magnitude $u = 26.0$.
 
 % --------------------------------------------------------------------
 
-% \subsection{Metrics}
-\subsubsection{Metrics}
+\subsection{Metrics}
+% \subsubsection{Metrics}
 \label{sec:\secname:MW_Halo_metrics}
 
 \textbf{Star-Galaxy Separation:} For main sequence stars, the useful depth of
@@ -274,6 +274,86 @@ range.
 %made to improve this science project's figure of merit, and mitigate
 %the identified risks?
 
+% ====================================================================
+%
+\subsection{Conclusions}
+
+ Here we answer the ten questions posed in
+ \autoref{sec:intro:evaluation:caseConclusions}:
+
+ \begin{description}
+
+ \item[Q1:] {\it Does the science case place any constraints on the
+ tradeoff between the sky coverage and coadded depth? For example, should
+ the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+ Pan-STARRS) or the number of detected galaxies (the current baseline but
+ with 18,000 deg$^2$)?}
+
+\new{ \item[A1:] Yes - depth is generally preferred over increased
+  sky-coverage. Fields with insufficient depth for star-galaxy
+  separation to the required level of reliability will not be useful
+  for the science in this section. While we expect this will lead to
+  preference of achieving minimum depth vs expanding the sky-coverage,
+  at this date we do not yet have quantitative limits.}
+
+ \item[Q2:] {\it Does the science case place any constraints on the
+ tradeoff between uniformity of sampling and frequency of  sampling? For
+ example, a rolling cadence can provide enhanced sample rates over a part
+ of the survey or the entire survey for a designated time at the cost of
+ reduced sample rate the rest of the time (while maintaining the nominal
+ total visit counts).}
+
+\new{ \item[A2:] Uniformity is generally preferred over sampling frequency. Coverage over the full ten-year survey must be maintained at sufficient cadence to be sensitive to RR Lyrae and $\delta$~Scuti populations, which are identified by variability. For the other tracers (where co-added depth is the key requirement), sampling considerations are less important.}
+
+ \item[Q3:] {\it Does the science case place any constraints on the
+ tradeoff between the single-visit depth and the number of visits
+ (especially in the $u$-band where longer exposures would minimize the
+ impact of the readout noise)?}
+
+\new{  \item[A3:] Single-visit depth is not a strong requirement for Halo science. Depth in $u$-band is dependent on the choice of tracer. For example, selection of red giants depends on accurate $u$-band photometry, which is not the case for turnoff stars (Section \ref{sec:MW_Halo:MW_Halo_targets}).}
+
+ \item[Q4:] {\it Does the science case place any constraints on the
+ Galactic plane coverage (spatial coverage, temporal sampling, visits per
+ band)?}
+
+\new{ \item[A4:] No.}
+
+ \item[Q5:] {\it Does the science case place any constraints on the
+ fraction of observing time allocated to each band?}
+
+ \new{ \item[A5:] Yes, depending on the tracer population (Section \ref{sec:MW_Halo:MW_Halo_targets}).}
+
+ \item[Q6:] {\it Does the science case place any constraints on the
+ cadence for deep drilling fields?}
+
+\new{ \item[A6:] Not strongly. However, achieving huge co-added depth in fields containing Halo structure would greatly aid the understanding of observations of Halo structure throughout the main survey region.}
+
+ \item[Q7:] {\it Assuming two visits per night, would the science case
+ benefit if they are obtained in the same band or not?}
+
+\new{ \item[A7:] Halo science does not constrain the intra-night filter choice for a given field.}
+
+ \item[Q8:] {\it Will the case science benefit from a special cadence
+ prescription during commissioning or early in the survey, such as:
+ acquiring a full 10-year count of visits for a small area (either in all
+ the bands or in a  selected set); a greatly enhanced cadence for a small
+ area?}
+
+\new{  \item[A8:] It would be good to observe at least a few fields towards known Halo structure, with a high fraction of observations in the first year or so, to best characterize LSST's performance for Halo science and make predictions for the rest of the survey.}
+
+ \item[Q9:] {\it Does the science case place any constraints on the
+ sampling of observing conditions (e.g., seeing, dark sky, airmass),
+ possibly as a function of band, etc.?}
+
+\new{  \item[A9:] Generally best-seeing is preferred to enable star/galaxy separation. We do not at this date have quantitiative evaluations of a Figure of Merit for this, however.}
+
+ \item[Q10:] {\it Does the case have science drivers that would require
+ real-time exposure time optimization to obtain nearly constant
+ single-visit limiting depth?}
+
+\new{ \item[A10:] No.}
+
+\end{description}
 
 % ====================================================================
 
