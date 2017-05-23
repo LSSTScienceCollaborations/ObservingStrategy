@@ -1,0 +1,120 @@
+\begin{tabular}{ll}
+\toprule
+                             0 &                                                  1 \\
+\midrule
+         AccumulateCountMetric &                                               None \\
+            AccumulateM5Metric &           The 5-sigma depth accumulated over time. \\
+              AccumulateMetric &                     Calculate the accumulated stat \\
+    AccumulateUniformityMetric &              Make a 2D version of UniformityMetric \\
+      ActivityOverPeriodMetric &  Count the fraction of the orbit (when split in... \\
+        ActivityOverTimeMetric &  Count the time periods where we would have a c... \\
+                  AveGapMetric &  Calculate the gap between consecutive observat... \\
+             AveSlewFracMetric &  Average time for slew activity, multiplied by ... \\
+                    BaseMetric &                        Base class for the metrics. \\
+                  BaseMoMetric &          Base class for the moving object metrics. \\
+                  BinaryMetric &                         Return 1 if there is data. \\
+              ChipVendorMetric &  Examine coverage with a mixed chip vendor foca... \\
+                 Coaddm5Metric &  Calculate the coadded m5 value at this gridpoint. \\
+      ColorDeterminationMetric &  Identify SS objects which could have observati... \\
+            CompletenessMetric &  Compute the completeness and joint completenes... \\
+                   CountMetric &        Count the length of a simData column slice. \\
+              CountRatioMetric &  Count the length of a simData column slice, th... \\
+             CountSubsetMetric &  Count the length of a simData column slice whi... \\
+             CountUniqueMetric &                 Return the number of unique values \\
+       CrowdingMagUncertMetric &  Given a stellar magnitude, calculate the mean ... \\
+                CrowdingMetric &  Calculate whether the coadded depth in r has e... \\
+        DiscoveryChancesMetric &  Count the number of discovery opportunities fo... \\
+               DiscoveryMetric &  Identify the discovery opportunities for an SS... \\
+      Discovery\_EcLonLatMetric &  Returns the ecliptic lon/lat and solar elongat... \\
+     Discovery\_N\_ChancesMetric &  Calculates total number of discovery opportuni... \\
+         Discovery\_N\_ObsMetric &  Calculates the number of observations of SS ob... \\
+         Discovery\_RADecMetric &  Returns the RA/Dec of the i-th SS object disco... \\
+          Discovery\_TimeMetric &  Returns the time of the i-th SS object discove... \\
+      Discovery\_VelocityMetric &  Returns the sky velocity of the i-th SS object... \\
+                     FftMetric &   Calculate a truncated FFT of the exposure times. \\
+            FilterColorsMetric &  Calculate an RGBA value that accounts for the ... \\
+               FracAboveMetric &           Find the fraction above a certain value. \\
+               FracBelowMetric &           Find the fraction below a certain value. \\
+          FullRangeAngleMetric &  Calculate the full range of an angular (radian... \\
+               FullRangeMetric &     Calculate the range of a simData column slice. \\
+            HighVelocityMetric &  Count the number of times an asteroid is obser... \\
+      HighVelocityNightsMetric &  Count the number of nights an asteroid is obse... \\
+             HistogramM5Metric &  Calculate the coadded depth for each bin (e.g.... \\
+               HistogramMetric &                A wrapper to stats.binned\_statistic \\
+               HourglassMetric &       Plot the filters used as a function of time. \\
+                IdentityMetric &                     Return the input value itself. \\
+          InterNightGapsMetric &  Calculate the gap between consecutive observat... \\
+          IntraNightGapsMetric &  Calculate the gap between consecutive observat... \\
+            KnownObjectsMetric &  Identify SS objects which could be classified ... \\
+     LightcurveInversionMetric &  Identify SS objects which would have observati... \\
+              LongGapAGNMetric &  Compute the max delta-t and average of the top... \\
+          MagicDiscoveryMetric &  Count the number of SS object discovery opport... \\
+                     MaxMetric &   Calculate the maximum of a simData column slice. \\
+              MaxPercentMetric &  Return the percent of the data which has the m... \\
+   MaxStateChangesWithinMetric &  Compute the maximum number of changes of state... \\
+               MeanAngleMetric &  Calculate the mean of an angular (radians) sim... \\
+                    MeanMetric &      Calculate the mean of a simData column slice. \\
+            MeanValueAtHMetric &    Return the mean value of a metric at a given H. \\
+               MedianAbsMetric &  Calculate the median of the absolute value of ... \\
+                  MedianMetric &    Calculate the median of a simData column slice. \\
+                MetricRegistry &                                                    \\
+                     MinMetric &   Calculate the minimum of a simData column slice. \\
+    MinTimeBetweenStatesMetric &  Compute the minimum time between changes of st... \\
+    MoCompletenessAtTimeMetric &  Calculate the completeness (relative to the en... \\
+          MoCompletenessMetric &  Calculate the completeness (relative to the en... \\
+                NChangesMetric &  Compute the number of times a column value cha... \\
+                 NNightsMetric &  Count the number of distinct nights an SS obje... \\
+                    NObsMetric &  Count the total number of observations where a... \\
+           NObsNoSinglesMetric &  Count the number of observations for an SS obj... \\
+               NRevisitsMetric &  Calculate the number of (consecutive) visits w... \\
+ NStateChangesFasterThanMetric &  Compute the number of changes of state that ha... \\
+           NightPointingMetric &  Gather relevant information for a single night... \\
+               NormalizeMetric &       Return a metric values divided by 'normVal'. \\
+         NoutliersNsigmaMetric &  Calculate the number of visits outside the giv... \\
+                  ObsArcMetric &  Calculate the difference between the first and... \\
+     OpenShutterFractionMetric &  Compute the fraction of time the shutter is op... \\
+               OptimalM5Metric &  Compare the co-added depth of the survey to on... \\
+                    PairMetric &  Count the number of pairs that could be used f... \\
+        ParallaxCoverageMetric &  Check how well the parallax factor is distribu... \\
+        ParallaxDcrDegenMetric &  Compute parallax and DCR displacement vectors ... \\
+                ParallaxMetric &  Calculate the uncertainty in a parallax measur... \\
+                    PassMetric &                        Just pass the entire array. \\
+                PeakVMagMetric &  Pull out the peak V magnitude of all observati... \\
+              PercentileMetric &  Find the value of a column at a given percentile. \\
+                PhaseGapMetric &  Measure the maximum gap in phase coverage for ... \\
+            ProperMotionMetric &  Calculate the uncertainty in the fitted proper... \\
+               RadiusObsMetric &  Find the radius a point falls in the focal plane. \\
+            RapidRevisitMetric &  Calculate uniformity of time between consecuti... \\
+                RmsAngleMetric &  Calculate the standard deviation of an angular... \\
+                     RmsMetric &  Calculate the standard deviation of a simData ... \\
+               RobustRmsMetric &  Use the inter-quartile range of the data to es... \\
+        SlewContributionMetric &  Average time a slew sctivity is in the critica... \\
+             StarDensityMetric &  Interpolate the stellar luminosity function to... \\
+                     SumMetric &       Calculate the sum of a simData column slice. \\
+               SupernovaMetric &  Measure how many time series meet a given time... \\
+           TableFractionMetric &  Compute a table for the completeness of reques... \\
+                    TeffMetric &  Effective exposure time for a given set of vis... \\
+          TemplateExistsMetric &  Calculate the fraction of images with a previo... \\
+                   TgapsMetric &                    Histogram up all the time gaps  \\
+              TotalPowerMetric &  Calculate the total power in the angular power... \\
+               TransientMetric &  Calculate what fraction of the transients woul... \\
+              UniformityMetric &  Calculate how uniformly observations are space... \\
+             UniqueRatioMetric &  Return the number of unique values divided by ... \\
+                ValueAtHMetric &        Return the metric value at a given H value. \\
+             VisitGroupsMetric &  Count the number of visits per night within de... \\
+               ZeropointMetric &  Return a metric values with the addition of ze... \\
+                    baseMetric &                                               None \\
+              chipVendorMetric &                                               None \\
+                crowdingMetric &                                               None \\
+                  fOAreaMetric &                   Metric to calculate the FO Area. \\
+                    fONvMetric &                     Metric to calculate the FO\_Nv. \\
+                     fftMetric &                                               None \\
+               hourglassMetric &                                               None \\
+              longGapAGNMetric &                                               None \\
+           nightPointingMetric &                                               None \\
+               optimalM5Metric &                                               None \\
+                    pairMetric &                                               None \\
+                phaseGapMetric &                                               None \\
+             visitGroupsMetric &                                               None \\
+\bottomrule
+\end{tabular}
