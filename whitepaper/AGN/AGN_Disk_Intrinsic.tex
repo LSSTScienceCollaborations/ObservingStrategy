@@ -50,7 +50,7 @@ signal expected from the inspiral.
 
 In the deep-drilling fields (DDFs), the LSST sampling is expected to provide
 high-quality power spectral density (PSD) functions for $\approx10^{5} - 10^{6}$
-AGNs across $L$, $z$, and $\lambda_{\rm eff}$ down to frequencies of
+AGNs across wide ranges of $L$, $z$, and $\lambda_{\rm eff}$ down to frequencies of
 $\sim1$~d$^{-1}$. These PSDs can enhance AGN selection, and can be used to
 constrain the SMBH mass and accretion rate/mode, as well as enable searching for
 periodic or quasi-periodic oscillations (QPOs).
@@ -249,7 +249,7 @@ the cadence requirements for LSST.
 
 While additional work is required for determining the optimal cadence in order
 to fully capture AGN accretion physics and to enhance AGN selection, it is clear
-that even the nominal DDF sampling (in enigma\_1189) is barely sufficient, and
+that even the nominal DDF sampling (\eg in \opsimdbname{enigma\_1189}) is barely sufficient, and
 more frequent sampling would have been ideal. The ability to detect HFQPOs
 should also improve by increasing the sampling frequency, the amplitudes of such
 features are quite uncertain, as are the (short) duty cycles. Observations,
@@ -263,7 +263,7 @@ $\sim 3$).
 Specific metrics include:
 
 1) LSST can make a significant contribution using
-the C-ARMA formalism is the selection of low-luminosity AGN (LLAGN), i.e.,
+the C-ARMA formalism in the selection of low-luminosity AGN (LLAGN), i.e.,
 sources with $L \ltsim 10^{42}$~erg~s$^{-1}$, in the DDFs. Such sources are
 likely to be missed by traditional color-variability selection algorithms due to
 a strong host contribution. The metric to be developed should assess how the
@@ -338,50 +338,54 @@ total visit counts).}
 
 \item[A2:] Preliminary studies of the impact of the survey strategy on
 the disc-intrinsic variability science case indicate that
-\begin {enumerate}
-\item having the longest-possible temporal baseline i.e. interval between
-the first and last observations, is mandatory. The temporal baseline
-\emph{must} be atleast 2-3 $\times$ the longest timescale ($\tau$) built
+%\begin {enumerate}
+%\item
+having the longest-possible temporal baseline, i.e., the interval between
+the first and last observation, is mandatory. The temporal baseline
+\emph{must} be at least 2-3 $\times$ the longest timescale ($\tau$) built
 into the light curve \citep{2017A&A...597A.128K}. \citet{2010ApJ...721.1014M}
-find that $\max \tau \sim 1000$ d suggesting that survey strategy strategies
+find that $\max \tau \sim 1000$ d suggesting that survey strategies
 that do not visit every field at both the beginning and end of the survey will
 be sub-optimal for this science case.
-\item having intervals of time during which the survey is performed with
-higher sampling frequency is mandatory. Fig. \ref{fig:PSDvsFreq} demonstrates
+%\item
+%having intervals of time during which the survey is performed with
+%higher sampling frequency is mandatory.
+Furthermore, Fig. \ref{fig:PSDvsFreq} demonstrates
 that in order to accurately distinguish between various stochastic models of
 AGN variability, the high frequency behavior of the light curve must be
-sufficiently explored
-\end{enumerate}
-In summary, non-uniform sampling is preferred. Some variant of the rolling-cadences
-strategies that provides a long temporal baseline but also periods of very high
-frequency observing is ideal.
+sufficiently explored by utilizing the DDFs.
+%\end{enumerate}
+
+%In summary, non-uniform sampling is preferred. Some variant of the rolling-cadences
+%strategies that provides a long temporal baseline but also periods of very high
+%frequency observing is ideal.
 
 \item[Q3:] {\it Does the science case place any constraints on the
 tradeoff between the single-visit depth and the number of visits
 (especially in the $u$-band where longer exposures would minimize the
 impact of the readout noise)?}
 
-\item[A3:] The disc-intrinsic variability science case is best benefited by a
-survey strategy that maximizes the number of visits.
+\item[A3:] The science cases would benefit from maximizing the number of visits.
 
 \item[Q4:] {\it Does the science case place any constraints on the
 Galactic plane coverage (spatial coverage, temporal sampling, visits per
 band)?}
 
-\item[A4:] The disc-intrinsic variability science case places no constraints on
-the Galactic plane coverage.
+\item[A4:] AGN science cases would benefit from minimizing coverage of
+the Galactic plane.
 
 \item[Q5:] {\it Does the science case place any constraints on the
 fraction of observing time allocated to each band?}
 
-\item[A5:] The disc-intrinsic variability science case places no constraints on
+\item[A5:] In general, the science cases place no constraints on
 the fraction of observing time allocated to each band.
+For QPOs, however, shorter wavelengths are preferred.
 
 \item[Q6:] {\it Does the science case place any constraints on the
 cadence for deep drilling fields?}
 
-\item[A6:] The disc-intrinsic variability science case places the same constraints
-on the DDFs as it does on the WFD survey. See the answer to Q2 for details.
+\item[A6:] The science cases would benefit from maximizing the sampling
+rate in the DDFs to at least one visit per day in each band.
 
 \item[Q7:] {\it Assuming two visits per night, would the science case
 benefit if they are obtained in the same band or not?}
