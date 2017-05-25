@@ -11,7 +11,7 @@ import numpy as np
 pd.set_option('display.max_colwidth', -1)
 # Go through MAF and mafContrib and generate a table of all the available metrics
 
-def metrics2df(metricNames, metrics, wraplength=70):
+def metrics2df(metricNames, metrics, wraplength=80):
     metricList = [getattr(metrics, metric) for metric in metricNames]
 
     output = []
@@ -44,18 +44,19 @@ def metrics2df(metricNames, metrics, wraplength=70):
             for add_doc in doc[1:]:
                 output.append(['', add_doc])
 
+
     df = pd.DataFrame(output, columns=['Metric Name', 'Description'])
     return df
 
 
-def table_clean(df_table):
+def table_clean(df_table, title=''):
     """
     ugh, of course the default pandas table is stupid
     """
     df_table = df_table.replace('bottomrule', 'hline')
     df_table = df_table.replace('toprule', 'hline')
     df_table = df_table.replace('midrule', 'hline')
-    result = '\\begin{table}\n\\scriptsize\n' + df_table+'\n\\end{table}'
+    result = '\\begin{table}\n\\scriptsize\n\\caption{%s}\n'%title + df_table+'\n\\end{table}'
     #result = "\\begin{deluxetable}{ll} \n \\startdata \n" + df_table + "\n \\end{deluxetable}"
     # XXX insert \enddata before end tabular
     #loc = result.find('\\end{tabular}')
@@ -78,8 +79,6 @@ for metric in metricNames:
         pass
 metricNames = newList
 
-
-
 df = metrics2df(metricNames, metrics)
 block_size = 45
 ind = np.arange(0, len(df)+block_size, block_size)
@@ -87,9 +86,13 @@ ind[np.where(ind > len(df)-1)] = len(df)-1
 #import pdb ; pdb.set_trace()
 f = open('metrics_table.tex', 'w')
 for i in range(len(ind)-1):
+    if i ==0:
+        title = "MAF Metrics"
+    else:
+        title = "MAF Metrics Continued..."
     sub_df = df.iloc[ind[i]:ind[i+1]]
     latex_table = sub_df.to_latex(index=False)
-    latex_table = table_clean(latex_table)
+    latex_table = table_clean(latex_table, title=title)
     f.write(latex_table)
     f.write('\n')
 f.close()
@@ -102,7 +105,7 @@ metricNames = [metric for metric in metricNames if (metric[0] != metric[0].lower
 
 df = metrics2df(metricNames, mafc)
 latex_table = df.to_latex(index=False)
-latex_table = table_clean(latex_table)
+latex_table = table_clean(latex_table, title='Contributed MAF Metrics')
 f = open('contrib_metrics_table.tex', 'w')
 f.write(latex_table)
 f.close()

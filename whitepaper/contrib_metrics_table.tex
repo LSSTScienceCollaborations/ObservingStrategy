@@ -1,47 +1,46 @@
 \begin{table}
 \scriptsize
+\caption{Contributed MAF Metrics}
 \begin{tabular}{ll}
 \hline
-                 Metric Name &                                                             Description \\
+                 Metric Name &                                                                       Description \\
 \hline
- AngularSpreadMetric &  Compute the angular spread statistic which measures uniformity of a \\
-  &  distribution angles accounting for 2pi periodicity. \\
+ AngularSpreadMetric &  Compute the angular spread statistic which measures uniformity of a distribution \\
+  &  angles accounting for 2pi periodicity. \\
  CampaignLengthMetric &  The campaign length, in seasons. \\
  GRBTransientMetric &  Detections for on-axis GRB afterglows decaying as \\
- GalaxyCountsMetric &  Estimate the number of galaxies expected at a particular coadded \\
-  &  depth. \\
- GalaxyCountsMetric\_extended &  Estimate galaxy counts per HEALpix pixel. Accomodates for dust \\
-  &  extinction, magnitude cuts, \\
- MeanNightSeparationMetric &  The mean separation between nights within a season, and then the mean \\
-  &  over the campaign. \\
+ GalaxyCountsMetric &  Estimate the number of galaxies expected at a particular coadded depth. \\
+ GalaxyCountsMetric\_extended &  Estimate galaxy counts per HEALpix pixel. Accomodates for dust extinction, \\
+  &  magnitude cuts, \\
+ MeanNightSeparationMetric &  The mean separation between nights within a season, and then the mean over the \\
+  &  campaign. \\
  NumObsMetric &  Calculate the number of observations per data slice. \\
- PeriodDeviationMetric &  Measure the percentage deviation of recovered periods for pure sine \\
-  &  wave variability (in magnitude). \\
- PeriodicMetric &  From a set of observation times, uses code provided by Robert Siverd \\
-  &  (LCOGT) to calculate the spectral window function. \\
- PeriodicStarMetric &  At each slicePoint, run a Monte Carlo simulation to see how well a \\
-  &  periodic source can be fit. \\
+ PeriodDeviationMetric &  Measure the percentage deviation of recovered periods for pure sine wave \\
+  &  variability (in magnitude). \\
+ PeriodicMetric &  From a set of observation times, uses code provided by Robert Siverd (LCOGT) to \\
+  &  calculate the spectral window function. \\
+ PeriodicStarMetric &  At each slicePoint, run a Monte Carlo simulation to see how well a periodic \\
+  &  source can be fit. \\
  RelRmsMetric &  Relative scatter metric (RMS over median). \\
  SEDSNMetric &  Computes the S/Ns for a given SED. \\
- SNMetric &  Calculate the signal to noise metric in a given filter for an object \\
-  &  of a given magnitude. \\
+ SNMetric &  Calculate the signal to noise metric in a given filter for an object of a given \\
+  &  magnitude. \\
  SeasonLengthMetric &  The mean season length, in months. \\
- StarCountMassMetric &  Find the number of stars in a given field in the mass range fainter \\
-  &  than magnitude 16 and bright enough to have noise less than 0.03 in a \\
-  &  given band. M1 and M2 are the upper and lower limits of the mass \\
-  &  range. 'band' is the band to be observed. \\
- StarCountMetric &  Find the number of stars in a given field between D1 and D2 in \\
-  &  parsecs. \\
- TdcMetric &  Combine campaign length, season length, and mean night speartion into \\
-  &  a single metric. \\
- ThreshSEDSNMetric &  Computes the metric whether the S/N is bigger than the threshold in \\
-  &  all the bands for a given SED \\
- TransientAsciiMetric &  Based on the transientMetric, but uses an ascii input file and \\
-  &  provides option to write out lightcurve. \\
- TripletBandMetric &  Find the number of 'triplets' of three images taken in the same band, \\
-  &  based on user-selected minimum and maximum intervals (in hours), \\
- TripletMetric &  Find the number of 'triplets' of three images taken in any band, based \\
-  &  on user-selected minimum and maximum intervals (in hours), \\
+ StarCountMassMetric &  Find the number of stars in a given field in the mass range fainter than \\
+  &  magnitude 16 and bright enough to have noise less than 0.03 in a given band. M1 \\
+  &  and M2 are the upper and lower limits of the mass range. 'band' is the band to \\
+  &  be observed. \\
+ StarCountMetric &  Find the number of stars in a given field between D1 and D2 in parsecs. \\
+ TdcMetric &  Combine campaign length, season length, and mean night speartion into a single \\
+  &  metric. \\
+ ThreshSEDSNMetric &  Computes the metric whether the S/N is bigger than the threshold in all the \\
+  &  bands for a given SED \\
+ TransientAsciiMetric &  Based on the transientMetric, but uses an ascii input file and provides option \\
+  &  to write out lightcurve. \\
+ TripletBandMetric &  Find the number of 'triplets' of three images taken in the same band, based on \\
+  &  user-selected minimum and maximum intervals (in hours), \\
+ TripletMetric &  Find the number of 'triplets' of three images taken in any band, based on user- \\
+  &  selected minimum and maximum intervals (in hours), \\
 \hline
 \end{tabular}
 
