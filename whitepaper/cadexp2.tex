@@ -28,10 +28,10 @@ Strategy Workshop.  A candidate new Baseline Cadence,
 \opsimdbref{db:baseCadence}, was found adequate and is proposed as  a
 replacement for the previous Baseline Cadence (\texttt{opsim3.61}).
 Simulations that only implemented Universal Cadence proposal imply a
-``best-case scenario'' margin for the number of visits of about 40\% relative to the design
-specifications for the main survey sky coverage (18,000 sq.deg.) and the number of
+``best-case scenario'' margin for the number of visits of about 40\% relative to {\it the design
+specifications} for the main survey sky coverage (18,000 sq.deg.) and the number of
 visits per field (825, summed over all bands) from the Science Requirements Document (SRD),
-and assuming perfect dithering\footnote{With a fill factor of 0.9 for the 9.6 sq.deg. large
+and assuming {\it perfect} dithering\footnote{With a fill factor of 0.9 for the 9.6 sq.deg. large
 field of view, it takes 1.72 million visits to meet the SRD specifications when a perfect
 redistribution of the field overlap coverage is assumed.}.
 This margin can be used to increase the sky coverage of the main survey, the total
@@ -660,12 +660,15 @@ employed, the survey area could be increased by about 40\%, while
 still delivering the mean number of fields at the level of 81\% of
 that in Baseline Cadence (or 90\% of the SRD design value of 825).
 Hence, simulations \opsimdbref{db:opstwoPS} and \opsimdbref{db:opstwo}
-demonstrate that the ``survey reserve'', relative to the Universal
+demonstrate that this hypothethical ``survey reserve'', relative to the Universal
 Cadence design specifications from the SRD, can be used to i) increase
 the number of visits per field over the WFD area, or ii) increase the
 surveyed area while keeping the number of visits per field
 statistically unchanged, or iii) increase both area and the number of
 visits, and/or iv) execute additional programs (the current baseline).
+Of course, it must be remembered that this ``survey reserve'' is derived
+using design system characteristics and thus unproven at the time of
+writing. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1023,7 +1026,8 @@ scattered light from bright stars, and more trailing of fast-moving asteroids.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:DoubleUbandExptime]{kraken\_1045}{Baseline Cadence, but with doubled $u$-band exposure time.}
+\opsimdb[db:DoubleUbandExptime]{kraken\_1045}{Baseline Cadence, but with 
+doubled $u$-band exposure time and the number of visits halved.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Motivation and description:} The read-out noise in the u band is
@@ -1075,7 +1079,8 @@ time-domain science.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:DoubleUbandExptimewithNESpur]{kraken\_1059}{Baseline Cadence, but with doubled $u$-band exp.\ time.}
+\opsimdb[db:DoubleUbandExptimewithNESpur]{kraken\_1059}{Baseline Cadence, 
+but with doubled $u$-band exp.\ time and the same number of visits.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Motivation and description:} This simulation is similar to
@@ -1113,7 +1118,9 @@ mags deeper. The other filters reach the same depth within 1\%.
 30 seconds to 60 seconds, and the number of visits is kept unchanged,
 the single-visit and coadded depths would be improved by 0.6 mag. This
 improvement would come at the expense of about 1\% fewer visits in
-other bands (with about 0.01 mag shallower coadded depths).
+other bands (with about 0.01 mag shallower coadded depths). These 
+promising results should be considered when designing the next 
+incarnation of baseline cadence. 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

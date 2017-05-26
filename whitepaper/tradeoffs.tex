@@ -20,8 +20,8 @@ We then discuss the tensions and tradeoffs apparent in these findings.
 
 The authors of the preceding chapters' science cases provided guidelines
 for improving the baseline LSST cadence, via their 10-question
-conclusions sections.  We now summarize this input, extracting a number
-of recommendations. The most important action
+conclusions sections.  We summarize this input below, extracting a number
+of recommendations for the Project to consider. The most important suggested action
 items for the Project Team include i) implementation, analysis and
 optimization of the ``rolling cadence'' idea, and ii) execution of a
 {\it systematic} effort to further optimize the ultimate LSST cadence
@@ -29,7 +29,7 @@ strategy.
 
 \begin{description}
 
-\item[Q1:] {\it Increased sky coverage is possible, at the price of fewer visits per field and shallower 
+\item[Q1:] {\it Increased sky coverage is possible, at the price of fewer visits per field and shallower
 coadded depth.  Does the science case place any constraints on the
 tradeoff between the sky coverage and depth? For example, should
 the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
@@ -38,15 +38,18 @@ with 18,000 deg$^2$)?}
 
 A general conclusion from many science cases is that the sky coverage
 can be increased only if the baseline single-visit and coadded depths
-are achieved. Large-scale structure studies (\eg galaxy clustering, BAO) are 
-area-limited more than depth-limited and thus a larger sky coverage is 
-preferred for them. In time-domain cases where baseline performance is already 
-more than adequate, a larger sky coverage is preferred, too (AGNs, 
-extra-galactic cepheids); when cadence performance is barely sufficient 
-or insufficient, smaller sky area with better temporal sampling is suggested 
-(supernovae, strong lensing). 
+are not significantly degraded. For example, the number of galaxies above
+some threshold photo-z quality would increase by about 8\% with the larger
+sky area, but the redshift range would be diminished a bit. Large-scale
+structure studies (\eg galaxy clustering, BAO) are
+area-limited more than depth-limited and thus a larger sky coverage is
+preferred for them. In time-domain cases where the LSST baseline performance is already
+more than adequate, a larger sky coverage is preferred, too (AGNs,
+extra-galactic cepheids); when cadence performance is barely sufficient
+or insufficient, smaller sky area with better temporal sampling is suggested
+(supernovae, strong lensing).
 
-The Project could enable finer optimization by providing several more
+The Project would enable finer optimization by providing several more
 simulations with the sky coverage in between the baseline cadence sky
 area of 18,000 deg$^2$) and the so-called ``Pan-STARRS cadence'' with
 $\sim$30,000 deg$^2$. MAF analysis should be extended to compute the
@@ -63,11 +66,11 @@ total visit counts).}
 
 Supernovae provide one of the strongest drivers for the implementation of
 rolling cadence. A sampling rate about three times higher than the
-uniform sampling implemented in baseline cadence (revisit time scale of
+uniform sampling implemented in the baseline cadence (revisit time scale of
 about one day), and lasting 3-4 months, is suggested. It is likely that
 such a rolling cadence would also be beneficial for constraining
 asteroid orbits and for studying short time scale variables (e.g.
-cataclysmic variables). Extreme cases of rolling cadence, with about a
+cataclysmic variables). Extreme cases of a rolling cadence, with roughly
 week-long campaigns, for special sky regions would be beneficial for
 studies of Young Stellar Objects.
 
@@ -93,7 +96,7 @@ is not decreased (of course, increasing the number of $u$ band visits
 would be beneficial, too).
 
 Simulated cadence \opsimdbref{db:DoubleUbandExptimewithNESpur}, which
-doubled $u$ band exposures from 30 sec to 60 sec, demonstrated that an
+doubled the $u$ band exposures from 30 sec to 60 sec, demonstrated that an
 improvement of $u$ band single-visit depth of 0.6 mag can be achieved
 with only a minor loss of coadded depth and the number of visits in other bands.
 We advocate taking u band exposures that are long enough to be sky noise dominated.
@@ -118,27 +121,29 @@ different cadence strategies for the Galactic disk coverage.
 fraction of observing time allocated to each band?}
 
 Generally, the baseline time allocation is satisfactory. Potential
-improvements depend on tracer population and the required imaging depth.
+improvements depend on studied population (e.g. young stellar objects)
+and the required imaging depth.
 The case for deeper $u$ band data (both single-visit and coadded depth)
 has the strongest drivers. The fraction of visits in red bands should be
 higher for deep drilling fields than for the main survey.
 
 When producing a new generation of deep drilling simulations, the
-Project could revisit per-band exposure time allocation for deep
+Project should revisit the per-band exposure time allocation for deep
 drilling fields.
 
 
 \item[Q6:] {\it Does the science case place any constraints on the
 cadence for deep drilling fields?}
 
-The strongest constraints for deep drilling field (DDF) cadence come
-from supernovae. DDFs should be preferrably visited nightly, with the
-depth 1-2 mag deeper than for the main survey visits. At least a few
-extragalactic fields should be observed at any time in the survey, with
+The strongest constraints for the deep drilling field (DDF) cadence come
+from supernovae. DDFs should be preferrably visited nightly,
+1-2 mag deeper than for the main survey visits. At least a few
+extragalactic fields should be observed at any month, with
 each field observed for a ``season'' of length at least 120-150 days,
-staggering the fields so new fields cycle in as old ones cycle out. For
+staggering the fields so new fields cycle in as old ones cycle out, and
+avoiding the moon. For
 potential deep drilling fields within the inner Galactic plane, short
-temporal baselines would be very useful. In case of Young Stellar
+temporal baselines would be very useful. In the case of Young Stellar
 Populations, a single week of denser monitoring for specific regions is
 suggested, with the goal of having several observations per night,
 separated in time by at least an hour from one another.
@@ -148,8 +153,8 @@ separated in time by at least an hour from one another.
 benefit if they are obtained in the same band or not?}
 
 Most science cases prefer pairs of visits in two different bands.
-Exceptions are GRBs and asteroids; in case of GRBs the second visit is
-needed to promptly establish variability and in case of asteroids
+Exceptions are GRBs and asteroids; in the case of GRBs the second visit is
+needed to promptly establish variability and in the case of asteroids
 different bands result in decreased sample completeness.
 
 The Project could investigate whether it is possible to increase the
@@ -163,6 +168,10 @@ the bands or in a  selected set); a greatly enhanced cadence for a small
 area?}
 
 A lot of excellent suggestions were made by multiple science cases.
+For example, photo-z analysis would be greatly assisted by acquiring
+a full 10-yr count of visits for a small area during commissioning or
+early in the survey, especially if these regions would be also covered by
+existing spectroscopic surveys.
 The Comissioning Science Verification Team should incorporate these
 suggestions, when possible, into the Commissioning plan, as well
 as to socialize the existing plan for ``mini surveys'' with Science
@@ -205,11 +214,11 @@ the upcoming Zwicky Transient Facility.
 The LSST survey will be carried out with physical and operational
 constraints that will impact all science objectives.  These include
 design limitations, such as the aperture of the telescope, the detector
-noise and readout time, or the limited number of filter changes that
-can be supported during the lifetime of the survey.  They include:
-natural constraints, such as weather, impacting the quantity of useful observing time
-in 10 years; system optimization constraints, such as
-exposure time and sky coverage; and celestial configurations such as lunar position and phase.
+noise and readout time, and the limited number of filter changes that
+can be supported during the lifetime of the survey.  They include
+natural constraints, such as the quantity of useful observing time
+in 10 years, and system optimization constraints, such as
+exposure time and sky coverage.
 
 The LSST observing schedule can be designed, to some extent, to minimize
 the impact that these limitations have on any one or few science
@@ -412,10 +421,10 @@ Multi-color visits are a very special case for LSST.  Moving the large
 While filter change time is not fully characterized, it will be slow
 enough (about 2 minutes) that filter change frequency competes directly
 with efficiency. Also, the mechanisms have a finite lifetime - ``rapid''
-multi-color sequences will be the exception rather than the rule.  
+multi-color sequences will be the exception rather than the rule.
 
-Many science objectives for variable targets are best served by 
-simultaneous or nearly so color information.   It is important to identify 
+Many science objectives for variable targets are best served by
+simultaneous or nearly so color information.   It is important to identify
 when and if rapid filter changes are of value or essential, and to trade this
 against the efficiency and limited lifetime of the filter change mechanism.
 
