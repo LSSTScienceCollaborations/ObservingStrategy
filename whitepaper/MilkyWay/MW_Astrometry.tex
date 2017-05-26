@@ -659,10 +659,21 @@ the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
 Pan-STARRS) or the number of detected galaxies (the current baseline but
 with 18,000 deg$^2$)?}
 
-\new{ \item[A1:] In principle yes (in that we do not yet know what
-  combination of depth and volume would make the sample of stars in
-  the Solar Neighborhood the most complete, for example). However we
-  do not yet have the FoM evaluation to set quantitative constraints.}
+\item[A1:] We do expect tradeoffs between depth and sky
+  coverage, but we do not yet have the FoM evaluations to set
+  quantitative constraints. For example, we expect some combination of
+  depth and survey volume would optimize the completeness to objects
+  among the populations in the Solar Neighborhood. More generally,
+  perhaps, in fields away from the galactic mid-plane, the
+  lengthscales over which the proper motion zeropoints can be
+  accurately constrained will depend on the spatial density of
+  well-measured background galaxies (finer lengthscale corresponding
+  to greater co-added depth). The depth must therefore be sufficient
+  to sample enough of these galaxies to constrain variations of
+  astrometric zeropoint on lengthscales at least as fine as those
+  imposed by the LSST system itself (or the atmosphere, whichever is
+  finer). We anticipate that this tradeoff can be informed by
+  simulation under a set of assumptions for these variations.
 
 \item[Q2:] {\it Does the science case place any constraints on the
 tradeoff between uniformity of sampling and frequency of  sampling? For
@@ -671,32 +682,32 @@ of the survey or the entire survey for a designated time at the cost of
 reduced sample rate the rest of the time (while maintaining the nominal
 total visit counts).}
 
-\new{ \item[A2:] Yes, although for astrometry the language of these
+\item[A2:] Yes, although for astrometry the language of these
   constraints is slightly different. The parallactic ellipse must be
   sufficiently covered, the correlation between hour angle and
   parallax factor must be minimized, and the visits must be
   sufficiently distributed (both within a year and over the ten-year
-  time baseline) to produce the best precision in both proper motion and parallax. See Section \ref{sec:MW_Astrometry:MW_Astrometry_metrics}}.
+  time baseline) to produce the best precision in both proper motion and parallax. See Section \ref{sec:MW_Astrometry:MW_Astrometry_metrics}.
 
 \item[Q3:] {\it Does the science case place any constraints on the
 tradeoff between the single-visit depth and the number of visits
 (especially in the $u$-band where longer exposures would minimize the
 impact of the readout noise)?}
 
-\new{ \item[A3:] More visits at the standard exposure time are
+\item[A3:] More visits at the standard exposure time are
   generally preferred to a few visits with longer exposures, in order
   to achieve as broad a temporal coverage as possible (see Section
   \ref{sec:MW_Astrometry:MW_Astrometry_metrics}). The $u$-band itself
   is likely to be of limited use for astrometry (except possibly for
   extremely blue objects with little signal in any of the other
   filters) due to differential chromatic refraction (DCR), however of
-  course $u$-band will still be useful for photometric constraints.}
+  course $u$-band will still be useful for photometric constraints.
 
 \item[Q4:] {\it Does the science case place any constraints on the
 Galactic plane coverage (spatial coverage, temporal sampling, visits per
 band)?}
 
-\new{ \item[A4:] Not for the example of detecting Galactic Halo
+\item[A4:] Not for the example of detecting Galactic Halo
   streams via proper motions (Section
   \ref{sec:MW_Astrometry:MW_Astrometry_measurements}). For the Solar
   Neighborhood populations, avoiding the inner Galactic mid-plane
@@ -712,12 +723,12 @@ band)?}
   performance of the LSST software stack towards crowded fields is
   as-yet unknown. As this performance becomes better understood, it
   will be possible to quantitatively compare strategies for astrometry
-  towards the inner plane.}
+  towards the inner plane.
 
 \item[Q5:] {\it Does the science case place any constraints on the
 fraction of observing time allocated to each band?}
 
-\new{ \item[A5:] Yes, but indirectly through the requirement to
+\item[A5:] Yes, but indirectly through the requirement to
   measure all the populations of interest in the Solar
   Neighborhood. Making the assumption that this science case requires
   parallax measurements for extremely blue objects as well as
@@ -730,22 +741,22 @@ fraction of observing time allocated to each band?}
   recovery from various filter-distributions has yet to be assessed at
   this date. Further work is needed to determine if the increased
   sensitivity of $u$-band astrometry to DCR relative to $g$-band would
-  prevent its use for astrometry.}
+  prevent its use for astrometry.
 
 \item[Q6:] {\it Does the science case place any constraints on the
 cadence for deep drilling fields?}
 
-\new{ \item[A6:] If precision astrometry is desired for the deep drilling fields, then the considerations of Section \ref{sec:MW_Astrometry:MW_Astrometry_metrics} apply to those fields as well.}
+\item[A6:] If precision astrometry is desired for the deep drilling fields, then the considerations of Section \ref{sec:MW_Astrometry:MW_Astrometry_metrics} apply to those fields as well.
 
 \item[Q7:] {\it Assuming two visits per night, would the science case
 benefit if they are obtained in the same band or not?}
 
-\new{ \item[A7:] While detailed investigation is still pending, we
+\item[A7:] While detailed investigation is still pending, we
   expect that using different filters within the same night would be
   preferred to allow better constraint of DCR effects. Doing different
   filters on the same night might reduce the number of free parameters
   (like seeing and parallax factor) and give more pairs for direct
-  filter-A vs. filter-B astrometry.}
+  filter-A vs. filter-B astrometry.
 
 \item[Q8:] {\it Will the case science benefit from a special cadence
 prescription during commissioning or early in the survey, such as:
@@ -753,7 +764,7 @@ acquiring a full 10-year count of visits for a small area (either in all
 the bands or in a  selected set); a greatly enhanced cadence for a small
 area?}
 
-\new{ \item[A8:] It is vital for astrometry that at least a few fields
+\item[A8:] It is vital for astrometry that at least a few fields
   be observed with both sufficient parallax factor coverage and
   sufficient number of visits, early in the survey, to demonstrate
   parallax precision specified in the Science Requirements
@@ -767,22 +778,22 @@ area?}
   constrain the degree to which FWHM will actually predict the
   achieved astrometric precision (see also the answer to Q10
   below). This second set of requirements may also be best served by
-  dedicated commissioning observations.}
+  dedicated commissioning observations.
 
 \item[Q9:] {\it Does the science case place any constraints on the
 sampling of observing conditions (e.g., seeing, dark sky, airmass),
 possibly as a function of band, etc.?}
 
-\new{ \item[A9:] The observations need to be planned in such a way
+\item[A9:] The observations need to be planned in such a way
   that the correlation between parallax and hour-angle is minimized,
   to avoid deneracies between the motion due to atmospheric refraction and the motion that is sought due to parallax. See
-  Section \ref{sec:MW_Astrometry:MW_Astrometry_metrics}.}
+  Section \ref{sec:MW_Astrometry:MW_Astrometry_metrics}.
 
 \item[Q10:] {\it Does the case have science drivers that would require
 real-time exposure time optimization to obtain nearly constant
 single-visit limiting depth?}
 
-\new{ \item[A10:] While optimization on an exposure-to-exposure basis
+\item[A10:] While optimization on an exposure-to-exposure basis
   is perhaps unlikely, {\it selection} between observations in
   response to conditions (on a timescale of perhaps 10 minutes) will
   be crucial to maximize achieved astrometric precision. The rules by
@@ -791,7 +802,7 @@ single-visit limiting depth?}
   exposure times when the FWHM is narrow, this may not translate to
   improved astrometric error across an LSST chip, because the
   lengthscales of the turbulence driving the FWHM is not the same as
-  that of the turbulence driving astrometric error across an LSST chip.}
+  that of the turbulence driving astrometric error across an LSST chip.
 
 \end{description}
 

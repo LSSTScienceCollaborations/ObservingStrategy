@@ -1,13 +1,25 @@
 language: ruby
 rvm:
-- 1.9.3
+  - 1.9.3
 script: /bin/bash whitepaper/travis.sh
+# Install LaTeX. This usually takes ~1 hour... 
 before_install:
-- yes "" | sudo apt-add-repository ppa:texlive-backports/ppa
-- sudo apt-get update -y
-- sudo apt-get install -y
-     inkscape
-     texlive-fonts-recommended
-     texlive-latex-extra
-     texlive-latex-recommended
-     texlive-xetex
+  - sudo apt-get install -qq bc tcsh
+  - yes "" | sudo apt-add-repository ppa:texlive-backports/ppa
+  - sudo apt-get update -y
+  - sudo apt-get install -y
+       inkscape
+       texlive-fonts-recommended
+       texlive-latex-extra
+       texlive-latex-recommended
+       texlive-xetex
+# Finally, if it's the master branch being updated, force-push the
+# resulting PDF to an otherwise empty "pdf" branch:
+after_success: |
+    if [ -n "$GITHUB_API_KEY" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
+        git checkout --orphan pdf
+        git rm -rf .
+        git add -f whitepaper/LSST_Observing_Strategy_White_Paper.pdf
+        git -c user.name='travis' -c user.email='travis' commit -m init
+        git push -q -f https://drphilmarshall:$GITHUB_API_KEY@github.com/LSSTScienceCollaborations/ObservingStrategy pdf
+    fi

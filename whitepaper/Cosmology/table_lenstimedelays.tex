@@ -1,0 +1,99 @@
+
+\begin{table*}
+\begin{center}
+\caption{Lens Time Delay Metric Analysis Results.}
+\label{tab:lenstimedelays:results}
+\footnotesize
+\begin{tabularx}{\linewidth}{ccccccccc}
+  \hline
+  \OpSim run                       % runName -> db
+   & Filters                       % filters
+    & Years                        % Nyears
+     & \texttt{cadence}            % high_accuracy_cadence
+      & \texttt{season}            % high_accuracy_season
+       & \texttt{Area}             % high_accuracy_area
+        & \texttt{dtPrecision}     % precision_per_lens
+         & \texttt{Nlenses}        % N_lenses
+          & \texttt{DPrecision} \\ % distance_precision
+  \hline\hline
+  \opsimdbref{db:baseCadence}
+   & $ugrizy$
+    & $10$
+     & $4.5$
+      & $6.9$
+       & $19004$
+        & $5.09$
+         & $468$
+          & $0.24$ \\
+  \opsimdbref{db:baseCadence}
+   & $ugrizy$
+    & $5$
+     & $5.1$
+      & $6.6$
+       & $17926$
+        & $6.29$
+         & $472$
+          & $0.29$ \\
+  \opsimdbref{db:baseCadence}
+   & $ri$
+    & $10$
+     & $10.4$
+      & $5.7$
+       & $18566$
+        & $7.07$
+         & $285$
+          & $0.42$ \\
+  \opsimdbref{db:baseCadence}
+   & $ri$
+    & $5$
+     & $14.2$
+      & $5.5$
+       & $4841$
+        & $10.81$
+         & $75$
+          & $1.25$ \\
+  \opsimdbref{db:NoVisitPairs}
+   & $ugrizy$
+    & $10$
+     & $3.9$
+      & $7.1$
+       & $18907$
+        & $4.88$
+         & $502$
+          & $0.22$ \\
+  \opsimdbref{db:NoVisitPairs}
+   & $ugrizy$
+    & $5$
+     & $4.5$
+      & $6.7$
+       & $18093$
+        & $5.93$
+         & $504$
+          & $0.26$ \\
+  \opsimdbref{db:NoVisitPairs}
+   & $ri$
+    & $10$
+     & $8.5$
+      & $6.1$
+       & $18617$
+        & $6.34$
+         & $329$
+          & $0.35$ \\
+  \opsimdbref{db:NoVisitPairs}
+   & $ri$
+    & $5$
+     & $10.7$
+      & $6.1$
+       & $9358$
+        & $9.35$
+         & $171$
+          & $0.71$ \\
+   \hline
+
+\multicolumn{9}{p{\linewidth}}{\scriptsize Notes: see the text for
+the definitions of each metric.}
+\end{tabularx}
+\normalsize
+\medskip\\
+\end{center}
+\end{table*}
