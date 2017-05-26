@@ -46,16 +46,16 @@ days of the survey (see Figure
 metrics and FoMs (see for example the right panel of Figure
 \ref{fig:parapmenigma}).  In this section, we consider the scientific merit of \opsimdbref{db:baseCadence} and other observing strategies to study the relative impacts of the distribution and number of visits on Galactic plane science.
 
-\new{Before proceeding further, we point out that static science
-  should not be sacrificed completely to variability studies. LSST's
-  adopted observing strategy must retain at least a minimum total
-  depth in each of the $\left\{u,g,r,i,z\right\}$~filters, along all
-  sight-lines (and evaluated appropriately for each field), in order
-  to constrain and disentangle populations photometrically
-  \citep[e.g.][]{2012ApJ...757..166B, ivezic08}. If there are any filters deemed
-  unimportant to variability studies in any fields, it will likely be the
-  photometric confusion limit (for static science) that sets the
-  minimum total integration times in those cases.}
+Before proceeding further, we point out that static science should not
+be sacrificed completely to variability studies. LSST's adopted
+observing strategy must retain at least a minimum total depth in each
+of the $\left\{u,g,r,i,z,y\right\}$~filters, along all sight-lines
+(and evaluated appropriately for each field), in order to constrain
+and disentangle populations photometrically
+\citep[e.g.][]{2012ApJ...757..166B, ivezic08}. If there are any
+filters deemed unimportant to variability studies in any fields, it
+will likely be the photometric confusion limit (for static science)
+that sets the minimum total integration times in those cases.
 
 %Comparison is now needed of multiple
 %strategies that do allocate sufficient observations to inner-Plane
@@ -784,9 +784,9 @@ Whether the Plane should be observed as a ``special survey'' or
 \subsection{Conclusions}
 
 
-\new{We answer below the ten questions posed in \autoref{sec:intro:evaluation:caseConclusions}.}
+We answer below the ten questions posed in \autoref{sec:intro:evaluation:caseConclusions}.
 
-\new{While the science cases developed thus far all rest on
+While the science cases developed thus far all rest on
   variability sensitivity in one way or another, we should point out
   that static science should not be sacrificed completely to
   variability studies. This suggests that any strategy covering the
@@ -802,7 +802,7 @@ Whether the Plane should be observed as a ``special survey'' or
   actual set stellar populations along each line of sight. This figure of
   merit is likely to set the minimum acceptable exposure time in each
   filter in each field, and will require a combination of modeling
-  work and experience with existing photometric datasets.}
+  work and experience with existing photometric datasets.
 
 \begin{description}
 
@@ -812,7 +812,7 @@ Whether the Plane should be observed as a ``special survey'' or
  Pan-STARRS) or the number of detected galaxies (the current baseline but
  with 18,000 deg$^2$)?}
 
- \new{ \item[A1:] Figures of Merit addressing this question have been
+ \item[A1:] Figures of Merit addressing this question have been
    specified in this chapter, but implementation and execution are
    still in progress. Co-added depth is less important to this science
    than temporal coverage sufficient to measure the variability (at a
@@ -834,7 +834,7 @@ Whether the Plane should be observed as a ``special survey'' or
    inner Disk. One example might be an OpSim run with (say) 50\%
    spatial coverage at Wide-Fast-Deep-like levels, the other 50\% at
    coverage similar to the Plane mini-survey in
-   \opsimdbref{db:baseCadence}.}
+   \opsimdbref{db:baseCadence}.
 
  \item[Q2:] {\it Does the science case place any constraints on the
  tradeoff between uniformity of sampling and frequency of  sampling? For
@@ -843,7 +843,7 @@ Whether the Plane should be observed as a ``special survey'' or
  reduced sample rate the rest of the time (while maintaining the nominal
  total visit counts).}
 
-\new{ \item[A2:] The frequency of sampling is critical for the science
+\item[A2:] The frequency of sampling is critical for the science
   cases in this section. Requirement on the uniformity of the sampling
   depends on the timescale of variability and is difficult to project
   without the FoMs being evaluated. A FoM to quantify the relative
@@ -853,14 +853,14 @@ Whether the Plane should be observed as a ``special survey'' or
   full-time-baseline coverage of the inner Plane are also needed on
   which to run the FoMs. We require suggestions for OpSim runs with a
   variety of temporal distributions of exposures within the ten-year
-  survey lifetime, towards the inner Plane.}
+  survey lifetime, towards the inner Plane.
 
  \item[Q3:] {\it Does the science case place any constraints on the
  tradeoff between the single-visit depth and the number of visits
  (especially in the $u$-band where longer exposures would minimize the
  impact of the readout noise)?}
 
-\new{ \item[A3:] This depends strongly on the line of sight,
+\item[A3:] This depends strongly on the line of sight,
   especially in $u$-band where reddening reduces sensitivity in any
   individual visit (thus impacting variability-searches for very blue
   objects). In those lines of sight, however, large co-added depth in
@@ -878,23 +878,23 @@ Whether the Plane should be observed as a ``special survey'' or
   \opsimdbref{db:DoubleUbandExptimeSameVisits} in Chapter
   \ref{chp:cadexp}). To-date, sufficient OpSim coverage to answer
   questions about preferred coverage vs. filter for the inner plane
-  simply does not exist.}
+  simply does not exist.
 
  \item[Q4:] {\it Does the science case place any constraints on the
  Galactic plane coverage (spatial coverage, temporal sampling, visits per
  band)?}
 
- \new{\item[A4:] Yes. Galactic plane coverage (in most cases, the inner Plane)
+ \item[A4:] Yes. Galactic plane coverage (in most cases, the inner Plane)
    is crucial to all the science cases in this Section, because the
    populations of interest are not found outside the plane in
    sufficient numbers. In most cases, this coverage must be
    sufficiently spread out in time for discovery through variability
-   to be possible over the entire ten-year survey.}
+   to be possible over the entire ten-year survey.
 
  \item[Q5:] {\it Does the science case place any constraints on the
  fraction of observing time allocated to each band?}
 
-\new{ \item[A5:] We do not have quantitative answers to this question
+\item[A5:] We do not have quantitative answers to this question
   yet since the FoMs are mostly still under development and await a
   sufficient range of OpSim runs to answer them. {\it Qualitatively,}
   however: LSST will likely be crucial in providing prompt color
@@ -906,7 +906,7 @@ Whether the Plane should be observed as a ``special survey'' or
   in breaking degeneracies between distance and luminosity since the
   spectrum of the outbursts discussed here is typically vega-like (so
   any unusual $r-i$~color should be the result largely of interstellar
-  reddening). The minimum observing time allocated to each band is likely to be set by the requirement to retain static science goals such as population dissection \citep[see, e.g.][]{ivezic08}; at the present date, however, figures of merit for static science in the inner plane have not yet been evaluated.}
+  reddening). The minimum observing time allocated to each band is likely to be set by the requirement to retain static science goals such as population dissection \citep[see, e.g.][]{ivezic08}; at the present date, however, figures of merit for static science in the inner plane have not yet been evaluated.
 %To be most generally useful for static population
 %  studies, such as those constraining reddening, $T_{eff}$~and
 %  $[Fe/H]$~photometrically following the manner of the SDSS tomography
@@ -917,7 +917,7 @@ Whether the Plane should be observed as a ``special survey'' or
 
 \item[Q6:] {\it Does the science case place any constraints on the cadence for deep drilling fields?}
 
-\new{ \item[A6:] The science cases in this chapter do not place any
+\item[A6:] The science cases in this chapter do not place any
   constraints on the deep-drilling fields already identified. Were
   deep-drilling-like cadence to be possible for a few fields within
   the inner plane, however, it would be hugely useful. For example, to
@@ -927,12 +927,12 @@ Whether the Plane should be observed as a ``special survey'' or
   baselines that short in order to reliably recover periods between 80
   minutes and 2 hours, where the majority of CVs (and potentially a
   new population of X-ray faint short period XRB outbursts) should
-  be. These considerations also apply to any LSST observational campaign that will complement WFIRST observations of the Bulge (Section \ref{sec:wfirst:microlensing}).}
+  be. These considerations also apply to any LSST observational campaign that will complement WFIRST observations of the Bulge (Section \ref{sec:wfirst:microlensing}).
 
  \item[Q7:] {\it Assuming two visits per night, would the science case
  benefit if they are obtained in the same band or not?}
 
-\new{ \item[A7:] Qualitatively, visits in two different filters are weakly preferred. Science cases requiring discrimination of
+\item[A7:] Qualitatively, visits in two different filters are weakly preferred. Science cases requiring discrimination of
    the class of object would benefit from color information afforded
    by observing in different filters during the same night, and for
    most of the science cases in this section the variation plays out
@@ -941,7 +941,7 @@ Whether the Plane should be observed as a ``special survey'' or
    sources), observations at the same filter would be preferred. If
    the color variation with phase is smaller than the orbital
    variations, then having the colors could give the best of both
-   worlds.}
+   worlds.
 
  \item[Q8:] {\it Will the case science benefit from a special cadence
  prescription during commissioning or early in the survey, such as:
@@ -949,7 +949,7 @@ Whether the Plane should be observed as a ``special survey'' or
  the bands or in a  selected set); a greatly enhanced cadence for a small
  area?}
 
-\new{ \item[A8:] No, as long as all fields obtain at least some
+\item[A8:] No, as long as all fields obtain at least some
   coverage in all filters throughout the full 10-year survey
   lifetime. Our expectation is that a given field will experience
   nonuniform cadence over the ten-year survey, with some intervals of
@@ -957,28 +957,28 @@ Whether the Plane should be observed as a ``special survey'' or
   useful for some fields to experience their high-cadence intervals
   during the first year in order to better understand detectability
   and systematics, and to update any population simulations as LSST's
-  performance is better constrained.}
+  performance is better constrained.
 
  \item[Q9:] {\it Does the science case place any constraints on the
  sampling of observing conditions (e.g., seeing, dark sky, airmass),
  possibly as a function of band, etc.?}
 
-\new{ \item[A9:] At this stage we do not believe that any special
+\item[A9:] At this stage we do not believe that any special
    conditions are required. The inner plane is somewhat unusual in
    that it will likely be confusion-limited rather than
    sky-limited. Thus better seeing would obviously be better for the
    science, however we do not at this stage have any quantitative
-   constraints. }
+   constraints. 
 
  \item[Q10:] {\it Does the case have science drivers that would require
  real-time exposure time optimization to obtain nearly constant
  single-visit limiting depth?}
 
-\new{ \item[A10:] Not as long as the achieved limiting depth is accurately
+\item[A10:] Not as long as the achieved limiting depth is accurately
    understood once observations have been taken. In these
    confusion-limited regions, this question is probably constrained
    more by the performance of the photometry software than by
-   real-time observing considerations.}
+   real-time observing considerations.
 
  \end{description}
 
