@@ -32,7 +32,7 @@
 % A short preamble goes here. What's the context for this science
 % project? Where does it fit in the big picture?
 
-The WFIRST SN survey seeks to measure thousands of SNe Ia with excellent systematics control over a two-year period. The Science Definition Team (SDT) outlined a three-tiered cadenced imaging survey: wide to $z=0.4$ (27.44 square degrees), medium to $z=0.8$ (8.96 square degrees), deep to $z=1.7$ (5.04 square degrees). SNe discovered in the imaging would followed with IFU spectrophotometry, helping to monitor changes in SN physical parameters and the extinction distribution with redshift. However, due to the slew time (now believed to be higher than was used in the SDT survey), and high read noise in short exposures, the wide survey was very inefficient, spending a bit more than half of its time on slews, while the medium survey would spend a significant fraction of its time slewing. However, the LSST DDFs offer a path to high signal-to-noise, well calibrated, multi-band optical imaging over an even larger area than WFIRST can survey. If the wide and medium tiers are replaced with LSST DDF discoveries, then WFIRST can offer spectrophotometry (with good host-galaxy subtraction) for $\sim$ 2,000 LSST SNe, with screening spectra for $\sim$ 1-2,000 more. As the WFI and IFU operate in parallel, this survey could provide sparsely sampled NIR imaging for $\sim$ 5,000 SNe up to $z = 1$ at the same time as the spectroscopy. The joint survey would thus provide systematics control (almost certainly better than either survey alone), as well as a cross-check of LSST photometric typing and host-galaxy-only redshift assignment.
+The WFIRST SN survey seeks to measure thousands of SNe Ia with excellent systematics control over a two-year period. The Science Definition Team (SDT) outlined a three-tiered cadenced imaging survey: wide to $z=0.4$ (27.44 square degrees), medium to $z=0.8$ (8.96 square degrees), deep to $z=1.7$ (5.04 square degrees). SNe discovered in the imaging would be followed with IFU spectrophotometry, helping to monitor changes in SN physical parameters and the extinction distribution with redshift. However, due to the slew time and high read noise in short exposures, the wide survey would be very inefficient, spending a bit more than half of its time on slews, while the medium survey would spend a significant fraction of its time slewing. However, the LSST DDFs offer a path to high signal-to-noise, well calibrated, multi-band optical imaging over an even larger area than WFIRST can survey. If the wide and medium tiers are replaced with LSST DDF discoveries, then WFIRST can offer spectrophotometry (with good host-galaxy subtraction) for $\sim$ 2,000 LSST SNe, with screening spectra for $\sim$ 1-2,000 more. As the WFI and IFU operate in parallel, this survey could provide sparsely sampled NIR imaging for $\sim$ 5,000 SNe up to $z = 1$ at the same time as the spectroscopy. The joint survey would thus provide systematics control (almost certainly better than either survey alone), as well as a cross-check of LSST photometric typing and host-galaxy-only redshift assignment.
 
 
 % --------------------------------------------------------------------
@@ -61,9 +61,9 @@ The targets of the measurements are related to those enumerated in Section~\ref{
 % Quantifying the response via MAF metrics: definition of the metrics,
 % and any derived overall figure of merit.
 
-The primary metrics are based on constraining cosmological parameters; the DETF FoM is standard (although other cosmological FoMs can be constructed using eigenmode constraints). For the joint observations proposed here, we anticipate an increase in the FoM of about 20\% (DR is still working to optimize the WFIRST side of the joint survey for the best possible constraints).
+The primary metrics are based on constraining cosmological parameters; the DETF FoM is standard. For the joint observations proposed here, this FoM increases about 20\%, from $\sim 300$ for WFIRST alone (with a Stage IV CMB constraint) to $\sim 370$. However, the number of SNe at $z \sim 0.5$ increases by $\sim$ 50\% over a WFIRST-only survey, improving some $w(z)$-derived FoM values by 40\%.
 
-The cosmological metric will essentially depend on the number of SNe meeting the above targets. It will degrade if CC SNe mistakenly sent to WFIRST for followup, if SNe Ia are sent to WFIRST but the LC is lost due to weather gaps, or if the cadence and depth simply do not allow the measurement of light curve parameters. These metrics will be strongly related to those in Section~\ref{sec:supernovae:metrics}, but with more emphasis on the rising portion of the light curve.
+The cosmological metric will essentially depend on the number of SNe meeting the above targets. It will degrade if core-collapse SNe are mistakenly sent to WFIRST for followup, if SNe Ia are sent to WFIRST but the LSST light curve is lost due to weather gaps, or if the cadence and depth simply do not allow the measurement of light curve parameters. These metrics will be strongly related to those in Section~\ref{sec:supernovae:metrics}, but with more emphasis on the rising portion of the light curve.
 
 % --------------------------------------------------------------------
 
@@ -85,79 +85,72 @@ The cosmological metric will essentially depend on the number of SNe meeting the
 
 % ====================================================================
 %
-% \subsection{Conclusions}
-%
-% Here we answer the ten questions posed in
-% \autoref{sec:intro:evaluation:caseConclusions}:
-%
-% \begin{description}
-%
-% \item[Q1:] {\it Does the science case place any constraints on the
-% tradeoff between the sky coverage and coadded depth? For example, should
-% the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline but
-% with 18,000 deg$^2$)?}
-%
-% \item[A1:] ...
-%
-% \item[Q2:] {\it Does the science case place any constraints on the
-% tradeoff between uniformity of sampling and frequency of  sampling? For
-% example, a rolling cadence can provide enhanced sample rates over a part
-% of the survey or the entire survey for a designated time at the cost of
-% reduced sample rate the rest of the time (while maintaining the nominal
-% total visit counts).}
-%
-% \item[A2:] ...
-%
-% \item[Q3:] {\it Does the science case place any constraints on the
-% tradeoff between the single-visit depth and the number of visits
-% (especially in the $u$-band where longer exposures would minimize the
-% impact of the readout noise)?}
-%
-% \item[A3:] ...
-%
-% \item[Q4:] {\it Does the science case place any constraints on the
-% Galactic plane coverage (spatial coverage, temporal sampling, visits per
-% band)?}
-%
-% \item[A4:] ...
-%
-% \item[Q5:] {\it Does the science case place any constraints on the
-% fraction of observing time allocated to each band?}
-%
-% \item[A5:] ...
-%
-% \item[Q6:] {\it Does the science case place any constraints on the
-% cadence for deep drilling fields?}
-%
-% \item[A6:] ...
-%
-% \item[Q7:] {\it Assuming two visits per night, would the science case
-% benefit if they are obtained in the same band or not?}
-%
-% \item[A7:] ...
-%
-% \item[Q8:] {\it Will the case science benefit from a special cadence
-% prescription during commissioning or early in the survey, such as:
-% acquiring a full 10-year count of visits for a small area (either in all
-% the bands or in a  selected set); a greatly enhanced cadence for a small
-% area?}
-%
-% \item[A8:] ...
-%
-% \item[Q9:] {\it Does the science case place any constraints on the
-% sampling of observing conditions (e.g., seeing, dark sky, airmass),
-% possibly as a function of band, etc.?}
-%
-% \item[A9:] ...
-%
-% \item[Q10:] {\it Does the case have science drivers that would require
-% real-time exposure time optimization to obtain nearly constant
-% single-visit limiting depth?}
-%
-% \item[A10:] ...
-%
-% \end{description}
+\subsection{Conclusions}
+
+Here we answer the ten questions posed in
+\autoref{sec:intro:evaluation:caseConclusions}. As WFIRST will only cadence a few 10's of square degrees, we assume that the overlap region will be contained in the DDFs, not in the main survey. We thus place no constraints on the main survey.
+
+\begin{description}
+
+\item[Q1:] {\it Does the science case place any constraints on the
+tradeoff between the sky coverage and coadded depth?}
+
+\item[A1:] In terms of direct overlap with WFIRST, there is no constraint. There are secondary considerations (such as constraining  Milky Way extinction and probing isotropy) that may prefer a larger number of square degrees, but this has not been investigated.
+
+\item[Q2:] {\it Does the science case place any constraints on the
+tradeoff between uniformity of sampling and frequency of sampling?}
+
+\item[A2:] No constraints.
+
+\item[Q3:] {\it Does the science case place any constraints on the
+tradeoff between the single-visit depth and the number of visits
+(especially in the $u$-band where longer exposures would minimize the
+impact of the readout noise)?}
+
+\item[A3:] In the DDFs, the SN Ia science would not be harmed by having longer exposures and less-frequent visits, at least if there was one observation every few days in each filter. No constraint on the main survey.
+
+\item[Q4:] {\it Does the science case place any constraints on the
+Galactic plane coverage (spatial coverage, temporal sampling, visits per
+band)?}
+
+\item[A4:] No constraints.
+
+\item[Q5:] {\it Does the science case place any constraints on the
+fraction of observing time allocated to each band?}
+
+\item[A5:] This has not been quantitatively investigated. Based on experience with other programs, the reddest filters (z and Y) should receive the most time.
+
+\item[Q6:] {\it Does the science case place any constraints on the
+cadence for deep drilling fields?}
+
+\item[A6:] To obtain good light curves, we would want at least one observation every few days per filter. This is also a requirement for photometric typing to obtain reasonable purity if WFIRST spectroscopy is to be triggered. Note: of all the questions, this one is the most important to the program.
+
+\item[Q7:] {\it Assuming two visits per night, would the science case
+benefit if they are obtained in the same band or not?}
+
+\item[A7:] No benefit.
+
+\item[Q8:] {\it Will the case science benefit from a special cadence
+prescription during commissioning or early in the survey, such as:
+acquiring a full 10-year count of visits for a small area (either in all
+the bands or in a  selected set); a greatly enhanced cadence for a small
+area?}
+
+\item[A8:] For the DDFs, such observations might help provide deep SN-free (template) images or host-galaxy photometric redshifts. This has not been quantitatively investigated. No constraints on the main survey.
+
+\item[Q9:] {\it Does the science case place any constraints on the
+sampling of observing conditions (e.g., seeing, dark sky, airmass),
+possibly as a function of band, etc.?}
+
+\item[A9:] As long as the DDF observations reach the targeted depths, there is no benefit to the SN Ia science from having specific observing conditions.
+
+\item[Q10:] {\it Does the case have science drivers that would require
+real-time exposure time optimization to obtain nearly constant
+single-visit limiting depth?}
+
+\item[A10:] We do not currently know of any benefit to the SN Ia science from doing this.
+
+\end{description}
 
 % ====================================================================
 
