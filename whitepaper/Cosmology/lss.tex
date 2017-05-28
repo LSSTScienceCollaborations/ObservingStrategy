@@ -31,7 +31,7 @@
 \credit{pkurczynski},
 \credit{rhiannonlynne}
 
-Three of the key cosmology probes available with LSST represent ``static science'', i.e., insensitive to time-domain concerns.  These are Weak Lensing, Large-Scale Structure, and Galaxy Clusters.  Nonetheless, due to the need to track and correct for the survey window function for these probes, cosmology with LSST will benefit from achieving survey depth as uniform as possible over the WFD area.  OpSim tiles the sky in hexagons inscribed within the nearly-circular LSST FOV. It has been shown in \citet{CarrollEtal2014} that the default LSST survey strategy implemented in OpSim leads to a strongly non-uniform honeycomb pattern due to overlapping regions on the edges of the hexagons receiving nearly double the observing time.  A pattern of large dithers, i.e. telescope-pointing offsets on the scale of the LSST FOV, greatly reduces these overlaps, leading to an increase in the median survey depth in each filter by 0.08 magnitudes.
+Three of the key cosmology probes available with LSST represent ``static science'', i.e., insensitive to time-domain concerns.  These are Weak Lensing, Large-Scale Structure, and Galaxy Clusters.  Nonetheless, due to the need to track and correct for the survey window function for these probes, cosmology with LSST will benefit from achieving survey depth as uniform as possible over the WFD area.  \OpSim tiles the sky in hexagons inscribed within the nearly-circular LSST FOV. It has been shown in \citet{CarrollEtal2014} that the default LSST survey strategy implemented in \OpSim leads to a strongly non-uniform honeycomb pattern due to overlapping regions on the edges of the hexagons receiving nearly double the observing time.  A pattern of large dithers, i.e. telescope-pointing offsets on the scale of the LSST FOV, greatly reduces these overlaps, leading to an increase in the median survey depth in each filter by 0.08 magnitudes.
 
 In this section, we report the results from an investigation into different types of dithers, varying both in terms of the timescales on which dithers are implemented as well as the geometry of the dither positions. The results discussed largely follow the analysis in \citet{AwanEtal2016}, except that here we use the $i$-band-relative mock catalogs and magnitude cuts (as opposed to the $r$-band), and analyze the impacts of different observing strategies using the new baseline cadence \opsimdbref{db:baseCadence} and two other cadences. We also discuss the quantification of the effectiveness of a given observing strategy as a Figure of Merit.
 
@@ -40,7 +40,7 @@ In this section, we report the results from an investigation into different type
 % ====================================================================
 \subsection{Dither Patterns and Timescales}
 \label{sec:\secname:strategies}
-As in \citet{AwanEtal2016}, we consider three timescales to capture the range of time intervals on which dithers can be implemented: by visit, by night, and by season. Both visit and night timescales are well-defined in OpSim \citep[see]{IvezicEtal2008}. For the seasons, we use the \href{https://github.com/lsst/sims_maf/blob/master/python/lsst/sims/maf/stackers/generalStackers.py}{SeasonStacker}, which assigns a season to every observation by tracking when each field's RA is overhead in the middle of the day. The season assignment leads to 11 seasons, and for our purposes, we treat the 0th and 10th seasons the same by assigning them the same dither position.
+As in \citet{AwanEtal2016}, we consider three timescales to capture the range of time intervals on which dithers can be implemented: by visit, by night, and by season. Both visit and night timescales are well-defined in \OpSim \citep[see]{IvezicEtal2008}. For the seasons, we use the \href{https://github.com/lsst/sims_maf/blob/master/python/lsst/sims/maf/stackers/generalStackers.py}{SeasonStacker}, which assigns a season to every observation by tracking when each field's RA is overhead in the middle of the day. The season assignment leads to 11 seasons, and for our purposes, we treat the 0th and 10th seasons the same by assigning them the same dither position.
 
 Another variation in the implementation timescale is added by dithering each field independently as opposed to dithering all fields collectively. For instance, FieldPerNight timescale assigns a new dither position to a field when it is observed on a new night, while PerNight implementation assigns a new dither to all fields every night regardless of whether a particular field is observed or not.
 
@@ -113,7 +113,7 @@ Generally the window function is assumed to be known perfectly and its uncertain
 % ====================================================================
 % Subsection: OpSim Analysis and Results
 % ====================================================================
-\subsection{OpSim Analysis and Results}
+\subsection{\OpSim Analysis and Results}
 \label{sec:\secname: analysis}
 For the purposes of our analysis, we use HEALPix resolution of $N_\mathrm{_{side}}= 256$, effectively tiling each $3.5^\circ$ FOV with about 190 HEALPix pixels. Using the metrics discussed in \autoref{sec:\secname:metrics}, we analyze \sigmaOS\ from various observing strategies. First we present the results for the baseline cadence, \opsimdbref{db:baseCadence}.
 
@@ -308,7 +308,7 @@ single-visit limiting depth?}
 \label{sec:\secname:discussion}
 
 In this section, we presented results for the impacts of LSST observing
-strategy on LSS studies. Using the OpSim cadence baseline
+strategy on LSS studies. Using the \OpSim cadence baseline
 \opsimdbref{db:baseCadence}, we demonstrate that dithers are necessary
 for both 1-year and 10-year surveys. We find that of the three dither strategies
 discussed here, FermatSpiral dithers on PerNight  timescale are the most
@@ -337,6 +337,10 @@ effectiveness of various systematics correction methods needs to be
 carried out, especially for the 1-year survey, as only a few observing 
 strategies reduce the artifacts. Finally, the effectiveness
 of various dithers still needs to be assessed for other science probes.
+
+
+A baseline dithering pattern ``Hexdither'' is generated for all \OpSim runs with the dithered field pointings output as part of the Sqlite database (using the ``ditheredRA'' and ``ditheredDec'' parameters).  The dithering strategies discussed in this section are incorporated within the \MAF analysis framework and can be applied as a post-processing step to each simulated \OpSim survey. Integration of dithering within the scheduling of the telescope, as opposed to a post-processing step, is expected to be delivered with the v1.5 release of \OpSim v4 (currently scheduled for June 2019).
+
 
 
 \navigationbar
