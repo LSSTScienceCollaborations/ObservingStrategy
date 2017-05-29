@@ -157,6 +157,13 @@ series of experiments varying the assumptions in \OpSim.  In
 \autoref{chp:specialsurveys}, we explore additional ideas for future
 experiments to be done in \OpSim -- many of them, we hope, inspired by
 requests from the community.
+% @ivezic: please check the following sentences, requested by the Pub Board reviewer.
+\OpSim itself may be viewed as a prototype for the LSST Scheduler
+software. A ``SOCS and Scheduler'' team will develop this vital piece of
+observatory infrastructure code based on the \OpSim experience; this
+team's role in the continuing exploration of the LSST observing strategy
+is laid out in more detail in \autoref{sec:intro:timeline} below.
+% @ivezic can you please unpack the SOCS acronym and add a sentence about what else this team will do, please? You can refer forward to MAF which is introduced and described in the next section (\ref{sec:intro:evaluation}).
 
 \navigationbar
 
@@ -182,11 +189,11 @@ science investigation team.  This is what the LSST Simulations team's ``Metric
 Analysis Framework'' (\MAF) was designed to enable: science case investigators
 can now design quantitative evaluations of the outputs of \OpSim, to
 answer the question, ``how good would that observing strategy be, for my
-science?'' These ``metrics'' can be coded against the \MAF API, and
+science?'' These ``metrics'' can be coded against the \MAF python API, and
 shared among the LSST science community at the
 \href{https://sims-maf.lsst.io/metricList.html#contributed-mafcontrib-metrics}{\simsMafContrib}
 online repository.
-% All of the \MAF metrics described in this paper can be found there.
+All of the community-delevoped \MAF metrics described in this paper can be found there; a complete listing of all available \MAF metrics is provided in the appendix.
 
 Once the fiducial strategy has
 been evaluated in this way, then any other strategy can be evaluated
@@ -260,12 +267,15 @@ regarding the Wide-Fast-Deep and mini-survey observing strategies.
 The Project Scientist will {\it synthesize and act on the results
 presented in this paper,} with support from the Science Advisory
 Committee and Survey Strategy Committee (see below).
+% @ivezic: "How will the Project Scientist act? Through the PST, or...?" Can you please suggest some extra detail here, or clean up and ignore?
 
-As described in the LSST Operations Plan (LPM-181), the observing
+As described in the LSST Operations Plan,\footnote{The LSST Operations Plan is available to LSST project and science community members as document LPM-181, \url{https://docushare.lsstcorp.org/docushare/dsweb/Services/LPM-181}. It contains descriptions for the various individual roles and groups referred to here.} the observing
 strategy will continue to be refined and optimized during operations:
-the Survey Scientist will chair a survey evaluation working group that
+the Survey Scientist will chair a Survey Evaluation Working Group that
 will evaluate quarterly the current and expected performance of the
-survey and scheduler software. This group may include representation
+survey evaluation and scheduler software (which we expect to be evolved from \OpSim and \MAF).
+% @ivezic: Please verify or edit the above parenthetical clause, inserted in response to the Pub Board reviewer.
+This group may include representation
 from the Survey Support Scientist, the Pipelines and Data Products
 group, the Data Processing group, the Camera team, and science
 community.  The science community representation may be implemented as a
@@ -360,6 +370,8 @@ single-visit limiting depth?}
 
 \end{description}
 
+These questions were designed by the LSST Project Scientist (this section's author) so as to provide the specific details needed to prepare the next generation of \OpSim simulations, as part of an on-going investigation described in the next section.
+
 \navigationbar
 
 
@@ -371,27 +383,27 @@ single-visit limiting depth?}
 \credit{connolly},
 \credit{drphilmarshall}
 
-The intersection between the community and the scheduler development,
+The intersection between the community observing strategy investigation and the scheduler software development,
 and the expected support that can be provided by the Project, is
 outlined in \autoref{fig:timeline}. From the point of view of the community, this timeline contains a number of interesting features:
 
 \begin{description}
 
 \item{\textbf{Update of the Baseline Cadence and Exploration of Rolling
-Cadences.}} During development of version 1.0 of this white paper, the
+Cadences.}} During the development of version 1.0 of this white paper, the LSST
 Project has been developing an enhanced operations simulator code,
 \OpSim~4. This will be used to generate, by the end of 2017, a new set of
 observing strategies, including some that have a ``rolling cadence''
 component. This is in response to the results presented in the science
 chapters of this paper. Analysis of these simulations would form the
-backbone of an updated, version 2.0 of this white paper, with existing
+backbone of an updated, version~2.0 of this white paper, with existing
 science cases being updated to include quantitative assessment of the
 new \OpSim~4 simulations, and new science cases being identified and
-investigated.
+investigated. This updated white paper will be developed throughout 2018.
 
 \item{\textbf{The definition of the Deep Drilling Fields (DDFs) and
 associated cadences.}} The 2017 simulations will all continue
-to use the baseline DDF cadence. However, by December 2017, the LSST
+to use the baseline DDF cadence while exploring the properties of the main survey. However, by December 2017, the LSST
 will issue a call for proposals to define the cadence and properties of
 the currently selected DDFs, and to propose a new set of DDFs. To enable
 this, the project will publish the known boundary conditions for
@@ -404,7 +416,7 @@ function of filter, the required cadence of observations, and the
 metrics that will demonstrate that the DDF observations meet their
 science requirements (these metrics do not need to be written within the
 framework of \MAF). Delivery of these white papers by the community will
-expected by the end of April 1, 2018.  The LSST Observing Strategy GitHub
+be expected by the end of April 1, 2018.  The LSST Observing Strategy GitHub
 repository can support the development and aggregation of these DDF
 white papers. The SAC will be asked to make a recommendation to the
 project by the end of May 2018 on which DDFs and cadences should be
@@ -415,29 +427,37 @@ the form of simulations (for new cadence proposals) or through an
 evaluation of the visibility and properties of the fields relative to
 the nominal performance of the LSST system.
 
-\item \textbf{The definition of Figures of Merit (FOMs) for the LSST
+\item \textbf{The definition of Figures of Merit (FoMs) for the LSST
 survey strategy}. By March 2019 the project will issue a request to
 to the community to update this Observing Strategy white paper with
 \MAF-coded Figures of Merit, to evaluate both the Wide-Fast-Deep and the
 mini-surveys (Galactic plane, Northern Ecliptic Spur, South Celestial
-Cap) for their impacts on specific science cases. These FOMs will be
+Cap) for their impacts on specific science cases. These FoMs will be
 required for the Project to evaluate the efficacy of different survey
 strategies on a range of LSST science (e.g.\ the trade-off between a
 rolling cadence for supernova classification vs transient detection or
 long period variability will need to be explored quantitatively). The
-requested delivery date for these \MAF FOMs into the Observing Strategy
-White Paper will be Aug 1, 2019.  This will leave time for a Survey
+requested delivery date for these \MAF FoMs into the Observing Strategy
+White Paper will be Aug 1, 2019; the updated document would be version~3.0.
+% @ivezic, @bwillman: Neither the v2.0 nor v3.0 white papers are referred to in the Table, but they are clearly called for in the text. Can you please check these references and make sure you are OK with them? @connolly: should we update the Table to refer to these WP updates?
+This will leave time for a Survey
 Strategy Committee (see below) to undertake trade studies that
-incorporate the community-provided FOMs. Details of the design of the
-FOMs (including units, thresholds, speed) will be described at a later
+incorporate the community-provided FoMs. Details of the design of the
+FoMs (including units, thresholds, speed) will be described at a later
 date (prior to December 2019). If Project resources can be allocated to
 the process, then the SOCS and Scheduler team will support the writing
-of the FOMs with advice and tutorials on the use of \OpSim~4~v1.4, but
+of the FoMs with advice and tutorials on the use of \OpSim~4~v1.4, but
 the Observing Strategy white paper community will be expected to deliver
 their metrics as \MAF code.
+% @ivezic: How will all this activity by the SSC and SOCS and
+% Scheduler team interact with their work preparing for commissioning?
+% The Pub Board reviewer asks, in particular, "is it then expected for
+% the scheduler team to update the cadence before commissioning?"
+% Great if you can give the text a quick read through and provide a
+% comment or two on commissioning.
 
 \item \textbf{Establishment of a Survey Strategy Committee (SSC)}. Given
-the delivery of the FOMs, the project will establish a committee by March
+the delivery of the FoMs, the project will establish a committee by March
 2020 to evaluate competing survey strategy proposals and to propose a
 survey strategy for commissioning and operation of the full LSST camera.
 This committee will be comprised of project and non-project personnel, and
