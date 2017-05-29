@@ -518,7 +518,14 @@ version of the PDF document}, which is hyper-linked for easy navigation.
 You will then be able to provide good feedback, which you should do via
 the
 \href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues}{\GitHub
-issues}. Please search the existing issues first: there might be a
+issues}. Note that the white paper chapters and sections each have a
+list of editors and contributors, hyperlinked to the contributing author
+list which shows their GitHub usernames: when joining (or starting) a
+conversation on the issues, please do {\@}mention people by
+their usernames to draw their attention to your comment. The chapter
+editors will be especially effective at helping you find answers to
+questions and guidance about your science case. Please search the
+existing issues first: there might be a
 conversation already taking place that you could join. New issues are
 most welcome: we'd like to make this white paper as comprehensive as
 possible.
@@ -589,11 +596,11 @@ In many (or perhaps all) cases, a Figure of Merit will be a
 \textit{precision} (\ie a percentage statistical uncertainty) on a
 astrophysical model parameter, assuming negligible bias in its
 inference. Precision is usually what we need to forecast in order to
-convince TAC's to give us telescope time, and so it makes sense to focus
-on it here too.
+convince observatory time allocation committees to give us telescope
+time, and so it makes sense to focus on it here too.
 
 Early on in a metric analysis, it may not be possible to compute a
-science case's Figure of Merit, most likely because to do do would
+science case's Figure of Merit, most likely because to do so would
 require a large simulation program to capture the response of the
 parameter measurement to the observing strategy. At this early stage, it
 makes sense to look for simple {\it proxies} that scale the same way as
@@ -612,13 +619,12 @@ this mean? Each science project will have a threshold acceptable
 Figure of Merit value, as well as a target (or ``design'') value.  If
 an observing strategy gives an FoM value below the threshold, it
 is very important that we know about it.  Optimizing all science cases
-in such a complex and diverse set is not really the best way of
-thinking about LSST's scheduling task: rather than maximizing
-happiness, what we are really trying to do is minimize global
-unhappiness.
-The comparisons between different simulated strategies will help make
-the case for any changes to the baseline strategy, and in the short term
-provide motivation for
+in such a complex and diverse set is not really the best way of thinking
+about LSST's scheduling task: rather, {\it what we are really
+trying to do is minimize global unhappiness with the LSST observing
+strategy.} The comparisons between different simulated strategies will
+help make the case for any changes to the baseline strategy, and in the
+short term provide motivation for
 \href{https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/master/opsim/README.md}{proposed
 new \OpSim simulation runs.}
 
@@ -642,7 +648,7 @@ soon as science  performance is quantified using any of the outputs from
 metrics should be able to be designed before the \MAF documentation is
 even opened. And since \MAF metrics always work with \OpSim outputs, any
 quantitative analysis that is focused towards those outputs will have
-the potential to grow into one of the \MAF analyses we need.
+the potential to grow into one of the \MAF analyses we need. The decision to upgrade a further work sub-section into its own science section should be made collectively, with the chapter editors. The editor in chief has the final say: for version 1.0 this role was filled by \credit{drphilmarshall}.
 
 
 \subsection{Proposing New Simulations}
