@@ -74,7 +74,7 @@ be found in opposition fields.
 \end{itemize}
 
 % Need the figure and caption
-These surveys will support two important scientific investigations:
+These surveys will support three important scientific investigations:
 \begin{enumerate}
 \item What are the properties of the population of objects that is
 nearest to the Earth?
@@ -84,9 +84,11 @@ have not yet been well characterized (mini-moons, sweetspot objects)?
 laboratory-measured properties of the ensuing meteorites?
 \end{enumerate}
 
-Many different types of objects and measurements with their own cadence
-``requirements'' will fall into these two broad categories (with some
-overlap).  These will be outlined in the next section.
+%Many different types of objects and measurements with their own cadence
+%``requirements'' will fall into these two broad categories (with some
+%overlap).  These will be outlined in the next section.
+Some details of the special cadence requirements for these 
+science investigations are described in the following section.
 
 % --------------------------------------------------------------------
 
@@ -101,7 +103,10 @@ cadence. These cadences are described here.
 \begin{itemize}
 
 \item{{\bf Mini-moons}}
-Mini-moons are objects that are temporary satellites of the Earth.
+Mini-moons are objects that are temporary satellites of the Earth
+(Bolin et al.\ 2014, Fedorets et al.\ 2017).
+% bolin et al, icarus, 241, 280 http://adsabs.harvard.edu/abs/2014Icar..241..280B
+% fedorets et al. icarus 285 83 http://adsabs.harvard.edu/abs/2017Icar..285...83F
 Therefore, they have orbital motions similar to the Earth's moon,
 and much faster than other Solar System populations. Therefore,
 a special cadence is required to detect these objects enough
@@ -112,11 +117,20 @@ twice per night. Such a survey would cover essentially
 all of the opposition sky each night. The opposition sky should
 be re-observed several nights in a row in order to
 link objects from night to night and determine their orbits.
-xxx need to work on these details; a bit sketchy right now xxx
+While the details of this special cadence are not yet
+fully refined, this mini-survey would likely have little impact
+on the overall LSST program since this small-scale
+program, which extends over a small number of nights,
+is effectively a compressed rolling cadence in which
+the aggregate field coverage is unchanged.
 
 \item{{\bf Impactors}}
 The Earth is struck by meter-sized impactors about
-once a month xxx confirm xxx.
+once a month (e.g., Boslough et al.\ 2015,
+Tricarico 2017, Trilling et al.\ 2017).
+% boslough et al. 2015 in Aerospace Conference, 2015 IEEE, 1-12
+% tricarico 2017 icarus 284 416
+% trilling et al 2017 AAS journals submitted
 On two occasions, impacting asteroids have
 been discovered some hours before impact, but
 there are no existing surveys that are dedicated to finding
@@ -126,8 +140,10 @@ Impactors generally have small apparent motions
 on the sky (because their orbits are not too different
 than the Earth's). The single exposure depth of LSST
 images suggests that a meter-sized NEO could be
-discovered perhaps a week before impact (given
-the typical Earth-relative velocity of such a body).
+discovered perhaps a week before impact, given
+the typical Earth-relative velocity of such a body
+(e.g., Chesley \& Veres 2017).
+% chesley & veres 2017 https://arxiv.org/abs/1705.06209
 A suggested cadence for an impactor survey would be
 to survey the opposition patch four times per night.
 This is more visits than in the nominal cadence, and
@@ -136,7 +152,7 @@ find orbits. The nominal wide-fast-deep cadence
 (twice per night, three times during a lunation) has
 a latency of orbit determination of up to two weeks,
 which is not acceptable for the impactor survey, as an
-impact would occur in a timescale of just a few days
+impact would occur on a timescale of just a few days
 from discovery.
 The cadence of four observations/night should be repeated
 roughly every three days, so that an object on an
@@ -149,6 +165,10 @@ each field is visited four times in a night, and that
 the fields are revisited every few nights. The overall
 impact of this mini-survey on the wide-fast-deep
 survey is likely to be small, and possibly negligible.
+Given the importance of this small but
+significant investigation, it is critical that the
+survey simulators be capable of including such
+a mini-survey in planning for LSST operations.
 
 \item{{\bf Twilight/sweetspot survey}}
 
@@ -165,7 +185,8 @@ in a twilight survey that looks at the ``sweetspot'' ---
 a location at around 60~degrees Solar
 elongation that is only visible at twilight.
 Because these sweetspot fields are only visible
-for a small amount of time in a night, a special
+for 30--60~twilight minutes each night,
+a special
 cadence is required to find and link these objects
 to determine their orbits.
 These observations would be best carried out
@@ -182,6 +203,7 @@ should last roughly one week, so that each
 object would have a tracklet on four nights
 (nights 1,3,5,7).
 During twilight, some 25~pointings could be visited
+after the sky is sufficiently dark but
 before the fields have set.
 Because these observations are made during twilight,
 there may be no significant impact on the
@@ -202,8 +224,9 @@ a given object in multiple filters yields an estimate
 of composition). For these three cases, discovery and
 good orbit determination is probably more important than
 immediate characterization from LSST measurements,
-so the nominal expectation is that all these mini-surveys
-would be carried out in r band.
+so the nominal expectation is that 
+the nighttime mini-surveys would be carried out in 
+r band and the twilight program in z band.
 
 
 % --------------------------------------------------------------------
@@ -244,6 +267,13 @@ cadence.
 The twilight/sweetspot survey is also not included in
 the nominal OpSim strategy, and the overall discussion
 of twilight observations is deferred to a later discussion.
+
+It is critical to ensure that OpSim can handle the kind
+of dedicated cadences described above in order to assess
+the global impact of these small-scale but highly
+important Solar System mini-surveys.
+
+
 
 %
 % % --------------------------------------------------------------------
