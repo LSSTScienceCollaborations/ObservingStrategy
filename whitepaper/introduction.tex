@@ -54,14 +54,14 @@ and less so for others; the metrics allow us to quantify this, and
 optimize the overall cadence for the broadest range of LSST science
 areas.
 
-In the six years since the Science Book was written, some of the
-science themes described in there have evolved or become obsolete,
+Since the Science Book was written, some of the
+science themes described there have evolved or become obsolete,
 while new science opportunities and ideas have arisen.  Moreover, our
 understanding of the capabilities (such as system response and
 therefore depth, telescope optics, and so on) have matured
 considerably.  The present document endeavors to explore the principal
 science themes as described in the Science Book, but is not slaved to
-them, and where appropriate, we will point out relevant updates to the
+them. Where appropriate, we point out relevant updates to the
 Science Book.
 
 
@@ -83,9 +83,8 @@ to demonstrate that LSST could meet its basic science goals, and indeed
 the formal
 \href{https://www.lsstcorp.org/docushare/dsweb/Get/LPM-17}{science
 requirements}.\footnote{\url{https://www.lsstcorp.org/docushare/dsweb/Get/LPM-17}}    As described in these references, the default LSST
-exposure is 15 seconds, and all exposures are taken in pairs, called a
-``{\em visit}'', before the telescope is slewed to a neighboring field.
-Any given field is observed twice on a given night, which allows
+exposure is 15 seconds, and all exposures are taken in pairs called  ``{\em visits},'' before the telescope is slewed to a neighboring field.
+Any given field is observed twice on a given night to allow
 preliminary trajectories of asteroids to be determined.
 
 The baseline cadence optimizes the amount of sky covered in any given
@@ -123,7 +122,7 @@ are as follows:
   objects. See \href{https://www.lsst.org/sites/default/files/docs/sciencebook/SB_2.pdf}{Chapter 2 of the Science Book} \citep{} for more details; the four field positions are listed on the \href{https://www.lsst.org/News/enews/deep-drilling-201202.html}{LSST website}.\footnote{\url{https://www.lsst.org/News/enews/deep-drilling-201202.html}}
 \item Imaging in the Northern portions of the Ecliptic Plane.  The
   airmass limit of 1.4 restricts us to declination $< +15^\circ$, which
-  means that significant fraction of the Ecliptic Plane
+  means that a significant fraction of the Ecliptic Plane
   is uncovered.  By observing with a reduced cadence close to the
   Ecliptic Plane north of this limit, we will be able to significantly
   increase the fraction of Near-Earth Asteroids and Main Belt
@@ -229,7 +228,8 @@ summarize the observing sequence presented to us. We return to the
 question of FoM design in \autoref{sec:guidelines:metrics} below.
 
 Thinking about the problem in terms of science projects, each with a
-Figure of Merit, encourages us to design modular document sections, with
+Figure of Merit, encourages us to design modular document sections
+for this white paper, with
 one science project and one FoM per section. These modular
 sections ought then to be easily extracted, combined and edited into
 publishable articles. They will also naturally lead to the definition of
@@ -290,9 +290,8 @@ sub-group of the Science Advisory Committee.
 
 In order to consolidate the various constraints on the observing
 strategy by different science cases, and provide high signal to noise
-data for the project to take forward, each science case will answer ten
-questions probing different aspects of the observing strategy, as
-follows:
+data for the project to take forward, each science case in this white paper will conclude by answering the following ten
+questions probing different aspects of the observing strategy:
 
 % AUTHORS! COPY AND PASTE THE FOLLOWING INTO YOUR SCIENCE SECTION!
 %
@@ -309,44 +308,44 @@ the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
 Pan-STARRS) or the number of detected galaxies (the current baseline but
 with 18,000 deg$^2$)?}
 
-\item[A1:] ...
+% \item[A1:] ...
 
 \item[Q2:] {\it Does the science case place any constraints on the
 tradeoff between uniformity of sampling and frequency of  sampling? For
-example, a rolling cadence can provide enhanced sample rates over a part
+example, a ``rolling cadence'' can provide enhanced sample rates over a part
 of the survey or the entire survey for a designated time at the cost of
 reduced sample rate the rest of the time (while maintaining the nominal
 total visit counts).}
 
-\item[A2:] ...
+% \item[A2:] ...
 
 \item[Q3:] {\it Does the science case place any constraints on the
 tradeoff between the single-visit depth and the number of visits
 (especially in the $u$-band where longer exposures would minimize the
 impact of the readout noise)?}
 
-\item[A3:] ...
+% \item[A3:] ...
 
 \item[Q4:] {\it Does the science case place any constraints on the
 Galactic plane coverage (spatial coverage, temporal sampling, visits per
 band)?}
 
-\item[A4:] ...
+% \item[A4:] ...
 
 \item[Q5:] {\it Does the science case place any constraints on the
 fraction of observing time allocated to each band?}
 
-\item[A5:] ...
+% \item[A5:] ...
 
 \item[Q6:] {\it Does the science case place any constraints on the
 cadence for deep drilling fields?}
 
-\item[A6:] ...
+% \item[A6:] ...
 
 \item[Q7:] {\it Assuming two visits per night, would the science case
 benefit if they are obtained in the same band or not?}
 
-\item[A7:] ...
+% \item[A7:] ...
 
 \item[Q8:] {\it Will the case science benefit from a special cadence
 prescription during commissioning or early in the survey, such as:
@@ -354,19 +353,19 @@ acquiring a full 10-year count of visits for a small area (either in all
 the bands or in a  selected set); a greatly enhanced cadence for a small
 area?}
 
-\item[A8:] ...
+% \item[A8:] ...
 
 \item[Q9:] {\it Does the science case place any constraints on the
 sampling of observing conditions (e.g., seeing, dark sky, airmass),
 possibly as a function of band, etc.?}
 
-\item[A9:] ...
+% \item[A9:] ...
 
 \item[Q10:] {\it Does the case have science drivers that would require
 real-time exposure time optimization to obtain nearly constant
 single-visit limiting depth?}
 
-\item[A10:] ...
+% \item[A10:] ...
 
 \end{description}
 
@@ -418,7 +417,7 @@ science requirements (these metrics do not need to be written within the
 framework of \MAF). Delivery of these white papers by the community will
 be expected by the end of April 1, 2018.  The LSST Observing Strategy GitHub
 repository can support the development and aggregation of these DDF
-white papers. The SAC will be asked to make a recommendation to the
+white papers. The LSST Science Advisory Committee (SAC) will be asked to make a recommendation to the
 project by the end of May 2018 on which DDFs and cadences should be
 considered, and the project will respond to these recommendations by
 the end of 2018. The Project's ``SOCS and Scheduler'' team will support
@@ -459,7 +458,7 @@ their metrics as \MAF code.
 \item \textbf{Establishment of a Survey Strategy Committee (SSC)}. Given
 the delivery of the FoMs, the project will establish a committee by March
 2020 to evaluate competing survey strategy proposals and to propose a
-survey strategy for commissioning and operation of the full LSST camera.
+survey strategy for commissioning (early 2021) and operation (late 2022) of the full LSST camera.
 This committee will be comprised of project and non-project personnel, and
 will include the LSST Project Scientist. The SAC will be asked to
 make recommendations for committee membership. The SSC will report to
@@ -487,7 +486,7 @@ project resources, these milestones should be considered as those we
 could achieve given our best effort. Likewise, given the limited
 availability of resources in the SOCS and Scheduler engineering team,
 support of community members who wish to use \OpSim~v4 will be on a best
-effort basis. \OpSim v4 will be delivered as a Docker container and its
+effort basis. \OpSim v4 will be delivered as a Docker\footnote{\url{https://www.docker.com/what-docker#/overview}} container and its
 use and operation will be documented, but there will be no guarantee of
 support for, or timeliness in response to requests for support from,
 community users. The solution to this problem is to work together: the LSST Observing Strategy community, represented here by this white paper, is already developing the skills to perform and analyze LSST operations simulations: by learning from each other, we can produce high quality quantitative conclusions for the Project to act upon.
