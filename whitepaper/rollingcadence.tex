@@ -38,18 +38,18 @@ cadence, and give some examples of ways in which it can be implemented.
 \subsection{The Uniform Cadence}
 
 Current schedule simulations allocate visits as pairs separated by 30-60
-minutes, for the purposes of identifying asteroids.  For most science
+minutes, for the purposes of identifying asteroids.  For most other science
 purposes, the 30-60 minute spacing is too small to reveal temporal
 information, and a pair will constitute effectively a single epoch of
 measurement.  If the expected 824 (design value) LSST visits are
 realized as 412 pairs, and distributed uniformly over 10 observing
 seasons of 6 months each, the typical separation between epochs will be
-4 days.   The most numerous visits will be in the $r$ and $i$
+4 days (typically in different filters).   The most numerous visits will be in the $r$ and $i$
 filters, and the repeat visit rate in either of these will be $\simeq$
 20 days.
 
 The possibility is still open that, for asteroid identification, visits
-might be required as triples or quadruples, in which case the universal
+might be required as triples or quadruples (which provide a more robust tracking), in which case the universal
 temporal sampling will be further slowed by 1.5 or 2$\times$.
 
 Under a strict universal cadence it is not possible to satisfy a need
@@ -78,12 +78,12 @@ for a period of time will be described as a ``roll''.
 \subsection{Rolling Cadence Basics}
 
 Assume a fixed number of observing epochs for each point on the sky,
-nominally distributed uniformly over the survey duration.  A subset of
-these can be reallocated to provide improved sampling of a sky region.
+nominally distributed uniformly over the 10-year survey duration.  A subset of
+these can be reallocated to provide improved sampling of a given sky region in a given time interval.
 This will have the inevitable effects of: (1) reducing the number of
-epochs available for that sky region during the rest of the survey, and
+epochs available for that sky region during the rest of the survey (affecting, for example, proper motion studies), and
 (2) displace observations of other sky regions during the time of the
-improved temporal sampling.  In short, the cadence outside the enhanced
+improved temporal sampling (affecting, for example, early large scale structure studies needing high depth uniformity).  In short, the cadence outside the enhanced
 interval will be degraded.
 
 The essential parameters of rolling cadence are: (1) the number of
@@ -169,7 +169,7 @@ with the regular distribution of filters.
 
 As a simple example, consider improving the cadence by a factor of 2 or
 3.  If we accept that some regions of the sky will be enhanced every
-year, and that uniform sky coverage will only arrive at the end of 10
+year, and that uniform sky coverage will only be achieved at the end of 10
 years, then we could use, e.g., 10\% of the total epochs in a single
 roll.  If the enhancement is 2$\times$, each roll would last for
 $\simeq$ 6 months, with high efficiency for capture of complete SN
@@ -287,9 +287,9 @@ those targeted by rolling cadence development.
 
 While preliminary experiments with rolling cadences have been carried
 out with \OpSim, these experiments have significant deficiencies, and
-are not suited for in-depth study as of this writing. Designing and 
-simulating a family of rolling cadences is one of the main goals for the 
-Project's ``SOCS and Scheduler'' team for the remainder of 2017. 
+are not suited for in-depth study as of this writing. Designing and
+simulating a family of rolling cadences is one of the main goals for the
+Project's ``SOCS and Scheduler'' team for \OpSim version 4.
 % However, analysis of the cadences described above may guide
 % development of objectives for enhancement by rolling cadence.
 
