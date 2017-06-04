@@ -1,33 +1,38 @@
 % --------------------------------------------------------------------
 
-\chapter[Eruptive and Explosive Transients]{Eruptive and Explosive Transients}
+\chapter[Transients]{Eruptive and Explosive Transients}
 \def\chpname{transients}\label{chp:\chpname}
-
-% \noindent {\it
-% Mike Lund, Ashish Mahabal, Stephen Ridgway, Lucianne Walkowicz, Rahul Biswas, Michelle Lochner, Jeonghee Rho, Eric Bellm, Federica B. Bianco...
-% }
 
 Chapter editors:
 \credit{ebellm},
 \credit{fedhere}
 
 Contributing Authors:
-\credit{AshishMahabal},
-\credit{StephenRidgway},
-\credit{ohadshemmer},
-\credit{paulaszkody},
-\credit{nathansmith},
-\credit{tommatheson},
-\credit{chomiuk},
+
 \credit{arcavi},
-\credit{raffaellamargutti},
+\credit{chomiuk},
 \credit{Doctor},
 \credit{Fong},
 \credit{Haiman},
 \credit{Kalogera},
+\credit{AshishMahabal},
+\credit{raffaellamargutti},
+\credit{tmatheson},
+\credit{StephenRidgway},
+\credit{ohadshemmer},
+\credit{nathansmith},
+\credit{paulaszkody},
 \credit{Trimble},
 \credit{svalenti},
 \credit{Zauderer}
+
+% \section*{Summary}
+% \addcontentsline{toc}{section}{~~~~~~~~~Summary}
+%
+% Executive summary goes here, highlighting the primary conclusions from
+% the chapter's science cases. This should be abstract length, no more:
+% say, 200 words.
+
 % --------------------------------------------------------------------
 
 \section{Introduction}
@@ -47,18 +52,18 @@ probe the final stages of stellar evolution. Tidal Disruption Events
 (TDEs), short GRBs, and
 Cataclysmic Variables (CVs) give us the opportunity to study
 compact and binary objects. Massive star eruptions allow us to understand
-mass loss mechanisms and chemical enrichment. 
+mass loss mechanisms and chemical enrichment.
 The brightest transients (GRBs, TDEs,
 SNe) are light beams that can be seen over cosmic distances, and some
-transients---most notably Type Ia SNe---are cosmological tracers.  
+transients---most notably Type Ia SNe---are cosmological tracers.
 In this chapter we focus on LSST's potential to advance the astrophysics of
 eruptive and explosive transients; the use of SNe for cosmology is
 discussed in \autoref{chp:cosmo}. Transients in the Milky Way Disk are
 discussed in more detail in \autoref{chp:galaxy}.
 
 Cadence choices will determine LSST's ability to discover, classify, and
-characterize these events. However, due to their different time scales, 
-different phenomena will benefit from different sampling 
+characterize these events. However, due to their different time scales,
+different phenomena will benefit from different sampling
 strategies---sometimes
 significantly different, and at times orthogonal.  Competing objectives
 described in this chapter are at the heart of LSST's observing strategy and
@@ -75,22 +80,22 @@ triggering followup resources in real time from the live event stream.
 Characterization, on the other hand, implies
 that basic properties of the event may be determined from the
 LSST observations, including but not limited to the classification of
-the event. The level of characterization accessible through LSST data
-will of course evolve with time for all the transients that have
-characteristic time scales longer than a few days.
+the event.
+It is particular relevant for science cases requiring analysis of large
+samples of completed lightcurves.
 
-Characterization and classification of transient events 
+Characterization and classification of transient events
 benefits from substantial temporal sampling over the finite duration of the
-event along with color information (perhaps contemporaneous). 
+event along with color information (perhaps contemporaneous).
 Transient events slower than $\sim$ weeks may be adequately sampled by
 a uniform LSST cadence.  Obtaining adequate sampling for faster-evolving
 events may require special scheduling
 strategies.  For some event types, LSST can only be expected to
 provide a discovery service, and followup will necessarily be
-performed elsewhere----so long as the cadence is sufficient to identify the
+performed elsewhere---so long as the cadence is sufficient to identify the
 event type.
 For some events, such as detecting electromagnetic counterparts to
-gravitational wave events,
+gravitational wave events (GWs),
 serendipitous discoveries are unlikely, but
 enabling a ToO program would provide the opportunity for LSST to
 contribute significantly to this science.
@@ -101,51 +106,61 @@ contribute significantly to this science.
 %facilities.
 
 We consider a non-exhaustive set of ``astronomical transients'' in the
-paragraphs that follow.
+paragraphs that follow. For a few of these transients, we quantify the
+ability of LSST cadences to produce data useful for various science
+goals. These case studies include SNe, GRBs, and GWs. For other
+transient families (Novae, LBVs, TDEs) we provide more general
+information in \autoref{sec:\chpname:future}, and we invite the
+community to further develop the ideas proposed here, as well as
+further other related goals, into quantified science cases.
 
 \subsection{Targets and Measurements}
 \label{sec:\chpname:targets}
 
 %The class of transients includes a heterogeneous assortment of objects
 %and phenomena.
-The table below is a \emph{non-exhaustive} list of
+\autoref{tab:transient_types} is a \emph{non-exhaustive} list of
 phenomena to which we are referring as \emph{Eruptive and Explosive
   transients} in this document.
 
+  \begin{table}
 \begin{center}
-  \begin{tabular}{| p{4.5cm} | p{6.0cm} | l | l | p{0.5cm}|}
+  \begin{tabular}{| p{4.0cm} | p{4.0cm} | l | l | p{1.5cm}|}
     \hline
 
     Transient Type & Science drivers & Amplitude & Time Scale & Event Rate\\
 \hline
 
-Flare stars & Flare frequency, energy, stellar age & large & min & common\\
+Flare stars & Flare frequency, energy, stellar age, space weather & large & min & common\\
 
 X-ray Novae & Interacting binaries, stellar evolution, SN progenitors,
 nuclear physics & large & weeks & rare\\
 
-Cataclysmic variables & Interacting binaries, stellar evolution, compact
+Cataclysmic variables (\ref{sec:\chpname:CVtransients})& Interacting binaries, stellar evolution, compact
 objects & large & min - days & common\\
 
-LBV variability & Late stages stellar evolution, Mass loss, SN progenitors
+LBV variability (\ref{sec:\chpname:LBVs})& Late stages stellar evolution, Mass loss, SN progenitors
 & large & weeks-years & rare \\
 
-Massive star eruptions & Late stages stellar evolution, Mass loss, SN progenitors & extreme & weeks-years & rare\\
+Massive star eruptions (\ref{sec:\chpname:LBVs})& Late stages stellar evolution, Mass loss, SN progenitors & extreme & weeks-years & rare\\
 
-Supernovae & stellar evolution, feedback, chemical enrichment, cosmology & extreme & days - months & very common\\
+Supernovae (\ref{sec:\chpname:SNtransients})& stellar evolution, feedback, chemical enrichment, cosmology & extreme & days - months & very common\\
 
-GRBs & jet physics, SN connection, stellar evolution & extreme & min - days
+GRBs (\ref{sec:\chpname:grbs})& jet physics, SN connection, stellar evolution & extreme & min - days
 & rare\\
 
-TDEs & Massive BH demographics, accretion physics & large & weeks-months & very rare\\
+TDEs (\ref{sec:\chpname:tdes})& Massive BH demographics, accretion physics & large & weeks-months & very rare\\
 
 
-LIGO detections & EM characterization & unknown & unknown & rare\\
+LIGO detections (GW, \ref{sec:\chpname:gw}) & EM characterization & unknown & unknown & rare\\
 
 \emph{Unknown} & Discovery & unknown & unknown & rare\\
 
  \hline \end{tabular}
 \end{center}
+\caption{Overiew of major types of optical transients.
+\label{tab:transient_types}}
+\end{table}
 
 \begin{figure}[hbt]
 \centerline{
@@ -162,7 +177,7 @@ transients \citep[adapted from][]{2011PhDT........35K}.
 
 %templates and stacks
 
-%confusion 
+%confusion
 
 %
 
@@ -172,35 +187,40 @@ transients \citep[adapted from][]{2011PhDT........35K}.
 
 \subsection{Transient time scales}
 
-For very short-lived phenomena (stellar flares, CV outbursts, GRBs),
+Optical transients display a wide range of intrinsic timescales
+(\autoref{fig:transient_phase_space}), and even some long-lived events
+have short-duration features of interest.
+
+For very short-lived phenomena (stellar flares, GRBs),
 the main function of LSST will be to provide discoveries and/or simple
 characterization.  Followup to discovery/identification, if required,
 must take place elsewhere. This implies that the LSST observations
-must be sufficient to recognize that an event is fast-evolving in real
-time in order to to trigger followup. However, assessing the rise
+must be sufficient to recognize in real time that an event is fast-evolving
+in order to to trigger followup. However, assessing the rise
 slope is best done with a single filter, so prompt characterization
 also needs multiple epochs within a night, preferably separated by at
 least a few hours, in the same filter (we discuss this in detail in
-Section~\ref{sec:transientsAge}). That is, when observing with different
+\autoref{sec:\chpname:transientsAge}). That is, when observing with different
 filters it is very difficult to separate lightcurve evolution from
 color variations. Colors are informative when considering a statistical
-samples (Section~\ref{sec:SNtransients}): as long as the epoch of peak is
+samples (\autoref{sec:\chpname:SNtransients}): as long as the epoch of peak is
 reliably assessed, coadded light curves and color time series can be studied.
 
-SN fall in an intermediate time range.  LSST will provide
+SNe fall in an intermediate time range.  LSST will provide
 multiple visits in multiple filters during the typical SN duration
 (months).  This sampling may still be insufficient for many science
-objectives, such as photometric classification of SN subtypes.  
+objectives, such as photometric classification of SN subtypes.
 However, moderate changes to LSST
 observing strategy may enhance the sampling for part of the sky part
-of the time, greatly improving the usefulness of SN observations. 
-Metrics that assess the discovery rate of SN are included in the
-cosmology chapter. Here we are interested in assessing the ability of
+of the time, greatly improving the usefulness of SN observations.
+Metrics that assess the discovery rate of SN are included in
+\autoref{chp:cosmo}.
+Here we are interested in assessing the ability of
 LSST to discriminate SN from other transients, SN subtypes from one
 another, and to identify particularly interesting SNe: for example
 those that show signature of shock break-out, or companion interaction
 in the early light curve, and would be candidates for \emph{flash
-spectroscopy} follow-up \citep[e.g.,][]{2014Natur.509..471G}. 
+spectroscopy} follow-up \citep[e.g.,][]{2014Natur.509..471G}.
 In addition, metrics that
 quantify LSST's ability to constrain SN physics in a statistically
 large sample of SN are needed.
@@ -212,19 +232,19 @@ would like to asses - through metrics - how well TDEs can be
 distinguished from supernovae based on their light curve shape and
 color (in real-time so that followup observations can be triggered)
 and how well the LSST light curves themselves can be used to model the
-TDE emission and deduce the black hole properties.  
+TDE emission and deduce the black hole properties.
 %Ref. Science Book:
 %10.6.1, \citet{Gezari2012, Chornock2014, Arcavi2014, Holoien2014,
 %Holoien2015, Holoien2016}.
 
 Large amplitude flares from AGN may mimic
-explosive transients; they are discussed in Chapter~\ref{chp:agn}.
+explosive transients; they are discussed in \autoref{chp:agn}.
 
 In addition we hope that LSST will provide a wealth of serendipitous
 discoveries of yet-to-be-observed transients.  An ideal transient
 discovery survey would include balanced coverage of all time scales. LSST
 will cover longer time periods well, but will have to make some
-choices of emphasis in coverage of shorter time-scales. 
+choices of emphasis in coverage of shorter time-scales.
 
 In the sections that follow we will use several case studies to assess
 LSST's performance for a range of time-domain science:
@@ -232,42 +252,33 @@ LSST's performance for a range of time-domain science:
 \begin{itemize}
 \item
   The ability of a given LSST cadence to discriminate truly young
-  transients from those only first detected well after their explosion date.  
+  transients from those only first detected well after their explosion date (\autoref{sec:\chpname:transientsAge}).
   This ability is a crucial input to follow-up strategy design.
   We identify a region of lightcurve slope
-  % the phase-space of rising speed and color 
+  % the phase-space of rising speed and color
   that is characteristic of a
   variety of transients in their early phases and assess the ability of LSST's
-  cadences to place transients within this phase-space. 
+  cadences to place transients within this phase-space.
   More sophisticated classification algorithms will likely be necessary, but
   are beyond the scope of this whitepaper.
-  %While early classification of transients is extremely important for
-  %transient science with LSST, it is also an incerdibly difficult task,
-  %on which many astronomers and statisticians are working. It is unfeasible,
-  %and beyond the scope of this work to attempt a naive classification metric.
-\item 
+\item
   The statistical constraints to a transient class that can be obtained
   over the course of the LSST survey, from the LSST survey data alone
   (assuming a successful classification). SN Ia early interaction
-  signatures or IIb shock break-out (Fed).
+  signatures or IIb shock break-out (\autoref{sec:\chpname:SNtransients}).
 \item
-  The ability to identify in real-time a rapidly-evolving 
+  The ability to identify in real-time a rapidly-evolving
   object of interest and
   trigger prompt follow-up observations. For this topic GRBs are used as
-  a case study. 
+  a case study (\autoref{sec:\chpname:grbs}).
+\item
+  The value of triggered Target-of-Opportunity observations for
+  following up very rare, fast-evolving events.   Here the kilonova
+  counterparts expected from Advanced LIGO triggers are used as a
+  case study (\autoref{sec:\chpname:gw}).
 \item
   The insight that a cadence gives into single transient classes. We
-  discuss CVs, massive star eruptions, and TDEs.
-%\item
-%  The ability of LSST, given a cadence, to provide insightful coverage
-%  for long duration transients. This metric favors cadences with small
-%  seasonal gaps, which allow us to gather complete color evolution of
-%  slow evolving transients, such as LBV and TDEs. (Ryan)
-  \item
-	  The value of triggered Target-of-Opportunity observations for
-	  following up very rare, fast-evolving events.   Here the kilonova
-	  counterparts expected from Advanced LIGO triggers are used as a
-	  case study.
+  discuss CVs, massive star eruptions, and TDEs (\autoref{sec:\chpname:future}).
 
 \end{itemize}
 
@@ -277,83 +288,109 @@ LSST's performance for a range of time-domain science:
 \subsection{Metrics}
 \label{sec:\chpname:metrics}
 
-\begin{table}
-  \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
-    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence}}}
-	  & {\rotatebox{90}{\opsimdbref{db:NEOwithVisitQuads}}} & {\rotatebox{90}{future run 1}} &  {\rotatebox{90}{future run 2}} & Notes \\
-    \hline
-     & \footnotesize{\texttt{TripletMetric}}      & - & - & - & - &
-    \footnotesize{Number of three-visit triples satisfying specified
-    user-specified time windows.}\\ 
-     & \footnotesize{\texttt{TransientMetric}}      & - & - & - & - &
-    \footnotesize{Fraction of transients detected (with
-user-specified constraints), assuming a basic
-linear rise and fall lightcurve.}\\
-     & \footnotesize{\texttt{GRBTransientMetric}}      & - & - & - & - &
-    \footnotesize{Fraction of GRB-like transients detected
-(with user-specified constraints) using an $F(t) \propto t^{-\alpha}$
-lightcurve.} \\
-     & \footnotesize{\texttt{transientAsciiMetric}}      & - & - & - & - &
-    \footnotesize{Fraction of transients detected (with
-user-specified constraints), with
-lightcurve specified by ASCII input file.} \\
-\end{tabular}
-\caption{Summary of figures-of-merit (FoMs) for the Transients science
-	cases. The best value of each FoM is indicated in bold.
-\textbf{replace with actual metrics used in each section}}
-\label{tab_SummaryTransients}
-\end{table}
+Two metrics were developed and are used in this chapter specifically for transient phenomena:
+\begin{itemize}
+  \item{\texttt{transientAsciiMetric}: accepts an ASCII file in input, so that realistic transient shapes can be used, with different shapes for different filters. The output can be the series of LSST observations (magnitude and error), or the fraction of transients detected (with user-specified constraints). This metric is used in \autoref{sec:\chpname:SNtransients}.}
+  \item{\texttt{GRBTransientMetric}: caluclates the fraction of GRB-like transients detected (with user-specified constraints) using an $F(t) \propto t^{-\alpha}$
+    lightcurve. This metric is used in \autoref{sec:\chpname:grbs}}.
+\end{itemize}
 
-%SNe & Number of events adequately sampled\\ 
-%Serendipity & Histogram of median visit series length vs maximum visit spacing within the series\\ 
+Additionally, the standard MAF metrics
+that quantify the gaps between consecutive visits to
+a field within a night and over multiple nights
+(\texttt{IntraNightGapsMetric} and \texttt{InterNightGapsMetric})
+are of great value and are
+heavily used throughout this chapter, in \autoref{sec:\chpname:transientsAge},
+~\autoref{sec:\chpname:SNtransients}, and~\autoref{sec:\chpname:gw} for example.
 
-\citet{2015arXiv150803175L} discuss
-three metrics that have been incorporated into the MAF. Two of these
-metrics deal explicitly with time variable behavior: a) observational
-triplets, and b) detection of periodic variability. While in this
-chapter w do not deal with periodic phenomena, the first of these
-metrics is useful to generically assess the performance of LSST for
-transients of all types. More specialized transients metrics can be
-obtained by simply using a more realistic light curve shape. A metric
-that uses input ASCII files is provided, to enable the assessment of
-discovery and characterization of an arbitrarily shaped transient.
+Further metrics relevant to transient science are discused in \autoref{chp:galaxy},~\autoref{chp:cosmo}, and ~\autoref{chp:variables}.
 
-\subsubsection{Observational triplets (TripletMetric)}
+Many science cases can be developed and tested with these metrics, and we
+encourage users to do so. In addition, we are collecting a library of representative transient lightcurves in a separate GitHub repository\footnote{\url{https://github.com/LSSTTVS/LSST_TVS_RoadMap}} and we encourage readers to contribute their transient models or observations.
 
-This metric provides a means of evaluating whether a transient event
-on some time scale of interest has been detected, by testing for a
-sequence of three observations. The object must be detected in
-quiescence, followed by two subsequent detections above some
-threshold; this sequence of observations allows the magnitude of the
-change to be measured, as well as its time scale.
-
-This metric may be used for a variety of astrophysical phenomena, in
-particular transient events on variable objects (e.g. novae, stellar
-flares), in that it is general with respect to the amplitude of the
-brightness variation as well as the time scale of said change. The
-requirement of a detection prior to outburst does constrain it to
-objects that have already been detected in quiescence (in other words,
-not necessarily ``true'' transients), although there may be some cases
-where this is not the case (e.g. a supernova occurring on a previously
-detected galaxy). In practice, the time lapse between the first and
-second and second and third observations must be comparable (between
-10$^2$ and 10$^5$ seconds) for discovery. This metric may be
-calculated for a given OpSim run and then further reduced to a
-histogram in logarithmic time bins; the minimum number of bins to
-construct an interesting sample of objects is source-dependent.
-
-\subsubsection{Transient Metric (transientAsciiMetric)}
-
-Calculate what fraction of transients would be detected using an ASCII
-input file for the light curve.
 
 % --------------------------------------------------------------------
 
 \subsection{OpSim Analysis}
 \label{sec:\chpname:analysis}
 
-Analysis shows that current simulations provide  poor coverage in any one filter for transient events longer than a deep drilling session ($\sim$30 minutes) and shorter than $\sim$ weeks.
-\textbf{delta T histogram}
+The current set of simulated cadences
+provide poor coverage in any one
+filter for transient events longer than a visit pair ($\sim$30
+minutes) and shorter than $\sim$ weeks (\autoref{fig:tgaps} and
+\autoref{fig:tgaps_r}; \autoref{tab:visitgaps}).
+
+As discussed in the subsequent sections, this
+gap in the sampling hinders characterization of fast-evolving
+transients.  A cadence with two visits separated by an hour or two rather
+than 20 minutes would provide better discrimination.  A third visit in the
+same night in a different filter would provide
+color information valuable for realtime classification.
+If a subset of those third
+visits were in the same filter as the first two, it would improve the shape
+characterization of the fastest-evolving transients.
+
+\begin{table}
+  \begin{tabular}{l|p{6cm}|c|c|c|c|p{5cm}}
+    FoM & Brief description & {\rotatebox{90}{\opsimdbref{db:baseCadence}}}
+          & {\rotatebox{90}{\opsimdbref{db:NEOswithVisitTriplets}}} &
+          {\rotatebox{90}{\opsimdbref{db:NoVisitPairs}}} &
+          {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & Notes \\
+    \hline
+
+    \thesection-1 & \footnotesize{\texttt{IntraNightGapsMetric},
+    any filter}      & 0.39 & 0.42 & 0.18 & 0.40 &
+    \footnotesize{Median gap (hours) between consecutive observations of a field
+	    in any pair
+    of filters in a single night.} \\
+
+    \thesection-2 & \footnotesize{\texttt{IntraNightGapsMetric},
+    $r$ band}      & 0.40 & 0.44 & 0.17 & 0.41 &
+    \footnotesize{Median gap (hours) between consecutive $r$-band observations of a
+	    field in a single night.} \\
+
+    \thesection-3 & \footnotesize{\texttt{InterNightGapsMetric},
+    any filter}      & 3.0 & 3.9 & 2.0 & 3.0 &
+	    \footnotesize{Median gap (days) between consecutive observations of a field
+	    in any pair
+    of filters over multiple nights.} \\
+
+    \thesection-4 & \footnotesize{\texttt{InterNightGapsMetric},
+    $r$ band}      & 15.0 & 22.8 & 11.0 & 21.9 &
+    \footnotesize{Median gap (days) between consecutive $r$-band observations
+    of a field over multiple nights.} \\
+
+\end{tabular}
+\caption{
+Inter- and intra-night revisit metrics in any filter and in $r$-band for
+several simulated surveys.
+}
+\label{tab:visitgaps}
+\end{table}
+
+\begin{figure}[hbt]
+\centerline{
+	\includegraphics[width=0.45\textwidth]{figs/transients/MedianIntra-NightGap.pdf}
+	\includegraphics[width=0.45\textwidth]{figs/transients/MedianInter-NightGap.pdf}
+}
+\caption{ Histograms of median intra- (left) and inter- (right)
+night visit gaps for any band for several OpSim runs. }
+\label{fig:tgaps}
+\end{figure}
+
+\begin{figure}[hbt]
+\centerline{
+	\includegraphics[width=0.45\textwidth]{figs/transients/MedianIntra-NightGap_r.pdf}
+	\includegraphics[width=0.45\textwidth]{figs/transients/MedianInter-NightGap_r.pdf}
+}
+\caption{ Histograms of median $r$-band intra- (left) and inter- (right)
+night visit gaps for several OpSim runs. }
+\label{fig:tgaps_r}
+\end{figure}
+
+% don't just care about gap between consecutive obs, though; first-last obs
+% in a night
+\emph{In fact, if the transient community were to design an optimal strategy for short and intermediate duration transients it would likely include 2 visits at a short time interval in different filter, and a third visit at a later time, but within the same night, with one of the two filters already used.}
 
 
 
@@ -362,53 +399,57 @@ Analysis shows that current simulations provide  poor coverage in any one filter
 \subsection{Discussion}
 \label{sec:\chpname:discussion}
 
-Community studies are providing improving SNe metrics, and continuing
-communication between the SN and LSST communities is essential to
-tuning the observing strategy to deliver the SN time series that are
-needed and possible.
-
-Improving LSST science return for SNe will also improve sampling of
-all transients with similar or somewhat shorter characteristic times.
-Non-uniform survey strategies (rolling cadence) can significantly
-improve the LSST performance for faster transients.  Interpretation of
-multiple filters for novel events may be powerful, or problematic,
-since color may be uncertain.
-
-Some insight into fast transients may be available from image pairs or
-triples (as opposed to more complete series).  These include the pair
-of images in a visit - which could be useful in studying the rise time
-of an extremely fast event.  This includes the characteristic grouping
-of visits (typically 0.5 to 1.0 hour separation) planned for purposes
-of identifying asteroids.  It also includes fortuitous multiple
-sampling due to field overlap, providing additional sampling, which
-may be random or systematic, depending on the scheduling, on a time
-scale of minutes to hours.  The sampling benefits of this fortuitous
-overlap have not yet been investigated.
+LSST's currently simulated cadences have significant cadence gaps for
+timescales between nightly visit pairs and intra-night revisits.  For
+many transient science cases, rolling-type cadences that improve the
+sampling of a subset of events may be helpful in maximizing the
+transient science that can be done with LSST: the minimum lightcurve
+sampling required to adequately discover or characterize them may
+still be larger than that provided by baseline cadences.  However,
+even moderate adjustments (e.g., lengthening the visit pair spacing,
+or optimizing the deep drilling filter strategy) may yield
+improvements.
 
 
-\navigationbar
+The metrics presented in these sections are initial efforts towards
+quantifying these goals, and they suggest specific directions for new
+OpSIM experiments.  More detailed efforts to understand and model the
+challenging problem of transient classification with sparse
+lightcurves will be needed in order to best guide LSST's time-domain
+observing strategy.
 
-\input{transientAge.tex}
-% --------------------------------------------------------------------
-
-\input{sn.tex}
 
 % --------------------------------------------------------------------
 
-\input{grb.tex}
+\input{Transients/transientAge.tex}
 
 % --------------------------------------------------------------------
 
-\input{tde.tex}
+\input{Transients/sn.tex}
 
 % --------------------------------------------------------------------
 
-\input{cv.tex}
+\input{Transients/grb.tex}
 
 % --------------------------------------------------------------------
 
-\input{eruptive.tex}
+% PJM: moved to Future Work while MAF analysis is pending:
+% \input{Transients/tde.tex}
 
 % --------------------------------------------------------------------
 
-\input{gw.tex}
+% PJM: moved to Future Work while MAF analysis is pending:
+% \input{Transients/cv.tex}
+
+% --------------------------------------------------------------------
+
+% PJM: moved to Future Work while MAF analysis is pending:
+% \input{Transients/eruptive.tex}
+
+% --------------------------------------------------------------------
+
+\input{Transients/gw.tex}
+
+% --------------------------------------------------------------------
+
+\input{Transients/transientFuture.tex}

@@ -1,23 +1,85 @@
+% ====================================================================
+%+
+% NAME:
+%    short_exposures.tex
+%
+% CHAPTER:
+%    specialsurveys.tex
+%
+% ELEVATOR PITCH:
+%
+% AUTHORS:
+%    Chris Stubbs (@astrostubbs))
+%-
+% ====================================================================
 
-\section{Short Exposure Survey- Introduction }
+\section{Short Exposure Surveying}
+\def\secname{shortexp}\label{sec:\secname}
 
-The current LSST requirements stipulate a minimum exposure time of 5 seconds, with an expected default exposure time of 15 seconds. This document advocates for decreasing the minimum exposure time requirement from 5 to 0.1 seconds. This would increase the dynamic range for bright sources (compared to the default 15 sec time) by about 5 magnitudes, to a total of 13 astronomical magnitudes (where dynamic range is the difference between the brightest unsaturated source and the faintest point source detectable at 5 sigma). This is a large factor, and would enable a wide range of science goals, outlined below. One interesting aspect of this is that it would allow us to operate the LSST system during twilight times that would otherwise saturate the array due to background sky brightness. This would allow a number of the goals described below to be carried out without impacting the primary survey by conducting observations during twilight sky conditions that would saturate the array at longer exposure times. 
+\credit{astrostubbs}
 
-Since the twilight sky brightness is an important factor discussed below, we provide here a very brief outline of the temporal evolution of the background sky brightness. 
+The current LSST requirements stipulate a minimum exposure time of 5
+seconds, with an expected default exposure time of 15 seconds. This
+document advocates for decreasing the minimum exposure time requirement
+from 5 to 0.1 seconds. This would increase the dynamic range for bright
+sources (compared to the default 15 sec time) by about 5 magnitudes, to
+a total of 13 astronomical magnitudes (where dynamic range is the
+difference between the brightest unsaturated source and the faintest
+point source detectable at 5 sigma). This is a large factor, and would
+enable a wide range of science goals, outlined below. One interesting
+aspect of this is that it would allow us to operate the LSST system
+during twilight times that would otherwise saturate the array due to
+background sky brightness. This would allow a number of the goals
+described below to be carried out without impacting the primary survey
+by conducting observations during twilight sky conditions that would
+saturate the array at longer exposure times.
+
+
+% ----------------------------------------------------------------------
+
+\subsection{Introduction}
+\label{sec:\secname:intro}
+
+Since the twilight sky brightness is an important factor discussed
+below, we provide here a very brief outline of the temporal evolution of
+the background sky brightness.
 
 \citet{1993AJ....105.1206T}
-provide a simple framework that serves our purposes well. They provide observational data as well as a simple model for the evolution of twilight sky brightness. Figure 1 from that paper is included below. They show that a good model for the sky brightness evolution is given by an exponential with 
-$\log_{10}(S)=(k/\tau)t+C$, 
-where S is the sky brightness in electrons per pixel per second, C is the dark sky background, k = (10.6 minutes)$^{-1}$  is a universal (band-independent) timescale during which the sky's surface brightness changes by a factor of ten (at latitude $-$30 degrees), and $\tau$ is a season-dependent factor that ranges from 1.0 at the equinox to 1.07 in austral winter and 1.20 in austral summer. So the rule of thumb is that we should expect it to take 4.25 minutes for the sky background to change by one magnitude per square arc sec. (In what follows we'll ignore the increased twilight time in summer and winter.)
+provide a simple framework that serves our purposes well. They provide
+observational data as well as a simple model for the evolution of
+twilight sky brightness. Figure~1 from that paper is included below, as \autoref{fig:Tyson}.
+They show that a good model for the sky brightness evolution is given by
+an exponential with
+$\log_{10}(S)=(k/\tau)t+C$,
+where S is the sky brightness in electrons per pixel per second, C is
+the dark sky background, k = (10.6 minutes)$^{-1}$  is a universal
+(band-independent) timescale during which the sky's surface brightness
+changes by a factor of ten (at latitude $-$30 degrees), and $\tau$ is a
+season-dependent factor that ranges from 1.0 at the equinox to 1.07 in
+austral winter and 1.20 in austral summer. So the rule of thumb is that
+we should expect it to take 4.25 minutes for the sky background to
+change by one magnitude per square arc sec. (In what follows we'll
+ignore the increased twilight time in summer and winter.)
 
-For current generation typical astronomical camera systems that take over a minute to read out, this 4.2 minute time scale means that only a handful of images can be obtained during twilight time. But for the LSST camera with a 2 second readout time, we can obtain hundreds of short exposures during twilight. Even if we are limited to a 15 second cadence due to thermal stability or data transfer limitations there is a large amount of time opened up that we can use. 
+For current generation typical astronomical camera systems that take
+over a minute to read out, this 4.2 minute time scale means that only a
+handful of images can be obtained during twilight time. But for the LSST
+camera with a 2 second readout time, we can obtain hundreds of short
+exposures during twilight. Even if we are limited to a 15 second cadence
+due to thermal stability or data transfer limitations there is a large
+amount of time opened up that we can use.
 
-What do we stand to gain in operational time with shorter exposures? If the standard survey terminates taking 15 second exposures due to some sky brightness criterion, by shifting to 0.1 sec images at that point we will have changed the sky flux per pixel by 2.5 $\log_{10}(150)$ = 5.4 magnitudes. This brings us back into a high dynamic range regime, as described below. 
+What do we stand to gain in operational time with shorter exposures? If
+the standard survey terminates taking 15 second exposures due to some
+sky brightness criterion, by shifting to 0.1 sec images at that point we
+will have changed the sky flux per pixel by 2.5 $\log_{10}(150)$ = 5.4
+magnitudes. This brings us back into a high dynamic range regime, as
+described below.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[trim = 0 7cm 0 1mm, clip, width=\textwidth]{figs/Stubbs_Fig1.pdf}
-\caption{(reproduced from Tyson et al, 1993). This plot shows the 
+\caption{(reproduced from Tyson et al, 1993). This plot shows the
   twilight sky surface brightness as a function of local time for four
   broadband filters (C, B, V and R) and different pointing directions.
   The surface brightness changes by one magnitude in a 4.2 minute interval,
@@ -26,9 +88,21 @@ essentially independently of the passband and pointing.}
 \end{center}
 \end{figure}
 
-Figure 2 illustrates the principles that underpin this proposal. LSST is a unique combination of hardware and software, that will deliver reliable catalogs of both the static and the dynamic sky. By pushing towards shorter integration times we can greatly expand the scientific reach of the system. 
+\autoref{fig:twilight} illustrates the principles that underpin this proposal. LSST is
+a unique combination of hardware and software, that will deliver
+reliable catalogs of both the static and the dynamic sky. By pushing
+towards shorter integration times we can greatly expand the scientific
+reach of the system.
 
-The dynamic range in magnitudes that we can achieve for a given integration time depends on the sky background, the read noise, and the full well depth per pixel. We will adopt a typical value of 100Ke for the full well depth, but the arguments presented below are essentially independent of this value. The dynamic range in magnitudes is limited on the bright end by the point source whose PSF peak exceeds full well, and on the faint end by the 5$\sigma$ point source sensitivity, which depends on sky brightness per pixel. So we are squeezed between the two parameters of full well depth and sky background. 
+The dynamic range in magnitudes that we can achieve for a given
+integration time depends on the sky background, the read noise, and the
+full well depth per pixel. We will adopt a typical value of 100Ke for
+the full well depth, but the arguments presented below are essentially
+independent of this value. The dynamic range in magnitudes is limited on
+the bright end by the point source whose PSF peak exceeds full well, and
+on the faint end by the 5$\sigma$ point source sensitivity, which
+depends on sky brightness per pixel. So we are squeezed between the two
+parameters of full well depth and sky background.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -38,62 +112,247 @@ The dynamic range in magnitudes that we can achieve for a given integration time
 \end{center}
 \end{figure}
 
-The 5 sigma limiting flux scales as the square root of the sky brightness, while the saturation flux decreases linearly as sky brightness increases. So the two curves in Figure 2 have slopes that differ by a factor of two. Operating during bright-sky time with short exposures adds about 20 minutes of observing per twilight, or 40 minutes per night. This is a non-trivial resource!
+The 5-sigma limiting flux scales as the square root of the sky
+brightness, while the saturation flux decreases linearly as sky
+brightness increases. So the two curves in \autoref{fig:twilight} have
+slopes that differ by a factor of two. Operating during bright-sky time
+with short exposures adds about 20 minutes of observing per twilight, or
+40 minutes per night. This is a non-trivial resource!
 
-Figure 2 shows one reason why it is not advantageous to go below 0.1 second exposures- we would lose the overlap between a twilight survey and the standard LSST object catalog. 
+\autoref{fig:twilight} shows one reason why it is not advantageous to go
+below 0.1 second exposures- we would lose the overlap between a twilight
+survey and the standard LSST object catalog.
 
-Having set the stage for the opportunity to operate at shorter exposure times either during dark sky time, or during twilight, or both, we now describe some of the scientific motivations for doing so. 
+
+% ----------------------------------------------------------------------
 
 \subsection{Science Drivers for Shorter Exposures}
+\label{sec:\secname:drivers}
 
-\subsubsection{Discovery space at short time scales.} 
+Having set the stage for the opportunity to operate at shorter exposure
+times either during dark sky time, or during twilight, or both, we now
+describe some of the scientific motivations for doing so.
 
-LSST is a time domain discovery machine. It is hard to anticipate the importance of being able to detect astronomical variability on short time scales. By extending the time domain sensitivity to phenomena with a characteristic time of less than 5 seconds, we will have added 1.5 orders of magnitude in time domain sensitivity. 
 
-Taking short exposures does not necessarily imply a requirement on fast image cadence. Periodic variability can be readily detected and characterized with a succession of short images that do not satisfy the Nyquist criterion, as long as we know the time associated with each data point to adequate accuracy. But it does seem appropriate to investigate the maximum possible rapid-fire imaging rate for LSST, presumably limited by either data transfer bottlenecks or by thermal issues within the camera. 
+\subsubsection{Discovery space at short time scales.}
+
+LSST is a time domain discovery machine. It is hard to anticipate the
+importance of being able to detect astronomical variability on short
+time scales. By extending the time domain sensitivity to phenomena with
+a characteristic time of less than 5 seconds, we will have added 1.5
+orders of magnitude in time domain sensitivity.
+
+Taking short exposures does not necessarily imply a requirement on fast
+image cadence. Periodic variability can be readily detected and
+characterized with a succession of short images that do not satisfy the
+Nyquist criterion, as long as we know the time associated with each data
+point to adequate accuracy. But it does seem appropriate to investigate
+the maximum possible rapid-fire imaging rate for LSST, presumably
+limited by either data transfer bottlenecks or by thermal issues within
+the camera.
 
 \subsubsection{Distances to Nearby SN Ia- an essential ingredient in using supernovae to probe dark energy.}
 
-The determination of the equation of state parameter of the Dark Energy using type Ia supernovae entails measuring the redshift dependence of the luminosity distances to objects over a range of redshifts. The low end of this redshift range is limited by peculiar velocities to considering supernovae at redshifts z$>$0.01. At this distance (distance modulus of 
-$\mu$ =33) the peak brightness of a type Ia supernova is r=15 and exceeds the expected LSST point source saturation limit. 
+The determination of the equation of state parameter of the Dark Energy
+using type Ia supernovae entails measuring the redshift dependence of
+the luminosity distances to objects over a range of redshifts. The low
+end of this redshift range is limited by peculiar velocities to
+considering supernovae at redshifts z$>$0.01. At this distance (distance
+modulus of $\mu$ =33) the peak brightness of a type Ia supernova is r=15
+and exceeds the expected LSST point source saturation limit.
 
-Moreover, the rate on the sky of these bright nearby supernovae is so low that in the standard cadence we don't expect to obtain well-sampled multiband light curves for them. But we will discover many of them on the rise. Using twilight time with short exposures to obtain appropriate temporal and passband coverage will allow us to extend the LSST SN Hubble diagram across the entire redshift range of 0.01 to 1. 
+Moreover, the rate on the sky of these bright nearby supernovae is so
+low that in the standard cadence we don't expect to obtain well-sampled
+multiband light curves for them. But we will discover many of them on
+the rise. Using twilight time with short exposures to obtain appropriate
+temporal and passband coverage will allow us to extend the LSST SN
+Hubble diagram across the entire redshift range of 0.01 to 1.
 
-It is vitally important that we obtain these nearby-SN light curves on the same photometric system, reduced with the same data reduction pipeline, as the distant sample. This means we really must use the LSST instrument and software in order to avoid systematic errors arising from differences in photometric systems or algorithmic issues. 
+It is vitally important that we obtain these nearby-SN light curves on
+the same photometric system, reduced with the same data reduction
+pipeline, as the distant sample. This means we really must use the LSST
+instrument and software in order to avoid systematic errors arising from
+differences in photometric systems or algorithmic issues.
 
-We stress that this twilight SN followup campaign can be accomplished without impacting the main survey, during the roughly 20 minutes per night of twilight that would otherwise unusable at the default exposure time. We would use the brighter twilight time to obtain pointed observations on nearby supernovae, motivated by the importance of photometric uniformity described above. 
+We stress that this twilight SN followup campaign can be accomplished
+without impacting the main survey, during the roughly 20 minutes per
+night of twilight that would otherwise unusable at the default exposure
+time. We would use the brighter twilight time to obtain pointed
+observations on nearby supernovae, motivated by the importance of
+photometric uniformity described above.
+
 
 \subsubsection{A Bright Star Survey for Galactic Science.}
 
-We could also use the added twilight time to conduct a bright star survey, and the precise astrometry and photometry from LSST can then be used in conjunction with archived data ranging from 11th to 27th AB magnitudes. This short-exposure domain would extend the LSST dynamic range in fluxes by two orders of magnitude, towards the bright end. Moreover, obtaining precise positions, fluxes and variability at these brighter magnitudes would greatly increase the overlap with the historical archive of astronomical information, including from digitized plate data. We would be able to obtain astrometric and color information to high precision, as well time series for variability studies. 
+We could also use the added twilight time to conduct a bright star
+survey, and the precise astrometry and photometry from LSST can then be
+used in conjunction with archived data ranging from 11th to 27th AB
+magnitudes. This short-exposure domain would extend the LSST dynamic
+range in fluxes by two orders of magnitude, towards the bright end.
+Moreover, obtaining precise positions, fluxes and variability at these
+brighter magnitudes would greatly increase the overlap with the
+historical archive of astronomical information, including from digitized
+plate data. We would be able to obtain astrometric and color information
+to high precision, as well time series for variability studies.
 
-An example of an application to Milky Way structure studies comes from RR Lyrae variable stars. With a saturation magnitude of around 16th in the standard LSST survey, RR Lyrae closer than 20 kpc will be saturated in the standard LSST images. So we will lose nearly all Galactic RR Lyrae. Extending the survey's bright limit to 11th magnitude will allow us to collect light curves for RR Lyrae beyond $\sim$ 100 parsecs, collecting essentially all Southern hemisphere Galactic RR Lyrae.
+An example of an application to Milky Way structure studies comes from
+RR Lyrae variable stars. With a saturation magnitude of around 16th in
+the standard LSST survey, RR Lyrae closer than 20 kpc will be saturated
+in the standard LSST images. So we will lose nearly all Galactic RR
+Lyrae. Extending the survey's bright limit to 11th magnitude will allow
+us to collect light curves for RR Lyrae beyond $\sim$ 100 parsecs,
+collecting essentially all Southern hemisphere Galactic RR Lyrae.
 
-Another application for stellar population studies is measuring the fraction of binary stars as a function of stellar type, metallicity, age and environment. By conducting a variability survey in the 11-18 magnitude range we can capitalize on temperature and metallicity data already in hand for many of these objects. 
+Another application for stellar population studies is measuring the
+fraction of binary stars as a function of stellar type, metallicity, age
+and environment. By conducting a variability survey in the 11-18
+magnitude range we can capitalize on temperature and metallicity data
+already in hand for many of these objects.
 
-Another application of a bright star survey would be to search for planetary transits in the magnitude range appropriate for radial velocity followup observations using 30 meter class telescopes. For high dispersion spectrographs at the 4m aperture class, most targets are currently around 8th magnitude, so we should expect 30m telescopes to attain similar radial velocity precisions for sources of magnitude  8 + 5log(30/4) = 12. By going to shorter exposures we obtain almost an hour's additional observing time per night when these sources don't saturate, whereas they are far beyond saturation in the default 15 second LSST survey images. 
+Another application of a bright star survey would be to search for
+planetary transits in the magnitude range appropriate for radial
+velocity followup observations using 30 meter class telescopes. For high
+dispersion spectrographs at the 4m aperture class, most targets are
+currently around 8th magnitude, so we should expect 30m telescopes to
+attain similar radial velocity precisions for sources of magnitude  8 +
+5log(30/4) = 12. By going to shorter exposures we obtain almost an
+hour's additional observing time per night when these sources don't
+saturate, whereas they are far beyond saturation in the default 15
+second LSST survey images.
 
-A typical (r$-$K) color between SDSS and 2MASS is r$-$K=3. The 2MASS catalog is complete down to K$\sim$14 which corresponds to r$\sim$17. So most 2MASS stars will be saturated in the standard LSST 15 second observations. A bright star survey will allow a multiband match to the 2MASS data, as well as an astrometric comparison between the two catalogs. 
+A typical (r$-$K) color between SDSS and 2MASS is r$-$K=3. The 2MASS
+catalog is complete down to K$\sim$14 which corresponds to r$\sim$17. So
+most 2MASS stars will be saturated in the standard LSST 15 second
+observations. A bright star survey will allow a multiband match to the
+2MASS data, as well as an astrometric comparison between the two
+catalogs.
 
-Finally, the apparent magnitude of solar system objects depends on their distance from us and from the sun, as well as illumination and observation geometry. Extending the bright limit will allow us to track asteroid positions as they approach opposition.  
+Finally, the apparent magnitude of solar system objects depends on their
+distance from us and from the sun, as well as illumination and
+observation geometry. Extending the bright limit will allow us to track
+asteroid positions as they approach opposition.
+
+
+% ----------------------------------------------------------------------
 
 \subsection{Counterarguments}
+\label{sec:\secname:counter}
+
 
 \subsubsection{What About Scintillation Effects?}
 
-Short exposure times suffer from scintillation effects. An estimate for uncertainty due to scintillation is provided by 
-\url{http://astro.corlan.net/gcx/scint.txt}. For a 0.1 second integration we expect a fractional flux uncertainty of  0.15 at 2 airmasses and 0.043 at 1 airmass, for a 10 cm aperture. Scaling this up to the 8.5m aperture of LSST by a factor D$^{2/3}$ predicts fractional flux variations of below one percent, even at two airmasses, for a 0.1 second exposure. So scintillation should not impact our ability to make precision measurements of flux and position.  
+Short exposure times suffer from scintillation effects. An estimate for
+uncertainty due to scintillation is provided by
+\url{http://astro.corlan.net/gcx/scint.txt}. For a 0.1 second
+integration we expect a fractional flux uncertainty of  0.15 at 2
+airmasses and 0.043 at 1 airmass, for a 10 cm aperture. Scaling this up
+to the 8.5m aperture of LSST by a factor D$^{2/3}$ predicts fractional
+flux variations of below one percent, even at two airmasses, for a 0.1
+second exposure. So scintillation should not impact our ability to make
+precision measurements of flux and position.
 
 \subsubsection{What about just doing this with smaller telescopes?}
 
-A possible counter-argument to the proposal of allowing for shorter exposure times is that much of this can be done with smaller telescopes. But it's important to bear in mind that LSST is a system, and the data reduction and dissemination tools are as important as the hardware. We intend to deliver accessible, high-quality, well-calibrated photometry on a common photometric system and correspondingly good positions. If we do so from a co-added point source depth of 27th to the short-exposure bright limit of 11th magnitude we will span over six decades in flux on a well-calibrated flux scale. We would also have the ability to study astrophysical variability on time scales from 0.1 second to 10 years, which is nine decades in the time domain. This combination of temporal and flux dynamic range would be a truly remarkable  achievement, and would yield science benefits far beyond the illustrative examples provided above. Much of this discovery space is enabled by going to shorter exposures. 
- 
+A possible counter-argument to the proposal of allowing for shorter
+exposure times is that much of this can be done with smaller telescopes.
+But it's important to bear in mind that LSST is a system, and the data
+reduction and dissemination tools are as important as the hardware. We
+intend to deliver accessible, high-quality, well-calibrated photometry
+on a common photometric system and correspondingly good positions. If we
+do so from a co-added point source depth of 27th to the short-exposure
+bright limit of 11th magnitude we will span over six decades in flux on
+a well-calibrated flux scale. We would also have the ability to study
+astrophysical variability on time scales from 0.1 second to 10 years,
+which is nine decades in the time domain. This combination of temporal
+and flux dynamic range would be a truly remarkable  achievement, and
+would yield science benefits far beyond the illustrative examples
+provided above. Much of this discovery space is enabled by going to
+shorter exposures.
+
 \subsection{Proposed Implementation and Impacts}
 
-The implementation of this would simply entail taking short-exposure images during twilight time that would otherwise go unused. The data rate would go up, and the number of shutter cycles per night would also increase. 
+The implementation of this would simply entail taking short-exposure
+images during twilight time that would otherwise go unused. The data
+rate would go up, and the number of shutter cycles per night would also
+increase.
+
 %
 %\section{References}
 %
-%Tyson and Gal, An Exposure Guide for Taking Twilight Flats with Large Format CCDs, AJ {\bf 105}, 1026 (1003). 
+%Tyson and Gal, An Exposure Guide for Taking Twilight Flats with Large Format CCDs, AJ {\bf 105}, 1026 (1003).
 
-
+% ====================================================================
+%
+% \subsection{Conclusions}
+%
+% Here we answer the ten questions posed in
+% \autoref{sec:intro:evaluation:caseConclusions}:
+%
+% \begin{description}
+%
+% \item[Q1:] {\it Does the science case place any constraints on the
+% tradeoff between the sky coverage and coadded depth? For example, should
+% the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+% Pan-STARRS) or the number of detected galaxies (the current baseline but
+% with 18,000 deg$^2$)?}
+%
+% \item[A1:] ...
+%
+% \item[Q2:] {\it Does the science case place any constraints on the
+% tradeoff between uniformity of sampling and frequency of  sampling? For
+% example, a rolling cadence can provide enhanced sample rates over a part
+% of the survey or the entire survey for a designated time at the cost of
+% reduced sample rate the rest of the time (while maintaining the nominal
+% total visit counts).}
+%
+% \item[A2:] ...
+%
+% \item[Q3:] {\it Does the science case place any constraints on the
+% tradeoff between the single-visit depth and the number of visits
+% (especially in the $u$-band where longer exposures would minimize the
+% impact of the readout noise)?}
+%
+% \item[A3:] ...
+%
+% \item[Q4:] {\it Does the science case place any constraints on the
+% Galactic plane coverage (spatial coverage, temporal sampling, visits per
+% band)?}
+%
+% \item[A4:] ...
+%
+% \item[Q5:] {\it Does the science case place any constraints on the
+% fraction of observing time allocated to each band?}
+%
+% \item[A5:] ...
+%
+% \item[Q6:] {\it Does the science case place any constraints on the
+% cadence for deep drilling fields?}
+%
+% \item[A6:] ...
+%
+% \item[Q7:] {\it Assuming two visits per night, would the science case
+% benefit if they are obtained in the same band or not?}
+%
+% \item[A7:] ...
+%
+% \item[Q8:] {\it Will the case science benefit from a special cadence
+% prescription during commissioning or early in the survey, such as:
+% acquiring a full 10-year count of visits for a small area (either in all
+% the bands or in a  selected set); a greatly enhanced cadence for a small
+% area?}
+%
+% \item[A8:] ...
+%
+% \item[Q9:] {\it Does the science case place any constraints on the
+% sampling of observing conditions (e.g., seeing, dark sky, airmass),
+% possibly as a function of band, etc.?}
+%
+% \item[A9:] ...
+%
+% \item[Q10:] {\it Does the case have science drivers that would require
+% real-time exposure time optimization to obtain nearly constant
+% single-visit limiting depth?}
+%
+% \item[A10:] ...
+%
+% \end{description}

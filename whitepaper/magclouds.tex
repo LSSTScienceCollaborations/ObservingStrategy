@@ -7,6 +7,15 @@ Chapter Editors:
 \credit{dnidever},
 \credit{knutago}
 
+% \section*{Summary}
+% \addcontentsline{toc}{section}{~~~~~~~~~Summary}
+%
+% Executive summary goes here, highlighting the primary conclusions from
+% the chapter's science cases. This should be abstract length, no more:
+% say, 200 words.
+
+\section{Introduction}
+
 The Magellanic Clouds have always had outsized importance for
 astrophysics.  They are critical steps in the cosmological distance
 ladder, they are a binary galaxy system with a unique interaction
@@ -27,7 +36,7 @@ will allow us to probe the thousands of square degrees that comprise
 the extended periphery of the Magellanic Clouds with unprecedented
 completeness and depth, allowing us to detect and map their extended
 disks, stellar halos, and debris from interactions that we already
-have strong evidence must exist (REFS).  Second, the ability of LSST
+have strong evidence must exist.  Second, the ability of LSST
 to map the entire main bodies in only a few pointings will allow us to
 identify and classify their extensive variable source populations with
 unprecedented time and areal coverage, discovering, for example,
@@ -38,40 +47,40 @@ Finally, the large number of observing opportunities that the LSST
 mosaic of the main bodies of the Clouds with extraordinary image
 quality, an invaluable legacy product of LSST.
 
-We have several important scientific goals:
+We have several important scientific questions:
 \begin{enumerate}
 
 \item What are the stellar and dark matter mass profiles of the
-Magellanic Clouds?  Map extended disk, halo, debris, and streams.  Use
-streams as probes of total mass profile.  RR Lyrae give potential for
-three-dimensional stellar profile.
+Magellanic Clouds?  To answer this we need to map their extended disks, halos, debris, and streams.  We can use
+streams and RR Lyrae stars as probes of the 3D mass profile.
 
-\item What is the satellite population of the Magellanic Clouds?
-Discovery of dwarfs by DES and other surveys illuminating for
-understanding distribution of dark matter subhalos and how galaxies
-form in them (REFS)
+\item What is the satellite population of the Magellanic Clouds? The
+discovery of dwarf satellites by the Dark Energy Survey and other
+surveys hint at LSST's potential here.
 
 \item What are the internal dynamics of the Magellanic Clouds?  Proper
-motions from HST and from the ground (REFS) have measured the bulk
+motions from HST and from the ground have measured the bulk
 motions of the Clouds and have, in combination with spectroscopy,
 begun to unravel the three dimensional internal dynamics of the
-Clouds...
+Clouds.
 
 \item How do exoplanet statistics in the Magellanic Clouds compare to
-those in the Milky Way?  Lund calculation shows can measure transits
-of Jupiter-like planets, Clouds are lower metallicity environment
+those in the Milky Way?  The calculations in the next section show that
+LSST can measure transits of Jupiter-like planets, an intriguing
+prospect given the Clouds' lower metallicity environment.
 
-\item Identify and characterize the variable star and transient
-population of the Clouds.  Population studies, linking to star
-formation and chemical enrichment histories, etc, from Szkody et al.
-DD white paper.
+\item What are the variable star and transient population of the Clouds?
+LSST will enable population studies, linking star formation and chemical
+enrichment histories.
 
-\item Light echoes from supernovae and explosive events.  Echoes can
-give view of such events unavailable by any other means, ref. papers
-by Rest et al.
+\item What can we learn about supernovae and other explosive events from
+their light echoes?  Echoes can give view of such events unavailable by
+any other means.
+
 \end{enumerate}
 
-These can be grouped into main overarching science themes:
+
+These questions can be grouped into main overarching science themes:
 \begin{enumerate}
 \item {\bf Galaxy formation evolution}: The study of the formation and
 evolution of the Large and Small Magellanic Clouds (LMC and SMC,
@@ -91,11 +100,11 @@ magnitudes, higher cadence, and larger area.
 
 Many different types of objects and measurements with their own
 cadence ``requirements'' will fall into these two broad categories
-(with some overlap).  These will be outlined in the next section.
-
+(with some overlap).
+% These will be outlined in the next section.
 A very important aspect of the ``galaxy evolution'' science theme is
 not just the cadence but also the sky coverage of the Magellanic
-Clouds ``mini-survey''.  A common misunderstanding is that the MCs
+Clouds ``mini-survey.''  A common misunderstanding is that the MCs
 only cover a few degrees on the sky.  That is, however, just the
 central regions of the MCs akin to the thinking of the Milky Way as
 the just the bulge.  The full galaxies are actually much larger with
@@ -104,12 +113,19 @@ at $\sim$10$^{\circ}$ ($\sim$11 kpc) from their respective centers.
 The extended stellar debris from their interaction likely extends to
 even larger distances.  Therefore, to get a complete picture of the
 complex structure of the MCs will require a mini-survey that covers
-$\sim$2000 deg$^2$.  At this point, it not entirely clear how to
-include this into the metrics.  Note, that for the second science case
+$\sim$2000 deg$^2$.
+% At this point, it not entirely clear how to
+% include this into the metrics.
+Note, that for the second science case
 this is not as much of an issue since the large majority of the
 relevant objects will be located in the high-density, central regions
 of the MCs.
 
+Our investigation of how the LSST observing strategy will affect the
+science outline here is still in its infancy. Some of the disgnostic and
+figure of merit metrics developed elsewhere in this paper may be useful
+for assessing the Magellanic Cloud science cases as well. In the
+meantime we present below two science cases in the early stages of development that show some of the promise LSST shows in this area.
 
 % static science vs. variables
 % cadence vs. areal coverage
@@ -122,178 +138,102 @@ of the MCs.
 
 
 % --------------------------------------------------------------------
-
-\new{Below is a generic list of things we want to measure in the
-Magellanic Clouds. These will need to be divided among a small set of
-science sections, each describing a focused science project that has a
-figure of merit, that is a function of various diagnostic metrics. The
-final version of the chapter tex file probably will not contain this
-list.}
-
-\begin{enumerate}
-
-\item Deep Color Magnitude Diagrams
-%  -Deep CMDs, just a matter of number of visits
-%  -do the full SMASH (and relevant DES area) with full spatial coverage, at least to SMASH depths, smaller
-%  number of epochs, ~5 sigma at gri~25
-% Knut thoughts: I think we want to make sure that we get 1 mag below old turnoff out to 100 kpc in ugriz with 10sigma precision, i.e. ugriz~25
-
-
-\item Proper Motions
-%-Proper Motions, cadence not as much of an issue, just more epochs
-%  bulk proper motion
-%  LMC spiral motion, streaming motions
-%  internal velocity dispersion
-
-In the last decade work with $HST$ has been able to measure the bulk
-tangential (in the plane of the sky) velocities ($\sim$300 km/s) of
-the Magellanic Clouds (Kallivayalil et al.\ 2016a,b,2013) and even the
-rotation of the LMC disk \citep{2014ApJ...781..121V}. Gaia
-will measure precise proper motions of stars to $\sim$20th magnitude
-which will include the Magellanic red giant branch stars. LSST will be
-complementary to Gaia and measure proper motions of stars in the
-$\sim$20--24 mag range that includes Magellanic main-sequence stars
-which are far more numerous than giants, and, therefore, more useful
-for mapping extended stellar structures. The LSST 10-year survey
-proper motion precision will be $\sim$0.3--0.4 mas/yr at LMC
-main-sequence turnoff at r$\approx$22.5--23.  This will allow for
-accurate measurement of proper motions of {\em individual stars} at the
-$\sim$5$\sigma$ level.
-
-Besides measuring kinematics, the LSST proper motions can be used to
-produce clean samples of Magellanic stars clean samples of background
-galaxies (no proper motions) and this is commonly done with $HST$ data
-of
-
-In addition, LSST proper motions can be used to improve star/galaxy
-separation which is quite significant for faint, blue Magellanic
-main-sequence stars.
-
-streaming motions
-%can we do individual LMC stars with LSST, or small groups?
-
-% SRD says want 0.2 mas/yr accuracy over the course of the survey
-% 0.2 mas/yr at r=20.5 (similar to Gaia)
-% ~0.25 mas/yr at r=22
-% ~0.3 mas/yr at r=22.5 LMC turnoff
-% ~0.4 mas/yr at r=23
-% 1 mas/yr for r=24
-% See Figure 21 from Ivezic et al. (2012) or slide 46 of overview-sci-reqs.pdf
-%have the astrometric precision to measure the proper motions of individual
-%Proper motion cleaning to find the giants?? gaia does that already
-%lsst can use proper motion cleaning to do star/galaxy separation as well
 %
-%The
-%The Magellanic Clouds have a large tangential velocity (in the plane of the sky) that has been
-%Gaia will be able to see the bright stuff, need lsst to get the MSTO
-%gaia/lsst synergy
+% \new{Below is a generic list of things we want to measure in the
+% Magellanic Clouds.}
+% % These will need to be divided among a small set of
+% % science sections, each describing a focused science project that has a
+% % figure of merit, that is a function of various diagnostic metrics. The
+% % final version of the chapter tex file probably will not contain this
+% % list.
 %
-%metric that calculates the proper motion accuracy of LMC MSTO stars at r=23 and calculates the sigma-level of
-%the proper motion measurement (2.0 mas/yr / sigma_pm ).
+% \begin{enumerate}
+%
+% \item Deep Color Magnitude Diagrams
+% %  -Deep CMDs, just a matter of number of visits
+% %  -do the full SMASH (and relevant DES area) with full spatial coverage, at least to SMASH depths, smaller
+% %  number of epochs, ~5 sigma at gri~25
+% % Knut thoughts: I think we want to make sure that we get 1 mag below old turnoff out to 100 kpc in ugriz with 10sigma precision, i.e. ugriz~25
+%
+%
+% \item Proper Motions
+% %-Proper Motions, cadence not as much of an issue, just more epochs
+% %  bulk proper motion
+% %  LMC spiral motion, streaming motions
+% %  internal velocity dispersion
+%
+%
+% %\item Parallaxes
+% %-Parallaxes, also mostly a function of nubmer of epochs
+% %  bulk distances
+% %  internal distance spread
+% %  -probably not get parallaxes at MC distances, but could do foreground rejection
+%
+% \item Variable stars
+%
+% %-Variables, RR Lyrae, Cepheids might be too bright, dwarf cepheids/scuti good, many more of them.
+% %   especially good for getting the 3D structure (out to large distances) of the MCs
+% %   -eclipsing binaries (get very accurate distances, see OGLE paper), pulsating WDs, CVs, T Tauri stars
+% % novae, supernovae  in Paula's white paper
+%
+% % use MCs are a way to get templates for variable sources that LSST will detect all over the sky
+% % look at variable group metrics
+%
+%
+% \item Transients
+% %-Transients, dwarf novae
+% % Mike Lund will work on some text for this.  Also did work on cadence considerations
+% % for detecting periodic objects in general (periodogram purity function).
+%
+% \item Transiting Exoplanets
+% % -Transiting planets, Mike Lund
+% % -need deep drilling to have any hope of finding them
+% % -best between ~0.8-1.6 Msun to detect exoplanets, not too faint
+% % -can't get ingress/egress but can detect the dip and periodicity
+% %   that's enough to characterize
+% % -challenging to do follow-up because they are quite faint and too many (?)
+% % -cadence?  cover all timescales properly
+% % -what's the expected period distribution
+%
+% % See Lund et al.\ (2015) and the exoplanet discussion in previous part
+% % of this paper.
+%
+% % PASP
+%
+% %\item Astrometric binaries
+% %-Astrometric binaries
+%
+% \item Light-echoes
+% % it's a surface-brightness issue, can see fainter things with LSST than MOSAIC/DECAM
+% % could trace out lightcurve if more epochs
+%
+% \item Gyrochronology
+% %-Gychronology, need to get periods of the dwarfs, gives age information
+% %  -gyro periods are ~10 days at 1 Gyr and ~30 days at 10 Gyr
+%
+% \item Interstellar scintillation
+% % run in movie mode for 1-2 nights to find missing molecular gas (H2)
+% % https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/68
+%
+% % Legacy survey
+% % use the best seeing to get great data on the MC main bodies
+%
+% %\item Astroseismology
+% %-Astroseismology, dwarfs/giants, giants vary by a couple percent and on "longer" timescales, but
+% %    probably too bright for LSST, OGLE probably has best data for those. however LSST might be able to do
+% %    asteroseismology of giants to larger distances, measure masses/ages of halo giants!
+% %    dwarfs are harder because they vary less and need more higher frequency observations
+%
+% \end{enumerate}
+%
+%
+% ====================================================================
 
-
-
-%\item Parallaxes
-%-Parallaxes, also mostly a function of nubmer of epochs
-%  bulk distances
-%  internal distance spread
-%  -probably not get parallaxes at MC distances, but could do foreground rejection
-
-\item Variable stars
-
-%-Variables, RR Lyrae, Cepheids might be too bright, dwarf cepheids/scuti good, many more of them.
-%   especially good for getting the 3D structure (out to large distances) of the MCs
-%   -eclipsing binaries (get very accurate distances, see OGLE paper), pulsating WDs, CVs, T Tauri stars
-% novae, supernovae  in Paula's white paper
-
-% use MCs are a way to get templates for variable sources that LSST will detect all over the sky
-% look at variable group metrics
-
-
-\item Transients
-%-Transients, dwarf novae
-% Mike Lund will work on some text for this.  Also did work on cadence considerations
-% for detecting periodic objects in general (periodogram purity function).
-
-\item Transiting Exoplanets
-% -Transiting planets, Mike Lund
-% -need deep drilling to have any hope of finding them
-% -best between ~0.8-1.6 Msun to detect exoplanets, not too faint
-% -can't get ingress/egress but can detect the dip and periodicity
-%   that's enough to characterize
-% -challenging to do follow-up because they are quite faint and too many (?)
-% -cadence?  cover all timescales properly
-% -what's the expected period distribution
-
-See Lund et al.\ (2015) and the exoplanet discussion in previous part
-of this paper.
-
-% PASP
-
-%\item Astrometric binaries
-%-Astrometric binaries
-
-\item Light-echoes
-% it's a surface-brightness issue, can see fainter things with LSST than MOSAIC/DECAM
-% could trace out lightcurve if more epochs
-
-\item Gyrochronology
-%-Gychronology, need to get periods of the dwarfs, gives age information
-%  -gyro periods are ~10 days at 1 Gyr and ~30 days at 10 Gyr
-
-\item Interstellar scintillation
-% run in movie mode for 1-2 nights to find missing molecular gas (H2)
-% https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/68
-
-% Legacy survey
-% use the best seeing to get great data on the MC main bodies
-
-%\item Astroseismology
-%-Astroseismology, dwarfs/giants, giants vary by a couple percent and on "longer" timescales, but
-%    probably too bright for LSST, OGLE probably has best data for those. however LSST might be able to do
-%    asteroseismology of giants to larger distances, measure masses/ages of halo giants!
-%    dwarfs are harder because they vary less and need more higher frequency observations
-
-\end{enumerate}
-
-% --------------------------------------------------------------------
-
-\subsection{Common Metrics}
-\label{sec:\chpname:metrics}
-
-\new{In this section we give the common diagnostic metrics that the Magellanic Clouds
-figures of merit will depend on. Many of these are defined elsewhere in this paper,
-so in the end we will probably just refer to them here.}
-
-% metric on surface brightness limit in different parts of the sky
-% to MC structure
-% could use metric for how much of the Besla stellar debris we can detect
-%  even just that region of the sky covered
-
-\begin{itemize}
-
-\item  Magellanic Clouds proper motion metric.
-It would be useful to calculate a metric that's the significance level ($\sigma$-level) of the proper motion measurement of one Magellanic MSTO star (r=23 mag).
-This would be $\sim$2.0 mas yr$^{-1}$ / $\sigma_{\rm pm}$.
-%  the precision proper motion metric that
-%  Metric that calculates the proper motion accuracy of LMC MSTO stars at r=23 and calculates the sigma-level of
-%the proper motion measurement (2.0 mas/yr / sigma_pm ).
-
-\item Another useful metric would be to calculate the surface
-brightness limit of the Magellanic structures using MSTO stars.
-
-\item Metric of how much of the expected Magellanic debris/structure
-\citet[from][]{2012MNRAS.421.2109B} model) we can detect.  This would depend
-mostly on the area covered, but we could also use the surface
-brightness limit (calculated above) directly.
-
-\end{itemize}
-
+% PJM: moved to Future Work while MAF analysis is pending:
+% \input{MagellanicClouds/MCs_ProperMotion.tex}
 
 % ====================================================================
 
-% TO DO: KNUT AND DAVID: \input{} science sections here!
+\input{MagellanicClouds/MCs_FutureWork.tex}
 
 % ====================================================================
-
-\navigationbar

@@ -4,6 +4,20 @@
 Chapter editor:
 \credit{jasondrhodes}.
 
+Contributing authors:
+\credit{rubind},
+\credit{davidpbennett},
+\credit{mtpenny},
+{\it Rachel Street}.
+
+\section*{Summary}
+\addcontentsline{toc}{section}{~~~~~~~~~Summary}
+
+WFIRST will launch in $\sim$ 2025 for a 5 year mission to explore dark energy, find and characterize exoplanets, and take wide, deep infrared surveys of the galactic and extragalactic sky.  WFIRST was recognized by the Astro2010 Decadal Survey as an excellent NIR complement to LSST's optical capabilities. More recent work has recognized the strong synergy these two projects will have in helping to address cosmological questions in the 2020s \citep{2015arXiv150107897J}.
+  Together, the two observatories can accomplish significantly more (and better) science than either can alone in the areas of weak lensing, large-scale structure studies, strong lensing, supernova studies, exoplanet investigations,  and photometric redshift determination. Accomplishing this will require coordinated observations.  We have identified three areas of proposed coordination: 1. Early coverage of the $>2000$ square degree WFIRST High Latitude Survey to the full optical depth for enhanced photometric redshifts for both LSST and WFIRST; 2. Coordinated LSST optical observations in the WFIRST supernova discovery fields; 3. Precursor, simultaneous, and follow-up observations of the WFIRST microlensing fields near the galactic bulge.
+
+  We note here that the focus of the WFIRST  input to this paper is on suggesting changes or enhancements to the LSST observing strategy (cadence or survey overlap) that will provide mutual benefit for WFIRST and LSST.  The observing strategy suggestions here are not exhaustive of the possibilities for synergy between WFIRST and LSST; rather the suggestions here are based on the planned primary WFIRST surveys that are driving the WFIRST mission requirements.  As the plans and possibilities for WFIRST Guest Observer surveys evolve, and the ideas for additional science investigations that will make use of planned WFIRST survey data mature, the community should continue to look for areas of survey synergy.  Both WFIRST and LSST should consider survey modifications that would increase the global combined science output of the two surveys.
+
 
 % --------------------------------------------------------------------
 
@@ -13,27 +27,71 @@ Chapter editor:
 % Introduce, with a very broad brush, this chapter's science projects,
 % and why it makes sense for them to be considered together.
 
-WFIRST-AFTA is a wide field infra-red survey telescope being designed for
-survey operations in the mid 2020's. It will carry out a large area survey,
-likely covering around X000 square degrees, for weak lensing and large scale
-structure cosmology, and also smaller targeted surveys to enable supernova
-cosmology and exoplanetary microlensing searches.
+The Wide Field Infrared Survey Telescope (WFIRST) is a NASA mission that
+entered Phase A in February 2016.  WFIRST was the highest recommendation
+for large space missions in the 2010 New Worlds New Horizons Decadal
+Survey.  That recommendation envisioned a wide-field observatory with
+near infrared (NIR) capabilities to complement LSST's optical
+capabilities; the Decadal Survey recognized the obvious synergy between
+WFIRST and LSST.  WFIRST's design has evolved since 2010 and the design
+being pursued for a mid-2020s launch uses an existing $2.4$m telescope
+donated to NASA, giving WFIRST capabilities not envisioned by the
+Decadal Survey.  WFIRST has 3 primary science objectives:
 
-The synergy with LSST is very promising indeed. In this chapter we lay out
-three specific projects in the three main WFIRST science areas, and test the
-simulated LSST Observing Strategies for their performance in each case. Then,
-we use these results to design a suite of modified LSST Observing Strategies,
-which we propose as new OpSim simulation runs.
+\begin{itemize}
+\item Determine the nature of the dark energy that is driving the
+current accelerating expansion of the universe using a combination of
+weak lensing, galaxy clustering (including Baryon Acoustic Oscillations
+and Redshift Space Distortions), and supernovae type Ia (SN).
+\item Study exoplanets through a statistical microlensing survey and via
+direct imaging and spectroscopy with a coronagraph.
+\item Perform NIR surveys of the galactic and extragalactic sky via a
+Guest Observer program.
+\end{itemize}
 
-% Add sections below, one science investigation per section, one
-% section per file.
+WFIRST will be at L2 to enable the thermal stability needed for the
+precise astrometric, photometric, and morphological measurements
+required for these science goals. The baseline WFIRST mission
+architecture is described in detail in the final report of the WFIRST
+Science Definition Team \citep{2015arXiv150303757S}
+%(arxiv/1503.03757).
+The WFIRST Wide Field
+Instrument(WFI) has a NIR focal plane with a $\sim0.28$ square degree
+field of view made up 18 4k$\times$4k Teledyne H4RG NIR detectors and will
+have imaging capabilities from $0.5-2$ microns and grism spectroscopy
+capabilities from $1-2$ microns with $R\sim461\lambda$.  The WFI
+also contains an Integral Field Channel (IFC) spectrometer with $R\sim100$
+resoluton over the range $0.6-2$ microns for SN follow up. The exoplanet
+coronagraph will have imaging ($0.43-0.97$ microns) and spectroscopic
+($0.6-0.97 $ microns) capabilities with a contrast ratio of 1 part in a
+billion.
+
+WFIRST's  5 year primary mission is envisioned to have $\sim2$years dedicated to a
+$\sim2200$ square degree High Latitude Survey (HLS) for weak lensing and
+galaxy clustering,  $\sim1$ year of microlensing observations divided into 6
+seasons, $\sim0.5$ years of SN search and follow-up, $\sim0.8$ years dedicated to
+the coronagraph and the remaining time dedicated to competitively selected Guest
+Observer observations. WFIRST has no expendables that would prevent an
+extended mission of 10 years or longer, and an extended mission will likely be
+given over entirely to Guest Observer observations.
+
+The synergy with LSST is very promising indeed. In this chapter we aim
+to  lay out three  specific projects in the three main WFIRST science
+areas, and test the simulated LSST Observing
+Strategies for their performance in each case. Then, we use these
+results to design a suite of modified LSST Observing Strategies, which
+we propose as new \OpSim simulation runs.
+
+
+
 % --------------------------------------------------------------------
 
+\input{WFIRST/WFIRST_weaklensing.tex}
+
+% PJM: commented out pending check-in from Dave Rubin
 \input{WFIRST/WFIRST_supernovae.tex}
 
 \input{WFIRST/WFIRST_microlensing.tex}
-
-\input{WFIRST/WFIRST_weaklensing.tex}
 
 % --------------------------------------------------------------------
 

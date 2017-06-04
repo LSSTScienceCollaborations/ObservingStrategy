@@ -1,0 +1,199 @@
+% ====================================================================
+%+
+% SECTION:
+%    MCs_ProperMotion.tex
+%
+% CHAPTER:
+%    magclouds.tex
+%
+% ELEVATOR PITCH:
+%-
+% ====================================================================
+
+% \section{The Proper Motion of the LMC and SMC}
+\subsection{The Proper Motion of the LMC and SMC}
+\def\secname{\chpname:propermotion}\label{sec:\secname}
+
+\credit{dnidever},
+\credit{knutago}
+
+In the last decade work with $HST$ has been able to measure the bulk
+tangential (in the plane of the sky) velocities ($\sim$300 km/s) of
+the Magellanic Clouds (Kallivayalil et al.\ 2016a,b,2013) and even the
+rotation of the LMC disk \citep{2014ApJ...781..121V}. Gaia
+will measure precise proper motions of stars to $\sim$20th magnitude
+which will include the Magellanic red giant branch stars. LSST will be
+complementary to Gaia and measure proper motions of stars in the
+$\sim$20--24 mag range that includes Magellanic main-sequence stars
+which are far more numerous than giants, and, therefore, more useful
+for mapping extended stellar structures. The LSST 10-year survey
+proper motion precision will be $\sim$0.3--0.4 mas/yr at LMC
+main-sequence turnoff at r$\approx$22.5--23.  This will allow for
+accurate measurement of proper motions of {\em individual stars} at the
+$\sim$5$\sigma$ level.
+
+Besides measuring kinematics, the LSST proper motions can be used to
+produce clean samples of Magellanic stars.
+%  clean samples of background
+% galaxies (no proper motions) and this is commonly done with $HST$ data
+% of
+%
+In addition, LSST proper motions can be used to improve star/galaxy
+separation which is quite significant for faint, blue Magellanic
+main-sequence stars.
+
+% streaming motions
+
+% can we do individual LMC stars with LSST, or small groups?
+
+% SRD says want 0.2 mas/yr accuracy over the course of the survey
+% 0.2 mas/yr at r=20.5 (similar to Gaia)
+% ~0.25 mas/yr at r=22
+% ~0.3 mas/yr at r=22.5 LMC turnoff
+% ~0.4 mas/yr at r=23
+% 1 mas/yr for r=24
+% See Figure 21 from Ivezic et al. (2012) or slide 46 of overview-sci-reqs.pdf
+%have the astrometric precision to measure the proper motions of individual
+%Proper motion cleaning to find the giants?? gaia does that already
+%lsst can use proper motion cleaning to do star/galaxy separation as well
+%
+%The
+%The Magellanic Clouds have a large tangential velocity (in the plane of the sky) that has been
+%Gaia will be able to see the bright stuff, need lsst to get the MSTO
+%gaia/lsst synergy
+%
+%metric that calculates the proper motion accuracy of LMC MSTO stars at r=23 and calculates the sigma-level of
+%the proper motion measurement (2.0 mas/yr / sigma_pm ).
+
+% --------------------------------------------------------------------
+
+% \subsection{Metrics}
+\subsubsection{Metrics}
+\label{sec:\chpname:metrics}
+
+The natural Figure of Merit for this science case is the precision
+with which the proper motion of the Magellanic Clouds can be measured.
+This is likely to depend on the following diagnostic metrics:
+
+% metric on surface brightness limit in different parts of the sky
+% to MC structure
+% could use metric for how much of the Besla stellar debris we can detect
+%  even just that region of the sky covered
+
+\begin{itemize}
+
+\item  Single star proper motion precision, possibly quantified as.
+the significance level
+($\sigma$-level) of the proper motion measurement of one Magellanic MSTO
+star (r=23 mag). We would expect this to take values of
+$\sim$2.0 mas yr$^{-1}$ / $\sigma_{\rm pm}$.
+%  the precision proper motion metric that
+%  Metric that calculates the proper motion accuracy of LMC MSTO stars at r=23 and calculates the sigma-level of
+%the proper motion measurement (2.0 mas/yr / sigma_pm ).
+
+\item Another useful diagnostic metric would be the surface
+brightness limit of the Magellanic structures, using MSTO stars.
+
+\item A metric quantifying how much of the expected Magellanic debris/structure
+\citet[from][]{2012MNRAS.421.2109B} model) we can detect would allow the
+proper motion science case to be extended to peripheral structures.
+This would depend
+mostly on the area covered, but we could also use the surface
+brightness limit (calculated above) directly.
+
+\end{itemize}
+
+% % --------------------------------------------------------------------
+%
+% \subsection{Metrics}
+% \label{sec:\secname:metrics}
+%
+% % --------------------------------------------------------------------
+%
+% \subsection{OpSim Analysis}
+% \label{sec:\secname:analysis}
+%
+% % --------------------------------------------------------------------
+%
+% \subsection{Discussion}
+% \label{sec:\secname:discussion}
+%
+% ====================================================================
+%
+% \subsection{Conclusions}
+%
+% Here we answer the ten questions posed in
+% \autoref{sec:intro:evaluation:caseConclusions}:
+%
+% \begin{description}
+%
+% \item[Q1:] {\it Does the science case place any constraints on the
+% tradeoff between the sky coverage and coadded depth? For example, should
+% the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
+% Pan-STARRS) or the number of detected galaxies (the current baseline but
+% with 18,000 deg$^2$)?}
+%
+% \item[A1:] ...
+%
+% \item[Q2:] {\it Does the science case place any constraints on the
+% tradeoff between uniformity of sampling and frequency of  sampling? For
+% example, a rolling cadence can provide enhanced sample rates over a part
+% of the survey or the entire survey for a designated time at the cost of
+% reduced sample rate the rest of the time (while maintaining the nominal
+% total visit counts).}
+%
+% \item[A2:] ...
+%
+% \item[Q3:] {\it Does the science case place any constraints on the
+% tradeoff between the single-visit depth and the number of visits
+% (especially in the $u$-band where longer exposures would minimize the
+% impact of the readout noise)?}
+%
+% \item[A3:] ...
+%
+% \item[Q4:] {\it Does the science case place any constraints on the
+% Galactic plane coverage (spatial coverage, temporal sampling, visits per
+% band)?}
+%
+% \item[A4:] ...
+%
+% \item[Q5:] {\it Does the science case place any constraints on the
+% fraction of observing time allocated to each band?}
+%
+% \item[A5:] ...
+%
+% \item[Q6:] {\it Does the science case place any constraints on the
+% cadence for deep drilling fields?}
+%
+% \item[A6:] ...
+%
+% \item[Q7:] {\it Assuming two visits per night, would the science case
+% benefit if they are obtained in the same band or not?}
+%
+% \item[A7:] ...
+%
+% \item[Q8:] {\it Will the case science benefit from a special cadence
+% prescription during commissioning or early in the survey, such as:
+% acquiring a full 10-year count of visits for a small area (either in all
+% the bands or in a  selected set); a greatly enhanced cadence for a small
+% area?}
+%
+% \item[A8:] ...
+%
+% \item[Q9:] {\it Does the science case place any constraints on the
+% sampling of observing conditions (e.g., seeing, dark sky, airmass),
+% possibly as a function of band, etc.?}
+%
+% \item[A9:] ...
+%
+% \item[Q10:] {\it Does the case have science drivers that would require
+% real-time exposure time optimization to obtain nearly constant
+% single-visit limiting depth?}
+%
+% \item[A10:] ...
+%
+% \end{description}
+
+% ====================================================================
+%
+% \navigationbar
