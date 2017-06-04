@@ -233,27 +233,28 @@ the injected ratio.  The relative detectability can be assessed with
 the \texttt{transientAsciiMetric}, which allows us to see how OpSims
 recovers observations of transients with realistic shapes. We conclude
 that for RG-WD progenitors the detectability is enhanced by $\sim50\%$ in
- $g'$ compared to SD progenitors, and slightly less in $r'$.
+ $g'$ compared to SD progenitors, and slightly less in $r'$. 
 Then we extract from the \texttt{transientAsciiMetric}, the number of
 \emph{color observations}, i.e. observations in 2 bands within 1 day
 of each other, each fulfilling our SNR requirement for the color for
 3-, 6-, and 12 months of survey in year 1. 
 
 With the goal of distinguishing a SD contribution of 10\% to the SN Ia
-population from a 5\% contribution to a three-sigma level ($p$-value $<0.05$)  we need more
-than 1000 detections within 1 day in 2 filters at a
-$\mathrm{SNR}~\geq~7$: \autoref{tab:SNprogenitors}. But the pairs
-of observations we recovered in the previous steps are within the first
-10 days but with any gap in time. \emph{Second shortcut}: To include
-the constraint that the detections should be within 24 hours we use
-to the \texttt{InterNightGapsMetric}, which is plotted in
+population from a 5\% contribution to a three-sigma level ($p$-value
+$<0.05$) we need more than 1000 detections within 1 day in 2 filters
+at a $\mathrm{SNR}~\geq~7$: \autoref{tab:SNprogenitors}. But the pairs
+of observations we recovered in the previous steps are within the
+first 10 days but with any gap in time. \emph{Second shortcut}: To
+include the constraint that the detections should be within 24 hours
+we use to the \texttt{InterNightGapsMetric}, which is plotted in
 ~\autoref{fig:enigmaGapAll}.  For the \opsimdbref{db:baseCadence} we
 estimate $~\sim10\%$ of the observation are revisited within a
 night. With the assumption that this is likely to happen in two
 different filters, which is \emph{non-conservative}, but neglecting
 intra-night observations that may happen in the two different filters,
 which is a \emph{conservative} assumption our numbers drop by a factor
-10.
+10. The lightcurves are injected with an event rate designed to be
+consistent with the discovery rate measured in \ref{sec:supernovae}.
 
 With all these assumptions standing, we find that that only 3 months
 of survey are sufficient to provide a sufficiently large and
@@ -359,12 +360,12 @@ and $r'$) for 3, 6 months, and a year of
  \item[Q6:] {\it Does the science case place any constraints on the
  cadence for deep drilling fields?}
 
- \item[A6:] Yes, although the present simulation has not included deep drilling fields.
+ \item[A6:] Yes, although the results have not been analyzed separately for WFD and DD fields.
 
  \item[Q7:] {\it Assuming two visits per night, would the science case
  benefit if they are obtained in the same band or not?}
 
- \item[A7:] No.
+ \item[A7:] No. Although  we would benefit greatly from 2 visits in the same filters, and one visit in a different filter to constrain simultaneously shape and color."
 
  \item[Q8:] {\it Will the case science benefit from a special cadence
  prescription during commissioning or early in the survey, such as:
