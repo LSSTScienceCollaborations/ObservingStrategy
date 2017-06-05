@@ -195,14 +195,14 @@ compromises.
 \subsection{Fast Transients and Rolling Cadence}
 \label{sec:rolling:transients}
 
-Fast transients as a science topic are addressed elsewhere. In this
+Fast transients as a science topic are addressed in \autoref{chp:transients}. In this
 section, the demands of fast transients are used to directly constrain
 or orient the rolling cadence development.
 
 By ``fast transients'', we are referring to events that are sufficiently
 fast that they are not addressed by the rolling cadence designed for SN
-observations, and slow enough that they are not covered in ``deep
-drilling'' type mini-surveys.  For higher tempo rolls, it is quite
+observations, and slow enough that they are not covered in the cosmological ``deep
+drilling field'' cadences (\autoref{sec:intro:baseline}, \autoref{sec:cadexp:opsim}).  For higher tempo rolls, it is quite
 difficult to obtain full color data, because of the constraints on
 filter selection.  For this example, we will examine a rolling cadence
 utilizing only the {\it r} and {\it i} filters, as they are used for
@@ -222,7 +222,7 @@ enhancement of 300$\times$.
 
 Several different possible redeployments of portions of a uniform survey
 have been described, each using 10\% of available time.  Of course it is
-possible in principal to implement multiple options, sequentially or
+possible in principle to implement multiple options, sequentially or
 maybe in parallel in some cases. This may pose considerable challenges
 to the scheduling strategy design by introducing incompatible boundary
 conditions.
@@ -250,13 +250,12 @@ There are strong arguments against beginning a rolling cadence in the
 first, or even the second year of the survey.  Early in the survey, it
 is important to obtain for each field/filter combination, an adequate
 number of good quality photometric images, and at least one image in
-excellent seeing, to support closure of photometry reductions and to
-support generation of template images.
+excellent seeing, to support closure of photometry reductions, generation of template images for differencing analysis, and to establish the baseline for proper motion studies.
 
-Since major science goals require a significant degree of survey
+Since many major science goals require a significant degree of survey
 homogeneity, it may be advisable to implement a strategy that brings the
 survey to nominal uniform depth at several times, e.g.\ after 3 or 5
-years.  This would strongly constrain rolling cadences.
+years.  This would strongly constrain rolling cadences. We note that such a strategy would also allow a lot of science to be done without waiting the whole 10-years.
 
 Some science objectives favor certain distributions of visits.  For
 astrometry, visits early and late in the survey and at large parallax
@@ -270,13 +269,13 @@ randomization, for example by acquiring a large number of observations
 during a meteorologically favorable or unfavorable season, or during a
 period of instrument performance variance.
 
-Dithering does not work gracefully with a rolling cadence, reducing
+Dithering may prove challenging with a rolling cadence, since it reduces
 temporal coverage at the boundaries of the selected sky region.  This is
 negligible for small dithers, but important for large dithers, which are
-under consideration.
+under consideration; making the contiguous roll area as large as possible shoudl mitigate this issue.
 
 These cautions illustrate that evaluation of rolling cadences must be
-based on the full range of schedule performance metrics, and not just
+based on the {\it full range of schedule performance metrics,} and not just
 those targeted by rolling cadence development.
 
 
@@ -293,13 +292,13 @@ Project's ``SOCS and Scheduler'' team for \OpSim version 4.
 % However, analysis of the cadences described above may guide
 % development of objectives for enhancement by rolling cadence.
 
-Rolling cadences will be required to pass the same metrics as for other
-cadences, and general requirements such as sky area, depth and visit
-count must be met.  Of particular interest will be metrics that clearly
-distinguish the gains available with rolling cadences -- that is,
-metrics that measure schedule performance for variable targets, and
-especially those with strong sampling requirements, or more rapid
-variability.
+Rolling cadences will need to satisfy the basic survey science
+requirements (including those on sky area, depth and visit count ), and
+then be evaluated using the same set of metrics as for other cadences.
+Of particular interest will be metrics that clearly distinguish the
+gains available with rolling cadences; that is, metrics that measure
+schedule performance for variable targets, and especially those with
+strong sampling requirements, or more rapid variability.
 
 % \subsubsection{Future Rolling Cadence Metrics}
 %
