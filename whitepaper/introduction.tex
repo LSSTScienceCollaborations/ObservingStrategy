@@ -95,11 +95,11 @@ uniform coverage at any given time, and reaches the survey goals for
 measuring stellar parallax and proper motion over the ten-year survey.
 The survey requirements on depth lead to roughly 825 visits (summing
 over the six filters) in the 10-year LSST survey to any given point on
-the sky.  The resulting Deep-Wide-Fast component of the survey covers
+the sky.  (The exact return position depends on the dithering strategy assumed; while \OpSim does not include dither patterns explicitly, they can be applied to the field centers in post-processing and before image depth, visit spacing etc.\ are calculated as a function of position on the sky.) The resulting Wide-Fast-Deep (WFD) component of the survey covers
 roughly 18,000 deg$^2$ of high Galactic latitude sky, and requires about
 85\% of the available observing time in its current baseline realization.
 
-There are obvious science cases that the Deep-Wide-Fast survey does
+There are obvious science cases that the WFD survey does
 not address, and thus the remaining 15\% of the telescope time in the
 baseline cadence is devoted to a series of specialized surveys.  They
 are as follows:
@@ -192,7 +192,7 @@ science?'' These ``metrics'' can be coded against the \MAF python API, and
 shared among the LSST science community at the
 \href{https://sims-maf.lsst.io/metricList.html#contributed-mafcontrib-metrics}{\simsMafContrib}
 online repository.
-All of the community-delevoped \MAF metrics described in this paper can be found there; a complete listing of all available \MAF metrics is provided in the appendix.
+All of the community-developed \MAF metrics described in this paper can be found there; a complete listing of all available \MAF metrics is provided in the appendix. The more basic metrics provided by the \MAF package itself allow a wide range of diagnostic analysis; some basic dither patterns may also be applied and investigated within the \MAF.
 
 Once the fiducial strategy has
 been evaluated in this way, then any other strategy can be evaluated
@@ -284,7 +284,7 @@ sub-group of the Science Advisory Committee.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 \subsection{Communicating via Science Case Conclusions}
-\label{sec:\secname:caseConclusions}
+\def\secname{intro:caseConclusions}\label{sec:\secname}
 
 \credit{ivezic}
 
@@ -305,8 +305,7 @@ questions probing different aspects of the observing strategy:
 \item[Q1:] {\it Does the science case place any constraints on the
 tradeoff between the sky coverage and coadded depth? For example, should
 the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-Pan-STARRS) or the number of detected galaxies (the current baseline but
-with 18,000 deg$^2$)?}
+Pan-STARRS) or the number of detected galaxies (the current baseline of 18,000 deg$^2$)?}
 
 % \item[A1:] ...
 
@@ -377,7 +376,7 @@ These questions were designed by the LSST Project Scientist (this section's auth
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 \subsection{Timeline}
-\label{sec:\chpname:timeline}
+\def\secname{intro:timeline}\label{sec:\secname}
 
 \credit{connolly},
 \credit{drphilmarshall}
@@ -499,7 +498,7 @@ community users. The solution to this problem is to work together: the LSST Obse
 % --------------------------------------------------------------------
 
 \section{Guidelines for Contributors}
-\def\secname{guidelines}\label{sec:\secname}
+\def\secname{intro:guidelines}\label{sec:\secname}
 
 \credit{drphilmarshall}
 
