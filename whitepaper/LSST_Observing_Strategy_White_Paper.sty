@@ -105,6 +105,12 @@
 % \usepackage{chapterbib}
 
 %%%%%
+% Endnotes are used in author list
+\usepackage{endnotes}
+\renewcommand{\notesname}{}
+\renewcommand{\enotesize}{\scriptsize}
+
+%%%%%
 % Hyper-linking between sections - must be *last* package?!:
 %\usepackage{color}
 %\definecolor{violet}{rgb}{0.4,0.0,0.4}
@@ -340,7 +346,7 @@ colorlinks=true]{hyperref}
 \renewcommand{\author}[3]{% args = Name, Username, Institution
    \phantomsection
    % #1\def\@currentlabel{\unexpanded{#1}}\label{#2} {\footnotesize(\github{#2})},\footnote{#3}
-   #1\def\@currentlabel{\unexpanded{#1}}\label{#2},\footnote{\github{#2}, #3}
+   #1\def\@currentlabel{\unexpanded{#1}}\label{#2},\endnote{\github{#2}, #3\vspace{-0.5\baselineskip}}
 }
 
 \newcommand{\credit}[1]{% args = Username
