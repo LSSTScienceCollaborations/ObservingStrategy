@@ -94,12 +94,15 @@ whether the simulated survey would be useful for any particular purpose or inter
 
 In most of the simulations discussed in this document, the \OpSim scheduler balances several different observing proposals:
 \begin{itemize}
-\item {\bf Wide, Fast, Deep (WFD):} The WFD is the primary LSST survey, taking 85-95\% of the observing time and covering 18,000 square degrees of sky, between declination $+2$ and $-62$~degrees.
+\item {\bf Wide, Fast, Deep (WFD):} The WFD is the primary LSST survey, taking 85-95\% of the observing time and covering 18,000 square degrees of sky, in the current implementation spanning the declination range from about $-65$ to about $+5$~degrees (the total
+sky area between these limits is about 20,500 square degrees, but a region aligned with the Galactic Plane is not included in WFD). 
 % @ivezic: Our SAC reviewer suggested including this dec range, and also that we say what the galactic latitude cut is. Can you check the former and add the latter, please? Thanks!
 This observing proposal is usually configured to attempt observing pairs spaced $\sim40$\ minutes apart.  This temporal spacing is designed to optimize the detection of moving solar system objects. This proposal typically balances the six $ugrizy$ filters, observing each field every $\sim3$\ days.
 \item {\bf North Ecliptic Spur (NES):} The NES is an extension to reach the Ecliptic at higher airmass than the WFD survey typically covers.  The NES typically does not include the $uy$ filters.
-\item {\bf Galactic Plane:} This proposal covers the region where LSST is expected to be highly confused by the density of stellar sources.  Typically takes fewer total exposures per field than the WFD survey and does not collect in pairs.
-\item {\bf South Celestial Pole (SCP):} The SCP is an extension to higher airmass than the WFD to cover the region south of declination -60 degrees.  This proposal includes $ugrizy$, but takes fewer exposures per field than the WFD and does not collect in pairs.
+\item {\bf Galactic Plane:} This proposal covers the region where LSST is expected to be highly confused by the density of stellar sources.  Typically takes fewer total exposures per field than the WFD survey and does not collect in pairs. This region is defined by the galactic 
+latitude limit $|b| <  (1-l/90^\circ) \, 10^\circ$ for $0^\circ < l < 90^\circ$ and analogously (mirror image) for $270^\circ < l < 360^\circ$. 
+\item {\bf South Celestial Pole (SCP):} The SCP is an extension to higher airmass than the WFD to cover the region south of declination 
+$-65$ degrees.  This proposal includes $ugrizy$, but takes fewer exposures per field than the WFD and does not collect in pairs.
 \item {\bf Deep Drilling Fields (DD):} The Deep Drilling Fields are single pointings that are observed in extended sequences. The DD proposals often include certain filter combinations to ensure that near-simultaneous color information is available for variable and transient objects. Four of the LSST Deep Drilling fields have been selected and announced. It is expected that there will be more DD fields selected for the final survey. Most of the simulations here include five DD fields.
 \end{itemize}
 

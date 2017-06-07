@@ -158,13 +158,11 @@ series of experiments varying the assumptions in \OpSim.  In
 \autoref{chp:specialsurveys}, we explore additional ideas for future
 experiments to be done in \OpSim -- many of them, we hope, inspired by
 requests from the community.
-% @ivezic: please check the following sentences, requested by the Pub Board reviewer.
 \OpSim itself may be viewed as a prototype for the LSST Scheduler
-software. A ``SOCS and Scheduler'' team will develop this vital piece of
-observatory infrastructure code based on the \OpSim experience; this
-team's role in the continuing exploration of the LSST observing strategy
+software (a part of the Observatory Control System).  \OpSim and Scheduler teams
+will develop this vital piece of observatory infrastructure code based on the \OpSim experience; these
+teams' role in the continuing exploration of the LSST observing strategy
 is laid out in more detail in \autoref{sec:intro:timeline} below.
-% @ivezic can you please unpack the SOCS acronym and add a sentence about what else this team will do, please? You can refer forward to MAF which is introduced and described in the next section (\ref{sec:intro:evaluation}).
 
 \navigationbar
 
@@ -266,17 +264,15 @@ Through the end of construction and commissioning, this community
 Observing Strategy White Paper will remain a living document that is
 {\it the} vehicle for the community to communicate to the LSST Project
 regarding the Wide-Fast-Deep and mini-survey observing strategies.
-The Project Scientist will {\it synthesize and act on the results
-presented in this paper,} with support from the Science Advisory
-Committee and Survey Strategy Committee (see below).
-% @ivezic: "How will the Project Scientist act? Through the PST, or...?" Can you please suggest some extra detail here, or clean up and ignore?
+The Project Scientist will {\it synthesize the results presented in this paper
+and develop an appropriate response strategy with the Scheduler and \OpSim 
+teams,} with support from the Science Advisory Committee and Survey Strategy Committee (see below).
 
 As described in the LSST Operations Plan,\footnote{The LSST Operations Plan is available to LSST project and science community members as document LPM-181, \url{https://docushare.lsstcorp.org/docushare/dsweb/Services/LPM-181}. It contains descriptions for the various individual roles and groups referred to here.} the observing
 strategy will continue to be refined and optimized during operations:
 the Survey Scientist will chair a Survey Evaluation Working Group that
 will evaluate quarterly the current and expected performance of the
-survey evaluation and scheduler software (which we expect to be evolved from \OpSim and \MAF).
-% @ivezic: Please verify or edit the above parenthetical clause, inserted in response to the Pub Board reviewer.
+survey (using software which we expect to be evolved from \OpSim and \MAF).
 This group may include representation
 from the Survey Support Scientist, the Pipelines and Data Products
 group, the Data Processing group, the Camera team, and science
@@ -421,7 +417,7 @@ repository can support the development and aggregation of these DDF
 white papers. The LSST Science Advisory Committee (SAC) will be asked to make a recommendation to the
 project by the end of May 2018 on which DDFs and cadences should be
 considered, and the project will respond to these recommendations by
-the end of 2018. The Project's ``SOCS and Scheduler'' team will support
+the end of 2018. The Project's \OpSim team will support
 this effort by evaluating the proposed cadences and DDFs. This may be in
 the form of simulations (for new cadence proposals) or through an
 evaluation of the visibility and properties of the fields relative to
@@ -438,23 +434,21 @@ strategies on a range of LSST science (e.g.\ the trade-off between a
 rolling cadence for supernova classification vs transient detection or
 long period variability will need to be explored quantitatively). The
 requested delivery date for these \MAF FoMs into the Observing Strategy
-White Paper will be Aug 1, 2019; the updated document would be version~3.0.
-% @ivezic, @bwillman: Neither the v2.0 nor v3.0 white papers are referred to in the Table, but they are clearly called for in the text. Can you please check these references and make sure you are OK with them? @connolly: should we update the Table to refer to these WP updates?
-This will leave time for a Survey
-Strategy Committee (see below) to undertake trade studies that
+White Paper will be Aug 1, 2019. This will leave time for a Survey
+Strategy Committee (SSC; see below) to undertake trade studies that
 incorporate the community-provided FoMs. Details of the design of the
 FoMs (including units, thresholds, speed) will be described at a later
 date (prior to December 2019). If Project resources can be allocated to
-the process, then the SOCS and Scheduler team will support the writing
-of the FoMs with advice and tutorials on the use of \OpSim~4~v1.4, but
+the process, then the \OpSim team will support the writing
+of the FoMs with advice and tutorials on the use of \OpSim~4, but
 the Observing Strategy white paper community will be expected to deliver
-their metrics as \MAF code.
-% @ivezic: How will all this activity by the SSC and SOCS and
-% Scheduler team interact with their work preparing for commissioning?
-% The Pub Board reviewer asks, in particular, "is it then expected for
-% the scheduler team to update the cadence before commissioning?"
-% Great if you can give the text a quick read through and provide a
-% comment or two on commissioning.
+their metrics as \MAF code.  By the summer of  2020, just prior to the 
+start of commissioning phase, MAF and Opsim tools will be finalized and a 
+series of simulated surveys and supporting documentation delivered 
+to the SAC and the SSC, which will be asked to recommend the initial 
+observing strategy. By early 2021, an initial survey strategy will be 
+announced and a baseline simulation that reproduces that strategy will 
+be published. 
 
 \item \textbf{Establishment of a Survey Strategy Committee (SSC)}. Given
 the delivery of the FoMs, the project will establish a committee by March
@@ -467,7 +461,7 @@ the LSST Director until the end of LSST construction and commissioning.
 In January 2021, based on the recommendation made by the SSC, the
 project will announce an initial survey strategy and publish a baseline
 simulation that reproduces that strategy. If Project resources can be
-allocated to the process, then the SOCS and Scheduler team might support
+allocated to the process, then the \OpSim team might support
 the committee by helping to generate the proposed survey strategies.
 
 \end{description}
