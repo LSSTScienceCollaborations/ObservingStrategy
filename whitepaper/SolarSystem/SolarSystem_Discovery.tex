@@ -38,7 +38,9 @@ orbits?''.  This requirement poses varying levels of difficulty as we
 move from Near Earth Objects (NEOs) through the Main Belt Asteroids
 (MBAs) and to Trans-Neptunian Objects (TNOs) and Scattered Disk Objects
 (SDOs), as well as for comets and for other unusual but very
-interesting populations such as Earth minimoons. Due to their small
+interesting populations such as Earth minimoons
+(see e.g. \citet{2014Icar..241..280B, 2017Icar..285...83F}.
+Due to their small
 heliocentric and geocentric distances, NEOs appear to move with
 relatively high velocities and are distributed over a large fraction
 of the sky, including regions far from the ecliptic plane. MBAs are densely distributed,
@@ -63,6 +65,18 @@ discovering Solar System Objects. An in-depth study of the performance
 of difference imaging and MOPS is currently ongoing. However, we can
 make a range of assumptions on how MOPS will perform and evaluate how
 many and which objects can be linked under observational cadence, given those assumptions.
+
+It is important to emphasize that for the vast majority of
+LSST-observed moving objects, LSST will be both the discovery and the
+recovery facility. Most LSST-observed objects will be too faint
+to be observed by assets that are currently carrying out
+Solar System small bodies observations, and the number of 
+detections will be so large that the existing infrastructure
+could not observe more than a tiny fraction, even if they 
+were bright enough. Therefore, as described in this section,
+LSST's performance for detecting and re-detecting minor
+bodies is critical to the success of the project; no outside
+contributions will be significant.
 
 
 % --------------------------------------------------------------------
@@ -156,7 +170,9 @@ some bright absolute magnitude ($H_b$), combined with the magnitude at
 which this falls to 50\% ($H_f$). A draft set of requirements for
 these parameters has been written up in the Solar System Object
 Specifications document, although these requirements are still quite
-preliminary. The current goal parameters are described in Table~\ref{ssoreqs}.
+preliminary. The current goal parameters are described in Table~\ref{ssoreqs},
+balancing a desireable level of completeness with reasonable goals for
+the standard LSST observing strategy.
 
 \begin{table}[]
 \centering
@@ -191,6 +207,15 @@ given H magnitude with the {\tt MoCompletenessMetric} summary metric.
 Examining the \opsimdbref{db:baseCadence} Baseline Cadence with these metrics,
 we find that most objects have many discovery opportunities. This is shown in
 Figure~\ref{standard_discovery}.
+
+Evaluating these metrics requires choosing an input solar system population;
+for all tests here, we have chosen a random set of 2,000 objects of each type from
+the Grav S3M model \citep{2011PASP..123..423G}. By cloning these orbits over a
+range of $H$ values, we can rapidly generate detections and evaluate the discovery
+metrics for a range of simulated surveys. The sample of 2,000 orbits per solar system
+population provides a completeness estimate comparable with the estimate
+resulting from evaluating a larger population, although with slightly more
+statistical noise.
 
 \begin{figure}
 \includegraphics[width=3.3in]{figs/solarsystem/minion_1016_DiscoveryChances_tno_mba_neo_10_year_3_pairs_in_15_nights_MOOB_ComboMetricVsH}
@@ -290,7 +315,7 @@ stops obtaining more than the minimum requested number of observations.
 
 With the expected MOPS discovery requirements,
 \opsimdbref{db:baseCadence} performs adequately for most solar system
-objects, although completeness falls off more rapidly for faint
+objects, as seen in Table~\ref{ssoperf}, although completeness falls off more rapidly for faint
 objects than desired for NEOs. To investigate this effect, more
 metrics will have to be developed to discover why these fainter NEOs
 are not being discovered (are they simply missing appropriate
