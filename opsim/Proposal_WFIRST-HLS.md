@@ -1,4 +1,4 @@
-# "Coordination with WFIRST"
+# "Coordination with WFIRST: HLS"
 
 A Proposed OpSim Experiment
 
