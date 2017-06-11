@@ -65,6 +65,7 @@
 \usepackage{xspace}
 \usepackage{tabularx}
 \usepackage{deluxetable} % Moved here by PJM 2009-01-27
+\usepackage{chngcntr}
 
 %%%%%
 %% If you use a font encoding package, please enter it here, i.e.,
@@ -288,12 +289,27 @@ colorlinks=true]{hyperref}
 
 \newcommand{\code}[1]{\texttt{#1}}
 
-\newcommand{\simsMAFcontrib}[2]{%
+% Deprecated macro - hyperlinking directly to code is fragile, as it can
+% get reorganized any time... Better to refer to the table in the
+% appendix, and make sure *that* is linked to the code.
+
+% \newcommand{\simsMAFcontrib}[2]{%
     % Example use: "We used \simsMAFcontrib{SeasonStacker}{mafContrib/seasonStacker.py} to work with seasons."
     % \simsMAFcontrib{Class}{folder/filename}
-    \href{https://github.com/LSST-nonproject/sims_maf_contrib/blob/master/#2}{\code{#1}}
+    % \href{https://github.com/LSST-nonproject/sims_maf_contrib/blob/master/#2}{\code{#1}}
+% }
+
+\newcommand{\metric}[1]{%
+    % Example use:
+    %   "We used \metric{SeasonStacker} to work with seasons."
+    \hyperref[tab:contrib_metrics]{\code{#1}}
 }
 
+\newcommand{\MAFmetric}[1]{%
+    % Example use:
+    %   "We used \metric{MedianMetric} to compute the median."
+    \hyperref[tab:maf_metrics]{\code{#1}}
+}
 % --------------------------------------------------------------------
 
 % OPSIM RUNS
