@@ -1,10 +1,16 @@
-\begin{table}
+\begin{table}[!h]
 \scriptsize
-\caption{MAF Metrics}
+\setcounter{table}{0}
+\makeatletter
+\renewcommand{\thetable}{A.\arabic{table}}
+\caption{Metrics provided by the
+\href{https://github.com/lsst/sims_maf/tree/master/python/lsst/sims/maf}{\MAF package}.
+\label{tab:maf_metrics}}
+\medskip
 \begin{tabular}{ll}
 \hline
                 Metric Name &                                                                       Description \\
-\hline
+\hline\hline
  AccumulateCountMetric &  Calculate the number of visits over time. \\
  AccumulateM5Metric &  The 5-sigma depth accumulated over time. \\
  AccumulateMetric &  Calculate the accumulated stat. \\
@@ -25,12 +31,28 @@
  CountMetric &  Count the length of a simData column slice. \\
  CountRatioMetric &  Count the length of a simData column slice, then divide by a normalization \\
   &  value. \\
- CountSubsetMetric &  Count the length of a simData column slice which matches 'subset'. \\
+ CountSubsetMetric &  Count the length of a simData column slice which matches ``subset". \\
  CountUniqueMetric &  Return the number of unique values \\
  CrowdingMagUncertMetric &  Given a stellar magnitude, calculate the mean uncertainty on the magnitude from \\
   &  crowding. \\
  CrowdingMetric &  Calculate whether the coadded depth in r has exceeded the confusion limit. \\
- DiscoveryChancesMetric &  Count the number of discovery opportunities for an SS object. \\
+\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+\scriptsize
+\setcounter{table}{0}
+\makeatletter
+\renewcommand{\thetable}{A.\arabic{table}}
+\caption{Metrics provided by the
+\href{https://github.com/lsst/sims_maf/tree/master/python/lsst/sims/maf}{\MAF package}, continued...}
+\medskip
+\begin{tabular}{ll}
+\hline
+            Metric Name &                                                                       Description \\
+\hline\hline
+  &  observations. \\
+ DiscoveryChancesMetric &  Count the number of discovery opportunities  for an SS object. \\
  DiscoveryMetric &  Identify the discovery opportunities for an SS object. \\
  Discovery\_EcLonLatMetric &  Returns the ecliptic lon/lat and solar elongation (deg) of the i-th SS object \\
   &  discovery opportunity. \\
@@ -50,22 +72,11 @@
  HighVelocityNightsMetric &  Count the number of nights with nObsPerNight number of high velocity detections. \\
  HistogramM5Metric &  Calculate the coadded depth for each bin (e.g., per night). \\
  HistogramMetric &  A wrapper to stats.binned\_statistic. \\
-\hline
-\end{tabular}
-
-\end{table}
-\begin{table}
-\scriptsize
-\caption{MAF Metrics Continued...}
-\begin{tabular}{ll}
-\hline
-                   Metric Name &                                                                       Description \\
-\hline
  HourglassMetric &  Plot the filters used as a function of time. \\
  IdentityMetric &  Return the input value itself. \\
  InterNightGapsMetric &  Calculate the gap between consecutive observations between nights, in days. \\
  IntraNightGapsMetric &  Calculate the gap between consecutive observations within a night, in hours. \\
- KnownObjectsMetric &  Identify SS objects which could be classified as 'previously known' based on \\
+ KnownObjectsMetric &  Identify SS objects which could be classified as ``previously known" based on \\
   &  their peak V magnitude. \\
  LightcurveInversionMetric &  Identify SS objects which would have observations suitable to do lightcurve \\
   &  inversion. \\
@@ -82,19 +93,34 @@
  MedianMetric &  Calculate the median of a simData column slice. \\
  MinMetric &  Calculate the minimum of a simData column slice. \\
  MinTimeBetweenStatesMetric &  Compute the minimum time between changes of state in a column value. \\
- MoCompletenessAtTimeMetric &  Calculate the completeness (relative to the entire population) <= a given H as a \\
+\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+\scriptsize
+\setcounter{table}{0}
+\makeatletter
+\renewcommand{\thetable}{A.\arabic{table}}
+\caption{Metrics provided by the
+\href{https://github.com/lsst/sims_maf/tree/master/python/lsst/sims/maf}{\MAF package}, continued...}
+\medskip
+\begin{tabular}{ll}
+\hline
+                   Metric Name &                                                                       Description \\
+\hline\hline
+MoCompletenessAtTimeMetric &  Calculate the completeness (relative to the entire population) <= a given H as a \\
   &  function of time, \\
  MoCompletenessMetric &  Calculate the completeness (relative to the entire population), given the counts \\
   &  of discovery chances. \\
  NChangesMetric &  Compute the number of times a column value changes. \\
  NNightsMetric &  Count the number of distinct nights an SS object is observed. \\
- NObsMetric &  Count the total number of observations where an SS object was 'visible'. \\
+ NObsMetric &  Count the total number of observations where an SS object was ``visible". \\
  NObsNoSinglesMetric &  Count the number of observations for an SS object, but not if it was a single \\
   &  observation on a night. \\
  NRevisitsMetric &  Calculate the number of (consecutive) visits with time differences less than dT. \\
- NStateChangesFasterThanMetric &  Compute the number of changes of state that happen faster than 'cutoff'. \\
+ NStateChangesFasterThanMetric &  Compute the number of changes of state that happen faster than ``cutoff". \\
  NightPointingMetric &  Gather relevant information for a single night to plot. \\
- NormalizeMetric &  Return a metric values divided by 'normVal'. \\
+ NormalizeMetric &  Return a metric values divided by ``normVal". \\
  NoutliersNsigmaMetric &  Calculate the number of visits outside the given sigma threshold. \\
  ObsArcMetric &  Calculate the time difference between the first and last observation of an SS \\
   &  object. \\
@@ -106,18 +132,6 @@
  ParallaxCoverageMetric &  Check how well the parallax factor is distributed. \\
  ParallaxDcrDegenMetric &  Compute parallax and DCR displacement vectors to find if they are degenerate. \\
  ParallaxMetric &  Calculate the uncertainty in a parallax measures given a serries of \\
-\hline
-\end{tabular}
-
-\end{table}
-\begin{table}
-\scriptsize
-\caption{MAF Metrics Continued...}
-\begin{tabular}{ll}
-\hline
-            Metric Name &                                                                       Description \\
-\hline
-  &  observations. \\
  PassMetric &  Just pass the entire array. \\
  PeakVMagMetric &  Pull out the peak V magnitude of all observations of an SS object. \\
  PercentileMetric &  Find the value of a column at a given percentile. \\
@@ -138,6 +152,21 @@
   &  depth expectations. \\
  TemplateExistsMetric &  Calculate the fraction of images with a previous template image of desired \\
   &  quality. \\
+\end{tabular}
+\end{table}
+
+\begin{table}[!ht]
+\scriptsize
+\setcounter{table}{0}
+\makeatletter
+\renewcommand{\thetable}{A.\arabic{table}}
+\caption{Metrics provided by the
+\href{https://github.com/lsst/sims_maf/tree/master/python/lsst/sims/maf}{\MAF package}, continued...}
+\medskip
+\begin{tabular}{ll}
+\hline
+                   Metric Name &                                                                       Description \\
+\hline\hline
  TgapsMetric &  Histogram up all the time gaps. \\
  TotalPowerMetric &  Calculate the total power in the angular power spectrum between lmin/lmax. \\
  TransientMetric &  Calculate what fraction of the transients would be detected. \\
@@ -149,5 +178,4 @@
  fOAreaMetric &  Metric to calculate the FO Area. \\
 \hline
 \end{tabular}
-
 \end{table}

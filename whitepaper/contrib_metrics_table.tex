@@ -1,10 +1,14 @@
-\begin{table}
+\begin{table}[!t]
 \scriptsize
-\caption{Contributed MAF Metrics}
+\setcounter{table}{1}
+\makeatletter
+\renewcommand{\thetable}{A.\arabic{table}}
+\caption{Community-contributed MAF metrics in the \href{https://github.com/LSST-nonproject/sims\_maf\_contrib/tree/master/mafContrib}{\code{sims\_maf\_contrib}  package}.\label{tab:contrib_metrics}}
+\medskip
 \begin{tabular}{ll}
 \hline
                  Metric Name &                                                                       Description \\
-\hline
+\hline\hline
  AngularSpreadMetric &  Compute the angular spread statistic which measures uniformity of a distribution \\
   &  angles accounting for 2pi periodicity. \\
  CampaignLengthMetric &  The campaign length, in seasons. \\
@@ -28,7 +32,7 @@
  SeasonLengthMetric &  The mean season length, in months. \\
  StarCountMassMetric &  Find the number of stars in a given field in the mass range fainter than \\
   &  magnitude 16 and bright enough to have noise less than 0.03 in a given band. M1 \\
-  &  and M2 are the upper and lower limits of the mass range. 'band' is the band to \\
+  &  and M2 are the upper and lower limits of the mass range. ``band" is the band to \\
   &  be observed. \\
  StarCountMetric &  Find the number of stars in a given field between D1 and D2 in parsecs. \\
  TdcMetric &  Combine campaign length, season length, and mean night speartion into a single \\
@@ -37,11 +41,10 @@
   &  bands for a given SED \\
  TransientAsciiMetric &  Based on the transientMetric, but uses an ascii input file and provides option \\
   &  to write out lightcurve. \\
- TripletBandMetric &  Find the number of 'triplets' of three images taken in the same band, based on \\
+ TripletBandMetric &  Find the number of ``triplets" of three images taken in the same band, based on \\
   &  user-selected minimum and maximum intervals (in hours), \\
- TripletMetric &  Find the number of 'triplets' of three images taken in any band, based on user- \\
+ TripletMetric &  Find the number of ``triplets" of three images taken in any band, based on user- \\
   &  selected minimum and maximum intervals (in hours), \\
 \hline
 \end{tabular}
-
 \end{table}
