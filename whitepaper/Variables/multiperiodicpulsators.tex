@@ -180,7 +180,7 @@ For comparison purposes, we calculate the number of ZZ Cetis detected in
 both the $u$ and $r$ filters, assuming intrinsic r.m.s.\ variability of
 1\% for two of the currently available \OpSim runs:
 \opsimdbref{db:baseCadence}, the current baseline cadence, and
-\opsimdbref{db:DoubleUbandExptime}, with doubled $u$-band exposure
+\opsimdbref{db:DoubleUbandExptimeSameVisits}, with doubled $u$-band exposure
 times. We require that 90\% of ZZ Cetis with 1\% r.m.s.\  variability
 are detected to the computed ``variability depth,'' with a tolerance for
 up to 10\% of nonvariables with the same $u$ and $r$ magnitudes to yield
@@ -197,7 +197,7 @@ of r.m.s.\ variability}, is provided in \autoref{tab:zz1pertab}.
     \OpSim Run & Filter & \# ZZ Cetis \\ \hline
       \opsimdbref{db:baseCadence} & $u$ & 9  \\
       & $r$ & 127 \\ \hline
-      \opsimdbref{db:DoubleUbandExptime} & $u$ & 17\\
+      \opsimdbref{db:DoubleUbandExptimeSameVisits} & $u$ & 17\\
       & $r$ & 123  \\ \hline
     \end{tabular}
 \end{center}
@@ -215,7 +215,7 @@ total number of ZZ Cetis expected, allowing for incompleteness to low
 amplitude.  While we still do not detect $\sim$1000 ZZ Cetis in $u$,
 overall we see an increase in the total number of detected ZZ Cetis by
 roughly an order of magnitude (in $r$), with the
-\opsimdbref{db:DoubleUbandExptime} simulation reaching markedly closer
+\opsimdbref{db:DoubleUbandExptimeSameVisits} simulation reaching markedly closer
 to the $u$-band goal than the \opsimdbref{db:baseCadence} strategy.
 
 
@@ -227,7 +227,7 @@ to the $u$-band goal than the \opsimdbref{db:baseCadence} strategy.
     \OpSim Run & Filter & \# ZZ Cetis \\ \hline
      \opsimdbref{db:baseCadence} & $u$ & 197  \\
       & $r$ & 1601 \\ \hline
-     \opsimdbref{db:DoubleUbandExptime}  & $u$ & 325\\
+     \opsimdbref{db:DoubleUbandExptimeSameVisits}  & $u$ & 325\\
     & $r$ & 1534  \\ \hline
     \end{tabular}
 \end{center}
@@ -255,12 +255,12 @@ We emphasize again that low-amplitude ZZ Cetis are the most difficult
 pulsating stars to observe. LSST will capture variability in higher
 amplitude ZZ Cetis and other types of variable star more completely, and
 LSST observations of all candidate pulsating white dwarfs will certainly
-still be worthy on careful analysis.  We note that the
-\opsimdbref{db:DoubleUbandExptime} strategy with 60\,s exposures in $u$
+still be worthy of careful analysis.  We note that the
+\opsimdbref{db:DoubleUbandExptimeSameVisits} strategy with 60\,s exposures in $u$
 does a much better job of measuring stellar variability overall, at the
 expense of a practically negligible decrease in $r$-band detections.  We
-argue that any observing strategy that increases the number of ZZ Cetis
-detected in the $u$ band will improve LSST's scientific yield for
+argue that any observing strategy that increases the typical {\tt VarDepth}
+limit in the $u$ band will improve LSST's scientific yield for
 \emph{all} stellar pulsation studies.
 
 
@@ -276,8 +276,8 @@ detected in the $u$ band will improve LSST's scientific yield for
  \item[Q1:] {\it Does the science case place any constraints on the
  tradeoff between the sky coverage and coadded depth? For example, should
  the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
- Pan-STARRS) or the number of detected galaxies (the current baseline but
- with 18,000 deg$^2$)?}
+ Pan-STARRS) or the number of detected galaxies (the current baseline 
+ of 18,000 deg$^2$)?}
 
  \item[A1:] Coadded depth is not directly a limitation on detecting variability,
  but both improve with the number of revisits to the same field, $N$,
@@ -347,7 +347,7 @@ detected in the $u$ band will improve LSST's scientific yield for
  new MAF metrics must be developed to demonstrate this and to help
  select between specific proposed cadences.
 
- The possibility to obtain data at a high cadence for extended periods of time in the deep drilling fields will also facilitate the asteroseismology of solar-like oscillators ($\sim$minutes for main-sequence stars and $\sim$hours for red giants). However, an MAF metric is required to determine the specific requirements.
+ The possibility to obtain data at a high cadence for extended periods of time in the deep drilling fields will also facilitate the asteroseismology of solar-like oscillators ($\sim$minutes for main-sequence stars and $\sim$hours for red giants). However, a MAF metric is required to determine the specific requirements.
 
  \item[Q7:] {\it Assuming two visits per night, would the science case
  benefit if they are obtained in the same band or not?}
@@ -368,7 +368,7 @@ detected in the $u$ band will improve LSST's scientific yield for
  multi-modal pulsating stars, as well as help accelerate LSST's ultimate
  characterization of variable stars in these fields.
 
- Furthermore, by mimicking the 10-yr survey for a small area, the scientific community can obtain evidence-based estimates of the yeild of different variable classes and example power spectra. This will also provide proof-of-concept data that will facilitate the recruitment of scientists to work on LSST.
+ Furthermore, by mimicking the 10-yr survey for a small area, the scientific community can obtain evidence-based estimates of the yield of different variable classes and example power spectra. This will also provide proof-of-concept data that will facilitate the recruitment of scientists to work on LSST.
 
 
  \item[Q9:] {\it Does the science case place any constraints on the
