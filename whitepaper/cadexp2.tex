@@ -1016,7 +1016,7 @@ scattered light from bright stars, and more trailing of fast-moving asteroids.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\opsimdb[db:DoubleUbandExptime]{kraken\_1045}{Baseline Cadence, but with
+\opsimdb[db:DoubleUbandExptime]{kraken\_1059}{Baseline Cadence, but with
 doubled $u$-band exposure time and the number of visits halved.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1043,10 +1043,9 @@ visits in this simulation is decreased by a factor of 2 relative to the
 Baseline Cadence specification. \\
 
 {\bf Expectations:} The {\it total} exposure time in the $u$ band should
-remain unchanged. The single visits depth should be 0.38 mag deeper
-due to twice as long exposure time (the gain of 0.24 mag related to
-read-out noise effects is not yet implemented in the \OpSim code so MAF
-outputs may be a bit confusing). \\
+remain unchanged. The single visits depth should be 0.62 mag deeper
+due to increased exposure time, and the coadded depth should be 
+0.24 mag deeper (due to decreased impact of readout noise). \\
 
 {\bf Analysis Results:} This simulated cadence is named \opsimdbref{db:DoubleUbandExptime}.  Compared
 to the Baseline Cadence (\opsimdbref{db:baseCadence}):
@@ -1061,33 +1060,33 @@ proposal 7\% vs. 6\%. %Given that the NE spur proposal was different
 {\bf Conclusions:} The $u$ band exposure time can be increased from 30
 seconds to 60 seconds without a significant impact on the survey
 efficiency. This change would result in a gain of about 0.2 mag in the
-coadded depth. However, the number of visits in the $u$ band would be
-decreased by about a factor of two, with a negative impact on
-time-domain science.
-
+coadded depth, with the same total exposure time allocated to the $u$ band. 
+However, the number of visits in the $u$ band would be decreased by about 
+a factor of two, with a negative impact on time-domain science.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The simulation previously known as DoubleUbandExptimewithNESpur:
-\opsimdb[db:DoubleUbandExptimeSameVisits]{kraken\_1059}{Baseline Cadence, but with
-doubled $u$-band exposure time and the number of visits halved.}
+\opsimdb[db:DoubleUbandExptimeSameVisits]{kraken\_1045}{Baseline Cadence, but with
+doubled $u$-band exposure time and the same number of visits.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\bf Motivation and description:} This simulation is similar to
 \opsimdbref{db:DoubleUbandExptime}, which increased the exposure time
 per visit in the $u$ band from 30 seconds to 60 seconds, with the
 requested number of visits decreased by a factor of 2. That change
-resulted in a gain of about 0.24 mag in the coadded depth, just from a reducing overheads. The
-number of $u$ band visits in \opsimdbref{db:DoubleUbandExptime} was
+resulted in a gain of about 0.2 mag in the coadded depth, just from reducing overheads. 
+However, in order to keep the same total exposure time allocated to the $u$ band,
+the number of $u$ band visits in \opsimdbref{db:DoubleUbandExptime} was
 decreased by about a factor of two relative to Baseline Cadence, and this had a negative impact on
-time-domain science: to further investigate this, the \opsimdbref{db:DoubleUbandExptimeSameVisits} simulation was designed and carried out. \opsimdbref{db:DoubleUbandExptimeSameVisits} retains the Baseline Cadence
+time-domain science. To further investigate this tradeoff, the \opsimdbref{db:DoubleUbandExptimeSameVisits} simulation was designed and carried out. \opsimdbref{db:DoubleUbandExptimeSameVisits} retains the Baseline Cadence
 requested number of visits per field: hence, the coadded depth in the
 $u$ band in this simulation could be improved by up to 0.6 mag. \\
 
-{\bf Expectations:}  Given that about 5\% of all visits are allocated
-to the $u$ band, the total number of visits may decrease by up to
-about 5\%, resulting in about 0.03 mag shallower data in bands other
-than $u$ band. \\
+{\bf Expectations:}  Given that about 7\% of all visits are allocated
+to the $u$ band (56 out of 825), the total number of visits for other bands
+will decrease when the number of the $u$ band is doubled, resulting in 
+about 0.04 mag shallower data in bands other than the $u$ band. \\
 
 {\bf Analysis Results:}  This simulated cadence is named
 \opsimdbref{db:DoubleUbandExptimeSameVisits}.  Compared to the Baseline
@@ -1099,16 +1098,18 @@ survey is 85\% vs. 85\% for the Baseline Cadence, and for the NES
 proposal 7\% vs. 6\%.
 
 The median number of visits in the $grizy$ filters in the main survey
-decreases by only around 1-2\%.  The main survey coadded $u$ band image is 0.18
-mags deeper. The other filters reach the same depth within 1\%.
+decreases by about 7\%.  The median single visit depth for main survey 
+is 0.53 mags deeper, and the median coadded $u$ band image is 0.50 mags 
+deeper. The other filters reach shallower coadded depth 
+than in the Baseline Cadence by about 0.05 mag.
 \end{enumerate}
 
 
 {\bf Conclusions:} When the $u$ band exposure time is increased from
 30 seconds to 60 seconds, and the number of visits is kept unchanged,
-the single-visit and coadded depths would be improved by 0.6 mag. This
-improvement would come at the expense of about 1\% fewer visits in
-other bands (with about 0.01 mag shallower coadded depths). These
+the single-visit and coadded depths would be improved by about 0.5 mag. 
+This improvement would come at the expense of about 7\% fewer visits in
+other bands (with about 0.05 mag shallower coadded depths). These
 promising results should be considered when designing the next
 incarnation of baseline cadence.
 
