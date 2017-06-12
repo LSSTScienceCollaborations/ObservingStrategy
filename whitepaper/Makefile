@@ -4,6 +4,9 @@ BIBFILES = references.bib
 
 all: pdf
 
+metric_tables:
+	python metrics_table.py
+
 clean:
 	-rm -f *.aux LSST*.log *.dvi *.blg *.bbl *.inx *.aut *.toc *.tod *.out
 
