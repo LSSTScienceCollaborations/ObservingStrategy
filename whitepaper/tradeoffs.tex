@@ -9,7 +9,7 @@ Chapter editors:
 
 
 In this chapter we summarize the findings of the science cases in this
-white paper, and draw some actionable conclusions for the LSST Project.
+white paper, and propose some actionable conclusions for the LSST Project.
 We then discuss the tensions and tradeoffs apparent in these findings.
 
 % ---------------------------------------------------------------------
@@ -20,8 +20,8 @@ We then discuss the tensions and tradeoffs apparent in these findings.
 
 The authors of the preceding chapters' science cases provided guidelines
 for improving the baseline LSST cadence, via their 10-question
-conclusions sections.  We now summarize this input, extracting a number
-of recommendations for the Project to take on. The most important action
+conclusions sections (see \autoref{sec:intro:caseConclusions}).  We summarize this input below, extracting a number
+of recommendations for the Project to consider. The most important suggested action
 items for the Project Team include i) implementation, analysis and
 optimization of the ``rolling cadence'' idea, and ii) execution of a
 {\it systematic} effort to further optimize the ultimate LSST cadence
@@ -29,23 +29,26 @@ strategy.
 
 \begin{description}
 
-\item[Q1:] {\it Does the science case place any constraints on the
-tradeoff between the sky coverage and coadded depth? For example, should
+\item[Q1:] {\it Increased sky coverage is possible, at the price of fewer visits per field and shallower
+coadded depth.  Does the science case place any constraints on the
+tradeoff between the sky coverage and depth? For example, should
 the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-Pan-STARRS) or the number of detected galaxies (the current baseline but
-with 18,000 deg$^2$)?}
+Pan-STARRS) or the number of detected galaxies (the current baseline of 18,000 deg$^2$)?}
 
 A general conclusion from many science cases is that the sky coverage
 can be increased only if the baseline single-visit and coadded depths
-are not significantly degraded. Large-scale structure studies (\eg galaxy clustering, BAO) are 
-area-limited more than depth-limited and thus a larger sky coverage is 
-preferred for them. In time-domain cases where baseline performance is already 
-more than adequate, a larger sky coverage is preferred, too (AGNs, 
-extra-galactic cepheids); when cadence performance is barely sufficient 
-or insufficient, smaller sky area with better temporal sampling is suggested 
-(supernovae, strong lensing). 
+are not significantly degraded. For example, the number of galaxies above
+some threshold photo-z quality would increase by about 8\% with the larger
+sky area, but the redshift range would be diminished a bit. Milky Way mapping and large-scale
+structure studies (\eg galaxy clustering, BAO) are
+area-limited more than depth-limited and thus a larger sky coverage is
+preferred for them. In time-domain cases where the LSST baseline performance is already
+more than adequate, a larger sky coverage is preferred, too (AGNs,
+extra-galactic cepheids); when cadence performance is barely sufficient
+or insufficient, smaller sky area with better temporal sampling is suggested
+(supernovae, strong lensing).
 
-The Project should enable finer optimization by providing several more
+The Project would enable finer optimization by providing several more
 simulations with the sky coverage in between the baseline cadence sky
 area of 18,000 deg$^2$) and the so-called ``Pan-STARRS cadence'' with
 $\sim$30,000 deg$^2$. MAF analysis should be extended to compute the
@@ -62,16 +65,20 @@ total visit counts).}
 
 Supernovae provide one of the strongest drivers for the implementation of
 rolling cadence. A sampling rate about three times higher than the
-uniform sampling implemented in baseline cadence (revisit time scale of
+uniform sampling implemented in the baseline cadence (revisit time scale of
 about one day), and lasting 3-4 months, is suggested. It is likely that
 such a rolling cadence would also be beneficial for constraining
 asteroid orbits and for studying short time scale variables (e.g.
-cataclysmic variables). Extreme cases of rolling cadence, with about a
+cataclysmic variables). Extreme cases of a rolling cadence, with roughly
 week-long campaigns, for special sky regions would be beneficial for
-studies of Young Stellar Objects.
+studies of Young Stellar Objects, for example.
+
+Other types of transients also require a rolling cadence, with necessary compromises.  A faster cadence in
+bluer filters in a shorter rolling window, and slower cadence in redder filters, may help address the
+trade-offs.
 
 The production and analysis of several families of rolling cadence
-simulations by the Project should be the highest priority, because this
+simulations should be a high priority, because this
 baseline cadence modification might provide more significant science
 benefits than any other proposed modification.
 
@@ -83,14 +90,15 @@ impact of the readout noise)?}
 
 
 A large number of science cases would benefit from deeper $u$ band data
-(both single-visit and co-added depth), as long as the number of visits
+(both single-visit and co-added depth), as long as the total number of visits
 is not decreased (of course, increasing the number of $u$ band visits
-would be beneficial, too).
+would be beneficial for $u$ band survey science, too).
 
-Simulated cadence \opsimdbref{db:DoubleUbandExptimewithNESpur}, which
-doubled $u$ band exposures from 30 sec to 60 sec, demonstrated that an
-improvement of $u$ band single-visit depth of 0.6 mag can be achieved
-with only a minor loss of depth and the number of visits in other bands.
+Simulated cadence \opsimdbref{db:DoubleUbandExptimeSameVisits}, which
+doubled the $u$ band exposures from 30 sec to 60 sec while retaining the Baseline number of visits, demonstrated that an
+improvement of $u$ band single-visit depth of 0.5 mag can be achieved
+with only a minor loss of coadded depth and the number of visits in other bands.
+We advocate taking $u$ band exposures that are long enough to be sky noise dominated.
 The Project should investigate this option further and potentially
 modify the baseline per-band exposure time allocation.
 
@@ -104,7 +112,7 @@ plane coverage is that Figures of Merit (FoM) exist, but that ``many
 OpSim runs with a variety of temporal distributions of exposures within
 the ten-year survey lifetime [are needed] to make these FOMs useful.''
 
-The Project should produce a family of simulations that explore
+The Project could consider producing a family of simulations that explore
 different cadence strategies for the Galactic disk coverage.
 
 
@@ -112,41 +120,43 @@ different cadence strategies for the Galactic disk coverage.
 fraction of observing time allocated to each band?}
 
 Generally, the baseline time allocation is satisfactory. Potential
-improvements depend on tracer population and the required imaging depth.
+improvements depend on studied population (e.g. young stellar objects)
+and the required imaging depth.
 The case for deeper $u$ band data (both single-visit and coadded depth)
 has the strongest drivers. The fraction of visits in red bands should be
 higher for deep drilling fields than for the main survey.
 
 When producing a new generation of deep drilling simulations, the
-Project should revisit per-band exposure time allocation for deep
+Project should revisit the per-band exposure time allocation for deep
 drilling fields.
 
 
 \item[Q6:] {\it Does the science case place any constraints on the
 cadence for deep drilling fields?}
 
-The strongest constraints for deep drilling field (DDF) cadence come
-from supernovae. DDFs should be preferrably visited nightly, with the
-depth 1-2 mag deeper than for the main survey visits. At least a few
-extragalactic fields should be observed at any time in the survey, with
+The strongest constraints for the deep drilling field (DDF) cadence come
+from supernovae. DDFs should be preferrably visited nightly,
+1-2 mag deeper than for the main survey visits. At least a few
+extragalactic fields should be observed at any month, with
 each field observed for a ``season'' of length at least 120-150 days,
-staggering the fields so new fields cycle in as old ones cycle out. For
+staggering the fields so new fields cycle in as old ones cycle out, and
+avoiding the moon. For
 potential deep drilling fields within the inner Galactic plane, short
-temporal baselines would be very useful. In case of Young Stellar
-Populations, a single week of denser monitoring for specific regions is
+temporal baselines would be very useful. In the case of Young Stellar
+Populations, for example, a single week of denser monitoring for specific regions is
 suggested, with the goal of having several observations per night,
-separated in time by at least an hour from one another.
+separated in time by at least an hour from one another. A more extensive study of the value of a Galactic deep drilling field is required.
 
 
 \item[Q7:] {\it Assuming two visits per night, would the science case
 benefit if they are obtained in the same band or not?}
 
-Most science cases prefer pairs of visits in two different bands.
-Exceptions are GRBs and asteroids; in case of GRBs the second visit is
-needed to promptly establish variability and in case of asteroids
+Most science cases prefer the visits in a pair to be taken in two different bands.
+Exceptions are GRBs and asteroids; in the case of GRBs the second visit is
+needed to promptly establish variability and in the case of asteroids
 different bands result in decreased sample completeness.
 
-The Project should investigate whether it is possible to increase the
+The Project could investigate whether it is possible to increase the
 fraction of visit pairs with different bandpasses.
 
 
@@ -157,6 +167,10 @@ the bands or in a  selected set); a greatly enhanced cadence for a small
 area?}
 
 A lot of excellent suggestions were made by multiple science cases.
+For example, photo-z analysis would be greatly assisted by acquiring
+a full 10-yr count of visits for a small area during commissioning or
+early in the survey, especially if these regions would be also covered by
+existing spectroscopic surveys.
 The Comissioning Science Verification Team should incorporate these
 suggestions, when possible, into the Commissioning plan, as well
 as to socialize the existing plan for ``mini surveys'' with Science
@@ -172,7 +186,7 @@ weak lensing case for good seeing in the $r$ and $i$ bands is already
 implemented in the simulator) and for minimizing various correlations
 (e.g. parallax factor vs. hour angle).
 
-The Project should analyze the impact of secular effects on randomizing
+The Project could analyze the impact of secular effects on randomizing
 various correlations vs. an explicit algorithmic driver to do so
 implemented in the Scheduler.
 
@@ -184,7 +198,7 @@ single-visit limiting depth?}
 No strong driver for real-time exposure time optimization was
 identified.
 
-The Project should monitor the fate of a similar proposal considered by
+The Project could monitor the fate of a similar proposal considered by
 the upcoming Zwicky Transient Facility.
 
 \end{description}
@@ -199,7 +213,7 @@ the upcoming Zwicky Transient Facility.
 The LSST survey will be carried out with physical and operational
 constraints that will impact all science objectives.  These include
 design limitations, such as the aperture of the telescope, the detector
-noise and readout time, or the limited number of filter changes that
+noise and readout time, and the limited number of filter changes that
 can be supported during the lifetime of the survey.  They include
 natural constraints, such as the quantity of useful observing time
 in 10 years, and system optimization constraints, such as
@@ -232,7 +246,7 @@ tensions within the main survey concern {\it temporal sampling for
 variable targets}.  Tensions among static science objectives, and
 between static science and variable science, may be less likely and
 mild. The strongest points of tension {\it may} turn out to be between
-mini-surveys and the main survey.
+mini-surveys and the main survey; similarly, rolling cadences (\autoref{sec:rolling}) are also likely to introduce new tensions.
 
 % --------------------------------------------------------------------
 
@@ -249,12 +263,12 @@ even periodic targets benefit from an early interval of higher frequency
 sampling, at least in some sky regions, as this can accelerate the ramp
 up of the science.
 
-By far the majority of variables and transients, stellar and galactic,
-are not periodic. For these, study will be greatly simplified (or may
-absolutely require) sufficient sampling within an interval that depends
+However, by far the majority of variables and transients, stellar and galactic,
+are not periodic. The analysis of their aperiodic light curves will be greatly simplified (or may
+absolutely require) sufficient sampling within a characteristic interval that depends
 on the target type. One would like to satisfy the sampling theorem, with
 visits at twice the frequency of the highest frequency content, but this
-is only a conceptual guide - knowledge of, and experience with, the
+is only a conceptual guide: knowledge of, and experience with, the
 targets and the science objectives can provide practical criteria.
 
 A truly uniform cadence provides a revisit rate of one visit pair every
@@ -272,7 +286,7 @@ well as more general survey requirements.
 Several examples will illustrate the diversity of cadences that are
 represented in the science programs described in this white paper.
 
-QSO variability tends to be ``red.''   A uniform distribution of the
+QSO variability tends to be stronger in low temporal frequencies   A uniform distribution of the
 LSST visits, with minimal seasonal gaps, provides fairly good support
 for identifying QSOs from their variability pattern.
 
@@ -289,7 +303,7 @@ within} the spot lifetime, which is typically several weeks. This
 cadence is much more rapid than provided by a uniformly distributed WFD
 visit pattern.
 
-Flaring stars and interacting binaries may show dramatic flux changes
+Flaring stars and interacting binaries, and new fast transients in general, may show dramatic flux changes
 in minutes to hours, and correct identification of such events may
 require several data points, and possibly more than one filter, on a
 similar time scale.
@@ -303,8 +317,7 @@ determination of orbits, requires visit patterns on short timescale
 ($\approx$ hour return) and intermediate time scale ($\approx$2 weeks) -
 long timescale confirmation occurs naturally later in the survey.  The
 number and pattern of rapid revisits required for positive
-identification depends strongly on the false positive rate, which cannot
-yet be predicted with confidence.
+identification depends strongly on the false positive rate.
 
 
 \subsubsection{How to provide a range of cadence speeds}
@@ -321,14 +334,14 @@ acquiring visits in pairs with $~$30 minute separation.  Experiments
 have been done with triples, in case that should prove necessary for
 asteroid characterization.  The possibility of using a different revisit
 pattern in different parts of the sky (e.g. less frequent away from the
-ecliptic) has been mentioned.  Different patterns for different filters
+ecliptic) has been mentioned but has not yet been implemented in \OpSim.  Different patterns for different filters
 (e.g. not using pairs for visits in the $u$ and $y$ bands) have been
 suggested and investigated. The use of visit pairs is clearly a very
-large impact decision, for practical purposes reducing by a factor of 2
+high impact decision, for practical purposes reducing by a factor of 2
 the effective revisit rate for other targets. However, rapid pairs are
 very effective for measuring brightness gradients for rapidly varying
 objects, and thus particularly valuable for the difficult problem of
-characterizing blank sky transients.
+characterizing blank sky, short timescale, transients.
 
 \item{Mini-surveys} --  these can include special cadences. The deep
 drilling concept utilizes rapid visit sequences to achieve greater depth
@@ -342,7 +355,7 @@ mini-surveys and the main survey is discussed below.
 re-deploying visits within the main survey so as to respond to special
 cadence demands without compromising main survey goals (or, perhaps in
 principle, trading against main survey goals in a measured and optimum
-way). Rolling cadences were introduced, and some preliminary experiments discussed, in \autoref{sec:rolling}.  As an example, the
+way). Rolling cadences were introduced in \autoref{sec:rolling}.  As an example, the
 average 9 visit pairs per year in the $r$ filter, which would be
 distributed over a season in a uniform survey, could be distributed over
 2 months, 1 month, 1 week, or 1 day, in a rolling cadence (leaving no
@@ -355,10 +368,10 @@ of rapid sampling, while other filters could maintain a uniform
 distribution.  Different rolling cadences can be used in different parts
 of the sky, or at different times during the survey.  There is an
 immense range of possibilities for rolling cadence, and the surface has
-barely been scratched.
+barely been scratched: \OpSim 4 should allow this approach to be explored in detail.
 
-\item{Commissioning survey} - the highest priority of the commissioning
-schedule is, of course, commissioning.  However, a secondary objective
+\item{Commissioning survey} -- the highest priority of the commissioning
+schedule is, of course, commissioning the hardware and software of the LSST system.  However, a secondary objective
 is to demonstrate system operation in the planned survey mode -
 presumably including main survey, deep drilling, rolling cadences, etc.
 There have been other suggestions, going beyond these basics, such as
@@ -374,7 +387,7 @@ objectives.
 \begin{description}
 
 \item{Pre-survey options} -- there are a number of survey instruments
-(CTIO, CFHT, Subaru) that can easily reach the single visit depth of
+(\eg CTIO, CFHT, Subaru) that can easily reach the single visit depth of
 LSST. These resources could be used to explore limited sky regions
 ($\approx$1\% of the LSST sky) with cadences that are planned for LSST
 (or cadences that are not planned for LSST), providing touchstone
@@ -382,7 +395,7 @@ datasets especially for the more common target types that will dominate
 the survey.
 
 \item{Twilight survey} -- \autoref{sec:shortexp} describes a concept for
-twilight data acquisition, using short exposures to tolerate bright sky.
+twilight data acquisition, using short exposures to tolerate bright sky and extend the dynamic range of the survey overall.
 This time is not required for current LSST science, and in principle
 could be allocated to $z$, $y$ filters in short bursts (20 minutes) of
 fast cadence ($<~$15 seconds) imaging, within the sensitivity limits of
@@ -395,39 +408,24 @@ useful discoveries will be bright enough to follow-up with smaller, more
 accessible apertures.  Follow-up can be far more customized to the
 science needs than a general purpose LSST cadence.  Faint targets of
 sufficient value may likewise merit followup with exceptional  ground
-and space-based resources.
+and space-based resources  \citep[see][for analysis and discussion]{NajitaEtal2016}.
 
 \end{description}
 
 
 \subsubsection{Frequency of filter changes}
 
-Multi-color visits are a very special case for LSST.  Moving the large
-(huge) optical filters involves substantial structure and mechanisms.
+Multi-color visits are a very special case for LSST.  Changing the
+huge optical filters will be a substantial mechanical task.
 While filter change time is not fully characterized, it will be slow
-enough (about 2 minutes) that filter change frequency competes directly
-with efficiency. Furthermore, the mechanisms have a finite lifetime and
-are designed to allow a finite number of changes (about 100,000 changes
-over 15 years; state-state statistics imply that the main survey will
-have fewer than about 10 filter changes per night). These are practical
-limitations of the facility. Combined, they ensure that ``rapid''
-multi-color sequences will be the exception rather than the rule (6
-consecutive filter changes every 3 minutes will be fine, as well as a
-rare night with changes every 10 minutes). Science objectives which need
-near-simultaneous multi-color photometry will be in competition for a
-limited resource.
+enough (about 2 minutes) that filter change frequency will compete directly
+with efficiency. Also, the mechanisms have a finite lifetime: ``rapid''
+multi-color sequences will be the exception rather than the rule.
 
-With a limited number of filter changes per night, it is possible for
-visit pairs to be acquired (sometimes) in different filters.  Deep
-drilling fields which have multiple filters in a single visit will be
-close in time (all exposures in one filter will be obtained, then the
-filter changed and all the exposures in the next filter obtained).
-Other exceptional targets, e.g. certain ToO observations, might be
-planned with rapid multi-filter sequences.
-
-For periodic variables, simultaneous multi-color photometry is a
-convenience.  For non-periodic or transient targets, it is desirable. It
-is important to identify when and if rapid filter changes are essential.
+Many science objectives for variable targets would be best served by
+simultaneous (or nearly so) color information.   It is important to identify
+when and if rapid filter changes are of value or essential, and to trade this
+against the efficiency and limited lifetime of the filter change mechanism.
 
 
 \subsubsection{Tension between rapid and slow cadences}
@@ -445,8 +443,7 @@ obtain limited duration but ``appropriate'' sampling of a fraction of
 the actual events, with the exact fraction still to be decided but
 inevitably significantly less than one.
 
-The tension in scheduling is, first and foremost, not between competing
-science objectives, but between science objectives and limited
+The tension in scheduling is between science objectives and limited
 scheduling flexibility. The confrontation between science requirements
 and schedule performance leans on the metrics and merit functions that
 are the major goal of this white paper.  It should be clear from the
@@ -471,9 +468,8 @@ cadence-related concerns are:
 \begin{description}
 
 \item{Photometry} -- the best photometric performance will be achieved
-after the calibration has been closed around the sky with superior image
-quality and superior photometric quality visits to every field.  While
-this is probable due to randomization of conditions over 10 years, the
+after the calibration has been closed around the sky, with superior image
+quality and superior photometric quality visits to every field.  The
 sooner that it is achieved during the survey, the sooner high quality
 photometry will be available.  This could be a target of active schedule
 control, with corresponding decreasing flexibility in some other
@@ -481,8 +477,8 @@ schedule variables.
 
 \item{Astrometry} -- both proper motions and parallaxes are served by
 any schedule that spreads visits well over the duration of the survey.
-Parallaxes benefit from observing at a range of hour angles, which is
-slightly in competition with the preference to observe at small airmass
+Parallaxes benefit from observing at a range of hour angles (for control of HA-dependent biases),
+which is slightly in competition with the preference to observe at small airmass
 for best image quality, but typical simulated schedules show good
 astrometric performance. A rolling cadence that moved a significant
 fraction of visits from one time period of the survey to another could
@@ -491,7 +487,7 @@ though as long as the fraction of visits concerned was small, the effect
 would correspondingly be small.
 
 \item{Homogeneity} -- an  example of required homogeneity is image
-quality. Just as the atmosphere allows a range of image quality during a
+quality. Just as the atmosphere offers a range of image quality during a
 night and from night to night, each point on the sky will be observed
 with a range of image quality.  To enable understanding of selection
 effects, and to compare sky regions on an even playing field, it is
@@ -500,6 +496,7 @@ with a similar distribution of image quality, and in particular with
 similar best image quality. Achieving homogeneity of conditions actively
 could be quite challenging, but simulations show that with a large
 number of independent visits, it occurs naturally to good approximation.
+(In \autoref{chp:cadexp} we saw that some higher order declination and seasonal effects persist in the current Baseline Cadence: these are expected to be reduced further with \OpSim~4.)
 Any cadence that relied on concentrated bursts of visits in a short
 interval would tend to reduce the spread of conditions observed.
 However, such an extreme has not been proposed or studied.
@@ -541,18 +538,18 @@ due to increased slew times, or observing under less optimum conditions
 (larger airmass).  Special cadences are likely to reduce randomization
 and homogenization to a small degree. However, except for very
 aggressive cadence implementations, these are second-order effects.
-Furthermore, they are measurable with simple metrics - the impact of
+Furthermore, they are readily measurable with simple metrics: the impact of
 variable science schedule considerations on static science should be
-small, and it can be readily quantified.
+small, although this situation may well change under a rolling cadence.
 
 % --------------------------------------------------------------------
 
 \subsection{Discussion: Mini-surveys and the Main Survey -- Tension for Sure}
 
 The LSST proposal and current plan allow a fraction of the total survey
-time for mini-survey. These may cover either special sky regions,
+time for mini-surveys. These may cover either special sky regions,
 special cadences, or both. The fraction 10\% has been carried for
-mini-surveys, but this is not necessarily a sacred number. In
+mini-surveys, but this is not a sacred number. In
 \autoref{chp:cadexp}, current scheduling experience has shown that the
 main survey program, to design depth, can be accomplished in $\approx$
 85\% of the available time. However, improvements in simulations could
@@ -563,16 +560,16 @@ unprecedented circumstances.
 Proposals for mini-surveys include deep drilling fields, the northern
 ecliptic, and the Magellanic clouds. Notional suggestions for deep
 drilling fields alone would exceed 10\%.   Most schedule simulations
-have allocated a limited number of visits to the galactic plane (based
+have allocated a limited number of visits to the Galactic plane (based
 on the expectation that crowding would limit the useful stacked depth).
-However, as detailed in \autoref{chp:galaxy}, many areas of galactic
-science could benefit from a more aggressive visit plan, perhaps similar
+However, as detailed in \autoref{chp:galaxy}, many areas of Galactic
+science could benefit from a more aggressive visit plan (as they are not driven by stacked image depth), perhaps similar
 to the main survey.
 
 At present there is no evidence that the trade between main and
 mini-surveys will require difficult compromises.  But it is a natural
-area of tension, and since is subject to weather experience (not to
-mention the evolution of the science) it is likely to be with us through
+area of tension, and since is likely to be exacerbated by weather disruptions (not to
+mention the evolution of the science), it is likely to be with us through
 the life of the survey.
 
 % --------------------------------------------------------------------
@@ -584,20 +581,23 @@ apparent from the schedule simulation experience (\autoref{chp:cadexp})
 and the science objectives and metrics
 (\autoref{chp:solarsystem}--\autoref{chp:specialsurveys}).  Static
 science has relatively few and mild points of concern.  Variable science
-has little and moderate tension with static science.  Variable science
+has little and moderate tension with static science, although this situation may change with rolling cadences.  Variable science
 has many points of tension between different variable science
 objectives, owing to the wide range of time scales. These lead to
 contrasting technical demands, and may or may not prove to be areas of
 scientific competition.
 
-The essential information needed to clarify tensions is the
-determination, for each science objective, of three things.
-\begin{itemize}
-	\item The number of such targets required for the science;
-	\item For a simulated schedule, the number of instances of targets satisfactorily observed;
-	\item The cadence requirements.
-\end{itemize}
-This information is the key to calibrating the metrics in terms of
-absolute and relative  sufficiency.
+% The essential information needed to clarify tensions is the
+% determination, for each science objective, of the following three things:
+% \begin{itemize}
+% 	\item The number of such targets required for the science;
+% 	\item For a simulated schedule, the number of instances of targets satisfactorily observed;
+% 	\item The cadence requirements.
+% \end{itemize}
+% This information is the key to calibrating the metrics in terms of
+% absolute and relative  sufficiency.
+
+The science teams are urged to continue to define and refine metrics, and in particular their all-important Figures of Merit, and the \MAF developers to provide
+tools for the large-scale comparison of simulated schedules by whole suites of metrics. \OpSim~4 will allow  exploration of the kinds of rolling cadences preferred by various science teams, and it will be important to be able to evaluate these more flexible simulations of the LSST observing strategy across the whole range of science projects, so that the prioritization decisions that need to be made are as well-informed as possible.
 
 % ====================================================================
