@@ -15,10 +15,6 @@
 \section{Future Work}
 \def\secname{MW_future}\label{sec:\secname}
 
-In this section we provide a short compendium of science cases that
-are either still being developed, or that are deserving of quantitative
-MAF analysis at some point in the future.
-
 % ====================================================================
 
 % \input{MilkyWay/MW_Dust.tex}
@@ -37,8 +33,84 @@ MAF analysis at some point in the future.
 
 In this final section we provide an extremely brief list of important science
 cases that are still in an early stage of development, but that are
-deserving of quantitative MAF analysis in the future:
+deserving of quantitative \MAF analysis in the future.
 
+\subsection{Further considerations for Milky Way static science}
+
+  One important area of Milky Way science on which further
+  community input is still sorely needed, is {\it static science} (a
+  category that includes population disentanglement through deep,
+  multicolor photometry), particularly in regions outside the main
+  ``Wide-Fast-Deep'' (WFD) survey (Sections \ref{sec:MW_Astrometry} \&
+  \ref{sec:MW_Halo} include discussion of static science in WFD regions). Since
+  static science depends on depth (for, e.g., precise colors near the
+  main sequence turn-off of some population) and uniformity over the
+  survey (to aid characterization of strong selection functions),
+  static science observing requirements may be in tension with (or at
+  least not explicitly addressed by) requirements communicated
+  elsewhere in this chapter.
+
+  For example, probing deep within spatially crowded
+  populations may lead to a sharper requirement on the selection of
+  observations in good seeing conditions towards crowded regions, than
+  has been apparent to-date. This needs quantification. 
+
+  To pick another example, while we have indicated that co-added
+  depth is a lower priority than temporal coverage for
+  variability-driven studies in the Galactic Disk (conclusion A.1 in
+  Section \ref{sec:MW_Disk}), co-added depth will likely be crucial for
+  population disentanglement through photometry. While a
+  judiciously-chosen observing strategy should be able to support both
+  static and variable science, at this date quantitative trade-offs have not yet been specified.
+
+  In many cases the implementation of figures of merit for static
+  science in the Milky Way is complicated by the requirement to
+  interface custom population simulations with the observational
+  characterizations produced by the \MAF framework. For many
+  investigators, the preferred method may be to use \MAF to produce
+  parameterizations of the observational quantities of interest - for
+  example, the run of photometric uncertainty against apparent
+  magnitude, for each location on the sky, and including spatial
+  confusion (all of which \MAF can currently produce\footnote{See the tutorials at \url{https://github.com/LSST-nonproject/sims_maf_contrib} for more information.}) - and then use
+  these characteristics as input to their own population simulations,
+  on which the investigator may have invested substantial time and
+  effort.
+
+  To provoke progress, we specify in Table
+  \ref{table:strawmanMWstaticScience} a possible Figure of Merit for
+  static science in terms of capabilities mostly already provided by
+  the \MAF framework, which does not require custom simulation. This
+  Figure of Merit - which asks what fraction of fields in a spatial
+  region of interest, are sufficiently well-observed to permit
+  population disentanglement to some desired level of precision -
+  could form the basis of several science FoM's (for example, the
+  fraction of fields in which photometric age determinations of
+  bulge/bar populations might be attempted). We encourage community
+  development and implementation of this and other FoMs for Milky Way
+  static science.
+
+\begin{table}[h]
+  \small
+  \begin{tabular}{c p{12cm}}
+    & {\it FoM innerMW-Static: fraction of fields in inner Galactic plane adequately covered for population discrimination} \\
+    \hline
+    1. & Produce absolute magnitudes $M_{u,g,r,i,z,y}$~of the population of interest, using \MAF's spectral libraries; \\
+    2. & For each HEALPIX (i.e. pointing):\\
+       & 2.1. Place the fiducial star at appropriate line-of-sight distance, produce apparent magnitudes $m_{u,g,r,i,z,y}$;\\
+       & 2.2. Modify $m_{u,g,r,i,z,y}$~for extinction using \MAF's extinction model;\\
+    & 2.3. Compute the photometric and astrometric uncertainties due to sampling and random error (from \MAF's ``m52snr'' method);\\
+    & 2.4. Convert exposure-by-exposure estimates of photometric and astrometric uncertainty due to spatial confusion, into co-added uncertainties;\\
+    & 2.5. Combine the random and confusion uncertainties into final measurement uncertainties on the photometry and astrometry;\\
+    & 2.6. Use uncertainty propagation to estimate color uncertainties $u-g, g-r, r-i, i-z$;\\
+    3. & Count the fraction of sight-lines for which the color below the threshold needed for "sufficient" accuracy in parameter determination \citep{ivezic08}. {\bf This is the figure of merit.} \\
+\hline
+    \end{tabular}
+ \caption{Description of Figure of merit ``innerMW-Static''}
+  \label{table:strawmanMWstaticScience}
+\end{table}
+
+Finally, we provide an extremely brief list of important science
+cases that are still in an early stage of development, which fall into the ``Static science'' category of Milky Way science:
 \begin{itemize}
   \item {\it Formation history of the Bulge and present-day balance of
   populations:} Sensitivity to metallicity and age distribution of Bulge
@@ -46,10 +118,52 @@ deserving of quantitative MAF analysis in the future:
   \item {\it Migration and heating in the Milky Way disk:} Error and
   bias in the determination of components in the (velocity dispersion vs
   metallicity) diagram, for disk populations along various lines of
-  sight (e.g. Loebman et al. 2016 ApJ 818 L6);
-  \item Fraction of Local-Volume objects discovered as a function of
-  survey strategy.
+  sight \citep[e.g.][]{2016ApJ...818L...6L}.
+
+% WIC 2017-05-24: commented this out in favor of a dedicated local volume subsection.
+%
+%\item Fraction of Local-Volume objects discovered as a function of
+%  survey strategy.
 \end{itemize}
+
+\subsection{Short exposures}
+
+  Populations near, or brighter than, LSST's nominal saturation
+  limit ($r \sim 16$~with 15s exposures) are likely to be crucial to a
+  number of investigations for Milky Way investigations, whether as
+  science tracers in their own right, or as contaminants that might
+  interfere with measurements of fainter program objects (due, for
+  example, to charge bleeds of bright, foreground disk objects).
+
+  Quantitative exploration of these issues now requires involvement from
+  the community (e.g. to determine LSST's discovery space for bright
+  tracers in context with other facilities and surveys like ZTF, Gaia
+  and VVV), and the project (e.g. to determine the parameters of short
+  exposures that might be supported by the facility). To provoke
+  development, here we list a few example questions regarding short
+  exposures that still need resolution:
+
+\begin{itemize}
+  \item{What level of bright-object charge-bleeding can be tolerated? For example, is some minimum distribution of position-angles required in order to spread the bleeds azimuthally over the set of observations of a particular line of sight (so that different pixels fall under bleeds in different exposures)?\footnote{Note that with $\sim 30$~exposures per filter per field over ten years towards some regions, charge bleeds on the detector for a given object might not be spread over a large range of orientations. The spread of charge bleed angles on the detector - as a spatially-varying metric - should be implemented and included in figures of merit.} What is this minimum?}
+    \item{What is the science impact of restricting targets to $r \gtrsim 16$?}
+      \item{Will the proposed twilight survey of short exposures be adequate for science cases requiring short exposures? Are there enough observations from other surveys (e.g. DES or other DECam surveys) to cover the bright end of the entire LSST footprint, and are {\it new} observations of very bright objects required scientifically in any case?}
+        \item{What is the bright limit required for adequate astrometric cross-calibration against Gaia?}
+          \item{To what extent would a given bright cutoff hamper the combination of LSST photometry or astrometry with that from other surveys (like VVV)?}
+          \item{How short an exposure time can the facility support? Does the OpSim framework already include all the operational limitations on scheduling short exposures?}
+\end{itemize}
+
+
+\subsection{The Local Volume}
+
+  Finally, we remind the reader that substantial opportunity
+  remains to develop science figures of merit for {\it Local Volume}
+  science cases. Figures of Merit for Local Volume science likely
+  share much common ground with those for the Halo (discussed in
+  Section \ref{sec:MW_Halo}), and substantial prior expertise exists
+  \citep[e.g.][]{2014ApJ...795L..13H}. One straightforward Figure of
+  Merit (FoM) might be the fraction of dwarf galaxies in the Local
+  Volume that are correctly identified as a function of survey
+  strategy.
 
 % ====================================================================
 

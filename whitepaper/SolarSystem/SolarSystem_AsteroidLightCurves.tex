@@ -85,15 +85,15 @@ surprising that the baseline cadence, \opsimdbref{db:baseCadence},
 performs reasonably well with this metric. Running the same metric on
 other simulated surveys tends to show similar results, although
 \opsimdbref{db:NEOwithVisitQuads} demonstrates that a higher fraction
-of NEOs get suitable observations for lightcurve inversion. This is
-illustrated in Figure~\ref{lightcurveinversion}. More
-sophisticated metrics or investigation will be required to discover
-the cause of this, although it seems likely that with visit quads,
-there are just more observations of the bright NEOs total, leading to
-a higher fraction of objects available for lightcurve inversion. The
-difference between these surveys suggests that it is possible to
-significantly increase the numbers of NEOs for which we can determine
-shapes, rotation rates, and spin positions.
+of TNOs get suitable observations for lightcurve inversion, according
+to this metric illustrated in Figure~\ref{lightcurveinversion}.
+Of course, TNOs are unlikely to be good candidates for
+full lightcurve inversion due to the limited range of phase angles the
+observations cover (due to the large distance to the TNOs), and this indicates
+one limitation of this simple metric. This does indicate however, that
+it is likely we can significantly increase the numbers of TNOs for
+which we can determine rotation periods (even if not full shape and spin
+measurements).
 
 % --------------------------------------------------------------------
 
@@ -101,7 +101,7 @@ shapes, rotation rates, and spin positions.
 \label{sec:\secname:discussion}
 
 A risk which is not captured by this simple metric is that the
-observations included for the lightcurve inversion estimate here,
+observations included for the lightcurve inversion estimate here
 could potentially occur far apart in time such that linking between
 the observations (to determine that they belong to the same object) is
 not possible.
@@ -116,6 +116,15 @@ addition, this metric currently uses observations in any filter;
 further work should be done to determine if this is sufficient, or if
 observations must occur in a single filter.
 
+A final point is that asteroid lightcurves can sometimes be
+used to discover and characterize binary asteroid systems.
+In general, sparse lightcurves, such as those that LSST
+will produce, are not sufficient for binary studies, but
+some sophisticated analysis and fortuitous observation
+timing could reveal asteroid binarity.
+
+
+
 % ====================================================================
 %
 % \subsection{Conclusions}
@@ -128,8 +137,8 @@ observations must occur in a single filter.
 % \item[Q1:] {\it Does the science case place any constraints on the
 % tradeoff between the sky coverage and coadded depth? For example, should
 % the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline but
-% with 18,000 deg$^2$)?}
+% Pan-STARRS) or the number of detected galaxies (the current baseline 
+% of 18,000 deg$^2$)?}
 %
 % \item[A1:] ...
 %

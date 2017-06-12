@@ -69,7 +69,7 @@ endif
 # Get most recent commit ID and its date:
 set SHA = `git show | head -1 | cut -d' ' -f2`
 set short_SHA = `echo $SHA | cut -c1-7`
-set date = `git log --date=rfc | head -3 | grep Date | cut -d':' -f2-`
+set date = `git log --date=rfc | head -4 | grep Date | cut -d':' -f2-`
 
 # Get URL of latest commit:
 set commit_url = "https://github.com/LSSTScienceCollaborations/ObservingStrategy/commit/${SHA}?diff=split"

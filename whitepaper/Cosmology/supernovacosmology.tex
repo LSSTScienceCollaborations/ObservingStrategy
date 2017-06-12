@@ -70,7 +70,11 @@ the first to scan a very large area of the sky for SNe. SNe that are detected
 and well characterized by the WFD will provide 
 \begin{itemize}
     \item a large, well-calibrated low redshift sample ($z \lesssim 0.1$) to replace/supplement the current  set of low redshift supernovae from a mixture of surveys. Such a large, clean low redshift sample is crucial in {\emph{providing a longer lever arm for the determination of cosmological parameters from supernovae.}}
-    \item  a low and medium redshift ($z \lesssim 0.8$ and peaking at $z \sim 0.4$ ) spanning large areas of the sky and therefore with the ability of {\emph{tracing large scale structure}} in a novel way, particularly due to the inclusion of estimates radial distances. This will be possible by combining redshift estimates from supernova light curve in conjuncion with photometric redshifts from host galaxies.  Such a sample could also be used to probe the {\emph{isotropy of the late time universe.}}
+    \item  a low and medium redshift ($z \lesssim 0.8$ and peaking at $z \sim 0.4$ ) sample spanning large areas of 
+the sky and therefore with the ability of {\emph{tracing large scale structure}} in a novel way, particularly due to 
+the inclusion of estimates radial distances. This will be possible by combining redshift estimates from supernova light 
+curves in conjunction with photometric redshifts from host galaxies.  Such a sample could also be used to probe the 
+{\emph{isotropy of the late time universe.}}
     \item This large sample of SNe will also enable further sharpening of our understanding of the properties of the SN population of both Type Ia and core-collapse SNe (see \autoref{sec:transients:SNtransients}). Aside from the science described in \autoref{sec:transients:SNtransients}, this understanding will also be extremely important to the goal of SN cosmology from LSST. When selecting supernovae satisfying specific criteria from observations in magnitude limited surveys, a lack of understanding of the population properties leads to selection biases in SNIa cosmology as well as the steps in photometric classification~\cite{2017ApJ...836...56K,2016ApJ...822L..35S}. 
 The WFD SN Ia
 sample will dramatically increase the size of the sample available to
@@ -90,7 +94,7 @@ due to deviations from the empirical model.
 \subsection{Target measurements and discoveries}
 \label{sec:\secname:targets}
 
-SNe of different types are visible over time scales of about a few
+SNe of different types are visible over observer time scales of about a few
 weeks (e.g., type Ia) to nearly a year (type IIP).  During the full
 ten-year survey, LSST will scan the entire southern sky repeatedly with
 a WFD cadence, and certain specific locations of the sky called the Deep
@@ -126,12 +130,12 @@ Supernova light curves consisting of flux measurements at different times are bu
 at specific locations on each of the observed images. A finite list of such specific locations is
 constructed through a transient detection pipeline studying difference images. In brief, this process
 consists of studying subtractions between a  `template' image (coadded over time so that a supernova
-flux averages to a small value) and single visit images called `science images` at different times,
+flux averages to a small value) and single visit images called `science images' at different times,
 after correcting for differences in resolution, observing conditions and pixel registration. In such
 difference images, one expects to obtain non zero pixel values at locations of transients including
 supernovae, and pixel values at other locations (including locations of static astrophysical
 sources) to be
-consistent with zero aside from a noise. The efficiency of detecting a supernova in a single
+consistent with zero aside from noise. The efficiency of detecting a supernova in a single
 exposure
 depends on a number of factors, the most significant of which is the signal (brightness of the supernova
 in the science image compared to the template) to noise (SNR) in the relevant image.
@@ -320,7 +324,7 @@ This metric is a proxy for the potential for a supernova to be detected
  detection of SN during LSST is likely to use more stringent criteria, leading to 
  smaller numbers of supernovae in order to deal with possibly large numbers of false positives in detection. A larger
  number of images taken at a time when the supernova is bright enough increases the
- probability of detection. Technically, Assuming that a single detection in any of the images containing
+ probability of detection. Technically, assuming that a single detection in any of the images containing
  the supernova is sufficient to trigger photometry at the location, one can find the
  probability of detection from an SNR vs. efficiency of detection curve. The signal-to-noise ratio
 (SNR) can be determined given properties of a supernova (redshift, intrinsic brightness etc.)
@@ -341,7 +345,7 @@ detection.}
  \label{fig:SNR_detection}
 \end{figure}
 
-Using this information, one can compute the value of the probability that a SN with given properties
+Using this information, one can compute the probability that a SN with given properties
 will be discovered if from a set of images where the SN have a known signal to noise ratio. We use this as the
 value for the supernova discovery metric (SNDM). While very high redshift (and thus faint)
 supernovae will not be discovered, it is
@@ -452,7 +456,7 @@ strategy, we do not anticipate our conclusions would change with the use of
 cadences.
 
 Using the OpSim output \texttt{enigma\_1189}, we generated
-light curves for a type Ia supernova with a with a redshift of z=0.5 at a few different
+light curves for a type Ia supernova with a redshift of z=0.5 at a few different
 locations. A date in MJD is chosen where the LSST simulated data are
 reasonably well populated. We used the SALT2-extended model
 with $x_0$, $x_1$ and $c$ set so that the SN Ia would have a specific
@@ -466,7 +470,7 @@ bandpasses.
 different filters in a deep drilling field. The
 number of visits for 50 days (which is the period of the simulated SN Ia light curve in
 rest-frame, which translates to 75 days at z=0.5) is 53 per filter. For this light
-curves, the supernova quality metric (SNQM) and the
+curve, the supernova quality metric (SNQM) and the
 discovery metric (SNDM), are both equal to 1. SNDM=1 indicates that this object is a transient that
 will be definitely discovered, and SNQM=1 indicates that the light
 curves will be of high quality enough to contribute extremely well to
@@ -487,9 +491,9 @@ fields considered, from the DDF and WFD.
 %\vskip -1.3in
 %*\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_290_lc.pdf}
 \centering
-\includegraphics[angle=0,width=14truecm]{figs/SN_290_lc.pdf}
+\includegraphics[angle=0,width=14truecm]{figs/supernova/SN_290_lc.pdf}
 %\vskip -1.3in
-\caption{An example of a light curve, in six filter bands, of a SN Ia from a DDF in
+\caption{An example of a light curve, in six filter bands, of a SN Ia from the DDF field with fieldID 290 in
 \texttt{enigma\_1189}.
 }
 \label{fig:SNIaLCopsimdeep}
@@ -498,7 +502,7 @@ fields considered, from the DDF and WFD.
 \begin{figure}
 %\vskip -1.3in
 \centering
-\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/SN_309_lc.pdf}
+\includegraphics[angle=0,width=0.99\hsize:,clip]{figs/supernova/SN_309_lc.pdf}
 %\vskip -1.3in
 \caption{An example of a light curve, where only four filter bands are available, of a SN Ia from
 the WFD survey in
@@ -509,12 +513,12 @@ the WFD survey in
 
 \begin{figure}
 \centering
-\includegraphics[angle=0,width=\textwidth,clip]{figs/SN_Cadence_290.pdf}
-\includegraphics[angle=0,width=\textwidth,clip]{figs/SN_Cadence_309.pdf}
+\includegraphics[angle=0,width=\textwidth,clip]{figs/supernova/SN_Cadence_290.pdf}
+\includegraphics[angle=0,width=\textwidth,clip]{figs/supernova/SN_Cadence_309.pdf}
 \caption{Cadence of observations in the time window of a representative
 supernova at redshift of $z=0.5$ in a DDF (top) field (fieldID: 290) and
 a WFD (bottom) field (fieldID: 309). The red lines show the date of
-explosion, and the shades show the number of observations in a night in
+peak, and the shades show the number of observations in a night in
 a distinct filter.}
 \label{fig:perSNCadence}
 \end{figure}
@@ -750,8 +754,8 @@ rectified in future.}
 % \item[Q1:] {\it Does the science case place any constraints on the
 % tradeoff between the sky coverage and coadded depth? For example, should
 % the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline but
-% with 18,000 deg$^2$)?}
+% Pan-STARRS) or the number of detected galaxies (the current baseline 
+% of 18,000 deg$^2$)?}
 %
 % \item[A1:] ...
 %
@@ -902,8 +906,8 @@ Here we answer the ten questions posed in Sub-section 1.2.1:
 \item[Q1:] {\it Does the science case place any constraints on the
 tradeoff between the sky coverage and coadded depth? For example, should
 the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-Pan-STARRS) or the number of detected galaxies (the current baseline but
-with 18,000 deg$^2$)?}
+Pan-STARRS) or the number of detected galaxies (the current baseline 
+of 18,000 deg$^2$)?}
 
 \item[A1:] For supernova observations, the most important aspect is cadence: we need a
 good sampling of well-measured light curves of supernovae. If the sky
