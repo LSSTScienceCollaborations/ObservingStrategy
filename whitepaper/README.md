@@ -9,7 +9,7 @@ A community white paper about LSST observing strategy, with quantifications via 
 
 ## How to contribute
 
-We welcome contributions from all members of the LSST project and science community! 
+We welcome contributions from all members of the LSST project and science community!
 The white paper contains guidelines for authors on how to get involved - including hyperlinks to useful resources.
 
 If you would like to propose changes or additions to the white paper, please:
@@ -30,4 +30,4 @@ Section Leads: you will need to make sure that your section is correctly read in
 
 ## License, credit etc
 
-This paper contains research in progress. All content is Copyright 2015 The LSST Science Collaborations. If you would like to cite it, please do so as "(LSST Science Collaborations, in preparation)" and provide a footnote containing the URL of this repository: https://github.com/LSSTScienceCollaborations/ObservingStrategy. The latex code used here is distributed for you to use at your own risk under the MIT License.
+This paper contains research in progress. All content is Copyright 2015, 2016, 2017 The LSST Science Collaborations. If you would like to cite it, please do so as "(LSST Science Collaborations, in preparation)" and provide a footnote containing the URL of this repository: https://github.com/LSSTScienceCollaborations/ObservingStrategy. The LaTeX and python code used here is distributed for you to use at your own risk under the MIT License. We are grateful to the developers of [yahapj.bst](https://github.com/AASJournals/yahapj) for enabling our hyper-linked reference list.
