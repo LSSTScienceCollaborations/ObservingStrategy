@@ -109,8 +109,9 @@ perihelion.
 
 Ensuring that any activity or outgassing of a comet or active asteroid
 is clearly identifiable with LSST DM or contributed Level 3 software is not a
-solved problem, however there is ongoing work toward this goal (xx
-ref? Hsieh, other? xx). In the meantime, it does not seem unreasonable
+solved problem, though there is ongoing work toward this goal
+both within and outside the project.
+In the meantime, it does not seem unreasonable
 to assume that the main requirement, in terms of cadence, is to actually
 have an observation at a time when activity is visible, as well as at
 surrounding times to determine the start and end points of that activity.
@@ -142,11 +143,11 @@ The metrics {\tt ActivityOverTimeMetric} and {\tt
   ActivityOverPeriodMetric} look at when an object was observed (with
 a detection above a given SNR), and
 split those observations into bins based on time or position in the
-orbit (mean anomaly), respectively. The first is relevant when looking
+orbit (true anomaly), respectively. The first is relevant when looking
 for transient activity that is not expected to repeat at the same
 point in the orbit, while the second seems more appropriate for
 activity that would repeat at the same point in the orbit. Each of
-these metrics takes only a single time or mean anomaly window, distributes
+these metrics takes only a single time or true anomaly window, distributes
 the observations of each object into bins based on those windows, and
 counts the number of bins which received observations. The number of
 bins with observations, compared to the overall number of bins,
@@ -223,8 +224,8 @@ been identified. (comment on cometary activity?)
 % \item[Q1:] {\it Does the science case place any constraints on the
 % tradeoff between the sky coverage and coadded depth? For example, should
 % the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline but
-% with 18,000 deg$^2$)?}
+% Pan-STARRS) or the number of detected galaxies (the current baseline 
+% of 18,000 deg$^2$)?}
 %
 % \item[A1:] ...
 %
