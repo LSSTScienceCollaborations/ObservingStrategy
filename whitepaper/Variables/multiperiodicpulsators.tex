@@ -180,7 +180,7 @@ For comparison purposes, we calculate the number of ZZ Cetis detected in
 both the $u$ and $r$ filters, assuming intrinsic r.m.s.\ variability of
 1\% for two of the currently available \OpSim runs:
 \opsimdbref{db:baseCadence}, the current baseline cadence, and
-\opsimdbref{db:DoubleUbandExptime}, with doubled $u$-band exposure
+\opsimdbref{db:DoubleUbandExptimeSameVisits}, with doubled $u$-band exposure
 times. We require that 90\% of ZZ Cetis with 1\% r.m.s.\  variability
 are detected to the computed ``variability depth,'' with a tolerance for
 up to 10\% of nonvariables with the same $u$ and $r$ magnitudes to yield
@@ -197,7 +197,7 @@ of r.m.s.\ variability}, is provided in \autoref{tab:zz1pertab}.
     \OpSim Run & Filter & \# ZZ Cetis \\ \hline
       \opsimdbref{db:baseCadence} & $u$ & 9  \\
       & $r$ & 127 \\ \hline
-      \opsimdbref{db:DoubleUbandExptime} & $u$ & 17\\
+      \opsimdbref{db:DoubleUbandExptimeSameVisits} & $u$ & 17\\
       & $r$ & 123  \\ \hline
     \end{tabular}
 \end{center}
@@ -215,7 +215,7 @@ total number of ZZ Cetis expected, allowing for incompleteness to low
 amplitude.  While we still do not detect $\sim$1000 ZZ Cetis in $u$,
 overall we see an increase in the total number of detected ZZ Cetis by
 roughly an order of magnitude (in $r$), with the
-\opsimdbref{db:DoubleUbandExptime} simulation reaching markedly closer
+\opsimdbref{db:DoubleUbandExptimeSameVisits} simulation reaching markedly closer
 to the $u$-band goal than the \opsimdbref{db:baseCadence} strategy.
 
 
@@ -227,7 +227,7 @@ to the $u$-band goal than the \opsimdbref{db:baseCadence} strategy.
     \OpSim Run & Filter & \# ZZ Cetis \\ \hline
      \opsimdbref{db:baseCadence} & $u$ & 197  \\
       & $r$ & 1601 \\ \hline
-     \opsimdbref{db:DoubleUbandExptime}  & $u$ & 325\\
+     \opsimdbref{db:DoubleUbandExptimeSameVisits}  & $u$ & 325\\
     & $r$ & 1534  \\ \hline
     \end{tabular}
 \end{center}
@@ -256,7 +256,7 @@ pulsating stars to observe. LSST will capture variability in higher
 amplitude ZZ Cetis and other types of variable star more completely, and
 LSST observations of all candidate pulsating white dwarfs will certainly
 still be worthy of careful analysis.  We note that the
-\opsimdbref{db:DoubleUbandExptime} strategy with 60\,s exposures in $u$
+\opsimdbref{db:DoubleUbandExptimeSameVisits} strategy with 60\,s exposures in $u$
 does a much better job of measuring stellar variability overall, at the
 expense of a practically negligible decrease in $r$-band detections.  We
 argue that any observing strategy that increases the typical {\tt VarDepth}
