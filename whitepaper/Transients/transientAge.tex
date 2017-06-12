@@ -43,7 +43,7 @@ Within the~\opsimdbref{db:baseCadence} cadence, and most cadences
 realized thus far, the second intra-night visit occurs around 30 minutes (left panel of \autoref{fig:tgaps_r}).
 after the first visit (to maximize the Solar System moving objects recovery,~\autoref{chp:solarsystem}). We want to understand {\bf\emph{how the intra-night gap enables, affects, and can be used to maximize the identification of new transients as young}}, where, by young, we mean within a day of outburst/explosion.
 
-To begin to answer this question, we limit our investigation to light curve shape in just the $r$ band, and specifically to what can be done in $r$ band. We have selected a representative set of transients with good photometric coverage in the first week after the the outburst/explosion (left panel of \autoref{fig:earlyslope}) and computed the light curve slope as a function of time in magnitudes per day (right panel of \autoref{fig:earlyslope}). In \autoref{fig:earlyrise} we report the change in $r$ brightness between the first and the second visit for the same set of transients as function of phase.
+To begin to answer this question, we limit our investigation to light curve shape in just the $r$ band, and specifically to what can be done in $r$ band. We have selected a representative set of transients with good photometric coverage in the first week after the the outburst/explosion (left panel of \autoref{fig:earlyslope}) and computed the light curve slope as a function of time in magnitudes per day (right panel of \autoref{fig:earlyslope}). In \autoref{fig:earlyrise} we report the change in $r$ brightness between the first and the second visit for the same set of transients as function of phase. The similarity matrices in \autoref{fig:simmatrix} represent the distance in this quantity for each transient pair for time gaps between observations ranging between 30 minutes and 24 hours.
 
 Despite the heterogeneity in light curve shapes, most of the transients show a similar change in brightness on short time scales.
 This confirms that early classification of the transient sub-type is a
@@ -88,23 +88,24 @@ the two.
     simulation of a cadence with three visits per field, per night,
     two in the same band, but spaced by two hours or more, and a third
     in a different band. This criteria could be limited to the
-    observations above and below the ecliptic plane, where recovery of
-    Solar System objects puts less strain on the cadence requirements.
-    The current 3-visit \OpSim run
-    (\opsimdbref{db:NEOswithVisitTriplets}) is inadequate since it does
-    not include the constraint of one visit being in a different
+    extragalactic sky, away from both the ecliptic plane and the
+    galactic plane, where recovery of Solar System objects puts less
+    strain on the cadence requirements.  The current 3-visit \OpSim run
+    (\opsimdbref{db:NEOswithVisitTriplets}) is inadequate since it
+    does not include the constraint of one visit being in a different
     filter.}}
 
-{\bf\emph{Furthermore, we note that the currently envisioned
-    deep drilling cadence prioritizes depth per visit at the expense
-    of a higher cadence. One hour per night on a deep drilling field
+{\bf\emph{Furthermore, we note that the currently envisioned deep
+    drilling cadence prioritizes depth per visit at the expense of a
+    higher cadence. One hour per night on a deep drilling field
     reaches a depth that not required for almost all transient science
     cases, and by cycling to a different field each night, the time
-    between visits for a particular field is too long for many
-    important science cases. Even with higher overhead, a more useful
-    approach for nearly all transient sciene, that the deep drilling
-    fields are designed to facilitate, would be to observe 3 or 4 of
-    the available fields each night for 15 or 20 minutes.}}
+    between visits for a particular field (4-5 days) is too long for
+    many important science cases. Even with higher overhead, a more
+    useful approach for nearly all transient science, that the deep
+    drilling fields are designed to facilitate, would be to observe
+    three or four of the available fields each night for 15 or 20
+    minutes.}}
 
 \begin{figure}[hbt]
 \centerline{
@@ -121,6 +122,37 @@ the two.
 \caption{Observed magnitude change between two consecutive observations for a representative set of astronomical transients, as a function of the phase. We consider observation gaps of 30 minutes  (left panel), 2 hours (central panel) and 24 hours (right panel).
 }
 \label{fig:earlyrise}
+\end{figure}
+\begin{figure}[hbt]
+\centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figs/transients/TransientsAgeSimilarity1.pdf}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figs/transients/TransientsAgeSimilarity2.pdf}
+    \end{subfigure}
+
+
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figs/transients/TransientsAgeSimilarity3.pdf}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figs/transients/TransientsAgeSimilarity4.pdf}
+    \end{subfigure}
+    
+%  \includegraphics[width=\textwidth]{figs/transients/TransientsAgeSimilarity1.pdf}{figs/transients/TransientsAgeSimilarity2.pdf}
+  
+    %  \includegraphics[width=\textwidth]{figs/transients/TransientsAgeSimilarit3.pdf}{figs/transients/TransientsAgeSimilarity4.pdf}
+    
+  
+    \caption{Similarity matrix of the transients in \autoref{fig:earlyslope} and \autoref{fig:earlyrise} in $r$ filter for time gaps (starting with the top left panel) of  0.5, 2, 5, and 24 hours.  The similarity is measured as the Euclidean distance between the magnitude change of each transient's pair and it is represented in log scale, with darker colors indicating a larger distance (to a maximum difference $\lvert{\Delta\mathrm{Mag}_1 - \Delta\mathrm{Mag}_2}\rvert ~\sim~8$). For each transient's pair the similarity is calculated for 8 phases within the life of the transients, with the first observation starting at explosion, and as late as 3.5 days after explosion, in 12 hour increments, thus 8 values are associated to each trsansient pair (as indicated by the tick markers).}
+  \label{fig:simmatrix}
 \end{figure}
 
 % ====================================================================
@@ -148,7 +180,8 @@ required for fast transients.
  reduced sample rate the rest of the time (while maintaining the nominal
  total visit counts).}
 
- \item[A2:] Two visits/night is not sufficient - a rolling cadence can provide a satisfactory solution.
+ \item[A2:] Frequency of sampling is far more important than uniformity of sampling for early classification of interesting cadence. The rolling cadence is definitely the first step to take, but it is still not enough to identify young transients. A longer than .4 hours intra-night gap or, even better a one day cadence would allow young transients to vary enough to be identified. If the second visit occurs on 0.4-hour time scale, a different filter would be preferred (color information can be alternatively used to identify young transients)
+   
 
  \item[Q3:] {\it Does the science case place any constraints on the
  tradeoff between the single-visit depth and the number of visits
