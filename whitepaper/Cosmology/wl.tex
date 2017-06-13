@@ -239,21 +239,20 @@ indicate that rotSkyPos is already being well sampled in current simulations due
 to the rotator tracking the sky during exposures, being subject to cable wrap
 limits, and occasionally resetting to 0-degrees for filter changes.
 
-Using techniques similar to \citet{Jee&Tyson2011}, Jee and Tyson did a study of
-the shear residual systematics due to known LSST CCD brighter-fatter anisotropy
-in 100 revisits to a single field with random angular orientations and seeing
-sampled from the expected distribution.  The Data Management (DM) pipeline will
-use a model of the charge transport in the CCD to re-map pixel shapes, sizes,
-and areas in pixel level data processing.  The needed factor of 10 suppression
-of the CCD-based shear systematic residuals (post pixel remap pipeline
-correction) was obtained, reaching the SRD floor on cosmic shear systematics
-(presented at weak lensing systematics workshop, Dec 2015)
-\footnote{\url{https://indico.bnl.gov/conferenceDisplay.py?confId=1604}}.  Of
-course, the requirements for spatial dithering for shear systematics residuals
-depend on the precision of the pixel processing for removal of the CCD based
-additive shear systematic.  We assume that this pixel level remap in the DM
-pipeline cannot correct to better than 3 times the rms errors in the lab tests
-for dynamic and static CCD systematics.
+\citet{Jee&Tyson2011} did a study of the shear residual systematics due to known
+LSST CCD brighter-fatter anisotropy in 100 revisits to a single field with
+random angular orientations and seeing sampled from the expected distribution.
+The Data Management (DM) pipeline will use a model of the charge transport in
+the CCD to re-map pixel shapes, sizes, and areas in pixel level data processing.
+The needed factor of 10 suppression of the CCD-based shear systematic residuals
+(post pixel remap pipeline correction) was obtained, reaching the SRD floor on
+cosmic shear systematics (presented at weak lensing systematics workshop, Dec
+2015)\footnote{\url{https://indico.bnl.gov/conferenceDisplay.py?confId=1604}}.
+Of course, the requirements for spatial dithering for shear systematics
+residuals depend on the precision of the pixel processing for removal of the CCD
+based additive shear systematic.  We assume that this pixel level remap in the
+DM pipeline cannot correct to better than 3 times the rms errors in the lab
+tests for dynamic and static CCD systematics.
 
 The distribution of parallactic angles is similarly shown in
 \autoref{fig:WL_AngularSpread_ParallacticAngle} and
