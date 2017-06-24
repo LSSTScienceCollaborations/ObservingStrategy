@@ -31,6 +31,7 @@ thisversion.tex
 *-blx.bib
 *.brf
 *.run.xml
+*.ent
 
 ## Build tool auxiliary files:
 *.fdb_latexmk
