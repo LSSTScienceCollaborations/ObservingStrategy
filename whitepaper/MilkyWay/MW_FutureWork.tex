@@ -33,7 +33,7 @@
 
 In this final section we provide an extremely brief list of important science
 cases that are still in an early stage of development, but that are
-deserving of quantitative MAF analysis in the future.
+deserving of quantitative \MAF analysis in the future.
 
 \subsection{Further considerations for Milky Way static science}
 
@@ -71,7 +71,7 @@ deserving of quantitative MAF analysis in the future.
   parameterizations of the observational quantities of interest - for
   example, the run of photometric uncertainty against apparent
   magnitude, for each location on the sky, and including spatial
-  confusion (all of which \MAF can currently produce) - and then use
+  confusion (all of which \MAF can currently produce\footnote{See the tutorials at \url{https://github.com/LSST-nonproject/sims_maf_contrib} for more information.}) - and then use
   these characteristics as input to their own population simulations,
   on which the investigator may have invested substantial time and
   effort.
@@ -144,7 +144,7 @@ cases that are still in an early stage of development, which fall into the ``Sta
   exposures that still need resolution:
 
 \begin{itemize}
-  \item{What level of bright-object charge-bleeding can be tolerated? For example, is some minimum distribution of position-angles required in order to spread the bleeds azimuthally over the set of observations of a particular line of sight (so that different pixels fall under bleeds in different exposures)?\footnote{Note that with $\sim 30$~exposures per filter per field over ten years towards some regions, charge-bleed directions might not be highly randomized.} What is this minimum?}
+  \item{What level of bright-object charge-bleeding can be tolerated? For example, is some minimum distribution of position-angles required in order to spread the bleeds azimuthally over the set of observations of a particular line of sight (so that different pixels fall under bleeds in different exposures)?\footnote{Note that with $\sim 30$~exposures per filter per field over ten years towards some regions, charge bleeds on the detector for a given object might not be spread over a large range of orientations. The spread of charge bleed angles on the detector - as a spatially-varying metric - should be implemented and included in figures of merit.} What is this minimum?}
     \item{What is the science impact of restricting targets to $r \gtrsim 16$?}
       \item{Will the proposed twilight survey of short exposures be adequate for science cases requiring short exposures? Are there enough observations from other surveys (e.g. DES or other DECam surveys) to cover the bright end of the entire LSST footprint, and are {\it new} observations of very bright objects required scientifically in any case?}
         \item{What is the bright limit required for adequate astrometric cross-calibration against Gaia?}

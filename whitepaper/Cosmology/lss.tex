@@ -23,10 +23,10 @@
 \newcommand{\delos}[0]{\delta_{\mathrm{OS},i}}
 \newcommand{\ev}[1]{\left < {#1} \right >}
 
-\section{Large-Scale Structure: Testing Dither Patterns and Timescales to Improve Survey Uniformity}
+\section{Large-Scale Structure: Dithering to Improve Survey Uniformity}
 \def\secname{lss}\label{sec:\secname}
 
-\credit{HumnaAwan},
+\credit{humnaawan},
 \credit{egawiser},
 \credit{pkurczynski},
 \credit{rhiannonlynne}
@@ -94,7 +94,7 @@ To quantify the effectiveness of each observing strategy in minimizing \sigmaOS,
 \end{equation}
 Here, $\bar{\eta}$ is the surface number density in steradians$^{-1}$, and the term containing it accounts for the contribution from the shot noise to the measured signal \citep{HutererEtal2001,Jing2005}. This FoM measures the percentage of ideal-case information that can be measured in the presence of systematics. We note that the shot noise is negligible even for the shallowest (10-year) surveys we consider.
 
-We define the ideal-case as being based on the largest coverage of the sky with LSST, i.e., $f_{\rm{sky, max}}$ is the largest WFD coverage with the baseline cadence. For \opsimdbref{db:baseCadence}, the observing strategy with RepulsiveRandomDitherFieldPerVisit dithers leads to the largest $f_{\rm{sky}}$ ($\sim 39.5\%$). Note that this fraction is calculated after masking the shallow borders of the main survey; for details, see \citet{AwanEtal2016}. %Therefore, we fix the $f_{\rm{sky, best}}$ to be $39.5\%$ and compare the the different observing strategies and cadences relative to it. 
+We define the ideal-case as being based on the largest coverage of the sky with LSST, i.e., $f_{\rm{sky, max}}$ is the largest WFD coverage with the baseline cadence. For \opsimdbref{db:baseCadence}, the observing strategy with RepulsiveRandomDitherFieldPerVisit dithers leads to the largest $f_{\rm{sky}}$ ($\sim 39.5\%$). Note that this fraction is calculated after masking the shallow borders of the main survey; for details, see \citet{AwanEtal2016}. %Therefore, we fix the $f_{\rm{sky, best}}$ to be $39.5\%$ and compare the the different observing strategies and cadences relative to it.
 
 % ====================================================================
 % Subsection: A Comment on Terminology
@@ -173,7 +173,7 @@ To further probe the effects of dithers, we run the 1-year and 10-year analyses 
 
 % For different cadences, 1yr results, we now have FoM really high for the wider minion1020 for both PerNight and FieldPerVisit dithers while NoDither and PerSeason dithers are still performing poorly. RepRandom dithers with the wider survey gets us F0M=0.99 while FermatSpiral dithers perform better than RepRandom for the other two cadences.
 
-As before, \sigmaOS\ improves with more frequent dithering. It is only about 1-3$\times$ the statistical floor for FermatSpiral dithers on PerNight timescale. In contrast to NoDither and PerSeason dithers, both \opsimdbref{db:opstwoPS} and \opsimdbref{db:NoVisitPairs} perform better than baseline\opsimdbref{db:baseCadence} with PerNight dithers: FoM from the wider coverage cadence is about $4.5\%$ better than for the baseline cadence, while we see a $4\%$ better FoM with \opsimdbref{db:NoVisitPairs}. 
+As before, \sigmaOS\ improves with more frequent dithering. It is only about 1-3$\times$ the statistical floor for FermatSpiral dithers on PerNight timescale. In contrast to NoDither and PerSeason dithers, both \opsimdbref{db:opstwoPS} and \opsimdbref{db:NoVisitPairs} perform better than baseline\opsimdbref{db:baseCadence} with PerNight dithers: FoM from the wider coverage cadence is about $4.5\%$ better than for the baseline cadence, while we see a $4\%$ better FoM with \opsimdbref{db:NoVisitPairs}.
 
 For RepulsiveRandom dithers on FieldPerVisit timescale, we find that the uncertainties in the bias induced by the observing strategy are on the same scale as the statistical floor. The wider coverage cadence outperforms the baseline cadence significantly as  the wider survey FoM is about $18\%$ better than the baseline FoM while the improvement is about 3$\%$ when not requiring visit-pairs. We emphasize that the differences between results with different cadences is highly dependent on the observing strategy: the wider coverage with no or infrequent dithers performs quite poorly while it significantly improves the FoM when large, frequent dithers are implemented. On the other hand, not requiring visit-pairs leads to comparatively larger improvement for infrequent dithers than frequent ones (compared to the baseline).
 
@@ -206,18 +206,18 @@ Here we answer the ten questions posed in
 \item[Q1:] {\it Does the science case place any constraints on the
 tradeoff between the sky coverage and coadded depth? For example, should
 the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-Pan-STARRS) or the number of detected galaxies (the current baseline but
-with 18,000 deg$^2$)?}
+Pan-STARRS) or the number of detected galaxies (the current baseline 
+of 18,000 deg$^2$)?}
 
 \item[A1:] As we see in \autoref{sec:\secname: analysis}, a deeper
 catalog is more effective, though it makes the choice of the dither
-strategy more important, especially in the first year of survey. We also see 
-that the wider-coverage cadence \opsimdbref{db:opstwoPS} performs 
-significantly better for LSS systematics with large, frequent dithers  
+strategy more important, especially in the first year of survey. We also see
+that the wider-coverage cadence \opsimdbref{db:opstwoPS} performs
+significantly better for LSS systematics with large, frequent dithers
 while it performs much poorly with no or infrequent dithers; this
 trend is consistent for both one-year and the full, ten-year surveys. We
 note here that one year of the wider coverage (for gold sample) with frequent large
-dithers leads to better systematics (as quantized here) than ten years of 
+dithers leads to better systematics (as quantized here) than ten years of
 the standard WFD  footprint, strongly supporting the effectiveness of wider area
 coverage in the first year of survey for LSS systematics. We are definitely area-
 limited more than depth-limited for LSS studies.
@@ -239,7 +239,7 @@ tradeoff between the single-visit depth and the number of visits
 (especially in the $u$-band where longer exposures would minimize the
 impact of the readout noise)?}
 
-\item[A3:] From our investigation into the large uncertainties in the bias induced by 
+\item[A3:] From our investigation into the large uncertainties in the bias induced by
 the observing strategy observed in the gold sample in the baseline cadence, in
 comparison with the shallower and deeper catalogs, we find that
 $u$-band-induced artifacts add the most to the uncertainties in the
@@ -314,7 +314,7 @@ for both 1-year and 10-year surveys. We find that of the three dither strategies
 discussed here, FermatSpiral dithers on PerNight  timescale are the most
 effective for the gold sample after one-year of survey while  dithers of all kinds
 are effective after the ten-year survey. These results imply the need for a very careful
-choice of the observing strategy in the first year while there is quite a range of choice 
+choice of the observing strategy in the first year while there is quite a range of choice
 for years 2-10.
 
 We also analyze two other cadences and find  that frequent dithering with
@@ -334,7 +334,7 @@ counts as well as its uncertainties, and a better estimate of the
 uncertainties in the bias induced by the observing strategy by a more thorough accounting of the
 effects of each band. Also, the development and the analysis of the
 effectiveness of various systematics correction methods needs to be
-carried out, especially for the 1-year survey, as only a few observing 
+carried out, especially for the 1-year survey, as only a few observing
 strategies reduce the artifacts. Finally, the effectiveness
 of various dithers still needs to be assessed for other science probes.
 

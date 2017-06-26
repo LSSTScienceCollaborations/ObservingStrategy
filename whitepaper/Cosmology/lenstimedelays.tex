@@ -112,18 +112,15 @@ Challenge. Reproduced from \citet{LiaoEtal2015}.\label{tab:tdcrungs}}
 \begin{figure*}[!ht]
   \capstart
   \begin{minipage}[b]{\linewidth}
-    \begin{minipage}[b]{0.32\linewidth}
-      \centering\includegraphics[width=\linewidth]{figs/Accuracy_season_nca.pdf}
-    \end{minipage} \hfill
-    \begin{minipage}[b]{0.32\linewidth}
+    \begin{minipage}[b]{0.48\linewidth}
       \centering\includegraphics[width=\linewidth]{figs/Precision_cadence_nca.pdf}
     \end{minipage} \hfill
-    \begin{minipage}[b]{0.32\linewidth}
+    \begin{minipage}[b]{0.48\linewidth}
       \centering\includegraphics[width=\linewidth]{figs/Fraction_season_nca.pdf}
     \end{minipage}
   \end{minipage}
-\caption{Examples of changes in accuracy $A$ (left), precision $P$
-(center) and success fraction $f$ (right) with schedule properties, as
+\caption{Examples of changes in precision $P$
+(left) and success fraction $f$ (right) with schedule properties, as
 seen in the different TDC submissions. The gray approximate power law
 model was derived by visual inspection of the pyCS-SPL results; the
 signs of the indices were pre-determined according to our expectations.
@@ -167,12 +164,12 @@ strategies be, for time delay lens cosmography?''
 \autoref{fig:lenstimedelays:accuracymaps} shows maps of TDC2 time delay
 measurement accuracy from our MAF analysis of two \OpSim databases, the
 baseline cadence \opsimdbref{db:baseCadence}, and a ``No Visit Pairs''
-strategy, \opsimdbref{db:NoVisitPairs}. We compare three different
+strategy, \opsimdbref{db:NoVisitPairs}. We use the \metric{TdcMetric} to compare three different
 analysis scenarios, differing by a) whether or not we can combine all 6
 filters' light curves such that they behave like the TDC2 single-filter
 simulations (as was assumed by \citeauthor{LiaoEtal2015}), and b)
 whether we wait 5 or 10 years before making the time delay measurement.\footnote{Here, ``years'' means ``seasons:'' we used the
-\simsMAFcontrib{SeasonStacker}{mafContrib/seasonStacker.py} to work
+\metric{SeasonStacker} to work
 with seasons, rather than calendar years.}
 
 These sky maps saturate at a threshold of 0.04\%, chosen conservatively
@@ -341,8 +338,8 @@ Based on the above results, we now answer the ten questions posed in
 \item[Q1:] {\it Does the science case place any constraints on the
 tradeoff between the sky coverage and coadded depth? For example, should
 the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-Pan-STARRS) or the number of detected galaxies (the current baseline but
-with 18,000 deg$^2$)?}
+Pan-STARRS) or the number of detected galaxies (the current baseline
+of 18,000 deg$^2$)?}
 
 \item[A1:] Yes: it's probably better to have smaller area and better
 data, especially if the multi-filter light curve analysis turns out to

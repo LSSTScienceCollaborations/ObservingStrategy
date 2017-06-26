@@ -22,14 +22,14 @@
 \credit{poleski},
 \credit{rachelstreet}.
 
-One of the most exciting prospects of future micolensing surveys is the 
-characterization of the population of ``rogue'' or free-floating planets. 
+One of the most exciting prospects of future micolensing surveys is the
+characterization of the population of ``rogue'' or free-floating planets.
 While recent estimates of the rogue planet abundance (Mroz et al. 2017 in prep)
- have cast doubt on the large population of rogue planets inferred by 
-\citet{2011Natur.473..349S}, they have clearly demonstrated that microlensing surveys 
+ have cast doubt on the large population of rogue planets inferred by
+\citet{2011Natur.473..349S}, they have clearly demonstrated that microlensing surveys
 have the sensitivity necessary to detect them. Firm detections of the rogue
-planet population that might be predicted by planet formation simulations 
-awaits the accumulation of sufficient survey duration for giant rogue planets, 
+planet population that might be predicted by planet formation simulations
+awaits the accumulation of sufficient survey duration for giant rogue planets,
 and the WFIRST microlensing survey for smaller planets~\citep{2015arXiv150303757S,2017arXiv170408749B}.
 % of discovery to come out of gravitational
 %microlensing surveys is the discovery of a large population of ``rogue''
@@ -41,7 +41,7 @@ are isolated in the sense that no host star can be detected
 by microlensing. Depending on the peak magnification and light curve
 coverage, this can imply that a host must be $> 10\,$AU or $> 100\,$AU away,
 and \citet{2012ApJ...757..119B} have argued that the median separation
-of possible host stars is likely to be $> 30\,$AU. The presence and properties 
+of possible host stars is likely to be $> 30\,$AU. The presence and properties
 of a host star can be constrained either with WFIRST's diffraction limited survey images separated by the mission duration, or adaptive optics observations on large telescopes ($\ge 8$~m) taken $4$--$8$ years after the rogue planet event~\citep{2016JKAS...49..123G,2016AJ....152...96H}.
 %Further observations by both the MOA and OGLE collaborations provide
 %a qualitative confirmation of this result, as dozens of additional
@@ -78,7 +78,7 @@ too short to allow a significant light curve change due to the Earth's
 orbital motion, but near simultaneous observations from Earth and a
 satellite orbiting at the Earth-Sun L2 point (where WFIRST will orbit) allows the measurement of microlensing parallax signals for planetary mass
 lenses \citep{2003ApJ...591L..53G}. The principles of the technique are identical to those employed by the {\it K2} Campaign 9 microlensing parallax survey~\citep{2016PASP..128l4401H,2016AJ....152...96H,2017AJ....153..161P}.
-Figure~\ref{fig-lc} shows an example of the light curves for one of the
+\autoref{fig-lc} shows an example of the light curves for one of the
 rogue planets with a mass determined by simultaneous WFIRST and LSST
 observations.
 
@@ -120,7 +120,7 @@ mass measurement from simultaneous WFIRST and LSST observations. The short durat
 \end{figure}
 
 WFIRST planetary microlensing events will greatly improve our
-understanding of not only rogue planets population but also of planets in wide orbits similar to those of 
+understanding of not only rogue planets population but also of planets in wide orbits similar to those of
 Uranus or Neptune and with a wide range of masses~\citep{2015arXiv150303757S}. Such cold planets
 cannot be studied using techniques other than microlensing~\citep[e.g.,][]{2012ARAA..50..411G} and
 WFIRST gives us a unique opportunity to detect a statistically significant
@@ -289,7 +289,7 @@ We expect this quantity to be simply related to the ultimate precision
 on any rogue planet population hyperparameter we may try to infer from
 the LSST-WFIRST sample.
 Some additional
-work is still needed to test and develop this metric so that it can be easily incorporated into the MAF based on OpSim runs.
+work is still needed to test and develop this metric so that it can be easily incorporated into the \MAF based on \OpSim runs.
 The value of this product is 355 for our straw man program.
 
 
@@ -303,19 +303,20 @@ and $10\,M_\oplus$ that follow logarithmic mass function with
 normalization extrapolated from \citep{2012Natur.481..167C}. We narrow the sample of
 planets detected by WFIRST in a number of steps. First, we reject the events
 with host peak during the LSST high-cadence observations, i.e., during one of six
-76-day long campaigns. Second, we exclude the events with host event reaching
-at least $0.75$ of the event maximum flux increase, because in these cases WFIRST
+76-day long campaigns. Second, we exclude the events for which flux increase
+during the WFIRST observing season is at least $0.75$ of the event maximum
+flux increase, because in these cases WFIRST
 data will strongly constrain the host peak even though it is not fully observed.
 Third, we require at least a single LSST observation within $\pm0.05t_{\rm E}$ of
 the host peak and the magnified source flux to be brighter than SDSS-$z$ of $23~{\rm mag}$.
 The expected number of $0.1\,M_\oplus$, $1\,M_\oplus$, and $10\,M_\oplus$
 planets for which host peak is detected are 2.1, 8.7, and 36.9, respectively.
 We chose a sum of those as a proxy for a Figure of Merit. For the observing strategy
-presented above the value of this FoM is 47.7. If a maximum airmass is chosen to be
-2.0 instead of 2.5, then the requested time decreases by $6\%$ and FoM decreases by $12\%$.
+presented above the value of this Figure of Merit is 47.7. If a maximum airmass is chosen to be
+2.0 instead of 2.5, then the requested time decreases by $6\%$ and Figure of Merit decreases by $12\%$.
 The metric is based solely on the distribution of peak times and source magnitudes
 for a given WFIRST simulation, so once this is set, the metric can
-be easily computed for any OpSim run.
+be easily computed for any \OpSim run.
 
 
 % Quantifying the response via MAF metrics: definition of the metrics,
@@ -338,16 +339,15 @@ be easily computed for any OpSim run.
 The rough estimates of our metrics and Figure of Merit given above were
 carried out using a very simple model for the LSST observations we
 have proposed. We would hope to refine this analysis using the output
-of an OpSim run where the WFIRST+LSST microlensing program was included
+of an \OpSim run where the WFIRST+LSST microlensing program was included
 as an additional special survey, and our Figure of Merit coded in the
 MAF. We do not expect the impact of this special survey on other science cases
 to be high, as it would only need $12$--$24$ hours per year in total. The risk
 seems similar, but smaller than that of a Deep Drilling Field.
 
-Other science teams may find it useful to think of the WFIRST+LSST microlensing
-survey as a medium deep drilling field located in the bulge: it would be interesting
-to see how some of the Milky Way, galactic transient, and  stellar variable
-metrics changed with the addition of this proposed survey.
+WFIRST microlesning field will have the highest cadence among LSST bulge fields,
+hence, should be significantly affect Figures of Merit for Milky Way,
+galactic transients, and stellar variability.
 
 
 % ====================================================================

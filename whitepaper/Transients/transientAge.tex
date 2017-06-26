@@ -124,11 +124,35 @@ the two.
 \label{fig:earlyrise}
 \end{figure}
 \begin{figure}[hbt]
-\centerline{
-\includegraphics[width=\textwidth]{figs/transients/TransientsAgeSimilarity.pdf}
-}
-\caption{Similarity matrix of transients in \autoref{fig:earlyslope} and \autoref{fig:earlyrise} for a given time gap between observations in the $r$ filter: the similarity is measured as the Euclidean distance between the magnitude change of each transient's pair. The similarity is represented in log scale and a darker color indicates a larger distance between transients (to a maximum difference $\lvert{\Delta\mathrm{Mag}_1 - \Delta\mathrm{Mag}_2}\rvert ~\sim~8$). For each transient's pair a range of gray intensities represents the range of distances as a function of time since explosion, up to a maximum of 4 days.}
-\label{fig:simmatrix}
+\centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figs/transients/TransientsAgeSimilarity1.pdf}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figs/transients/TransientsAgeSimilarity2.pdf}
+    \end{subfigure}
+
+
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figs/transients/TransientsAgeSimilarity3.pdf}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figs/transients/TransientsAgeSimilarity4.pdf}
+    \end{subfigure}
+    
+%  \includegraphics[width=\textwidth]{figs/transients/TransientsAgeSimilarity1.pdf}{figs/transients/TransientsAgeSimilarity2.pdf}
+  
+    %  \includegraphics[width=\textwidth]{figs/transients/TransientsAgeSimilarit3.pdf}{figs/transients/TransientsAgeSimilarity4.pdf}
+    
+  
+    \caption{Similarity matrix of the transients in \autoref{fig:earlyslope} and \autoref{fig:earlyrise} in $r$ filter for time gaps (starting with the top left panel) of  0.5, 2, 5, and 24 hours.  The similarity is measured as the Euclidean distance between the magnitude change of each transient's pair and it is represented in log scale, with darker colors indicating a larger distance (to a maximum difference $\lvert{\Delta\mathrm{Mag}_1 - \Delta\mathrm{Mag}_2}\rvert ~\sim~8$). For each transient's pair the similarity is calculated for 8 phases within the life of the transients, with the first observation starting at explosion, and as late as 3.5 days after explosion, in 12 hour increments, thus 8 values are associated to each trsansient pair (as indicated by the tick markers).}
+  \label{fig:simmatrix}
 \end{figure}
 
 % ====================================================================
@@ -143,8 +167,8 @@ the two.
  \item[Q1:] {\it Does the science case place any constraints on the
  tradeoff between the sky coverage and coadded depth? For example, should
  the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
- Pan-STARRS) or the number of detected galaxies (the current baseline but
- with 18,000 deg$^2$)?}
+ Pan-STARRS) or the number of detected galaxies (the current baseline 
+ of 18,000 deg$^2$)?}
 
  \item[A1:] No strong constraint, as long as larger sky coverage does not compete with dense cadences
 required for fast transients.

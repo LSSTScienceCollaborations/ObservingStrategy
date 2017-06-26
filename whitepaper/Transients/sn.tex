@@ -38,7 +38,7 @@ $z=1$ is estimated to be $\sim200 ~(\mathrm{sq. deg.})^{-1}$ per
 year\footnote{\url{http://www.lsst.org/sites/default/files/docs/Wood-Vasey_086.11.pdf}},
 and SN~Ia represent only about 1/4 of all SN
 events~\citep{Li11b}: tens of millions of stars will explode
-within the LSST footprint every year. The main factors affecting 
+within the LSST footprint every year. The main factors affecting
 LSST SN science concern:
 \begin{enumerate}
 \item
@@ -233,11 +233,11 @@ the injected ratio.  The relative detectability can be assessed with
 the \texttt{transientAsciiMetric}, which allows us to see how OpSims
 recovers observations of transients with realistic shapes. We conclude
 that for RG-WD progenitors the detectability is enhanced by $\sim50\%$ in
- $g'$ compared to SD progenitors, and slightly less in $r'$. 
+ $g'$ compared to SD progenitors, and slightly less in $r'$.
 Then we extract from the \texttt{transientAsciiMetric}, the number of
 \emph{color observations}, i.e. observations in 2 bands within 1 day
 of each other, each fulfilling our SNR requirement for the color for
-3-, 6-, and 12 months of survey in year 1. 
+3-, 6-, and 12 months of survey in year 1.
 
 With the goal of distinguishing a SD contribution of 10\% to the SN Ia
 population from a 5\% contribution to a three-sigma level ($p$-value
@@ -322,64 +322,72 @@ and $r'$) for 3, 6 months, and a year of
  \begin{description}
 
  \item[Q1:] {\it Does the science case place any constraints on the
- tradeoff between the sky coverage and coadded depth? For example, should
- the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
- Pan-STARRS) or the number of detected galaxies (the current baseline but
- with 18,000 deg$^2$)?}
+ tradeoff between the sky coverage and coadded depth? For example,
+ should the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g.,
+ in Pan-STARRS) or the number of detected galaxies (the current baseline
+ but with 18,000 deg$^2$)?}
 
  \item[A1:] Yes, although this question can be answered with a full simulation that includes a coordinate dependent event rate while the current simulation assumes uniform probability of a transient in the field-of-view and cannot evaluate this trade-off
 
+
  \item[Q2:] {\it Does the science case place any constraints on the
  tradeoff between uniformity of sampling and frequency of sampling? For
- example, a rolling cadence can provide enhanced sample rates over a part
- of the survey or the entire survey for a designated time at the cost of
- reduced sample rate the rest of the time (while maintaining the nominal
- total visit counts).}
+ example, a rolling cadence can provide enhanced sample rates over a
+ part of the survey or the entire survey for a designated time at the
+ cost of reduced sample rate the rest of the time (while maintaining the
+ nominal total visit counts).}
 
  \item[A2:] Yes: this science case is sensitive to both. A more sophisticated simulation which also measures the ability to correctly identify the epoch of maximum would be more powerful to answer the question.
-   
+
 
  \item[Q3:] {\it Does the science case place any constraints on the
  tradeoff between the single-visit depth and the number of visits
  (especially in the $u$-band where longer exposures would minimize the
  impact of the readout noise)?}
 
- \item[A3:] Yes, because the diagnostic power depends on both the SNR of each observation and the gap between observations. 
+ \item[A3:] Yes, because the diagnostic power depends on both the SNR of each observation and the gap between observations.
+
 
  \item[Q4:] {\it Does the science case place any constraints on the
- Galactic plane coverage (spatial coverage, temporal sampling, visits per
- band)?}
+ Galactic plane coverage (spatial coverage, temporal sampling, visits
+ per band)?}
 
  \item[A4:] No.
+
 
  \item[Q5:] {\it Does the science case place any constraints on the
  fraction of observing time allocated to each band?}
 
  \item[A5:] Yes, since it relies on obtaining observations in at least 2 filters.
 
+
  \item[Q6:] {\it Does the science case place any constraints on the
  cadence for deep drilling fields?}
 
  \item[A6:] Yes, although the results have not been analyzed separately for WFD and DD fields.
+
 
  \item[Q7:] {\it Assuming two visits per night, would the science case
  benefit if they are obtained in the same band or not?}
 
  \item[A7:] No. Although  we would benefit greatly from 2 visits in the same filters, and one visit in a different filter to constrain simultaneously shape and color."
 
+
  \item[Q8:] {\it Will the case science benefit from a special cadence
  prescription during commissioning or early in the survey, such as:
- acquiring a full 10-year count of visits for a small area (either in all
- the bands or in a  selected set); a greatly enhanced cadence for a small
- area?}
+ acquiring a full 10-year count of visits for a small area (either in
+ all the bands or in a  selected set); a greatly enhanced cadence for a
+ small area?}
 
  \item[A8:] A full event rate needs to be inculded in the simulation to answer this question.
+
 
  \item[Q9:] {\it Does the science case place any constraints on the
  sampling of observing conditions (e.g., seeing, dark sky, airmass),
  possibly as a function of band, etc.?}
 
  \item[A9:] Yes since detection depends on SNR.
+
 
  \item[Q10:] {\it Does the case have science drivers that would require
  real-time exposure time optimization to obtain nearly constant
