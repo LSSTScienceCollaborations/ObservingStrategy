@@ -182,50 +182,43 @@ sample to the highest-amplitude sources ($\gtrsim$ 0.1 magnitude) does little
 to aid period recovery. The main issue remains the short-period systems where
 P $\lesssim$ 2 days.
 
-\begin{figure}[b]
-\begin{center}
- \includegraphics[width=5.32in]{figs/starFormation/tts1.pdf}
- \caption{Recovered period vs. true period for a sample of sinusoidal (left),
-bowl-shaped (middle) and bowl-shaped with False Alarm Probability $<$ 0.01 (right),
-assuming a 3-day cadence and one year of observing. What appears as a solid line are the
-individual points with periods that are recovered correctly. The bowl-shaped curves are
-more difficult to recover than the sinusoids, but the method is highly successful in both cases.}
-   \label{tts1}
-\end{center}
-\end{figure}
-
-\begin{figure}[b]
-\vspace*{1.0 cm}
-\begin{center}
- \includegraphics[width=5.32in]{figs/starFormation/tts2.pdf}
- \caption{ Fraction of periods recovered correctly for sinusoidal (left) and bowl light curves (right) for
-3-day (solid line) and 7-day (dashed line) cadences over an observing period of one year.
-A 3-day cadence is significantly better than a 7-day one. Over 98\%\ of sinusoidal, and 86\%\ of bowl
-light curve periods are recovered successfully with the 3-day cadence. The percentages drop to about
-82\%\ and 59\%\, respectively, for the 7-day cadence.
-}
-   \label{tts2}
-\end{center}
-\end{figure}
-
-\begin{figure}[b]
-\vspace*{1.0 cm}
-\begin{center}
- \includegraphics[width=5.32in]{figs/starFormation/tts3.pdf}
- \caption{Left and center: Same as Fig 2 but restricting the sample to amplitudes greater than 0.1 mag. The
-method is only marginally more successful with the larger amplitude objects than it is with the entire sample.
-Right: The narrowest 278 bowls have a significantly higher error rate than the entire sample does.
-}
-   \label{tts3}
-\end{center}
-\end{figure}
-
 Overall, standard cadences of once every few days should suffice
 to find most periodic T-Tauri stars that have periods $\gtrsim$ 3 days.
 A dedicated campaign to observe star-forming regions
 at time intervals of an hour or less is required to capture the shorter-period systems.
 The r-filter should suffice for most objects, though some benefit will be had
 by going to z to allow the more heavily-extincted sources to be observed.
+
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.95\linewidth]{figs/starFormation/tts1.png}
+\caption{Recovered period vs. true period for a sample of sinusoidal (left),
+bowl-shaped (middle) and bowl-shaped with False Alarm Probability $<$ 0.01 (right),
+assuming a 3-day cadence and one year of observing. What appears as a solid line are the
+individual points with periods that are recovered correctly. The bowl-shaped curves are
+more difficult to recover than the sinusoids, but the method is highly successful in both cases.}
+\label{tts1}
+\end{figure}
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.95\linewidth]{figs/starFormation/tts2.png}
+\caption{ Fraction of periods recovered correctly for sinusoidal (left) and bowl light curves (right) for
+3-day (solid line) and 7-day (dashed line) cadences over an observing period of one year.
+A 3-day cadence is significantly better than a 7-day one. Over 98\%\ of sinusoidal, and 86\%\ of bowl
+light curve periods are recovered successfully with the 3-day cadence. The percentages drop to about
+82\%\ and 59\%\, respectively, for the 7-day cadence.
+}
+\label{tts2}
+\end{figure}
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.95\linewidth]{figs/starFormation/tts3.png}
+\caption{Left and center: Same as Fig 2 but restricting the sample to amplitudes greater than 0.1 mag. The
+method is only marginally more successful with the larger amplitude objects than it is with the entire sample.
+Right: The narrowest 278 bowls have a significantly higher error rate than the entire sample does.
+}\label{tts3}
+\end{figure}
+
 
 {\bf C. Period Recovery for cTTs}
 
@@ -334,10 +327,10 @@ rotational variability associated with young stars.
 \item[Q1:] {\it Does the science case place any constraints on the
 tradeoff between the sky coverage and coadded depth? For example, should
 the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-Pan-STARRS) or the number of detected galaxies (the current baseline 
+Pan-STARRS) or the number of detected galaxies (the current baseline
 of 18,000 deg$^2$)?}
 %
-\item[A1:] 
+\item[A1:]
 Most young stars congregate into clusters in specific regions, though there is an older
 population that is more distributed. The vast majority are within $\sim$ 25 degrees of the
 galactic plane. As long as that swath of sky is covered to the degree possible from Chile,
@@ -355,7 +348,7 @@ of the survey or the entire survey for a designated time at the cost of
 reduced sample rate the rest of the time (while maintaining the nominal
 total visit counts).}
 
-\item[A2:] 
+\item[A2:]
 We discussed cadences in some detail above. To obtain the best constraints on periods, a time-intensive
 ($\sim$ one week/year) campaign on a few selected regions is warranted. Nominal coverage over the
 galactic plane will suffice to identify eruptive variables.
@@ -365,7 +358,7 @@ tradeoff between the single-visit depth and the number of visits
 (especially in the $u$-band where longer exposures would minimize the
 impact of the readout noise)?}
 
-\item[A3:] 
+\item[A3:]
 This item is discussed in section A above. In young stars, the u-band is particularly useful
 as a measure of accretion. At the same time, for period determinations, denser cadences produce
 fewer problems with aliasing for the typical young star variable with a rotation period between
@@ -375,28 +368,28 @@ a day and two weeks.
 Galactic plane coverage (spatial coverage, temporal sampling, visits per
 band)?}
 
-\item[A4:] 
+\item[A4:]
 A nominal sampling of once every few days will suffice to identify interesting
 eruptive variables as long as the galactic plane coverage is good (item A1).
 However, a sparse temporal sampling such as this will make it difficult to interpret
 the lightcurves of the tens of thousands of T Tauri stars observed by LSST. A single
 week's campaign of dense sampling, e.g., 2-3 times per night, of targeted regions
-will greatly improve our ability to separate periodic variables from aperiodic ones. 
+will greatly improve our ability to separate periodic variables from aperiodic ones.
 Knowing the rotation periods of thousands of young stars within a given star forming
 region will be a major contribution that LSST makes to this field of research. Such data
 will allow us to learn how angular momentum is distributed among newborn
-stars, whether it changes with mass and location in the cloud, 
-and how it varies as the stars age. 
+stars, whether it changes with mass and location in the cloud,
+and how it varies as the stars age.
 
 \item[Q5:] {\it Does the science case place any constraints on the
 fraction of observing time allocated to each band?}
 
-\item[A5:] 
+\item[A5:]
 In the case we made above for dense sampling, we argued for z, r, and u. The
 u-band allows us to follow mass accretion variability, while r and z (for most
 objects) will be dominated by photospheric flux. The r-z color is an important
 constraint for models of star spots. More colors are always useful, but having
-a photospheric color index plus one accretion measure are the science drivers 
+a photospheric color index plus one accretion measure are the science drivers
 for filter choices. Once u, r, and z are observed, having higher cadences
 is preferable to having more bands.
 The exposure times and magnitudes for typical objects are described in section A
@@ -405,7 +398,7 @@ above.
 \item[Q6:] {\it Does the science case place any constraints on the
 cadence for deep drilling fields?}
 
-\item[A6:] 
+\item[A6:]
 Absolutely. We argue in the `Summary and Recommendations' section above
 for the advantages of a single week of denser monitoring for specific
 regions, with the goal of having several observations per night, separated
@@ -413,12 +406,12 @@ in time by at least an hour from one another. The goal here is to provide
 some basis in reality for interpreting the irregular lightcurves of young
 stars, which also typically have a periodic component. Depending on the longevity of
 the star spots, a period might be obvious in high-cadence data taken over
-a week, but disappear over a year if some spots vanish and others form. 
+a week, but disappear over a year if some spots vanish and others form.
 
 \item[Q7:] {\it Assuming two visits per night, would the science case
 benefit if they are obtained in the same band or not?}
 
-\item[A7:] 
+\item[A7:]
 If the data are taken in the same band
 it means better sampling for periods. With different bands it means a lightcurve in two bands,
 which is also useful. It's probably a wash, and we can follow whatever the drivers are for the
@@ -430,27 +423,27 @@ acquiring a full 10-year count of visits for a small area (either in all
 the bands or in a  selected set); a greatly enhanced cadence for a small
 area?}
 
-\item[A8:] 
+\item[A8:]
 Yes, definitely. We ought to see what we can get out of a dedicated week-long
-LSST cadence on specific regions. If the results are impressive we follow up 
+LSST cadence on specific regions. If the results are impressive we follow up
 on different regions every year (or even return to the same regions).
 
 \item[Q9:] {\it Does the science case place any constraints on the
 sampling of observing conditions (e.g., seeing, dark sky, airmass),
 possibly as a function of band, etc.?}
 
-\item[A9:] 
+\item[A9:]
 
 Better seeing helps with unresolved binaries and for regions where contamination comes
 into play, for example, in the plane but away from dark clouds. Some of the fainter objects
 will be affected if the Moon is very bright and close. However generally these constraints
-are probably in a 'typical' category and will not affect the design of the survey.
+are probably in a ``typical'' category and will not affect the design of the survey.
 
 \item[Q10:] {\it Does the case have science drivers that would require
 real-time exposure time optimization to obtain nearly constant
 single-visit limiting depth?}
 
-\item[A10:] 
+\item[A10:]
 No.
 
 \end{description}

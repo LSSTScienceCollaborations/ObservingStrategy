@@ -95,18 +95,20 @@ whether the simulated survey would be useful for any particular purpose or inter
 In most of the simulations discussed in this document, the \OpSim scheduler balances several different observing proposals:
 \begin{itemize}
 \item {\bf Wide, Fast, Deep (WFD):} The WFD is the primary LSST survey, taking 85-95\% of the observing time and covering 18,000 square degrees of sky, in the current implementation spanning the declination range from about $-65$ to about $+5$~degrees (the total
-sky area between these limits is about 20,500 square degrees, but a region aligned with the Galactic Plane is not included in WFD). 
+sky area between these limits is about 20,500 square degrees, but a region aligned with the Galactic Plane is not included in WFD).
 % @ivezic: Our SAC reviewer suggested including this dec range, and also that we say what the galactic latitude cut is. Can you check the former and add the latter, please? Thanks!
 This observing proposal is usually configured to attempt observing pairs spaced $\sim40$\ minutes apart.  This temporal spacing is designed to optimize the detection of moving solar system objects. This proposal typically balances the six $ugrizy$ filters, observing each field every $\sim3$\ days.
 \item {\bf North Ecliptic Spur (NES):} The NES is an extension to reach the Ecliptic at higher airmass than the WFD survey typically covers.  The NES typically does not include the $uy$ filters.
-\item {\bf Galactic Plane:} This proposal covers the region where LSST is expected to be highly confused by the density of stellar sources.  Typically takes fewer total exposures per field than the WFD survey and does not collect in pairs. This region is defined by the galactic 
-latitude limit $|b| <  (1-l/90^\circ) \, 10^\circ$ for $0^\circ < l < 90^\circ$ and analogously (mirror image) for $270^\circ < l < 360^\circ$. 
-\item {\bf South Celestial Pole (SCP):} The SCP is an extension to higher airmass than the WFD to cover the region south of declination 
+\item {\bf Galactic Plane:} This proposal covers the region where LSST is expected to be highly confused by the density of stellar sources.  Typically takes fewer total exposures per field than the WFD survey and does not collect in pairs. This region is defined by the galactic
+latitude limit $|b| <  (1-l/90^\circ) \, 10^\circ$ for $0^\circ < l < 90^\circ$ and analogously (mirror image) for $270^\circ < l < 360^\circ$.
+\item {\bf South Celestial Pole (SCP):} The SCP is an extension to higher airmass than the WFD to cover the region south of declination
 $-65$ degrees.  This proposal includes $ugrizy$, but takes fewer exposures per field than the WFD and does not collect in pairs.
 \item {\bf Deep Drilling Fields (DD):} The Deep Drilling Fields are single pointings that are observed in extended sequences. The DD proposals often include certain filter combinations to ensure that near-simultaneous color information is available for variable and transient objects. Four of the LSST Deep Drilling fields have been selected and announced. It is expected that there will be more DD fields selected for the final survey. Most of the simulations here include five DD fields.
 \end{itemize}
 
 One of the more unique constraints on the \OpSim scheduler is that it highly penalizes, and thus avoids, filter changes.  With it's large field of view, LSST filter changes take about two minutes to complete. The filters are also large and heavy enough that we want to minimize wear on the filter changing mechanism.
+
+\navigationbar
 
 \section{The Baseline Observing Strategy}
 \def\secname{cadexp:baseline}\label{sec:\secname}
@@ -515,14 +517,6 @@ functions, that can be further optimized, as discussed in
 Most of these issues are expected to be resolved by \OpSim version 4.
 
 \navigationbar
-% --------------------------------------------------------------------
-
-
-
-
-
-
-
 
 % --------------------------------------------------------------------
 
@@ -1044,7 +1038,7 @@ Baseline Cadence specification. \\
 
 {\bf Expectations:} The {\it total} exposure time in the $u$ band should
 remain unchanged. The single visits depth should be 0.62 mag deeper
-due to increased exposure time, and the coadded depth should be 
+due to increased exposure time, and the coadded depth should be
 0.24 mag deeper (due to decreased impact of readout noise). \\
 
 {\bf Analysis Results:} This simulated cadence is named \opsimdbref{db:DoubleUbandExptime}.  Compared
@@ -1060,8 +1054,8 @@ proposal 7\% vs. 6\%. %Given that the NE spur proposal was different
 {\bf Conclusions:} The $u$ band exposure time can be increased from 30
 seconds to 60 seconds without a significant impact on the survey
 efficiency. This change would result in a gain of about 0.2 mag in the
-coadded depth, with the same total exposure time allocated to the $u$ band. 
-However, the number of visits in the $u$ band would be decreased by about 
+coadded depth, with the same total exposure time allocated to the $u$ band.
+However, the number of visits in the $u$ band would be decreased by about
 a factor of two, with a negative impact on time-domain science.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -1075,7 +1069,7 @@ doubled $u$-band exposure time and the same number of visits.}
 \opsimdbref{db:DoubleUbandExptime}, which increased the exposure time
 per visit in the $u$ band from 30 seconds to 60 seconds, with the
 requested number of visits decreased by a factor of 2. That change
-resulted in a gain of about 0.2 mag in the coadded depth, just from reducing overheads. 
+resulted in a gain of about 0.2 mag in the coadded depth, just from reducing overheads.
 However, in order to keep the same total exposure time allocated to the $u$ band,
 the number of $u$ band visits in \opsimdbref{db:DoubleUbandExptime} was
 decreased by about a factor of two relative to Baseline Cadence, and this had a negative impact on
@@ -1085,7 +1079,7 @@ $u$ band in this simulation could be improved by up to 0.6 mag. \\
 
 {\bf Expectations:}  Given that about 7\% of all visits are allocated
 to the $u$ band (56 out of 825), the total number of visits for other bands
-will decrease when the number of the $u$ band is doubled, resulting in 
+will decrease when the number of the $u$ band is doubled, resulting in
 about 0.04 mag shallower data in bands other than the $u$ band. \\
 
 {\bf Analysis Results:}  This simulated cadence is named
@@ -1098,16 +1092,16 @@ survey is 85\% vs. 85\% for the Baseline Cadence, and for the NES
 proposal 7\% vs. 6\%.
 
 The median number of visits in the $grizy$ filters in the main survey
-decreases by about 7\%.  The median single visit depth for main survey 
-is 0.53 mags deeper, and the median coadded $u$ band image is 0.50 mags 
-deeper. The other filters reach shallower coadded depth 
+decreases by about 7\%.  The median single visit depth for main survey
+is 0.53 mags deeper, and the median coadded $u$ band image is 0.50 mags
+deeper. The other filters reach shallower coadded depth
 than in the Baseline Cadence by about 0.05 mag.
 \end{enumerate}
 
 
 {\bf Conclusions:} When the $u$ band exposure time is increased from
 30 seconds to 60 seconds, and the number of visits is kept unchanged,
-the single-visit and coadded depths would be improved by about 0.5 mag. 
+the single-visit and coadded depths would be improved by about 0.5 mag.
 This improvement would come at the expense of about 7\% fewer visits in
 other bands (with about 0.05 mag shallower coadded depths). These
 promising results should be considered when designing the next
