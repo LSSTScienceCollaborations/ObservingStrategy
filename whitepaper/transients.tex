@@ -292,15 +292,15 @@ LSST's performance for a range of time-domain science:
 
 Two metrics were developed and are used in this chapter specifically for transient phenomena:
 \begin{itemize}
-  \item{\texttt{transientAsciiMetric}: accepts an ASCII file in input, so that realistic transient shapes can be used, with different shapes for different filters. The output can be the series of LSST observations (magnitude and error), or the fraction of transients detected (with user-specified constraints). This metric is used in \autoref{sec:\chpname:SNtransients}.}
-  \item{\texttt{GRBTransientMetric}: calculates the fraction of GRB-like transients detected (with user-specified constraints) using an $F(t) \propto t^{-\alpha}$
+  \item{\metric{transientAsciiMetric}: accepts an ASCII file in input, so that realistic transient shapes can be used, with different shapes for different filters. The output can be the series of LSST observations (magnitude and error), or the fraction of transients detected (with user-specified constraints). This metric is used in \autoref{sec:\chpname:SNtransients}.}
+  \item{\metric{GRBTransientMetric}: calculates the fraction of GRB-like transients detected (with user-specified constraints) using an $F(t) \propto t^{-\alpha}$
     lightcurve. This metric is used in \autoref{sec:\chpname:grbs}}.
 \end{itemize}
 
 Additionally, the standard MAF metrics
 that quantify the gaps between consecutive visits to
 a field within a night and over multiple nights
-(\texttt{IntraNightGapsMetric} and \texttt{InterNightGapsMetric})
+(\MAFmetric{IntraNightGapsMetric} and \MAFmetric{InterNightGapsMetric})
 are of great value and are
 heavily used throughout this chapter, in \autoref{sec:\chpname:transientsAge},
 ~\autoref{sec:\chpname:SNtransients}, and~\autoref{sec:\chpname:gw} for example.
@@ -342,24 +342,24 @@ characterization of the fastest-evolving transients.
           {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & Notes \\
     \hline
 
-    \thesection-1 & \footnotesize{\texttt{IntraNightGapsMetric},
+    \thesection-1 & \footnotesize{\MAFmetric{IntraNightGapsMetric},
     any filter}      & 0.39 & 0.42 & 0.18 & 0.40 &
     \footnotesize{Median gap (hours) between consecutive observations of a field
 	    in any pair
     of filters in a single night.} \\
 
-    \thesection-2 & \footnotesize{\texttt{IntraNightGapsMetric},
+    \thesection-2 & \footnotesize{\MAFmetric{IntraNightGapsMetric},
     $r$ band}      & 0.40 & 0.44 & 0.17 & 0.41 &
     \footnotesize{Median gap (hours) between consecutive $r$-band observations of a
 	    field in a single night.} \\
 
-    \thesection-3 & \footnotesize{\texttt{InterNightGapsMetric},
+    \thesection-3 & \footnotesize{\MAFmetric{InterNightGapsMetric},
     any filter}      & 3.0 & 3.9 & 2.0 & 3.0 &
 	    \footnotesize{Median gap (days) between consecutive observations of a field
 	    in any pair
     of filters over multiple nights.} \\
 
-    \thesection-4 & \footnotesize{\texttt{InterNightGapsMetric},
+    \thesection-4 & \footnotesize{\MAFmetric{InterNightGapsMetric},
     $r$ band}      & 15.0 & 22.8 & 11.0 & 21.9 &
     \footnotesize{Median gap (days) between consecutive $r$-band observations
     of a field over multiple nights.} \\

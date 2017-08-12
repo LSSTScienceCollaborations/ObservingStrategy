@@ -70,9 +70,9 @@ It is important to emphasize that for the vast majority of
 LSST-observed moving objects, LSST will be both the discovery and the
 recovery facility. Most LSST-observed objects will be too faint
 to be observed by assets that are currently carrying out
-Solar System small bodies observations, and the number of 
+Solar System small bodies observations, and the number of
 detections will be so large that the existing infrastructure
-could not observe more than a tiny fraction, even if they 
+could not observe more than a tiny fraction, even if they
 were bright enough. Therefore, as described in this section,
 LSST's performance for detecting and re-detecting minor
 bodies is critical to the success of the project; no outside
@@ -146,12 +146,12 @@ approximately 92\% fill factor.
 \subsection{Metrics}
 \label{sec:\secname:metrics}
 
-The {\tt DiscoveryChancesMetric} can be used to identify sets of
+The \MAFmetric{DiscoveryChancesMetric} can be used to identify sets of
 detections of a particular object that meet the defined criteria for
 discovery: X detections within T minutes in a night, Y nights within a
 W day window; this describes the number of discovery opportunities for
-each object. The results from the Discovery Metric can be fed to the
-{\tt MoCompletenessMetric} summary metric, where if an object achieves
+each object. The results from the \MAFmetric{DiscoveryChancesMetric} can be fed to the
+\MAFmetric{MoCompletenessMetric} summary metric, where if an object achieves
 a user-defined requirement for the minimum number of discovery
 opportunities (typically 1), then it is counted as `discovered'.  The
 total number of objects discovered at each H magnitude is compared to
@@ -194,16 +194,16 @@ and is discussed in its own section, \ref{sec:solarsystem:phas}.
 
 % --------------------------------------------------------------------
 
-\subsection{OpSim Analysis}
+\subsection{\OpSim Analysis}
 \label{sec:\secname:analysis}
 
-The basic output from the {\tt DiscoveryChancesMetric} is the number
+The basic output from the \MAFmetric{DiscoveryChancesMetric} is the number
 of discovery opportunities (e.g.\ sets of observations that match the
 required discovery criteria) available. For objects which have at
 least a given number of discovery opportunities (here, we simply use
 one required opportunity), then this object can be considered
 ``found'' and marked towards the completeness of the population at a
-given H magnitude with the {\tt MoCompletenessMetric} summary metric.
+given H magnitude with the \MAFmetric{MoCompletenessMetric} summary metric.
 Examining the \opsimdbref{db:baseCadence} Baseline Cadence with these metrics,
 we find that most objects have many discovery opportunities. This is shown in
 Figure~\ref{standard_discovery}.
@@ -334,7 +334,7 @@ subtle occurring?).
 % \item[Q1:] {\it Does the science case place any constraints on the
 % tradeoff between the sky coverage and coadded depth? For example, should
 % the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline 
+% Pan-STARRS) or the number of detected galaxies (the current baseline
 % of 18,000 deg$^2$)?}
 %
 % \item[A1:] ...

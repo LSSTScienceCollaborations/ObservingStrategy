@@ -151,7 +151,7 @@ Function provides a measure of the power lost due to aliasing.}
 %\vskip -4.0in
 \centering\includegraphics[width=0.95\linewidth]{figs/variables/enigma_1189_Phase_Gap_MedianGap_OPSI_SkyMap.pdf}
 \caption{The median phase gap for candidate Baseline Cadence \opsimdbref{db:baseCadence}.
-The PhaseGapMetric looks at periods between 3 and 35 days by default.}
+The \MAF \MAFmetric{PhaseGapMetric} looks at periods between 3 and 35 days by default.}
 \label{fig:enigmaMedianGap}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -164,7 +164,7 @@ The PhaseGapMetric looks at periods between 3 and 35 days by default.}
 %\vskip -4.0in
 \centering\includegraphics[width=0.95\linewidth]{figs/variables/enigma_1189_Phase_Gap_LargestGap_OPSI_SkyMap.pdf}
 \caption{The maximum phase gap for candidate Baseline Cadence \opsimdbref{db:baseCadence}.
-The PhaseGapMetric looks at periods between 3 and 35 days by default.}
+The \MAFmetric{PhaseGapMetric} looks at periods between 3 and 35 days by default.}
 \label{fig:enigmaMaxGap}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -184,7 +184,7 @@ quantified as the minimum value of the periodogram purity function at non-zero
 frequency shifts; the ideal case would be a periodogram purity metric value of
 1.
 
-\subsubsection{Phase Gap Metric (PhaseGapMetric)}
+\subsubsection{Phase Gap Metric \MAFmetric{PhaseGapMetric}}
 
 The Phase Gap Metric is designed to examine the largest phase gaps in
 the observing schedule. For a given point in the sky, a series of
@@ -195,7 +195,7 @@ period is calculated, and the metric plots the median
 of this subset of values that contains the maximum phase gap per period.
 The Phase Gap Metric is part of varMetrics.
 
-\subsubsection{Period Deviation Metric (PeriodDeviationMetric)}
+\subsubsection{Period Deviation Metric \MAFmetric{PeriodDeviationMetric}}
 
 The Period Deviation Metric calculates the error in recovering the
 correct period of a sinusoid using a given observing schedule and a

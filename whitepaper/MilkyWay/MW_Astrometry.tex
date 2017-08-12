@@ -203,8 +203,7 @@ Within \MAF, metrics A (parallax factor distribution) and B
   different manner from the prescription above. We describe the
   implemented metrics here.
 
-{\it Parallax factor coverage:} This is {\tt
-  calibrationMetrics.ParallaxCoverageMetric} in \MAF. For
+{\it Parallax factor coverage:} This is \MAFmetric{ParallaxCoverageMetric} in \MAF. For
   each pointing, the parallax factor coverage is parameterized as the
   weighted mean radius of arc $\langle l \rangle$~from the center of
   motion due to parallax, scaled to the range $0 \le \langle l \rangle
@@ -213,9 +212,9 @@ Within \MAF, metrics A (parallax factor distribution) and B
 %  inverse-variance weighted mean parallax offset is subtracted from
 %  the set of parallax offsets for an object at a given location with
 %  unit parallax amplitude, and the inverse-variance weighted mean
-%  $\langle l \rangle$~of the resulting residuals is returned, 
+%  $\langle l \rangle$~of the resulting residuals is returned,
 %The reported $\langle l \rangle$~is scaled
-%  to the range $0 \le \langle r \rangle \le 1$. 
+%  to the range $0 \le \langle r \rangle \le 1$.
 For each measurement,
   the variance used in the weighting is the estimate of the
   (uncrowded) astrometric uncertainty returned by \OpSim for a star of
@@ -230,8 +229,7 @@ For each measurement,
   parallax amplitude would be completely degenerate with the object's
   position.
 
-{\it Parallax-Hour angle correlation:} This is metric {\tt
-    calibrationMetrics.ParallaxDcrDegenMetric}. At the level of tens
+{\it Parallax-Hour angle correlation:} This is \MAF metric \MAFmetric{ParallaxDcrDegenMetric}. At the level of tens
   of milliarcsec, Differential Chromatic Refraction (DCR) shifts the
   apparent location of the star in a color-dependent manner. Depending
   on the hour-angle distribution of observations throughout the year,
@@ -586,7 +584,7 @@ the sky. These form FoM 1.1-1.4, and have to-date been run for the
 \OpSim runs \opsimdbref{db:baseCadence} (Baseline cadence),
 \opsimdbref{db:opstwoPS} (similar to PanSTARRS-1), and the
 recently-completed \opsimdbref{db:NormalGalacticPlane} (which applies
-Wide-Fast-Deep cadence to much of the inner Galactic Plane). 
+Wide-Fast-Deep cadence to much of the inner Galactic Plane).
 
 From the point of view of parallax and proper motion, the latter two
 strategies do not negatively impact the non-plane regions, but they
@@ -713,7 +711,7 @@ Here we answer the ten questions posed in
 \item[Q1:] {\it Does the science case place any constraints on the
 tradeoff between the sky coverage and coadded depth? For example, should
 the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-Pan-STARRS) or the number of detected galaxies (the current baseline 
+Pan-STARRS) or the number of detected galaxies (the current baseline
 of 18,000 deg$^2$)?}
 
 \item[A1:] We do expect tradeoffs between depth and sky
