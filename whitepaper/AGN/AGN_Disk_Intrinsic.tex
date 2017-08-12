@@ -30,7 +30,9 @@ Measuring time-delayed responses between variations in the continuum flux in one
 LSST band to the continuum flux in another, will be one of the main themes of
 AGN science in the LSST era (e.g., \citealt{Chelouche2013};
 \citealt{CheloucheandZucker2013}; \citealt{EdelsonEtal2015};
-\citealt{FausnaughEtal2015}). Such measurements can test accretion disk models
+\citealt{FausnaughEtal2015}).
+% LSST Review by Niel Brandt: Add Jiang et al? Sentences below are vague: what can be learned _specifically_ about accretion disk models?
+Such measurements can test accretion disk models
 in a robust manner for a considerably larger number of AGNs than is currently
 feasible with microlensing (see section~\ref{sec:agn:microlensing}).
 
@@ -119,20 +121,24 @@ measuring time delays between pairs of continuum bands and for detecting
 periodic AGNs. Correlation analyses will search for relations between AGN
 variability properties and their basic physical parameters. In the DDFs, such
 analyses will enable probing deeper and more frequently, resulting in
-higher-quality data that will provide stronger constraints; the only drawback is
+higher-quality data that will provide stronger constraints on AGN variability propertie; the only drawback is
 the relatively smaller number of sources available at the high-luminosity end.
 
 A key measurement enabled by the DDFs is a high-quality PSD, in six bands,
 for the largest number of AGNs to date. These PSDs, which are rich
-in diagnostic power, will be used to search for `features' such as QPOs
+in diagnostic power, will be used to search for ``features'' such as QPOs
 and breaks, as well as power-law slopes, that can help constrain SMBH masses
-and accretion rates. Additionally, the PSDs can serve as selection
+and accretion rates.
+% LSST Review from Niel Brandt: describe current optical/NIR PSD results, add refs.
+Additionally, the PSDs can serve as selection
 tools, to more effectively distinguish AGNs from variable stars, as
 well as a basis to propose cadence perturbations to further enhance
 AGN selection.
 
-A high-quality PSD, extending to high frequencies (reaching $\sim 1$ min
-timescales for stacked PSDs), can effectively distinguish AGNs from other
+A high-quality PSD, extending to high frequencies
+% (reaching $\sim 1$ min timescales for stacked PSDs),
+% PJM: commented out followin LSST Review by Niel Brandt: is 1 min really needed?
+can effectively distinguish AGNs from other
 variable sources, assuming AGN light curves are described by a particular
 continuous-time autoregressive moving average model (C-ARMA; \citet{KellyEtal14}),
 i.e., C-ARMA(2,1), corresponding to a damped harmonic oscillator.
@@ -249,10 +255,12 @@ the cadence requirements for LSST.
 %with the nominal OpSim, and point out potential perturbations in the
 %cadence to improve the number and quality of such time delays.
 
-While additional work is required for determining the optimal cadence in order
-to fully capture AGN accretion physics and to enhance AGN selection, it is clear
-that even the nominal DDF sampling (\eg in \opsimdbname{enigma\_1189}) is barely sufficient, and
-more frequent sampling would have been ideal. The ability to detect HFQPOs
+While additional quantitative work is required for determining the optimal cadence for
+fully capturing AGN accretion physics and to enhance AGN selection, it is clear
+that even the nominal DDF sampling (\eg in \opsimdbname{db:baseCadence}) is barely sufficient, and
+more frequent sampling would be ideal.
+% LSST Review from Niel Brandt: Haven't connected the hyperparameters to science impacts clearly. What exactly is lost going from 1 day to 3 day cadence?
+The ability to detect HFQPOs
 should also improve by increasing the sampling frequency, the amplitudes of such
 features are quite uncertain, as are the (short) duty cycles. Observations,
 theory and numerical simulations have only suggested that the fractional
@@ -269,7 +277,7 @@ the C-ARMA formalism in the selection of low-luminosity AGN (LLAGN), i.e.,
 sources with $L \ltsim 10^{42}$~erg~s$^{-1}$, in the DDFs. Such sources are
 likely to be missed by traditional color-variability selection algorithms due to
 a strong host contribution. The metric to be developed should assess how the
-number of selected LLAGN depends on the sampling frequency in each band.
+number of selected LLAGN depends on the sampling frequency in each band, and take into account the host galaxy light contamination.
 
 2) Assessing the standard deviation of the error in recovered time-lag between
 bands, $\tau$, using a cross-correlation analysis. The goal is to minimize
@@ -304,13 +312,14 @@ variability data from K2 observations of SDSS quasars.
 % made to improve this science project's figure of merit, and mitigate
 % the identified risks?
 
-Overall, the key requirement is to increase the nominal sampling
+While science-driven metric analysis is still to be performed, we expect the key requirement emerging from such an analysis to be to increase the nominal sampling
 frequency in the DDFs by at least a factor of 3, i.e., having at least
 3000 visits, per band, during the entire survey. Alternatively, if this
 sampling is not feasible for all the DDFs, it would be beneficial to
 identify a subset of ``special'' DDFs which would be sampled by this
-frequency. Such DDFs would also benefit from being circumpolar, e.g.,
-the Magellanic Clouds, enabling a more uniform sampling to produce the
+frequency. Such DDFs would also benefit from being circumpolar,
+% e.g., the Magellanic Clouds,
+enabling a more uniform sampling to produce the
 highest quality PSDs.
 
 % ====================================================================
