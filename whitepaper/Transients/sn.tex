@@ -17,14 +17,14 @@
 \credit{fedhere}
 
 Supernovae (SNe) represent the final dramatic stages of the life of many
-stars. The term SN we covers a diverse set of phenomena: explosion of
+stars. The term SN covers a diverse set of phenomena: explosion of
 low mass stars in binary systems, thermonuclear SN or SN Ia (also
-discussed in \autoref{sec:supernovae}), and explosion of high mass stars,
-Core collapse (CC) SNe, and even terminal explosions of more exotic
+discussed in \autoref{sec:supernovae}), explosions of high mass stars,
+core collapse (CC) SNe, and even terminal explosions of more exotic
 systems, yet to be understood, like Super Luminous SNe
 (SLSNe). Phenomenologically, the observables of the explosion are
-also diverse. The transient duration ranges between weeks,
-months, even years. The electromagnetic energy radiated ranges between
+also diverse. The transient duration ranges from weeks to
+months and even years. The electromagnetic energy radiated ranges between
 $\sim0.1$ (faintest CC SNe), to $\sim1$ (SN Ia) and $\sim100$ (SLSNe)
 $\times 10^{49}$ erg, corresponding to absolute magnitudes at peak
 ranging between $\sim-19$ and $\sim-22$.
@@ -57,35 +57,31 @@ fraction of $\sim40\%$ SN~Ia $z\lesssim0.5$ are expected to be discovered pre-pe
 luminosity within the standard LSST survey
 (e.g. \opsimdbref{db:baseCadence}~Figure~\ref{fig:enigmaEarlySNe}). The
 topic of SNe discovery is discussed in further detail in
-\ref{sec:supernovae}.
+\autoref{sec:supernovae}.
 
-The next step is then {\bf\emph{discrimination}}, and the question we need
+The next step is then {\emph{discrimination}}, and the question we need
 to answer, for SNe as well as for most other transients, is: will LSST
-photometry allow to distinguish SN from other transients, and to
+photometry allow us to distinguish SN from other transients, and to
 distinguish the different types of SN? And further: will this be
 achievable in time to appropriately direct follow-up efforts? This is
 particularly difficult considering that photometric classification
 schemes have only achieved modest performances in distinguishing, for
-example, SN~Ic from SN~Ia. As mentioned earlier in this chapter, the issue
-of prompt classification is at the heart of the success of LSST
-transient science, but it is too complex to tackle in this chapter,
-while LSST's ability to assess whether a new transient is young is discussed
-in \autoref{sec:\chpname:transientsAge}.
+example, SN~Ic from SN~Ia.
 
 When a large statistical sample of SNe is generated, LSST's photometry
 may allow setting constraints on the diversity of the sample, even as a
-standalone survey, without the aid of follow-up efforts.  {\bf Thus
-  LSST \emph{alone} can shed light on the diversity within the
+standalone survey, without the aid of follow-up efforts.  {\emph Thus
+  LSST \bf{alone} can shed light on the diversity within the
   population of SN}, which in turn may constrain the genesis of the
 explosion.\footnote{Reliable typing of a SN and redshift determination
   would still require auxiliary data.} For SN~Ia, where the exploding
-star is a carbon-oxygen White Dwarf (WD), outstanding questions
-that can be answered by an LSST photometric sample include, for
-example, what is the percentage of SN Ia that arise from a
-\emph{double-degenerate} (DD) progenitor system -- a carbon-oxygen WD-WD binary
---, from a \emph {single-degenerate} (SD) system -- a WD-Main Sequence
- or WD-Red Giant (RG) binary--, or a \emph{merger} -- a WD-WD
- binary with a He and a carbon-oxygen WD.
+star is a carbon-oxygen White Dwarf (WD), a major outstanding question
+that can be answered by an LSST photometric sample is
+what is the percentage of SN Ia that arise from a
+\emph{double-degenerate} (DD) progenitor system (a carbon-oxygen WD-WD
+binary), from a \emph {single-degenerate} (SD) system (a WD-Main Sequence
+ or WD-Red Giant (RG) binary), or from a \emph{merger} (a WD-WD
+ binary with a He and a carbon-oxygen WD).
  Answering this question would reduce the
 scatter in the Hubble diagram if SNe from different progenitors are
 shown to require different standardization~\citep{Scolnic2014}. On the
@@ -123,10 +119,10 @@ that follows.
 In this chapter we envision and design a SN related metric that works
 on a large sample (months-to-years of LSST data) and assesses the
 ability to characterize the contribution of SNe with specific features
-to the global population: as a test case we will use the presence of
-an early blue excess for SN type Ia, signature of interaction with a
+to the global population: as a test case we will use the identification of
+an early blue excess for SN type Ia, a signature of interaction with a
 companion, and thus of a SD progenitor. Equivalently, the presence of
-an early blue excess in CC~SNe could be assessed, the signature of
+an early blue excess in CC~SNe could be the signature of
 shock breakout which directly measures the radius of the progenitor
 star. We perform the simulation on SN~Ia since statistical studies of
 samples that set constraints on progenitor fractions (fraction of DD
@@ -135,12 +131,12 @@ benchmark~\citep{Hayden2010, Bianco11}.  What we evaluate as a
 \emph{figure of merit} (FoM) for this science deviates from the
 guidelines for figures of merit, since LSST will surely be able to
 answer this question \emph{at some point} and we measure \emph{how
-  fast} LSST can answer this question. The FoM is time
+  fast} LSST can answer this question. Our FoM is time
 within the survey required to achieve a sufficiently large sample of
 SNe to enable us to distinguish
 populations with different contribution from DD and SD progenitors.
 We rely on simulations of the observables of the population for
-different sample sizes, and on the \texttt{transientAsciiMetric} to
+different sample sizes, and on the \MAFmetric{transientAsciiMetric} to
 determine the detectability of interacting vs non-interacting
 SNe. We are developing a metric (\texttt{colorGapMetric}) to assess
 the gap between of detections in 2 filters. In the meantime, we rely on
@@ -170,7 +166,7 @@ observation of $\mathrm{SNR} >
 \frac{1.0}{\sqrt{2.0}~\sigma_\mathrm{pop}}$.
 We generate populations of $N_\mathrm{pop}=100$,~1000,~10000 $z~=~0.5$ SNe,
 observed in $g'-r'$, as a representative case. Because the effect is
-heavily chromatic, and it dissipates becoming essentially negligible
+heavily chromatic and becomes essentially negligible
 by $r$ band, $u'-i'$ gives the most leverage. However $g'$ and $r'$
 are the best observed LSST bands in most cadences. An extension of
 this work should then consider $g'-r'$, $u'-r'$, $g'-i'$, and $u'-i'$.
@@ -185,12 +181,12 @@ this work should then consider $g'-r'$, $u'-r'$, $g'-i'$, and $u'-i'$.
   top of a lightcurve simulated from the \citealt{Nugent02}
   templates. The data points represent one possible set of LSST
   observations of this transient, obtained by running the
-  \texttt{transientAsciiMetric}.  This particular event is detected in
+  \MAFmetric{transientAsciiMetric}.  This particular event is detected in
   $g'$, $r'$, and $i'$ within the first 10 days.}
 \label{fig:kasenlc}
 \end{figure}
 
-We perform Kolmogorov-Smirnoff ($KS$) an Anderson-Darling ($AD$) tests
+We perform Kolmogorov-Smirnoff ($KS$) and Anderson-Darling ($AD$) tests
 to evaluate our diagnostic power as a function of sample quality,
 $SNR$, and sample size, $N_\mathrm{pop}$.  In
 \autoref{tab:SNprogenitors} we report the ability to distinguish a
@@ -230,11 +226,11 @@ can take some shortcuts. \emph{First shortcut}: we evaluate the
 relative observability of SNe with excess, and SNe without excess at
 $z~=~0.5$ and adjust the number of detections according to
 the injected ratio.  The relative detectability can be assessed with
-the \texttt{transientAsciiMetric}, which allows us to see how OpSims
+the \MAFmetric{transientAsciiMetric}, which allows us to see how OpSim
 recovers observations of transients with realistic shapes. We conclude
 that for RG-WD progenitors the detectability is enhanced by $\sim50\%$ in
  $g'$ compared to SD progenitors, and slightly less in $r'$.
-Then we extract from the \texttt{transientAsciiMetric}, the number of
+Then we extract from the \MAFmetric{transientAsciiMetric}, the number of
 \emph{color observations}, i.e. observations in 2 bands within 1 day
 of each other, each fulfilling our SNR requirement for the color for
 3-, 6-, and 12 months of survey in year 1.
@@ -246,7 +242,7 @@ at a $\mathrm{SNR}~\geq~7$: \autoref{tab:SNprogenitors}. But the pairs
 of observations we recovered in the previous steps are within the
 first 10 days but with any gap in time. \emph{Second shortcut}: To
 include the constraint that the detections should be within 24 hours
-we use to the \texttt{InterNightGapsMetric}, which is plotted in
+we use to the \MAFmetric{InterNightGapsMetric}, which is plotted in
 ~\autoref{fig:enigmaGapAll}.  For the \opsimdbref{db:baseCadence} we
 estimate $~\sim10\%$ of the observation are revisited within a
 night. With the assumption that this is likely to happen in two
@@ -379,14 +375,14 @@ and $r'$) for 3, 6 months, and a year of
  all the bands or in a  selected set); a greatly enhanced cadence for a
  small area?}
 
- \item[A8:] A full event rate needs to be inculded in the simulation to answer this question.
+ \item[A8:] A full event rate needs to be included in the simulation to answer this question.
 
 
  \item[Q9:] {\it Does the science case place any constraints on the
  sampling of observing conditions (e.g., seeing, dark sky, airmass),
  possibly as a function of band, etc.?}
 
- \item[A9:] Yes since detection depends on SNR.
+ \item[A9:] Indirectly, since detection efficiency depends on SNR.
 
 
  \item[Q10:] {\it Does the case have science drivers that would require
@@ -396,3 +392,5 @@ and $r'$) for 3, 6 months, and a year of
  \item[A10:] No.
 
  \end{description}
+
+ \navigationbar

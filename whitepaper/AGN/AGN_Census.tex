@@ -20,7 +20,7 @@
 \credit{AstroVPK},
 \credit{ScottAnderson}
 
-The basic figure of merit for AGN science is the total number of AGNs
+One basic figure of merit for AGN science is the total number of AGNs
 discovered in the entire LSST survey, as a function of luminosity and
 redshift. The main goal is therefore to adjust the Observing Strategy
 in order to maximize this number.
@@ -52,9 +52,9 @@ determination of the color, due to the non-negligible time gaps between
 observations using two different filters for a particular LSST field. This will
 eventually determine the AGN $L-z$ distribution and, in particular, may affect
 the identification of quasars at $z\gtsim 6$ if, for example, $Y$-band exposures
-will not be sufficiently deep.
+are not sufficiently deep.
 
-{\bf Variability:} AGNs can be effectively distinguished from (variable)
+{\bf Variability:} some AGNs can be effectively distinguished from (variable)
 stars, and from quiescent galaxies, by exhibiting certain characteristic
 variability patterns (e.g., \citealt{ButlerandBloom2011}). Picking the
 right cadence can increase the effectiveness of AGN selection. Ultimately,
@@ -69,7 +69,7 @@ significant fraction of the entire AGN population.
 {\bf Astrometry:} In cases where selection by color and variability is
 insufficient for a reliable identification, AGNs can be further selected
 among sources having zero proper motion, within the uncertainties. The
-LSST cadence may affect the level of this uncertainty in each band, and
+LSST cadence may affect the level of this uncertainty in each band, and certainly the temporal baseline for proper motion measurement, and
 may therefore affect the ability to identify (mostly fainter) AGN.
 %
 Differential chromatic refraction (DCR), making use of the astrometric offset a
@@ -78,7 +78,7 @@ power-law spectrum, can help in the selection of AGNs and in confirming their
 photometric redshifts \citep{KaczmarczikEtal2009}. The DCR effect is more
 pronounced at higher airmasses. Therefore, it could be advantageous to have at
 least one visit, per source, at airmass greater than about 1.4 (though of course
-there are trade-offs versus the additional extinction, for faint sources). AGN
+there is a trade-off with the additional extinction, for faint sources). AGN
 selection and photometric redshift confirmation may be affected since the LSST
 cadence will affect the airmass distribution, in each band, for each AGN
 candidate.
@@ -116,7 +116,7 @@ corresponding uncertainties on the photomteric redshift.
 
 2) Estimate the {\bf number of quasars at $z>6$ that LSST can discover}
 during a single visit, as well as in the entire survey, and verify that
-these numbers do not fall short of the original predictions. This
+these numbers do not fall short of the original predictions. To first order this
 simply requires computing the maximum depth in the $Y$-band (for both
 single visits and the coadd), averaged across the sky for the nominal
 OpSim, as well as assessing the ability to reject L and T dwarfs via astrometry.
@@ -131,8 +131,10 @@ Next, each source would be represented as an ellipse in color-color space.
 The aim is to assess the sizes of the ellipses and how these sizes could be
 minimized by perturbing the current cadence.
 
-4) Asses how the sampling affects the selection of AGN by variability (e.g.,
+4) Assess how the sampling affects the selection of AGN by variability (e.g.,
 interactions with red-noise power spectrum).
+
+5) Check how overall survey length affects proper motion measurements and consequently AGN selection.
 
 %4) Estimate the number of low-luminosity AGN (LLAGN) that can be
 %identified during the entire survey.
@@ -154,6 +156,7 @@ marked by the first (second) dotted line from the left.}
 \label{fig:zgt6}
 \end{figure}
 
+% LSST Review from Niel Brandt: check for updates needed to this figure, as it is over a decade old. Also, add a plot comparing LSST and WFIRST for high-z AGN selection
 
 For assessing the limitations of DCR on the $L-z$ plane of LSST AGNs,
 one needs to obtain from OpSim the current maximal airmasses for each band,
@@ -199,6 +202,7 @@ a factor of $\sim 2$
 As for general AGN selection, the effects of the sampling on variability selection
 should be assessed, and the amplitudes of the uncertainties in color-color space
 and how these depend on the cadence should be simulated.
+The combination of LSST photometry with that from WFIRST and/or Euclid data should also be considered, both for extending the upper limit in detectable redshift to $\sim10$, but also improving the completeness and purity of the sample at lower redshifts.
 
 % % --------------------------------------------------------------------
 %
@@ -222,7 +226,7 @@ Here we answer the ten questions posed in
 \item[Q1:] {\it Does the science case place any constraints on the
 tradeoff between the sky coverage and coadded depth? For example, should
 the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-Pan-STARRS) or the number of detected galaxies (the current baseline 
+Pan-STARRS) or the number of detected galaxies (the current baseline
 of 18,000 deg$^2$)?}
 
 \item[A1:] The main FoM for AGN science is maximizing the number of AGNs
@@ -242,7 +246,7 @@ time allocated to each band?}
 the relative selection completeness and efficiency for OpSim outputs
 with different uniformity/frequency of sampling. The same can be said
 for constraining the fraction of observing time in each band (where $u$
-is the most important for $z<\sim3$ and $Y$ is most important for $z>\sim6$)
+is the most important for $z\lesssim3$ and $Y$ is most important for $z\gtrsim6$)
 and for determining whether nightly
 visits should be in the same band or not, and for the trade-off of
 single-visit depth and number of visits. However, the AGN census is
@@ -252,7 +256,7 @@ unlikely to be the driver in these decisions.
 Galactic plane coverage (spatial coverage, temporal sampling, visits per
 band)?}
 
-\item[A4:] Given the desire for maximal area, added Galactic plane
+\item[A4:] Given the desire for maximal extragalactic area, added Galactic plane
 coverage would be detrimental to AGN science.
 
 \item[Q6:] {\it Does the science case place any constraints on the
@@ -291,6 +295,8 @@ in terms of observing conditions and does not require nearly constant
 single-visit depths.
 
 \end{description}
+
+% LSST Review from Niel Brandt: survey must span full 10 years to enable good astrometry / propoer motion measurements to aid in selection. PJM: doesn't fit in the 10 questions, but leaving a note here for the future!
 
 
 \navigationbar

@@ -132,14 +132,14 @@ We are developing this infrastructure for the MAF framework.
 
 In the meantime, simplified metrics can give us a general idea of how well
 a given cadence can characterize fast-evolving transients such as GRBs.  We
-have created a new metric, \texttt{GRBTransientMetric}, that replaces the
-linearly rising and decaying lightcurve in \texttt{TransientMetric} with
+have created a new metric, \metric{GRBTransientMetric}, that replaces the
+linearly rising and decaying lightcurve in \MAFmetric{TransientMetric} with
 the $F \sim t^{-\alpha}$ decay characteristic of on-axis afterglows.  (For
 the time being, we neglect the jet break that steepens the rate of decay;
 this implies that our detectability estimates are optimistic.)
 
-We simulate random on-axis afterglows using the parameters of
-\citet{2011PASP..123.1034J}: the R-band apparent magnitude at 1 minute
+We simulate on-axis afterglows at random sky positions using the parameters of
+\citet{2011PASP..123.1034J}. The R-band apparent magnitude at 1 minute
 after explosion is randomly drawn from a Gaussian with $\mu=15.35$,
 $\sigma=1.59$ and decays with $\alpha=1.0$.  For these estimates we
 simply assume zero color difference between in all LSST bands.
@@ -154,7 +154,7 @@ two, or three detections in any single filter.
 \subsection{OpSim Analysis}
 \label{sec:\secname:analysis}
 
-We ran \texttt{GRBTransientMetric} on several OpSim v3.3.5 runs with a range of
+We ran \metric{GRBTransientMetric} on several OpSim v3.3.5 runs with a range of
 characteristics:  \opsimdbref{db:baseCadence}, the baseline cadence;
 \opsimdbref{db:NEOswithVisitTriplets}, with three visits per WFD field;
 \opsimdbref{db:NoVisitPairs}, with no visit pairs; and
@@ -177,15 +177,15 @@ rate.
 	  {\rotatebox{90}{\opsimdbref{db:NoVisitPairs}}} &
 	  {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & Notes \\
     \hline
-    \thesection-1 & \footnotesize{\texttt{GRBTransientMetric},
+    \thesection-1 & \footnotesize{\metric{GRBTransientMetric},
     \texttt{nPerFilter}\,$=1$}      & 0.17 & 0.16 & 0.20 & \textbf{0.21} &
     \footnotesize{Fraction of GRB-like transients detected in at least one
     epoch.} \\
-    \thesection-2     & \footnotesize{\texttt{GRBTransientMetric},
+    \thesection-2     & \footnotesize{\metric{GRBTransientMetric},
     \texttt{nPerFilter}\,$=2$}      & 0.12 & 0.10 & 0.09 & \textbf{0.14} &
     \footnotesize{Fraction of GRB-like transients detected in at least two
     epochs in any single filter.} \\
-    \thesection-3     & \footnotesize{\texttt{GRBTransientMetric},
+    \thesection-3     & \footnotesize{\metric{GRBTransientMetric},
     \texttt{nPerFilter}\,$=3$}      & 0.05 & \textbf{0.08} & 0.04 & 0.04 &
     \footnotesize{Fraction of GRB-like transients detected in at least
 	    three epochs in any single filter.}
@@ -229,7 +229,7 @@ photometry.
 
 In future work we intend to simulate cosmological populations of on- and
 off-axis in order to better determine how many events could be discovered
-in time to trigger real-time followup\footnote{or conversely, 
+in time to trigger real-time followup\footnote{or conversely,
 constrain the area
 over which high-cadence observations are required to detect a meaningful
 population of GRBs.}.
@@ -262,7 +262,7 @@ Here we answer the ten questions posed in
 \item[Q1:] {\it Does the science case place any constraints on the
 tradeoff between the sky coverage and coadded depth? For example, should
 the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-Pan-STARRS) or the number of detected galaxies (the current baseline 
+Pan-STARRS) or the number of detected galaxies (the current baseline
 of 18,000 deg$^2$)?}
 
 \item[A1:] No strong constraint, although on average

@@ -120,7 +120,7 @@ further other related goals, into quantified science cases.
 %The class of transients includes a heterogeneous assortment of objects
 %and phenomena.
 \autoref{tab:transient_types} is a \emph{non-exhaustive} list of
-phenomena to which we are referring as \emph{Eruptive and Explosive
+phenomena to which we are referring as \emph{eruptive and explosive
   transients} in this document.
 
   \begin{table}
@@ -131,7 +131,8 @@ phenomena to which we are referring as \emph{Eruptive and Explosive
     Transient Type & Science drivers & Amplitude & Time Scale & Event Rate\\
 \hline
 
-Flare stars & Flare frequency, energy, stellar age, space weather & large & min & common\\
+Flare stars & Flare frequency, energy, stellar age, space weather & large &
+	  min & very common\\
 
 X-ray Novae & Interacting binaries, stellar evolution, SN progenitors,
 nuclear physics & large & weeks & rare\\
@@ -147,18 +148,21 @@ Massive star eruptions (\ref{sec:\chpname:LBVs})& Late stages stellar evolution,
 Supernovae (\ref{sec:\chpname:SNtransients})& stellar evolution, feedback, chemical enrichment, cosmology & extreme & days - months & very common\\
 
 GRBs (\ref{sec:\chpname:grbs})& jet physics, SN connection, stellar evolution & extreme & min - days
-& rare\\
+	  & rare (optical discovery) \\
 
 TDEs (\ref{sec:\chpname:tdes})& Massive BH demographics, accretion physics & large & weeks-months & very rare\\
 
 
-LIGO detections (GW, \ref{sec:\chpname:gw}) & EM characterization & unknown & unknown & rare\\
+LIGO detections (GW, \ref{sec:\chpname:gw}) & EM characterization & unknown
+	  & unknown & very rare\\
 
 \emph{Unknown} & Discovery & unknown & unknown & rare\\
 
  \hline \end{tabular}
 \end{center}
-\caption{Overiew of major types of optical transients.
+\caption{Overiew of major types of optical transients.  Common events have
+hundreds or thousands of exemplars, while rare event classes have only a
+	  few or tens.
 \label{tab:transient_types}}
 \end{table}
 
@@ -197,14 +201,12 @@ characterization.  Followup to discovery/identification, if required,
 must take place elsewhere. This implies that the LSST observations
 must be sufficient to recognize in real time that an event is fast-evolving
 in order to to trigger followup. However, assessing the rise
-slope is best done with a single filter, so prompt characterization
-also needs multiple epochs within a night, preferably separated by at
-least a few hours, in the same filter (we discuss this in detail in
-\autoref{sec:\chpname:transientsAge}). That is, when observing with different
+slope is best done with a single filter,
+because when observing with different
 filters it is very difficult to separate lightcurve evolution from
-color variations. Colors are informative when considering a statistical
-samples (\autoref{sec:\chpname:SNtransients}): as long as the epoch of peak is
-reliably assessed, coadded light curves and color time series can be studied.
+color variations. Colors are informative when considering statistical
+samples (\autoref{sec:\chpname:SNtransients}) as long as the epoch of peak
+can be reliably determined.
 
 SNe fall in an intermediate time range.  LSST will provide
 multiple visits in multiple filters during the typical SN duration
@@ -218,8 +220,8 @@ Metrics that assess the discovery rate of SN are included in
 Here we are interested in assessing the ability of
 LSST to discriminate SN from other transients, SN subtypes from one
 another, and to identify particularly interesting SNe: for example
-those that show signature of shock break-out, or companion interaction
-in the early light curve, and would be candidates for \emph{flash
+those that show signature of shock break-out, companion interaction
+in the early light curve, or would be candidates for \emph{flash
 spectroscopy} follow-up \citep[e.g.,][]{2014Natur.509..471G}.
 In addition, metrics that
 quantify LSST's ability to constrain SN physics in a statistically
@@ -228,7 +230,7 @@ large sample of SN are needed.
 TDEs have only recently started to be characterized in the optical
 bands. The current sample of events show relatively long
 time-scales (rise and decline of the light curve is over months). We
-would like to asses - through metrics - how well TDEs can be
+would like to assess through metrics how well TDEs can be
 distinguished from supernovae based on their light curve shape and
 color (in real-time so that followup observations can be triggered)
 and how well the LSST light curves themselves can be used to model the
@@ -264,8 +266,8 @@ LSST's performance for a range of time-domain science:
 \item
   The statistical constraints to a transient class that can be obtained
   over the course of the LSST survey, from the LSST survey data alone
-  (assuming a successful classification). SN Ia early interaction
-  signatures or IIb shock break-out (\autoref{sec:\chpname:SNtransients}).
+  (assuming a successful classification). We discuss SN Ia early interaction
+  signatures and IIb shock break-out (\autoref{sec:\chpname:SNtransients}).
 \item
   The ability to identify in real-time a rapidly-evolving
   object of interest and
@@ -290,18 +292,20 @@ LSST's performance for a range of time-domain science:
 
 Two metrics were developed and are used in this chapter specifically for transient phenomena:
 \begin{itemize}
-  \item{\texttt{transientAsciiMetric}: accepts an ASCII file in input, so that realistic transient shapes can be used, with different shapes for different filters. The output can be the series of LSST observations (magnitude and error), or the fraction of transients detected (with user-specified constraints). This metric is used in \autoref{sec:\chpname:SNtransients}.}
-  \item{\texttt{GRBTransientMetric}: caluclates the fraction of GRB-like transients detected (with user-specified constraints) using an $F(t) \propto t^{-\alpha}$
+  \item{\metric{transientAsciiMetric}: accepts an ASCII file in input, so that realistic transient shapes can be used, with different shapes for different filters. The output can be the series of LSST observations (magnitude and error), or the fraction of transients detected (with user-specified constraints). This metric is used in \autoref{sec:\chpname:SNtransients}.}
+  \item{\metric{GRBTransientMetric}: calculates the fraction of GRB-like transients detected (with user-specified constraints) using an $F(t) \propto t^{-\alpha}$
     lightcurve. This metric is used in \autoref{sec:\chpname:grbs}}.
 \end{itemize}
 
 Additionally, the standard MAF metrics
 that quantify the gaps between consecutive visits to
 a field within a night and over multiple nights
-(\texttt{IntraNightGapsMetric} and \texttt{InterNightGapsMetric})
+(\MAFmetric{IntraNightGapsMetric} and \MAFmetric{InterNightGapsMetric})
 are of great value and are
 heavily used throughout this chapter, in \autoref{sec:\chpname:transientsAge},
 ~\autoref{sec:\chpname:SNtransients}, and~\autoref{sec:\chpname:gw} for example.
+These quantify the median times between consecutive visits to a field
+within one night and over multiple nights, respectively.
 
 Further metrics relevant to transient science are discused in \autoref{chp:galaxy},~\autoref{chp:cosmo}, and ~\autoref{chp:variables}.
 
@@ -338,24 +342,24 @@ characterization of the fastest-evolving transients.
           {\rotatebox{90}{\opsimdbref{db:opstwoPS}}} & Notes \\
     \hline
 
-    \thesection-1 & \footnotesize{\texttt{IntraNightGapsMetric},
+    \thesection-1 & \footnotesize{\MAFmetric{IntraNightGapsMetric},
     any filter}      & 0.39 & 0.42 & 0.18 & 0.40 &
     \footnotesize{Median gap (hours) between consecutive observations of a field
 	    in any pair
     of filters in a single night.} \\
 
-    \thesection-2 & \footnotesize{\texttt{IntraNightGapsMetric},
+    \thesection-2 & \footnotesize{\MAFmetric{IntraNightGapsMetric},
     $r$ band}      & 0.40 & 0.44 & 0.17 & 0.41 &
     \footnotesize{Median gap (hours) between consecutive $r$-band observations of a
 	    field in a single night.} \\
 
-    \thesection-3 & \footnotesize{\texttt{InterNightGapsMetric},
+    \thesection-3 & \footnotesize{\MAFmetric{InterNightGapsMetric},
     any filter}      & 3.0 & 3.9 & 2.0 & 3.0 &
 	    \footnotesize{Median gap (days) between consecutive observations of a field
 	    in any pair
     of filters over multiple nights.} \\
 
-    \thesection-4 & \footnotesize{\texttt{InterNightGapsMetric},
+    \thesection-4 & \footnotesize{\MAFmetric{InterNightGapsMetric},
     $r$ band}      & 15.0 & 22.8 & 11.0 & 21.9 &
     \footnotesize{Median gap (days) between consecutive $r$-band observations
     of a field over multiple nights.} \\
@@ -373,8 +377,11 @@ several simulated surveys.
 	\includegraphics[width=0.45\textwidth]{figs/transients/MedianIntra-NightGap.pdf}
 	\includegraphics[width=0.45\textwidth]{figs/transients/MedianInter-NightGap.pdf}
 }
-\caption{ Histograms of median intra- (left) and inter- (right)
-night visit gaps for any band for several OpSim runs. }
+\caption{ Histograms of median intra-night visit gaps (hours, left) and
+	inter-night visit gaps (days, right)
+for any band for several OpSim runs.  Current simulations provide little
+	temporal coverage for transient timescales between 30 minutes and
+	2--3 days.}
 \label{fig:tgaps}
 \end{figure}
 
@@ -383,8 +390,10 @@ night visit gaps for any band for several OpSim runs. }
 	\includegraphics[width=0.45\textwidth]{figs/transients/MedianIntra-NightGap_r.pdf}
 	\includegraphics[width=0.45\textwidth]{figs/transients/MedianInter-NightGap_r.pdf}
 }
-\caption{ Histograms of median $r$-band intra- (left) and inter- (right)
-night visit gaps for several OpSim runs. }
+\caption{ Histograms of median $r$-band intra-night visit gaps (hours,
+	left) and inter-night visit gaps (days, right)
+for several OpSim runs.  Current simulations don't revisit a field in the
+	same filter for a period of weeks after a 30-minute visit pair.}
 \label{fig:tgaps_r}
 \end{figure}
 
@@ -418,6 +427,7 @@ challenging problem of transient classification with sparse
 lightcurves will be needed in order to best guide LSST's time-domain
 observing strategy.
 
+\navigationbar
 
 % --------------------------------------------------------------------
 

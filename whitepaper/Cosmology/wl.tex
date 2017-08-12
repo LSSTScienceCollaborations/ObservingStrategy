@@ -136,6 +136,8 @@ minimized.
 
 \subsection{Metrics}
 
+% LSST Review by Nelson Padilla: S9.3.3 Metrics: There is a very clear explanation of the spin-2 nature of systematics, and of the general metrics that need to be used with accordingly modified angles related to rotSkyPos and parallactic angles. I wonder whether a plot showing simple examples here would help interpret the metrics as these are presented.
+
 For characterizing the isotropy of rotational sampling, both for rotSkyPos and
 the parallactic angle, we investigate two metrics: the AngularSpreadMetric and
 the KuiperMetric.  The AngularSpreadMetric characterizes the balance of a set of
@@ -366,6 +368,8 @@ in different ways to better monitor the atmosphere.
 
 \subsection{Deep vs Wide}
 
+% LSST Review by Nelson Padilla: This section points out the different advantages that come from deep vs. wide observations. Are there quantitative metrics that show the best balance between the two? A plot showing this would give much more weight to the important requirement of a deep 1000 sq. degree survey during commissioning.
+
 As outlined above, many revisits to each field spanning many RotSkyPos angles
 aids the suppression of additive shear systematics.  For a given per-visit
 exposure time this leads to a deep survey, due to the multitude of visits.
@@ -395,6 +399,8 @@ efficient in shrinking the length of the ``banana'' in the $\Omega_M$-$\sigma_8$
 plane because of the $\sigma_8 \Omega_M^\alpha = \mathrm{const}$ degeneracy.
 The deep strategy compensates for the loss of volume due to a reduced area by
 extending the volume along the line of sight.
+
+% LSST Review by Nelson Padilla: is there a way to be more quantitative about the advantage of depth over area at fixed volume? The advantages are explained qualitatively in the following paragraphs.
 
 Third, deep surveys provide more useful galaxies per area.  This merit does not
 entirely overlap with the second point.  In addition to new sources at higher
@@ -431,6 +437,8 @@ systematics, and could be chosen to overlap the WFIRST footprint.  Such an
 overlap may enable additional systematics checks of photometric redshift accuracy
 (exploiting WFIRST infrared photometry) and the impact of blends (exploiting the
 smaller WFIRST PSF).
+
+% LSST Review by Nelson Padilla: a brief list of advantages of overlap with WFIRST would be a definite plus here.
 
 Metrics for reaching the SRD goals for WL related science are needed. Long
 before LSST is on the sky such metrics can be applied to realistic simulations
@@ -605,6 +613,9 @@ to uniformly sample camera angles relative to north with uniformly good
 IQ. Rotation angles of previous poor IQ visits need to be repeated.
 
 \end{description}
+
+\navigationbar
+
 
 
 % The RotSkyPos metric analysis shows that the majority of fields have a

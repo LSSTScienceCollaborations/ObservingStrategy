@@ -322,8 +322,8 @@ development. The FoMs are:
 With the exception of FoM 3.1 above, all these Figures of Merit are
 likely to be impacted by spatial confusion, as the populations of
 interest tend to lie at low Galactic latitudes. Metrics for assessing
-the impact of crowding have been developed (e.g. {\tt
-  CrowdingMetrics.ipynb} in {\tt maf\_contrib}), and these should be
+the impact of crowding have been developed (e.g. \href{https://github.com/LSST-nonproject/sims_maf_contrib/blob/master/science/static/CrowdingMetrics.ipynb}{{\tt
+  CrowdingMetrics.ipynb} in {\tt sims\_maf\_contrib}}), and these should be
 incorporated into all the FoMs described here. For the present,
 however, we note that intrinsic source confusion is not a function of
 observing strategy (assuming the confusion limit is well above the
@@ -373,8 +373,7 @@ anticipated FoMs in these cases below.
   sinusoid, with filter-dependent amplitude to match typical quiescent
   Low Mass X-ray Binaries (qLMXBs) from the literature. The next level
   of sophistication would be to input a more complicated shape that
-  captures deviations from pure sine-wave behavior, likely using the {\tt
-    TransientAsciiMetric}.
+  captures deviations from pure sine-wave behavior, likely using the \MAFmetric{TransientAsciiMetric}.
 
 An open question is how best to meaningfully quantify the
   recovery fraction of a population with a wide range in binary
@@ -401,8 +400,8 @@ completeness-correction that would be crucial in this case.
     \hline
   1. & Pick a typical binary mass ratio and separation for $qLMXB$ \\
   2. & Identify typical ellipsoidal variation amplitude and period, for each filter \\
-  3a. & {\it Near-term:} Run {\tt periodicStarMetric} to determine the fraction of typical qLMXBs that would be recovered. Or; \\
-  3b. & Run a variant of {\tt periodicStarFit.ipynb} that allows the appropriate double-humped lightcurve shape. \\
+  3a. & {\it Near-term:} Run \metric{periodicStarMetric} to determine the fraction of typical qLMXBs that would be recovered. Or; \\
+  3b. & Run a variant of \href{https://github.com/LSST-nonproject/sims_maf_contrib/blob/master/science/periodicVariables/periodicStarFit.ipynb}{\tt periodicStarFit.ipynb} that allows the appropriate double-humped lightcurve shape. \\
   4. & {\bf Arrive at FoM 1.1:} Load the result from 4. and sum over the spatial region (to be determined: Galactic Latitude range? Comparison high-latitude clusters?) where the qLMXBs are expected.\\
 \hline
     \end{tabular}
@@ -447,7 +446,7 @@ with the duty cycle itself).
     \hline
   1. & Pick a typical lightcurve for the Dwarf Nova class of interest; \\
   2. & Assign a duty cycle (and thus typical outburst recurrence timescale); \\
-  3. & Run {\tt TransientMetricASCII} using this lightcurve and duty cycle; \\
+  3. & Run \MAFmetric{TransientMetricASCII} using this lightcurve and duty cycle; \\
   4. & Combine the (spatially distributed) results of 3. into a median and formal random uncertainty estimate on the duty cycle estimated from each line of sight; \\
   5. & Compute the offset and its formal error, between the median from 4. and the input duty cycle from 2;\\
   6. & {\bf Arrive at FoM 1.2:} The four numbers from steps 4. and 5. are the characterization of the uncertainty in duty cycle required. \\
@@ -473,7 +472,7 @@ results from direct gravitational detection.
 %    \item Histogram of recovery efficiency of maximum brightness of dwarf nova versus duration and recurrence time (if assume subsequent outbursts have similar profiles).
 %    \end{itemize}
 
-{\bf FoMs 2.1 \& 2.2 - Fraction of Novae characterized by LSST; and the fraction detected early enough to schedule scientifically useful follow-up observations:} Since the set of Novae is so heterogeneous, one can imagine a two-stage process. In the near-future, a single run of {\tt TransientMetricASCII} using some sense of an ``average'' Nova as tracer to enable comparison between observing strategies. We present this in Table \ref{table:pseudoFOM_2p1}, which includes examples for the specific and total fraction of Novae recovered.
+{\bf FoMs 2.1 \& 2.2 - Fraction of Novae characterized by LSST; and the fraction detected early enough to schedule scientifically useful follow-up observations:} Since the set of Novae is so heterogeneous, one can imagine a two-stage process. In the near-future, a single run of \MAFmetric{TransientMetricASCII} using some sense of an ``average'' Nova as tracer to enable comparison between observing strategies. We present this in Table \ref{table:pseudoFOM_2p1}, which includes examples for the specific and total fraction of Novae recovered.
 
 In the longer term, a Monte Carlo simulation could be run on a particular class of Novae depending on the parameters of the overall population whose constraints are desired. This latter effort would likely require further development of the Vector Metrics.
 
@@ -483,7 +482,7 @@ In the longer term, a Monte Carlo simulation could be run on a particular class 
     & {\it FoMs 2.1 \& 2.2 - Novae identified from LSST data} \\
     \hline
   1. & Pick a typical lightcurve for the Nova class of interest; \\
-  2. & Run {\tt TransientMetricASCII} using this lightcurve; \\
+  2. & Run \MAFmetric{TransientMetricASCII} using this lightcurve; \\
   3. & {\bf Arrive at FoM 2.1a: Specific fraction of Novae discovered:} Sum the result from 2. over the spatial region of interest; \\
   4. & {\bf Arrive at FoM 2.1b:} Multiply the result of 2. by the result of the {\tt Starcounts} metric. Sum this to find the fraction of Novae recovered if their spatial density follows the stellar density in the Milky Way. \\
   \hline
@@ -555,9 +554,8 @@ proportional to the number of stars along a particular line of
 sight.
 
 In definition (\ref{eqn:def_FOM_3p1}), a lightly-modified version of
-{\tt CountMetric} was used to determine $N_{\ast, i}$~with the output
-summed over all sight-lines to produce $N_{\ast}$. Module {\tt
-  TransientMetric} was used to determine $f_{var, i}$~for each
+\MAFmetric{CountMetric} was used to determine $N_{\ast, i}$~with the output
+summed over all sight-lines to produce $N_{\ast}$. Module \MAFmetric{TransientMetric} was used to determine $f_{var, i}$~for each
 sight-line.\footnote{The notebooks used to evaluate this version of
   FoM 3.1 can be found in subdirectory {\tt notebooks} of the
   experimental github repository {\tt lsstScratchWIC}, available at
@@ -669,7 +667,7 @@ transient duration: 80 days. All filters are used in the detections, and
 20 evenly-spaced phases are simulated for sensitivity to pathological
 cases (parameter nPhaseCheck=20). Peak apparent magnitudes used: $\{
 11,9,8,7,6,6\}$~in $\{u,g,r,i,z,y\}$. Then, $f_{var, i}$~is taken as the
-``Sawtooth Alert'' quantity returned by {\tt TransientMetric}. For the
+``Sawtooth Alert'' quantity returned by \MAFmetric{TransientMetric}. For the
 stellar density metric, distance limits ($10$pc $\le d \le 80$kpc) are
 used to avoid biases in the FoM estimate by the Magellanic Clouds.
 

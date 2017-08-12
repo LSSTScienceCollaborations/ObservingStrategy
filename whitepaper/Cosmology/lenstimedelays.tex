@@ -33,8 +33,8 @@ gravitational potential. If the lens mass distribution can be modeled
 independently, using a combination of high resolution imaging of the
 distorted quasar/SN host galaxy and stellar dynamics in the lens
 galaxy, the measured time delays can be used to infer the ``time delay
-distance'' in the system. This distance enables a direct measurement
-of the Hubble constant, independent of the distance ladder.
+distance'' in the system. This distance enables a direct physical measurement
+of the Hubble constant, independent of the distance ladder.  \citet{TM16} provide a recent review of this cosmological probe, including its the main systematic errors and observational follow-up demands. High resolution follow-up imaging and spectroscopy is needed to constrain the lens galaxy mass distribution, and this is expected to dominate the systematic error budget in systems with good measured time delays. In tis section we investigate the cadence needed for LSST to provide these good time delays, in lensed quasar systems. We leave the assessment of lensed supernova time delays to future work.
 
 % --------------------------------------------------------------------
 
@@ -51,6 +51,7 @@ days and several weeks long, and so are measurable in monitoring
 campaigns having night-to-night cadence of between one and a few days,
 and seasons lasting several months or more.
 
+This size of sample seems plausible: \citet{OM10} predicted that several thousand lensed quasar systems should be detectable at LSST single visit depth and resolution, and \citet{LiaoEtal2015} found that around 400 of these should yield time delay measurements of high enough quality for cosmography.
 To obtain accurate as well as precise lensed quasar time delays, several
 monitoring seasons are required. Lensed supernova time delays have not
 yet been measured, but their transient nature means that their time
@@ -69,7 +70,11 @@ schedule properties. In \citet{LiaoEtal2015}, we simulated 5 different
 light curve datasets, each containing 1000 lenses, and presented them to
 the strong lensing community in a ``Time Delay Challenge.'' These 5
 challenge ``rungs'' differed by their schedule properties, in the ways
-shown in \autoref{tab:tdcrungs}. Focusing on the best challenge
+shown in \autoref{tab:tdcrungs}. Entries to the challenge consisted of samples of measured time delays, the quality of which the challenge team then measured via three primary diagnostic metrics: time delay accuracy, time delay
+precision, and useable sample fraction (\ie the number of lenses that could be measured well, divided by the number of simulated lenses in the dataset). The accuracy of a sample was defined to be the mean fractional offset between the estimated and true time delays within the sample. The precision of a sample was defined to be the mean reported fractional uncertainty within the sample.
+
+
+Focusing on the best challenge
 submissions made by the community, we derived a simple power law model
 for the variation of each of the time delay accuracy, time delay
 precision, and useable sample fraction, with the schedule properties
@@ -143,7 +148,7 @@ which in turns gives us the mean precision per lens there. Combining the
 whole sample, we would get the error on the weighted mean time delay, as
 used by \citet{Coe+Moustakas2009}. This uncertainty, which scales as one
 over the square root of the number of available lenses,  can be roughly
-equated to the statistical uncertainty on the Hubble constant. The
+equated to the statistical uncertainty on the Hubble constant \citep{Coe+Moustakas2009,TM16}. The
 Figure of Merit would be the final percentage precision on $H_0$, as a
 way to sum up the sample size and time delay measurability (at fixed
 accuracy requirement).
@@ -184,7 +189,7 @@ use of shorter campaign sky areas observed at higher frequency, as would
 emerge from a rolling cadence strategy.
 
 To summarize the diagnostic metric results, we first compute the area of
-this ``high accuracy'' sky. We can then compute the cadence, season, and
+this ``high accuracy'' ($A < 0.04\%$) sky. We can then compute the cadence, season, and
 campaign length just in these areas; these values are reported in
 \autoref{tab:lenstimedelays:results}. The high accuracy area can be used
 to define a ``Gold Sample'' of lenses, whose mean precision per lens we
@@ -192,7 +197,8 @@ can compute. The TDC2 useable fraction averaged over this area gives us
 the approximate size of this sample: we simply re-scale the 400 lenses
 predicted by \citet{LiaoEtal2015} by this fraction over the 30\% found
 in TDC2. While these numbers are approximate, the ratios between
-different observing and analysis strategies provide a useful indication of relative merit.
+different observing and analysis strategies provide a useful indication of relative merit. In this table, the impacts of higher night-to-night sampling rate and survey length can be seen.\footnote{The small decrease in the number of useable lenses with $ugrizy$ going from 5 years to 10 years is due to the slightly lower precision in 5 years, and is an artifact of how the metrics are calculated (as global means rather than running totals).}
+
 
 As described above, we follow \citet{Coe+Moustakas2009} and compute a
 very simple time delay distance Figure of Merit ``\texttt{DPrecision}''
@@ -220,83 +226,32 @@ but it seems unlikely that it would be a factor of two improvement.
   \capstart
   \begin{minipage}[b]{\linewidth}
     \begin{minipage}[b]{0.48\linewidth}
-       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/minion_1016_TDC_Accuracy_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf}
+       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/minion_1016_TDC_Accuracy_night_lt_1826_and_r_or_i_HEAL_SkyMap.png}
     \end{minipage} \hfill
     \begin{minipage}[b]{0.48\linewidth}
-       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/kraken_1043_TDC_Accuracy_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf}
+       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/kraken_1043_TDC_Accuracy_night_lt_1826_and_r_or_i_HEAL_SkyMap.png}
     \end{minipage}
   \end{minipage}
   \begin{minipage}[b]{\linewidth}
     \begin{minipage}[b]{0.48\linewidth}
-       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/minion_1016_TDC_Accuracy_night_lt_1826_HEAL_SkyMap.pdf}
+       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/minion_1016_TDC_Accuracy_night_lt_1826_HEAL_SkyMap.png}
     \end{minipage} \hfill
     \begin{minipage}[b]{0.48\linewidth}
-       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/kraken_1043_TDC_Accuracy_night_lt_1826_HEAL_SkyMap.pdf}
+       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/kraken_1043_TDC_Accuracy_night_lt_1826_HEAL_SkyMap.png}
     \end{minipage}
   \end{minipage}
   \begin{minipage}[b]{\linewidth}
     \begin{minipage}[b]{0.48\linewidth}
-       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/minion_1016_TDC_Accuracy_night_lt_3652_HEAL_SkyMap.pdf}
+       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/minion_1016_TDC_Accuracy_night_lt_3652_HEAL_SkyMap.png}
     \end{minipage} \hfill
     \begin{minipage}[b]{0.48\linewidth}
-       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/kraken_1043_TDC_Accuracy_night_lt_3652_HEAL_SkyMap.pdf}
+       \centering\includegraphics[width=\linewidth]{figs/lenstimedelays/kraken_1043_TDC_Accuracy_night_lt_3652_HEAL_SkyMap.png}
     \end{minipage}
   \end{minipage}
-\caption{Sky maps of the TDC2 time delay measurement accuracy metric $A$ for the baseline cadence \opsimdbref{db:baseCadence} (left) and the ``No Visit Pairs'' strategy, \opsimdbref{db:NoVisitPairs} (right). The rows show the build up of data quality with time and analysis capability, from 5 years of $r$ and $i$-band light curve data only (top row), to 5 years of hypothetically-combined $ugrizy$ light curve data (middle row), to 10 years of hypothetically-combined $ugrizy$ light curve data (bottom row). The maps saturate at the threshold accuracy of 0.04, such that any regions that are {\it not yellow} should yield high accuracy lens time delays.}
+\caption{Sky maps of the TDC2 time delay measurement accuracy metric $A$ for the baseline cadence \opsimdbref{db:baseCadence} (left) and the ``No Visit Pairs'' strategy, \opsimdbref{db:NoVisitPairs} (right). The rows show the build up of data quality with time and analysis capability, from 5 years of $r$ and $i$-band light curve data only (top row), to 5 years of hypothetically-combined $ugrizy$ light curve data (middle row), to 10 years of hypothetically-combined $ugrizy$ light curve data (bottom row). The maps saturate at the threshold accuracy of 0.04, such that any regions that are {\it not yellow} should yield high accuracy lens time delays, while the yellow regions show where high accuracy time delay measurement is not possible.}
 \label{fig:lenstimedelays:accuracymaps}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% List of possible skymaps, oh my:
-%
-% kraken_1043_TDC_Accuracy_night_lt_1826_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Accuracy_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Accuracy_night_lt_3652_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Accuracy_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Cadence_night_lt_1826_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Cadence_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Cadence_night_lt_3652_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Cadence_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Campaign_night_lt_1826_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Campaign_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Campaign_night_lt_3652_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Campaign_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Precision_night_lt_1826_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Precision_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Precision_night_lt_3652_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Precision_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Rate_night_lt_1826_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Rate_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Rate_night_lt_3652_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Rate_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Season_night_lt_1826_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Season_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Season_night_lt_3652_HEAL_SkyMap.pdf
-% kraken_1043_TDC_Season_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Accuracy_night_lt_1826_HEAL_SkyMap.pdf
-% minion_1016_TDC_Accuracy_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Accuracy_night_lt_3652_HEAL_SkyMap.pdf
-% minion_1016_TDC_Accuracy_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Cadence_night_lt_1826_HEAL_SkyMap.pdf
-% minion_1016_TDC_Cadence_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Cadence_night_lt_3652_HEAL_SkyMap.pdf
-% minion_1016_TDC_Cadence_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Campaign_night_lt_1826_HEAL_SkyMap.pdf
-% minion_1016_TDC_Campaign_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Campaign_night_lt_3652_HEAL_SkyMap.pdf
-% minion_1016_TDC_Campaign_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Precision_night_lt_1826_HEAL_SkyMap.pdf
-% minion_1016_TDC_Precision_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Precision_night_lt_3652_HEAL_SkyMap.pdf
-% minion_1016_TDC_Precision_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Rate_night_lt_1826_HEAL_SkyMap.pdf
-% minion_1016_TDC_Rate_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Rate_night_lt_3652_HEAL_SkyMap.pdf
-% minion_1016_TDC_Rate_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Season_night_lt_1826_HEAL_SkyMap.pdf
-% minion_1016_TDC_Season_night_lt_1826_and_r_or_i_HEAL_SkyMap.pdf
-% minion_1016_TDC_Season_night_lt_3652_HEAL_SkyMap.pdf
-% minion_1016_TDC_Season_night_lt_3652_and_r_or_i_HEAL_SkyMap.pdf
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{Cosmology/table_lenstimedelays}
@@ -373,9 +328,9 @@ likely that we'd prefer more shallow visits than fewer deeper visits.
 Galactic plane coverage (spatial coverage, temporal sampling, visits per
 band)?}
 
-\item[A4:] No: only inasmuch that time spent in the plane could have
-been used to improve the night-to-nght sampling frequency. The effect is
-probably not large.
+\item[A4:] No: only inasmuch as that time spent in the plane could have
+been used to improve the night-to-night sampling frequency. The effect
+is probably not large.
 
 \item[Q5:] {\it Does the science case place any constraints on the
 fraction of observing time allocated to each band?}
@@ -394,7 +349,7 @@ cadence for deep drilling fields?}
 \item[Q7:] {\it Assuming two visits per night, would the science case
 benefit if they are obtained in the same band or not?}
 
-\item[A7:] Yes, probably: different bands are probably going to be
+\item[A7:] Unclear: different bands are probably going to be
 better, but this has not been tested. It would clearly provide good
 information on the AGN color variability model.
 
@@ -407,8 +362,8 @@ area?}
 \item[A8:] Not really. We rely on the difference imaging working well,
 so making a good template across as much sky as possible would be good.
 Including a known lens system (from DES, perhaps) in any deep field
-would be useful too: we'd be happy if the cadence to be similar to WDF
-to be able to test our software.
+would be useful too: we would be happy if the cadence to be similar to
+WDF to be able to test our software.
 
 \item[Q9:] {\it Does the science case place any constraints on the
 sampling of observing conditions (e.g., seeing, dark sky, airmass),
