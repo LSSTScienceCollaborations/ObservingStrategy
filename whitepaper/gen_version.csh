@@ -29,6 +29,7 @@
 
 set help = 0
 set version = 0.0
+set release = 0
 
 while ( $#argv > 0 )
    switch ($argv[1])
@@ -39,6 +40,10 @@ while ( $#argv > 0 )
    case --{help}:
       shift argv
       set help = 1
+      breaksw
+   case --{release}:
+      shift argv
+      set release = 1
       breaksw
    case -v:
       shift argv
@@ -75,7 +80,11 @@ set date = `git log --date=rfc | head -4 | grep Date | cut -d':' -f2-`
 set commit_url = "https://github.com/LSSTScienceCollaborations/ObservingStrategy/commit/${SHA}?diff=split"
 
 # Append commit ID to version number:
-set version = "${version}.${short_SHA}"
+if ( $release ) then
+    set version = "${version}"
+else
+    set version = "${version}.${short_SHA}"
+endif
 
 # Write tex file for input into paper:
 set texfile = "thisversion.tex"
