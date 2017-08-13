@@ -23,7 +23,7 @@ LSST_Observing_Strategy_White_Paper.pdf: version LSST_Observing_Strategy_White_P
 	pdflatex LSST_Observing_Strategy_White_Paper.tex
 
 version:
-	tcsh gen_version.csh --version 0.99
+	tcsh gen_version.csh --version 1.0 --release
 
 run: $(ARG)_standalone.tex LSST_Observing_Strategy_White_Paper.sty  $(BIBFILES) $(TEXFILES)
 	pdflatex $(ARG)_standalone.tex
