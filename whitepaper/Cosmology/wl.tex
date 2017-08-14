@@ -49,13 +49,12 @@ $$ \gamma_i^\mathrm{obs} = (1+m_i) \gamma_i + c_i, $$
 
 where $m_i$ is the multiplicative and $c_i$ is the additive systematic in the
 ith shear component.  These systematics have contributions from the atmosphere
-and the detector+optics.  Systematic errors in the PSF of the relatively
-brighter calibration stars in the field are propagated to errors in the galaxy
-shear, depending on the relative half-light sizes of the  galaxy and star.  To
-leading order, the PSF contributions to the additive systematic are a linear
-function of the PSF ellipticity.  The best observing strategies cause the
-average PSF ellipticity at a given point (over all exposures) to average towards
-zero.
+and the detector+optics.  Systematic errors in modeling the PSF from images of
+stars and in interpolating the PSF from the positions of stars to the positions of
+galaxies propagate to systematic errors in the galaxy shear.  To leading order, the
+PSF contributions to the additive systematic are a linear function of the PSF
+ellipticity.  The best observing strategies cause the average PSF ellipticity at a
+given point (over all exposures) to average towards zero.
 
 From the LSST SRD requirements on residual systematics in the galaxy shear-shear
 correlation function one can specify the level of residual shear systematics at
@@ -164,7 +163,31 @@ radians).  To incorporate this spin-2 nature of shear systematics is simple, we
 just multiply each angle $\theta_i$ (either RotSkyPos or the parallactic angle)
 by 2 before applying the AngularSpread metric, so that, for example, pairs of
 angles separated by $\pi/2$ radians on the sky are separated by $\pi$ radians in
-shear phase and correctly cancel.
+shear phase and correctly cancel.  See \autoref{fig:angularSpread} and caption for
+an example of how the AngularSpread metric is used for weak lensing.
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{figs/WL/angularSpread.pdf}
+\caption{Demonstration of AngularSpread metric.  \textbf{Left:} Three position
+angles are indicated on a unit circle, using headless vectors since shear
+systematics are invariant to 180-degree rotations.  \textbf{Right:} The
+corresponding shear phases, which are twice the position angles, on a unit circle.
+The black arrow indicates the 2D centroid of the 2D shear phases.  The
+AngularSpread metric is the distance from the tip of this black arrow to the unit
+circle.  Note that the blue and green position angle symbols, which are separated
+by nearly 90-degrees and hence produce nearly opposing shear systematics, correspond
+to blue and green shear phase vectors separated by nearly 180-degrees and hence
+nearly cancel geometrically in the computation of the AngularSpread.}
+\label{fig:angularSpread}
+\end{figure}
+
+% \begin{figure}
+% \centering\includegraphics[width=\linewidth]{figs/enigma1189RmsAnglerotSkyPosugrizybandallpropsOPSIComboHistogram.png}
+% \caption{The relative angle of the detector plane with respect to the sky, RotSkyPos, as a histogram showing the number of fields vs. rms of the parameter.}
+% \label{RotSkyPos}
+% \end{figure}
+
 
 While the AngularSpread metric does a good job at characterizing the balance of
 a distribution defined on a circle, it does not directly address the {\emph
@@ -218,21 +241,20 @@ indicate that rotSkyPos is already being well sampled in current simulations due
 to the rotator tracking the sky during exposures, being subject to cable wrap
 limits, and occasionally resetting to 0-degrees for filter changes.
 
-Using techniques similar to \citet{Jee&Tyson2011}, Jee and Tyson did a study of
-the shear residual systematics due to known LSST CCD brighter-fatter anisotropy
-in 100 revisits to a single field with random angular orientations and seeing
-sampled from the expected distribution.  The Data Management (DM) pipeline will
-use a model of the charge transport in the CCD to re-map pixel shapes, sizes,
-and areas in pixel level data processing.  The needed factor of 10 suppression
-of the CCD-based shear systematic residuals (post pixel remap pipeline
-correction) was obtained, reaching the SRD floor on cosmic shear systematics
-(presented at weak lensing systematics workshop, Dec 2015)
-\footnote{\url{https://indico.bnl.gov/conferenceDisplay.py?confId=1604}}.  Of
-course, the requirements for spatial dithering for shear systematics residuals
-depend on the precision of the pixel processing for removal of the CCD based
-additive shear systematic.  We assume that this pixel level remap in the DM
-pipeline cannot correct to better than 3 times the rms errors in the lab tests
-for dynamic and static CCD systematics.
+\citet{Jee&Tyson2011} did a study of the shear residual systematics due to known
+LSST CCD brighter-fatter anisotropy in 100 revisits to a single field with
+random angular orientations and seeing sampled from the expected distribution.
+The Data Management (DM) pipeline will use a model of the charge transport in
+the CCD to re-map pixel shapes, sizes, and areas in pixel level data processing.
+The needed factor of 10 suppression of the CCD-based shear systematic residuals
+(post pixel remap pipeline correction) was obtained, reaching the SRD floor on
+cosmic shear systematics (presented at weak lensing systematics workshop, Dec
+2015)\footnote{\url{https://indico.bnl.gov/conferenceDisplay.py?confId=1604}}.
+Of course, the requirements for spatial dithering for shear systematics
+residuals depend on the precision of the pixel processing for removal of the CCD
+based additive shear systematic.  We assume that this pixel level remap in the
+DM pipeline cannot correct to better than 3 times the rms errors in the lab
+tests for dynamic and static CCD systematics.
 
 The distribution of parallactic angles is similarly shown in
 \autoref{fig:WL_AngularSpread_ParallacticAngle} and
@@ -353,14 +375,14 @@ aids the suppression of additive shear systematics.  For a given per-visit
 exposure time this leads to a deep survey, due to the multitude of visits.
 There are several advantages to a deep survey over a shallow-wide survey for
 weak lensing science, especially for dark energy where a range of lens redshifts
-is required to sample the growth of dark matter structure from low redshift to
-redshift beyond 1.  A strategy question for LSST is whether to go wide first and
+is required to sample the growth of dark matter structure from redshift beyond 1
+to low redshift.  A strategy question for LSST is whether to go wide first and
 then deep, or the reverse.  There are actually several drivers for depth over
 area, given fixed observing time and camera+telescope etendue.  Provided that
 sufficient area is covered to overcome sample variance at lower redshifts and to
 adequately cover the important angular scales, a deep observing strategy
 maximizes the cosmological signal-to-noise ratio both by maximizing the signal
-and minimizing the noise.
+and minimizing the noise (see, for example, Figure 26 from \citep{Jee2013}).
 
 First, a deep survey strategy boosts the amplitude of the cosmic shear signals
 due to the increased amplitude of the lensing kernel.  Given the same lens mass,
@@ -385,9 +407,10 @@ entirely overlap with the second point.  In addition to new sources at higher
 redshift, the fainter limiting magnitude enables detection of fainter galaxies
 at a given redshift and better signal-to-noise ratio.  This argument requires
 that photometric redshifts of this population of galaxies is as well-calibrated
-as those at lower redshift.  This may be done via cross-correlation with sample
-low-z galaxies.  Needless to say, the increased source density reduces the
-impact of shape noise caused by intrinsic ellipticity dispersion.
+as those at lower redshift.  This may be done via angular cross-correlation with
+the brighter photometric sample galaxies with known spectra, in test patches.
+Needless to say, the increased source density reduces the impact of shape noise
+caused by intrinsic ellipticity dispersion.
 
 Fourth, it mitigates the effects of intrinsic alignments (IA), an important
 theoretical systematic in precision cosmic shear.  Current studies
@@ -410,7 +433,10 @@ particularly the angle dither scheme.  Deep drilling data is useful to a variety
 of LSST science drivers, including Bayesian analyses.  By the same reasoning, it
 would be important to cover a significant area [perhaps 2000 sq. deg] to full
 depth during the first year of the survey.  This would allow full assessment of
-systematics, and could be chosen to overlap the WFIRST footprint.
+systematics, and could be chosen to overlap the WFIRST footprint.  Such an
+overlap may enable additional systematics checks of photometric redshift accuracy
+(exploiting WFIRST infrared photometry) and the impact of blends (exploiting the
+smaller WFIRST PSF).
 
 % LSST Review by Nelson Padilla: a brief list of advantages of overlap with WFIRST would be a definite plus here.
 
