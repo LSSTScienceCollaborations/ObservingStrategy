@@ -67,22 +67,22 @@ at high redshifts.
 
 On the other hand, the Wide-Fast-Deep (WFD) aspect will make the LSST survey
 the first to scan a very large area of the sky for SNe. SNe that are detected
-and well characterized by the WFD will provide 
+and well characterized by the WFD will provide
 \begin{itemize}
     \item a large, well-calibrated low redshift sample ($z \lesssim 0.1$) to replace/supplement the current  set of low redshift supernovae from a mixture of surveys. Such a large, clean low redshift sample is crucial in {\emph{providing a longer lever arm for the determination of cosmological parameters from supernovae.}}
-    \item  a low and medium redshift ($z \lesssim 0.8$ and peaking at $z \sim 0.4$ ) sample spanning large areas of 
-the sky and therefore with the ability of {\emph{tracing large scale structure}} in a novel way, particularly due to 
-the inclusion of estimates radial distances. This will be possible by combining redshift estimates from supernova light 
-curves in conjunction with photometric redshifts from host galaxies.  Such a sample could also be used to probe the 
+    \item  a low and medium redshift ($z \lesssim 0.8$ and peaking at $z \sim 0.4$ ) sample spanning large areas of
+the sky and therefore with the ability of {\emph{tracing large scale structure}} in a novel way, particularly due to
+the inclusion of estimates radial distances. This will be possible by combining redshift estimates from supernova light
+curves in conjunction with photometric redshifts from host galaxies.  Such a sample could also be used to probe the
 {\emph{isotropy of the late time universe.}}
-    \item This large sample of SNe will also enable further sharpening of our understanding of the properties of the SN population of both Type Ia and core-collapse SNe (see \autoref{sec:transients:SNtransients}). Aside from the science described in \autoref{sec:transients:SNtransients}, this understanding will also be extremely important to the goal of SN cosmology from LSST. When selecting supernovae satisfying specific criteria from observations in magnitude limited surveys, a lack of understanding of the population properties leads to selection biases in SNIa cosmology as well as the steps in photometric classification~\cite{2017ApJ...836...56K,2016ApJ...822L..35S}. 
+    \item This large sample of SNe will also enable further sharpening of our understanding of the properties of the SN population of both Type Ia and core-collapse SNe (see \autoref{sec:transients:SNtransients}). Aside from the science described in \autoref{sec:transients:SNtransients}, this understanding will also be extremely important to the goal of SN cosmology from LSST. When selecting supernovae satisfying specific criteria from observations in magnitude limited surveys, a lack of understanding of the population properties leads to selection biases in SNIa cosmology as well as the steps in photometric classification~\cite{2017ApJ...836...56K,2016ApJ...822L..35S}.
 The WFD SN Ia
 sample will dramatically increase the size of the sample available to
 train such an empirical model, as well as understand the probability of
 deviations and scatter from this model. Aside from issues like
 calibration which need to be addressed separately, a larger sample of
 such well measured SNe is probably the only way to address `systematics'
-due to deviations from the empirical model. 
+due to deviations from the empirical model.
 \end{itemize}
 %The anticipated WFD sample can
 %be thought of as consisting of two components:  the low-redshift sample
@@ -151,7 +151,7 @@ in the science image compared to the template) to noise (SNR) in the relevant im
 Because LSST will discover significantly more SNe than can be spectroscopically confirmed,
 photometric classification of supernova type from multi-band light curves is crucial. While cosmology
 with a photometric SNe sample with contamination from core collapse SNe is possible (see for
-example 
+example
 \citet{Kunz2007,Newling2011,Hlozek2012,Knights2013,Bernstein2012,Gjergo2013,Campbell2013,Rubin2015,Jones2016})
 ,
 these methods still benefit from accurate class probabilities from classification algorithms. To
@@ -216,8 +216,8 @@ following strategy:
 
 \begin{figure}
  \centering
- \includegraphics[width=\textwidth]{figs/supernova/fig_309_2ndYear}
- \includegraphics[width=\textwidth]{figs/supernova/fig_744_2ndYear}
+ \includegraphics[width=\textwidth]{figs/supernova/fig_309_2ndYear.pdf}
+ \includegraphics[width=\textwidth]{figs/supernova/fig_744_2ndYear.pdf}
  \includegraphics[height=0.2\textheight]{figs/supernova/loc_309_744.pdf}
  \caption{Example of the cadence in the 2nd season in a WFD Field
  (fieldID 309) (top-panel) and a Deep Drilling Field (fieldID 744)
@@ -321,7 +321,7 @@ This metric is designed to gauge the performance of detection of SNe
 discussed in \autoref{sec:\secname:targets}.
 This metric is a proxy for the potential for a supernova to be detected
  during its lifetime by the set of images taken in different bands by LSST. The actual
- detection of SN during LSST is likely to use more stringent criteria, leading to 
+ detection of SN during LSST is likely to use more stringent criteria, leading to
  smaller numbers of supernovae in order to deal with possibly large numbers of false positives in detection. A larger
  number of images taken at a time when the supernova is bright enough increases the
  probability of detection. Technically, assuming that a single detection in any of the images containing
@@ -357,12 +357,12 @@ characterized or hard to classify.
 
 Separating supernovae from other detected transients is being considered in
 \autoref{chp:transients}. Here we concern ourselves with problem of classifying subclasses of
-SNe. Multiple techniques have been proposed to solve this problem \citep{Frieman2008,sako2008, kessler2010b, 
+SNe. Multiple techniques have been proposed to solve this problem \citep{Frieman2008,sako2008, kessler2010b,
 ishida2012, sako2014} and it is not yet clear how the
 relative success of these techniques are affected by observing strategy. Work is ongoing to use the
 multifaceted, machine learning pipeline developed in \citet{Lochner2016} to compare alternative
 observing strategies. As this pipeline employs a variety of different feature extraction and machine learning
-techniques, it is ideal to investigate the effect of observing strategy on the supernova classification. The exact 
+techniques, it is ideal to investigate the effect of observing strategy on the supernova classification. The exact
 metric used to determine the efficacy of the classification depends
 on the exact problem at hand. For producing a general purpose, well-classified set of all types of
 supernovae (for example, to study supernova population statistics), one could use the AUC metric
@@ -389,9 +389,9 @@ of around $0.1$ in previous surveys, which may be expected to decrease
 with better training samples and understanding of underlying
 correlations of SN Ia properties and their environments. We compute a
 quality metric for each SN Ia as the ratio of the square of the
-intrinsic dispersion to variance of the distance indicator from the supernova. 
+intrinsic dispersion to variance of the distance indicator from the supernova.
 $$ QM = 0.05^2/\sigma^2_{\mu}.$$ If our sample had a perfect discovery rate, and good classification (for example if we had spectroscopic classification), the uncertainty on
-cosmological parameters would be entirely due to this quality metric and would be expected to scale with the quality metric as 
+cosmological parameters would be entirely due to this quality metric and would be expected to scale with the quality metric as
 $$\frac{1}{\sigma} \sim \sqrt{\sum{\frac{1.0}{1.0 + 1.0 / QM}}}$$
 where the sum is over the SNe in the sample.
 
@@ -754,7 +754,7 @@ rectified in future.}
 % \item[Q1:] {\it Does the science case place any constraints on the
 % tradeoff between the sky coverage and coadded depth? For example, should
 % the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-% Pan-STARRS) or the number of detected galaxies (the current baseline 
+% Pan-STARRS) or the number of detected galaxies (the current baseline
 % of 18,000 deg$^2$)?}
 %
 % \item[A1:] ...
@@ -906,7 +906,7 @@ Here we answer the ten questions posed in Sub-section 1.2.1:
 \item[Q1:] {\it Does the science case place any constraints on the
 tradeoff between the sky coverage and coadded depth? For example, should
 the sky coverage be maximized (to $\sim$30,000 deg$^2$, as e.g., in
-Pan-STARRS) or the number of detected galaxies (the current baseline 
+Pan-STARRS) or the number of detected galaxies (the current baseline
 of 18,000 deg$^2$)?}
 
 \item[A1:] For supernova observations, the most important aspect is cadence: we need a
