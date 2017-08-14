@@ -32,7 +32,7 @@
 
 set help = 0
 set fromscratch = 0
-set maxsize = 200
+set maxsize = 150
 
 while ( $#argv > 0 )
    switch ($argv[1])
@@ -114,10 +114,17 @@ foreach figfile ( $figfiles )
     mkdir -p $figfolder
     set size = `du -k $figfile | awk '{print $1}'`
     set target = $figfolder/$figfile:t
-    if ( $size > $maxsize && $figfile:e == pdf ) then
-        convert $figfile intermediate.png
-        convert intermediate.png $target
-        rm intermediate.png
+    if ( $size > $maxsize ) then
+        if ( $figfile:e == pdf ) then
+            set intermediate = intermediate.png
+            convert $figfile $intermediate
+        else
+            set ext = $figfile:e
+            set intermediate = intermediate.$ext
+            convert -geometry 25%x25% -depth 72 -units pixelsperinch $figfile $intermediate
+        endif
+        mv $intermediate $target
+        rm $intermediate
         echo "Reduced file size:"
         du -k $figfile $target
     else
