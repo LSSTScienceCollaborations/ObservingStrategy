@@ -19,6 +19,7 @@
 #   -h --help           Print this header
 #   --clobber           Overwrite submission folder
 #   --maxsize X         Shrink all images with size greater than X kb
+#   --metadata          Skip straight to the metadata
 #
 # OUTPUTS:
 #   arxiv/lsst-obs-str-vX.X.tar.gz
@@ -33,6 +34,7 @@
 set help = 0
 set fromscratch = 0
 set maxsize = 150
+set metadata = 0
 
 while ( $#argv > 0 )
    switch ($argv[1])
@@ -52,6 +54,10 @@ while ( $#argv > 0 )
       shift argv
       set maxsize = $argv[1]
       shift argv
+      breaksw
+   case --{metadata}:
+      shift argv
+      set metadata = 1
       breaksw
    endsw
 end
@@ -80,6 +86,12 @@ if ( $fromscratch ) then
 endif
 
 mkdir -p $folder
+
+if ($metadata) then
+  goto METADATA
+endif
+
+# Start copying stuff in there!
 
 echo "Copying source files to ${folder}:"
 
@@ -160,6 +172,35 @@ cd -
 echo ""
 echo "Successfully made tarball:"
 du -h $tarball
+
+# Now make other things:
+
+METADATA:
+
+set metafile = $folder:h/${folder:t}.metadata
+
+echo "LSST Science Collaborations: " > $metafile
+grep author authors.tex | grep -v Section | cut -c9- | sed s/'}{'/' '/g | awk '{print $1}' | tail -n +3 | sed s/'\\v{'//g | sed s/"\\'{"//g | sed s/"\\'"//g | sed s/'{\\'//g | sed s/'}'//g | sed s/'~'/' '/g | sed 's/$/,/g' >> $metafile
+
+cat $metafile | awk '{printf "%s", $0}' > junk ; mv junk $metafile
+echo "" >> $metafile
+
+echo "" >> $metafile
+echo "Science-Driven Optimization of the LSST Observing Strategy" >> $metafile
+
+# Count figures and pages:
+
+chdir $folder
+    set Nfigs = `grep 'begin{figure' *tex */*tex | grep -v '%' | wc -l`
+chdir -
+set Npages = `tail LSST_Observing_Strategy_White_Paper.log | grep 'Output written' | cut -d'(' -f2 | awk '{print $1}'`
+
+set comments = "$Npages pages, $Nfigs figures. Browse the current version at https://github.com/LSSTScienceCollaborations/ObservingStrategy, new contributions welcome!"
+
+echo "" >> $metafile
+echo "$comments" >> $metafile
+
+cat $metafile
 
 # ======================================================================
 FINISH:
