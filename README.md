@@ -11,6 +11,8 @@ We are writing a white paper on this topic, primarily composed of a set of indiv
 )** (automatically generated PDF, rebuilt every time the `master` branch is updated)
 [![Build Status](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy.svg?branch=master)](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy)
 
+* **[Download v1.0 of the white paper](https://github.com/LSSTScienceCollaborations/ObservingStrategy/raw/master/whitepaper/releases/LSST_Observing_Strategy_White_Paper_v1.0.pdf)** This is the initial arxiv version.
+
 * **[Join the conversation about this project at its issues list](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues)**
 
 * **[Gauge the project's activity level](https://github.com/LSSTScienceCollaborations/ObservingStrategy/pulse/halfweekly)**
@@ -27,22 +29,17 @@ We are writing a white paper on this topic, primarily composed of a set of indiv
 * Shortened URL for this repository (for passing around): [http://ls.st/o5k](http://ls.st/o5k)
 * Community-contributed MAF metric code at the [`sims_maf_contrib` repository](https://github.com/LSST-nonproject/sims_maf_contrib/wiki)
 
-
+<!-- Old workshop links:
 ## The 2015 MAF Workshop, Bremerton
-
 *August 19-21, 2015.*
-
 * [Meeting website](http://lsstsciencecollaborations.github.io/ObservingStrategy/)
 * [List of registered attendees](https://project.lsst.org/meetings/lsst2015/cadence-registrations)
 * [Hack session products](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues?utf8=%E2%9C%93&q=label%3A%22Hack+Day!%22+)
 * [Feedback form](http://goo.gl/forms/xmVBIWynm4)
-
 ## Face-to-Face White Paper Workshop, Tucscon
-
 *November 19-20, 2015.*
-
 * [Program](workshop/Tucson2015.md)
-
+End of old workshop links -->
 
 ## Contacts
 
