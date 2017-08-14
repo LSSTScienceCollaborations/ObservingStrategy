@@ -18,6 +18,7 @@
 # OPTIONAL INPUTS:
 #   -h --help           Print this header
 #   --clobber           Overwrite submission folder
+#   --maxsize X         Shrink all images with size greater than X kb
 #
 # OUTPUTS:
 #   arxiv/lsst-obs-str-vX.X.tar.gz
@@ -31,6 +32,7 @@
 
 set help = 0
 set fromscratch = 0
+set maxsize = 200
 
 while ( $#argv > 0 )
    switch ($argv[1])
@@ -45,6 +47,11 @@ while ( $#argv > 0 )
    case --{clobber}:
       shift argv
       set fromscratch = 1
+      breaksw
+   case --{maxsize}:
+      shift argv
+      set maxsize = $argv[1]
+      shift argv
       breaksw
    endsw
 end
@@ -84,10 +91,11 @@ foreach texfile ( $texfiles )
     mkdir -p $texfolder
     cp -v $texfile $texfolder
 end
+mv $folder/LSST_Observing_Strategy_White_Paper.tex $folder/ms.tex
 
 # Do style files etc by hand
 cp -v LSST_Observing_Strategy_White_Paper.sty  $folder/.
-cp -v LSST_Observing_Strategy_White_Paper.bbl  $folder/.
+cp -v LSST_Observing_Strategy_White_Paper.bbl  $folder/ms.bbl
 cp -v deluxetable.sty  $folder/.
 cp -v yahapj.bst  $folder/.
 
@@ -99,14 +107,25 @@ foreach figname ( $fignames )
     if ( $#thesefigfiles > 1 ) echo "Warning: copying multiple files $thesefigfiles"
     set figfiles = ( $figfiles $thesefigfiles )
 end
+
+# Copy figures, shrinking as required:
 foreach figfile ( $figfiles )
     set figfolder = $folder/$figfile:h
     mkdir -p $figfolder
-    cp -v $figfile $figfolder
+    set size = `du -k $figfile | awk '{print $1}'`
+    set target = $figfolder/$figfile:t
+    if ( $size > $maxsize && $figfile:e == pdf ) then
+        convert $figfile intermediate.png
+        convert intermediate.png $target
+        rm intermediate.png
+        echo "Reduced file size:"
+        du -k $figfile $target
+    else
+        cp -v $figfile $target
+    endif
 end
 
 # Compile paper, to check:
-mv $folder/LSST_Observing_Strategy_White_Paper.tex $folder/ms.tex
 cd $folder
     pdflatex ms.tex
     pdflatex ms.tex
@@ -114,10 +133,12 @@ cd -
 
 echo ""
 echo "Successfully compiled paper:"
-du -h $folder/ms.pdf
+set pdffile = $folder:h/${folder:t}.pdf
+mv $folder/ms.pdf $pdffile
+du -h $pdffile
 
 # Clean up before archiving:
-set types = ( out ent pdf log tod toc )
+set types = ( out ent log tod toc )
 foreach ext ( $types )
     rm -vf $folder/ms.*$ext
 end
