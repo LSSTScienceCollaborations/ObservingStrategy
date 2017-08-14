@@ -74,7 +74,7 @@ set folder = arxiv/lsst-obs-str-v${Num}
 # Make a folder if one doesn't exist (or clobber what's there):
 
 if ( $fromscratch ) then
-    rm -f $folder/*.* $folder/*/*.*
+    rm -f $folder/*.* $folder/*/*.* $folder/*/*/*.*
     rmdir $folder/*
     rmdir $folder
 endif
