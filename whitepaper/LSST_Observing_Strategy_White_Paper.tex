@@ -65,51 +65,60 @@
 
 % --------------------------------------------------------------------
 
+% The v2 introduction should explain the structure of the paper,
+% and describe the 2018 white paper process.
+
 \include{introduction}
 
 % --------------------------------------------------------------------
 
+\part{Simulations}
+\def\partname{sims}\label{part:\partname}
+
+% v2 could have two chapters, for the two suite of simulations we
+% now have:
+
 \include{cadexp2}
+% \include{cadexp2018}
 
 % --------------------------------------------------------------------
+
+\part{Science Cases and Performance Metrics}
+\def\partname{science}\label{part:\partname}
+
+% The science chapters will need updating and extending with the
+% 2018 white paper content. We might consider re-organizing them
+% into 4 themes.
 
 \include{solarsystem}
-
-% --------------------------------------------------------------------
-
 \include{galaxy}
-
-% --------------------------------------------------------------------
-
 \include{variables}
-
-% --------------------------------------------------------------------
-
 \include{transients}
-
-% --------------------------------------------------------------------
-
 \include{magclouds}
-
-% --------------------------------------------------------------------
-
 \include{agn}
-
-% --------------------------------------------------------------------
-
 \include{cosmology}
-
-% --------------------------------------------------------------------
-
 \include{specialsurveys}
-
-% --------------------------------------------------------------------
-
 \include{wfirst}
 
+% The tradeoffs chapter was a summary of the v1 analysis, and will need
+% updating for v2:
+\include{tradeoffs}
+
 % --------------------------------------------------------------------
 
-\include{tradeoffs}
+\part{Proposed Observing Strategies}
+\def\partname{proposals}\label{part:\partname}
+
+% Chapters collecting together the various proposed cadences. This
+% may not be the best way to do it; science theme could make more sense.
+% \include{wfd}
+% \include{ddf}
+% \include{mini-surveys}
+% \include{too}
+
+% The SAC will provide a summary of their findings and conclusions,
+% including a list of new cadences to be simulated:
+% \include{sac-summary}
 
 % --------------------------------------------------------------------
 
