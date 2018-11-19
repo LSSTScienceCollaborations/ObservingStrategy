@@ -55,7 +55,7 @@ End of old workshop links -->
 
 This effort is being coordinated by [Phil Marshall](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@drphilmarshall) (the v1 COSEP's editor-in-chief), with guidance from [Zeljko Ivezic](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@ivezic) and [Lynne Jones](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues/new?body=@rhiannonlynne). Any of them can propagate your privately-communicated concerns into a redacted issue on this repository. Contributions are very welcome from all round the LSST science collaborations, and beyond. Perhaps we are missing a science case? Or an idea for how to perturb the observing strategy? We'd like to hear from you! Please send all your feedback to [this repo's issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues).
 
-All COSEP content is Copyright 2015, 2016, 2017, 2018 The Authors. If you make use of the ideas and results in the COSEP in your research, please cite it as **"(LSST Science Collaborations 2017)"**, and provide the URL of this repository: https://github.com/LSSTScienceCollaborations/ObservingStrategy. The BibTeX entry for the v1 COSEP is below.  Thanks!
+All COSEP content is Copyright 2017 The Authors. If you make use of the ideas and results in the COSEP in your research, please cite it as **"(LSST Science Collaborations 2017)"**, and provide the URL of this repository: https://github.com/LSSTScienceCollaborations/ObservingStrategy. The BibTeX entry for the v1 COSEP is below.  Thanks!
 
 ```
 @ARTICLE{LSST-COSEP,
