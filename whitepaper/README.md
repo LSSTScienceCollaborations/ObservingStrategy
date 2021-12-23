@@ -2,23 +2,26 @@
 
 [![Build Status](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy.svg?branch=master)](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy)
 
-A community white paper about LSST observing strategy, with quantifications via the the Metric Analysis Framework.
+the LSST Community Observing Strategy Evaluation Paper (COSEP) is a living document that explores the effects that changes to the LSST survey strategy would have on the detailed performance of the anticipated science investigations,
+with quantifications via the the Metric Analysis Framework.
 
-* **[Read the current version of the paper here](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.pdf)** (automatically generated PDF, updated hourly - [log file is here](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.log))
+* **[Read the current draft of the COSEP](https://github.com/LSSTScienceCollaborations/ObservingStrategy/blob/pdf/whitepaper/LSST_Observing_Strategy_White_Paper.pdf
+)** (automatically generated PDF, rebuilt every time the `master` branch is updated)
+[![Build Status](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy.svg?branch=master)](https://travis-ci.org/LSSTScienceCollaborations/ObservingStrategy)
 
 
 ## How to contribute
 
 We welcome contributions from all members of the LSST project and science community!
-The white paper contains guidelines for authors on how to get involved - including hyperlinks to useful resources.
+The COSEP contains guidelines for authors on how to get involved - including hyperlinks to useful resources.
 
-If you would like to propose changes or additions to the white paper, please:
+If you would like to propose changes or additions to the COSEP, please:
 
 * 1) First, read the [paper](http://www.slac.stanford.edu/~digel/ObservingStrategy/whitepaper/LSST_Observing_Strategy_White_Paper.pdf) and the [issues](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues) to see if your suggestion is already being discussed.
 
-* 2) Then, to edit the paper, first [fork](https://help.github.com/articles/fork-a-repo/) this repository, clone it to your local machine, and edit the text. To compile the PDF, just hit `make` in the `whitepaper` folder.
+* 2) Then, to edit the COSEP, first [fork](https://help.github.com/articles/fork-a-repo/) this repository, clone it to your local machine, and edit the text. To compile the PDF, just hit `make` in the `whitepaper` folder.
 
-* 3) After you have committed and pushed your changes, you can submit a [pull request](https://help.github.com/articles/using-pull-requests/) to get your work accepted into the white paper by the editors. Thanks!
+* 3) After you have committed and pushed your changes, you can submit a [pull request](https://help.github.com/articles/using-pull-requests/) to get your work accepted into the COSEP by the editors. Thanks!
 
 
 If the document does not compile, and you cannot fix the problem, please submit the error message and your preliminary diagnosis as an [issue](https://github.com/LSSTScienceCollaborations/ObservingStrategy/issues).
@@ -30,4 +33,4 @@ Section Leads: you will need to make sure that your section is correctly read in
 
 ## License, credit etc
 
-This paper contains research in progress. All content is Copyright 2015, 2016, 2017 The LSST Science Collaborations. If you would like to cite it, please do so as "(LSST Science Collaborations, in preparation)" and provide a footnote containing the URL of this repository: https://github.com/LSSTScienceCollaborations/ObservingStrategy. The LaTeX and python code used here is distributed for you to use at your own risk under the MIT License. We are grateful to the developers of [yahapj.bst](https://github.com/AASJournals/yahapj) for enabling our hyper-linked reference list.
+This paper contains research in progress. All content is Copyright 2015, 2016, 2017, 2018 The LSST Science Collaborations. If you would like to cite it, please do so as "(LSST Science Collaborations, in preparation)" and provide a footnote containing the URL of this repository: https://github.com/LSSTScienceCollaborations/ObservingStrategy. The LaTeX and python code used here is distributed for you to use at your own risk under the MIT License. We are grateful to the developers of [yahapj.bst](https://github.com/AASJournals/yahapj) for enabling our hyper-linked reference list.

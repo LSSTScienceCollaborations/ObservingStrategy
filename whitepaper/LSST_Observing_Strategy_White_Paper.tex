@@ -65,51 +65,75 @@
 
 % --------------------------------------------------------------------
 
+% The v2 introduction should explain the structure of the paper,
+% and describe the 2018 white paper process.
+
 \include{introduction}
 
 % --------------------------------------------------------------------
 
-\include{cadexp2}
+\part{Simulations}
+\def\partname{sims}\label{part:\partname}
+
+% Comment from Michael Strauss: I would suggest that we not simply copy 
+% Chapter 2 (cadexp2) of the previous COSEP into V2, as it will just 
+% confuse people who want a clean story about the status of the simulations. 
+% The earlier version had a lot of "aspirational" words about, e.g., 
+% rolling cadence, that now is implementable with the feature-based scheduler, 
+% and I think we can tell a cleaner story without all the detours that were taken at the time V1 was written.
+
+% There have been lots of changesin how cadences are simulated - let's
+% summarize them here:
+% \include{opsim-intro} 
+% This section shoudl include some history, to make the work that refers
+% to minion_1016 etc make sense. That history can be distilled from 
+% cadexp2.tex.
+
+% Then, we can explain the new set of simulations that was provided with 
+% the 2018 WP call. 
+% \include{cadexp2018}
 
 % --------------------------------------------------------------------
+
+\part{Science Cases and Performance Metrics}
+\def\partname{science}\label{part:\partname}
+
+% The science chapters will need updating and extending with the
+% 2018 white paper content. We might consider re-organizing them
+% into 4 themes.
 
 \include{solarsystem}
-
-% --------------------------------------------------------------------
-
 \include{galaxy}
-
-% --------------------------------------------------------------------
-
 \include{variables}
-
-% --------------------------------------------------------------------
-
 \include{transients}
-
-% --------------------------------------------------------------------
-
 \include{magclouds}
-
-% --------------------------------------------------------------------
-
 \include{agn}
-
-% --------------------------------------------------------------------
-
 \include{cosmology}
-
-% --------------------------------------------------------------------
-
 \include{specialsurveys}
-
-% --------------------------------------------------------------------
-
 \include{wfirst}
 
+% The tradeoffs chapter was a summary of the v1 analysis, and will need
+% updating for v2:
+\include{tradeoffs}
+
 % --------------------------------------------------------------------
 
-\include{tradeoffs}
+\part{Proposed Observing Strategies}
+\def\partname{proposals}\label{part:\partname}
+
+% Chapters collecting together the various proposed cadences. This
+% may not be the best way to do it; science theme could make more sense.
+% \include{wfd}
+% \include{ddf}
+% \include{mini-surveys}
+% \include{too}
+
+% The SAC will provide a summary of their findings and conclusions,
+% including a discussion of next steps (the SAC's recommendations):
+% \include{sac-summary}
+% Comment from Michael Strauss: This summary will also likely appear in 
+% a separate public document.
+
 
 % --------------------------------------------------------------------
 
